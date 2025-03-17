@@ -1,0 +1,127 @@
+
+import React, { useRef, useState, useEffect } from 'react';
+import { cn } from '@/lib/utils';
+import { Mail, Linkedin, Dribbble, Github } from 'lucide-react';
+
+export function Contact() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isInView, setIsInView] = useState(false);
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+    
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  const socialLinks = [
+    { 
+      name: "Email", 
+      url: "mailto:haet.pariya@example.com", 
+      icon: <Mail className="h-5 w-5" />
+    },
+    { 
+      name: "LinkedIn", 
+      url: "https://linkedin.com/in/haetpariya", 
+      icon: <Linkedin className="h-5 w-5" /> 
+    },
+    { 
+      name: "Dribbble", 
+      url: "https://dribbble.com/haetpariya", 
+      icon: <Dribbble className="h-5 w-5" /> 
+    },
+    { 
+      name: "GitHub", 
+      url: "https://github.com/haetpariya", 
+      icon: <Github className="h-5 w-5" /> 
+    }
+  ];
+
+  return (
+    <section 
+      id="contact" 
+      ref={sectionRef}
+      className="py-24 relative overflow-hidden"
+    >
+      <div className="section-container">
+        <div className="text-center max-w-3xl mx-auto">
+          <span className={cn(
+            "text-sm font-medium px-3 py-1 rounded-full bg-secondary text-primary inline-block mb-4",
+            "opacity-0 transform translate-y-6 transition-all duration-700",
+            isInView && "opacity-100 translate-y-0"
+          )}>
+            Get in Touch
+          </span>
+          
+          <h2 className={cn(
+            "heading",
+            "opacity-0 transform translate-y-6 transition-all duration-700 delay-100",
+            isInView && "opacity-100 translate-y-0"
+          )}>
+            Let's collaborate
+          </h2>
+          
+          <p className={cn(
+            "text-muted-foreground mt-6 max-w-2xl mx-auto",
+            "opacity-0 transform translate-y-6 transition-all duration-700 delay-200",
+            isInView && "opacity-100 translate-y-0"
+          )}>
+            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out through any of the platforms below.
+          </p>
+          
+          <div className={cn(
+            "mt-12 flex flex-wrap justify-center gap-4",
+            "opacity-0 transform translate-y-6 transition-all duration-700 delay-300",
+            isInView && "opacity-100 translate-y-0"
+          )}>
+            {socialLinks.map((link, index) => (
+              <a 
+                key={link.name}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-2 px-6 py-3 rounded-full bg-secondary hover:bg-secondary/80 text-primary transition-colors duration-300"
+                style={{ transitionDelay: `${300 + index * 100}ms` }}
+              >
+                {link.icon}
+                <span className="font-medium">{link.name}</span>
+              </a>
+            ))}
+          </div>
+          
+          <div className={cn(
+            "mt-16 p-6 md:p-10 rounded-2xl bg-secondary/50 backdrop-blur-sm",
+            "opacity-0 transform translate-y-6 transition-all duration-700 delay-500",
+            isInView && "opacity-100 translate-y-0"
+          )}>
+            <h3 className="text-xl font-bold">Looking for a designer?</h3>
+            <p className="text-muted-foreground mt-3 mb-6">
+              If you're looking for a designer who combines creativity with strategy to create impactful digital experiences, let's connect.
+            </p>
+            <a 
+              href="mailto:haet.pariya@example.com"
+              className="btn-hover inline-flex items-center px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium text-sm"
+            >
+              <span className="relative z-10">Send me an email</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      {/* Background decorative elements */}
+      <div className="absolute top-1/4 left-0 w-full h-1/3 bg-gradient-to-r from-secondary/20 via-transparent to-secondary/20 rounded-full filter blur-3xl opacity-20"></div>
+    </section>
+  );
+}
