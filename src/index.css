@@ -76,6 +76,28 @@
     animation-delay: calc(0.1s * var(--index, 0));
   }
 
+  @keyframes text-reveal {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease forwards;
+  }
+
   /* Glass morphism effect */
   .glass {
     background: rgba(6, 78, 59, 0.08);

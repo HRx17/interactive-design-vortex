@@ -1,6 +1,7 @@
 
 import React, { useRef, useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
+import { BookOpen, FileSearch, FlaskConical } from 'lucide-react';
 
 export function About() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -30,6 +31,24 @@ export function About() {
     "Usability Testing", "UI Design", "Interaction Design",
     "Information Architecture", "Design Systems", "Figma",
     "Adobe XD", "Human-Computer Interaction", "Sketch"
+  ];
+
+  const researchProjects = [
+    {
+      title: "AR/VR Interfaces for Collaboration",
+      description: "Exploring the effectiveness of augmented and virtual reality interfaces for remote collaborative work environments.",
+      year: "2023"
+    },
+    {
+      title: "Accessibility in Mobile Applications",
+      description: "Investigating design patterns that improve accessibility for users with visual impairments in mobile applications.",
+      year: "2022"
+    },
+    {
+      title: "Cognitive Load in Complex UI",
+      description: "Measuring cognitive load during interaction with complex user interfaces to develop best practices for UX design.",
+      year: "2021"
+    }
   ];
 
   return (
@@ -85,7 +104,7 @@ export function About() {
                 <span 
                   key={skill} 
                   className={cn(
-                    "px-4 py-2 rounded-full bg-gradient-to-r from-emerald-100 to-teal-100 text-primary text-sm font-medium transition-all duration-500 hover:shadow-md hover:scale-105",
+                    "px-4 py-2 rounded-full bg-gradient-to-r from-emerald-900 to-teal-800 text-white text-sm font-medium transition-all duration-500 hover:shadow-md hover:scale-105 border border-emerald-600/30",
                     "opacity-0 transform translate-y-4",
                     isInView && "opacity-100 translate-y-0"
                   )}
@@ -113,6 +132,52 @@ export function About() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        
+        {/* Research Section */}
+        <div className={cn(
+          "mt-20",
+          "opacity-0 transform translate-y-6 transition-all duration-700 delay-400",
+          isInView && "opacity-100 translate-y-0"
+        )}>
+          <div className="flex items-center gap-3 mb-6">
+            <FlaskConical className="w-6 h-6 text-emerald-500" />
+            <h2 className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">Research Projects</h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {researchProjects.map((project, index) => (
+              <div 
+                key={project.title}
+                className={cn(
+                  "p-6 rounded-lg bg-secondary/50 border border-emerald-600/20 hover:border-emerald-600/40 transition-all duration-300 glass",
+                  "opacity-0 transform translate-y-4",
+                  isInView && "opacity-100 translate-y-0"
+                )}
+                style={{ transitionDelay: `${500 + index * 100}ms` }}
+              >
+                <div className="flex items-start gap-3">
+                  <div className="bg-emerald-900 p-2 rounded-md">
+                    <FileSearch className="w-5 h-5 text-emerald-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-white">{project.title}</h3>
+                    <p className="text-sm text-emerald-100/70 mt-1">{project.year}</p>
+                    <p className="mt-3 text-muted-foreground">{project.description}</p>
+                  </div>
+                </div>
+                <div className="mt-4 flex justify-end">
+                  <a 
+                    href="#" 
+                    className="text-sm font-medium text-emerald-400 flex items-center gap-1 hover:text-emerald-300 transition-colors"
+                  >
+                    <span>Read more</span>
+                    <BookOpen className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

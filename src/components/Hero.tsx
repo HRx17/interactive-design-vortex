@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowDownIcon, ExternalLink } from 'lucide-react';
+import { ArrowDownIcon, ExternalLink, Download } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export function Hero() {
@@ -53,48 +53,64 @@ export function Hero() {
       </div>
       
       <div className="section-container relative z-10">
-        <div className="max-w-4xl">
-          <div 
-            className="mb-6 reveal-text"
-            ref={sentenceRef}
-          >
-            <span className="inline-block px-3 py-1 rounded-full text-sm font-medium bg-emerald-900/50 text-emerald-100 backdrop-blur-sm border border-emerald-700/30 animate-fade-in opacity-0" style={{animationDelay: '0.2s', animationFillMode: 'forwards'}}>
-              UI/UX Designer & HCI Student
-            </span>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div className="max-w-4xl">
+            <div 
+              className="mb-6 reveal-text"
+              ref={sentenceRef}
+            >
+              <span className="inline-block px-3 py-1 rounded-full text-sm font-medium bg-emerald-900/50 text-emerald-100 backdrop-blur-sm border border-emerald-700/30 animate-fade-in opacity-0" style={{animationDelay: '0.2s', animationFillMode: 'forwards'}}>
+                UI/UX Designer & HCI Student
+              </span>
+            </div>
+            
+            <h1 className="heading mb-4 text-white">
+              <div className="reveal-text">
+                <span className="block">Creating intentional</span>
+              </div>
+              <div className="reveal-text mt-2">
+                <span className="block">and impactful digital</span>
+              </div>
+              <div className="reveal-text mt-2">
+                <span className="block bg-gradient-to-r from-emerald-300 to-teal-200 bg-clip-text text-transparent">experiences</span>
+              </div>
+            </h1>
+            
+            <p className="text-lg md:text-xl text-emerald-100/80 max-w-2xl mt-6 animate-fade-in opacity-0" style={{animationDelay: '0.6s', animationFillMode: 'forwards'}}>
+              I'm Haet Ranpariya, a UI/UX Designer passionate about creating human-centered digital experiences that balance form and function.
+            </p>
+            
+            <div className="mt-10 animate-fade-in opacity-0 flex flex-wrap gap-4" style={{animationDelay: '0.8s', animationFillMode: 'forwards'}}>
+              <a 
+                href="#projects"
+                className="btn-hover inline-flex items-center px-8 py-4 rounded-full bg-emerald-600 text-white font-medium transform transition-transform duration-300 hover:scale-105"
+              >
+                <span className="relative z-10">View my work</span>
+              </a>
+              <a 
+                href="/resume.pdf"
+                download
+                className="inline-flex items-center px-8 py-4 rounded-full bg-emerald-800/40 backdrop-blur-sm text-white font-medium transition-colors hover:bg-emerald-800/60 gap-2 border border-emerald-700/30"
+              >
+                <span>Download Resume</span>
+                <Download className="h-4 w-4" />
+              </a>
+            </div>
           </div>
           
-          <h1 className="heading mb-4 text-white">
-            <div className="reveal-text">
-              <span className="block">Creating intentional</span>
+          <div className="hidden md:flex justify-center">
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full blur-xl"></div>
+              <div className="h-80 w-80 relative rounded-full overflow-hidden border-4 border-emerald-400/20 p-1">
+                <img 
+                  src="/lovable-uploads/5b5ed0d0-de9b-4af8-b929-868ede9465fc.png" 
+                  alt="Haet Ranpariya"
+                  className="object-cover w-full h-full rounded-full"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/70 to-transparent mix-blend-overlay"></div>
+              </div>
+              <div className="absolute bottom-0 right-0 h-20 w-20 bg-gradient-to-br from-emerald-400 to-teal-600 rounded-full border-4 border-emerald-900 flex items-center justify-center text-white font-bold text-lg">UX</div>
             </div>
-            <div className="reveal-text mt-2">
-              <span className="block">and impactful digital</span>
-            </div>
-            <div className="reveal-text mt-2">
-              <span className="block bg-gradient-to-r from-emerald-300 to-teal-200 bg-clip-text text-transparent">experiences</span>
-            </div>
-          </h1>
-          
-          <p className="text-lg md:text-xl text-emerald-100/80 max-w-2xl mt-6 animate-fade-in opacity-0" style={{animationDelay: '0.6s', animationFillMode: 'forwards'}}>
-            I'm Haet Ranpariya, a UI/UX Designer passionate about creating human-centered digital experiences that balance form and function.
-          </p>
-          
-          <div className="mt-10 animate-fade-in opacity-0 flex flex-wrap gap-4" style={{animationDelay: '0.8s', animationFillMode: 'forwards'}}>
-            <a 
-              href="#projects"
-              className="btn-hover inline-flex items-center px-8 py-4 rounded-full bg-emerald-600 text-white font-medium transform transition-transform duration-300 hover:scale-105"
-            >
-              <span className="relative z-10">View my work</span>
-            </a>
-            <a 
-              href="https://www.behance.net/haetranpariya17"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-8 py-4 rounded-full bg-emerald-800/40 backdrop-blur-sm text-white font-medium transition-colors hover:bg-emerald-800/60 gap-2 border border-emerald-700/30"
-            >
-              <span>Behance profile</span>
-              <ExternalLink className="h-4 w-4" />
-            </a>
           </div>
         </div>
         
