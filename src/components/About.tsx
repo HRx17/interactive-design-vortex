@@ -53,14 +53,14 @@ export function About() {
       }
     },
     {
-      title: "Accessibility in Mobile Applications",
-      description: "Investigating design patterns that improve accessibility for users with visual impairments in mobile applications.",
-      year: "2022",
+      title: "Experimental Research on MyCourses Platform",
+      description: "The study investigates the challenges faced by international and American students at the Rochester Institute of Technology(RIT) while using the MyCourses learning platform. ",
+      year: "2024",
       fullContent: {
         challenge: "Despite advances in design systems, many mobile applications remain challenging for users with visual impairments. This research identified and tested design patterns to improve mobile accessibility without compromising visual aesthetics.",
         methods: [
-          "Accessibility audit of 50 popular mobile applications",
-          "User testing with 18 participants with varying degrees of visual impairment",
+          "Experimental Research",
+          "User testing with 21 participants with varying degrees",
           "Development and testing of an accessible design pattern library",
           "Longitudinal study tracking usability metrics before and after accessibility improvements"
         ],
@@ -70,9 +70,9 @@ export function About() {
       }
     },
     {
-      title: "Cognitive Load in Complex UI",
-      description: "Measuring cognitive load during interaction with complex user interfaces to develop best practices for UX design.",
-      year: "2021",
+      title: "What is the correlation between age groups and their preferred game genres on PlayStation, and how does this affect the average time spent playing per week?",
+      description: "This study investigates the correlation relationship between PlayStation users, focusing on age groups, their preferred game genres on PlayStation, and the average time spent playing per week and developing the structured survey methodology on Google Forms as we gathered data from PlayStation users to collect data focusing on their game genre preferences and gaming habits.",
+      year: "2024",
       fullContent: {
         challenge: "As digital interfaces become more feature-rich, users often experience cognitive overload. This study measured cognitive load across different interface designs to identify patterns that minimize mental effort while maintaining functionality.",
         methods: [
@@ -125,7 +125,7 @@ export function About() {
                 With a background in design and technology, I approach each project with a user-centered mindset, ensuring that the final product meets both user needs and business objectives. I'm particularly interested in the intersection of design, psychology, and technology.
               </p>
               <p>
-                When I'm not designing, you can find me exploring new design trends, attending UX workshops, or experimenting with new prototyping tools.
+                When I'm not designing, you can find me Painting, Scuba Diving, or experimenting with new prototyping tools.
               </p>
             </div>
           </div>
