@@ -156,7 +156,7 @@ export function About() {
               <h3 className="text-xl font-bold mb-6 bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">Education</h3>
               <div className="space-y-6">
                 <div className="relative pl-8 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:rounded-full before:bg-gradient-to-r before:from-emerald-600 before:to-teal-500">
-                  <h4 className="text-lg font-bold">MSc in Human-Computer Interaction</h4>
+                  <h4 className="text-lg font-bold">MS in Human-Computer Interaction</h4>
                   <p className="text-sm text-muted-foreground">Rochester Institute of Technology</p>
                   <p className="text-sm text-muted-foreground">2024 - Present</p>
                   <p className="text-sm font-medium mt-1">GPA: 3.9</p>
