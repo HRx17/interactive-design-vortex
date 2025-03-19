@@ -66,13 +66,16 @@ export function Hero() {
             
             <h1 className="heading mb-4 text-white">
               <div className="reveal-text">
-                <span className="block">Creating intentional</span>
+                <span className="inline-block bg-gradient-to-r from-emerald-300 to-teal-200 bg-clip-text text-transparent">Creating</span>
+                <span className="inline-block ml-3">intentional</span>
               </div>
               <div className="reveal-text mt-2">
-                <span className="block">and impactful digital</span>
+                <span className="inline-block">and</span>
+                <span className="inline-block ml-3 bg-gradient-to-r from-emerald-300 to-teal-200 bg-clip-text text-transparent">impactful</span>
+                <span className="inline-block ml-3">digital</span>
               </div>
               <div className="reveal-text mt-2">
-                <span className="block bg-gradient-to-r from-emerald-300 to-teal-200 bg-clip-text text-transparent">experiences</span>
+                <span className="inline-block bg-gradient-to-r from-emerald-300 to-teal-200 bg-clip-text text-transparent">experiences</span>
               </div>
             </h1>
             
