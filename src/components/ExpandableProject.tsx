@@ -8,7 +8,6 @@ import {
   AccordionItem, 
   AccordionTrigger 
 } from "@/components/ui/accordion";
-import { ProjectEmbed } from './ProjectEmbed';
 
 interface ExpandableProjectProps {
   embedSrc: string;
