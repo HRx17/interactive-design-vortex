@@ -7,33 +7,33 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 4%;
+    --background: 160 15% 5%;
+    --foreground: 160 10% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 4%;
+    --card: 160 15% 8%;
+    --card-foreground: 160 10% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 4%;
+    --popover: 160 15% 6%;
+    --popover-foreground: 160 10% 98%;
 
-    --primary: 240 6% 10%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 160 10% 98%;
+    --primary-foreground: 160 15% 5%;
 
-    --secondary: 240 5% 96%;
-    --secondary-foreground: 240 6% 10%;
+    --secondary: 165 15% 15%;
+    --secondary-foreground: 160 10% 98%;
 
-    --muted: 240 5% 96%;
-    --muted-foreground: 240 4% 46%;
+    --muted: 165 15% 15%;
+    --muted-foreground: 160 5% 65%;
 
-    --accent: 240 5% 96%;
-    --accent-foreground: 240 6% 10%;
+    --accent: 165 15% 15%;
+    --accent-foreground: 160 10% 98%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 6% 90%;
-    --input: 240 6% 90%;
-    --ring: 240 6% 10%;
+    --border: 160 15% 15%;
+    --input: 160 15% 15%;
+    --ring: 160 70% 40%;
 
     --radius: 0.5rem;
   }
@@ -78,26 +78,21 @@
 
   /* Glass morphism effect */
   .glass {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(6, 78, 59, 0.08);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: var(--radius);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .dark .glass {
-    background: rgba(15, 15, 15, 0.08);
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(20, 184, 166, 0.08);
   }
 }
 
 @layer components {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-500;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-300 to-teal-200;
   }
   
   .btn-hover {
-    @apply relative overflow-hidden transition-all duration-300 ease-out before:absolute before:inset-0 before:z-0 before:bg-primary/10 before:opacity-0 before:transition-opacity hover:before:opacity-100;
+    @apply relative overflow-hidden transition-all duration-300 ease-out before:absolute before:inset-0 before:z-0 before:bg-white/10 before:opacity-0 before:transition-opacity hover:before:opacity-100;
   }
   
   .section-container {

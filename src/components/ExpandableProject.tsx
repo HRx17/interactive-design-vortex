@@ -1,7 +1,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { ChevronDown, X, ExternalLink } from 'lucide-react';
+import { X, ExternalLink } from 'lucide-react';
 import { 
   Accordion, 
   AccordionContent, 
@@ -66,8 +66,9 @@ export function ExpandableProject({ embedSrc, index }: ExpandableProjectProps) {
     <>
       <div 
         ref={projectRef}
+        onClick={toggleExpand}
         className={cn(
-          "bg-card border border-border rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300",
+          "bg-card border border-border rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer",
           "opacity-0 transform translate-y-12",
           isVisible && "opacity-100 translate-y-0"
         )}
@@ -91,17 +92,6 @@ export function ExpandableProject({ embedSrc, index }: ExpandableProjectProps) {
             ></iframe>
           </div>
         </div>
-        
-        <button 
-          onClick={toggleExpand}
-          className="w-full py-3 px-4 flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-blue-500 text-white font-medium rounded-b-xl hover:from-purple-700 hover:to-blue-600 transition-all duration-300"
-        >
-          <span>View Case Study</span>
-          <ChevronDown className={cn(
-            "h-5 w-5 transition-transform duration-300",
-            isExpanded && "rotate-180"
-          )} />
-        </button>
       </div>
 
       {isExpanded && (
@@ -186,7 +176,7 @@ export function ExpandableProject({ embedSrc, index }: ExpandableProjectProps) {
                     href={embedSrc.replace("/embed/project/", "/project/")}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 p-4 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-medium mt-4"
+                    className="flex items-center justify-center gap-2 p-4 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-medium mt-4"
                   >
                     <span>View Full Case Study on Behance</span>
                     <ExternalLink className="h-4 w-4" />
