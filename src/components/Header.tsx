@@ -49,7 +49,7 @@ export function Header() {
           href="#home" 
           className="font-display text-lg font-bold relative"
         >
-          Haet Pariya
+          Haet Ranpariya
           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
         </a>
 
