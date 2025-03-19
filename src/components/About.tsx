@@ -50,7 +50,7 @@ export function About() {
             </span>
             
             <h2 className={cn(
-              "heading",
+              "heading bg-gradient-to-r from-purple-700 to-blue-500 bg-clip-text text-transparent",
               "opacity-0 transform translate-y-6 transition-all duration-700 delay-100",
               isInView && "opacity-100 translate-y-0"
             )}>
@@ -79,13 +79,13 @@ export function About() {
             "opacity-0 transform translate-y-6 transition-all duration-700 delay-300",
             isInView && "opacity-100 translate-y-0"
           )}>
-            <h3 className="text-xl font-bold mb-6">Skills & Expertise</h3>
+            <h3 className="text-xl font-bold mb-6 bg-gradient-to-r from-purple-700 to-blue-500 bg-clip-text text-transparent">Skills & Expertise</h3>
             <div className="flex flex-wrap gap-3">
               {skills.map((skill, index) => (
                 <span 
                   key={skill} 
                   className={cn(
-                    "px-4 py-2 rounded-full bg-secondary text-primary text-sm font-medium transition-all duration-500",
+                    "px-4 py-2 rounded-full bg-gradient-to-r from-purple-100 to-blue-100 text-primary text-sm font-medium transition-all duration-500 hover:shadow-md hover:scale-105",
                     "opacity-0 transform translate-y-4",
                     isInView && "opacity-100 translate-y-0"
                   )}
@@ -97,18 +97,19 @@ export function About() {
             </div>
             
             <div className="mt-12">
-              <h3 className="text-xl font-bold mb-6">Education</h3>
+              <h3 className="text-xl font-bold mb-6 bg-gradient-to-r from-purple-700 to-blue-500 bg-clip-text text-transparent">Education</h3>
               <div className="space-y-6">
-                <div className="relative pl-8 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:rounded-full before:bg-primary">
+                <div className="relative pl-8 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:rounded-full before:bg-gradient-to-r before:from-purple-600 before:to-blue-500">
                   <h4 className="text-lg font-bold">MSc in Human-Computer Interaction</h4>
                   <p className="text-sm text-muted-foreground">Rochester Institute of Technology</p>
                   <p className="text-sm text-muted-foreground">2022 - Present</p>
                   <p className="text-sm font-medium mt-1">GPA: 3.9</p>
                 </div>
-                <div className="relative pl-8 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:rounded-full before:bg-primary">
-                  <h4 className="text-lg font-bold">BSc in Computer Science</h4>
-                  <p className="text-sm text-muted-foreground">University of California, Berkeley</p>
+                <div className="relative pl-8 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:rounded-full before:bg-gradient-to-r before:from-purple-600 before:to-blue-500">
+                  <h4 className="text-lg font-bold">B.E. in Computer Engineering</h4>
+                  <p className="text-sm text-muted-foreground">Gujarat Technological University</p>
                   <p className="text-sm text-muted-foreground">2018 - 2022</p>
+                  <p className="text-sm font-medium mt-1">GPA: 3.8</p>
                 </div>
               </div>
             </div>
@@ -117,7 +118,7 @@ export function About() {
       </div>
       
       {/* Background decorative elements */}
-      <div className="absolute bottom-0 right-0 w-1/3 h-1/2 bg-gradient-to-l from-secondary/30 to-transparent rounded-full filter blur-3xl opacity-30"></div>
+      <div className="absolute bottom-0 right-0 w-1/3 h-1/2 bg-gradient-to-l from-purple-500/20 to-transparent rounded-full filter blur-3xl opacity-30"></div>
     </section>
   );
 }
