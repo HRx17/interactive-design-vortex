@@ -103,6 +103,7 @@ export function About() {
                   <h4 className="text-lg font-bold">MSc in Human-Computer Interaction</h4>
                   <p className="text-sm text-muted-foreground">Rochester Institute of Technology</p>
                   <p className="text-sm text-muted-foreground">2022 - Present</p>
+                  <p className="text-sm font-medium mt-1">GPA: 3.9</p>
                 </div>
                 <div className="relative pl-8 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:rounded-full before:bg-primary">
                   <h4 className="text-lg font-bold">BSc in Computer Science</h4>

@@ -29,7 +29,7 @@ export function Contact() {
   const socialLinks = [
     { 
       name: "Email", 
-      url: "mailto:haet.pariya@example.com", 
+      url: "mailto:haetranpariya1789@gmail.com", 
       icon: <Mail className="h-5 w-5" />
     },
     { 
@@ -111,7 +111,7 @@ export function Contact() {
               If you're looking for a designer who combines creativity with strategy to create impactful digital experiences, let's connect.
             </p>
             <a 
-              href="mailto:haet.pariya@example.com"
+              href="mailto:haetranpariya1789@gmail.com"
               className="btn-hover inline-flex items-center px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium text-sm"
             >
               <span className="relative z-10">Send me an email</span>
