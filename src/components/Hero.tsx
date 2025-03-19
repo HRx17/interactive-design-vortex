@@ -91,7 +91,7 @@ export function Hero() {
                 <span className="relative z-10">View my work</span>
               </a>
               <a 
-                href="/resume.pdf"
+                href="/Haet-Ranpariya-UIUX Designer.pdf"
                 download
                 className="inline-flex items-center px-8 py-4 rounded-full bg-emerald-800/40 backdrop-blur-sm text-white font-medium transition-colors hover:bg-emerald-800/60 gap-2 border border-emerald-700/30"
               >
