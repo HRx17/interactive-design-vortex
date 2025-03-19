@@ -29,16 +29,16 @@ export function About() {
 
   const skills = [
     "User Research", "Wireframing", "Prototyping", 
-    "Usability Testing", "UI Design", "Interaction Design",
+    "Usability Testing", "UI/UX Design", "Interaction Design",
     "Information Architecture", "Design Systems", "Figma",
     "Adobe XD", "Human-Computer Interaction", "Sketch"
   ];
 
   const researchProjects = [
     {
-      title: "AR/VR Interfaces for Collaboration",
-      description: "Exploring the effectiveness of augmented and virtual reality interfaces for remote collaborative work environments.",
-      year: "2023",
+      title: "The Impact of Situationally Induced Impairments and Disabilities (SIIDs) on Task Performance: A Comparative Study of Sensory Modalities",
+      description: "Situationally Induced Impairments and Disabilities (SIIDs) present dynamic challenges to accessible technology interactions. This study proposes a comparative experimental investigation of how visual, auditory, and tactile SIIDs affect task performance and user experience. Metrics like completion time, accuracy, and subjective ratings will be measured under controlled conditions. The research would hypothesize differentiated impacts depending on impairment type and task complexity, along with insights for designing adaptive interfaces to improve inclusivity and usability in dynamic real-world contexts.",
+      year: "2024",
       fullContent: {
         challenge: "The transition to remote work has highlighted limitations in current collaboration tools. This research explored how AR/VR interfaces could enhance remote teamwork by creating more immersive and engaging collaboration experiences.",
         methods: [
