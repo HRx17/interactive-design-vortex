@@ -158,13 +158,13 @@ export function About() {
                 <div className="relative pl-8 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:rounded-full before:bg-gradient-to-r before:from-emerald-600 before:to-teal-500">
                   <h4 className="text-lg font-bold">MSc in Human-Computer Interaction</h4>
                   <p className="text-sm text-muted-foreground">Rochester Institute of Technology</p>
-                  <p className="text-sm text-muted-foreground">2022 - Present</p>
+                  <p className="text-sm text-muted-foreground">2024 - Present</p>
                   <p className="text-sm font-medium mt-1">GPA: 3.9</p>
                 </div>
                 <div className="relative pl-8 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:rounded-full before:bg-gradient-to-r before:from-emerald-600 before:to-teal-500">
                   <h4 className="text-lg font-bold">B.E. in Computer Engineering</h4>
                   <p className="text-sm text-muted-foreground">Gujarat Technological University</p>
-                  <p className="text-sm text-muted-foreground">2018 - 2022</p>
+                  <p className="text-sm text-muted-foreground">2019 - 2023</p>
                   <p className="text-sm font-medium mt-1">GPA: 3.8</p>
                 </div>
               </div>
