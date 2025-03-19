@@ -97,7 +97,8 @@ export function ResearchCard({
                 
                 <div className="pt-3 flex justify-end">
                   <a 
-                    href="#" 
+                    href="/SIID_Research.pdf" 
+                    download
                     className="text-sm font-medium text-emerald-400 flex items-center gap-1 hover:text-emerald-300 transition-colors px-4 py-2 rounded-full border border-emerald-700/30 hover:bg-emerald-800/40"
                   >
                     <span>Read full paper</span>
