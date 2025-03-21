@@ -43,8 +43,7 @@ export function ResearchCard({
               <h3 className="text-lg font-bold text-white">{title}</h3>
               <p className="text-sm text-emerald-100/70 mt-1">{year}</p>
               <p className="mt-3 text-muted-foreground">{description}</p>
-            </div>
-            <div className="pt-3 flex justify-end">
+              <div className="pt-3 flex justify-end">
                   <a 
                     href={downloadFile}
                     download
@@ -54,6 +53,7 @@ export function ResearchCard({
                     <BookOpen className="w-4 h-4" />
                   </a>
                 </div>
+            </div>
           </div>
         </div>
       </Collapsible>
