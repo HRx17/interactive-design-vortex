@@ -39,19 +39,19 @@ export function About() {
       title: "The Impact of Situationally Induced Impairments and Disabilities (SIIDs) on Task Performance: A Comparative Study of Sensory Modalities",
       description: "This study proposes a comparative experimental investigation of how visual, auditory, and tactile SIIDs affect task performance and user experience.",
       year: "2024",
-      downloadFile: "/SIID_Research.pdf",
+      downloadFile: "SIID_Research.pdf",
     },
     {
       title: "Experimental Research on MyCourses Platform",
       description: "The study investigates the challenges faced by international and American students at the Rochester Institute of Technology(RIT) while using the MyCourses learning platform. ",
       year: "2024",
-      downloadFile: "/Experimental_Research.pdf",
+      downloadFile: "Experimental_Research.pdf",
     },
     {
       title: "What is the correlation between age groups and their preferred game genres on PlayStation, and how does this affect the average time spent playing per week?",
       description: "This study investigates the correlation relationship between PlayStation users, focusing on age groups, their preferred game genres on PlayStation, and the average time spent playing per week and developing the structured survey methodology on Google Forms as we gathered data from PlayStation users to collect data focusing on their game genre preferences and gaming habits.",
       year: "2024",
-      downloadFile: "/Research_Gaming.pdf",
+      downloadFile: "Research_Gaming.pdf",
     }
   ];
 
