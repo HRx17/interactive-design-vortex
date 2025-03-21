@@ -33,7 +33,6 @@ export function ResearchCard({
       )}
       style={{ transitionDelay: `${delay}ms` }}
     >
-      <Collapsible open={isOpen} onOpenChange={setIsOpen}>
         <div className="p-6 cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
           <div className="flex items-start gap-3">
             <div className="bg-emerald-900 p-2 rounded-md">
@@ -56,7 +55,6 @@ export function ResearchCard({
             </div>
           </div>
         </div>
-      </Collapsible>
     </div>
   );
 }
