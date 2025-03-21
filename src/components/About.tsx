@@ -157,6 +157,7 @@ export function About() {
                 title={project.title}
                 description={project.description}
                 year={project.year}
+                downloadFile={project.downloadFile}
                 delay={500 + index * 100}
                 isInView={isInView}
               />

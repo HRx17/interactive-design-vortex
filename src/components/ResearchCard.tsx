@@ -21,7 +21,7 @@ export function ResearchCard({
   delay = 0,
   isInView = true
 }: ResearchProjectProps) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   return (
     <div 
@@ -33,7 +33,7 @@ export function ResearchCard({
       )}
       style={{ transitionDelay: `${delay}ms` }}
     >
-        <div className="p-6 cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
+        <div className="p-6 cursor-pointer">
           <div className="flex items-start gap-3">
             <div className="bg-emerald-900 p-2 rounded-md">
               <FileSearch className="w-5 h-5 text-emerald-400" />
