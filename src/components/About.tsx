@@ -1,7 +1,7 @@
 
 import React, { useRef, useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { BookOpen, FileSearch, FlaskConical } from 'lucide-react';
+import { BookOpen, Download, FileSearch, FlaskConical } from 'lucide-react';
 import { ResearchCard } from '@/components/ResearchCard';
 
 export function About() {
@@ -39,52 +39,19 @@ export function About() {
       title: "The Impact of Situationally Induced Impairments and Disabilities (SIIDs) on Task Performance: A Comparative Study of Sensory Modalities",
       description: "This study proposes a comparative experimental investigation of how visual, auditory, and tactile SIIDs affect task performance and user experience.",
       year: "2024",
-      fullContent: {
-        challenge: "The transition to remote work has highlighted limitations in current collaboration tools. This research explored how AR/VR interfaces could enhance remote teamwork by creating more immersive and engaging collaboration experiences.",
-        methods: [
-          "Comparative usability testing between traditional video conferencing and VR meeting spaces",
-          "Semi-structured interviews with 24 remote workers across different industries",
-          "Prototype development and iterative testing of AR annotation tools",
-          "Heuristic evaluation of existing VR collaboration platforms"
-        ],
-        findings: "Participants reported a 37% increase in engagement and 28% improvement in spatial understanding when using VR collaboration tools compared to traditional video conferencing. AR annotation capabilities reduced miscommunication in design feedback by 42%.",
-        impact: "The findings informed the development of new guidelines for remote collaboration tools that integrate spatial awareness and interactive capabilities. Several companies have adopted these design principles in their next-generation remote work platforms.",
-        conclusion: "AR/VR interfaces show significant promise for improving remote collaboration, particularly for tasks requiring spatial understanding or visual communication. However, hardware limitations and accessibility concerns remain important considerations for widespread adoption."
-      }
+      downloadFile: "/SIID_Research.pdf",
     },
     {
       title: "Experimental Research on MyCourses Platform",
       description: "The study investigates the challenges faced by international and American students at the Rochester Institute of Technology(RIT) while using the MyCourses learning platform. ",
       year: "2024",
-      fullContent: {
-        challenge: "Despite advances in design systems, many mobile applications remain challenging for users with visual impairments. This research identified and tested design patterns to improve mobile accessibility without compromising visual aesthetics.",
-        methods: [
-          "Experimental Research",
-          "User testing with 21 participants with varying degrees",
-          "Development and testing of an accessible design pattern library",
-          "Longitudinal study tracking usability metrics before and after accessibility improvements"
-        ],
-        findings: "Implementation of the identified patterns improved task completion rates by 64% for users with visual impairments while maintaining or enhancing the user experience for sighted users. Semantic grouping of interface elements and consistent navigation patterns showed the most significant impact.",
-        impact: "The research resulted in an open-source accessibility pattern library now used by over 200 development teams. Three major apps implemented the recommended changes, reaching over 2 million users with visual impairments.",
-        conclusion: "Effective accessibility design requires both technical compliance and thoughtful UX considerations. When properly implemented, accessibility improvements benefit all users through more intuitive and flexible interfaces."
-      }
+      downloadFile: "/Experimental_Research.pdf",
     },
     {
       title: "What is the correlation between age groups and their preferred game genres on PlayStation, and how does this affect the average time spent playing per week?",
       description: "This study investigates the correlation relationship between PlayStation users, focusing on age groups, their preferred game genres on PlayStation, and the average time spent playing per week and developing the structured survey methodology on Google Forms as we gathered data from PlayStation users to collect data focusing on their game genre preferences and gaming habits.",
       year: "2024",
-      fullContent: {
-        challenge: "As digital interfaces become more feature-rich, users often experience cognitive overload. This study measured cognitive load across different interface designs to identify patterns that minimize mental effort while maintaining functionality.",
-        methods: [
-          "Eye-tracking studies comparing different navigation paradigms",
-          "NASA Task Load Index assessments for various task flows",
-          "A/B testing of progressive disclosure techniques",
-          "Biometric measurements (GSR, heart rate) during interface interaction"
-        ],
-        findings: "Progressive disclosure techniques reduced perceived cognitive load by 31% while maintaining task completion rates. Information architecture based on user mental models showed a 27% reduction in eye movement patterns associated with confusion.",
-        impact: "The research informed a redesign of several enterprise applications, resulting in a 24% reduction in training time and a 17% decrease in user errors. The findings have been incorporated into design education programs at three universities.",
-        conclusion: "Effective management of cognitive load is crucial for complex interfaces. Design strategies that align with users' mental models and carefully implement progressive disclosure can significantly improve usability without sacrificing functionality."
-      }
+      downloadFile: "/Research_Gaming.pdf",
     }
   ];
 
@@ -190,7 +157,6 @@ export function About() {
                 title={project.title}
                 description={project.description}
                 year={project.year}
-                fullContent={project.fullContent}
                 delay={500 + index * 100}
                 isInView={isInView}
               />
