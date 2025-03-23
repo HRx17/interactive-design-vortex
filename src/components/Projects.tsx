@@ -58,7 +58,7 @@ export function Projects() {
         return <HealthyRProject key="healthyR" index={index} />;
       }
       // For other projects, render the regular ExpandableProject
-      const adjustedIndex = index > 3 ? index - 1 : index; // Adjust embed index after our custom project
+      const adjustedIndex = index > 3 ? index - 2 : index; // Adjust embed index after our custom project
       return <ExpandableProject key={adjustedIndex} embedSrc={embed} index={index} />;
     });
   };
@@ -82,7 +82,7 @@ export function Projects() {
         );
       }
       // For other projects, render the regular ExpandableProject in a carousel item
-      const adjustedIndex = index > 3 ? index - 1 : index; // Adjust embed index after our custom project
+      const adjustedIndex = index > 3 ? index - 2 : index; // Adjust embed index after our custom project
       return (
         <CarouselItem key={adjustedIndex} className="md:basis-1/2 lg:basis-1/3">
           <ExpandableProject embedSrc={embed} index={index} />
