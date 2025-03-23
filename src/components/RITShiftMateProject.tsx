@@ -8,6 +8,7 @@ import {
   DialogClose,
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Button } from "@/components/ui/button";
 
 interface RITShiftMateProjectProps {
   index: number;
@@ -49,7 +50,7 @@ export function RITShiftMateProject({ index }: RITShiftMateProjectProps) {
       <div 
         onClick={() => setIsOpen(true)}
         className={cn(
-          "bg-card border border-border rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer h-full",
+          "bg-card/80 backdrop-blur-sm border border-border/40 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer h-full",
           "opacity-0 transform translate-y-12",
           isVisible && "opacity-100 translate-y-0"
         )}
