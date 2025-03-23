@@ -9,12 +9,13 @@ import {
   CarouselPrevious 
 } from "@/components/ui/carousel";
 import { ExpandableProject } from './ExpandableProject';
+import { RITShiftMateProject } from './RITShiftMateProject';
 
-// Project embed data
+// Project embed data - removing the 3rd project as it will be replaced
 const projectEmbeds = [
   "https://www.behance.net/embed/project/212271631?ilo0=1",
   "https://www.behance.net/embed/project/205264815?ilo0=1",
-  "https://www.behance.net/embed/project/204961433?ilo0=1",
+  // RIT ShiftMate project will be inserted as a custom component
   "https://www.behance.net/embed/project/179988285?ilo0=1",
   "https://www.behance.net/embed/project/178309711?ilo0=1",
   "https://www.behance.net/embed/project/176648697?ilo0=1",
@@ -43,6 +44,40 @@ export function Projects() {
       }
     };
   }, []);
+
+  // Helper function to render projects with RIT ShiftMate at index 2
+  const renderProjects = () => {
+    return projectEmbeds.map((embed, index) => {
+      // If this is the position where we want to insert RIT ShiftMate (position 2)
+      if (index === 2) {
+        return <RITShiftMateProject key="ritshiftmate" index={index} />;
+      }
+      // For other projects, render the regular ExpandableProject
+      const adjustedIndex = index > 2 ? index - 1 : index; // Adjust embed index after our custom project
+      return <ExpandableProject key={adjustedIndex} embedSrc={embed} index={index} />;
+    });
+  };
+
+  // Helper function to render carousel items with RIT ShiftMate at index 2
+  const renderCarouselItems = () => {
+    return projectEmbeds.map((embed, index) => {
+      // If this is the position where we want to insert RIT ShiftMate (position 2)
+      if (index === 2) {
+        return (
+          <CarouselItem key="ritshiftmate" className="md:basis-1/2 lg:basis-1/3">
+            <RITShiftMateProject index={index} />
+          </CarouselItem>
+        );
+      }
+      // For other projects, render the regular ExpandableProject in a carousel item
+      const adjustedIndex = index > 2 ? index - 1 : index; // Adjust embed index after our custom project
+      return (
+        <CarouselItem key={adjustedIndex} className="md:basis-1/2 lg:basis-1/3">
+          <ExpandableProject embedSrc={embed} index={index} />
+        </CarouselItem>
+      );
+    });
+  };
 
   return (
     <section 
@@ -91,11 +126,7 @@ export function Projects() {
             )}
           >
             <CarouselContent>
-              {projectEmbeds.map((embed, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <ExpandableProject embedSrc={embed} index={index} />
-                </CarouselItem>
-              ))}
+              {renderCarouselItems()}
             </CarouselContent>
             <div className="flex justify-center gap-4 mt-6">
               <CarouselPrevious className="static translate-y-0 relative" />
@@ -106,9 +137,7 @@ export function Projects() {
         
         {/* Desktop grid view for projects */}
         <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {projectEmbeds.map((embed, index) => (
-            <ExpandableProject key={index} embedSrc={embed} index={index} />
-          ))}
+          {renderProjects()}
         </div>
         
         <div className={cn(
