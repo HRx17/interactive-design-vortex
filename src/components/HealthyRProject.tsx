@@ -87,13 +87,13 @@ export function HealthyRProject({ index }: HealthyRProjectProps) {
                 <img 
                   key={idx}
                   src={img}
-                  alt={`RIT ShiftMate case study slide ${idx+1}`}
+                  alt={`HealthyR case study slide ${idx+1}`}
                   className="w-full"
                   loading={idx > 2 ? "lazy" : "eager"}
                 />
               ))}
               
-              <div className="bg-[#BF5A24] text-white py-10 px-6 text-center">
+              <div className="bg-[#001808] text-white py-10 px-6 text-center">
                 <h2 className="text-3xl font-bold mb-2">Project by: HAET RANPARIYA</h2>
                 <a 
                   href="https://www.behance.net/haetranpariya17" 
