@@ -28,20 +28,20 @@ export function RITShiftMateProject({ index }: RITShiftMateProjectProps) {
   }, []);
 
   const caseStudyImages = [
-    "/lovable-uploads/4759a7f6-6f7c-4441-b12d-98d51c19b2e1.png",
-    "/lovable-uploads/915eab9b-6e55-453e-9b81-3e7de11015fd.png",
-    "/lovable-uploads/b68ea382-3338-4c9e-8272-7c520c85eb25.png",
-    "/lovable-uploads/a65bdb0d-f2cc-4e61-b901-e0db0b190336.png",
-    "/lovable-uploads/72abd1af-4ac3-40df-ba3f-efffe7591421.png",
-    "/lovable-uploads/9f75e93c-1a5f-4cde-964c-dbd4673d7a8b.png",
-    "/lovable-uploads/33d386c0-68be-47e8-ae52-6798affe8b64.png",
-    "/lovable-uploads/f01a77e5-acc2-42a9-b22e-291974668019.png",
-    "/lovable-uploads/f703921c-399e-4ef7-98eb-3bf61fe9f4c4.png",
-    "/lovable-uploads/b5dd574f-8dcd-474f-97f3-735ea518c899.png",
-    "/lovable-uploads/2b498a0a-e855-4238-b576-066dac5652c2.png",
-    "/lovable-uploads/38892388-8ddb-4676-a19f-d1a3c300bc2d.png",
-    "/lovable-uploads/b7cc8537-b6c4-4d27-a1d4-8bd3a67bb9f4.png",
-    "/lovable-uploads/0e0a2e03-c609-432e-bf18-91931602e7ee.png"
+    "/lovable-uploads/RIT1.png",
+    "/lovable-uploads/RIT2.png",
+    "/lovable-uploads/RIT3.png",
+    "/lovable-uploads/RIT4.png",
+    "/lovable-uploads/RIT5.png",
+    "/lovable-uploads/RIT6.png",
+    "/lovable-uploads/RIT7.png",
+    "/lovable-uploads/RIT8.png",
+    "/lovable-uploads/RIT9.png",
+    "/lovable-uploads/RIT10.png",
+    "/lovable-uploads/RIT11.png",
+    "/lovable-uploads/RIT12.png",
+    "/lovable-uploads/RIT13.png",
+    "/lovable-uploads/RIT14.png"
   ];
 
   return (
