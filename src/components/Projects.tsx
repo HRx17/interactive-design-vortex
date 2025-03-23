@@ -10,12 +10,14 @@ import {
 } from "@/components/ui/carousel";
 import { ExpandableProject } from './ExpandableProject';
 import { RITShiftMateProject } from './RITShiftMateProject';
+import { HealthyRProject } from './HealthyRProject';
 
 // Project embed data - removing the 3rd project as it will be replaced
 const projectEmbeds = [
   "https://www.behance.net/embed/project/212271631?ilo0=1",
   "https://www.behance.net/embed/project/205264815?ilo0=1",
   // RIT ShiftMate project will be inserted as a custom component
+    // healthyR project will be inserted as a custom component
   "https://www.behance.net/embed/project/179988285?ilo0=1",
   "https://www.behance.net/embed/project/178309711?ilo0=1",
   "https://www.behance.net/embed/project/176648697?ilo0=1",
@@ -52,8 +54,11 @@ export function Projects() {
       if (index === 2) {
         return <RITShiftMateProject key="ritshiftmate" index={index} />;
       }
+      if (index === 3) {
+        return <HealthyRProject key="healthyR" index={index} />;
+      }
       // For other projects, render the regular ExpandableProject
-      const adjustedIndex = index > 2 ? index - 1 : index; // Adjust embed index after our custom project
+      const adjustedIndex = index > 3 ? index - 1 : index; // Adjust embed index after our custom project
       return <ExpandableProject key={adjustedIndex} embedSrc={embed} index={index} />;
     });
   };
@@ -69,8 +74,15 @@ export function Projects() {
           </CarouselItem>
         );
       }
+      if (index === 3) {
+        return (
+          <CarouselItem key="healthyR" className="md:basis-1/2 lg:basis-1/3">
+            <HealthyRProject index={index} />
+          </CarouselItem>
+        );
+      }
       // For other projects, render the regular ExpandableProject in a carousel item
-      const adjustedIndex = index > 2 ? index - 1 : index; // Adjust embed index after our custom project
+      const adjustedIndex = index > 3 ? index - 1 : index; // Adjust embed index after our custom project
       return (
         <CarouselItem key={adjustedIndex} className="md:basis-1/2 lg:basis-1/3">
           <ExpandableProject embedSrc={embed} index={index} />
