@@ -8,22 +8,15 @@ import {
   CarouselNext,
   CarouselPrevious 
 } from "@/components/ui/carousel";
-import { ExpandableProject } from './ExpandableProject';
-
-// Project embed data
-const projectEmbeds = [
-  "https://www.behance.net/embed/project/212271631?ilo0=1",
-  "https://www.behance.net/embed/project/205264815?ilo0=1",
-  "https://www.behance.net/embed/project/204961433?ilo0=1",
-  "https://www.behance.net/embed/project/179988285?ilo0=1",
-  "https://www.behance.net/embed/project/178309711?ilo0=1",
-  "https://www.behance.net/embed/project/176648697?ilo0=1",
-  "https://www.behance.net/embed/project/176642493?ilo0=1"
-];
+import { StaticProjectCard } from './StaticProjectCard';
+import { projects } from '../data/projects';
+import ProjectCaseStudy from './ProjectCaseStudy';
+import { Project } from '../types/project';
 
 export function Projects() {
   const sectionRef = useRef<HTMLElement>(null);
   const [isInView, setIsInView] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -43,6 +36,10 @@ export function Projects() {
       }
     };
   }, []);
+
+  const handleProjectClick = (project: Project) => {
+    setSelectedProject(project);
+  };
 
   return (
     <section 
@@ -91,9 +88,9 @@ export function Projects() {
             )}
           >
             <CarouselContent>
-              {projectEmbeds.map((embed, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <ExpandableProject embedSrc={embed} index={index} />
+              {projects.map((project, index) => (
+                <CarouselItem key={project.id} className="md:basis-1/2 lg:basis-1/3">
+                  <StaticProjectCard project={project} index={index} onClick={handleProjectClick} />
                 </CarouselItem>
               ))}
             </CarouselContent>
@@ -106,8 +103,13 @@ export function Projects() {
         
         {/* Desktop grid view for projects */}
         <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {projectEmbeds.map((embed, index) => (
-            <ExpandableProject key={index} embedSrc={embed} index={index} />
+          {projects.map((project, index) => (
+            <StaticProjectCard 
+              key={project.id} 
+              project={project} 
+              index={index} 
+              onClick={handleProjectClick} 
+            />
           ))}
         </div>
         
@@ -126,6 +128,15 @@ export function Projects() {
           </a>
         </div>
       </div>
+      
+      {/* Case study modal */}
+      {selectedProject && (
+        <ProjectCaseStudy 
+          isOpen={!!selectedProject} 
+          onClose={() => setSelectedProject(null)} 
+          project={selectedProject} 
+        />
+      )}
       
       {/* Background decorative elements */}
       <div className="absolute top-1/4 left-0 w-1/3 h-1/3 bg-gradient-to-r from-emerald-600/20 to-transparent rounded-full filter blur-3xl opacity-30"></div>
