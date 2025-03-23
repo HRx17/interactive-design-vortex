@@ -4,6 +4,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { ExternalLink } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Project } from '../types/project';
 
 interface ProjectCaseStudyProps {
   isOpen: boolean;
