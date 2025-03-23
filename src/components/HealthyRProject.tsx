@@ -60,14 +60,14 @@ export function HealthyRProject({ index }: HealthyRProjectProps) {
           <div className="w-full h-full rounded-lg overflow-hidden">
             <img 
               src={caseStudyImages[0]} 
-              alt="RIT ShiftMate Project" 
+              alt="HealthyR Project" 
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
             />
           </div>
         </div>
         <div className="p-5">
           <div className="flex justify-between items-center mb-2">
-            <span className="text-sm font-medium px-3 py-1 rounded-full bg-orange-100 text-orange-600">UX/UI Design</span>
+            <span className="text-sm font-medium px-3 py-1 rounded-full bg-green-100 text-green-600">UX/UI Design</span>
           </div>
           <h3 className="text-xl font-bold">HealthyR</h3>
           <p className="text-sm text-muted-foreground mt-2">An App that helps you with mental, emotional and physical wellbeing.</p>
