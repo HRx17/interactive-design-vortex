@@ -5,6 +5,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { ExternalLink } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Project } from '../types/project';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 interface ProjectCaseStudyProps {
   isOpen: boolean;
@@ -77,27 +78,35 @@ const ProjectCaseStudy: React.FC<ProjectCaseStudyProps> = ({
               </div>
             )}
             
-            {project.challenges && (
-              <div className="mt-6">
-                <h3 className="text-xl font-semibold mb-2">Challenges</h3>
-                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                  {project.challenges.map((challenge, index) => (
-                    <li key={index}>{challenge}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-            
-            {project.outcomes && (
-              <div className="mt-6">
-                <h3 className="text-xl font-semibold mb-2">Outcomes</h3>
-                <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                  {project.outcomes.map((outcome, index) => (
-                    <li key={index}>{outcome}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
+            <Collapsible className="w-full mt-6">
+              <CollapsibleTrigger className="flex items-center justify-between w-full p-4 bg-muted rounded-md hover:bg-muted/80 transition-colors text-left">
+                <h3 className="text-xl font-semibold">Project Details</h3>
+                <span className="text-muted-foreground text-sm">Click to expand</span>
+              </CollapsibleTrigger>
+              <CollapsibleContent className="pt-4 px-4 space-y-6 animate-accordion-down">
+                {project.challenges && (
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">Challenges</h3>
+                    <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                      {project.challenges.map((challenge, index) => (
+                        <li key={index}>{challenge}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                
+                {project.outcomes && (
+                  <div className="mt-6">
+                    <h3 className="text-xl font-semibold mb-2">Outcomes</h3>
+                    <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                      {project.outcomes.map((outcome, index) => (
+                        <li key={index}>{outcome}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </CollapsibleContent>
+            </Collapsible>
           </div>
         </div>
       </DialogContent>
