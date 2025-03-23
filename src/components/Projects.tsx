@@ -16,9 +16,10 @@ import { HealthyRProject } from './HealthyRProject';
 const projectEmbeds = [
   "https://www.behance.net/embed/project/212271631?ilo0=1",
   "https://www.behance.net/embed/project/205264815?ilo0=1",
+  "",
+  "",
   // RIT ShiftMate project will be inserted as a custom component
     // healthyR project will be inserted as a custom component
-  "https://www.behance.net/embed/project/179988285?ilo0=1",
   "https://www.behance.net/embed/project/178309711?ilo0=1",
   "https://www.behance.net/embed/project/176648697?ilo0=1",
   "https://www.behance.net/embed/project/176642493?ilo0=1"
