@@ -11,15 +11,15 @@ import {
 import { ExpandableProject } from './ExpandableProject';
 import { RITShiftMateProject } from './RITShiftMateProject';
 import { HealthyRProject } from './HealthyRProject';
+import { WeatherAppProject } from './WeatherAppProject';
 
-// Project embed data - removing the 3rd project as it will be replaced
+// Project embed data - removing appropriate projects as they will be replaced with custom components
 const projectEmbeds = [
   "https://www.behance.net/embed/project/212271631?ilo0=1",
   "https://www.behance.net/embed/project/205264815?ilo0=1",
   "",
   "",
-  // RIT ShiftMate project will be inserted as a custom component
-    // healthyR project will be inserted as a custom component
+  "", // Weather App project will be inserted here
   "https://www.behance.net/embed/project/178309711?ilo0=1",
   "https://www.behance.net/embed/project/176648697?ilo0=1",
   "https://www.behance.net/embed/project/176642493?ilo0=1"
@@ -48,23 +48,28 @@ export function Projects() {
     };
   }, []);
 
-  // Helper function to render projects with RIT ShiftMate at index 2
+  // Helper function to render projects with custom components at specific positions
   const renderProjects = () => {
     return projectEmbeds.map((embed, index) => {
       // If this is the position where we want to insert RIT ShiftMate (position 2)
       if (index === 2) {
         return <RITShiftMateProject key="ritshiftmate" index={index} />;
       }
+      // If this is the position where we want to insert HealthyR (position 3)
       if (index === 3) {
         return <HealthyRProject key="healthyR" index={index} />;
       }
+      // If this is the position where we want to insert Weather App (position 4)
+      if (index === 4) {
+        return <WeatherAppProject key="weatherApp" index={index} />;
+      }
       // For other projects, render the regular ExpandableProject
-      const adjustedIndex = index > 3 ? index - 2 : index; // Adjust embed index after our custom project
+      const adjustedIndex = index > 4 ? index - 3 : index; // Adjust embed index after our custom projects
       return <ExpandableProject key={adjustedIndex} embedSrc={embed} index={index} />;
     });
   };
 
-  // Helper function to render carousel items with RIT ShiftMate at index 2
+  // Helper function to render carousel items with custom components at specific positions
   const renderCarouselItems = () => {
     return projectEmbeds.map((embed, index) => {
       // If this is the position where we want to insert RIT ShiftMate (position 2)
@@ -75,6 +80,7 @@ export function Projects() {
           </CarouselItem>
         );
       }
+      // If this is the position where we want to insert HealthyR (position 3)
       if (index === 3) {
         return (
           <CarouselItem key="healthyR" className="md:basis-1/2 lg:basis-1/3">
@@ -82,8 +88,16 @@ export function Projects() {
           </CarouselItem>
         );
       }
+      // If this is the position where we want to insert Weather App (position 4)
+      if (index === 4) {
+        return (
+          <CarouselItem key="weatherApp" className="md:basis-1/2 lg:basis-1/3">
+            <WeatherAppProject index={index} />
+          </CarouselItem>
+        );
+      }
       // For other projects, render the regular ExpandableProject in a carousel item
-      const adjustedIndex = index > 3 ? index - 2 : index; // Adjust embed index after our custom project
+      const adjustedIndex = index > 4 ? index - 3 : index; // Adjust embed index after our custom projects
       return (
         <CarouselItem key={adjustedIndex} className="md:basis-1/2 lg:basis-1/3">
           <ExpandableProject embedSrc={embed} index={index} />
