@@ -15,7 +15,6 @@ import { WeatherAppProject } from './WeatherAppProject';
 
 // Project embed data - removing appropriate projects as they will be replaced with custom components
 const projectEmbeds = [
-  "",
   "https://www.behance.net/embed/project/205264815?ilo0=1",
   "",
   "",
@@ -52,19 +51,19 @@ export function Projects() {
   const renderProjects = () => {
     return projectEmbeds.map((embed, index) => {
       // If this is the position where we want to insert RIT ShiftMate (position 2)
-      if (index === 2) {
+      if (index === 1) {
         return <RITShiftMateProject key="ritshiftmate" index={index} />;
       }
       // If this is the position where we want to insert HealthyR (position 3)
-      if (index === 3) {
+      if (index === 2) {
         return <HealthyRProject key="healthyR" index={index} />;
       }
       // If this is the position where we want to insert Weather App (position 4)
-      if (index === 4) {
+      if (index === 3) {
         return <WeatherAppProject key="weatherApp" index={index} />;
       }
       // For other projects, render the regular ExpandableProject
-      const adjustedIndex = index > 4 ? index - 3 : index; // Adjust embed index after our custom projects
+      const adjustedIndex = index > 3 ? index - 2 : index; // Adjust embed index after our custom projects
       return <ExpandableProject key={adjustedIndex} embedSrc={embed} index={index} />;
     });
   };
