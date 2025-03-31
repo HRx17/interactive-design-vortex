@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
  
  @tailwind base;
@@ -102,6 +103,48 @@
     border-radius: var(--radius);
     border: 1px solid rgba(20, 184, 166, 0.08);
   }
+
+  /* Switch animation for project type toggling */
+  @keyframes fade-slide {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in {
+    animation: fade-slide 0.5s ease-out forwards;
+  }
+
+  /* Project switcher styles */
+  .project-switch {
+    --switch-width: 60px;
+    --switch-height: 30px;
+  }
+
+  /* Responsive adaptations */
+  @media (max-width: 640px) {
+    h1, .heading {
+      font-size: 2rem;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+    }
+
+    .section-container {
+      padding: 0 1rem;
+    }
+  }
 }
  
 @layer components {
@@ -114,17 +157,27 @@
   }
   
   .section-container {
-    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24;
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
   }
   
   .heading {
-    @apply font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
+    @apply font-display text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight;
   }
   
   .subheading {
-    @apply font-display text-xl md:text-2xl font-medium text-muted-foreground;
+    @apply font-display text-lg md:text-2xl font-medium text-muted-foreground;
+  }
+
+  /* Coding projects styles */
+  .code-card {
+    @apply bg-card/80 backdrop-blur-sm border border-border/40 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all;
+  }
+
+  .code-gradient {
+    @apply bg-gradient-to-r from-blue-600 to-indigo-600;
   }
 }
+
 /* RIT ShiftMate case study specific styles */
 .case-study-container {
   display: flex;

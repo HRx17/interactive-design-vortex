@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const navItems = [
   { label: 'Home', href: '#home' },
@@ -14,6 +15,7 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,13 +43,13 @@ export function Header() {
     <header 
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-6",
-        isScrolled ? "py-3 glass" : "py-6"
+        isScrolled ? "py-2 glass" : "py-4 md:py-6"
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <a 
           href="#home" 
-          className="font-display text-lg font-bold relative"
+          className="font-display text-base md:text-lg font-bold relative"
         >
           Haet Ranpariya
           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
@@ -79,14 +81,14 @@ export function Header() {
 
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden p-2 focus:outline-none"
+          className="md:hidden p-1 focus:outline-none"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >
           {mobileMenuOpen ? (
-            <X className="h-6 w-6" />
+            <X className="h-5 w-5" />
           ) : (
-            <Menu className="h-6 w-6" />
+            <Menu className="h-5 w-5" />
           )}
         </button>
       </div>
@@ -94,18 +96,18 @@ export function Header() {
       {/* Mobile Menu */}
       <div 
         className={cn(
-          "fixed inset-x-0 top-[69px] z-50 glass md:hidden transform transition-transform duration-300 ease-in-out",
-          isScrolled ? "top-[57px]" : "top-[85px]",
+          "fixed inset-x-0 top-[53px] z-50 glass md:hidden transform transition-transform duration-300 ease-in-out",
+          isScrolled ? "top-[41px]" : "top-[57px]",
           mobileMenuOpen ? "translate-y-0" : "-translate-y-full"
         )}
       >
-        <div className="px-4 py-6 flex flex-col space-y-5 divide-y divide-primary/5">
+        <div className="px-4 py-4 flex flex-col space-y-3 divide-y divide-primary/5">
           {navItems.map(item => (
             <a 
               key={item.href}
               href={item.href}
               className={cn(
-                "pt-5 first:pt-0 font-medium",
+                "pt-3 first:pt-0 font-medium text-base",
                 activeSection === item.href.substring(1) ? "text-primary" : "text-muted-foreground"
               )}
               onClick={() => setMobileMenuOpen(false)}

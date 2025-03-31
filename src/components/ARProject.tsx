@@ -8,7 +8,7 @@ import {
   DialogClose,
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Button } from "@/components/ui/button";
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface ARProjectProps {
   index: number;
@@ -17,6 +17,7 @@ interface ARProjectProps {
 export function ARProject({ index }: ARProjectProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const isMobile = useIsMobile();
 
   React.useEffect(() => {
     // Set visible after a short delay for animation
@@ -101,20 +102,22 @@ export function ARProject({ index }: ARProjectProps) {
                       loading={idx > 2 ? "lazy" : "eager"}
                     />
                   ) : (
-                    <iframe 
-                      src={item.src}
-                      className="w-full aspect-video"
-                      title={`AR/VR Project video ${idx + 1}`}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      loading={idx > 2 ? "lazy" : "eager"}
-                    />
+                    <div className="w-full aspect-video">
+                      <iframe 
+                        src={item.src}
+                        className="w-full h-full"
+                        title={`AR/VR Project video ${idx + 1}`}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        loading={idx > 2 ? "lazy" : "eager"}
+                      />
+                    </div>
                   )}
                 </div>
               ))}
               
               <div className="bg-[#ECECEC] text-black py-10 px-6 text-center">
-                <h2 className="text-3xl font-bold mb-2">Project by: HAET RANPARIYA</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-2">Project by: HAET RANPARIYA</h2>
                 <a 
                   href="https://www.behance.net/haetranpariya17" 
                   target="_blank"
