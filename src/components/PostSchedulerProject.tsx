@@ -65,6 +65,7 @@ export function PostSchedulerProject({ index }: PostSchedulerProjectProps) {
         <div className="p-5">
           <div className="flex justify-between items-center mb-2">
             <span className="text-sm font-medium px-3 py-1 rounded-full bg-indigo-100 text-indigo-600">Web Development</span>
+            <span className="text-sm font-medium px-3 py-1 rounded-full bg-indigo-100 text-indigo-600">Mobile App</span>
           </div>
           <h3 className="text-xl font-bold">Post Scheduler App</h3>
           <p className="text-sm text-muted-foreground mt-2">A content management and scheduling application for social media posts.</p>
