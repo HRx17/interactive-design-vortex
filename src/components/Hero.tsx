@@ -106,7 +106,7 @@ export function Hero() {
               <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full blur-xl"></div>
               <div className="h-80 w-80 relative rounded-full overflow-hidden border-4 border-emerald-400/20 p-1">
                 <img 
-                  src="/lovable-uploads/e4152d05-8a49-4c32-b9e9-014dcf1b39ec.png" 
+                  src="/lovable-uploads/hero1.png" 
                   alt="Haet Ranpariya - Ghibli Style"
                   className="object-cover w-full h-full rounded-full"
                 />
@@ -144,7 +144,7 @@ export function Hero() {
         ></div>
         
         {/* Scroll indicator - moved down and made less prominent */}
-        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce opacity-50">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce opacity-50">
           <a 
             href="#projects" 
             className="flex flex-col items-center text-white/40 hover:text-white/60 transition-colors duration-200"
