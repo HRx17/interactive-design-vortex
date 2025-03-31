@@ -11,6 +11,7 @@ import {
 import { ExpandableProject } from './ExpandableProject';
 import { RITShiftMateProject } from './RITShiftMateProject';
 import { HealthyRProject } from './HealthyRProject';
+import { FoodZapProject } from './FoodZapProject';
 import { WeatherAppProject } from './WeatherAppProject';
 
 // Project embed data - removing appropriate projects as they will be replaced with custom components
@@ -19,7 +20,7 @@ const projectEmbeds = [
   "",
   "",
   "", // Weather App project will be inserted here
-  "https://www.behance.net/embed/project/178309711?ilo0=1",
+  "",
   "https://www.behance.net/embed/project/176648697?ilo0=1",
   "https://www.behance.net/embed/project/176642493?ilo0=1"
 ];
@@ -62,8 +63,11 @@ export function Projects() {
       if (index === 3) {
         return <WeatherAppProject key="weatherApp" index={index} />;
       }
+      if (index === 4) {
+        return <FoodZapProject key="foodzap" index={index} />;
+      }
       // For other projects, render the regular ExpandableProject
-      const adjustedIndex = index > 3 ? index - 2 : index; // Adjust embed index after our custom projects
+      const adjustedIndex = index > 4 ? index - 3 : index; // Adjust embed index after our custom projects
       return <ExpandableProject key={adjustedIndex} embedSrc={embed} index={index} />;
     });
   };
@@ -72,7 +76,7 @@ export function Projects() {
   const renderCarouselItems = () => {
     return projectEmbeds.map((embed, index) => {
       // If this is the position where we want to insert RIT ShiftMate (position 2)
-      if (index === 2) {
+      if (index === 1) {
         return (
           <CarouselItem key="ritshiftmate" className="md:basis-1/2 lg:basis-1/3">
             <RITShiftMateProject index={index} />
@@ -80,7 +84,7 @@ export function Projects() {
         );
       }
       // If this is the position where we want to insert HealthyR (position 3)
-      if (index === 3) {
+      if (index === 2) {
         return (
           <CarouselItem key="healthyR" className="md:basis-1/2 lg:basis-1/3">
             <HealthyRProject index={index} />
@@ -88,10 +92,17 @@ export function Projects() {
         );
       }
       // If this is the position where we want to insert Weather App (position 4)
-      if (index === 4) {
+      if (index === 3) {
         return (
           <CarouselItem key="weatherApp" className="md:basis-1/2 lg:basis-1/3">
             <WeatherAppProject index={index} />
+          </CarouselItem>
+        );
+      }
+      if (index === 4) {
+        return (
+          <CarouselItem key="foodzap" className="md:basis-1/2 lg:basis-1/3">
+            <FoodZapProject index={index} />
           </CarouselItem>
         );
       }
