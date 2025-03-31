@@ -13,10 +13,11 @@ import { RITShiftMateProject } from './RITShiftMateProject';
 import { HealthyRProject } from './HealthyRProject';
 import { FoodZapProject } from './FoodZapProject';
 import { WeatherAppProject } from './WeatherAppProject';
+import { ARProject } from './ARProject';
 
 // Project embed data - removing appropriate projects as they will be replaced with custom components
 const projectEmbeds = [
-  "https://www.behance.net/embed/project/205264815?ilo0=1",
+  "",
   "",
   "",
   "", // Weather App project will be inserted here
@@ -52,6 +53,9 @@ export function Projects() {
   const renderProjects = () => {
     return projectEmbeds.map((embed, index) => {
       // If this is the position where we want to insert RIT ShiftMate (position 2)
+      if (index === 0) {
+        return <ARProject key="AR" index={index} />;
+      }
       if (index === 1) {
         return <RITShiftMateProject key="ritshiftmate" index={index} />;
       }
@@ -76,6 +80,13 @@ export function Projects() {
   const renderCarouselItems = () => {
     return projectEmbeds.map((embed, index) => {
       // If this is the position where we want to insert RIT ShiftMate (position 2)
+      if (index === 0) {
+        return (
+          <CarouselItem key="AR" className="md:basis-1/2 lg:basis-1/3">
+            <ARProject index={index} />
+          </CarouselItem>
+        );
+      }
       if (index === 1) {
         return (
           <CarouselItem key="ritshiftmate" className="md:basis-1/2 lg:basis-1/3">
