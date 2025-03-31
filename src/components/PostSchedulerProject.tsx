@@ -58,7 +58,7 @@ export function PostSchedulerProject({ index }: PostSchedulerProjectProps) {
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-white">Post Scheduler</h3>
-              <p className="text-white/80 mt-2 text-sm">React • TypeScript • Firebase</p>
+              <p className="text-white/80 mt-2 text-sm">React • React Native • MongoDB • Firebase</p>
             </div>
           </div>
         </div>
@@ -141,7 +141,7 @@ export function PostSchedulerProject({ index }: PostSchedulerProjectProps) {
                 <div className="text-center py-8 border-t border-border">
                   <h2 className="text-2xl font-bold mb-4">Want to learn more?</h2>
                   <a 
-                    href="https://github.com/haetranpariya" 
+                    href="https://github.com/HRx17/FBlogin" 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition-colors"

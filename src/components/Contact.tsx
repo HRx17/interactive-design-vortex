@@ -38,13 +38,8 @@ export function Contact() {
       icon: <Linkedin className="h-5 w-5" /> 
     },
     { 
-      name: "Dribbble", 
-      url: "https://dribbble.com/haetpariya", 
-      icon: <Dribbble className="h-5 w-5" /> 
-    },
-    { 
       name: "GitHub", 
-      url: "https://github.com/haetpariya", 
+      url: "https://github.com/HRx17", 
       icon: <Github className="h-5 w-5" /> 
     }
   ];

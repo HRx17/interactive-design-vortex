@@ -52,7 +52,7 @@ export function AttendanceProject({ index }: AttendanceProjectProps) {
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-white">Attendance System</h3>
-              <p className="text-white/80 mt-2 text-sm">React • Node.js • MongoDB</p>
+              <p className="text-white/80 mt-2 text-sm">Android Studio • React • Node.js • MongoDB</p>
             </div>
           </div>
         </div>
@@ -129,7 +129,7 @@ export function AttendanceProject({ index }: AttendanceProjectProps) {
                 <div className="text-center py-8 border-t border-border">
                   <h2 className="text-2xl font-bold mb-4">Want to learn more?</h2>
                   <a 
-                    href="https://github.com/haetranpariya" 
+                    href="https://github.com/HRx17/LU-AttendanceProject" 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
