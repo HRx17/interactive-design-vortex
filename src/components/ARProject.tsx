@@ -30,25 +30,25 @@ export function ARProject({ index }: ARProjectProps) {
   }, []);
 
   const caseStudyImages = [
-    "h1.png",
-    "h2.png",
-    //"https://www.youtube.com/embed/77vlfTa8X10?si=G5aZDIPwJUqbL05z",
-    "hh.png",
-    "h3.png",
-    "h4.png",
-    "h5.png",
-    //"https://www.youtube.com/embed/NAD_Kot-t84?si=pCx8-3kDUoySOwaG",
-    "h6.png",
-    //"https://www.youtube.com/embed/BL654YYW5m0?si=asOgNqLg205b_kjg",
-    "h7.png",
-    //"https://www.youtube.com/embed/MniPfpXs74w?si=H99swviNUKRwZuzl",
-    "h8.png",
-    //"https://www.youtube.com/embed/xPe2nukLMaE?si=zaBGCzwieXt_KpDn",
-    "h9.png",
-   // "https://www.youtube.com/embed/0PoPD6UaLx8?si=6IjHag0h2zggX1-O",
-    "h10.png",
-    //"https://www.youtube.com/embed/p5qNTiH_8JI?si=ZKkHsHmjuCyCRIaP",
-    "h11.png",
+    "../public/lovable-uploads/h1.png",
+    "../public/lovable-uploads/h2.png",
+    "https://www.youtube.com/embed/77vlfTa8X10?si=G5aZDIPwJUqbL05z",
+    "../public/lovable-uploads/hh.png",
+    "../public/lovable-uploads/h3.png",
+    "../public/lovable-uploads/h4.png",
+    "../public/lovable-uploads/h5.png",
+    "https://www.youtube.com/embed/NAD_Kot-t84?si=pCx8-3kDUoySOwaG",
+    "../public/lovable-uploads/h6.png",
+    "https://www.youtube.com/embed/BL654YYW5m0?si=asOgNqLg205b_kjg",
+    "../public/lovable-uploads/h7.png",
+    "https://www.youtube.com/embed/MniPfpXs74w?si=H99swviNUKRwZuzl",
+    "../public/lovable-uploads/h8.png",
+    "https://www.youtube.com/embed/xPe2nukLMaE?si=zaBGCzwieXt_KpDn",
+    "../public/lovable-uploads/h9.png",
+    "https://www.youtube.com/embed/0PoPD6UaLx8?si=6IjHag0h2zggX1-O",
+    "../public/lovable-uploads/h10.png",
+    "https://www.youtube.com/embed/p5qNTiH_8JI?si=ZKkHsHmjuCyCRIaP",
+    "../public/lovable-uploads/h11.png",
   ];
 
   return (
@@ -93,7 +93,7 @@ export function ARProject({ index }: ARProjectProps) {
           <ScrollArea className="max-h-[90vh] overflow-y-auto">
             <div className="case-study-container">
               {caseStudyImages.map((img, idx) => (
-                <img 
+                <iframe 
                   key={idx}
                   src={img}
                   className="w-full"
