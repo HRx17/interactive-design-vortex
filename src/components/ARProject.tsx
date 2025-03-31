@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { ExternalLink, X } from 'lucide-react';
-import { ReactElement } from "react";
 import { 
   Dialog,
   DialogContent,
@@ -18,7 +17,6 @@ interface ARProjectProps {
 export function ARProject({ index }: ARProjectProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  let src: ReactElement | null = null;
 
   React.useEffect(() => {
     // Set visible after a short delay for animation
@@ -29,26 +27,26 @@ export function ARProject({ index }: ARProjectProps) {
     return () => clearTimeout(timer);
   }, []);
 
-  const caseStudyImages = [
-    "../public/lovable-uploads/h1.png",
-    "../public/lovable-uploads/h2.png",
-    "https://www.youtube.com/embed/77vlfTa8X10?si=G5aZDIPwJUqbL05z",
-    "../public/lovable-uploads/hh.png",
-    "../public/lovable-uploads/h3.png",
-    "../public/lovable-uploads/h4.png",
-    "../public/lovable-uploads/h5.png",
-    "https://www.youtube.com/embed/NAD_Kot-t84?si=pCx8-3kDUoySOwaG",
-    "../public/lovable-uploads/h6.png",
-    "https://www.youtube.com/embed/BL654YYW5m0?si=asOgNqLg205b_kjg",
-    "../public/lovable-uploads/h7.png",
-    "https://www.youtube.com/embed/MniPfpXs74w?si=H99swviNUKRwZuzl",
-    "../public/lovable-uploads/h8.png",
-    "https://www.youtube.com/embed/xPe2nukLMaE?si=zaBGCzwieXt_KpDn",
-    "../public/lovable-uploads/h9.png",
-    "https://www.youtube.com/embed/0PoPD6UaLx8?si=6IjHag0h2zggX1-O",
-    "../public/lovable-uploads/h10.png",
-    "https://www.youtube.com/embed/p5qNTiH_8JI?si=ZKkHsHmjuCyCRIaP",
-    "../public/lovable-uploads/h11.png",
+  const caseStudyContent = [
+    { type: "image", src: "/lovable-uploads/h1.png" },
+    { type: "image", src: "/lovable-uploads/h2.png" },
+    { type: "video", src: "https://www.youtube.com/embed/77vlfTa8X10?si=G5aZDIPwJUqbL05z" },
+    { type: "image", src: "/lovable-uploads/hh.png" },
+    { type: "image", src: "/lovable-uploads/h3.png" },
+    { type: "image", src: "/lovable-uploads/h4.png" },
+    { type: "image", src: "/lovable-uploads/h5.png" },
+    { type: "video", src: "https://www.youtube.com/embed/NAD_Kot-t84?si=pCx8-3kDUoySOwaG" },
+    { type: "image", src: "/lovable-uploads/h6.png" },
+    { type: "video", src: "https://www.youtube.com/embed/BL654YYW5m0?si=asOgNqLg205b_kjg" },
+    { type: "image", src: "/lovable-uploads/h7.png" },
+    { type: "video", src: "https://www.youtube.com/embed/MniPfpXs74w?si=H99swviNUKRwZuzl" },
+    { type: "image", src: "/lovable-uploads/h8.png" },
+    { type: "video", src: "https://www.youtube.com/embed/xPe2nukLMaE?si=zaBGCzwieXt_KpDn" },
+    { type: "image", src: "/lovable-uploads/h9.png" },
+    { type: "video", src: "https://www.youtube.com/embed/0PoPD6UaLx8?si=6IjHag0h2zggX1-O" },
+    { type: "image", src: "/lovable-uploads/h10.png" },
+    { type: "video", src: "https://www.youtube.com/embed/p5qNTiH_8JI?si=ZKkHsHmjuCyCRIaP" },
+    { type: "image", src: "/lovable-uploads/h11.png" },
   ];
 
   return (
@@ -69,7 +67,8 @@ export function ARProject({ index }: ARProjectProps) {
         <div className="w-full aspect-video p-2">
           <div className="w-full h-full rounded-lg overflow-hidden">
             <img 
-              src={caseStudyImages[0]}  
+              src={caseStudyContent[0].src}  
+              alt="AR/VR Project Thumbnail"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
             />
           </div>
@@ -91,14 +90,27 @@ export function ARProject({ index }: ARProjectProps) {
           </DialogClose>
           
           <ScrollArea className="max-h-[90vh] overflow-y-auto">
-            <div className="case-study-container">
-              {caseStudyImages.map((img, idx) => (
-                <iframe 
-                  key={idx}
-                  src={img}
-                  className="w-full"
-                  loading={idx > 2 ? "lazy" : "eager"}
-                />
+            <div className="case-study-container flex flex-col w-full">
+              {caseStudyContent.map((item, idx) => (
+                <div key={idx} className="w-full">
+                  {item.type === "image" ? (
+                    <img 
+                      src={item.src}
+                      alt={`AR/VR Project slide ${idx + 1}`}
+                      className="w-full"
+                      loading={idx > 2 ? "lazy" : "eager"}
+                    />
+                  ) : (
+                    <iframe 
+                      src={item.src}
+                      className="w-full aspect-video"
+                      title={`AR/VR Project video ${idx + 1}`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      loading={idx > 2 ? "lazy" : "eager"}
+                    />
+                  )}
+                </div>
               ))}
               
               <div className="bg-[#FFFFFF] text-black py-10 px-6 text-center">
