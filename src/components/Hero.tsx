@@ -108,7 +108,7 @@ export function Hero() {
                 <img 
                   src="/lovable-uploads/hero1.png" 
                   alt="Haet Ranpariya - Ghibli Style"
-                  className="object-cover w-full h-full rounded-full"
+                  className="object-cover w-fit h-fit rounded-full"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/70 to-transparent mix-blend-overlay"></div>
               </div>
