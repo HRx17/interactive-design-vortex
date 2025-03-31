@@ -62,23 +62,24 @@ export function Projects() {
     return designProjectEmbeds.map((embed, index) => {
       // If this is the position where we want to insert special projects
       if (index === 0) {
-        return <ARProject key="AR" index={index} />;
-      }
-      if (index === 1) {
-        return <RITShiftMateProject key="ritshiftmate" index={index} />;
-      }
-      if (index === 2) {
-        return <HealthyRProject key="healthyR" index={index} />;
-      }
-      if (index === 3) {
-        return <WeatherAppProject key="weatherApp" index={index} />;
-      }
-      if (index === 4) {
-        return <FoodZapProject key="foodzap" index={index} />;
-      }
-      if (index === 5) {
         return <ParkingAppProject key="parkingApp" index={index} />;
       }
+      if (index === 1) {
+        return <ARProject key="AR" index={index} />;
+      }
+      if (index === 2) {
+        return <RITShiftMateProject key="ritshiftmate" index={index} />;
+      }
+      if (index === 3) {
+        return <HealthyRProject key="healthyR" index={index} />;
+      }
+      if (index === 4) {
+        return <WeatherAppProject key="weatherApp" index={index} />;
+      }
+      if (index === 5) {
+        return <FoodZapProject key="foodzap" index={index} />;
+      }
+     
       // For other projects, render the regular ExpandableProject
       const adjustedIndex = index > 5 ? index - 4 : index; 
       return <ExpandableProject key={adjustedIndex} embedSrc={embed} index={index} />;
@@ -99,46 +100,47 @@ export function Projects() {
     return designProjectEmbeds.map((embed, index) => {
       if (index === 0) {
         return (
+          <CarouselItem key="parkingApp" className="md:basis-1/2 lg:basis-1/3">
+            <ParkingAppProject index={index} />
+          </CarouselItem>
+        );
+      }
+      if (index === 1) {
+        return (
           <CarouselItem key="AR" className="md:basis-1/2 lg:basis-1/3">
             <ARProject index={index} />
           </CarouselItem>
         );
       }
-      if (index === 1) {
+      if (index === 2) {
         return (
           <CarouselItem key="ritshiftmate" className="md:basis-1/2 lg:basis-1/3">
             <RITShiftMateProject index={index} />
           </CarouselItem>
         );
       }
-      if (index === 2) {
+      if (index === 3) {
         return (
           <CarouselItem key="healthyR" className="md:basis-1/2 lg:basis-1/3">
             <HealthyRProject index={index} />
           </CarouselItem>
         );
       }
-      if (index === 3) {
+      if (index === 4) {
         return (
           <CarouselItem key="weatherApp" className="md:basis-1/2 lg:basis-1/3">
             <WeatherAppProject index={index} />
           </CarouselItem>
         );
       }
-      if (index === 4) {
+      if (index === 5) {
         return (
           <CarouselItem key="foodzap" className="md:basis-1/2 lg:basis-1/3">
             <FoodZapProject index={index} />
           </CarouselItem>
         );
       }
-      if (index === 5) {
-        return (
-          <CarouselItem key="parkingApp" className="md:basis-1/2 lg:basis-1/3">
-            <ParkingAppProject index={index} />
-          </CarouselItem>
-        );
-      }
+      
       // For other projects, render the regular ExpandableProject in a carousel item
       const adjustedIndex = index > 5 ? index - 4 : index;
       return (
