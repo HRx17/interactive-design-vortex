@@ -27,8 +27,8 @@ const designProjectEmbeds = [
   "",
   "", 
   "",
-  "https://www.behance.net/embed/project/176648697?ilo0=1",
-  "https://www.behance.net/embed/project/176642493?ilo0=1"
+  //"https://www.behance.net/embed/project/176648697?ilo0=1",
+  //"https://www.behance.net/embed/project/176642493?ilo0=1"
 ];
 
 export function Projects() {
