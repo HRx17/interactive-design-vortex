@@ -28,19 +28,19 @@ export function WeatherAppProject({ index }: WeatherAppProjectProps) {
   }, []);
 
   const caseStudyImages = [
-    "/lovable-uploads/38727636-d170-46e8-aab7-f123f179d688.png",
-    "/lovable-uploads/c56e21f0-b78c-49b9-a2e4-e503b5d7a07a.png",
-    "/lovable-uploads/0d1d146b-6285-4b50-9a1c-955f82fe8841.png",
-    "/lovable-uploads/62d45b31-511d-490d-b9d9-4ac880ab5c6b.png",
-    "/lovable-uploads/f43468b2-7934-4c1d-a36e-75472388ff29.png",
-    "/lovable-uploads/f6bd9f18-7759-4a67-b4bc-99f4e740650f.png",
-    "/lovable-uploads/663d3492-8371-4628-b10d-568b858e5004.png",
-    "/lovable-uploads/cc5f0091-fd95-4b91-89db-f7de3e96a15c.png",
-    "/lovable-uploads/a7439ce2-7f81-4a0b-8232-a5fc9e4c12af.png",
-    "/lovable-uploads/6a6ef6cf-5294-4523-b071-419842917556.png",
-    "/lovable-uploads/3d862fdf-d921-4694-8cdc-d66cc1e10644.png",
+    "/lovable-uploads/efc63ad4-1a76-470a-96f0-74a08ed01a6f.png",
     "/lovable-uploads/e4152d05-8a49-4c32-b9e9-014dcf1b39ec.png",
-    "/lovable-uploads/efc63ad4-1a76-470a-96f0-74a08ed01a6f.png"
+    "/lovable-uploads/3d862fdf-d921-4694-8cdc-d66cc1e10644.png",
+    "/lovable-uploads/6a6ef6cf-5294-4523-b071-419842917556.png",
+    "/lovable-uploads/a7439ce2-7f81-4a0b-8232-a5fc9e4c12af.png",
+    "/lovable-uploads/cc5f0091-fd95-4b91-89db-f7de3e96a15c.png",
+    "/lovable-uploads/663d3492-8371-4628-b10d-568b858e5004.png",
+    "/lovable-uploads/f6bd9f18-7759-4a67-b4bc-99f4e740650f.png",
+    "/lovable-uploads/f43468b2-7934-4c1d-a36e-75472388ff29.png",
+    "/lovable-uploads/62d45b31-511d-490d-b9d9-4ac880ab5c6b.png",
+    "/lovable-uploads/0d1d146b-6285-4b50-9a1c-955f82fe8841.png",
+    "/lovable-uploads/c56e21f0-b78c-49b9-a2e4-e503b5d7a07a.png",
+    "/lovable-uploads/38727636-d170-46e8-aab7-f123f179d688.png",
   ];
 
   return (

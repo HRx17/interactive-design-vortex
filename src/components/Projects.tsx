@@ -15,7 +15,7 @@ import { WeatherAppProject } from './WeatherAppProject';
 
 // Project embed data - removing appropriate projects as they will be replaced with custom components
 const projectEmbeds = [
-  "https://www.behance.net/embed/project/212271631?ilo0=1",
+  "",
   "https://www.behance.net/embed/project/205264815?ilo0=1",
   "",
   "",
