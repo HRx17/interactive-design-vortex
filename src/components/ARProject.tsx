@@ -68,9 +68,9 @@ export function ARProject({ index }: ARProjectProps) {
       >
         <div className="w-full aspect-video p-2">
           <div className="w-full h-full rounded-lg overflow-hidden">
-            <iframe 
+            <img 
               src={caseStudyImages[0]}  
-              className="w-full h-full object-cover autoplay hover:scale-105 transition-transform duration-500"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
             />
           </div>
         </div>
