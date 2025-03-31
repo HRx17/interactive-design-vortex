@@ -32,22 +32,22 @@ export function ARProject({ index }: ARProjectProps) {
   const caseStudyImages = [
     "h1.png",
     "h2.png",
-    "https://www.youtube.com/embed/77vlfTa8X10?si=G5aZDIPwJUqbL05z",
+    //"https://www.youtube.com/embed/77vlfTa8X10?si=G5aZDIPwJUqbL05z",
     "hh.png",
     "h3.png",
     "h4.png",
     "h5.png",
-    "https://www.youtube.com/embed/NAD_Kot-t84?si=pCx8-3kDUoySOwaG",
+    //"https://www.youtube.com/embed/NAD_Kot-t84?si=pCx8-3kDUoySOwaG",
     "h6.png",
-    "https://www.youtube.com/embed/BL654YYW5m0?si=asOgNqLg205b_kjg",
+    //"https://www.youtube.com/embed/BL654YYW5m0?si=asOgNqLg205b_kjg",
     "h7.png",
-    "https://www.youtube.com/embed/MniPfpXs74w?si=H99swviNUKRwZuzl",
+    //"https://www.youtube.com/embed/MniPfpXs74w?si=H99swviNUKRwZuzl",
     "h8.png",
-    "https://www.youtube.com/embed/xPe2nukLMaE?si=zaBGCzwieXt_KpDn",
+    //"https://www.youtube.com/embed/xPe2nukLMaE?si=zaBGCzwieXt_KpDn",
     "h9.png",
-    "https://www.youtube.com/embed/0PoPD6UaLx8?si=6IjHag0h2zggX1-O",
+   // "https://www.youtube.com/embed/0PoPD6UaLx8?si=6IjHag0h2zggX1-O",
     "h10.png",
-    "https://www.youtube.com/embed/p5qNTiH_8JI?si=ZKkHsHmjuCyCRIaP",
+    //"https://www.youtube.com/embed/p5qNTiH_8JI?si=ZKkHsHmjuCyCRIaP",
     "h11.png",
   ];
 
@@ -93,7 +93,7 @@ export function ARProject({ index }: ARProjectProps) {
           <ScrollArea className="max-h-[90vh] overflow-y-auto">
             <div className="case-study-container">
               {caseStudyImages.map((img, idx) => (
-                <iframe 
+                <img 
                   key={idx}
                   src={img}
                   className="w-full"
