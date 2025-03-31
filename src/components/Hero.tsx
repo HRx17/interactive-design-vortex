@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowDownIcon, ExternalLink, Download } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -101,13 +100,14 @@ export function Hero() {
             </div>
           </div>
           
+          {/* Profile picture section - updated with Ghibli-style image */}
           <div className="hidden md:flex justify-center">
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full blur-xl"></div>
               <div className="h-80 w-80 relative rounded-full overflow-hidden border-4 border-emerald-400/20 p-1">
                 <img 
-                  src="/lovable-uploads/5b5ed0d0-de9b-4af8-b929-868ede9465fc.png" 
-                  alt="Haet Ranpariya"
+                  src="/lovable-uploads/e4152d05-8a49-4c32-b9e9-014dcf1b39ec.png" 
+                  alt="Haet Ranpariya - Ghibli Style"
                   className="object-cover w-full h-full rounded-full"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/70 to-transparent mix-blend-overlay"></div>
@@ -143,11 +143,14 @@ export function Hero() {
           }}
         ></div>
         
-        {/* Scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <a href="#projects" className="flex flex-col items-center text-white/70 hover:text-white transition-colors duration-200">
-            <span className="text-sm font-medium mb-2">Scroll down</span>
-            <ArrowDownIcon className="w-5 h-5" />
+        {/* Scroll indicator - moved down and made less prominent */}
+        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce opacity-50">
+          <a 
+            href="#projects" 
+            className="flex flex-col items-center text-white/40 hover:text-white/60 transition-colors duration-200"
+          >
+            <span className="text-xs font-medium mb-1">Scroll</span>
+            <ArrowDownIcon className="w-4 h-4" />
           </a>
         </div>
       </div>
