@@ -75,7 +75,7 @@ export function ARProject({ index }: ARProjectProps) {
         </div>
         <div className="p-5">
           <div className="flex justify-between items-center mb-2">
-            <span className="text-sm font-medium px-3 py-1 rounded-full bg-white-100 text-black-600">AR/VR Design, Future UX/UI Design, Interaction Design</span>
+            <span className="text-sm font-medium px-3 py-1 rounded-full bg-blue-100 text-black-600">AR/VR Design, Future UX/UI Design, Interaction Design</span>
           </div>
           <h3 className="text-xl font-bold">Mixed Reality Concept</h3>
           <p className="text-sm text-muted-foreground mt-2">Mixed Reality Futuristic Holographic Interaction Tech - Help Visualize Better.</p>
@@ -113,7 +113,7 @@ export function ARProject({ index }: ARProjectProps) {
                 </div>
               ))}
               
-              <div className="bg-[#FFFFFF] text-black py-10 px-6 text-center">
+              <div className="bg-[#ECECEC] text-black py-10 px-6 text-center">
                 <h2 className="text-3xl font-bold mb-2">Project by: HAET RANPARIYA</h2>
                 <a 
                   href="https://www.behance.net/haetranpariya17" 

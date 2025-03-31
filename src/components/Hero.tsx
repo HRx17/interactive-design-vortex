@@ -106,7 +106,7 @@ export function Hero() {
               <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full blur-xl"></div>
               <div className="h-80 w-80 relative rounded-full overflow-hidden border-4 border-emerald-400/20 p-1">
                 <img 
-                  src="/lovable-uploads/hero1.png" 
+                  src="/lovable-uploads/smile.png" 
                   alt="Haet Ranpariya - Ghibli Style"
                   className="object-cover w-fit h-fit rounded-full"
                 />
