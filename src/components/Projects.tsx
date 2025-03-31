@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { 
@@ -14,6 +13,7 @@ import { HealthyRProject } from './HealthyRProject';
 import { FoodZapProject } from './FoodZapProject';
 import { WeatherAppProject } from './WeatherAppProject';
 import { ARProject } from './ARProject';
+import { ParkingAppProject } from './ParkingAppProject';
 import { PostSchedulerProject } from './PostSchedulerProject';
 import { AttendanceProject } from './AttendanceProject';
 import { WaahTvProject } from './WaahTvProject';
@@ -26,6 +26,7 @@ const designProjectEmbeds = [
   "",
   "",
   "", 
+  "",
   "",
   //"https://www.behance.net/embed/project/176648697?ilo0=1",
   //"https://www.behance.net/embed/project/176642493?ilo0=1"
@@ -75,8 +76,11 @@ export function Projects() {
       if (index === 4) {
         return <FoodZapProject key="foodzap" index={index} />;
       }
+      if (index === 5) {
+        return <ParkingAppProject key="parkingApp" index={index} />;
+      }
       // For other projects, render the regular ExpandableProject
-      const adjustedIndex = index > 4 ? index - 3 : index; 
+      const adjustedIndex = index > 5 ? index - 4 : index; 
       return <ExpandableProject key={adjustedIndex} embedSrc={embed} index={index} />;
     });
   };
@@ -128,8 +132,15 @@ export function Projects() {
           </CarouselItem>
         );
       }
+      if (index === 5) {
+        return (
+          <CarouselItem key="parkingApp" className="md:basis-1/2 lg:basis-1/3">
+            <ParkingAppProject index={index} />
+          </CarouselItem>
+        );
+      }
       // For other projects, render the regular ExpandableProject in a carousel item
-      const adjustedIndex = index > 4 ? index - 3 : index;
+      const adjustedIndex = index > 5 ? index - 4 : index;
       return (
         <CarouselItem key={adjustedIndex} className="md:basis-1/2 lg:basis-1/3">
           <ExpandableProject embedSrc={embed} index={index} />
