@@ -58,7 +58,7 @@ export function FoodZapProject({ index }: FoodZapProjectProps) {
         </div>
         <div className="p-5">
           <div className="flex justify-between items-center mb-2">
-            <span className="text-sm font-medium px-3 py-1 rounded-full bg-blue-100 text-green-600">UX/UI Design</span>
+            <span className="text-sm font-medium px-3 py-1 rounded-full bg-blue-100 text-green-600">UX/UI Design, App Design</span>
           </div>
           <h3 className="text-xl font-bold">FoodZap</h3>
           <p className="text-sm text-muted-foreground mt-2">FoodZap, A food deliver and pickup app with unique UI and solutions.</p>
