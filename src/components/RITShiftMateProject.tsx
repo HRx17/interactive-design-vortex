@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { ExternalLink, X, CheckCircle, Users, Clock, Calendar, Award } from 'lucide-react';
@@ -7,6 +6,7 @@ import {
   DialogContent,
   DialogClose,
   DialogTitle,
+  DialogDescription
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
@@ -36,10 +36,8 @@ export function RITShiftMateProject({ index }: RITShiftMateProjectProps) {
   useEffect(() => {
     if (!isOpen) return;
 
+    // Observer function to check if sections are visible
     const handleScroll = () => {
-      const scrollArea = document.querySelector('.case-study-scroll-area');
-      if (!scrollArea) return;
-
       sectionsRef.current.forEach((section, index) => {
         if (!section) return;
         
@@ -50,15 +48,15 @@ export function RITShiftMateProject({ index }: RITShiftMateProjectProps) {
         if (rect.top < viewportHeight * 0.7 && rect.bottom > 0) {
           setActiveSection(index);
           section.classList.add('section-visible');
-        } else {
-          section.classList.remove('section-visible');
         }
       });
     };
 
+    // Add scroll event listener
     const scrollArea = document.querySelector('.case-study-scroll-area');
     if (scrollArea) {
       scrollArea.addEventListener('scroll', handleScroll);
+      
       // Trigger initial check
       setTimeout(() => {
         handleScroll();
@@ -111,6 +109,9 @@ export function RITShiftMateProject({ index }: RITShiftMateProjectProps) {
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent className="max-w-6xl w-[95vw] max-h-[90vh] p-0 bg-background">
           <DialogTitle className="sr-only">RIT ShiftMate Case Study</DialogTitle>
+          <DialogDescription className="sr-only">
+            A comprehensive case study on the RIT ShiftMate app design project
+          </DialogDescription>
           <DialogClose className="absolute right-4 top-4 p-2 z-50 rounded-full bg-black/20 text-white backdrop-blur-sm hover:bg-black/40 transition-colors">
             <X className="h-5 w-5" />
           </DialogClose>
@@ -250,6 +251,7 @@ export function RITShiftMateProject({ index }: RITShiftMateProjectProps) {
                 </div>
               </div>
 
+              {/* Continue with remaining sections but keep them the same */}
               {/* Section 4: Design Process */}
               <div 
                 ref={el => sectionsRef.current[3] = el}
