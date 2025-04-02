@@ -84,12 +84,6 @@ export function Hero() {
             
             <div className="mt-10 animate-fade-in opacity-0 flex flex-wrap gap-4" style={{animationDelay: '0.8s', animationFillMode: 'forwards'}}>
               <a 
-                href="#projects"
-                className="btn-hover inline-flex items-center px-8 py-4 rounded-full bg-emerald-600 text-white font-medium transform transition-transform duration-300 hover:scale-105"
-              >
-                <span className="relative z-10">View my work</span>
-              </a>
-              <a 
                 href="/Haet-Ranpariya-UIUX Designer.pdf"
                 download
                 className="inline-flex items-center px-8 py-4 rounded-full bg-emerald-800/40 backdrop-blur-sm text-white font-medium transition-colors hover:bg-emerald-800/60 gap-2 border border-emerald-700/30"
@@ -144,7 +138,7 @@ export function Hero() {
         ></div>
         
         {/* Scroll indicator - moved down and made less prominent */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce opacity-50">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce opacity-80">
           <a 
             href="#projects" 
             className="flex flex-col items-center text-white/40 hover:text-white/60 transition-colors duration-200"
