@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { ExternalLink, X, CheckCircle, Users, Clock, Calendar, Award } from 'lucide-react';
@@ -251,7 +252,6 @@ export function RITShiftMateProject({ index }: RITShiftMateProjectProps) {
                 </div>
               </div>
 
-              {/* Continue with remaining sections but keep them the same */}
               {/* Section 4: Design Process */}
               <div 
                 ref={el => sectionsRef.current[3] = el}
