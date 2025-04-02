@@ -57,26 +57,7 @@ export function About() {
     "AI Prompting", "Lovable AI", "ChatGPT", "Coding"
   ];
 
-  const researchProjects = [
-    {
-      title: "The Impact of Situationally Induced Impairments and Disabilities (SIIDs) on Task Performance: A Comparative Study of Sensory Modalities",
-      description: "This study proposes a comparative experimental investigation of how visual, auditory, and tactile SIIDs affect task performance and user experience.",
-      year: "2024",
-      downloadFile: "/SIID_Research.pdf",
-    },
-    {
-      title: "Experimental Research on MyCourses Platform",
-      description: "The study investigates the challenges faced by international and American students at the Rochester Institute of Technology(RIT) while using the MyCourses learning platform. ",
-      year: "2024",
-      downloadFile: "/Experimental_Research.pdf",
-    },
-    {
-      title: "What is the correlation between age groups and their preferred game genres on PlayStation, and how does this affect the average time spent playing per week?",
-      description: "This study investigates the correlation relationship between PlayStation users, focusing on age groups, their preferred game genres on PlayStation, and the average time spent playing per week and developing the structured survey methodology on Google Forms as we gathered data from PlayStation users to collect data focusing on their game genre preferences and gaming habits.",
-      year: "2024",
-      downloadFile: "/Research_Gaming.pdf",
-    }
-  ];
+  
 
   return (
     <section 
@@ -185,32 +166,6 @@ export function About() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        
-        {/* Research Section */}
-        <div className={cn(
-          "mt-20",
-          "opacity-0 transform translate-y-6 transition-all duration-700 delay-400",
-          isInView && "opacity-100 translate-y-0"
-        )}>
-          <div className="flex items-center gap-3 mb-6">
-            <FlaskConical className="w-6 h-6 text-emerald-500" />
-            <h2 className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">Research Projects</h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {researchProjects.map((project, index) => (
-              <ResearchCard
-                key={project.title}
-                title={project.title}
-                description={project.description}
-                year={project.year}
-                downloadFile={project.downloadFile}
-                delay={500 + index * 100}
-                isInView={isInView}
-              />
-            ))}
           </div>
         </div>
       </div>
