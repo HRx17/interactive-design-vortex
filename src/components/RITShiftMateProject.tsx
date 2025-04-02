@@ -117,7 +117,7 @@ export function RITShiftMateProject({ index }: RITShiftMateProjectProps) {
             <X className="h-5 w-5" />
           </DialogClose>
           
-          <ScrollArea className="max-h-[90vh] overflow-y-auto">
+          <ScrollArea className="max-h-[90vh] overflow-y-auto case-study-scroll-area">
             <div className="case-study-container">
               {/* Section 1: Hero */}
               <div 
