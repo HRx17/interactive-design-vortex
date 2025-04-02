@@ -76,7 +76,7 @@ export function ARProject({ index }: ARProjectProps) {
         </div>
         <div className="p-5">
           <div className="flex justify-between items-center mb-2">
-            <span className="text-sm font-medium px-3 py-1 rounded-full bg-[#A8D0D6] bg-opacity-20 text-[#FFFFFF]">AR/VR Design, Interaction Design</span>
+            <span className="text-sm font-medium px-3 py-1 rounded-full bg-[#A8D0D6] bg-opacity-60 text-[#FFFFFF]">AR/VR Design, Interaction Design</span>
           </div>
           <h3 className="text-xl font-bold">Mixed Reality Concept</h3>
           <p className="text-sm text-muted-foreground mt-2">Mixed Reality Futuristic Holographic Interaction Tech - Help Visualize Better.</p>
