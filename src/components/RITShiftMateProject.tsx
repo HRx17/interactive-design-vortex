@@ -6,6 +6,7 @@ import {
   Dialog,
   DialogContent,
   DialogClose,
+  DialogTitle,
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
@@ -58,6 +59,10 @@ export function RITShiftMateProject({ index }: RITShiftMateProjectProps) {
     const scrollArea = document.querySelector('.case-study-scroll-area');
     if (scrollArea) {
       scrollArea.addEventListener('scroll', handleScroll);
+      // Trigger initial check
+      setTimeout(() => {
+        handleScroll();
+      }, 300);
     }
     
     return () => {
@@ -105,6 +110,7 @@ export function RITShiftMateProject({ index }: RITShiftMateProjectProps) {
       {/* Full Case Study Dialog */}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent className="max-w-6xl w-[95vw] max-h-[90vh] p-0 bg-background">
+          <DialogTitle className="sr-only">RIT ShiftMate Case Study</DialogTitle>
           <DialogClose className="absolute right-4 top-4 p-2 z-50 rounded-full bg-black/20 text-white backdrop-blur-sm hover:bg-black/40 transition-colors">
             <X className="h-5 w-5" />
           </DialogClose>
@@ -567,7 +573,8 @@ export function RITShiftMateProject({ index }: RITShiftMateProjectProps) {
         </DialogContent>
       </Dialog>
 
-      <style jsx>{`
+      <style>
+        {`
         .section {
           opacity: 0;
           transform: translateY(30px);
@@ -575,8 +582,8 @@ export function RITShiftMateProject({ index }: RITShiftMateProjectProps) {
         }
         
         .section-visible {
-          opacity: 1;
-          transform: translateY(0);
+          opacity: 1 !important;
+          transform: translateY(0) !important;
         }
         
         .fade-up {
@@ -610,6 +617,11 @@ export function RITShiftMateProject({ index }: RITShiftMateProjectProps) {
         .phone-mockup {
           width: ${isMobile ? '140px' : '180px'};
           padding: 8px;
+          transition: transform 0.3s ease;
+        }
+        
+        .phone-mockup:hover {
+          transform: translateY(-10px);
         }
         
         .phone-screen {
@@ -619,7 +631,8 @@ export function RITShiftMateProject({ index }: RITShiftMateProjectProps) {
           position: relative;
           box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
-      `}</style>
+        `}
+      </style>
     </>
   );
 }
