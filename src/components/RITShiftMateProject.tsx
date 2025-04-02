@@ -74,7 +74,7 @@ export function RITShiftMateProject({ index }: RITShiftMateProjectProps) {
   const caseStudyThumbnail = "/lovable-uploads/RIT1.png";
 
   return (
-    <>
+    <section>
       {/* Thumbnail Card */}
       <div 
         onClick={() => setIsOpen(true)}
@@ -635,6 +635,6 @@ export function RITShiftMateProject({ index }: RITShiftMateProjectProps) {
         }
         `}
       </style>
-    </>
+    </section>
   );
 }
