@@ -295,13 +295,8 @@ export function Projects() {
             </span>
           </a>
         </div>
-      </div>
-      
-      {/* Background decorative elements */}
-      <div className="absolute top-1/4 left-0 w-1/3 h-1/3 bg-gradient-to-r from-emerald-600/20 to-transparent rounded-full filter blur-3xl opacity-30"></div>
-      <div className="absolute bottom-1/4 right-0 w-1/3 h-1/3 bg-gradient-to-l from-teal-500/20 to-transparent rounded-full filter blur-3xl opacity-30"></div>
 
-      {/* Research Section */}
+         {/* Research Section */}
       <div className={cn(
           "mt-20",
           "opacity-0 transform translate-y-6 transition-all duration-700 delay-400",
@@ -326,6 +321,11 @@ export function Projects() {
             ))}
           </div>
         </div>
+      </div>
+      
+      {/* Background decorative elements */}
+      <div className="absolute top-1/4 left-0 w-1/3 h-1/3 bg-gradient-to-r from-emerald-600/20 to-transparent rounded-full filter blur-3xl opacity-30"></div>
+      <div className="absolute bottom-1/4 right-0 w-1/3 h-1/3 bg-gradient-to-l from-teal-500/20 to-transparent rounded-full filter blur-3xl opacity-30"></div>
     </section>
   );
 }
