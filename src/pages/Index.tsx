@@ -215,35 +215,6 @@ const Index = () => {
           opacity: 0;
         }
       }
-      
-      /* Made with Lovable AI badge */
-      .lovable-badge {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        padding: 8px 12px;
-        background: rgba(16, 185, 129, 0.1);
-        border: 1px solid rgba(16, 185, 129, 0.3);
-        border-radius: 8px;
-        font-size: 12px;
-        color: rgba(16, 185, 129, 0.8);
-        backdrop-filter: blur(5px);
-        z-index: 1000;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        transition: all 0.3s ease;
-      }
-      
-      .lovable-badge:hover {
-        background: rgba(16, 185, 129, 0.2);
-        transform: translateY(-3px);
-      }
-      
-      .lovable-badge svg {
-        width: 14px;
-        height: 14px;
-      }
     `;
     document.head.appendChild(style);
     
@@ -265,21 +236,6 @@ const Index = () => {
     };
     
     createParticles();
-    
-    // Add "Made with Lovable AI" badge
-    const lovableBadge = document.createElement('a');
-    lovableBadge.className = 'lovable-badge';
-    lovableBadge.href = "https://lovable.ai";
-    lovableBadge.target = "_blank";
-    lovableBadge.rel = "noopener noreferrer";
-    lovableBadge.innerHTML = `
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
-        <path d="M12 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 10c2.757 0 5-2.243 5-5h-2c0 1.654-1.346 3-3 3s-3-1.346-3-3H7c0 2.757 2.243 5 5 5z"/>
-      </svg>
-      Made with Lovable
-    `;
-    //document.body.appendChild(lovableBadge);
     
     return () => {
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -303,10 +259,6 @@ const Index = () => {
       const particles = document.querySelector('.particles');
       if (particles && particles.parentNode) {
         particles.parentNode.removeChild(particles);
-      }
-      
-      if (lovableBadge && lovableBadge.parentNode) {
-        lovableBadge.parentNode.removeChild(lovableBadge);
       }
     };
   }, []);
