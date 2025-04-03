@@ -2,6 +2,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Mail, Linkedin, Github } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export function Contact() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -87,8 +88,12 @@ export function Contact() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-2 px-6 py-3 rounded-full bg-secondary hover:bg-secondary/80 text-primary transition-colors duration-300"
+                className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-secondary hover:bg-secondary/80 text-primary transition-colors duration-300"
                 style={{ transitionDelay: `${300 + index * 100}ms` }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open(link.url, '_blank', 'noopener,noreferrer');
+                }}
               >
                 {link.icon}
                 <span className="font-medium">{link.name}</span>
@@ -108,6 +113,10 @@ export function Contact() {
             <a 
               href="mailto:haetranpariya1789@gmail.com"
               className="btn-hover inline-flex items-center px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium text-sm"
+              onClick={(e) => {
+                e.stopPropagation();
+                window.location.href = "mailto:haetranpariya1789@gmail.com";
+              }}
             >
               <span className="relative z-10">Send me an email</span>
             </a>
