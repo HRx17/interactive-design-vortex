@@ -86,17 +86,10 @@ export function Contact() {
               <a 
                 key={link.name}
                 href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-secondary hover:bg-secondary/80 text-primary transition-colors duration-300"
                 style={{ transitionDelay: `${300 + index * 100}ms` }}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  window.open(link.url, '_blank', 'noopener,noreferrer');
-                }}
               >
                 {link.icon}
-                <span className="font-medium">{link.name}</span>
               </a>
             ))}
           </div>
