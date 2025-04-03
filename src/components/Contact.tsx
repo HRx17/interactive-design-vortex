@@ -1,7 +1,7 @@
 
 import React, { useRef, useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { Mail, Linkedin, Dribbble, Github } from 'lucide-react';
+import { Mail, Linkedin, Github } from 'lucide-react';
 
 export function Contact() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -34,7 +34,7 @@ export function Contact() {
     },
     { 
       name: "LinkedIn", 
-      url: "https://linkedin.com/in/haetpariya", 
+      url: "https://www.linkedin.com/in/haet-ranpariya-382324188/", 
       icon: <Linkedin className="h-5 w-5" /> 
     },
     { 
