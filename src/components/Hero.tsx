@@ -84,7 +84,7 @@ export function Hero() {
             
             <div className="mt-10 animate-fade-in opacity-0 flex flex-wrap gap-4" style={{animationDelay: '0.8s', animationFillMode: 'forwards'}}>
               <a 
-                href="/Haet-Ranpariya-UIUX Designer.pdf"
+                href="/lovable-uploads/resume.pdf"
                 download
                 className="inline-flex items-center px-8 py-4 rounded-full bg-emerald-800/40 backdrop-blur-sm text-white font-medium transition-colors hover:bg-emerald-800/60 gap-2 border border-emerald-700/30"
               >
