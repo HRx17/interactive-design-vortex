@@ -86,11 +86,13 @@ export function Contact() {
               <a 
                 key={link.name}
                 href={link.url}
-                className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-secondary hover:bg-secondary/80 text-primary transition-colors duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-hover inline-flex items-center gap-2 px-6 py-3 rounded-full bg-secondary hover:bg-secondary/80 text-primary transition-colors duration-300"
                 style={{ transitionDelay: `${300 + index * 100}ms` }}
                 onClick={(e) => {
                   e.stopPropagation();
-                  window.location.href = {link.url} ;
+                  window.open(link.url);
                 }}
               >
                 {link.icon}
