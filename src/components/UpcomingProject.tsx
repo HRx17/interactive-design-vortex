@@ -8,6 +8,8 @@ import {
   AccordionItem, 
   AccordionTrigger 
 } from "@/components/ui/accordion";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Card, CardContent } from "@/components/ui/card";
 
 interface UpcomingProjectProps {
   index: number;
@@ -61,11 +63,12 @@ export function UpcomingProject({ index }: UpcomingProjectProps) {
     setIsExpanded(!isExpanded);
   };
 
-  // Cover image for the project card
-  const coverImage = "/lovable-uploads/1a4e83d1-a197-4880-886c-748f9af505d7.png";
+  // Cover image for the project card (using the last image from the array)
+  const coverImage = "/lovable-uploads/b9c4ca15-5989-4244-90d9-de2cb6f747eb.png";
 
-  // Array of images for the detailed case study
+  // Array of images for the detailed case study, reordered with the cover image first
   const caseStudyImages = [
+    "/lovable-uploads/b9c4ca15-5989-4244-90d9-de2cb6f747eb.png", // Cover image first
     "/lovable-uploads/544935c7-7062-4776-bbe3-9b4354f88150.png",
     "/lovable-uploads/f6dbc0ba-a340-475f-98a5-b4611953f905.png",
     "/lovable-uploads/f867e9fc-cd97-40f0-b227-696b092580e0.png",
@@ -80,16 +83,16 @@ export function UpcomingProject({ index }: UpcomingProjectProps) {
     "/lovable-uploads/88af03d0-7217-433e-9838-870ddbec6d92.png",
     "/lovable-uploads/40c6b33e-12ba-475b-80dd-1e7e61d34d79.png",
     "/lovable-uploads/a3bc2b03-24b2-452c-bc4f-943879f35f0c.png",
-    "/lovable-uploads/b9c4ca15-5989-4244-90d9-de2cb6f747eb.png"
+    "/lovable-uploads/1a4e83d1-a197-4880-886c-748f9af505d7.png"
   ];
 
   return (
     <>
-      <div 
+      <Card 
         ref={projectRef}
         onClick={toggleExpand}
         className={cn(
-          "bg-card border border-border rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer",
+          "border border-border rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer h-full",
           "opacity-0 transform translate-y-12",
           isVisible && "opacity-100 translate-y-0"
         )}
@@ -99,27 +102,27 @@ export function UpcomingProject({ index }: UpcomingProjectProps) {
         }}
       >
         <div className="relative">
-          <div className="absolute top-3 left-3 px-2 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full">
+          <div className="absolute top-3 left-3 px-3 py-1 bg-emerald-600 text-white text-xs font-semibold rounded-full z-10">
             Upcoming
           </div>
-          <div className="w-full aspect-video p-2">
+          <AspectRatio ratio={16/9} className="p-2">
             <div className="w-full h-full rounded-lg overflow-hidden">
               <img 
                 src={coverImage} 
-                alt="NewsVibe App Design" 
-                className="w-full h-full object-cover"
+                alt="Upcoming Project" 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />
             </div>
-          </div>
-          <div className="p-5">
-            <h3 className="text-lg font-bold mb-1">NewsVibe App Design</h3>
+          </AspectRatio>
+          <CardContent className="p-5">
+            <h3 className="text-lg font-bold mb-1">Upcoming Project</h3>
             <p className="text-sm text-muted-foreground line-clamp-2">
-              A modern news app focused on personalized multimedia experiences with gamified user engagement.
+              A modern user interface design focused on personalized experiences with innovative visual elements.
             </p>
-          </div>
+          </CardContent>
         </div>
-      </div>
+      </Card>
 
       {isExpanded && (
         <div 
@@ -146,9 +149,9 @@ export function UpcomingProject({ index }: UpcomingProjectProps) {
               </button>
               
               <div className="p-6 md:p-8">
-                <h2 className="text-2xl md:text-3xl font-bold mb-2">NewsVibe App Design</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-2">Upcoming Project</h2>
                 <p className="text-muted-foreground mb-6">
-                  A next-generation news application focused on visual learning, exploration, and gamified engagement
+                  A next-generation UI/UX design concept focused on modern visual elements and user engagement
                 </p>
                 
                 <div className="grid gap-6 mb-8">
@@ -156,19 +159,23 @@ export function UpcomingProject({ index }: UpcomingProjectProps) {
                   <div className="aspect-video w-full rounded-lg overflow-hidden shadow-xl">
                     <img 
                       src={caseStudyImages[0]} 
-                      alt="NewsVibe Moodboard" 
+                      alt="Project Cover" 
                       className="w-full h-full object-cover"
                     />
                   </div>
                   
-                  {/* Case study images gallery */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Case study images gallery - reorganized for better flow */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {caseStudyImages.slice(1).map((img, idx) => (
-                      <div key={idx} className="rounded-lg overflow-hidden shadow-md">
+                      <div key={idx} className={cn(
+                        "rounded-lg overflow-hidden shadow-md",
+                        // Make some images span full width for visual interest
+                        idx % 5 === 0 ? "md:col-span-2" : ""
+                      )}>
                         <img 
                           src={img} 
-                          alt={`NewsVibe Case Study ${idx + 1}`} 
-                          className="w-full h-auto"
+                          alt={`Case Study ${idx + 1}`} 
+                          className="w-full h-auto object-cover"
                           loading="lazy"
                         />
                       </div>
@@ -181,21 +188,21 @@ export function UpcomingProject({ index }: UpcomingProjectProps) {
                     <AccordionItem value="overview">
                       <AccordionTrigger className="text-xl font-bold">Project Overview</AccordionTrigger>
                       <AccordionContent className="text-muted-foreground">
-                        <p>NewsVibe is a modern news app concept designed to revolutionize how users consume news through personalized multimedia experiences and gamified engagement. It caters to different user archetypes, from visual learners to critical thinkers, explorers, and those motivated by gamification elements.</p>
+                        <p>This upcoming project focuses on creating an innovative interface design with emphasis on visual hierarchy, user flow, and engaging interactions. The concept explores new approaches to digital experiences through thoughtful design elements.</p>
                       </AccordionContent>
                     </AccordionItem>
                     
                     <AccordionItem value="process">
                       <AccordionTrigger className="text-xl font-bold">Design Process</AccordionTrigger>
                       <AccordionContent className="text-muted-foreground">
-                        <p>My design process followed these key steps:</p>
+                        <p>The design process for this project involves:</p>
                         <ol className="list-decimal pl-5 mt-3 space-y-2">
                           <li>User research and persona development</li>
                           <li>Problem definition through "How Might We" questions</li>
                           <li>Flow diagram creation and user journey mapping</li>
-                          <li>Wireframing and visual design</li>
+                          <li>Wireframing and visual design exploration</li>
                           <li>Interactive prototype development</li>
-                          <li>User testing and iteration</li>
+                          <li>Usability testing and iteration</li>
                         </ol>
                       </AccordionContent>
                     </AccordionItem>
@@ -204,12 +211,12 @@ export function UpcomingProject({ index }: UpcomingProjectProps) {
                       <AccordionTrigger className="text-xl font-bold">Key Features</AccordionTrigger>
                       <AccordionContent>
                         <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
-                          <li>Card-based visual story formats for quick consumption</li>
-                          <li>Gamified onboarding and streaks to ensure retention</li>
-                          <li>Interactive headlines with sentiment-based filters</li>
-                          <li>Timeline design with vertical progress indicators</li>
-                          <li>Pro/con debate views for balanced perspective</li>
-                          <li>Interactive 3D globe for geographical news discovery</li>
+                          <li>Modern visual design system with consistent components</li>
+                          <li>Thoughtful micro-interactions for enhanced user experience</li>
+                          <li>Accessible interface elements that work for all users</li>
+                          <li>Responsive layouts optimized for multiple devices</li>
+                          <li>Dark and light mode with seamless transitions</li>
+                          <li>Data visualization components for complex information</li>
                         </ul>
                       </AccordionContent>
                     </AccordionItem>
