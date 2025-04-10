@@ -21,6 +21,7 @@ import { AttendanceProject } from './AttendanceProject';
 import { WaahTvProject } from './WaahTvProject';
 import { ProjectTypeSwitcher } from './ProjectTypeSwitcher';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { UpcomingProject } from './UpcomingProject';
 
 // Project embed data for design projects
 const designProjectEmbeds = [
@@ -61,31 +62,20 @@ export function Projects() {
 
   // Helper function to render design projects
   const renderDesignProjects = () => {
-    return designProjectEmbeds.map((embed, index) => {
-      // If this is the position where we want to insert special projects
-      if (index === 0) {
-        return <ParkingAppProject key="parkingApp" index={index} />;
-      }
-      if (index === 1) {
-        return <ARProject key="AR" index={index} />;
-      }
-      if (index === 2) {
-        return <RITShiftMateProject key="ritshiftmate" index={index} />;
-      }
-      if (index === 3) {
-        return <HealthyRProject key="healthyR" index={index} />;
-      }
-      if (index === 4) {
-        return <WeatherAppProject key="weatherApp" index={index} />;
-      }
-      if (index === 5) {
-        return <FoodZapProject key="foodzap" index={index} />;
-      }
-     
-      // For other projects, render the regular ExpandableProject
-      const adjustedIndex = index > 5 ? index - 4 : index; 
-      return <ExpandableProject key={adjustedIndex} embedSrc={embed} index={index} />;
-    });
+    return [
+      <UpcomingProject key="upcoming" index={0} />, // Add the Upcoming project at the beginning
+      <ParkingAppProject key="parkingApp" index={1} />,
+      <ARProject key="AR" index={2} />,
+      <RITShiftMateProject key="ritshiftmate" index={3} />,
+      <HealthyRProject key="healthyR" index={4} />,
+      <WeatherAppProject key="weatherApp" index={5} />,
+      <FoodZapProject key="foodzap" index={6} />,
+      // For any remaining embed projects
+      ...designProjectEmbeds.slice(6).map((embed, index) => {
+        const adjustedIndex = index + 7;
+        return embed ? <ExpandableProject key={adjustedIndex} embedSrc={embed} index={adjustedIndex} /> : null;
+      }).filter(Boolean)
+    ];
   };
 
   // Helper function to render coding projects
@@ -99,58 +89,38 @@ export function Projects() {
 
   // Helper function to render carousel items with design projects
   const renderDesignCarouselItems = () => {
-    return designProjectEmbeds.map((embed, index) => {
-      if (index === 0) {
-        return (
-          <CarouselItem key="parkingApp" className="md:basis-1/2 lg:basis-1/3">
-            <ParkingAppProject index={index} />
+    return [
+      <CarouselItem key="upcoming" className="md:basis-1/2 lg:basis-1/3">
+        <UpcomingProject index={0} />
+      </CarouselItem>,
+      <CarouselItem key="parkingApp" className="md:basis-1/2 lg:basis-1/3">
+        <ParkingAppProject index={1} />
+      </CarouselItem>,
+      <CarouselItem key="AR" className="md:basis-1/2 lg:basis-1/3">
+        <ARProject index={2} />
+      </CarouselItem>,
+      <CarouselItem key="ritshiftmate" className="md:basis-1/2 lg:basis-1/3">
+        <RITShiftMateProject index={3} />
+      </CarouselItem>,
+      <CarouselItem key="healthyR" className="md:basis-1/2 lg:basis-1/3">
+        <HealthyRProject index={4} />
+      </CarouselItem>,
+      <CarouselItem key="weatherApp" className="md:basis-1/2 lg:basis-1/3">
+        <WeatherAppProject index={5} />
+      </CarouselItem>,
+      <CarouselItem key="foodzap" className="md:basis-1/2 lg:basis-1/3">
+        <FoodZapProject index={6} />
+      </CarouselItem>,
+      // For any remaining embed projects
+      ...designProjectEmbeds.slice(6).map((embed, index) => {
+        const adjustedIndex = index + 7;
+        return embed ? (
+          <CarouselItem key={adjustedIndex} className="md:basis-1/2 lg:basis-1/3">
+            <ExpandableProject embedSrc={embed} index={adjustedIndex} />
           </CarouselItem>
-        );
-      }
-      if (index === 1) {
-        return (
-          <CarouselItem key="AR" className="md:basis-1/2 lg:basis-1/3">
-            <ARProject index={index} />
-          </CarouselItem>
-        );
-      }
-      if (index === 2) {
-        return (
-          <CarouselItem key="ritshiftmate" className="md:basis-1/2 lg:basis-1/3">
-            <RITShiftMateProject index={index} />
-          </CarouselItem>
-        );
-      }
-      if (index === 3) {
-        return (
-          <CarouselItem key="healthyR" className="md:basis-1/2 lg:basis-1/3">
-            <HealthyRProject index={index} />
-          </CarouselItem>
-        );
-      }
-      if (index === 4) {
-        return (
-          <CarouselItem key="weatherApp" className="md:basis-1/2 lg:basis-1/3">
-            <WeatherAppProject index={index} />
-          </CarouselItem>
-        );
-      }
-      if (index === 5) {
-        return (
-          <CarouselItem key="foodzap" className="md:basis-1/2 lg:basis-1/3">
-            <FoodZapProject index={index} />
-          </CarouselItem>
-        );
-      }
-      
-      // For other projects, render the regular ExpandableProject in a carousel item
-      const adjustedIndex = index > 5 ? index - 4 : index;
-      return (
-        <CarouselItem key={adjustedIndex} className="md:basis-1/2 lg:basis-1/3">
-          <ExpandableProject embedSrc={embed} index={index} />
-        </CarouselItem>
-      );
-    });
+        ) : null;
+      }).filter(Boolean)
+    ];
   };
 
   const researchProjects = [
