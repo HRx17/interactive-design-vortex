@@ -66,24 +66,24 @@ export function UpcomingProject({ index }: UpcomingProjectProps) {
   // Cover image for the project card (using the last image from the array)
   const coverImage = "/lovable-uploads/b9c4ca15-5989-4244-90d9-de2cb6f747eb.png";
 
-  // Array of images for the detailed case study, reordered with the cover image first
+  // Array of images for the detailed case study in reverse order (last to first)
   const caseStudyImages = [
-    "/lovable-uploads/b9c4ca15-5989-4244-90d9-de2cb6f747eb.png", // Cover image first
-    "/lovable-uploads/544935c7-7062-4776-bbe3-9b4354f88150.png",
-    "/lovable-uploads/f6dbc0ba-a340-475f-98a5-b4611953f905.png",
-    "/lovable-uploads/f867e9fc-cd97-40f0-b227-696b092580e0.png",
-    "/lovable-uploads/d1206f5c-189d-427b-93b8-b82ff662ed6b.png",
-    "/lovable-uploads/1497f8ac-58ba-4b12-9413-b540e5ac41d4.png",
-    "/lovable-uploads/37bc024c-9988-4145-9288-d950af6b72c5.png",
-    "/lovable-uploads/e6c733a0-15f5-4f5b-80b5-d968f89c3f5b.png",
-    "/lovable-uploads/68bde57b-779c-497e-be33-dea6ba8834a8.png",
-    "/lovable-uploads/53a9e943-f2d7-4061-90ff-4588dff4a699.png",
-    "/lovable-uploads/7af53f86-2561-4cf1-8d26-82d478ec7b59.png",
-    "/lovable-uploads/47e30545-06d0-4588-af03-fb8c707abab7.png",
-    "/lovable-uploads/88af03d0-7217-433e-9838-870ddbec6d92.png",
-    "/lovable-uploads/40c6b33e-12ba-475b-80dd-1e7e61d34d79.png",
+    "/lovable-uploads/b9c4ca15-5989-4244-90d9-de2cb6f747eb.png",
+    "/lovable-uploads/1a4e83d1-a197-4880-886c-748f9af505d7.png",
     "/lovable-uploads/a3bc2b03-24b2-452c-bc4f-943879f35f0c.png",
-    "/lovable-uploads/1a4e83d1-a197-4880-886c-748f9af505d7.png"
+    "/lovable-uploads/40c6b33e-12ba-475b-80dd-1e7e61d34d79.png",
+    "/lovable-uploads/88af03d0-7217-433e-9838-870ddbec6d92.png",
+    "/lovable-uploads/47e30545-06d0-4588-af03-fb8c707abab7.png",
+    "/lovable-uploads/7af53f86-2561-4cf1-8d26-82d478ec7b59.png",
+    "/lovable-uploads/53a9e943-f2d7-4061-90ff-4588dff4a699.png",
+    "/lovable-uploads/68bde57b-779c-497e-be33-dea6ba8834a8.png",
+    "/lovable-uploads/e6c733a0-15f5-4f5b-80b5-d968f89c3f5b.png",
+    "/lovable-uploads/37bc024c-9988-4145-9288-d950af6b72c5.png",
+    "/lovable-uploads/1497f8ac-58ba-4b12-9413-b540e5ac41d4.png",
+    "/lovable-uploads/d1206f5c-189d-427b-93b8-b82ff662ed6b.png",
+    "/lovable-uploads/f867e9fc-cd97-40f0-b227-696b092580e0.png",
+    "/lovable-uploads/f6dbc0ba-a340-475f-98a5-b4611953f905.png",
+    "/lovable-uploads/544935c7-7062-4776-bbe3-9b4354f88150.png",
   ];
 
   return (
@@ -111,6 +111,7 @@ export function UpcomingProject({ index }: UpcomingProjectProps) {
                 src={coverImage} 
                 alt="Upcoming Project" 
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                style={{ objectPosition: "left center" }}
                 loading="lazy"
               />
             </div>
@@ -155,27 +156,24 @@ export function UpcomingProject({ index }: UpcomingProjectProps) {
                 </p>
                 
                 <div className="grid gap-6 mb-8">
-                  {/* Main showcase image */}
+                  {/* Main showcase image - shifted to the left */}
                   <div className="aspect-video w-full rounded-lg overflow-hidden shadow-xl">
                     <img 
                       src={caseStudyImages[0]} 
                       alt="Project Cover" 
                       className="w-full h-full object-cover"
+                      style={{ objectPosition: "left center" }}
                     />
                   </div>
                   
-                  {/* Case study images gallery - reorganized for better flow */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {/* Case study images gallery - one image per row */}
+                  <div className="grid grid-cols-1 gap-6">
                     {caseStudyImages.slice(1).map((img, idx) => (
-                      <div key={idx} className={cn(
-                        "rounded-lg overflow-hidden shadow-md",
-                        // Make some images span full width for visual interest
-                        idx % 5 === 0 ? "md:col-span-2" : ""
-                      )}>
+                      <div key={idx} className="rounded-lg overflow-hidden shadow-md">
                         <img 
                           src={img} 
                           alt={`Case Study ${idx + 1}`} 
-                          className="w-full h-auto object-cover"
+                          className="w-full h-auto object-contain"
                           loading="lazy"
                         />
                       </div>
