@@ -1,9 +1,7 @@
-
 import React, { useRef, useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { BookOpen, Download, FileSearch, FlaskConical, Zap, Sparkles } from 'lucide-react';
 import { ResearchCard } from '@/components/ResearchCard';
-import { WorkExperience } from '@/components/WorkExperience';
 
 export function About() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -99,14 +97,6 @@ export function About() {
               <p>
                 When I'm not designing, you can find me Painting, Scuba Diving, or experimenting with new prototyping tools.
               </p>
-            </div>
-
-            {/* Work Experience Section */}
-            <div className={cn(
-              "opacity-0 transform translate-y-6 transition-all duration-700 delay-300",
-              isInView && "opacity-100 translate-y-0"
-            )}>
-              <WorkExperience />
             </div>
           </div>
           
