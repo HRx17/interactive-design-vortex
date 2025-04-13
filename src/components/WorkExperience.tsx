@@ -1,4 +1,3 @@
-
 import React, { useRef, useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Briefcase, Building, Calendar, Globe, ExternalLink } from 'lucide-react';
@@ -44,10 +43,10 @@ export function WorkExperience() {
       isPrimary: true
     },
     {
-      title: "Project Lead Intern - UI/UX",
+      title: "Frontend UI/UX Project Intern",
       company: "Zlato Technolabs",
       period: "Jan 2023 - May 2023",
-      description: "Led a team of 3 designers to create a social media management platform for web and mobile that helps with post scheduling across different platforms like LinkedIn, Instagram, and Facebook.",
+      description: "Created a social media management platform for web and mobile that helps with post scheduling across different platforms like LinkedIn, Instagram, and Facebook.",
       website: "https://zlatotech.com/"
     },
     {
