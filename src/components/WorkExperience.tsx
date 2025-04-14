@@ -36,13 +36,6 @@ export function WorkExperience() {
 
   const experiences: WorkExperienceItem[] = [
     {
-      title: "Student Manager",
-      company: "RIT Dining Services",
-      period: "Jan 2024 - Present",
-      description: "Managing students across dining services at Rochester Institute of Technology as a part-time role while pursuing my studies.",
-      isPrimary: true
-    },
-    {
       title: "Frontend UI/UX Project Intern",
       company: "Zlato Technolabs",
       period: "Jan 2023 - May 2023",
