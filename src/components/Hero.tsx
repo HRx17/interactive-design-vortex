@@ -80,7 +80,7 @@ export function Hero() {
             </h1>
             
             <p className="text-lg md:text-xl text-emerald-100/80 max-w-2xl mt-6 animate-fade-in opacity-0" style={{animationDelay: '0.6s', animationFillMode: 'forwards'}}>
-              I'm Haet Ranpariya, a UI/UX Designer passionate about creating human-centered digital experiences. I also specialize in GenUI, leveraging generative AI to enhance and accelerate the design process while maintaining focus on user needs.
+              I'm Haet Ranpariya, a UI/UX Designer and Product Designer passionate about creating human-centered digital experiences. I also specialize in GenUI, leveraging generative AI to enhance and accelerate the design process.
             </p>
             
             <div className="mt-10 animate-fade-in opacity-0 flex flex-wrap gap-4" style={{animationDelay: '0.8s', animationFillMode: 'forwards'}}>
