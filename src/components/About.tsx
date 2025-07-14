@@ -49,11 +49,11 @@ export function About() {
   }, []);
 
   const skills = [
-    "User Research", "Wireframing", "Prototyping", 
+    "GenUI Design", "Product Design", "User Research", "Wireframing", "Prototyping", 
     "Usability Testing", "UI/UX Design", "Interaction Design",
     "Information Architecture", "Design Systems", "Figma",
     "Adobe XD", "Human-Computer Interaction", "Sketch",
-    "AI Prompting", "Lovable AI", "ChatGPT", "Coding"
+    "AI Prompting", "Lovable AI", "ChatGPT", "Generative Design", "Coding"
   ];
 
   return (
@@ -80,7 +80,7 @@ export function About() {
               "opacity-0 transform translate-y-6 transition-all duration-700 delay-100",
               isInView && "opacity-100 translate-y-0"
             )}>
-              UI/UX Designer with a focus on human experience
+              Product Designer & GenUI Specialist focused on AI-enhanced human experiences
             </h2>
             
             <div className={cn(
@@ -89,13 +89,13 @@ export function About() {
               isInView && "opacity-100 translate-y-0"
             )}>
               <p>
-                I'm a UI/UX designer currently studying Human-Computer Interaction at Rochester Institute of Technology. My passion lies in creating digital experiences that are not only aesthetically pleasing but also intuitive and accessible.
+                I'm a Product Designer and GenUI Specialist currently studying Human-Computer Interaction at Rochester Institute of Technology. I pioneer the use of generative AI to create intuitive, beautiful, and accessible digital experiences that push the boundaries of traditional design.
               </p>
               <p>
-                With a background in design and technology, I approach each project with a user-centered mindset, ensuring that the final product meets both user needs and business objectives. I'm particularly interested in the intersection of design, psychology, and technology.
+                As a GenUI expert, I leverage AI tools like Lovable, ChatGPT, and custom prompting techniques to rapidly prototype and iterate on design solutions. This approach allows me to explore more creative possibilities while maintaining a user-centered design process that meets both user needs and business objectives.
               </p>
               <p>
-                When I'm not designing, you can find me Painting, Scuba Diving, or experimenting with new prototyping tools.
+                When I'm not designing or experimenting with AI-powered design tools, you can find me Painting, Scuba Diving, or researching the latest developments in human-computer interaction.
               </p>
             </div>
           </div>
@@ -112,7 +112,7 @@ export function About() {
             >
               {skills.map((skill, index) => {
                 // Add a special animation for AI-related skills
-                const isAISkill = ["AI Prompting", "Lovable AI", "ChatGPT"].includes(skill);
+                const isAISkill = ["GenUI Design", "AI Prompting", "Lovable AI", "ChatGPT", "Generative Design"].includes(skill);
                 
                 return (
                   <span 
