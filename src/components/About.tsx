@@ -80,7 +80,7 @@ export function About() {
               "opacity-0 transform translate-y-6 transition-all duration-700 delay-100",
               isInView && "opacity-100 translate-y-0"
             )}>
-              Product Designer & GenUI Specialist focused on AI-enhanced human experiences
+              UI/UX Designer & Product Designer with GenUI expertise
             </h2>
             
             <div className={cn(
@@ -89,13 +89,13 @@ export function About() {
               isInView && "opacity-100 translate-y-0"
             )}>
               <p>
-                I'm a Product Designer and GenUI Specialist currently studying Human-Computer Interaction at Rochester Institute of Technology. I pioneer the use of generative AI to create intuitive, beautiful, and accessible digital experiences that push the boundaries of traditional design.
+                I'm a UI/UX Designer currently studying Human-Computer Interaction at Rochester Institute of Technology. My passion lies in creating digital experiences that are not only aesthetically pleasing but also intuitive and accessible, with a strong foundation in user-centered design principles.
               </p>
               <p>
-                As a GenUI expert, I leverage AI tools like Lovable, ChatGPT, and custom prompting techniques to rapidly prototype and iterate on design solutions. This approach allows me to explore more creative possibilities while maintaining a user-centered design process that meets both user needs and business objectives.
+                I complement my traditional UI/UX expertise with GenUI specialization, leveraging AI tools like Lovable, ChatGPT, and custom prompting techniques to enhance my design process. This combination allows me to rapidly prototype and iterate while maintaining the core focus on user needs and business objectives.
               </p>
               <p>
-                When I'm not designing or experimenting with AI-powered design tools, you can find me Painting, Scuba Diving, or researching the latest developments in human-computer interaction.
+                When I'm not designing or experimenting with new design tools and methodologies, you can find me Painting, Scuba Diving, or researching the latest developments in human-computer interaction.
               </p>
             </div>
           </div>

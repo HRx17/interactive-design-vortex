@@ -60,7 +60,7 @@ export function Hero() {
               ref={sentenceRef}
             >
               <span className="inline-block px-3 py-1 rounded-full text-sm font-medium bg-emerald-900/50 text-emerald-100 backdrop-blur-sm border border-emerald-700/30 animate-fade-in opacity-0" style={{animationDelay: '0.2s', animationFillMode: 'forwards'}}>
-                Product Designer • UI/UX Designer • GenUI Specialist
+                UI/UX Designer • Product Designer • GenUI Specialist
               </span>
             </div>
             
@@ -80,7 +80,7 @@ export function Hero() {
             </h1>
             
             <p className="text-lg md:text-xl text-emerald-100/80 max-w-2xl mt-6 animate-fade-in opacity-0" style={{animationDelay: '0.6s', animationFillMode: 'forwards'}}>
-              I'm Haet Ranpariya, a Product Designer & GenUI Specialist who pioneers the intersection of AI and design. I create human-centered digital experiences that leverage generative AI to push the boundaries of traditional UI/UX design.
+              I'm Haet Ranpariya, a UI/UX Designer passionate about creating human-centered digital experiences. I also specialize in GenUI, leveraging generative AI to enhance and accelerate the design process while maintaining focus on user needs.
             </p>
             
             <div className="mt-10 animate-fade-in opacity-0 flex flex-wrap gap-4" style={{animationDelay: '0.8s', animationFillMode: 'forwards'}}>
