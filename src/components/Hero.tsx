@@ -101,9 +101,9 @@ export function Hero() {
               <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full blur-xl"></div>
               <div className="h-80 w-80 relative rounded-full overflow-hidden border-4 border-emerald-400/20 p-1">
                 <img 
-                  src="/lovable-uploads/hero1.png" 
-                  alt="Haet Ranpariya - Ghibli Style"
-                  className="object-cover w-fit h-fit rounded-full"
+                  src="/lovable-uploads/c11612aa-2535-469b-8a3c-fd8e73bf68ca.png" 
+                  alt="Haet Ranpariya"
+                  className="object-cover w-full h-full rounded-full"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/70 to-transparent mix-blend-overlay"></div>
               </div>
