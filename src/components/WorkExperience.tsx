@@ -36,6 +36,14 @@ export function WorkExperience() {
 
   const experiences: WorkExperienceItem[] = [
     {
+      title: "Product Designer",
+      company: "Tech9",
+      period: "May 2025 - Aug 2025",
+      description: "Currently working as a Product Designer intern, focusing on creating user-centered design solutions and contributing to custom software development projects.",
+      website: "https://www.tech9.com/",
+      isPrimary: true
+    },
+    {
       title: "Frontend UI/UX Project Intern",
       company: "Zlato Technolabs",
       period: "Jan 2023 - May 2023",
