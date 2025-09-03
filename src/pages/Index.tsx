@@ -3,8 +3,8 @@ import React from 'react';
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
 import { BentoGrid } from '@/components/BentoGrid';
-import { HorizontalScroll } from '@/components/HorizontalScroll';
 import { DiagonalLayout } from '@/components/DiagonalLayout';
+import { ProjectCard } from '@/components/ProjectCard';
 import { About } from '@/components/About';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
@@ -95,27 +95,65 @@ const Index = () => {
       <main>
         <Hero />
         
-        {/* Skills & Expertise Bento Grid */}
-        <BentoGrid />
-        
-        {/* Featured Design Projects - Horizontal Scroll */}
-        <HorizontalScroll 
-          items={featuredProjects}
-          title="Featured Design Projects"
-          subtitle="Explore my latest UI/UX design work focusing on user-centered solutions and innovative digital experiences."
-        />
-        
-        {/* Development Projects - Horizontal Scroll */}
-        <div className="bg-gradient-to-b from-background to-emerald-950/5">
-          <HorizontalScroll 
-            items={codingProjects}
-            title="Development Projects"
-            subtitle="Full-stack applications and coding projects showcasing technical implementation and problem-solving skills."
-          />
-        </div>
-        
         {/* Work Experience - Diagonal Layout */}
         <DiagonalLayout />
+        
+        {/* Featured Design Projects */}
+        <section id="projects" className="py-16 relative overflow-hidden">
+          <div className="section-container">
+            <div className="max-w-2xl mx-auto mb-12 text-center">
+              <h2 className="heading bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">
+                Featured Design Projects
+              </h2>
+              <p className="text-muted-foreground mt-4">
+                Explore my latest UI/UX design work focusing on user-centered solutions and innovative digital experiences.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {featuredProjects.map((project, index) => (
+                <ProjectCard
+                  key={project.id}
+                  title={project.title}
+                  description={project.description}
+                  imageUrl={project.image}
+                  category={project.category}
+                  link={project.link}
+                  index={index}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+        
+        {/* Development Projects */}
+        <section className="py-16 bg-gradient-to-b from-background to-emerald-950/5 relative overflow-hidden">
+          <div className="section-container">
+            <div className="max-w-2xl mx-auto mb-12 text-center">
+              <h2 className="heading bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">
+                Development Projects
+              </h2>
+              <p className="text-muted-foreground mt-4">
+                Full-stack applications and coding projects showcasing technical implementation and problem-solving skills.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {codingProjects.map((project, index) => (
+                <ProjectCard
+                  key={project.id}
+                  title={project.title}
+                  description={project.description}
+                  imageUrl={project.image}
+                  category={project.category}
+                  link={project.link}
+                  index={index}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+        
+        {/* Skills & Expertise Bento Grid */}
+        <BentoGrid />
         
         <About />
         <Contact />

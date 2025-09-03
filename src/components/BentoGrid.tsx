@@ -81,7 +81,7 @@ export function BentoGrid() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 relative overflow-hidden">
+    <section ref={sectionRef} className="py-16 relative overflow-hidden">
       <div className="section-container">
         <div className="max-w-2xl mx-auto mb-16 text-center">
           <span className={cn(
@@ -107,18 +107,18 @@ export function BentoGrid() {
           "opacity-0 transform translate-y-6 transition-all duration-700 delay-200",
           isInView && "opacity-100 translate-y-0"
         )}>
-          {/* Large card - UI/UX Design */}
+          {/* UI/UX Design */}
           <BentoCard
-            className="md:col-span-2 lg:col-span-3 md:row-span-2"
+            className="md:col-span-2 lg:col-span-3"
             title="UI/UX Design"
             description="Creating human-centered digital experiences through research, prototyping, and iterative design. I focus on solving real user problems with elegant, accessible solutions."
             icon={<Palette className="w-5 h-5 text-emerald-400" />}
             gradient="hover:bg-gradient-to-br hover:from-emerald-500/10 hover:to-teal-500/10"
             onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            <div className="mt-6 flex flex-wrap gap-2">
-              {['Figma', 'Adobe XD', 'Sketch', 'Prototyping', 'User Research'].map((skill) => (
-                <span key={skill} className="px-2 py-1 bg-emerald-500/10 text-emerald-300 text-xs rounded-md border border-emerald-500/20">
+            <div className="mt-4 grid grid-cols-3 gap-2">
+              {['Wireframing', 'Storyboarding', 'User Journey', 'Empathy Mapping', 'Mockups', 'Sketches', 'User Persona', 'UI Kit', 'Style Guide', 'Figma', 'Adobe XD', 'Prototyping'].map((skill) => (
+                <span key={skill} className="px-2 py-1 bg-emerald-500/10 text-emerald-300 text-xs rounded-md border border-emerald-500/20 text-center">
                   {skill}
                 </span>
               ))}

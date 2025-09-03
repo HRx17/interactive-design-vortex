@@ -49,18 +49,16 @@ export function About() {
   }, []);
 
   const skills = [
-    "GenUI Design", "Product Design", "User Research", "Wireframing", "Prototyping", 
-    "Usability Testing", "UI/UX Design", "Interaction Design",
-    "Information Architecture", "Design Systems", "Figma",
-    "Adobe XD", "Human-Computer Interaction", "Sketch",
-    "AI Prompting", "Lovable AI", "ChatGPT", "Generative Design", "Coding"
+    "GenUI Design", "AI Prompting", "Lovable AI", "ChatGPT", "Generative Design", 
+    "Human-Computer Interaction", "Information Architecture", "Design Systems",
+    "Usability Testing", "Interaction Design", "React", "TypeScript", "JavaScript", "Coding"
   ];
 
   return (
     <section 
       id="about" 
       ref={sectionRef}
-      className="py-24 relative overflow-hidden"
+      className="py-16 relative overflow-hidden"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
