@@ -176,6 +176,15 @@ export function BentoGrid() {
           />
         </div>
       </div>
+      
+      {/* Background floating elements */}
+      <div className="absolute top-1/5 right-1/4 w-28 h-28 rounded-full bg-gradient-to-r from-emerald-600/8 to-teal-600/8 filter blur-2xl opacity-50 float-animation" style={{animationDelay: '2s'}}></div>
+      <div className="absolute bottom-1/4 left-1/5 w-36 h-36 rounded-full bg-gradient-to-r from-teal-500/10 to-emerald-500/10 filter blur-3xl opacity-30 float-animation" style={{animationDelay: '0s'}}></div>
+      
+      {/* Floating decorative shapes */}
+      <div className="absolute top-1/3 right-1/6 w-5 h-5 border border-emerald-400/40 rotate-45 float-animation" style={{animationDelay: '1s'}}></div>
+      <div className="absolute bottom-1/3 left-1/3 w-3 h-3 bg-teal-400/30 rounded-full float-animation" style={{animationDelay: '3s'}}></div>
+      <div className="absolute top-2/3 right-1/3 w-7 h-7 border-2 border-teal-300/30 rounded-full float-animation" style={{animationDelay: '0.5s'}}></div>
     </section>
   );
 }

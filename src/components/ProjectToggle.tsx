@@ -161,6 +161,15 @@ export function ProjectToggle({ isInView }: ProjectToggleProps) {
           </div>
         </div>
       </div>
+      
+      {/* Background floating elements */}
+      <div className="absolute top-1/4 right-1/5 w-32 h-32 rounded-full bg-gradient-to-r from-emerald-500/10 to-teal-500/10 filter blur-2xl opacity-40 float-animation" style={{animationDelay: '1s'}}></div>
+      <div className="absolute bottom-1/3 left-1/4 w-24 h-24 rounded-full bg-gradient-to-r from-teal-400/10 to-emerald-400/10 filter blur-xl opacity-30 float-animation" style={{animationDelay: '3s'}}></div>
+      
+      {/* Floating decorative shapes */}
+      <div className="absolute top-1/3 left-1/6 w-6 h-6 border-2 border-emerald-400/30 rotate-45 float-animation" style={{animationDelay: '0.5s'}}></div>
+      <div className="absolute bottom-1/4 right-1/3 w-4 h-4 bg-teal-400/20 rounded-full float-animation" style={{animationDelay: '2s'}}></div>
+      <div className="absolute top-1/2 right-1/5 w-5 h-5 border border-emerald-300/40 rounded-full float-animation" style={{animationDelay: '4s'}}></div>
     </section>
   );
 }

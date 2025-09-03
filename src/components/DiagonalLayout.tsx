@@ -207,6 +207,11 @@ export function DiagonalLayout() {
       {/* Background Elements */}
       <div className="absolute top-1/4 left-0 w-1/3 h-1/3 bg-gradient-to-r from-emerald-600/10 to-transparent rounded-full filter blur-3xl opacity-30" />
       <div className="absolute bottom-1/4 right-0 w-1/3 h-1/3 bg-gradient-to-l from-teal-500/10 to-transparent rounded-full filter blur-3xl opacity-30" />
+      
+      {/* Floating decorative elements */}
+      <div className="absolute top-1/3 right-1/4 w-6 h-6 border-2 border-emerald-400/30 rounded-full float-animation" style={{animationDelay: '1s'}}></div>
+      <div className="absolute bottom-1/3 left-1/5 w-8 h-8 border border-teal-400/30 rotate-45 float-animation" style={{animationDelay: '3s'}}></div>
+      <div className="absolute top-1/2 right-1/3 w-4 h-4 bg-emerald-400/20 rounded-full float-animation" style={{animationDelay: '0.5s'}}></div>
     </section>
   );
 }
