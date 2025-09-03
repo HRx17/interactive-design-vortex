@@ -81,7 +81,7 @@ export function BentoGrid() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-16 relative overflow-hidden">
+    <section ref={sectionRef} className="py-12 relative overflow-hidden">
       <div className="section-container">
         <div className="max-w-2xl mx-auto mb-16 text-center">
           <span className={cn(

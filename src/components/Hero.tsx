@@ -107,19 +107,13 @@ export function Hero() {
             </div>
           </div>
           
-          {/* Enhanced Profile picture section with floating elements */}
+          {/* Profile picture section */}
           <div className="hidden md:flex justify-center relative">
             <div className="relative">
-              {/* Animated floating elements around profile */}
-              <div className="absolute -top-8 -left-8 w-4 h-4 bg-emerald-400/60 rounded-full float-animation" style={{animationDelay: '0s'}}></div>
-              <div className="absolute -top-4 -right-12 w-3 h-3 bg-teal-400/60 rounded-full float-animation" style={{animationDelay: '2s'}}></div>
-              <div className="absolute -bottom-8 -right-8 w-5 h-5 bg-emerald-300/40 rounded-full float-animation" style={{animationDelay: '4s'}}></div>
-              <div className="absolute -bottom-4 -left-12 w-2 h-2 bg-teal-300/60 rounded-full float-animation" style={{animationDelay: '1s'}}></div>
-              
               {/* Main glow effect */}
               <div className="absolute -inset-6 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full blur-2xl glow-effect"></div>
               
-              {/* Profile container with enhanced interactivity */}
+              {/* Profile container */}
               <div className="h-80 w-80 relative rounded-full overflow-hidden border-4 border-emerald-400/30 p-1 cursor-magnetic hover:border-emerald-400/50 transition-all duration-500 group">
                 <img 
                   src="/lovable-uploads/c11612aa-2535-469b-8a3c-fd8e73bf68ca.png" 
@@ -132,7 +126,7 @@ export function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
               
-              {/* Enhanced UX badge */}
+              {/* UX badge */}
               <div className="absolute bottom-4 right-4 h-20 w-20 bg-gradient-to-br from-emerald-400 to-teal-600 rounded-full border-4 border-emerald-900 flex items-center justify-center text-white font-bold text-lg cursor-magnetic hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-emerald-500/30 group">
                 <span className="group-hover:rotate-12 transition-transform duration-300">UX</span>
               </div>

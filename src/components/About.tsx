@@ -99,7 +99,7 @@ export function About() {
     <section 
       id="about" 
       ref={sectionRef}
-      className="py-16 relative overflow-hidden"
+      className="py-12 relative overflow-hidden"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
