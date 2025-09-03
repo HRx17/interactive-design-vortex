@@ -118,10 +118,10 @@ export function About() {
                   <span 
                     key={skill} 
                     className={cn(
-                      "px-4 py-2 rounded-full text-white text-sm font-medium transition-all duration-500 hover:shadow-md hover:scale-105 border border-emerald-600/30",
+                      "skill-tag cursor-magnetic",
                       isAISkill 
-                        ? "bg-gradient-to-r from-emerald-700 to-teal-700 hover:from-emerald-600 hover:to-teal-600" 
-                        : "bg-gradient-to-r from-emerald-900 to-teal-800",
+                        ? "bg-gradient-to-r from-emerald-700 to-teal-700 hover:from-emerald-600 hover:to-teal-600 hover:shadow-emerald-400/20 glow-effect" 
+                        : "bg-gradient-to-r from-emerald-900 to-teal-800 hover:from-emerald-800 hover:to-teal-700",
                       "opacity-0 transform translate-y-4",
                       isInView && "opacity-100 translate-y-0"
                     )}
@@ -133,12 +133,12 @@ export function About() {
                           ? "translateY(0)" 
                           : "translateY(4px)",
                       transition: isHovering 
-                        ? "transform 0.2s ease-out, opacity 0.5s ease-out, background 0.3s ease" 
-                        : "transform 0.5s ease-out, opacity 0.5s ease-out, background 0.3s ease"
+                        ? "transform 0.2s ease-out, opacity 0.5s ease-out, background 0.3s ease, box-shadow 0.3s ease" 
+                        : "transform 0.5s ease-out, opacity 0.5s ease-out, background 0.3s ease, box-shadow 0.3s ease"
                     }}
                   >
                     {isAISkill && (
-                      <Sparkles className="w-3 h-3 inline-block mr-1 text-yellow-300" />
+                      <Sparkles className="w-3 h-3 inline-block mr-1 text-yellow-300 group-hover:animate-pulse" />
                     )}
                     {skill}
                   </span>
@@ -149,17 +149,17 @@ export function About() {
             <div className="mt-12">
               <h3 className="text-xl font-bold mb-6 bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">Education</h3>
               <div className="space-y-6">
-                <div className="relative pl-8 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:rounded-full before:bg-gradient-to-r before:from-emerald-600 before:to-teal-500 hover:before:scale-150 before:transition-transform">
+                <div className="interactive-card p-6 relative pl-8 before:absolute before:left-0 before:top-8 before:w-3 before:h-3 before:rounded-full before:bg-gradient-to-r before:from-emerald-600 before:to-teal-500 hover:before:scale-150 before:transition-transform cursor-magnetic">
                   <h4 className="text-lg font-bold">MS in Human-Computer Interaction</h4>
                   <p className="text-sm text-muted-foreground">Rochester Institute of Technology</p>
                   <p className="text-sm text-muted-foreground">2024 - Present</p>
-                  <p className="text-sm font-medium mt-1">GPA: 3.9</p>
+                  <p className="text-sm font-medium mt-1 text-emerald-400">GPA: 3.9</p>
                 </div>
-                <div className="relative pl-8 before:absolute before:left-0 before:top-2 before:w-3 before:h-3 before:rounded-full before:bg-gradient-to-r before:from-emerald-600 before:to-teal-500 hover:before:scale-150 before:transition-transform">
+                <div className="interactive-card p-6 relative pl-8 before:absolute before:left-0 before:top-8 before:w-3 before:h-3 before:rounded-full before:bg-gradient-to-r before:from-emerald-600 before:to-teal-500 hover:before:scale-150 before:transition-transform cursor-magnetic">
                   <h4 className="text-lg font-bold">B.E. in Computer Engineering</h4>
                   <p className="text-sm text-muted-foreground">Gujarat Technological University</p>
                   <p className="text-sm text-muted-foreground">2019 - 2023</p>
-                  <p className="text-sm font-medium mt-1">GPA: 3.8</p>
+                  <p className="text-sm font-medium mt-1 text-emerald-400">GPA: 3.8</p>
                 </div>
               </div>
             </div>
@@ -167,21 +167,27 @@ export function About() {
         </div>
       </div>
       
-      {/* Animated background decorative elements */}
+      {/* Enhanced animated background decorative elements */}
       <div 
-        className="absolute bottom-0 right-0 w-1/3 h-1/2 bg-gradient-to-l from-emerald-500/20 to-transparent rounded-full filter blur-3xl opacity-30"
+        className="absolute bottom-0 right-0 w-1/3 h-1/2 bg-gradient-to-l from-emerald-500/20 to-transparent rounded-full filter blur-3xl opacity-30 float-animation"
         style={{ 
           transform: isHovering ? `translate(${mousePosition.x * -30}px, ${mousePosition.y * -30}px)` : 'none',
-          transition: isHovering ? "transform 0.2s ease-out" : "transform 0.5s ease-out"
+          transition: isHovering ? "transform 0.2s ease-out" : "transform 0.5s ease-out",
+          animationDelay: '1s'
         }}
       ></div>
       <div 
-        className="absolute top-1/3 left-0 w-1/4 h-1/3 bg-gradient-to-r from-teal-500/10 to-emerald-500/10 rounded-full filter blur-3xl opacity-20"
+        className="absolute top-1/3 left-0 w-1/4 h-1/3 bg-gradient-to-r from-teal-500/10 to-emerald-500/10 rounded-full filter blur-3xl opacity-20 float-animation"
         style={{ 
           transform: isHovering ? `translate(${mousePosition.x * 40}px, ${mousePosition.y * 40}px)` : 'none',
-          transition: isHovering ? "transform 0.3s ease-out" : "transform 0.5s ease-out"
+          transition: isHovering ? "transform 0.3s ease-out" : "transform 0.5s ease-out",
+          animationDelay: '2s'
         }}
       ></div>
+      
+      {/* Additional floating decorative elements */}
+      <div className="absolute top-1/4 right-1/3 w-6 h-6 border-2 border-emerald-400/30 rotate-45 float-animation" style={{animationDelay: '0.5s'}}></div>
+      <div className="absolute bottom-1/4 left-1/5 w-4 h-4 bg-teal-400/20 rounded-full float-animation" style={{animationDelay: '3s'}}></div>
     </section>
   );
 }

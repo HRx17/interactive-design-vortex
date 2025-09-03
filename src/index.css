@@ -104,7 +104,7 @@
     border: 1px solid rgba(20, 184, 166, 0.08);
   }
 
-  /* Switch animation for project type toggling */
+  /* Advanced interactive animations */
   @keyframes fade-slide {
     0% {
       opacity: 0;
@@ -116,14 +116,61 @@
     }
   }
 
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% { 
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+    }
+    50% { 
+      box-shadow: 0 0 40px rgba(16, 185, 129, 0.6), 0 0 60px rgba(16, 185, 129, 0.3);
+    }
+  }
+
+  @keyframes ripple {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+
+  @keyframes magnetic-pull {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(var(--mouse-x, 0), var(--mouse-y, 0)) scale(1.05); }
+  }
+
   .fade-in {
     animation: fade-slide 0.5s ease-out forwards;
+  }
+
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .glow-effect {
+    animation: glow-pulse 3s ease-in-out infinite;
   }
 
   /* Project switcher styles */
   .project-switch {
     --switch-width: 60px;
     --switch-height: 30px;
+  }
+
+  /* Interactive cursor effects */
+  .cursor-magnetic {
+    transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .cursor-magnetic:hover {
+    animation: magnetic-pull 0.2s ease-out forwards;
   }
 
   /* Responsive adaptations */
@@ -155,6 +202,32 @@
   .btn-hover {
     @apply relative overflow-hidden transition-all duration-300 ease-out before:absolute before:inset-0 before:z-0 before:bg-white/10 before:opacity-0 before:transition-opacity hover:before:opacity-100;
   }
+
+  .btn-magnetic {
+    @apply relative overflow-hidden transition-all duration-200 ease-out;
+    @apply hover:scale-105 hover:shadow-2xl;
+    @apply after:absolute after:inset-0 after:bg-gradient-to-r after:from-transparent after:via-white/20 after:to-transparent;
+    @apply after:translate-x-[-100%] after:transition-transform after:duration-700;
+    @apply hover:after:translate-x-[100%];
+  }
+
+  .interactive-card {
+    @apply relative overflow-hidden rounded-2xl transition-all duration-300;
+    @apply hover:scale-[1.02] hover:shadow-2xl hover:shadow-emerald-500/20;
+    @apply before:absolute before:inset-0 before:bg-gradient-to-r before:from-emerald-500/10 before:to-teal-500/10;
+    @apply before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-100;
+  }
+
+  .ripple-effect {
+    @apply relative overflow-hidden;
+  }
+
+  .ripple-effect::after {
+    content: '';
+    @apply absolute rounded-full bg-white/30;
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+  }
   
   .section-container {
     @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
@@ -168,13 +241,30 @@
     @apply font-display text-lg md:text-2xl font-medium text-muted-foreground;
   }
 
-  /* Coding projects styles */
+  /* Enhanced interactive elements */
   .code-card {
     @apply bg-card/80 backdrop-blur-sm border border-border/40 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all;
+    @apply hover:shadow-emerald-500/20 hover:border-emerald-500/30;
   }
 
   .code-gradient {
     @apply bg-gradient-to-r from-blue-600 to-indigo-600;
+  }
+
+  .skill-tag {
+    @apply px-4 py-2 rounded-full text-white text-sm font-medium transition-all duration-300;
+    @apply hover:shadow-lg hover:scale-105 border border-emerald-600/30;
+    @apply cursor-pointer relative overflow-hidden;
+  }
+
+  .skill-tag::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0;
+    @apply translate-x-[-100%] transition-transform duration-500;
+  }
+
+  .skill-tag:hover::before {
+    @apply translate-x-[100%];
   }
 }
 
