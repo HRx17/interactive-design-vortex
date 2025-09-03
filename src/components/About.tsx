@@ -1,11 +1,10 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { BookOpen, Download, FileSearch, FlaskConical, Zap, Sparkles } from 'lucide-react';
+import { BookOpen, Download, FileSearch, FlaskConical, Zap } from 'lucide-react';
 import { ResearchCard } from '@/components/ResearchCard';
 
 export function About() {
   const sectionRef = useRef<HTMLElement>(null);
-  const skillsRef = useRef<HTMLDivElement>(null);
   const [isInView, setIsInView] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
@@ -32,11 +31,8 @@ export function About() {
   // Mouse parallax effect for the decorative elements
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      if (!skillsRef.current) return;
-      
-      const rect = skillsRef.current.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      const x = e.clientX / window.innerWidth - 0.5;
+      const y = e.clientY / window.innerHeight - 0.5;
       
       setMousePosition({ x, y });
     };
@@ -47,12 +43,6 @@ export function About() {
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
-
-  const skills = [
-    "GenUI Design", "AI Prompting", "Lovable AI", "ChatGPT", "Generative Design", 
-    "Human-Computer Interaction", "Information Architecture", "Design Systems",
-    "Usability Testing", "Interaction Design", "React", "TypeScript", "JavaScript", "Coding"
-  ];
 
   return (
     <section 
@@ -103,39 +93,6 @@ export function About() {
             "opacity-0 transform translate-y-6 transition-all duration-700 delay-300",
             isInView && "opacity-100 translate-y-0"
           )}>
-            <h3 className="text-xl font-bold mb-6 bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">Skills & Expertise</h3>
-            <div 
-              ref={skillsRef}
-              className="flex flex-wrap gap-3"
-            >
-              {skills.map((skill, index) => {
-                // Add a special visual indicator for AI-related skills without movement
-                const isAISkill = ["GenUI Design", "AI Prompting", "Lovable AI", "ChatGPT", "Generative Design"].includes(skill);
-                
-                return (
-                  <span 
-                    key={skill} 
-                    className={cn(
-                      "px-4 py-2 rounded-full text-white text-sm font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 border cursor-pointer",
-                      isAISkill 
-                        ? "bg-gradient-to-r from-emerald-600 to-teal-600 border-emerald-400/30 hover:border-emerald-400/50" 
-                        : "bg-gradient-to-r from-emerald-800 to-teal-700 border-emerald-600/20 hover:border-emerald-600/40",
-                      "opacity-0 transform translate-y-4",
-                      isInView && "opacity-100 translate-y-0"
-                    )}
-                    style={{ 
-                      transitionDelay: `${300 + index * 50}ms`
-                    }}
-                  >
-                    {isAISkill && (
-                      <Sparkles className="w-3 h-3 inline-block mr-1 text-yellow-300" />
-                    )}
-                    {skill}
-                  </span>
-                );
-              })}
-            </div>
-            
             <div className="mt-12">
               <h3 className="text-xl font-bold mb-6 bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">Education</h3>
               <div className="space-y-6">

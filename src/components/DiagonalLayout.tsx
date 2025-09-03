@@ -104,28 +104,36 @@ export function DiagonalLayout() {
 
   const experiences = [
     {
-      title: "UX Designer",
-      company: "Tech Startup",
-      period: "2024 - Present",
+      title: "Product Designer",
+      company: "Tech9",
+      period: "May 2025 - Aug 2025",
       location: "Remote",
-      description: "Leading user experience design for a cutting-edge fintech platform, conducting user research, creating wireframes and prototypes, and collaborating with cross-functional teams to deliver intuitive digital solutions.",
-      skills: ["User Research", "Prototyping", "Figma", "Design Systems", "A/B Testing"]
+      description: "Currently working as a Product Designer intern, focusing on creating user-centered design solutions and contributing to custom software development projects.",
+      skills: ["Product Design", "User Research", "Prototyping", "Design Systems", "Figma"]
     },
     {
-      title: "Product Design Intern",
-      company: "Innovation Lab",
-      period: "Summer 2024",
-      location: "Rochester, NY",
-      description: "Worked on multiple product initiatives, from concept to delivery. Designed mobile-first experiences and contributed to the company's design system while learning agile methodologies.",
-      skills: ["Mobile Design", "Design Systems", "Agile", "Stakeholder Management", "User Testing"]
+      title: "Frontend UI/UX Project Intern",
+      company: "Zlato Technolabs",
+      period: "Jan 2023 - May 2023",
+      location: "Remote",
+      description: "Created a social media management platform for web and mobile that helps with post scheduling across different platforms like LinkedIn, Instagram, and Facebook.",
+      skills: ["UI/UX Design", "Frontend Development", "React", "Social Media Integration", "Mobile Design"]
     },
     {
-      title: "Freelance Designer",
-      company: "Self-Employed",
-      period: "2023 - 2024",
+      title: "Founding Designer & Developer",
+      company: "WaahTV OTT App",
+      period: "Sept 2021 - Feb 2022",
+      location: "Remote",
+      description: "Designed and developed an OTT Platform for Android TV as a contract freelancing project in collaboration with the founder of WaahTV.",
+      skills: ["Android TV Development", "UI/UX Design", "Streaming Platform", "Freelancing", "Product Strategy"]
+    },
+    {
+      title: "UI/UX Designer & Frontend Developer",
+      company: "Upwork (Freelancer)",
+      period: "Sept 2021 - Dec 2022",
       location: "Global",
-      description: "Provided UI/UX design services for various clients including startups and small businesses. Specialized in creating compelling digital experiences and brand identities.",
-      skills: ["Client Management", "Brand Design", "Web Design", "Consultation", "Project Management"]
+      description: "Completed multiple UI/UX design and frontend development projects as a freelancer through the Upwork platform.",
+      skills: ["Freelancing", "UI/UX Design", "Frontend Development", "Client Management", "Project Management"]
     }
   ];
 
