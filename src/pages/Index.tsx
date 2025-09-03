@@ -9,6 +9,7 @@ import { HealthyRProject } from '@/components/HealthyRProject';
 import { WeatherAppProject } from '@/components/WeatherAppProject';
 import { FoodZapProject } from '@/components/FoodZapProject';
 import { ARProject } from '@/components/ARProject';
+import { UpcomingProject } from '@/components/UpcomingProject';
 import { PostSchedulerProject } from '@/components/PostSchedulerProject';
 import { AttendanceProject } from '@/components/AttendanceProject';
 import { WaahTvProject } from '@/components/WaahTvProject';
@@ -38,11 +39,12 @@ const Index = () => {
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <RITShiftMateProject index={0} />
-              <HealthyRProject index={1} />
-              <WeatherAppProject index={2} />
-              <FoodZapProject index={3} />
-              <ARProject index={4} />
+              <UpcomingProject index={0} />
+              <RITShiftMateProject index={1} />
+              <HealthyRProject index={2} />
+              <WeatherAppProject index={3} />
+              <FoodZapProject index={4} />
+              <ARProject index={5} />
             </div>
           </div>
         </section>

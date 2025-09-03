@@ -3,6 +3,57 @@ import { cn } from '@/lib/utils';
 import { BookOpen, Download, FileSearch, FlaskConical, Zap } from 'lucide-react';
 import { ResearchCard } from '@/components/ResearchCard';
 
+interface BentoCardProps {
+  className?: string;
+  title: string;
+  description: string;
+  icon?: React.ReactNode;
+  gradient?: string;
+  children?: React.ReactNode;
+  onClick?: () => void;
+}
+
+const BentoCard = ({ className, title, description, icon, gradient, children, onClick }: BentoCardProps) => {
+  const [isHovered, setIsHovered] = useState(false);
+  
+  return (
+    <div
+      className={cn(
+        "group relative overflow-hidden rounded-2xl border border-border/40 bg-card/50 backdrop-blur-sm p-6 transition-all duration-500 hover:shadow-2xl cursor-pointer",
+        gradient,
+        className
+      )}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onClick={onClick}
+    >
+      {/* Background gradient overlay */}
+      <div className={cn(
+        "absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100",
+        gradient || "bg-gradient-to-br from-emerald-500/10 to-teal-500/10"
+      )} />
+      
+      {/* Content */}
+      <div className="relative z-10">
+        <div className="flex items-start justify-between mb-4">
+          <div className="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
+            {icon}
+          </div>
+        </div>
+        
+        <h3 className="text-lg font-bold mb-2 group-hover:text-emerald-300 transition-colors duration-300">
+          {title}
+        </h3>
+        <p className="text-muted-foreground text-sm leading-relaxed">
+          {description}
+        </p>
+        
+        {children}
+      </div>
+    </div>
+  );
+};
+
 export function About() {
   const sectionRef = useRef<HTMLElement>(null);
   const [isInView, setIsInView] = useState(false);
@@ -93,23 +144,31 @@ export function About() {
             "opacity-0 transform translate-y-6 transition-all duration-700 delay-300",
             isInView && "opacity-100 translate-y-0"
           )}>
-            <div className="mt-12">
-              <h3 className="text-xl font-bold mb-6 bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">Education</h3>
-              <div className="space-y-6">
-                <div className="interactive-card p-6 relative pl-8 before:absolute before:left-0 before:top-8 before:w-3 before:h-3 before:rounded-full before:bg-gradient-to-r before:from-emerald-600 before:to-teal-500 hover:before:scale-150 before:transition-transform cursor-magnetic">
-                  <h4 className="text-lg font-bold">MS in Human-Computer Interaction</h4>
-                  <p className="text-sm text-muted-foreground">Rochester Institute of Technology</p>
-                  <p className="text-sm text-muted-foreground">2024 - Present</p>
-                  <p className="text-sm font-medium mt-1 text-emerald-400">GPA: 3.9</p>
+            {/* Education Section */}
+            <BentoCard
+              className="w-full"
+              title="MS in Human-Computer Interaction • Rochester Institute of Technology"
+              description="Currently pursuing advanced studies in HCI with a focus on emerging technologies, accessibility, and user-centered design methodologies. GPA: 3.9/4.0"
+              icon={<div className="w-5 h-5 bg-gradient-to-r from-emerald-400 to-teal-400 rounded" />}
+              gradient="hover:bg-gradient-to-r hover:from-emerald-500/5 hover:to-teal-500/5"
+            >
+              <div className="mt-4 flex justify-between items-center">
+                <div className="flex gap-4 text-xs text-muted-foreground">
+                  <span>2024 - Present</span>
+                  <span>•</span>
+                  <span>Rochester, NY</span>
                 </div>
-                <div className="interactive-card p-6 relative pl-8 before:absolute before:left-0 before:top-8 before:w-3 before:h-3 before:rounded-full before:bg-gradient-to-r before:from-emerald-600 before:to-teal-500 hover:before:scale-150 before:transition-transform cursor-magnetic">
-                  <h4 className="text-lg font-bold">B.E. in Computer Engineering</h4>
-                  <p className="text-sm text-muted-foreground">Gujarat Technological University</p>
-                  <p className="text-sm text-muted-foreground">2019 - 2023</p>
-                  <p className="text-sm font-medium mt-1 text-emerald-400">GPA: 3.8</p>
+                <div className="text-emerald-400 text-sm font-medium">3.9 GPA</div>
+              </div>
+              
+              <div className="mt-4 p-4 bg-emerald-500/5 rounded-lg border border-emerald-500/10">
+                <h5 className="text-sm font-semibold text-emerald-300 mb-2">Previous Education</h5>
+                <div className="text-xs text-muted-foreground">
+                  <p className="font-medium">B.E. in Computer Engineering</p>
+                  <p>Gujarat Technological University • 2019 - 2023 • GPA: 3.8</p>
                 </div>
               </div>
-            </div>
+            </BentoCard>
           </div>
         </div>
       </div>

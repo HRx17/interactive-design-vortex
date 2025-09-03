@@ -174,24 +174,6 @@ export function BentoGrid() {
             icon={<Users className="w-5 h-5 text-green-400" />}
             gradient="hover:bg-gradient-to-br hover:from-green-500/10 hover:to-emerald-500/10"
           />
-
-          {/* Education Highlight */}
-          <BentoCard
-            className="md:col-span-4 lg:col-span-6 md:row-span-1"
-            title="MS in Human-Computer Interaction • Rochester Institute of Technology"
-            description="Currently pursuing advanced studies in HCI with a focus on emerging technologies, accessibility, and user-centered design methodologies. GPA: 3.9/4.0"
-            icon={<div className="w-5 h-5 bg-gradient-to-r from-emerald-400 to-teal-400 rounded" />}
-            gradient="hover:bg-gradient-to-r hover:from-emerald-500/5 hover:to-teal-500/5"
-          >
-            <div className="mt-4 flex justify-between items-center">
-              <div className="flex gap-4 text-xs text-muted-foreground">
-                <span>2024 - Present</span>
-                <span>•</span>
-                <span>Rochester, NY</span>
-              </div>
-              <div className="text-emerald-400 text-sm font-medium">3.9 GPA</div>
-            </div>
-          </BentoCard>
         </div>
       </div>
     </section>
