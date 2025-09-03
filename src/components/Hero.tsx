@@ -133,8 +133,8 @@ export function Hero() {
               </div>
               
               {/* UX badge */}
-              <div className="absolute bottom-4 right-4 h-20 w-20 bg-gradient-to-br from-emerald-400 to-teal-600 rounded-full border-4 border-emerald-900 flex items-center justify-center text-white font-bold text-lg cursor-magnetic hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-emerald-500/30 group">
-                <span className="group-hover:rotate-12 transition-transform duration-300">UX</span>
+              <div className="absolute bottom-4 right-4 h-20 w-20 bg-gradient-to-br from-emerald-400 to-teal-600 rounded-full border-4 border-emerald-900 flex items-center justify-center text-white font-bold text-sm cursor-magnetic hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-emerald-500/30 group">
+                <span className="group-hover:rotate-12 transition-transform duration-300">UI/UX</span>
               </div>
             </div>
           </div>
