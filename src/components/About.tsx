@@ -154,7 +154,7 @@ export function About() {
             >
               <div className="mt-4 flex justify-between items-center">
                 <div className="flex gap-4 text-xs text-muted-foreground">
-                  <span>2024 - Present</span>
+                  <span>2024 - 2025</span>
                   <span>•</span>
                   <span>Rochester, NY</span>
                 </div>
