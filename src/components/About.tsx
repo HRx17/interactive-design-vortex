@@ -148,7 +148,7 @@ export function About() {
             <BentoCard
               className="w-full"
               title="MS in Human-Computer Interaction • Rochester Institute of Technology"
-              description="Currently pursuing advanced studies in HCI with a focus on emerging technologies, accessibility, and user-centered design methodologies. GPA: 3.9/4.0"
+              description="Currently pursuing advanced studies in HCI with a focus on emerging technologies, accessibility, and user-centered design methodologies."
               icon={<div className="w-5 h-5 bg-gradient-to-r from-emerald-400 to-teal-400 rounded" />}
               gradient="hover:bg-gradient-to-r hover:from-emerald-500/5 hover:to-teal-500/5"
             >
