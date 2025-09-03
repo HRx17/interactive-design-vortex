@@ -144,7 +144,7 @@ export function ProjectToggle({ isInView }: ProjectToggleProps) {
           
           <div className="text-center p-6 rounded-2xl bg-card/30 backdrop-blur-sm border border-border/40">
             <div className="text-3xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
-              {activeTab === 'design' ? '2+' : '1+'}
+              {activeTab === 'design' ? '3+' : '1+'}
             </div>
             <div className="text-muted-foreground text-sm mt-1">
               {activeTab === 'design' ? 'Years Experience' : 'Years Coding'}
