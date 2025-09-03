@@ -111,34 +111,26 @@ export function About() {
               className="flex flex-wrap gap-3"
             >
               {skills.map((skill, index) => {
-                // Add a special animation for AI-related skills
+                // Add a special visual indicator for AI-related skills without movement
                 const isAISkill = ["GenUI Design", "AI Prompting", "Lovable AI", "ChatGPT", "Generative Design"].includes(skill);
                 
                 return (
                   <span 
                     key={skill} 
                     className={cn(
-                      "skill-tag cursor-magnetic",
+                      "px-4 py-2 rounded-full text-white text-sm font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 border cursor-pointer",
                       isAISkill 
-                        ? "bg-gradient-to-r from-emerald-700 to-teal-700 hover:from-emerald-600 hover:to-teal-600 hover:shadow-emerald-400/20 glow-effect" 
-                        : "bg-gradient-to-r from-emerald-900 to-teal-800 hover:from-emerald-800 hover:to-teal-700",
+                        ? "bg-gradient-to-r from-emerald-600 to-teal-600 border-emerald-400/30 hover:border-emerald-400/50" 
+                        : "bg-gradient-to-r from-emerald-800 to-teal-700 border-emerald-600/20 hover:border-emerald-600/40",
                       "opacity-0 transform translate-y-4",
                       isInView && "opacity-100 translate-y-0"
                     )}
                     style={{ 
-                      transitionDelay: `${300 + index * 50}ms`,
-                      transform: isHovering && isAISkill 
-                        ? `translate(${mousePosition.x * 15}px, ${mousePosition.y * 15}px) scale(1.05)` 
-                        : isInView 
-                          ? "translateY(0)" 
-                          : "translateY(4px)",
-                      transition: isHovering 
-                        ? "transform 0.2s ease-out, opacity 0.5s ease-out, background 0.3s ease, box-shadow 0.3s ease" 
-                        : "transform 0.5s ease-out, opacity 0.5s ease-out, background 0.3s ease, box-shadow 0.3s ease"
+                      transitionDelay: `${300 + index * 50}ms`
                     }}
                   >
                     {isAISkill && (
-                      <Sparkles className="w-3 h-3 inline-block mr-1 text-yellow-300 group-hover:animate-pulse" />
+                      <Sparkles className="w-3 h-3 inline-block mr-1 text-yellow-300" />
                     )}
                     {skill}
                   </span>

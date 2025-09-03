@@ -51,16 +51,15 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
+/* scrollbar-hide utility */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
 
-  /* Hide scrollbar for IE, Edge and Firefox */
-  .no-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-  }
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
   /* Custom reveal animation for text */
   .reveal-text {
