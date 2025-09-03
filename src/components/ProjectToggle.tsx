@@ -83,8 +83,8 @@ export function ProjectToggle({ isInView }: ProjectToggleProps) {
             >
               <Palette className="w-5 h-5" />
               <span>Design Projects</span>
-              {activeTab === 'design' && (
-                <ArrowRight className="w-4 h-4 opacity-60" />
+              {activeTab === 'development' && (
+                <ArrowRight className="w-4 h-4 opacity-60 rotate-180" />
               )}
             </button>
             
@@ -100,7 +100,7 @@ export function ProjectToggle({ isInView }: ProjectToggleProps) {
             >
               <Code className="w-5 h-5" />
               <span>Development Projects</span>
-              {activeTab === 'development' && (
+              {activeTab === 'design' && (
                 <ArrowRight className="w-4 h-4 opacity-60" />
               )}
             </button>

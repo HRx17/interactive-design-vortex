@@ -120,7 +120,7 @@ export function Hero() {
               <div className="absolute -inset-6 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full blur-2xl glow-effect"></div>
               
               {/* Profile container */}
-              <div className="h-80 w-80 relative rounded-full overflow-hidden p-1 cursor-magnetic transition-all duration-500 group">
+              <div className="h-80 w-80 relative rounded-full overflow-hidden border-4 border-emerald-400/30 p-1 cursor-magnetic hover:border-emerald-400/50 transition-all duration-500 group">
                 <img 
                   src="/lovable-uploads/c11612aa-2535-469b-8a3c-fd8e73bf68ca.png" 
                   alt="Haet Ranpariya"
@@ -170,7 +170,6 @@ export function Hero() {
         ></div>
         
         {/* Additional interactive elements */}
-        <div className="absolute top-1/2 right-1/4 w-6 h-6 border-2 border-emerald-400/40 rounded-full float-animation" style={{animationDelay: '0.5s'}}></div>
         <div className="absolute bottom-1/3 left-1/4 w-8 h-8 border border-teal-400/30 rotate-45 float-animation" style={{animationDelay: '2.5s'}}></div>
         
         {/* Enhanced scroll indicator */}
