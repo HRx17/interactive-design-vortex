@@ -66,7 +66,7 @@ export function ProjectToggle({ isInView }: ProjectToggleProps) {
             {/* Background slider */}
             <div 
               className={cn(
-                "absolute top-2 h-14 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full transition-all duration-500 ease-out border border-emerald-500/30",
+                "absolute top-2 bottom-2 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full transition-all duration-500 ease-out border border-emerald-500/30",
                 activeTab === 'design' ? 'left-2 w-48' : 'left-52 w-56'
               )}
             />
