@@ -68,12 +68,12 @@ export function Header() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <a 
           href="#home" 
-          className="font-display text-base md:text-lg font-bold relative group cursor-magnetic flex items-center gap-2"
+          className="font-display text-base md:text-lg font-bold relative group cursor-magnetic flex items-end gap-2"
         >
           <img 
             src="/lovable-uploads/7e4d4ff8-93ad-488b-b074-ca4fe23f33da.png" 
             alt="HR" 
-            className="w-10 h-10 md:w-12 md:h-12"
+            className="w-12 h-12 md:w-14 md:h-14"
           />
           <span className="relative z-10">
             Haet Ranpariya
