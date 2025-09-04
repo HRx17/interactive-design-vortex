@@ -68,7 +68,7 @@ export function Header() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <a 
           href="#home" 
-          className="font-display text-base md:text-lg font-bold relative group cursor-magnetic flex items-end gap-2"
+          className="font-display text-base md:text-lg font-bold relative group cursor-magnetic flex items-center gap-2"
         >
           <img 
             src="/lovable-uploads/7e4d4ff8-93ad-488b-b074-ca4fe23f33da.png" 
