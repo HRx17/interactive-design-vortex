@@ -73,7 +73,7 @@ export function Header() {
           <img 
             src="/lovable-uploads/7e4d4ff8-93ad-488b-b074-ca4fe23f33da.png" 
             alt="HR" 
-            className="w-6 h-6 md:w-7 md:h-7"
+            className="w-8 h-8 md:w-10 md:h-10"
           />
           <span className="relative z-10">
             Haet Ranpariya
