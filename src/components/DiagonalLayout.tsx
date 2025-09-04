@@ -9,22 +9,32 @@ interface DiagonalCardProps {
   location: string;
   description: string;
   skills: string[];
+  website?: string;
   index: number;
   isInView: boolean;
 }
 
-const DiagonalCard = ({ title, company, period, location, description, skills, index, isInView }: DiagonalCardProps) => (
-  <div
-    className={cn(
-      "group relative overflow-hidden rounded-2xl bg-card/40 backdrop-blur-sm border border-border/30 p-8 transition-all duration-700 hover:shadow-2xl hover:shadow-emerald-500/10 hover:border-emerald-500/30 cursor-pointer",
-      "opacity-0 transform rotate-2 translate-y-8",
-      isInView && "opacity-100 rotate-0 translate-y-0"
-    )}
-    style={{ 
-      transitionDelay: `${index * 200}ms`,
-      transform: isInView ? 'rotate(0deg) translateY(0)' : `rotate(${index % 2 === 0 ? '2deg' : '-2deg'}) translateY(32px)`
-    }}
-  >
+const DiagonalCard = ({ title, company, period, location, description, skills, website, index, isInView }: DiagonalCardProps) => {
+  const handleClick = () => {
+    if (website) {
+      window.open(website, '_blank', 'noopener,noreferrer');
+    }
+  };
+
+  return (
+    <div
+      className={cn(
+        "group relative overflow-hidden rounded-2xl bg-card/40 backdrop-blur-sm border border-border/30 p-8 transition-all duration-700 hover:shadow-2xl hover:shadow-emerald-500/10 hover:border-emerald-500/30",
+        website ? "cursor-pointer" : "cursor-default",
+        "opacity-0 transform rotate-2 translate-y-8",
+        isInView && "opacity-100 rotate-0 translate-y-0"
+      )}
+      style={{ 
+        transitionDelay: `${index * 200}ms`,
+        transform: isInView ? 'rotate(0deg) translateY(0)' : `rotate(${index % 2 === 0 ? '2deg' : '-2deg'}) translateY(32px)`
+      }}
+      onClick={handleClick}
+    >
     {/* Background Pattern */}
     <div className="absolute inset-0 opacity-5">
       <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full -translate-x-16 -translate-y-16" />
@@ -77,7 +87,8 @@ const DiagonalCard = ({ title, company, period, location, description, skills, i
     {/* Hover gradient overlay */}
     <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
   </div>
-);
+  );
+};
 
 export function DiagonalLayout() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -109,7 +120,8 @@ export function DiagonalLayout() {
       period: "May 2025 - Aug 2025",
       location: "Utah, USA (Remote)",
       description: "Currently working as a Product Designer intern, focusing on creating user-centered design solutions and contributing to custom software development projects.",
-      skills: ["Product Design", "User Research", "Prototyping", "Design Systems", "Figma"]
+      skills: ["Product Design", "User Research", "Prototyping", "Design Systems", "Figma"],
+      website: "https://www.tech9.com/"
     },
     {
       title: "Frontend UI/UX Project Intern",
@@ -117,7 +129,8 @@ export function DiagonalLayout() {
       period: "Jan 2023 - May 2023",
       location: "Ahmedabad, India",
       description: "Created a social media management platform for web and mobile that helps with post scheduling across different platforms like LinkedIn, Instagram, and Facebook.",
-      skills: ["UI/UX Design", "Frontend Development", "React", "Social Media Integration", "Mobile Design"]
+      skills: ["UI/UX Design", "Frontend Development", "React", "Social Media Integration", "Mobile Design"],
+      website: "https://zlatotech.com/"
     },
     {
       title: "Founding Designer & Developer",
@@ -125,7 +138,8 @@ export function DiagonalLayout() {
       period: "Sept 2021 - Feb 2022",
       location: "NJ, USA (Remote)",
       description: "Designed and developed an OTT Platform for Android TV as a contract freelancing project in collaboration with the founder of WaahTV.",
-      skills: ["Android TV Development", "UI/UX Design", "Streaming Platform", "Freelancing", "Product Strategy"]
+      skills: ["Android TV Development", "UI/UX Design", "Streaming Platform", "Freelancing", "Product Strategy"],
+      website: "https://waahtv.com"
     },
     {
       title: "UI/UX Designer & Frontend Developer",
