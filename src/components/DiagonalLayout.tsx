@@ -107,7 +107,7 @@ export function DiagonalLayout() {
       title: "Product Designer",
       company: "Tech9",
       period: "May 2025 - Aug 2025",
-      location: "Remote",
+      location: "Utah, USA (Remote)",
       description: "Currently working as a Product Designer intern, focusing on creating user-centered design solutions and contributing to custom software development projects.",
       skills: ["Product Design", "User Research", "Prototyping", "Design Systems", "Figma"]
     },
@@ -115,7 +115,7 @@ export function DiagonalLayout() {
       title: "Frontend UI/UX Project Intern",
       company: "Zlato Technolabs",
       period: "Jan 2023 - May 2023",
-      location: "Remote",
+      location: "Ahmedabad, India",
       description: "Created a social media management platform for web and mobile that helps with post scheduling across different platforms like LinkedIn, Instagram, and Facebook.",
       skills: ["UI/UX Design", "Frontend Development", "React", "Social Media Integration", "Mobile Design"]
     },
@@ -123,7 +123,7 @@ export function DiagonalLayout() {
       title: "Founding Designer & Developer",
       company: "WaahTV OTT App",
       period: "Sept 2021 - Feb 2022",
-      location: "Remote",
+      location: "NJ, USA (Remote)",
       description: "Designed and developed an OTT Platform for Android TV as a contract freelancing project in collaboration with the founder of WaahTV.",
       skills: ["Android TV Development", "UI/UX Design", "Streaming Platform", "Freelancing", "Product Strategy"]
     },
