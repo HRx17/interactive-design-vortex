@@ -71,7 +71,7 @@ export function Header() {
           className="font-display text-base md:text-lg font-bold relative group cursor-magnetic flex items-center gap-2"
         >
           <img 
-            src="/favicon-hr-emerald.png" 
+            src="/lovable-uploads/7e4d4ff8-93ad-488b-b074-ca4fe23f33da.png" 
             alt="HR" 
             className="w-6 h-6 md:w-7 md:h-7"
           />
