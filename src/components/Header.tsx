@@ -68,8 +68,13 @@ export function Header() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <a 
           href="#home" 
-          className="font-display text-base md:text-lg font-bold relative group cursor-magnetic"
+          className="font-display text-base md:text-lg font-bold relative group cursor-magnetic flex items-center gap-2"
         >
+          <img 
+            src="/favicon-hr.png" 
+            alt="HR" 
+            className="w-6 h-6 md:w-7 md:h-7"
+          />
           <span className="relative z-10">
             Haet Ranpariya
           </span>
