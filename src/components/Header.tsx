@@ -71,8 +71,8 @@ export function Header() {
           className="font-display text-base md:text-lg font-bold relative group cursor-magnetic flex items-center gap-2"
         >
           <img 
-            src="/lovable-uploads/7e4d4ff8-93ad-488b-b074-ca4fe23f33da.png" 
-            alt="HR" 
+            src="/lovable-uploads/031164e9-f067-46d6-9ed3-ea3a83cd4a7d.png" 
+            alt="SD" 
             className="w-12 h-12 md:w-14 md:h-14"
           />
           <span className="relative z-10">
