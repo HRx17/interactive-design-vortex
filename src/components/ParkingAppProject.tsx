@@ -55,7 +55,7 @@ export function ParkingAppProject({ index }: ParkingAppProjectProps) {
           <div className="flex justify-between items-center mb-2">
             <span className="text-sm font-medium px-3 py-1 rounded-full bg-blue-100 text-blue-600">Hackathon</span>
           </div>
-          <h3 className="text-xl font-bold">Parking Finder</h3>
+          <h3 className="text-xl font-bold">ParkEase</h3>
           <p className="text-sm text-muted-foreground mt-2">Car display app for finding and navigating to parking spots in real-time.</p>
         </div>
       </div>
@@ -78,7 +78,7 @@ export function ParkingAppProject({ index }: ParkingAppProjectProps) {
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 flex flex-col justify-end p-6">
                   <span className="text-sm font-medium px-3 py-1 rounded-full bg-blue-500/80 text-white inline-block w-fit mb-4">24-Hour Hackathon</span>
-                  <h1 className="text-3xl md:text-4xl font-bold text-white">Parking Finder App</h1>
+                  <h1 className="text-3xl md:text-4xl font-bold text-white">ParkEase App</h1>
                   <p className="text-white/80 mt-2 max-w-2xl">Simplifying parking experiences with real-time navigation and availability</p>
                 </div>
               </div>
