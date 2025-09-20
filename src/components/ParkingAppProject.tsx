@@ -83,22 +83,6 @@ export function ParkingAppProject({ index }: ParkingAppProjectProps) {
                 </div>
               </div>
               
-              {/* Video Embed Section */}
-              <div className="p-6 md:p-10 bg-gradient-to-b from-blue-900/20 to-transparent">
-                <h2 className="text-2xl font-bold mb-6">Project Demo</h2>
-                <div className="w-full aspect-video rounded-xl overflow-hidden shadow-xl">
-                  <iframe 
-                    src="https://player.vimeo.com/video/1025876016?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479" 
-                    width="100%" 
-                    height="100%" 
-                    frameBorder="0" 
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-                    title="Prototype"
-                    className="w-full h-full"
-                  ></iframe>
-                </div>
-              </div>
-              
               {/* Project Overview */}
               <div className="p-6 md:p-10">
                 <h2 className="text-2xl font-bold mb-6">Project Overview</h2>
@@ -194,6 +178,22 @@ export function ParkingAppProject({ index }: ParkingAppProjectProps) {
                     <h3 className="font-semibold mb-3">Prototyping</h3>
                     <p className="text-sm text-muted-foreground">Developed interactive prototypes for testing with users while driving (in simulation environments).</p>
                   </div>
+                </div>
+              </div>
+              
+              {/* Project Demo */}
+              <div className="p-6 md:p-10 bg-gradient-to-b from-blue-900/20 to-transparent">
+                <h2 className="text-2xl font-bold mb-6">Project Demo</h2>
+                <div className="w-full aspect-video rounded-xl overflow-hidden shadow-xl">
+                  <iframe 
+                    src="https://player.vimeo.com/video/1025876016?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479" 
+                    width="100%" 
+                    height="100%" 
+                    frameBorder="0" 
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
+                    title="Prototype"
+                    className="w-full h-full"
+                  ></iframe>
                 </div>
               </div>
               
