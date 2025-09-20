@@ -88,7 +88,7 @@ export function Contact() {
                 href={link.url}
                 target={link.url.startsWith('mailto:') ? '_self' : '_blank'}
                 rel="noopener noreferrer"
-                className="btn-hover inline-flex items-center gap-2 px-6 py-3 rounded-full bg-secondary hover:bg-secondary/80 text-primary transition-colors duration-300"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-secondary hover:bg-secondary/80 text-primary transition-all duration-300 hover:scale-105 cursor-pointer"
                 style={{ transitionDelay: `${300 + index * 100}ms` }}
               >
                 {link.icon}
@@ -108,7 +108,7 @@ export function Contact() {
             </p>
             <a 
               href="mailto:haetranpariya1789@gmail.com"
-              className="btn-hover inline-flex items-center px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium text-sm"
+              className="inline-flex items-center px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium text-sm transition-all duration-300 hover:scale-105 cursor-pointer"
             >
               <span className="relative z-10">Send me an email</span>
             </a>
