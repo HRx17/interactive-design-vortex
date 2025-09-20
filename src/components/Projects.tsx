@@ -247,7 +247,7 @@ export function Projects() {
           isInView && "opacity-100 translate-y-0"
         )}>
           <a 
-            href={isCodingProjects ? "https://github.com/haetranpariya" : "https://www.behance.net/haetranpariya17"}
+            href={isCodingProjects ? "https://github.com/HRx17" : "https://www.behance.net/haetranpariya17"}
             target="_blank"
             rel="noopener noreferrer"
             className={cn(
