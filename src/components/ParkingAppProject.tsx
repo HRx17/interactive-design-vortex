@@ -156,6 +156,28 @@ export function ParkingAppProject({ index }: ParkingAppProjectProps) {
                 </div>
               </div>
               
+              {/* User Flow & Feature Mapping */}
+              <div className="p-6 md:p-10 bg-gradient-to-r from-slate-900/10 to-transparent">
+                <h2 className="text-2xl font-bold mb-6">User Flow & Feature Mapping</h2>
+                <div className="bg-card/30 rounded-xl p-6">
+                  <p className="text-muted-foreground mb-6">
+                    During the hackathon, we mapped out the complete user flow and feature set through collaborative ideation sessions. 
+                    This whiteboard session helped us visualize the app's core functionality and user journey from arrival to parking completion.
+                  </p>
+                  <div className="relative">
+                    <img 
+                      src="/lovable-uploads/parkease-user-flow-mindmap.jpg" 
+                      alt="ParkEase User Flow and Feature Mindmap - Whiteboard session showing app features like occupancy indicators, smart parking selection, payment integration, and navigation flow" 
+                      className="w-full rounded-lg shadow-lg border border-border/20"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-card/80 via-transparent to-transparent rounded-lg pointer-events-none"></div>
+                  </div>
+                  <div className="mt-4 text-sm text-muted-foreground">
+                    <p>Key features identified: Smart parking selection, real-time occupancy tracking, indoor navigation, contactless payment, and accessibility options.</p>
+                  </div>
+                </div>
+              </div>
+              
               {/* Design Process & Solution */}
               <div className="p-6 md:p-10 bg-gradient-to-r from-blue-900/10 to-transparent">
                 <h2 className="text-2xl font-bold mb-6">Design Process</h2>
