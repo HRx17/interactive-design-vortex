@@ -78,23 +78,37 @@ export function Contact() {
           </p>
           
           <div className={cn(
-            "mt-12 flex flex-wrap justify-center gap-4",
+            "mt-12 flex flex-wrap justify-center gap-4 relative z-50",
             "opacity-0 transform translate-y-6 transition-all duration-700 delay-300",
             isInView && "opacity-100 translate-y-0"
           )}>
-            {socialLinks.map((link, index) => (
-              <a 
-                key={link.name}
-                href={link.url}
-                target={link.url.startsWith('mailto:') ? '_self' : '_blank'}
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-secondary hover:bg-secondary/80 text-primary transition-all duration-300 hover:scale-105 cursor-pointer"
-                style={{ transitionDelay: `${300 + index * 100}ms` }}
-              >
-                {link.icon}
-                <span className="font-medium">{link.name}</span>
-              </a>
-            ))}
+            <a 
+              href="mailto:haetranpariya1789@gmail.com"
+              className="flex items-center gap-2 px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-colors cursor-pointer"
+            >
+              <Mail className="h-5 w-5" />
+              <span>Email</span>
+            </a>
+            
+            <a 
+              href="https://www.linkedin.com/in/haet-ranpariya-382324188/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-colors cursor-pointer"
+            >
+              <Linkedin className="h-5 w-5" />
+              <span>LinkedIn</span>
+            </a>
+            
+            <a 
+              href="https://github.com/HRx17"
+              target="_blank"
+              rel="noopener noreferrer" 
+              className="flex items-center gap-2 px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-colors cursor-pointer"
+            >
+              <Github className="h-5 w-5" />
+              <span>GitHub</span>
+            </a>
           </div>
           
           <div className={cn(
@@ -108,9 +122,9 @@ export function Contact() {
             </p>
             <a 
               href="mailto:haetranpariya1789@gmail.com"
-              className="inline-flex items-center px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium text-sm transition-all duration-300 hover:scale-105 cursor-pointer"
+              className="flex items-center px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors cursor-pointer"
             >
-              <span className="relative z-10">Send me an email</span>
+              Send me an email
             </a>
           </div>
         </div>
