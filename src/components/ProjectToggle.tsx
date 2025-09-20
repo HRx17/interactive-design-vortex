@@ -10,6 +10,7 @@ import { UpcomingProject } from '@/components/UpcomingProject';
 import { PostSchedulerProject } from '@/components/PostSchedulerProject';
 import { AttendanceProject } from '@/components/AttendanceProject';
 import { WaahTvProject } from '@/components/WaahTvProject';
+import { ParkingAppProject } from '@/components/ParkingAppProject';
 
 interface ProjectToggleProps {
   isInView: boolean;
@@ -39,9 +40,10 @@ export function ProjectToggle({ isInView }: ProjectToggleProps) {
   ];
 
   const developmentProjects = [
-    <PostSchedulerProject key="postScheduler" index={0} />,
-    <AttendanceProject key="attendance" index={1} />,
-    <WaahTvProject key="waahTv" index={2} />
+    <ParkingAppProject key="parkingApp" index={0} />,
+    <PostSchedulerProject key="postScheduler" index={1} />,
+    <AttendanceProject key="attendance" index={2} />,
+    <WaahTvProject key="waahTv" index={3} />
   ];
 
   return (
@@ -144,7 +146,7 @@ export function ProjectToggle({ isInView }: ProjectToggleProps) {
           
           <div className="text-center p-6 rounded-2xl bg-card/30 backdrop-blur-sm border border-border/40">
             <div className="text-3xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
-              {activeTab === 'design' ? '3+' : '1+'}
+              {activeTab === 'design' ? '4+' : '1+'}
             </div>
             <div className="text-muted-foreground text-sm mt-1">
               {activeTab === 'design' ? 'Years Experience' : 'Years Coding'}
