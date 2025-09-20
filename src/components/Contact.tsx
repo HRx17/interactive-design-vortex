@@ -84,30 +84,30 @@ export function Contact() {
           )}>
             <a 
               href="mailto:haetranpariya1789@gmail.com"
-              className="flex items-center gap-2 px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-colors cursor-pointer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-secondary hover:bg-secondary/80 text-primary transition-all duration-300 hover:scale-105 cursor-pointer"
             >
               <Mail className="h-5 w-5" />
-              <span>Email</span>
+              <span className="font-medium">Email</span>
             </a>
             
             <a 
               href="https://www.linkedin.com/in/haet-ranpariya-382324188/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-colors cursor-pointer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-secondary hover:bg-secondary/80 text-primary transition-all duration-300 hover:scale-105 cursor-pointer"
             >
               <Linkedin className="h-5 w-5" />
-              <span>LinkedIn</span>
+              <span className="font-medium">LinkedIn</span>
             </a>
             
             <a 
               href="https://github.com/HRx17"
               target="_blank"
               rel="noopener noreferrer" 
-              className="flex items-center gap-2 px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-colors cursor-pointer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-secondary hover:bg-secondary/80 text-primary transition-all duration-300 hover:scale-105 cursor-pointer"
             >
               <Github className="h-5 w-5" />
-              <span>GitHub</span>
+              <span className="font-medium">GitHub</span>
             </a>
           </div>
           
@@ -122,9 +122,9 @@ export function Contact() {
             </p>
             <a 
               href="mailto:haetranpariya1789@gmail.com"
-              className="flex items-center px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors cursor-pointer"
+              className="inline-flex items-center px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium text-sm transition-all duration-300 hover:scale-105 cursor-pointer"
             >
-              Send me an email
+              <span className="relative z-10">Send me an email</span>
             </a>
           </div>
         </div>
