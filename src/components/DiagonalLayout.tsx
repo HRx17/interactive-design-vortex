@@ -144,7 +144,7 @@ export function DiagonalLayout() {
     {
       title: "UI/UX Designer & Frontend Developer",
       company: "Upwork (Freelancer)",
-      period: "Sept 2021 - Dec 2022",
+      period: "Sept 2020 - Dec 2022",
       location: "Global",
       description: "Completed multiple UI/UX design and frontend development projects as a freelancer through the Upwork platform.",
       skills: ["Freelancing", "UI/UX Design", "Frontend Development", "Client Management", "Project Management"]
