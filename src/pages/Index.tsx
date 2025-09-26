@@ -2,6 +2,7 @@
 import React from 'react';
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
+import { MetricsShowcase } from '@/components/MetricsShowcase';
 import { BentoGrid } from '@/components/BentoGrid';
 import { DiagonalLayout } from '@/components/DiagonalLayout';
 import { ProjectToggle } from '@/components/ProjectToggle';
@@ -15,6 +16,9 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
+        
+        {/* Key Metrics Showcase */}
+        <MetricsShowcase />
         
         {/* Work Experience - Diagonal Layout */}
         <DiagonalLayout />
