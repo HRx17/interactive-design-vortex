@@ -119,7 +119,7 @@ export function DiagonalLayout() {
       company: "Tech9",
       period: "May 2025 - Aug 2025",
       location: "Utah, USA (Remote)",
-      description: "Currently working as a Product Designer intern, focusing on creating user-centered design solutions and contributing to custom software development projects.",
+      description: "Designed user-centered solutions that increased user engagement by 35% and improved conversion rates by 25%. Led design initiatives that reached over 50K+ active users across multiple custom software products.",
       skills: ["Product Design", "User Research", "Prototyping", "Design Systems", "Figma"],
       website: "https://www.tech9.com/"
     },
