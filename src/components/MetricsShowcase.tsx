@@ -53,7 +53,7 @@ export function MetricsShowcase() {
   ];
   
   return (
-    <div ref={sectionRef} className="py-12 relative overflow-hidden">
+    <div ref={sectionRef} className="py-6 relative overflow-hidden">
       <div className="section-container">
         <div className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
           {metrics.map((metric, index) => {
