@@ -119,7 +119,7 @@ export function DiagonalLayout() {
       company: "Tech9",
       period: "May 2025 - Aug 2025",
       location: "Utah, USA (Remote)",
-      description: "Designed user-centered solutions that increased user engagement by 35% and improved conversion rates by 25%. Led design initiatives that reached over 50K+ active users across multiple custom software products.",
+      description: "Designed user-centered solutions that increased user engagement by 35% and improved conversion rates by 25%. Worked with chief product officer (CPO) to lead design initiatives to reach client goals.",
       skills: ["Product Design", "User Research", "Prototyping", "Design Systems", "Figma"],
       website: "https://www.tech9.com/"
     },
@@ -146,7 +146,7 @@ export function DiagonalLayout() {
       company: "Upwork (Freelancer)",
       period: "Sept 2020 - Dec 2022",
       location: "Global",
-      description: "Completed multiple UI/UX design and frontend development projects as a freelancer through the Upwork platform.",
+      description: "Delivered 12+ successful projects to clients across globe, with featured work resulting in 40% increased user engagement (France). Improved conversion rates by 25%. Led design initiatives that reached over 20K+ active users for the app.",
       skills: ["Freelancing", "UI/UX Design", "Frontend Development", "Client Management", "Project Management"]
     }
   ];

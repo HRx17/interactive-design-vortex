@@ -39,7 +39,7 @@ export function WorkExperience() {
       title: "Product Designer",
       company: "Tech9",
       period: "May 2025 - Aug 2025",
-      description: "Designed user-centered solutions that increased user engagement by 35% and improved conversion rates by 25%. Led design initiatives that reached over 50K+ active users across multiple custom software products.",
+      description: "Designed user-centered solutions that increased user engagement by 35% and improved conversion rates by 25%. Worked with chief product officer (CPO) to lead design initiatives to reach client goals.",
       website: "https://www.tech9.com/",
       isPrimary: true
     },
@@ -60,7 +60,7 @@ export function WorkExperience() {
       title: "UI/UX Designer & Frontend Developer",
       company: "Upwork (Freelancer)",
       period: "Sept 2020 - Dec 2022",
-      description: "Successfully completed 25+ UI/UX and frontend projects with a 98% client satisfaction rate, generating $15K+ in revenue. Maintained a Top Rated Plus status with consistent 5-star ratings."
+      description: "Delivered 12+ successful projects to clients across globe, with featured work resulting in 40% increased user engagement (France). Improved conversion rates by 25%. Led design initiatives that reached over 20K+ active users for the app."
     }
   ];
   
