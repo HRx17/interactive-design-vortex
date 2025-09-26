@@ -137,7 +137,7 @@ export function DiagonalLayout() {
       company: "WaahTV OTT App",
       period: "Sept 2021 - Feb 2022",
       location: "NJ, USA (Remote)",
-      description: "Designed and developed an OTT Platform for Android TV as a contract freelancing project in collaboration with the founder of WaahTV.",
+      description: "Designed and developed an OTT Platform app for Android TV, with currently 15+ daily signups, 10+ countries covered, 10K+ active users. Delivered a complete streaming solution from concept to production.",
       skills: ["Android TV Development", "UI/UX Design", "Streaming Platform", "Freelancing", "Product Strategy"],
       website: "https://waahtv.com"
     },

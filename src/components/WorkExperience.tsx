@@ -54,7 +54,7 @@ export function WorkExperience() {
       title: "Founding Designer & Developer",
       company: "WaahTV OTT App",
       period: "Sept 2021 - Feb 2022",
-      description: "Architected and launched an Android TV OTT platform that achieved 10K+ downloads within 3 months and maintained a 4.2-star rating. Delivered a complete streaming solution from concept to production."
+      description: "Designed and developed an OTT Platform app for Android TV, with currently 15+ daily signups, 10+ countries covered, 10K+ active users. Delivered a complete streaming solution from concept to production."
     },
     {
       title: "UI/UX Designer & Frontend Developer",
