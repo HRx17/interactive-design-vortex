@@ -2,7 +2,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowDownIcon, ExternalLink, Download } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import profileImage from '@/assets/profile-new.jpg';
 
 export function Hero() {
   const sentenceRef = useRef<HTMLDivElement>(null);
@@ -123,10 +122,9 @@ export function Hero() {
               {/* Profile container */}
               <div className="h-80 w-80 relative rounded-full overflow-hidden border-4 border-emerald-400/30 p-1 cursor-magnetic hover:border-emerald-400/50 transition-all duration-500 group">
                 <img 
-                  src={profileImage} 
+                  src="/lovable-uploads/c11612aa-2535-469b-8a3c-fd8e73bf68ca.png" 
                   alt="Haet Ranpariya"
-                  className="object-cover object-center w-full h-full rounded-full group-hover:scale-105 transition-transform duration-500"
-                  style={{ objectPosition: 'center 60%' }}
+                  className="object-cover w-full h-full rounded-full group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/70 to-transparent mix-blend-overlay group-hover:from-emerald-950/50 transition-all duration-500"></div>
                 
