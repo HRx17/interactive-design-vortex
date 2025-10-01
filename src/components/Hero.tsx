@@ -126,7 +126,7 @@ export function Hero() {
                   src={profileImage} 
                   alt="Haet Ranpariya"
                   className="object-cover object-center w-full h-full rounded-full group-hover:scale-105 transition-transform duration-500"
-                  style={{ objectPosition: 'center 30%' }}
+                  style={{ objectPosition: 'center 60%' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/70 to-transparent mix-blend-overlay group-hover:from-emerald-950/50 transition-all duration-500"></div>
                 
