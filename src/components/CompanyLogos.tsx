@@ -42,9 +42,9 @@ const companies: Company[] = [
 
 export function CompanyLogos() {
   return (
-    <div className="py-12 border-y border-border/20">
+    <div className="py-6 border-y border-border/20">
       <div className="section-container">
-        <div className="text-center mb-8">
+        <div className="text-center mb-4">
           <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
             Trusted by companies worldwide
           </h3>

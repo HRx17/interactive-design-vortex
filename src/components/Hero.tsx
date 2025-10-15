@@ -42,7 +42,7 @@ export function Hero() {
   return (
     <section 
       id="home"
-      className="min-h-screen flex flex-col justify-center relative overflow-hidden"
+      className="min-h-screen flex flex-col justify-center relative overflow-hidden pb-20"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
