@@ -167,8 +167,8 @@ export function Hero() {
                   className="object-cover object-top w-full h-full group-hover:scale-105 transition-transform duration-500"
                   style={{
                     objectPosition: '50% 0%',
-                    maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.9) 60%, rgba(0,0,0,0.6) 75%, rgba(0,0,0,0.3) 85%, rgba(0,0,0,0) 100%), radial-gradient(ellipse 100% 80% at 50% 30%, rgba(0,0,0,1) 20%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0) 100%)',
-                    WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.9) 60%, rgba(0,0,0,0.6) 75%, rgba(0,0,0,0.3) 85%, rgba(0,0,0,0) 100%), radial-gradient(ellipse 100% 80% at 50% 30%, rgba(0,0,0,1) 20%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0) 100%)',
+                    maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0.95) 75%, rgba(0,0,0,0.7) 85%, rgba(0,0,0,0.3) 92%, rgba(0,0,0,0) 100%), radial-gradient(ellipse 100% 80% at 50% 30%, rgba(0,0,0,1) 20%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0) 100%)',
+                    WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0.95) 75%, rgba(0,0,0,0.7) 85%, rgba(0,0,0,0.3) 92%, rgba(0,0,0,0) 100%), radial-gradient(ellipse 100% 80% at 50% 30%, rgba(0,0,0,1) 20%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0) 100%)',
                     maskComposite: 'intersect',
                     WebkitMaskComposite: 'source-in'
                   }}
@@ -179,8 +179,8 @@ export function Hero() {
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                   style={{
                     background: 'radial-gradient(circle at center, rgba(16, 185, 129, 0.1) 0%, transparent 70%)',
-                    maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.9) 60%, rgba(0,0,0,0.6) 75%, rgba(0,0,0,0.3) 85%, rgba(0,0,0,0) 100%), radial-gradient(ellipse 100% 80% at 50% 30%, rgba(0,0,0,1) 20%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0) 100%)',
-                    WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.9) 60%, rgba(0,0,0,0.6) 75%, rgba(0,0,0,0.3) 85%, rgba(0,0,0,0) 100%), radial-gradient(ellipse 100% 80% at 50% 30%, rgba(0,0,0,1) 20%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0) 100%)',
+                    maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0.95) 75%, rgba(0,0,0,0.7) 85%, rgba(0,0,0,0.3) 92%, rgba(0,0,0,0) 100%), radial-gradient(ellipse 100% 80% at 50% 30%, rgba(0,0,0,1) 20%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0) 100%)',
+                    WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0.95) 75%, rgba(0,0,0,0.7) 85%, rgba(0,0,0,0.3) 92%, rgba(0,0,0,0) 100%), radial-gradient(ellipse 100% 80% at 50% 30%, rgba(0,0,0,1) 20%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0) 100%)',
                     maskComposite: 'intersect',
                     WebkitMaskComposite: 'source-in'
                   }}
