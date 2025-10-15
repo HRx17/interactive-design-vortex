@@ -28,11 +28,11 @@ const Index = () => {
         {/* Projects Toggle Section */}
         <ProjectToggle isInView={true} />
         
-        {/* Skills & Expertise Bento Grid */}
-        <BentoGrid />
-        
         {/* UX Process Section */}
         <UXProcess />
+        
+        {/* Skills & Expertise Bento Grid */}
+        <BentoGrid />
         
         <About />
         <Contact />
