@@ -10,8 +10,8 @@ import {
   CarouselPrevious 
 } from "@/components/ui/carousel";
 import { ExpandableProject } from './ExpandableProject';
-import { RITShiftMateProject } from './RITShiftMateProjectDetailed';
-import { HealthyRProject } from './HealthyRProjectDetailed';
+import { RITShiftMateProject } from './RITShiftMateProject';
+import { HealthyRProject } from './HealthyRProject';
 import { FoodZapProject } from './FoodZapProject';
 import { WeatherAppProject } from './WeatherAppProject';
 import { ARProject } from './ARProject';
