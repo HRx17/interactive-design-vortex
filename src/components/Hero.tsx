@@ -123,7 +123,7 @@ export function Hero() {
               I'm Haet Ranpariya, a UI/UX Designer and Product Designer passionate about creating human-centered digital experiences. I also specialize in GenUI, leveraging generative AI to enhance and accelerate the design process.
             </p>
             
-            <div className="mt-10 animate-fade-in opacity-0 flex flex-wrap gap-4 items-center" style={{animationDelay: '0.8s', animationFillMode: 'forwards'}}>
+            <div className="mt-10 animate-fade-in opacity-0 flex flex-wrap gap-4 items-center justify-center" style={{animationDelay: '0.8s', animationFillMode: 'forwards'}}>
               <a 
                 href="/resume.pdf"
                 download
