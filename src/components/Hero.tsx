@@ -42,15 +42,15 @@ export function Hero() {
   return (
     <section 
       id="home"
-      className="min-h-screen flex flex-col justify-center relative overflow-hidden pb-20 bg-gray-950"
+      className="min-h-screen flex flex-col justify-center relative overflow-hidden pb-20 bg-black"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
       {/* Hero cover image with creative elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-950/70 to-background z-0 pointer-events-none">
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-background z-0 pointer-events-none">
         <div className="absolute inset-0 mix-blend-overlay opacity-20 bg-[url('https://www.behance.net/gallery/212271631/Product-Designer-Portfolio-Overcoming-Remote-UX-Challeng/modules/1201095617')] bg-cover bg-center"></div>
         <div className="absolute inset-0 backdrop-blur-[2px]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-transparent via-background/10 to-background"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-transparent via-black/10 to-background"></div>
       </div>
       
       <div className="section-container relative z-10">
