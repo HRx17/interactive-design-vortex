@@ -29,7 +29,7 @@ const endorsements = [
       "Strong communication and collaboration skills",
       "Deep understanding of streaming platform needs"
     ],
-    fullText: "Haet brought fresh perspectives to our streaming platform redesign. He conducted thorough user research, created detailed user personas, and delivered wireframes and prototypes that truly resonated with our target audience. What impressed me most was his ability to balance aesthetic appeal with functionality, ensuring our users could navigate complex features effortlessly. His iterative approach and willingness to incorporate feedback made the entire process smooth and collaborative."
+    fullText: "Haet took our streaming platform from concept to launch with exceptional skill and professionalism. He conducted thorough user research, created detailed user personas, and delivered wireframes and prototypes that truly resonated with our target audience. What impressed me most was his ability to balance aesthetic appeal with functionality, ensuring our users could navigate complex features effortlessly from day one. His iterative approach and willingness to incorporate feedback made the entire process smooth and collaborative."
   }
 ];
 
@@ -160,13 +160,6 @@ export function Endorsements() {
               </Card>
             </div>
           ))}
-        </div>
-
-        {/* Bottom Note */}
-        <div className={`mt-12 text-center transition-all duration-1000 delay-500 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <p className="text-sm text-muted-foreground">
-            More endorsements coming soon as I continue to grow and collaborate with amazing teams
-          </p>
         </div>
       </div>
     </section>
