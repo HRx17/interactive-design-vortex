@@ -18,9 +18,6 @@ const Index = () => {
       <main>
         <Hero />
         
-        {/* Company Logos */}
-        <CompanyLogos />
-        
         {/* Key Metrics Showcase */}
         <MetricsShowcase />
         
