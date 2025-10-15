@@ -8,6 +8,7 @@ import { BentoGrid } from '@/components/BentoGrid';
 import { DiagonalLayout } from '@/components/DiagonalLayout';
 import { ProjectToggle } from '@/components/ProjectToggle';
 import { UXProcess } from '@/components/UXProcess';
+import { Endorsements } from '@/components/Endorsements';
 import { About } from '@/components/About';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
@@ -33,6 +34,9 @@ const Index = () => {
         
         {/* Skills & Expertise Bento Grid */}
         <BentoGrid />
+        
+        {/* Endorsements Section */}
+        <Endorsements />
         
         <About />
         <Contact />
