@@ -272,8 +272,23 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 1400px;
+  max-width: calc(100% - 400px);
   margin: 0 auto;
+  padding: 0 200px;
+}
+
+@media (max-width: 1024px) {
+  .case-study-container {
+    max-width: calc(100% - 200px);
+    padding: 0 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .case-study-container {
+    max-width: 100%;
+    padding: 0 1.5rem;
+  }
 }
 
 .case-study-section {
