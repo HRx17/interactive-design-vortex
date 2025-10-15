@@ -29,6 +29,12 @@ export function Footer() {
               Projects
             </a>
             <a 
+              href="#endorsements"
+              className="text-sm text-muted-foreground hover:text-primary transition-colors"
+            >
+              Endorsements
+            </a>
+            <a 
               href="#about"
               className="text-sm text-muted-foreground hover:text-primary transition-colors"
             >
