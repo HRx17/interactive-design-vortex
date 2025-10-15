@@ -11,7 +11,7 @@ const companies: Company[] = [
   {
     name: "Tech9",
     url: "https://www.tech9.com/",
-    logo: "/logos/tech9-logo-blue.svg"
+    logo: "/logos/tech9-logo.svg"
   },
   {
     name: "Excellus BCBS",
@@ -50,12 +50,11 @@ export function CompanyLogos() {
           </h3>
         </div>
         
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+        <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16">
           {companies.map((company, index) => (
             <div
               key={company.name}
               className={cn(
-                "relative px-6 py-4 rounded-xl border border-border/30 bg-card/40 backdrop-blur-sm",
                 "opacity-0 transform translate-y-4 animate-fade-in"
               )}
               style={{ 
@@ -67,10 +66,7 @@ export function CompanyLogos() {
                 <img 
                   src={company.logo} 
                   alt={`${company.name} logo`}
-                  className={cn(
-                    "h-8 w-auto",
-                    company.name === "Excellus BCBS" && "brightness-0 invert"
-                  )}
+                  className="h-12 w-auto"
                 />
               ) : (
                 <span className="text-lg font-semibold text-muted-foreground">
