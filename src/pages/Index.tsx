@@ -2,6 +2,7 @@
 import React from 'react';
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
+import { CompanyLogos } from '@/components/CompanyLogos';
 import { MetricsShowcase } from '@/components/MetricsShowcase';
 import { BentoGrid } from '@/components/BentoGrid';
 import { DiagonalLayout } from '@/components/DiagonalLayout';
@@ -16,6 +17,9 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
+        
+        {/* Company Logos */}
+        <CompanyLogos />
         
         {/* Key Metrics Showcase */}
         <MetricsShowcase />
