@@ -88,7 +88,7 @@ export default function HealthyRCaseStudy() {
           </div>
           
           {/* Overview Section */}
-          <div className="p-6 md:p-10">
+          <div className="case-study-section">
             <h2 className="text-2xl font-bold mb-6">Overview</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
@@ -143,7 +143,7 @@ export default function HealthyRCaseStudy() {
           </div>
 
           {/* Research & Discovery */}
-          <div className="p-6 md:p-10 bg-gradient-to-r from-green-900/10 to-transparent">
+          <div className="case-study-section bg-gradient-to-r from-green-900/10 to-transparent">
             <h2 className="text-2xl font-bold mb-6">Research & Discovery</h2>
             
             <div className="space-y-8">
@@ -186,23 +186,24 @@ export default function HealthyRCaseStudy() {
           </div>
 
           {/* Design System & Visual Screens */}
-          <div className="p-6 md:p-10">
-            <h2 className="text-2xl font-bold mb-6">Design Showcase</h2>
-            <div className="grid md:grid-cols-2 gap-6">
+          <div className="case-study-section">
+            <h2 className="text-2xl font-bold mb-8">Design Showcase</h2>
+            <div className="space-y-8">
               {caseStudyImages.slice(1).map((img, idx) => (
-                <img 
-                  key={idx}
-                  src={img}
-                  alt={`HealthyR screen ${idx + 1}`}
-                  className="w-full rounded-xl shadow-lg"
-                  loading="lazy"
-                />
+                <div key={idx} className="w-full">
+                  <img 
+                    src={img}
+                    alt={`HealthyR screen ${idx + 1}`}
+                    className="w-full rounded-xl shadow-lg"
+                    loading="lazy"
+                  />
+                </div>
               ))}
             </div>
           </div>
 
           {/* Impact & Outcomes */}
-          <div className="p-6 md:p-10 bg-gradient-to-r from-green-900/10 to-transparent">
+          <div className="case-study-section bg-gradient-to-r from-green-900/10 to-transparent">
             <h2 className="text-2xl font-bold mb-6">Impact & Outcomes</h2>
             
             <div className="space-y-6">

@@ -43,29 +43,31 @@ export default function ARCaseStudy() {
 
       <ScrollArea className="h-[calc(100vh-73px)]">
         <div className="w-full">
-          {caseStudyContent.map((item, idx) => (
-            <div key={idx} className="w-full">
-              {item.type === "image" ? (
-                <img 
-                  src={item.src}
-                  alt={`AR/VR Project slide ${idx + 1}`}
-                  className="w-full"
-                  loading={idx > 2 ? "lazy" : "eager"}
-                />
-              ) : (
-                <div className="w-full aspect-video">
-                  <iframe 
+          <div className="space-y-6">
+            {caseStudyContent.map((item, idx) => (
+              <div key={idx} className="w-full">
+                {item.type === "image" ? (
+                  <img 
                     src={item.src}
-                    className="w-full h-full"
-                    title={`AR/VR Project video ${idx + 1}`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
+                    alt={`AR/VR Project slide ${idx + 1}`}
+                    className="w-full"
                     loading={idx > 2 ? "lazy" : "eager"}
                   />
-                </div>
-              )}
-            </div>
-          ))}
+                ) : (
+                  <div className="w-full aspect-video">
+                    <iframe 
+                      src={item.src}
+                      className="w-full h-full"
+                      title={`AR/VR Project video ${idx + 1}`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      loading={idx > 2 ? "lazy" : "eager"}
+                    />
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
           
           <div className="bg-[#ECECEC] text-black py-10 px-6 text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-2">Project by: HAET RANPARIYA</h2>

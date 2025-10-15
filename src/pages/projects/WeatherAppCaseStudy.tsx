@@ -37,15 +37,17 @@ export default function WeatherAppCaseStudy() {
 
       <ScrollArea className="h-[calc(100vh-73px)]">
         <div className="w-full">
-          {caseStudyImages.map((img, idx) => (
-            <img 
-              key={idx}
-              src={img}
-              alt={`Weather App case study slide ${idx+1}`}
-              className="w-full"
-              loading={idx > 2 ? "lazy" : "eager"}
-            />
-          ))}
+          <div className="space-y-6">
+            {caseStudyImages.map((img, idx) => (
+              <img 
+                key={idx}
+                src={img}
+                alt={`Weather App case study slide ${idx+1}`}
+                className="w-full"
+                loading={idx > 2 ? "lazy" : "eager"}
+              />
+            ))}
+          </div>
           
           <div className="bg-[#1e3a8a] text-white py-10 px-6 text-center">
             <h2 className="text-3xl font-bold mb-2">Project by: HAET RANPARIYA</h2>
