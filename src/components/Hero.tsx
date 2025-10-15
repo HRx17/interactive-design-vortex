@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowDownIcon, ExternalLink, Download } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import heroImage from '@/assets/hero-image.png';
 
 export function Hero() {
   const sentenceRef = useRef<HTMLDivElement>(null);
@@ -120,16 +121,26 @@ export function Hero() {
               <div className="absolute -inset-6 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full blur-2xl glow-effect"></div>
               
               {/* Profile container */}
-              <div className="h-80 w-80 relative rounded-full overflow-hidden border-4 border-emerald-400/30 p-1 cursor-magnetic hover:border-emerald-400/50 transition-all duration-500 group">
+              <div className="h-80 w-80 relative cursor-magnetic transition-all duration-500 group">
                 <img 
-                  src="/lovable-uploads/c11612aa-2535-469b-8a3c-fd8e73bf68ca.png" 
+                  src={heroImage} 
                   alt="Haet Ranpariya"
-                  className="object-cover w-full h-full rounded-full group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                  style={{
+                    maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)',
+                    WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)'
+                  }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/70 to-transparent mix-blend-overlay group-hover:from-emerald-950/50 transition-all duration-500"></div>
                 
-                {/* Interactive overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                {/* Subtle glow overlay */}
+                <div 
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{
+                    background: 'radial-gradient(circle at center, rgba(16, 185, 129, 0.1) 0%, transparent 70%)',
+                    maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)',
+                    WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)'
+                  }}
+                ></div>
               </div>
               
               {/* UX badge */}
