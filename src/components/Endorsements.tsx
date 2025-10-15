@@ -96,29 +96,17 @@ export function Endorsements() {
                   </div>
 
                   <div className="relative z-10">
-                    {/* Header with Logo and Info */}
-                    <div className="flex items-start gap-6 mb-6">
-                      {/* Company Logo */}
-                      <div className="shrink-0 w-16 h-16 rounded-xl bg-background border border-border/40 flex items-center justify-center p-3">
-                        <img 
-                          src={endorsement.companyLogo} 
-                          alt={endorsement.company}
-                          className="w-full h-full object-contain"
-                        />
-                      </div>
-
-                      {/* Person Info */}
-                      <div className="flex-1">
-                        <h3 className="text-2xl font-bold text-foreground mb-1">
-                          {endorsement.name}
-                        </h3>
-                        <p className="text-muted-foreground font-medium">
-                          {endorsement.title}
-                        </p>
-                        <p className="text-sm text-muted-foreground">
-                          {endorsement.company}
-                        </p>
-                      </div>
+                    {/* Header with Info */}
+                    <div className="mb-6">
+                      <h3 className="text-2xl font-bold text-foreground mb-1">
+                        {endorsement.name}
+                      </h3>
+                      <p className="text-muted-foreground font-medium">
+                        {endorsement.title}
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        {endorsement.company}
+                      </p>
                     </div>
 
                     {/* Main Quote */}
