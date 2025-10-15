@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { ArrowUpRight } from 'lucide-react';
 
@@ -18,10 +19,8 @@ export function FoodZapProject({ index }: FoodZapProjectProps) {
   }, []);
 
   return (
-    <a 
-      href="https://www.behance.net/haetranpariya17"
-      target="_blank"
-      rel="noopener noreferrer"
+    <Link 
+      to="/projects/foodzap"
       className={cn(
         "group bg-card/80 backdrop-blur-sm border border-border/40 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 h-full flex flex-col hover:scale-[1.02]",
         "opacity-0 transform translate-y-12",
@@ -56,6 +55,6 @@ export function FoodZapProject({ index }: FoodZapProjectProps) {
           A food delivery and pickup app with unique UI and solutions.
         </p>
       </div>
-    </a>
+    </Link>
   );
 }

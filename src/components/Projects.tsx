@@ -90,32 +90,32 @@ export function Projects() {
   // Helper function to render carousel items with design projects
   const renderDesignCarouselItems = () => {
     return [
-      <CarouselItem key="upcoming" className="md:basis-1/2 lg:basis-1/3">
+      <CarouselItem key="upcoming" className="md:basis-1/2">
         <UpcomingProject index={0} />
       </CarouselItem>,
-      <CarouselItem key="parkingApp" className="md:basis-1/2 lg:basis-1/3">
+      <CarouselItem key="parkingApp" className="md:basis-1/2">
         <ParkingAppProject index={1} />
       </CarouselItem>,
-      <CarouselItem key="AR" className="md:basis-1/2 lg:basis-1/3">
+      <CarouselItem key="AR" className="md:basis-1/2">
         <ARProject index={2} />
       </CarouselItem>,
-      <CarouselItem key="ritshiftmate" className="md:basis-1/2 lg:basis-1/3">
+      <CarouselItem key="ritshiftmate" className="md:basis-1/2">
         <RITShiftMateProject index={3} />
       </CarouselItem>,
-      <CarouselItem key="healthyR" className="md:basis-1/2 lg:basis-1/3">
+      <CarouselItem key="healthyR" className="md:basis-1/2">
         <HealthyRProject index={4} />
       </CarouselItem>,
-      <CarouselItem key="weatherApp" className="md:basis-1/2 lg:basis-1/3">
+      <CarouselItem key="weatherApp" className="md:basis-1/2">
         <WeatherAppProject index={5} />
       </CarouselItem>,
-      <CarouselItem key="foodzap" className="md:basis-1/2 lg:basis-1/3">
+      <CarouselItem key="foodzap" className="md:basis-1/2">
         <FoodZapProject index={6} />
       </CarouselItem>,
       // For any remaining embed projects
       ...designProjectEmbeds.slice(6).map((embed, index) => {
         const adjustedIndex = index + 7;
         return embed ? (
-          <CarouselItem key={adjustedIndex} className="md:basis-1/2 lg:basis-1/3">
+          <CarouselItem key={adjustedIndex} className="md:basis-1/2">
             <ExpandableProject embedSrc={embed} index={adjustedIndex} />
           </CarouselItem>
         ) : null;
@@ -146,13 +146,13 @@ export function Projects() {
   // Helper function to render carousel items with coding projects
   const renderCodingCarouselItems = () => {
     return [
-      <CarouselItem key="postScheduler" className="md:basis-1/2 lg:basis-1/3">
+      <CarouselItem key="postScheduler" className="md:basis-1/2">
         <PostSchedulerProject index={0} />
       </CarouselItem>,
-      <CarouselItem key="attendance" className="md:basis-1/2 lg:basis-1/3">
+      <CarouselItem key="attendance" className="md:basis-1/2">
         <AttendanceProject index={1} />
       </CarouselItem>,
-      <CarouselItem key="waahTv" className="md:basis-1/2 lg:basis-1/3">
+      <CarouselItem key="waahTv" className="md:basis-1/2">
         <WaahTvProject index={2} />
       </CarouselItem>
     ];

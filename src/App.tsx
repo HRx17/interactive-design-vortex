@@ -8,6 +8,9 @@ import NotFound from "./pages/NotFound";
 import HealthyRCaseStudy from "./pages/projects/HealthyRCaseStudy";
 import RITShiftMateCaseStudy from "./pages/projects/RITShiftMateCaseStudy";
 import ParkEaseCaseStudy from "./pages/projects/ParkEaseCaseStudy";
+import ARCaseStudy from "./pages/projects/ARCaseStudy";
+import WeatherAppCaseStudy from "./pages/projects/WeatherAppCaseStudy";
+import FoodZapCaseStudy from "./pages/projects/FoodZapCaseStudy";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +25,9 @@ const App = () => (
           <Route path="/projects/healthyr" element={<HealthyRCaseStudy />} />
           <Route path="/projects/rit-shiftmate" element={<RITShiftMateCaseStudy />} />
           <Route path="/projects/parkease" element={<ParkEaseCaseStudy />} />
+          <Route path="/projects/ar-vr" element={<ARCaseStudy />} />
+          <Route path="/projects/weather-app" element={<WeatherAppCaseStudy />} />
+          <Route path="/projects/foodzap" element={<FoodZapCaseStudy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
