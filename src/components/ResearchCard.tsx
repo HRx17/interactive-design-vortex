@@ -25,11 +25,11 @@ export function ResearchCard({
   return (
     <div 
       className={cn(
-        "rounded-lg border border-gray-600/20 hover:border-gray-600/40 transition-all duration-300",
-        "bg-secondary/50 hover:bg-gray-900/30",
+        "rounded-lg border border-emerald-600/20 hover:border-emerald-600/40 transition-all duration-300",
+        "bg-secondary/50 hover:bg-emerald-900/30",
         "opacity-0 transform translate-y-4",
         isInView && "opacity-100 translate-y-0",
-        isHovered && "shadow-lg shadow-gray-500/20"
+        isHovered && "shadow-lg shadow-emerald-500/20"
       )}
       style={{ transitionDelay: `${delay}ms` }}
       onMouseEnter={() => setIsHovered(true)}
@@ -38,17 +38,17 @@ export function ResearchCard({
       <div className="p-6">
         <div className="flex items-start gap-3">
           <div className={cn(
-            "bg-gray-900 p-2 rounded-md transition-all duration-300",
-            isHovered && "rotate-3 bg-gray-800"
+            "bg-emerald-900 p-2 rounded-md transition-all duration-300",
+            isHovered && "rotate-3 bg-emerald-800"
           )}>
             <FileSearch className={cn(
-              "w-5 h-5 text-gray-400 transition-all duration-300", 
+              "w-5 h-5 text-emerald-400 transition-all duration-300", 
               isHovered && "scale-110"
             )} />
           </div>
           <div className="flex-1">
             <h3 className="text-lg font-bold text-white">{title}</h3>
-            <p className="text-sm text-gray-100/70 mt-1">{year}</p>
+            <p className="text-sm text-emerald-100/70 mt-1">{year}</p>
             <p className="mt-3 text-muted-foreground">{description}</p>
             <div className="pt-3 flex justify-end">
               <a 
@@ -57,7 +57,7 @@ export function ResearchCard({
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
                 className={cn(
-                  "text-sm font-medium text-gray-400 flex items-center gap-1 hover:text-gray-300 transition-all px-4 py-2 rounded-full border border-gray-700/30 hover:bg-gray-800/40",
+                  "text-sm font-medium text-emerald-400 flex items-center gap-1 hover:text-emerald-300 transition-all px-4 py-2 rounded-full border border-emerald-700/30 hover:bg-emerald-800/40",
                   isHovered && "scale-105"
                 )}
               >

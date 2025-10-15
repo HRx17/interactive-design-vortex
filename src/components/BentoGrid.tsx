@@ -29,22 +29,22 @@ const BentoCard = ({ className, title, description, icon, gradient, children, on
       {/* Background gradient overlay */}
       <div className={cn(
         "absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100",
-        gradient || "bg-gradient-to-br from-gray-500/10 to-gray-600/10"
+        gradient || "bg-gradient-to-br from-emerald-500/10 to-teal-500/10"
       )} />
       
       {/* Content */}
       <div className="relative z-10">
         <div className="flex items-start justify-between mb-4">
-          <div className="p-2 rounded-lg bg-gray-500/10 border border-gray-500/20">
+          <div className="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
             {icon}
           </div>
           <ArrowUpRight className={cn(
             "w-5 h-5 text-muted-foreground transition-all duration-300",
-            isHovered && "translate-x-1 -translate-y-1 text-gray-700"
+            isHovered && "translate-x-1 -translate-y-1 text-emerald-400"
           )} />
         </div>
         
-        <h3 className="text-lg font-bold mb-2 group-hover:text-gray-700 transition-colors duration-300">
+        <h3 className="text-lg font-bold mb-2 group-hover:text-emerald-300 transition-colors duration-300">
           {title}
         </h3>
         <p className="text-muted-foreground text-sm leading-relaxed">
@@ -81,7 +81,7 @@ export function BentoGrid() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-12 relative overflow-hidden bg-gray-50">
+    <section ref={sectionRef} className="py-12 relative overflow-hidden">
       <div className="section-container">
         <div className="max-w-2xl mx-auto mb-16 text-center">
           <span className={cn(
@@ -93,7 +93,7 @@ export function BentoGrid() {
           </span>
           
           <h2 className={cn(
-            "heading bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent",
+            "heading bg-gradient-to-r from-emerald-700 to-teal-500 bg-clip-text text-transparent",
             "opacity-0 transform translate-y-6 transition-all duration-700 delay-100",
             isInView && "opacity-100 translate-y-0"
           )}>
@@ -112,13 +112,13 @@ export function BentoGrid() {
             className="md:col-span-2 lg:col-span-3"
             title="UI/UX Design"
             description="Creating human-centered digital experiences through research, prototyping, and iterative design. I focus on solving real user problems with elegant, accessible solutions."
-            icon={<Palette className="w-5 h-5 text-gray-600" />}
-            gradient="hover:bg-gradient-to-br hover:from-gray-500/10 hover:to-gray-600/10"
+            icon={<Palette className="w-5 h-5 text-emerald-400" />}
+            gradient="hover:bg-gradient-to-br hover:from-emerald-500/10 hover:to-teal-500/10"
             onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
           >
             <div className="mt-4 grid grid-cols-3 gap-2">
               {['Wireframing', 'Storyboarding', 'User Journey', 'Empathy Mapping', 'Mockups', 'Sketches', 'User Persona', 'UI Kit', 'Style Guide', 'Figma', 'Adobe XD', 'Prototyping'].map((skill) => (
-                <span key={skill} className="px-2 py-1 bg-gray-500/10 text-gray-700 text-xs rounded-md border border-gray-500/20 text-center">
+                <span key={skill} className="px-2 py-1 bg-emerald-500/10 text-emerald-300 text-xs rounded-md border border-emerald-500/20 text-center">
                   {skill}
                 </span>
               ))}
@@ -171,20 +171,20 @@ export function BentoGrid() {
             className="md:col-span-2 lg:col-span-2"
             title="User Research"
             description="Conducting usability testing, interviews, and data analysis to inform design decisions."
-            icon={<Users className="w-5 h-5 text-gray-600" />}
-            gradient="hover:bg-gradient-to-br hover:from-gray-500/10 hover:to-gray-600/10"
+            icon={<Users className="w-5 h-5 text-green-400" />}
+            gradient="hover:bg-gradient-to-br hover:from-green-500/10 hover:to-emerald-500/10"
           />
         </div>
       </div>
       
       {/* Background floating elements */}
-      <div className="absolute top-1/5 right-1/4 w-28 h-28 rounded-full bg-gradient-to-r from-gray-600/8 to-gray-700/8 filter blur-2xl opacity-50 float-animation" style={{animationDelay: '2s'}}></div>
-      <div className="absolute bottom-1/4 left-1/5 w-36 h-36 rounded-full bg-gradient-to-r from-gray-500/10 to-gray-600/10 filter blur-3xl opacity-30 float-animation" style={{animationDelay: '0s'}}></div>
+      <div className="absolute top-1/5 right-1/4 w-28 h-28 rounded-full bg-gradient-to-r from-emerald-600/8 to-teal-600/8 filter blur-2xl opacity-50 float-animation" style={{animationDelay: '2s'}}></div>
+      <div className="absolute bottom-1/4 left-1/5 w-36 h-36 rounded-full bg-gradient-to-r from-teal-500/10 to-emerald-500/10 filter blur-3xl opacity-30 float-animation" style={{animationDelay: '0s'}}></div>
       
       {/* Floating decorative shapes */}
-      <div className="absolute top-1/3 right-1/6 w-5 h-5 border border-gray-400/40 rotate-45 float-animation" style={{animationDelay: '1s'}}></div>
-      <div className="absolute bottom-1/3 left-1/3 w-3 h-3 bg-gray-400/30 rounded-full float-animation" style={{animationDelay: '3s'}}></div>
-      <div className="absolute top-2/3 right-1/3 w-7 h-7 border-2 border-gray-300/30 rounded-full float-animation" style={{animationDelay: '0.5s'}}></div>
+      <div className="absolute top-1/3 right-1/6 w-5 h-5 border border-emerald-400/40 rotate-45 float-animation" style={{animationDelay: '1s'}}></div>
+      <div className="absolute bottom-1/3 left-1/3 w-3 h-3 bg-teal-400/30 rounded-full float-animation" style={{animationDelay: '3s'}}></div>
+      <div className="absolute top-2/3 right-1/3 w-7 h-7 border-2 border-teal-300/30 rounded-full float-animation" style={{animationDelay: '0.5s'}}></div>
     </section>
   );
 }

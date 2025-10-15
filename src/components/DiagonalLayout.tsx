@@ -25,7 +25,7 @@ const DiagonalCard = ({ title, company, companyLogo, period, location, descripti
   return (
     <div
       className={cn(
-        "group relative overflow-hidden rounded-2xl bg-card/40 backdrop-blur-sm border border-border/30 p-8 transition-all duration-700 hover:shadow-2xl hover:shadow-gray-500/10 hover:border-gray-500/30",
+        "group relative overflow-hidden rounded-2xl bg-card/40 backdrop-blur-sm border border-border/30 p-8 transition-all duration-700 hover:shadow-2xl hover:shadow-emerald-500/10 hover:border-emerald-500/30",
         website ? "cursor-pointer" : "cursor-default",
         "opacity-0 transform rotate-2 translate-y-8",
         isInView && "opacity-100 rotate-0 translate-y-0"
@@ -38,8 +38,8 @@ const DiagonalCard = ({ title, company, companyLogo, period, location, descripti
     >
     {/* Background Pattern */}
     <div className="absolute inset-0 opacity-5">
-      <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-gray-500 to-gray-600 rounded-full -translate-x-16 -translate-y-16" />
-      <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl from-gray-500 to-gray-600 rounded-full translate-x-12 translate-y-12" />
+      <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full -translate-x-16 -translate-y-16" />
+      <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl from-emerald-500 to-teal-500 rounded-full translate-x-12 translate-y-12" />
     </div>
 
     {/* Content */}
@@ -56,16 +56,16 @@ const DiagonalCard = ({ title, company, companyLogo, period, location, descripti
                   className="w-full h-full object-contain"
                 />
               ) : (
-                <span className="text-xl font-bold text-gray-700">
+                <span className="text-xl font-bold text-emerald-400">
                   {company.charAt(0)}
                 </span>
               )}
             </div>
             <div>
-              <h3 className="text-xl font-bold group-hover:text-gray-700 transition-colors duration-300">
+              <h3 className="text-xl font-bold group-hover:text-emerald-300 transition-colors duration-300">
                 {title}
               </h3>
-              <p className="text-gray-700 font-medium">{company}</p>
+              <p className="text-emerald-400 font-medium">{company}</p>
             </div>
           </div>
           
@@ -80,7 +80,7 @@ const DiagonalCard = ({ title, company, companyLogo, period, location, descripti
             </div>
           </div>
         </div>
-        <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-gray-700 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 flex-shrink-0" />
+        <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-emerald-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 flex-shrink-0" />
       </div>
 
       <p className="text-muted-foreground leading-relaxed mb-6">
@@ -92,7 +92,7 @@ const DiagonalCard = ({ title, company, companyLogo, period, location, descripti
           <span
             key={skill}
             className={cn(
-              "px-3 py-1 bg-gray-500/10 text-gray-700 text-xs rounded-full border border-gray-500/20 transition-all duration-300",
+              "px-3 py-1 bg-emerald-500/10 text-emerald-300 text-xs rounded-full border border-emerald-500/20 transition-all duration-300",
               "opacity-0 translate-y-2",
               isInView && "opacity-100 translate-y-0"
             )}
@@ -105,7 +105,7 @@ const DiagonalCard = ({ title, company, companyLogo, period, location, descripti
     </div>
 
     {/* Hover gradient overlay */}
-    <div className="absolute inset-0 bg-gradient-to-br from-gray-500/5 to-gray-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
   </div>
   );
 };
@@ -186,7 +186,7 @@ export function DiagonalLayout() {
   ];
 
   return (
-    <section id="work-experience" ref={sectionRef} className="py-12 relative overflow-hidden bg-gray-50">
+    <section id="work-experience" ref={sectionRef} className="py-12 relative overflow-hidden bg-gradient-to-br from-emerald-950/20 to-teal-950/10">
       <div className="section-container">
         {/* Header */}
         <div className="max-w-2xl mx-auto mb-16 text-center">
@@ -199,7 +199,7 @@ export function DiagonalLayout() {
           </span>
           
           <h2 className={cn(
-            "heading bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent",
+            "heading bg-gradient-to-r from-emerald-700 to-teal-500 bg-clip-text text-transparent",
             "opacity-0 transform translate-y-6 transition-all duration-700 delay-100",
             isInView && "opacity-100 translate-y-0"
           )}>
@@ -242,7 +242,7 @@ export function DiagonalLayout() {
           <a 
             href="/resume.pdf"
             download
-            className="btn-magnetic inline-flex items-center px-8 py-4 rounded-full bg-gradient-to-r from-gray-800 to-gray-900 text-white font-medium gap-2 border border-gray-700/30 shadow-lg hover:shadow-gray-500/25 group"
+            className="btn-magnetic inline-flex items-center px-8 py-4 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-medium gap-2 border border-emerald-500/30 shadow-lg hover:shadow-emerald-500/25 group"
           >
             <span className="relative z-10 flex items-center gap-2">
               Download Full Resume
@@ -253,13 +253,13 @@ export function DiagonalLayout() {
       </div>
 
       {/* Background Elements */}
-      <div className="absolute top-1/4 left-0 w-1/3 h-1/3 bg-gradient-to-r from-gray-600/10 to-transparent rounded-full filter blur-3xl opacity-30" />
-      <div className="absolute bottom-1/4 right-0 w-1/3 h-1/3 bg-gradient-to-l from-gray-500/10 to-transparent rounded-full filter blur-3xl opacity-30" />
+      <div className="absolute top-1/4 left-0 w-1/3 h-1/3 bg-gradient-to-r from-emerald-600/10 to-transparent rounded-full filter blur-3xl opacity-30" />
+      <div className="absolute bottom-1/4 right-0 w-1/3 h-1/3 bg-gradient-to-l from-teal-500/10 to-transparent rounded-full filter blur-3xl opacity-30" />
       
       {/* Floating decorative elements */}
-      <div className="absolute top-1/3 right-1/4 w-6 h-6 border-2 border-gray-400/30 rounded-full float-animation" style={{animationDelay: '1s'}}></div>
-      <div className="absolute bottom-1/3 left-1/5 w-8 h-8 border border-gray-400/30 rotate-45 float-animation" style={{animationDelay: '3s'}}></div>
-      <div className="absolute top-1/2 right-1/3 w-4 h-4 bg-gray-400/20 rounded-full float-animation" style={{animationDelay: '0.5s'}}></div>
+      <div className="absolute top-1/3 right-1/4 w-6 h-6 border-2 border-emerald-400/30 rounded-full float-animation" style={{animationDelay: '1s'}}></div>
+      <div className="absolute bottom-1/3 left-1/5 w-8 h-8 border border-teal-400/30 rotate-45 float-animation" style={{animationDelay: '3s'}}></div>
+      <div className="absolute top-1/2 right-1/3 w-4 h-4 bg-emerald-400/20 rounded-full float-animation" style={{animationDelay: '0.5s'}}></div>
     </section>
   );
 }
