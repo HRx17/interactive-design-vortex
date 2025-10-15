@@ -91,19 +91,19 @@ export function UXProcess() {
         </div>
 
         {/* Desktop Flow - Zigzag Pattern */}
-        <div className="hidden lg:block relative">
+        <div className="hidden lg:block relative max-w-4xl mx-auto">
           {processSteps.map((step, index) => {
             const isEven = index % 2 === 0;
             const isLast = index === processSteps.length - 1;
             
             return (
-              <div key={step.title} className="relative mb-32">
-                <div className={`flex items-center ${isEven ? 'justify-start' : 'justify-end'} gap-8`}>
+              <div key={step.title} className="relative mb-24">
+                <div className={`flex items-center justify-center`}>
                   {/* Step Card */}
                   <div
-                    className={`group relative w-full max-w-lg transition-all duration-700 ${
-                      isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                    }`}
+                    className={`group relative w-full max-w-md transition-all duration-700 ${
+                      isEven ? 'mr-auto' : 'ml-auto'
+                    } ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                     style={{ transitionDelay: `${index * 150}ms` }}
                   >
                     <div className={`relative p-8 rounded-2xl ${step.gradient} backdrop-blur-sm border border-border/40 hover:border-emerald-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20`}>
@@ -136,12 +136,12 @@ export function UXProcess() {
 
                 {/* Connecting Arrow */}
                 {!isLast && (
-                  <div className={`absolute ${isEven ? 'right-0' : 'left-0'} top-full mt-8 transition-all duration-700 ${
+                  <div className={`absolute left-1/2 -translate-x-1/2 top-full mt-4 transition-all duration-700 ${
                     isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
                   }`} style={{ transitionDelay: `${(index * 150) + 300}ms` }}>
-                    <div className={`flex flex-col items-center gap-2 ${isEven ? 'mr-20' : 'ml-20'}`}>
-                      <ArrowDown className={`w-8 h-8 text-emerald-500 animate-bounce`} style={{ animationDelay: `${index * 200}ms` }} />
-                      <div className={`w-1 h-12 bg-gradient-to-b ${step.color}`} />
+                    <div className={`flex flex-col items-center gap-1`}>
+                      <div className={`w-1 h-8 bg-gradient-to-b ${step.color}`} />
+                      <ArrowDown className={`w-6 h-6 text-emerald-500 animate-bounce`} style={{ animationDelay: `${index * 200}ms` }} />
                     </div>
                   </div>
                 )}
