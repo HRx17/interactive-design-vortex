@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowDownIcon, ExternalLink, Download } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import heroImage from '@/assets/hero-image.png';
+import heroImage from '@/assets/hero-image-bright.png';
 
 export function Hero() {
   const sentenceRef = useRef<HTMLDivElement>(null);
