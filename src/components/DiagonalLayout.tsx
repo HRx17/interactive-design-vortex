@@ -145,6 +145,16 @@ export function DiagonalLayout() {
       website: "https://www.tech9.com/"
     },
     {
+      title: "Usability Specialist",
+      company: "Excellus BCBS",
+      companyLogo: "/logos/excellus-logo.png",
+      period: "Aug 2024 - Dec 2024",
+      location: "New York, NY (Remote)",
+      description: "Planned and implemented a usability study using six task-based scenarios across mobile and desktop platforms, utilizing four key metrics to evaluate user interactions and identify usability gaps. Facilitated usability testing sessions with 10 users and gathered in-depth qualitative and quantitative insights to assess their needs.",
+      skills: ["Usability Testing", "User Research", "Mobile & Desktop Testing", "Qualitative Analysis", "Task Scenarios"],
+      website: "https://www.excellusbcbs.com/"
+    },
+    {
       title: "Frontend UI/UX Project Intern",
       company: "Zlato Technolabs",
       companyLogo: "/logos/zlato-logo.png",

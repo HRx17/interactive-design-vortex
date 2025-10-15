@@ -14,6 +14,11 @@ const companies: Company[] = [
     logo: "/logos/tech9-logo.svg"
   },
   {
+    name: "Excellus BCBS",
+    url: "https://www.excellusbcbs.com/",
+    logo: "/logos/excellus-logo.png"
+  },
+  {
     name: "Zlato Technolabs",
     url: "https://zlatotech.com/",
     logo: "/logos/zlato-logo.png"
