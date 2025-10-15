@@ -266,14 +266,13 @@ export function Hero() {
           </div>
         </div>
         
-        {/* Explore Work indicator with mouse icon */}
+        {/* Mouse icon indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
           <a 
             href="#projects" 
             className="flex flex-col items-center text-white/50 hover:text-white/80 transition-all duration-300 group"
           >
-            <span className="text-xs font-medium mb-1 group-hover:text-emerald-300 transition-colors duration-300">Explore Work</span>
-            <div className="relative animate-bounce">
+            <div className="relative" style={{ animation: 'bounce 2s infinite' }}>
               <Mouse className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
               <div className="absolute inset-0 bg-emerald-400/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
