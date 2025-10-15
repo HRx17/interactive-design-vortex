@@ -42,7 +42,7 @@ const companies: Company[] = [
 
 export function CompanyLogos() {
   return (
-    <div className="pb-6 border-y border-white/10 bg-white/5 backdrop-blur-xl shadow-lg">
+    <div className="pb-6 border-y border-white/20 bg-white/10 backdrop-blur-xl shadow-lg">
       <div className="section-container">
         <div className="text-center mb-4">
           <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
