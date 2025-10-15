@@ -132,13 +132,13 @@ export function Contact() {
       
       {/* Background decorative elements */}
       <div className="absolute top-1/4 left-0 w-full h-1/3 bg-gradient-to-r from-secondary/20 via-transparent to-secondary/20 rounded-full filter blur-3xl opacity-20"></div>
-      <div className="absolute bottom-1/3 right-1/5 w-28 h-28 rounded-full bg-gradient-to-r from-emerald-500/10 to-teal-500/10 filter blur-2xl opacity-40 float-animation" style={{animationDelay: '1.5s'}}></div>
-      <div className="absolute top-1/5 left-1/4 w-20 h-20 rounded-full bg-gradient-to-r from-teal-400/8 to-emerald-400/8 filter blur-xl opacity-30 float-animation" style={{animationDelay: '3s'}}></div>
+      <div className="absolute bottom-1/3 right-1/5 w-28 h-28 rounded-full bg-gradient-to-r from-gray-500/10 to-gray-600/10 filter blur-2xl opacity-40 float-animation" style={{animationDelay: '1.5s'}}></div>
+      <div className="absolute top-1/5 left-1/4 w-20 h-20 rounded-full bg-gradient-to-r from-gray-400/8 to-gray-500/8 filter blur-xl opacity-30 float-animation" style={{animationDelay: '3s'}}></div>
       
       {/* Floating decorative shapes */}
-      <div className="absolute top-1/3 right-1/3 w-5 h-5 border border-emerald-400/30 rotate-45 float-animation" style={{animationDelay: '0.8s'}}></div>
-      <div className="absolute bottom-1/4 left-1/6 w-3 h-3 bg-teal-400/20 rounded-full float-animation" style={{animationDelay: '2.5s'}}></div>
-      <div className="absolute top-2/3 right-1/5 w-6 h-6 border-2 border-teal-300/30 rounded-full float-animation" style={{animationDelay: '1s'}}></div>
+      <div className="absolute top-1/3 right-1/3 w-5 h-5 border border-gray-400/30 rotate-45 float-animation" style={{animationDelay: '0.8s'}}></div>
+      <div className="absolute bottom-1/4 left-1/6 w-3 h-3 bg-gray-400/20 rounded-full float-animation" style={{animationDelay: '2.5s'}}></div>
+      <div className="absolute top-2/3 right-1/5 w-6 h-6 border-2 border-gray-300/30 rounded-full float-animation" style={{animationDelay: '1s'}}></div>
     </section>
   );
 }
