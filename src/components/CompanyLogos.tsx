@@ -11,7 +11,7 @@ const companies: Company[] = [
   {
     name: "Tech9",
     url: "https://www.tech9.com/",
-    logo: "/logos/tech9-logo.svg"
+    logo: "/logos/tech9-logo-blue.svg"
   },
   {
     name: "Excellus BCBS",
@@ -52,13 +52,10 @@ export function CompanyLogos() {
         
         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
           {companies.map((company, index) => (
-            <a
+            <div
               key={company.name}
-              href={company.url}
-              target="_blank"
-              rel="noopener noreferrer"
               className={cn(
-                "group relative px-6 py-4 rounded-xl border border-border/30 bg-card/40 backdrop-blur-sm hover:border-emerald-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10",
+                "relative px-6 py-4 rounded-xl border border-border/30 bg-card/40 backdrop-blur-sm",
                 "opacity-0 transform translate-y-4 animate-fade-in"
               )}
               style={{ 
@@ -70,17 +67,17 @@ export function CompanyLogos() {
                 <img 
                   src={company.logo} 
                   alt={`${company.name} logo`}
-                  className="h-8 w-auto grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100"
+                  className={cn(
+                    "h-8 w-auto",
+                    company.name === "Excellus BCBS" && "brightness-0 invert"
+                  )}
                 />
               ) : (
-                <span className="text-lg font-semibold text-muted-foreground group-hover:text-emerald-400 transition-colors duration-300">
+                <span className="text-lg font-semibold text-muted-foreground">
                   {company.name}
                 </span>
               )}
-              
-              {/* Glow effect on hover */}
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/5 to-teal-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </a>
+            </div>
           ))}
         </div>
       </div>
