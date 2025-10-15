@@ -66,7 +66,10 @@ export function CompanyLogos() {
                 <img 
                   src={company.logo} 
                   alt={`${company.name} logo`}
-                  className="h-12 w-auto"
+                  className={cn(
+                    "w-auto",
+                    (company.name === "Zlato Technolabs" || company.name === "Upwork") ? "h-16" : "h-12"
+                  )}
                 />
               ) : (
                 <span className="text-lg font-semibold text-muted-foreground">
