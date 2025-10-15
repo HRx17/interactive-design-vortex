@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
 
 export default function WeatherAppCaseStudy() {
+  const navigate = useNavigate();
   const caseStudyImages = [
     "/lovable-uploads/efc63ad4-1a76-470a-96f0-74a08ed01a6f.png",
     "/lovable-uploads/e4152d05-8a49-4c32-b9e9-014dcf1b39ec.png",
@@ -26,12 +27,10 @@ export default function WeatherAppCaseStudy() {
       {/* Back Button */}
       <div className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border/40">
         <div className="section-container py-4">
-          <Link to="/#projects">
-            <Button variant="ghost" className="gap-2">
-              <ArrowLeft className="h-4 w-4" />
-              Back to Projects
-            </Button>
-          </Link>
+          <Button variant="ghost" className="gap-2" onClick={() => navigate(-1)}>
+            <ArrowLeft className="h-4 w-4" />
+            Back to Projects
+          </Button>
         </div>
       </div>
 

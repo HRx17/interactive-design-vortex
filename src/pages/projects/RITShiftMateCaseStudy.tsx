@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Clock, Users, Calendar, TrendingUp, Target, Lightbulb, CheckCircle2 } from 'lucide-react';
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
 
 export default function RITShiftMateCaseStudy() {
+  const navigate = useNavigate();
   const caseStudyImages = [
     "/lovable-uploads/RIT1.png",
     "/lovable-uploads/RIT2.png",
@@ -27,12 +28,10 @@ export default function RITShiftMateCaseStudy() {
       {/* Back Button */}
       <div className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border/40">
         <div className="section-container py-4">
-          <Link to="/#projects">
-            <Button variant="ghost" className="gap-2">
-              <ArrowLeft className="h-4 w-4" />
-              Back to Projects
-            </Button>
-          </Link>
+          <Button variant="ghost" className="gap-2" onClick={() => navigate(-1)}>
+            <ArrowLeft className="h-4 w-4" />
+            Back to Projects
+          </Button>
         </div>
       </div>
 
