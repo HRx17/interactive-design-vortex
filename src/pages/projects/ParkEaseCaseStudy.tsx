@@ -22,7 +22,7 @@ export default function ParkEaseCaseStudy() {
       <ScrollArea className="h-[calc(100vh-73px)]">
         <div className="case-study-container">
           {/* Header Image */}
-          <div className="relative">
+          <div className="relative w-full">
             <img 
               src="/lovable-uploads/2a9fc4ff-b9fa-4053-87ce-4de202e01975.png" 
               alt="Parking Finder App Header" 
@@ -36,7 +36,7 @@ export default function ParkEaseCaseStudy() {
           </div>
           
           {/* Project Overview */}
-          <div className="p-6 md:p-10">
+          <div className="case-study-section">
             <h2 className="text-2xl font-bold mb-6">Project Overview</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>
@@ -93,7 +93,7 @@ export default function ParkEaseCaseStudy() {
           </div>
           
           {/* User Flow & Feature Mapping */}
-          <div className="p-6 md:p-10 bg-gradient-to-r from-slate-900/10 to-transparent">
+          <div className="case-study-section bg-gradient-to-r from-slate-900/10 to-transparent">
             <h2 className="text-2xl font-bold mb-6">User Flow & Feature Mapping</h2>
             <div className="bg-card/30 rounded-xl p-6">
               <p className="text-muted-foreground mb-6">
@@ -114,7 +114,7 @@ export default function ParkEaseCaseStudy() {
           </div>
           
           {/* Design Process & Solution */}
-          <div className="p-6 md:p-10 bg-gradient-to-r from-blue-900/10 to-transparent">
+          <div className="case-study-section bg-gradient-to-r from-blue-900/10 to-transparent">
             <h2 className="text-2xl font-bold mb-6">Design Process</h2>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-card/30 p-5 rounded-xl">
@@ -133,7 +133,7 @@ export default function ParkEaseCaseStudy() {
           </div>
           
           {/* Project Demo */}
-          <div className="p-6 md:p-10 bg-gradient-to-b from-blue-900/20 to-transparent">
+          <div className="case-study-section bg-gradient-to-b from-blue-900/20 to-transparent">
             <h2 className="text-2xl font-bold mb-6">Project Demo</h2>
             <div className="w-full aspect-video rounded-xl overflow-hidden shadow-xl">
               <iframe 

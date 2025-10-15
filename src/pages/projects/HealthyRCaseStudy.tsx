@@ -34,7 +34,7 @@ export default function HealthyRCaseStudy() {
       </div>
 
       <ScrollArea className="h-[calc(100vh-73px)]">
-        <div className="case-study-container">
+        <div className="w-full">
           {/* Hero Section */}
           <div className="relative">
             <img 

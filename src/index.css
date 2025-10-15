@@ -267,11 +267,25 @@
   }
 }
 
-/* RIT ShiftMate case study specific styles */
+/* Case study specific styles */
 .case-study-container {
   display: flex;
   flex-direction: column;
   width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.case-study-section {
+  padding: 3rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .case-study-section {
+    padding: 4rem 3rem;
+  }
 }
 
 .case-study-container img {
