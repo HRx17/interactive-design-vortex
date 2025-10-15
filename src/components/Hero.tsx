@@ -145,20 +145,6 @@ export function Hero() {
                 </span>
               </a>
             </div>
-            
-            {/* Explore Work indicator with mouse icon */}
-            <div className="mt-16 flex justify-center animate-fade-in opacity-0" style={{animationDelay: '1s', animationFillMode: 'forwards'}}>
-              <a 
-                href="#projects" 
-                className="flex flex-col items-center text-white/50 hover:text-white/80 transition-all duration-300 group"
-              >
-                <span className="text-xs font-medium mb-1 group-hover:text-emerald-300 transition-colors duration-300">Explore Work</span>
-                <div className="relative animate-bounce">
-                  <Mouse className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
-                  <div className="absolute inset-0 bg-emerald-400/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-              </a>
-            </div>
           </div>
           
           {/* Profile picture section with floating elements */}
@@ -194,7 +180,21 @@ export function Hero() {
                     WebkitMaskImage: 'radial-gradient(ellipse 100% 100% at 50% 50%, rgba(0,0,0,1) 20%, rgba(0,0,0,0.95) 35%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.4) 65%, rgba(0,0,0,0.1) 80%, rgba(0,0,0,0) 95%)'
                   }}
                 ></div>
-              </div>
+        </div>
+        
+        {/* Explore Work indicator with mouse icon */}
+        <div className="mt-16 flex justify-center animate-fade-in opacity-0" style={{animationDelay: '1s', animationFillMode: 'forwards'}}>
+          <a 
+            href="#projects" 
+            className="flex flex-col items-center text-white/50 hover:text-white/80 transition-all duration-300 group"
+          >
+            <span className="text-xs font-medium mb-1 group-hover:text-emerald-300 transition-colors duration-300">Explore Work</span>
+            <div className="relative animate-bounce">
+              <Mouse className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+              <div className="absolute inset-0 bg-emerald-400/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+          </a>
+        </div>
               
               {/* UX badge */}
               <div className="absolute bottom-4 right-4 h-20 w-20 bg-gradient-to-br from-emerald-400 to-teal-600 rounded-full border-4 border-emerald-900 flex items-center justify-center text-white font-bold text-sm cursor-magnetic hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-emerald-500/30 group">
