@@ -42,7 +42,7 @@ export default function ARCaseStudy() {
       </div>
 
       <ScrollArea className="h-[calc(100vh-73px)]">
-        <div className="w-full">
+        <div className="case-study-container">
           <div className="space-y-6">
             {caseStudyContent.map((item, idx) => (
               <div key={idx} className="w-full">

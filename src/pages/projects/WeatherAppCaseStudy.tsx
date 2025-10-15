@@ -36,7 +36,7 @@ export default function WeatherAppCaseStudy() {
       </div>
 
       <ScrollArea className="h-[calc(100vh-73px)]">
-        <div className="w-full">
+        <div className="case-study-container">
           <div className="space-y-6">
             {caseStudyImages.map((img, idx) => (
               <img 
