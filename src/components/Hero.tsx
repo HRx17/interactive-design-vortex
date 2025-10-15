@@ -160,7 +160,7 @@ export function Hero() {
               <div className="absolute -inset-6 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full blur-2xl glow-effect"></div>
               
               {/* Profile container */}
-              <div className="h-80 w-80 relative cursor-magnetic transition-all duration-500 group">
+              <div className="h-96 w-96 relative cursor-magnetic transition-all duration-500 group">
                 <img 
                   src={heroImage} 
                   alt="Haet Ranpariya"
@@ -273,7 +273,7 @@ export function Hero() {
             className="flex flex-col items-center text-white/50 hover:text-white/80 transition-all duration-300 group"
           >
             <div className="relative" style={{ animation: 'bounce 2s infinite' }}>
-              <Mouse className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+              <Mouse className="w-7 h-7 group-hover:scale-110 transition-transform duration-300" />
               <div className="absolute inset-0 bg-emerald-400/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
           </a>
