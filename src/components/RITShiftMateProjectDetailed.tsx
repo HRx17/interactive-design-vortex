@@ -5,6 +5,7 @@ import {
   Dialog,
   DialogContent,
   DialogClose,
+  DialogTitle,
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ProjectMetadata } from '@/components/ProjectMetadata';
@@ -78,12 +79,13 @@ export function RITShiftMateProject({ index }: RITShiftMateProjectProps) {
 
       {/* Full Case Study Dialog */}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="max-w-6xl w-[95vw] max-h-[90vh] p-0 bg-background">
+        <DialogContent className="max-w-6xl w-[95vw] max-h-[90vh] p-0 bg-background" aria-describedby="rit-shiftmate-case-study-description">
+          <DialogTitle className="sr-only">RIT ShiftMate Case Study</DialogTitle>
           <DialogClose className="absolute right-4 top-4 p-2 z-50 rounded-full bg-black/20 text-white backdrop-blur-sm hover:bg-black/40 transition-colors">
             <X className="h-5 w-5" />
           </DialogClose>
 
-          <ScrollArea className="max-h-[90vh] overflow-y-auto">
+          <ScrollArea className="max-h-[90vh] overflow-y-auto" id="rit-shiftmate-case-study-description">
             <div className="case-study-container">
               {/* Header */}
               <div className="relative">
