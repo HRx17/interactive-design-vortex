@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowDownIcon, ExternalLink, Download } from 'lucide-react';
+import { Mouse, Download } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import heroImage from '@/assets/hero-image-final.png';
 
@@ -123,7 +123,7 @@ export function Hero() {
               I'm Haet Ranpariya, a UI/UX Designer and Product Designer passionate about creating human-centered digital experiences. I also specialize in GenUI, leveraging generative AI to enhance and accelerate the design process.
             </p>
             
-            <div className="mt-10 animate-fade-in opacity-0 flex flex-wrap gap-4" style={{animationDelay: '0.8s', animationFillMode: 'forwards'}}>
+            <div className="mt-10 animate-fade-in opacity-0 flex flex-wrap gap-4 items-center" style={{animationDelay: '0.8s', animationFillMode: 'forwards'}}>
               <a 
                 href="/resume.pdf"
                 download
@@ -143,6 +143,18 @@ export function Hero() {
                   View Projects
                   <div className="w-2 h-2 rounded-full bg-emerald-400 group-hover:animate-pulse"></div>
                 </span>
+              </a>
+              
+              {/* Explore Work indicator with mouse icon */}
+              <a 
+                href="#projects" 
+                className="flex flex-col items-center text-white/50 hover:text-white/80 transition-all duration-300 group ml-4"
+              >
+                <span className="text-xs font-medium mb-1 group-hover:text-emerald-300 transition-colors duration-300">Explore Work</span>
+                <div className="relative animate-bounce">
+                  <Mouse className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+                  <div className="absolute inset-0 bg-emerald-400/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
               </a>
             </div>
           </div>
@@ -259,20 +271,6 @@ export function Hero() {
               </div>
             ))}
           </div>
-        </div>
-        
-        {/* Enhanced scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce opacity-80 cursor-magnetic group">
-          <a 
-            href="#projects" 
-            className="flex flex-col items-center text-white/50 hover:text-white/80 transition-all duration-300 group-hover:scale-110"
-          >
-            <span className="text-xs font-medium mb-2 group-hover:text-emerald-300 transition-colors duration-300">Explore Work</span>
-            <div className="relative">
-              <ArrowDownIcon className="w-5 h-5 group-hover:translate-y-1 transition-transform duration-300" />
-              <div className="absolute inset-0 bg-emerald-400/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-          </a>
         </div>
       </div>
     </section>
