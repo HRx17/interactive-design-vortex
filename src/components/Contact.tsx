@@ -49,7 +49,7 @@ export function Contact() {
     <section 
       id="contact" 
       ref={sectionRef}
-      className="py-24 relative overflow-hidden"
+      className="py-24 relative overflow-hidden bg-gray-50"
     >
       <div className="section-container">
         <div className="text-center max-w-3xl mx-auto">

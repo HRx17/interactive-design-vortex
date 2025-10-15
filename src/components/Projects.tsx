@@ -175,7 +175,7 @@ export function Projects() {
           </span>
           
           <h2 className={cn(
-            "heading bg-gradient-to-r from-emerald-700 to-teal-500 bg-clip-text text-transparent",
+            "heading bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent",
             "opacity-0 transform translate-y-6 transition-all duration-700 delay-100",
             isInView && "opacity-100 translate-y-0"
           )}>
@@ -254,7 +254,7 @@ export function Projects() {
               "btn-hover inline-flex items-center px-8 py-4 rounded-full text-white font-medium hover:shadow-lg transition-all",
               isCodingProjects 
                 ? "bg-gradient-to-r from-blue-600 to-indigo-600" 
-                : "bg-gradient-to-r from-emerald-600 to-teal-500"
+                : "bg-gradient-to-r from-gray-800 to-gray-900"
             )}
           >
             <span className="relative z-10">
@@ -273,8 +273,8 @@ export function Projects() {
           isInView && "opacity-100 translate-y-0"
         )}>
           <div className="flex items-center gap-3 mb-6">
-            <FlaskConical className="w-6 h-6 text-emerald-500" />
-            <h2 className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">Research Projects</h2>
+            <FlaskConical className="w-6 h-6 text-gray-700" />
+            <h2 className="text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Research Projects</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -294,8 +294,8 @@ export function Projects() {
       </div>
       
       {/* Background decorative elements */}
-      <div className="absolute top-1/4 left-0 w-1/3 h-1/3 bg-gradient-to-r from-emerald-600/20 to-transparent rounded-full filter blur-3xl opacity-30"></div>
-      <div className="absolute bottom-1/4 right-0 w-1/3 h-1/3 bg-gradient-to-l from-teal-500/20 to-transparent rounded-full filter blur-3xl opacity-30"></div>
+      <div className="absolute top-1/4 left-0 w-1/3 h-1/3 bg-gradient-to-r from-gray-600/20 to-transparent rounded-full filter blur-3xl opacity-30"></div>
+      <div className="absolute bottom-1/4 right-0 w-1/3 h-1/3 bg-gradient-to-l from-gray-500/20 to-transparent rounded-full filter blur-3xl opacity-30"></div>
     </section>
   );
 }

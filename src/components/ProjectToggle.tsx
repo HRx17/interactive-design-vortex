@@ -47,12 +47,12 @@ export function ProjectToggle({ isInView }: ProjectToggleProps) {
   ];
 
   return (
-    <section id="projects" className="py-12 relative overflow-hidden">
+    <section id="projects" className="py-12 relative overflow-hidden bg-white">
       <div className="section-container">
         {/* Header with Toggle */}
         <div className="max-w-4xl mx-auto mb-16 text-center">
           <h2 className={cn(
-            "heading bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent mb-8",
+            "heading bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-8",
             "opacity-0 transform translate-y-6 transition-all duration-700",
             isInView && "opacity-100 translate-y-0"
           )}>
@@ -68,7 +68,7 @@ export function ProjectToggle({ isInView }: ProjectToggleProps) {
             {/* Background slider */}
             <div 
               className={cn(
-                "absolute top-2 bottom-2 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full transition-all duration-500 ease-out border border-emerald-500/30",
+                "absolute top-2 bottom-2 bg-gradient-to-r from-gray-500/20 to-gray-600/20 rounded-full transition-all duration-500 ease-out border border-gray-500/30",
                 activeTab === 'design' ? 'left-2 w-48' : 'left-52 w-56'
               )}
             />
@@ -79,8 +79,8 @@ export function ProjectToggle({ isInView }: ProjectToggleProps) {
               className={cn(
                 "relative z-10 flex items-center gap-3 px-8 py-4 rounded-full font-medium transition-all duration-300 w-48",
                 activeTab === 'design' 
-                  ? 'text-emerald-300 shadow-lg' 
-                  : 'text-muted-foreground hover:text-emerald-400'
+                  ? 'text-gray-900 shadow-lg' 
+                  : 'text-muted-foreground hover:text-gray-700'
               )}
             >
               <Palette className="w-5 h-5" />
@@ -96,8 +96,8 @@ export function ProjectToggle({ isInView }: ProjectToggleProps) {
               className={cn(
                 "relative z-10 flex items-center gap-3 px-8 py-4 rounded-full font-medium transition-all duration-300 w-56",
                 activeTab === 'development' 
-                  ? 'text-emerald-300 shadow-lg' 
-                  : 'text-muted-foreground hover:text-emerald-400'
+                  ? 'text-gray-900 shadow-lg' 
+                  : 'text-muted-foreground hover:text-gray-700'
               )}
             >
               <Code className="w-5 h-5" />
@@ -136,7 +136,7 @@ export function ProjectToggle({ isInView }: ProjectToggleProps) {
           isInView && "opacity-100 translate-y-0"
         )}>
           <div className="text-center p-6 rounded-2xl bg-card/30 backdrop-blur-sm border border-border/40">
-            <div className="text-3xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
+            <div className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
               {activeTab === 'design' ? '7+' : '3+'}
             </div>
             <div className="text-muted-foreground text-sm mt-1">
@@ -145,7 +145,7 @@ export function ProjectToggle({ isInView }: ProjectToggleProps) {
           </div>
           
           <div className="text-center p-6 rounded-2xl bg-card/30 backdrop-blur-sm border border-border/40">
-            <div className="text-3xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
+            <div className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
               {activeTab === 'design' ? '4+' : '1+'}
             </div>
             <div className="text-muted-foreground text-sm mt-1">
@@ -154,7 +154,7 @@ export function ProjectToggle({ isInView }: ProjectToggleProps) {
           </div>
           
           <div className="text-center p-6 rounded-2xl bg-card/30 backdrop-blur-sm border border-border/40">
-            <div className="text-3xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
+            <div className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
               {activeTab === 'design' ? '100%' : '95%'}
             </div>
             <div className="text-muted-foreground text-sm mt-1">
@@ -165,13 +165,13 @@ export function ProjectToggle({ isInView }: ProjectToggleProps) {
       </div>
       
       {/* Background floating elements */}
-      <div className="absolute top-1/4 right-1/5 w-32 h-32 rounded-full bg-gradient-to-r from-emerald-500/10 to-teal-500/10 filter blur-2xl opacity-40 float-animation" style={{animationDelay: '1s'}}></div>
-      <div className="absolute bottom-1/3 left-1/4 w-24 h-24 rounded-full bg-gradient-to-r from-teal-400/10 to-emerald-400/10 filter blur-xl opacity-30 float-animation" style={{animationDelay: '3s'}}></div>
+      <div className="absolute top-1/4 right-1/5 w-32 h-32 rounded-full bg-gradient-to-r from-gray-500/10 to-gray-600/10 filter blur-2xl opacity-40 float-animation" style={{animationDelay: '1s'}}></div>
+      <div className="absolute bottom-1/3 left-1/4 w-24 h-24 rounded-full bg-gradient-to-r from-gray-400/10 to-gray-500/10 filter blur-xl opacity-30 float-animation" style={{animationDelay: '3s'}}></div>
       
       {/* Floating decorative shapes */}
-      <div className="absolute top-1/3 left-1/6 w-6 h-6 border-2 border-emerald-400/30 rotate-45 float-animation" style={{animationDelay: '0.5s'}}></div>
-      <div className="absolute bottom-1/4 right-1/3 w-4 h-4 bg-teal-400/20 rounded-full float-animation" style={{animationDelay: '2s'}}></div>
-      <div className="absolute top-1/2 right-1/5 w-5 h-5 border border-emerald-300/40 rounded-full float-animation" style={{animationDelay: '4s'}}></div>
+      <div className="absolute top-1/3 left-1/6 w-6 h-6 border-2 border-gray-400/30 rotate-45 float-animation" style={{animationDelay: '0.5s'}}></div>
+      <div className="absolute bottom-1/4 right-1/3 w-4 h-4 bg-gray-400/20 rounded-full float-animation" style={{animationDelay: '2s'}}></div>
+      <div className="absolute top-1/2 right-1/5 w-5 h-5 border border-gray-300/40 rounded-full float-animation" style={{animationDelay: '4s'}}></div>
     </section>
   );
 }

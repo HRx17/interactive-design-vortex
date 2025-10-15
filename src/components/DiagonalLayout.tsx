@@ -186,7 +186,7 @@ export function DiagonalLayout() {
   ];
 
   return (
-    <section id="work-experience" ref={sectionRef} className="py-12 relative overflow-hidden bg-gradient-to-br from-gray-950/20 to-gray-900/10">
+    <section id="work-experience" ref={sectionRef} className="py-12 relative overflow-hidden bg-gray-50">
       <div className="section-container">
         {/* Header */}
         <div className="max-w-2xl mx-auto mb-16 text-center">
