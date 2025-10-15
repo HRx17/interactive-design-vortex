@@ -1,25 +1,15 @@
-
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
-import { ExternalLink, X } from 'lucide-react';
-import { 
-  Dialog,
-  DialogContent,
-  DialogClose,
-} from "@/components/ui/dialog";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Button } from "@/components/ui/button";
+import { ArrowUpRight } from 'lucide-react';
 
 interface FoodZapProjectProps {
   index: number;
 }
 
 export function FoodZapProject({ index }: FoodZapProjectProps) {
-  const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   
   React.useEffect(() => {
-    // Set visible after a short delay for animation
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 100);
@@ -27,79 +17,45 @@ export function FoodZapProject({ index }: FoodZapProjectProps) {
     return () => clearTimeout(timer);
   }, []);
 
-  const caseStudyImages = [
-    "/lovable-uploads/Group89.png",
-    "/lovable-uploads/Group90.png",
-  ];
-
   return (
-    <>
-      {/* Thumbnail Card */}
-      <div 
-        onClick={() => setIsOpen(true)}
-        className={cn(
-          "bg-card/80 backdrop-blur-sm border border-border/40 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer h-full",
-          "opacity-0 transform translate-y-12",
-          isVisible && "opacity-100 translate-y-0"
-        )}
-        style={{ 
-          transitionDelay: `${index * 100}ms`, 
-          transitionDuration: '600ms'
-        }}
-      >
-        <div className="w-full aspect-video p-2">
-          <div className="w-full h-full rounded-lg overflow-hidden">
-            <img 
-              src={caseStudyImages[0]} 
-              alt="FoodZap App Project" 
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-            />
-          </div>
-        </div>
-        <div className="p-5">
-          <div className="flex justify-between items-center mb-2">
-            <span className="text-sm font-medium px-3 py-1 rounded-full bg-blue-100 text-green-600">UX/UI Design, App Design</span>
-          </div>
-          <h3 className="text-xl font-bold">FoodZap</h3>
-          <p className="text-sm text-muted-foreground mt-2">FoodZap, A food deliver and pickup app with unique UI and solutions.</p>
+    <a 
+      href="https://www.behance.net/haetranpariya17"
+      target="_blank"
+      rel="noopener noreferrer"
+      className={cn(
+        "group bg-card/80 backdrop-blur-sm border border-border/40 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 h-full flex flex-col hover:scale-[1.02]",
+        "opacity-0 transform translate-y-12",
+        isVisible && "opacity-100 translate-y-0"
+      )}
+      style={{ 
+        transitionDelay: `${index * 100}ms`, 
+        transitionDuration: '600ms'
+      }}
+    >
+      <div className="relative w-full aspect-[16/10] overflow-hidden">
+        <img 
+          src="/lovable-uploads/Group89.png" 
+          alt="FoodZap Project" 
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="absolute top-4 right-4 p-2 rounded-full bg-background/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+          <ArrowUpRight className="h-5 w-5 text-foreground" />
         </div>
       </div>
-
-      {/* Full Case Study Dialog */}
-      <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="max-w-6xl w-[95vw] max-h-[90vh] p-0 bg-background">
-          <DialogClose className="absolute right-4 top-4 p-2 z-50 rounded-full bg-black/20 text-white backdrop-blur-sm hover:bg-black/40 transition-colors">
-            <X className="h-5 w-5" />
-          </DialogClose>
-          
-          <ScrollArea className="max-h-[90vh] overflow-y-auto">
-            <div className="case-study-container">
-              {caseStudyImages.map((img, idx) => (
-                <img 
-                  key={idx}
-                  src={img}
-                  alt={`Weather App case study slide ${idx+1}`}
-                  className="w-full"
-                  loading={idx > 2 ? "lazy" : "eager"}
-                />
-              ))}
-              
-              <div className="bg-[#8E9A92] text-white py-10 px-6 text-center">
-                <h2 className="text-3xl font-bold mb-2">Project by: HAET RANPARIYA</h2>
-                <a 
-                  href="https://www.behance.net/haetranpariya17" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-4 px-6 py-3 bg-white/10 hover:bg-white/20 transition-colors rounded-lg backdrop-blur-sm"
-                >
-                  <span>View More Projects on Behance</span>
-                  <ExternalLink className="h-4 w-4" />
-                </a>
-              </div>
-            </div>
-          </ScrollArea>
-        </DialogContent>
-      </Dialog>
-    </>
+      <div className="p-6 flex-1 flex flex-col">
+        <div className="flex justify-between items-center mb-3">
+          <span className="text-sm font-medium px-4 py-1.5 rounded-full bg-green-100 text-green-600">
+            UX/UI Design
+          </span>
+        </div>
+        <h3 className="text-2xl font-bold mb-2 group-hover:text-emerald-500 transition-colors">
+          FoodZap
+        </h3>
+        <p className="text-muted-foreground text-sm leading-relaxed">
+          A food delivery and pickup app with unique UI and solutions.
+        </p>
+      </div>
+    </a>
   );
 }

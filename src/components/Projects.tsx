@@ -231,7 +231,7 @@ export function Projects() {
         
         {/* Desktop grid view for projects */}
         <div className={cn(
-          "hidden md:grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10",
+          "hidden md:grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10",
           "transform transition-all duration-500",
           "fade-in",
         )}>
