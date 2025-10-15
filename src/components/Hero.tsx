@@ -164,10 +164,11 @@ export function Hero() {
                 <img 
                   src={heroImage} 
                   alt="Haet Ranpariya"
-                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover object-top w-full h-full group-hover:scale-105 transition-transform duration-500"
                   style={{
-                    maskImage: 'radial-gradient(ellipse 100% 100% at 50% 40%, rgba(0,0,0,1) 30%, rgba(0,0,0,0.9) 45%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.4) 75%, rgba(0,0,0,0.15) 85%, rgba(0,0,0,0) 100%)',
-                    WebkitMaskImage: 'radial-gradient(ellipse 100% 100% at 50% 40%, rgba(0,0,0,1) 30%, rgba(0,0,0,0.9) 45%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.4) 75%, rgba(0,0,0,0.15) 85%, rgba(0,0,0,0) 100%)'
+                    objectPosition: '50% 0%',
+                    maskImage: 'radial-gradient(ellipse 100% 100% at 50% 45%, rgba(0,0,0,1) 30%, rgba(0,0,0,0.9) 45%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.4) 75%, rgba(0,0,0,0.15) 85%, rgba(0,0,0,0) 100%)',
+                    WebkitMaskImage: 'radial-gradient(ellipse 100% 100% at 50% 45%, rgba(0,0,0,1) 30%, rgba(0,0,0,0.9) 45%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.4) 75%, rgba(0,0,0,0.15) 85%, rgba(0,0,0,0) 100%)'
                   }}
                 />
                 
