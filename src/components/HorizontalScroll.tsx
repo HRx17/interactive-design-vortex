@@ -85,7 +85,7 @@ export function HorizontalScroll({ items, title, subtitle }: HorizontalScrollPro
         <div className="flex justify-between items-end mb-12">
           <div>
             <h2 className={cn(
-              "text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent",
+              "text-3xl md:text-4xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent",
               "opacity-0 transform translate-y-6 transition-all duration-700",
               isInView && "opacity-100 translate-y-0"
             )}>
@@ -114,7 +114,7 @@ export function HorizontalScroll({ items, title, subtitle }: HorizontalScrollPro
               className={cn(
                 "p-3 rounded-full border transition-all duration-300",
                 canScrollLeft 
-                  ? "border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400" 
+                  ? "border-gray-500/30 bg-gray-500/10 hover:bg-gray-500/20 text-gray-700" 
                   : "border-border/30 bg-muted/50 text-muted-foreground cursor-not-allowed"
               )}
             >
@@ -126,7 +126,7 @@ export function HorizontalScroll({ items, title, subtitle }: HorizontalScrollPro
               className={cn(
                 "p-3 rounded-full border transition-all duration-300",
                 canScrollRight 
-                  ? "border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400" 
+                  ? "border-gray-500/30 bg-gray-500/10 hover:bg-gray-500/20 text-gray-700" 
                   : "border-border/30 bg-muted/50 text-muted-foreground cursor-not-allowed"
               )}
             >
@@ -151,7 +151,7 @@ export function HorizontalScroll({ items, title, subtitle }: HorizontalScrollPro
               className="flex-none w-80 md:w-96 group cursor-pointer"
               onClick={() => item.link && window.open(item.link, '_blank')}
             >
-              <div className="relative overflow-hidden rounded-2xl bg-card/50 backdrop-blur-sm border border-border/40 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-500/10 hover:border-emerald-500/30">
+              <div className="relative overflow-hidden rounded-2xl bg-card/50 backdrop-blur-sm border border-border/40 transition-all duration-500 hover:shadow-2xl hover:shadow-gray-500/10 hover:border-gray-500/30">
                 {/* Image */}
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
@@ -166,7 +166,7 @@ export function HorizontalScroll({ items, title, subtitle }: HorizontalScrollPro
                 <div className="absolute inset-0 p-6 flex flex-col justify-end">
                   <div className="transform translate-y-2 transition-transform duration-300 group-hover:translate-y-0">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="px-2 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full border border-emerald-500/30 backdrop-blur-sm">
+                      <span className="px-2 py-1 bg-gray-500/20 text-gray-700 text-xs rounded-full border border-gray-500/30 backdrop-blur-sm">
                         {item.category}
                       </span>
                       <span className="text-white/60 text-xs">{item.year}</span>
@@ -176,7 +176,7 @@ export function HorizontalScroll({ items, title, subtitle }: HorizontalScrollPro
                       {item.description}
                     </p>
                     {item.link && (
-                      <div className="flex items-center gap-1 text-emerald-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="flex items-center gap-1 text-gray-700 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <span>View Project</span>
                         <ExternalLink className="w-3 h-3" />
                       </div>
@@ -185,7 +185,7 @@ export function HorizontalScroll({ items, title, subtitle }: HorizontalScrollPro
                 </div>
 
                 {/* Hover Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-500/10 to-gray-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
             </div>
           ))}

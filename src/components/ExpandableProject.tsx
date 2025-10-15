@@ -176,7 +176,7 @@ export function ExpandableProject({ embedSrc, index }: ExpandableProjectProps) {
                     href={embedSrc.replace("/embed/project/", "/project/")}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 p-4 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-medium mt-4"
+                    className="flex items-center justify-center gap-2 p-4 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors font-medium mt-4"
                   >
                     <span>View Full Case Study on Behance</span>
                     <ExternalLink className="h-4 w-4" />

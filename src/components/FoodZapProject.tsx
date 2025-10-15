@@ -44,11 +44,11 @@ export function FoodZapProject({ index }: FoodZapProjectProps) {
       </div>
       <div className="p-6 flex-1 flex flex-col">
         <div className="flex justify-between items-center mb-3">
-          <span className="text-sm font-medium px-4 py-1.5 rounded-full bg-green-100 text-green-600">
+          <span className="text-sm font-medium px-4 py-1.5 rounded-full bg-gray-100 text-gray-600">
             UX/UI Design
           </span>
         </div>
-        <h3 className="text-2xl font-bold mb-2 group-hover:text-emerald-500 transition-colors">
+        <h3 className="text-2xl font-bold mb-2 group-hover:text-gray-700 transition-colors">
           FoodZap
         </h3>
         <p className="text-muted-foreground text-sm leading-relaxed">
