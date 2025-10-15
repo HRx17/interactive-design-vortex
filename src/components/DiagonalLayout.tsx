@@ -5,6 +5,7 @@ import { ArrowUpRight, Download, Calendar, MapPin } from 'lucide-react';
 interface DiagonalCardProps {
   title: string;
   company: string;
+  companyLogo?: string;
   period: string;
   location: string;
   description: string;
@@ -14,25 +15,12 @@ interface DiagonalCardProps {
   isInView: boolean;
 }
 
-interface CompanyLogoMap {
-  [key: string]: string;
-}
-
-const companyLogos: CompanyLogoMap = {
-  "Tech9": "T9",
-  "Zlato Technolabs": "ZT",
-  "WaahTV OTT App": "WT",
-  "Upwork (Freelancer)": "UP"
-};
-
-const DiagonalCard = ({ title, company, period, location, description, skills, website, index, isInView }: DiagonalCardProps) => {
+const DiagonalCard = ({ title, company, companyLogo, period, location, description, skills, website, index, isInView }: DiagonalCardProps) => {
   const handleClick = () => {
     if (website) {
       window.open(website, '_blank', 'noopener,noreferrer');
     }
   };
-  
-  const logoInitials = companyLogos[company] || company.substring(0, 2).toUpperCase();
 
   return (
     <div
@@ -60,8 +48,18 @@ const DiagonalCard = ({ title, company, period, location, description, skills, w
         <div className="flex-1">
           {/* Company Logo Badge */}
           <div className="flex items-center gap-3 mb-3">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-600 to-teal-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-emerald-500/20">
-              {logoInitials}
+            <div className="w-12 h-12 rounded-xl bg-card/80 backdrop-blur-sm flex items-center justify-center border border-border/30 p-2 shadow-lg">
+              {companyLogo ? (
+                <img 
+                  src={companyLogo} 
+                  alt={`${company} logo`}
+                  className="w-full h-full object-contain"
+                />
+              ) : (
+                <span className="text-xl font-bold text-emerald-400">
+                  {company.charAt(0)}
+                </span>
+              )}
             </div>
             <div>
               <h3 className="text-xl font-bold group-hover:text-emerald-300 transition-colors duration-300">
@@ -139,6 +137,7 @@ export function DiagonalLayout() {
     {
       title: "Product Designer",
       company: "Tech9",
+      companyLogo: "/logos/tech9-logo.svg",
       period: "May 2025 - Aug 2025",
       location: "Utah, USA (Remote)",
       description: "Designed user-centered solutions that increased user engagement by 35% and improved conversion rates by 25%. Worked with chief product officer (CPO) to lead design initiatives to reach client goals.",
@@ -148,6 +147,7 @@ export function DiagonalLayout() {
     {
       title: "Frontend UI/UX Project Intern",
       company: "Zlato Technolabs",
+      companyLogo: "/logos/zlato-logo.png",
       period: "Jan 2023 - May 2023",
       location: "Ahmedabad, India",
       description: "Created a social media management platform for web and mobile that helps with post scheduling across different platforms like LinkedIn, Instagram, and Facebook.",
@@ -157,6 +157,7 @@ export function DiagonalLayout() {
     {
       title: "Founding Designer & Developer",
       company: "WaahTV OTT App",
+      companyLogo: "/logos/waahtv-logo.png",
       period: "Sept 2021 - Feb 2022",
       location: "NJ, USA (Remote)",
       description: "Designed and developed an OTT Platform app for Android TV, with currently 15+ daily signups, 10+ countries covered, 10K+ active users. Delivered a complete streaming solution from concept to production.",
@@ -166,6 +167,7 @@ export function DiagonalLayout() {
     {
       title: "UI/UX Designer & Frontend Developer",
       company: "Upwork (Freelancer)",
+      companyLogo: "/logos/upwork-logo.png",
       period: "Sept 2020 - Dec 2022",
       location: "Global",
       description: "Delivered 12+ successful projects to clients across globe, with featured work resulting in 40% increased user engagement (France). Improved conversion rates by 25%. Led design initiatives that reached over 20K+ active users for the app.",

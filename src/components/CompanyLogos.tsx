@@ -11,22 +11,27 @@ const companies: Company[] = [
   {
     name: "Tech9",
     url: "https://www.tech9.com/",
-    logo: undefined // Will use text fallback
+    logo: "/logos/tech9-logo.svg"
   },
   {
     name: "Zlato Technolabs",
     url: "https://zlatotech.com/",
-    logo: undefined
+    logo: "/logos/zlato-logo.png"
   },
   {
     name: "WaahTV",
     url: "https://waahtv.com",
-    logo: undefined
+    logo: "/logos/waahtv-logo.png"
   },
   {
     name: "Upwork",
     url: "https://www.upwork.com/",
-    logo: undefined
+    logo: "/logos/upwork-logo.png"
+  },
+  {
+    name: "RIT",
+    url: "https://www.rit.edu/",
+    logo: "/logos/rit-logo.png"
   }
 ];
 
