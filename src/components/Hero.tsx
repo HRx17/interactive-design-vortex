@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Mouse, Download } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import heroImage from '@/assets/hero-image-final.png';
+import heroImage from '@/assets/hero-image-new.png';
 
 interface Company {
   name: string;
