@@ -137,7 +137,7 @@ export function DiagonalLayout() {
     {
       title: "Product Designer",
       company: "Tech9",
-      companyLogo: "/logos/tech9-logo.svg",
+      companyLogo: "/logos/tech9-logo.svg?v=2",
       period: "May 2025 - Aug 2025",
       location: "Utah, USA (Remote)",
       description: "Designed user-centered solutions that increased user engagement by 35% and improved conversion rates by 25%. Worked with chief product officer (CPO) to lead design initiatives to reach client goals.",

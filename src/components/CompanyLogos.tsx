@@ -11,7 +11,7 @@ const companies: Company[] = [
   {
     name: "Tech9",
     url: "https://www.tech9.com/",
-    logo: "/logos/tech9-logo.svg"
+    logo: "/logos/tech9-logo.svg?v=2"
   },
   {
     name: "Excellus BCBS",
