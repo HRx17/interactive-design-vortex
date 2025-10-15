@@ -16,6 +16,20 @@ const endorsements = [
       "Tremendous asset to any team"
     ],
     fullText: "What particularly impressed me was Haet's ability to take constructive feedback exceptionally well. He listened carefully, asked thoughtful questions, and implemented suggestions with a positive attitude that made collaboration both productive and enjoyable. One of Haet's standout qualities is his proactive mindset. Rather than waiting for direction, he actively sought out opportunities to contribute and consistently looked for ways to add value to our projects."
+  },
+  {
+    name: "WaahTV Founder",
+    title: "Founder & CEO",
+    company: "WaahTV",
+    companyLogo: "/logos/waahtv-logo.png",
+    quote: "Working with Haet was an absolute pleasure. His deep understanding of UX principles and ability to translate our vision into intuitive designs exceeded our expectations. He delivered high-quality work ahead of schedule while maintaining excellent communication throughout the project.",
+    highlights: [
+      "Exceptional UX research and user-centered approach",
+      "Quick turnaround with high-quality deliverables",
+      "Strong communication and collaboration skills",
+      "Deep understanding of streaming platform needs"
+    ],
+    fullText: "Haet brought fresh perspectives to our streaming platform redesign. He conducted thorough user research, created detailed user personas, and delivered wireframes and prototypes that truly resonated with our target audience. What impressed me most was his ability to balance aesthetic appeal with functionality, ensuring our users could navigate complex features effortlessly. His iterative approach and willingness to incorporate feedback made the entire process smooth and collaborative."
   }
 ];
 
@@ -65,7 +79,7 @@ export function Endorsements() {
         </div>
 
         {/* Endorsement Cards */}
-        <div className="grid grid-cols-1 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {endorsements.map((endorsement, index) => (
             <div
               key={index}
