@@ -7,6 +7,7 @@ import { MetricsShowcase } from '@/components/MetricsShowcase';
 import { BentoGrid } from '@/components/BentoGrid';
 import { DiagonalLayout } from '@/components/DiagonalLayout';
 import { ProjectToggle } from '@/components/ProjectToggle';
+import { UXProcess } from '@/components/UXProcess';
 import { About } from '@/components/About';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
@@ -29,6 +30,9 @@ const Index = () => {
         
         {/* Skills & Expertise Bento Grid */}
         <BentoGrid />
+        
+        {/* UX Process Section */}
+        <UXProcess />
         
         <About />
         <Contact />
