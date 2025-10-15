@@ -83,12 +83,12 @@ export function Endorsements() {
           {endorsements.map((endorsement, index) => (
             <div
               key={index}
-              className={`transition-all duration-700 ${
+              className={`h-full transition-all duration-700 ${
                 isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: `${index * 200}ms` }}
             >
-              <Card className="group relative overflow-hidden border-border/40 hover:border-emerald-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/10 bg-card/80 backdrop-blur-sm">
+              <Card className="h-full group relative overflow-hidden border-border/40 hover:border-emerald-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/10 bg-card/80 backdrop-blur-sm">
                 <CardContent className="p-8 md:p-10">
                   {/* Quote Icon */}
                   <div className="absolute top-6 right-6 opacity-10 group-hover:opacity-20 transition-opacity">
