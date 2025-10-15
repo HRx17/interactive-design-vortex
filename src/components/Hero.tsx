@@ -127,8 +127,8 @@ export function Hero() {
                   alt="Haet Ranpariya"
                   className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                   style={{
-                    maskImage: 'radial-gradient(ellipse 90% 95% at 50% 45%, rgba(0,0,0,1) 30%, rgba(0,0,0,0.9) 50%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0) 90%)',
-                    WebkitMaskImage: 'radial-gradient(ellipse 90% 95% at 50% 45%, rgba(0,0,0,1) 30%, rgba(0,0,0,0.9) 50%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0) 90%)'
+                    maskImage: 'radial-gradient(ellipse 100% 100% at 50% 50%, rgba(0,0,0,1) 20%, rgba(0,0,0,0.95) 35%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.4) 65%, rgba(0,0,0,0.1) 80%, rgba(0,0,0,0) 95%)',
+                    WebkitMaskImage: 'radial-gradient(ellipse 100% 100% at 50% 50%, rgba(0,0,0,1) 20%, rgba(0,0,0,0.95) 35%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.4) 65%, rgba(0,0,0,0.1) 80%, rgba(0,0,0,0) 95%)'
                   }}
                 />
                 
@@ -137,8 +137,8 @@ export function Hero() {
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                   style={{
                     background: 'radial-gradient(circle at center, rgba(16, 185, 129, 0.1) 0%, transparent 70%)',
-                    maskImage: 'radial-gradient(ellipse 90% 95% at 50% 45%, rgba(0,0,0,1) 30%, rgba(0,0,0,0.9) 50%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0) 90%)',
-                    WebkitMaskImage: 'radial-gradient(ellipse 90% 95% at 50% 45%, rgba(0,0,0,1) 30%, rgba(0,0,0,0.9) 50%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0) 90%)'
+                    maskImage: 'radial-gradient(ellipse 100% 100% at 50% 50%, rgba(0,0,0,1) 20%, rgba(0,0,0,0.95) 35%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.4) 65%, rgba(0,0,0,0.1) 80%, rgba(0,0,0,0) 95%)',
+                    WebkitMaskImage: 'radial-gradient(ellipse 100% 100% at 50% 50%, rgba(0,0,0,1) 20%, rgba(0,0,0,0.95) 35%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.4) 65%, rgba(0,0,0,0.1) 80%, rgba(0,0,0,0) 95%)'
                   }}
                 ></div>
               </div>
