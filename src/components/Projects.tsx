@@ -95,26 +95,23 @@ export function Projects() {
       <CarouselItem key="upcoming" className="md:basis-1/2">
         <UpcomingProject index={0} />
       </CarouselItem>,
-      <CarouselItem key="uxprobe" className="md:basis-1/2">
-        <UXProbeProject index={1} />
-      </CarouselItem>,
       <CarouselItem key="parkingApp" className="md:basis-1/2">
-        <ParkingAppProject index={2} />
+        <ParkingAppProject index={1} />
       </CarouselItem>,
       <CarouselItem key="AR" className="md:basis-1/2">
-        <ARProject index={3} />
+        <ARProject index={2} />
       </CarouselItem>,
       <CarouselItem key="ritshiftmate" className="md:basis-1/2">
-        <RITShiftMateProject index={4} />
+        <RITShiftMateProject index={3} />
       </CarouselItem>,
       <CarouselItem key="healthyR" className="md:basis-1/2">
-        <HealthyRProject index={5} />
+        <HealthyRProject index={4} />
       </CarouselItem>,
       <CarouselItem key="weatherApp" className="md:basis-1/2">
-        <WeatherAppProject index={6} />
+        <WeatherAppProject index={5} />
       </CarouselItem>,
       <CarouselItem key="foodzap" className="md:basis-1/2">
-        <FoodZapProject index={7} />
+        <FoodZapProject index={6} />
       </CarouselItem>,
       // For any remaining embed projects
       ...designProjectEmbeds.slice(6).map((embed, index) => {
