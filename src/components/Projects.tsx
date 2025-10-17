@@ -17,6 +17,7 @@ import { WeatherAppProject } from './WeatherAppProject';
 import { ARProject } from './ARProject';
 import { ParkingAppProject } from './ParkingAppProject';
 import { PostSchedulerProject } from './PostSchedulerProject';
+import { UXProbeProject } from './UXProbeProject';
 import { AttendanceProject } from './AttendanceProject';
 import { WaahTvProject } from './WaahTvProject';
 import { ProjectTypeSwitcher } from './ProjectTypeSwitcher';
@@ -64,12 +65,13 @@ export function Projects() {
   const renderDesignProjects = () => {
     return [
       <UpcomingProject key="upcoming" index={0} />, // Add the Upcoming project at the beginning
-      <ParkingAppProject key="parkingApp" index={1} />,
-      <ARProject key="AR" index={2} />,
-      <RITShiftMateProject key="ritshiftmate" index={3} />,
-      <HealthyRProject key="healthyR" index={4} />,
-      <WeatherAppProject key="weatherApp" index={5} />,
-      <FoodZapProject key="foodzap" index={6} />,
+      <UXProbeProject key="uxprobe" index={1} />,
+      <ParkingAppProject key="parkingApp" index={2} />,
+      <ARProject key="AR" index={3} />,
+      <RITShiftMateProject key="ritshiftmate" index={4} />,
+      <HealthyRProject key="healthyR" index={5} />,
+      <WeatherAppProject key="weatherApp" index={6} />,
+      <FoodZapProject key="foodzap" index={7} />,
       // For any remaining embed projects
       ...designProjectEmbeds.slice(6).map((embed, index) => {
         const adjustedIndex = index + 7;
@@ -93,23 +95,26 @@ export function Projects() {
       <CarouselItem key="upcoming" className="md:basis-1/2">
         <UpcomingProject index={0} />
       </CarouselItem>,
+      <CarouselItem key="uxprobe" className="md:basis-1/2">
+        <UXProbeProject index={1} />
+      </CarouselItem>,
       <CarouselItem key="parkingApp" className="md:basis-1/2">
-        <ParkingAppProject index={1} />
+        <ParkingAppProject index={2} />
       </CarouselItem>,
       <CarouselItem key="AR" className="md:basis-1/2">
-        <ARProject index={2} />
+        <ARProject index={3} />
       </CarouselItem>,
       <CarouselItem key="ritshiftmate" className="md:basis-1/2">
-        <RITShiftMateProject index={3} />
+        <RITShiftMateProject index={4} />
       </CarouselItem>,
       <CarouselItem key="healthyR" className="md:basis-1/2">
-        <HealthyRProject index={4} />
+        <HealthyRProject index={5} />
       </CarouselItem>,
       <CarouselItem key="weatherApp" className="md:basis-1/2">
-        <WeatherAppProject index={5} />
+        <WeatherAppProject index={6} />
       </CarouselItem>,
       <CarouselItem key="foodzap" className="md:basis-1/2">
-        <FoodZapProject index={6} />
+        <FoodZapProject index={7} />
       </CarouselItem>,
       // For any remaining embed projects
       ...designProjectEmbeds.slice(6).map((embed, index) => {

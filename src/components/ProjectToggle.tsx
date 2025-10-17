@@ -11,6 +11,7 @@ import { PostSchedulerProject } from '@/components/PostSchedulerProject';
 import { AttendanceProject } from '@/components/AttendanceProject';
 import { WaahTvProject } from '@/components/WaahTvProject';
 import { ParkingAppProject } from '@/components/ParkingAppProject';
+import { UXProbeProject } from '@/components/UXProbeProject';
 
 interface ProjectToggleProps {
   isInView: boolean;
@@ -32,12 +33,13 @@ export function ProjectToggle({ isInView }: ProjectToggleProps) {
 
   const designProjects = [
     <UpcomingProject key="upcoming" index={0} />,
-    <ParkingAppProject key="parkingApp" index={1} />,
-    <ARProject key="AR" index={2} />,
-    <RITShiftMateProject key="ritshiftmate" index={3} />,
-    <HealthyRProject key="healthyR" index={4} />,
-    <WeatherAppProject key="weatherApp" index={5} />,
-    <FoodZapProject key="foodzap" index={6} />
+    <UXProbeProject key="uxprobe" index={1} />,
+    <ParkingAppProject key="parkingApp" index={2} />,
+    <ARProject key="AR" index={3} />,
+    <RITShiftMateProject key="ritshiftmate" index={4} />,
+    <HealthyRProject key="healthyR" index={5} />,
+    <WeatherAppProject key="weatherApp" index={6} />,
+    <FoodZapProject key="foodzap" index={7} />
   ];
 
   const developmentProjects = [
@@ -137,7 +139,7 @@ export function ProjectToggle({ isInView }: ProjectToggleProps) {
         )}>
           <div className="text-center p-6 rounded-2xl bg-card/30 backdrop-blur-sm border border-border/40">
             <div className="text-3xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
-              {activeTab === 'design' ? '7+' : '3+'}
+              {activeTab === 'design' ? '8+' : '3+'}
             </div>
             <div className="text-muted-foreground text-sm mt-1">
               {activeTab === 'design' ? 'Design Projects' : 'Full-Stack Apps'}
