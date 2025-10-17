@@ -11,6 +11,7 @@ import ParkEaseCaseStudy from "./pages/projects/ParkEaseCaseStudy";
 import ARCaseStudy from "./pages/projects/ARCaseStudy";
 import WeatherAppCaseStudy from "./pages/projects/WeatherAppCaseStudy";
 import FoodZapCaseStudy from "./pages/projects/FoodZapCaseStudy";
+import UXProbeCaseStudy from "./pages/projects/UXProbeCaseStudy";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/projects/ar-vr" element={<ARCaseStudy />} />
           <Route path="/projects/weather-app" element={<WeatherAppCaseStudy />} />
           <Route path="/projects/foodzap" element={<FoodZapCaseStudy />} />
+          <Route path="/projects/uxprobe" element={<UXProbeCaseStudy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
