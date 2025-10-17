@@ -231,7 +231,7 @@ export function Hero() {
         <div className="mt-20 pt-12 border-t border-white/10">
           <div className="text-center mb-8">
             <h3 className="text-sm font-medium text-white/60 uppercase tracking-wider">
-              Trusted by companies worldwide
+              Previous Clients & Employers
             </h3>
           </div>
           
