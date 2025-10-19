@@ -135,6 +135,68 @@ const UXProbeCaseStudy = () => {
             </div>
           </section>
 
+          {/* Try It Yourself */}
+          <section className="case-study-section bg-gradient-to-r from-primary/10 via-purple-600/10 to-primary/10">
+            <Card className="bg-card/50 backdrop-blur border-primary/30">
+              <CardHeader className="text-center">
+                <CardTitle className="text-2xl md:text-3xl mb-2">Experience UXProbe Yourself</CardTitle>
+                <CardDescription className="text-base">Choose your path to explore the platform</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {/* Quick Demo */}
+                  <Card className="bg-card/80">
+                    <CardHeader>
+                      <CardTitle className="text-xl">Quick Demo</CardTitle>
+                      <CardDescription>No signup required</CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <p className="text-sm text-muted-foreground">
+                        Try a free heuristic analysis instantly - analyze any website in seconds
+                      </p>
+                      <Button className="w-full gap-2" asChild>
+                        <a href="https://hello-world-starter-6016.lovable.app/" target="_blank" rel="noopener noreferrer">
+                          Analyze Now
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      </Button>
+                    </CardContent>
+                  </Card>
+
+                  {/* Full Platform */}
+                  <Card className="bg-card/80">
+                    <CardHeader>
+                      <CardTitle className="text-xl">Full Platform Access</CardTitle>
+                      <CardDescription>Create a free account</CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <ul className="space-y-2 text-sm text-muted-foreground">
+                        <li className="flex items-start gap-2">
+                          <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>Save and manage multiple projects</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>Generate comprehensive study plans</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                          <span>Access full research toolkit</span>
+                        </li>
+                      </ul>
+                      <Button className="w-full gap-2" variant="outline" asChild>
+                        <a href="https://hello-world-starter-6016.lovable.app/auth" target="_blank" rel="noopener noreferrer">
+                          Create Account
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </div>
+              </CardContent>
+            </Card>
+          </section>
+
           {/* Key Metrics Banner */}
           <section className="case-study-section bg-gradient-to-r from-primary/10 via-purple-600/10 to-primary/10">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -387,68 +449,6 @@ const UXProbeCaseStudy = () => {
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
-              </CardContent>
-            </Card>
-          </section>
-
-          {/* Try It Yourself */}
-          <section className="case-study-section bg-gradient-to-r from-primary/10 via-purple-600/10 to-primary/10">
-            <Card className="bg-card/50 backdrop-blur border-primary/30">
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl md:text-3xl mb-2">Experience UXProbe Yourself</CardTitle>
-                <CardDescription className="text-base">Choose your path to explore the platform</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="grid md:grid-cols-2 gap-6">
-                  {/* Quick Demo */}
-                  <Card className="bg-card/80">
-                    <CardHeader>
-                      <CardTitle className="text-xl">Quick Demo</CardTitle>
-                      <CardDescription>No signup required</CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <p className="text-sm text-muted-foreground">
-                        Try a free heuristic analysis instantly - analyze any website in seconds
-                      </p>
-                      <Button className="w-full gap-2" asChild>
-                        <a href="https://hello-world-starter-6016.lovable.app/" target="_blank" rel="noopener noreferrer">
-                          Analyze Now
-                          <ExternalLink className="w-4 h-4" />
-                        </a>
-                      </Button>
-                    </CardContent>
-                  </Card>
-
-                  {/* Full Platform */}
-                  <Card className="bg-card/80">
-                    <CardHeader>
-                      <CardTitle className="text-xl">Full Platform Access</CardTitle>
-                      <CardDescription>Create a free account</CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <ul className="space-y-2 text-sm text-muted-foreground">
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                          <span>Save and manage multiple projects</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                          <span>Generate comprehensive study plans</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                          <span>Access full research toolkit</span>
-                        </li>
-                      </ul>
-                      <Button className="w-full gap-2" variant="outline" asChild>
-                        <a href="https://hello-world-starter-6016.lovable.app/auth" target="_blank" rel="noopener noreferrer">
-                          Create Account
-                          <ExternalLink className="w-4 h-4" />
-                        </a>
-                      </Button>
-                    </CardContent>
-                  </Card>
-                </div>
               </CardContent>
             </Card>
           </section>
