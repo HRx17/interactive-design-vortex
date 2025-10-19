@@ -6,7 +6,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { ImageZoom } from '@/components/ImageZoom';
 import { TechBadge } from '@/components/TechBadge';
-import { ArchitectureDiagram } from '@/components/ArchitectureDiagram';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
 const UXProbeCaseStudy = () => {
@@ -18,42 +17,42 @@ const UXProbeCaseStudy = () => {
       title: "AI Heuristic Analysis",
       description: "Automated analysis using Nielsen's 10 usability heuristics. AI evaluates websites and identifies violations with severity ratings, specific locations, and actionable recommendations.",
       tech: "Powered by Gemini 2.5 Pro for deep reasoning, processes screenshots with vision API, generates structured violation reports with bounding boxes",
-      image: "/lovable-uploads/uxprobe-heuristic-analysis.jpg"
+      image: "/lovable-uploads/uxprobe-analysis-results.png"
     },
     {
       icon: FileText,
       title: "Study Plan Generation",
       description: "AI-generated comprehensive research plans from user goals. Creates structured, multi-step research workflows with objectives, methodologies, and deliverables.",
       tech: "Uses Gemini 2.5 Flash for fast generation, dynamic step parsing, PostgreSQL storage with RLS policies",
-      image: "/lovable-uploads/uxprobe-study-plan.jpg"
+      image: "/lovable-uploads/uxprobe-study-plan.png"
     },
     {
       icon: Layout,
       title: "Dynamic Step Workspace",
       description: "Context-aware workspace that adapts to each research step type. Different tools and AI guidance for interviews, personas, observations, and synthesis.",
       tech: "React-based dynamic routing, step-specific AI prompts, real-time data persistence, markdown rendering",
-      image: "/lovable-uploads/uxprobe-workspace.jpg"
+      image: "/lovable-uploads/uxprobe-study-plan.png"
     },
     {
       icon: Users,
       title: "Interview Management",
       description: "Schedule, conduct, and document user interviews. Record responses, track findings, and generate insights with AI assistance.",
       tech: "Real-time database updates, structured interview templates, AI-powered insight extraction",
-      image: "/lovable-uploads/uxprobe-interviews.jpg"
+      image: "/lovable-uploads/uxprobe-research.png"
     },
     {
       icon: UserCircle,
       title: "Persona Builder",
       description: "Create detailed user personas based on research findings. Build comprehensive profiles with demographics, goals, pain points, and behaviors.",
       tech: "Form validation with Zod, rich persona templates, relationship mapping",
-      image: "/lovable-uploads/uxprobe-personas.jpg"
+      image: "/lovable-uploads/uxprobe-research.png"
     },
     {
       icon: Sparkles,
       title: "Real-time AI Guidance",
       description: "On-demand AI assistance for any research step. Get recommendations, suggestions, and guidance tailored to your current task and context.",
       tech: "Context-aware prompts, streaming AI responses, edge functions for AI processing",
-      image: "/lovable-uploads/uxprobe-ai-guidance.jpg"
+      image: "/lovable-uploads/uxprobe-analysis-input.png"
     }
   ];
 
@@ -94,8 +93,8 @@ const UXProbeCaseStudy = () => {
           <section className="relative h-[60vh] min-h-[500px] w-full overflow-hidden">
             <div className="absolute inset-0">
               <img
-                src="/lovable-uploads/uxprobe-workspace.jpg"
-                alt="UXProbe Platform"
+                src="/lovable-uploads/uxprobe-analysis-results.png"
+                alt="UXProbe Heuristic Analysis Results"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
@@ -264,21 +263,62 @@ const UXProbeCaseStudy = () => {
             </div>
           </section>
 
-          {/* Technical Implementation */}
+          {/* Platform Showcase */}
           <section className="case-study-section">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Platform Overview</h2>
+            
+            <div className="space-y-8">
+              {/* Landing Page */}
+              <Card className="bg-card/30 backdrop-blur overflow-hidden">
+                <CardHeader>
+                  <CardTitle>Landing Page</CardTitle>
+                  <CardDescription>First impression for users</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ImageZoom 
+                    src="/lovable-uploads/uxprobe-landing.png"
+                    alt="UXProbe Landing Page"
+                    className="rounded-lg border border-border/20 w-full"
+                  />
+                </CardContent>
+              </Card>
+
+              {/* Dashboard */}
+              <Card className="bg-card/30 backdrop-blur overflow-hidden">
+                <CardHeader>
+                  <CardTitle>Dashboard</CardTitle>
+                  <CardDescription>Manage and view analyzed websites</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ImageZoom 
+                    src="/lovable-uploads/uxprobe-dashboard.png"
+                    alt="UXProbe Dashboard"
+                    className="rounded-lg border border-border/20 w-full"
+                  />
+                </CardContent>
+              </Card>
+
+              {/* Analysis Input */}
+              <Card className="bg-card/30 backdrop-blur overflow-hidden">
+                <CardHeader>
+                  <CardTitle>Analysis Input</CardTitle>
+                  <CardDescription>Enter website URL for evaluation</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ImageZoom 
+                    src="/lovable-uploads/uxprobe-analysis-input.png"
+                    alt="UXProbe Analysis Input Page"
+                    className="rounded-lg border border-border/20 w-full"
+                  />
+                </CardContent>
+              </Card>
+            </div>
+          </section>
+
+          {/* Technical Implementation */}
+          <section className="case-study-section bg-gradient-to-b from-transparent to-primary/5">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Technical Implementation</h2>
             
-            {/* Architecture Diagram */}
-            <Card className="bg-card/30 backdrop-blur mb-8">
-              <CardHeader>
-                <CardTitle>System Architecture</CardTitle>
-                <CardDescription>How UXProbe's components work together</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ArchitectureDiagram />
-              </CardContent>
-            </Card>
-
             {/* Tech Stack */}
             <Card className="bg-card/30 backdrop-blur mb-8">
               <CardHeader>
