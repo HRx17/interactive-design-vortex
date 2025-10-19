@@ -106,22 +106,6 @@ const UXProbeCaseStudy = () => {
               <p className="text-lg md:text-xl text-muted-foreground mb-8">
                 Full-stack web application automating heuristic evaluation and streamlining UX research workflows
               </p>
-              
-              {/* Quick Stats */}
-              <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm md:text-base">
-                <div className="flex items-center gap-2">
-                  <Brain className="w-5 h-5 text-primary" />
-                  <span className="font-semibold">200K+ Analyses</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Users className="w-5 h-5 text-primary" />
-                  <span className="font-semibold">50K+ Users</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-primary" />
-                  <span className="font-semibold">4.9/5 Rating</span>
-                </div>
-              </div>
 
               {/* CTAs */}
               <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -137,34 +121,6 @@ const UXProbeCaseStudy = () => {
                     <ExternalLink className="w-4 h-4" />
                   </a>
                 </Button>
-              </div>
-
-              {/* Project Metadata */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-                <Card className="bg-card/50 backdrop-blur">
-                  <CardHeader className="p-4">
-                    <CardTitle className="text-sm text-muted-foreground">Role</CardTitle>
-                    <CardDescription className="text-base text-foreground font-semibold">Full-Stack Developer</CardDescription>
-                  </CardHeader>
-                </Card>
-                <Card className="bg-card/50 backdrop-blur">
-                  <CardHeader className="p-4">
-                    <CardTitle className="text-sm text-muted-foreground">Duration</CardTitle>
-                    <CardDescription className="text-base text-foreground font-semibold">3 months</CardDescription>
-                  </CardHeader>
-                </Card>
-                <Card className="bg-card/50 backdrop-blur">
-                  <CardHeader className="p-4">
-                    <CardTitle className="text-sm text-muted-foreground">Tech Stack</CardTitle>
-                    <CardDescription className="text-base text-foreground font-semibold">React, TypeScript, AI</CardDescription>
-                  </CardHeader>
-                </Card>
-                <Card className="bg-card/50 backdrop-blur">
-                  <CardHeader className="p-4">
-                    <CardTitle className="text-sm text-muted-foreground">Status</CardTitle>
-                    <CardDescription className="text-base text-foreground font-semibold">Live & Active</CardDescription>
-                  </CardHeader>
-                </Card>
               </div>
             </div>
           </section>

@@ -64,7 +64,7 @@ export function Projects() {
   // Helper function to render design projects
   const renderDesignProjects = () => {
     return [
-      <UpcomingProject key="upcoming" index={0} />, // Add the Upcoming project at the beginning
+      <UpcomingProject key="upcoming" index={0} />,
       <UXProbeProject key="uxprobe" index={1} />,
       <ParkingAppProject key="parkingApp" index={2} />,
       <ARProject key="AR" index={3} />,
@@ -95,23 +95,26 @@ export function Projects() {
       <CarouselItem key="upcoming" className="md:basis-1/2">
         <UpcomingProject index={0} />
       </CarouselItem>,
+      <CarouselItem key="uxprobe" className="md:basis-1/2">
+        <UXProbeProject index={1} />
+      </CarouselItem>,
       <CarouselItem key="parkingApp" className="md:basis-1/2">
-        <ParkingAppProject index={1} />
+        <ParkingAppProject index={2} />
       </CarouselItem>,
       <CarouselItem key="AR" className="md:basis-1/2">
-        <ARProject index={2} />
+        <ARProject index={3} />
       </CarouselItem>,
       <CarouselItem key="ritshiftmate" className="md:basis-1/2">
-        <RITShiftMateProject index={3} />
+        <RITShiftMateProject index={4} />
       </CarouselItem>,
       <CarouselItem key="healthyR" className="md:basis-1/2">
-        <HealthyRProject index={4} />
+        <HealthyRProject index={5} />
       </CarouselItem>,
       <CarouselItem key="weatherApp" className="md:basis-1/2">
-        <WeatherAppProject index={5} />
+        <WeatherAppProject index={6} />
       </CarouselItem>,
       <CarouselItem key="foodzap" className="md:basis-1/2">
-        <FoodZapProject index={6} />
+        <FoodZapProject index={7} />
       </CarouselItem>,
       // For any remaining embed projects
       ...designProjectEmbeds.slice(6).map((embed, index) => {
