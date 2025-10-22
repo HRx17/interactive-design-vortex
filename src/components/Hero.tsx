@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Mouse, Download } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import heroImage from '@/assets/hero-profile-silhouette.png';
+import heroImage from '@/assets/hero-profile.png';
 
 interface Company {
   name: string;
@@ -160,7 +160,7 @@ export function Hero() {
               <div className="absolute -inset-6 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full blur-2xl glow-effect"></div>
               
               {/* Profile container */}
-              <div className="h-[500px] w-[500px] relative cursor-magnetic transition-all duration-500 group">
+              <div className="h-96 w-96 relative cursor-magnetic transition-all duration-500 group">
                 <img 
                   src={heroImage} 
                   alt="Haet Ranpariya"
