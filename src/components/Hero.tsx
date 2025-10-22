@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Mouse, Download } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import heroImage from '@/assets/hero-profile.png';
+
 
 interface Company {
   name: string;
@@ -93,105 +93,56 @@ export function Hero() {
       </div>
       
       <div className="section-container relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="max-w-4xl">
-            <div 
-              className="mb-6 reveal-text"
-              ref={sentenceRef}
-            >
-              <span className="inline-block px-3 py-1 rounded-full text-sm font-medium bg-emerald-900/50 text-emerald-100 backdrop-blur-sm border border-emerald-700/30 animate-fade-in opacity-0" style={{animationDelay: '0.2s', animationFillMode: 'forwards'}}>
-                UI/UX Designer • Product Designer • GenUI Specialist
-              </span>
-            </div>
-            
-            <h1 className="heading mb-4 text-white">
-              <div className="reveal-text">
-                <span className="inline-block bg-gradient-to-r from-emerald-300 to-teal-200 bg-clip-text text-transparent">Creating</span>
-                <span className="inline-block ml-3">intentional</span>
-              </div>
-              <div className="reveal-text mt-2">
-                <span className="inline-block">and</span>
-                <span className="inline-block ml-3 bg-gradient-to-r from-emerald-300 to-teal-200 bg-clip-text text-transparent">impactful</span>
-                <span className="inline-block ml-3">digital</span>
-              </div>
-              <div className="reveal-text mt-2">
-                <span className="inline-block bg-gradient-to-r from-emerald-300 to-teal-200 bg-clip-text text-transparent">experiences</span>
-              </div>
-            </h1>
-            
-            <p className="text-lg md:text-xl text-emerald-100/80 max-w-2xl mt-6 animate-fade-in opacity-0" style={{animationDelay: '0.6s', animationFillMode: 'forwards'}}>
-              I'm Haet Ranpariya, a UI/UX Designer and Product Designer passionate about creating human-centered digital experiences. I also specialize in GenUI, leveraging generative AI to enhance and accelerate the design process.
-            </p>
-            
-            <div className="mt-10 animate-fade-in opacity-0 flex flex-wrap gap-4 items-center justify-center" style={{animationDelay: '0.8s', animationFillMode: 'forwards'}}>
-              <a 
-                href="/resume.pdf"
-                download
-                className="btn-magnetic inline-flex items-center px-8 py-4 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 backdrop-blur-sm text-white font-medium gap-2 border border-emerald-500/30 shadow-lg hover:shadow-emerald-500/25 group"
-              >
-                <span className="relative z-10 flex items-center gap-2">
-                  Download Resume
-                  <Download className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-                </span>
-              </a>
-              
-              <a 
-                href="#projects"
-                className="btn-magnetic inline-flex items-center px-8 py-4 rounded-full border border-emerald-500/30 backdrop-blur-sm text-emerald-100 font-medium hover:bg-emerald-500/10 transition-all duration-300 group"
-              >
-                <span className="relative z-10 flex items-center gap-2">
-                  View Projects
-                  <div className="w-2 h-2 rounded-full bg-emerald-400 group-hover:animate-pulse"></div>
-                </span>
-              </a>
-            </div>
+        <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
+          <div 
+            className="mb-6 reveal-text"
+            ref={sentenceRef}
+          >
+            <span className="inline-block px-3 py-1 rounded-full text-sm font-medium bg-emerald-900/50 text-emerald-100 backdrop-blur-sm border border-emerald-700/30 animate-fade-in opacity-0" style={{animationDelay: '0.2s', animationFillMode: 'forwards'}}>
+              UI/UX Designer • Product Designer • GenUI Specialist
+            </span>
           </div>
           
-          {/* Profile picture section with floating elements */}
-          <div className="hidden md:flex justify-center relative">
-            <div className="relative">
-              {/* Animated floating elements around profile */}
-              <div className="absolute -top-8 -left-8 w-4 h-4 bg-emerald-400/60 rounded-full float-animation" style={{animationDelay: '0s'}}></div>
-              <div className="absolute -top-4 -right-12 w-3 h-3 bg-teal-400/60 rounded-full float-animation" style={{animationDelay: '2s'}}></div>
-              <div className="absolute -bottom-8 -right-8 w-5 h-5 bg-emerald-300/40 rounded-full float-animation" style={{animationDelay: '4s'}}></div>
-              <div className="absolute -bottom-4 -left-12 w-2 h-2 bg-teal-300/60 rounded-full float-animation" style={{animationDelay: '1s'}}></div>
-              
-              {/* Main glow effect */}
-              <div className="absolute -inset-6 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full blur-2xl glow-effect"></div>
-              
-              {/* Profile container */}
-              <div className="h-96 w-96 relative cursor-magnetic transition-all duration-500 group">
-                <img 
-                  src={heroImage} 
-                  alt="Haet Ranpariya"
-                  className="object-cover object-top w-full h-full group-hover:scale-105 transition-transform duration-500"
-                  style={{
-                    objectPosition: '50% 0%',
-                    maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0.95) 75%, rgba(0,0,0,0.7) 85%, rgba(0,0,0,0.3) 92%, rgba(0,0,0,0) 100%), radial-gradient(ellipse 100% 80% at 50% 30%, rgba(0,0,0,1) 20%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0) 100%)',
-                    WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0.95) 75%, rgba(0,0,0,0.7) 85%, rgba(0,0,0,0.3) 92%, rgba(0,0,0,0) 100%), radial-gradient(ellipse 100% 80% at 50% 30%, rgba(0,0,0,1) 20%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0) 100%)',
-                    maskComposite: 'intersect',
-                    WebkitMaskComposite: 'source-in'
-                  }}
-                />
-                
-                {/* Subtle glow overlay */}
-                <div 
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{
-                    background: 'radial-gradient(circle at center, rgba(16, 185, 129, 0.1) 0%, transparent 70%)',
-                    maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0.95) 75%, rgba(0,0,0,0.7) 85%, rgba(0,0,0,0.3) 92%, rgba(0,0,0,0) 100%), radial-gradient(ellipse 100% 80% at 50% 30%, rgba(0,0,0,1) 20%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0) 100%)',
-                    WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0.95) 75%, rgba(0,0,0,0.7) 85%, rgba(0,0,0,0.3) 92%, rgba(0,0,0,0) 100%), radial-gradient(ellipse 100% 80% at 50% 30%, rgba(0,0,0,1) 20%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0) 100%)',
-                    maskComposite: 'intersect',
-                    WebkitMaskComposite: 'source-in'
-                  }}
-                ></div>
-              </div>
-              
-              {/* UX badge */}
-              <div className="absolute bottom-4 right-4 h-20 w-20 bg-gradient-to-br from-emerald-400 to-teal-600 rounded-full border-4 border-emerald-900 flex items-center justify-center text-white font-bold text-sm cursor-magnetic hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-emerald-500/30 group">
-                <span className="group-hover:rotate-12 transition-transform duration-300">UI/UX</span>
-              </div>
+          <h1 className="heading mb-4 text-white text-5xl md:text-7xl">
+            <div className="reveal-text">
+              <span className="inline-block bg-gradient-to-r from-emerald-300 to-teal-200 bg-clip-text text-transparent">Creating</span>
+              <span className="inline-block ml-3">intentional</span>
             </div>
+            <div className="reveal-text mt-2">
+              <span className="inline-block">and</span>
+              <span className="inline-block ml-3 bg-gradient-to-r from-emerald-300 to-teal-200 bg-clip-text text-transparent">impactful</span>
+              <span className="inline-block ml-3">digital</span>
+            </div>
+            <div className="reveal-text mt-2">
+              <span className="inline-block bg-gradient-to-r from-emerald-300 to-teal-200 bg-clip-text text-transparent">experiences</span>
+            </div>
+          </h1>
+          
+          <p className="text-lg md:text-xl text-emerald-100/80 max-w-3xl mt-8 animate-fade-in opacity-0" style={{animationDelay: '0.6s', animationFillMode: 'forwards'}}>
+            I'm Haet Ranpariya, a UI/UX Designer and Product Designer passionate about creating human-centered digital experiences. I also specialize in GenUI, leveraging generative AI to enhance and accelerate the design process.
+          </p>
+          
+          <div className="mt-12 animate-fade-in opacity-0 flex flex-wrap gap-4 items-center justify-center" style={{animationDelay: '0.8s', animationFillMode: 'forwards'}}>
+            <a 
+              href="/resume.pdf"
+              download
+              className="btn-magnetic inline-flex items-center px-8 py-4 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 backdrop-blur-sm text-white font-medium gap-2 border border-emerald-500/30 shadow-lg hover:shadow-emerald-500/25 group"
+            >
+              <span className="relative z-10 flex items-center gap-2">
+                Download Resume
+                <Download className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+              </span>
+            </a>
+            
+            <a 
+              href="#projects"
+              className="btn-magnetic inline-flex items-center px-8 py-4 rounded-full border border-emerald-500/30 backdrop-blur-sm text-emerald-100 font-medium hover:bg-emerald-500/10 transition-all duration-300 group"
+            >
+              <span className="relative z-10 flex items-center gap-2">
+                View Projects
+                <div className="w-2 h-2 rounded-full bg-emerald-400 group-hover:animate-pulse"></div>
+              </span>
+            </a>
           </div>
         </div>
         
