@@ -5,7 +5,7 @@ import { Hero } from '@/components/Hero';
 import { CompanyLogos } from '@/components/CompanyLogos';
 import { MetricsShowcase } from '@/components/MetricsShowcase';
 import { BentoGrid } from '@/components/BentoGrid';
-import { StackedExperience } from '@/components/StackedExperience';
+import { DiagonalLayout } from '@/components/DiagonalLayout';
 import { ProjectToggle } from '@/components/ProjectToggle';
 import { UXProcess } from '@/components/UXProcess';
 import { Endorsements } from '@/components/Endorsements';
@@ -25,8 +25,8 @@ const Index = () => {
         {/* Key Metrics Showcase */}
         <MetricsShowcase />
         
-        {/* Work Experience - Stacked Cards */}
-        <StackedExperience />
+        {/* Work Experience - Diagonal Layout */}
+        <DiagonalLayout />
         
         {/* Projects Toggle Section */}
         <ProjectToggle isInView={true} />
