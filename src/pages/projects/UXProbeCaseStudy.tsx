@@ -7,6 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { ImageZoom } from '@/components/ImageZoom';
 import { TechBadge } from '@/components/TechBadge';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import heroProfile from '@/assets/hero-profile-silhouette.png';
 
 const UXProbeCaseStudy = () => {
   const navigate = useNavigate();
@@ -91,13 +92,17 @@ const UXProbeCaseStudy = () => {
         <div className="case-study-container">
           {/* Hero Section with Image */}
           <section className="relative h-[60vh] min-h-[500px] w-full overflow-hidden">
-            <div className="absolute inset-0">
-              <img
-                src="/lovable-uploads/uxprobe-analysis-results.png"
-                alt="UXProbe Heuristic Analysis Results"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
+            <div className="absolute inset-0 flex items-end justify-center">
+              <div className="relative w-full h-full flex items-end justify-center">
+                <img
+                  src={heroProfile}
+                  alt="Profile Silhouette"
+                  className="h-[90%] w-auto object-contain"
+                />
+                {/* Vanishing gradient effect at bottom */}
+                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background via-background/80 to-transparent" />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
             </div>
             
             <div className="relative h-full flex flex-col justify-end pb-16 px-4 container mx-auto">
