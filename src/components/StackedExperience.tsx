@@ -21,31 +21,29 @@ interface StackedCardProps {
 
 const StackedCard = ({ experience, index, totalCards }: StackedCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
-  const [scale, setScale] = useState(1);
-  const [isStacked, setIsStacked] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       if (!cardRef.current) return;
-
+      
       const card = cardRef.current;
       const rect = card.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      const cardTop = rect.top;
-
-      // Calculate how much the card should be scaled and positioned
-      const scrollProgress = Math.max(0, Math.min(1, (windowHeight - cardTop) / (windowHeight * 0.5)));
       
-      // Scale from 0.95 to 1 as it comes into view
-      const newScale = 0.85 + (scrollProgress * 0.15);
-      setScale(newScale);
-
-      // Determine if card is in stacked position (top of viewport)
-      setIsStacked(cardTop <= 80 + (index * 30));
+      // Each card sticks at a slightly lower position, showing previous cards' tops
+      const stackOffset = index * 40; // 40px peek of each previous card
+      const targetTop = 100 + stackOffset;
+      
+      // Add a subtle scale effect as cards stack
+      if (rect.top <= targetTop) {
+        const scaleValue = Math.max(0.95, 1 - (index * 0.01));
+        card.style.transform = `scale(${scaleValue})`;
+      } else {
+        card.style.transform = 'scale(1)';
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, [index]);
@@ -59,23 +57,20 @@ const StackedCard = ({ experience, index, totalCards }: StackedCardProps) => {
   return (
     <div
       ref={cardRef}
-      className="sticky"
+      className="sticky transition-transform duration-300 ease-out"
       style={{
-        top: `${80 + index * 30}px`,
+        top: `${100 + index * 40}px`, // Each card sticks 40px below the previous
         zIndex: totalCards - index,
       }}
     >
       <div
         className={cn(
-          "group relative overflow-hidden rounded-3xl bg-card backdrop-blur-xl border border-border/40 p-8 transition-all duration-500",
+          "group relative overflow-hidden rounded-3xl bg-card/95 backdrop-blur-xl border border-border/40 p-8 transition-all duration-300",
           experience.website ? "cursor-pointer" : "cursor-default",
           "hover:border-emerald-500/50 hover:shadow-2xl hover:shadow-emerald-500/20"
         )}
         style={{
-          transform: `scale(${scale}) translateY(${isStacked ? index * -5 : 0}px)`,
-          boxShadow: isStacked 
-            ? `0 ${20 + index * 5}px ${40 + index * 10}px -10px rgba(16, 185, 129, 0.15)` 
-            : '0 10px 30px -10px rgba(0, 0, 0, 0.3)',
+          boxShadow: `0 ${10 + index * 5}px ${30 + index * 10}px -5px rgba(0, 0, 0, 0.3), 0 ${5 + index * 2}px ${15 + index * 5}px -3px rgba(16, 185, 129, 0.1)`,
         }}
         onClick={handleClick}
       >
@@ -272,8 +267,8 @@ export function StackedExperience() {
           </p>
         </div>
 
-        {/* Stacked Cards */}
-        <div className="space-y-8 pb-96">
+        {/* Stacked Cards - Each card needs space to scroll into position */}
+        <div className="space-y-[100vh] pb-[50vh]">
           {experiences.map((experience, index) => (
             <StackedCard
               key={experience.company + experience.title}
