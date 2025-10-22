@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { ArrowUpRight, Download, Calendar, MapPin } from 'lucide-react';
+import { useScrollAnimation, useParallax } from '@/hooks/useScrollAnimation';
 
 interface DiagonalCardProps {
   title: string;
@@ -25,7 +26,7 @@ const DiagonalCard = ({ title, company, companyLogo, period, location, descripti
   return (
     <div
       className={cn(
-        "group relative overflow-hidden rounded-2xl bg-card/40 backdrop-blur-sm border border-border/30 p-8 transition-all duration-700 hover:shadow-2xl hover:shadow-emerald-500/10 hover:border-emerald-500/30",
+        "group relative overflow-hidden rounded-2xl bg-card/40 backdrop-blur-sm border border-border/30 p-8 transition-all duration-700 hover:shadow-2xl hover:shadow-emerald-500/10 hover:border-emerald-500/30 hover:scale-[1.02]",
         website ? "cursor-pointer" : "cursor-default",
         "opacity-0 transform rotate-2 translate-y-8",
         isInView && "opacity-100 rotate-0 translate-y-0"
@@ -111,27 +112,8 @@ const DiagonalCard = ({ title, company, companyLogo, period, location, descripti
 };
 
 export function DiagonalLayout() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const [isInView, setIsInView] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
-      { threshold: 0.1 }
-    );
-    
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-    
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
+  const { ref: sectionRef, isInView } = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
+  const parallaxOffset = useParallax(0.5);
 
   const experiences = [
     {
@@ -192,24 +174,24 @@ export function DiagonalLayout() {
         <div className="max-w-2xl mx-auto mb-16 text-center">
           <span className={cn(
             "text-sm font-medium px-3 py-1 rounded-full bg-secondary text-primary inline-block mb-4",
-            "opacity-0 transform translate-y-6 transition-all duration-700",
-            isInView && "opacity-100 translate-y-0"
+            "opacity-0 transform transition-all duration-700",
+            isInView && "opacity-100 bounce-in"
           )}>
             Professional Journey
           </span>
           
           <h2 className={cn(
             "heading bg-gradient-to-r from-emerald-700 to-teal-500 bg-clip-text text-transparent",
-            "opacity-0 transform translate-y-6 transition-all duration-700 delay-100",
-            isInView && "opacity-100 translate-y-0"
+            "opacity-0 transform transition-all duration-700 delay-100",
+            isInView && "opacity-100 slide-in-right"
           )}>
             Work Experience
           </h2>
           
           <p className={cn(
             "text-muted-foreground mt-4 max-w-xl mx-auto",
-            "opacity-0 transform translate-y-6 transition-all duration-700 delay-200",
-            isInView && "opacity-100 translate-y-0"
+            "opacity-0 transform transition-all duration-700 delay-200",
+            isInView && "opacity-100 blur-in"
           )}>
             My professional journey in design and technology, working with diverse teams and innovative projects.
           </p>
@@ -236,8 +218,8 @@ export function DiagonalLayout() {
         {/* Call to Action */}
         <div className={cn(
           "mt-16 text-center",
-          "opacity-0 transform translate-y-6 transition-all duration-700 delay-600",
-          isInView && "opacity-100 translate-y-0"
+          "opacity-0 transform transition-all duration-700 delay-600",
+          isInView && "opacity-100 scale-up"
         )}>
           <a 
             href="/resume.pdf"
@@ -252,9 +234,18 @@ export function DiagonalLayout() {
         </div>
       </div>
 
-      {/* Background Elements */}
-      <div className="absolute top-1/4 left-0 w-1/3 h-1/3 bg-gradient-to-r from-emerald-600/10 to-transparent rounded-full filter blur-3xl opacity-30" />
-      <div className="absolute bottom-1/4 right-0 w-1/3 h-1/3 bg-gradient-to-l from-teal-500/10 to-transparent rounded-full filter blur-3xl opacity-30" />
+      {/* Background Elements with parallax and morphing */}
+      <div 
+        className="absolute top-1/4 left-0 w-1/3 h-1/3 bg-gradient-to-r from-emerald-600/10 to-transparent rounded-full filter blur-3xl opacity-30 morph-blob"
+        style={{ transform: `translateY(${parallaxOffset}px)` }}
+      />
+      <div 
+        className="absolute bottom-1/4 right-0 w-1/3 h-1/3 bg-gradient-to-l from-teal-500/10 to-transparent rounded-full filter blur-3xl opacity-30 morph-blob" 
+        style={{ 
+          animationDelay: '4s',
+          transform: `translateY(${-parallaxOffset * 0.7}px)` 
+        }}
+      />
       
       {/* Floating decorative elements */}
       <div className="absolute top-1/3 right-1/4 w-6 h-6 border-2 border-emerald-400/30 rounded-full float-animation" style={{animationDelay: '1s'}}></div>

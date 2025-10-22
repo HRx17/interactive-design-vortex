@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const processSteps = [
   {
@@ -92,29 +93,7 @@ const StepGraphics = ({ index }: { index: number }) => {
 };
 
 export function UXProcess() {
-  const [isInView, setIsInView] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsInView(true);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
+  const { ref: sectionRef, isInView } = useScrollAnimation({ threshold: 0.2, triggerOnce: true });
 
   return (
     <section ref={sectionRef} className="section-container relative overflow-hidden">
@@ -139,8 +118,10 @@ export function UXProcess() {
         {/* Desktop Horizontal Timeline */}
         <div className="hidden lg:block">
           <div className="relative py-16">
-            {/* Main horizontal line */}
-            <div className="absolute left-0 right-0 top-32 h-0.5 bg-gradient-to-r from-emerald-500 via-teal-500 to-purple-500" />
+            {/* Main horizontal line with animated gradient */}
+            <div className={`absolute left-0 right-0 top-32 h-1 bg-gradient-to-r from-emerald-500 via-teal-500 to-purple-500 transition-all duration-1000 ${
+              isInView ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'
+            }`} style={{ transformOrigin: 'left' }} />
             
             {/* Process Steps */}
             <div className="grid grid-cols-6 gap-4">
@@ -149,18 +130,18 @@ export function UXProcess() {
                   {/* Vertical connector to timeline */}
                   <div className="absolute left-1/2 -translate-x-1/2 top-24 w-0.5 h-8 bg-border" />
                   
-                  {/* Dot on timeline */}
+                  {/* Dot on timeline with pulse effect */}
                   <div 
                     className={`absolute left-1/2 -translate-x-1/2 top-[124px] w-4 h-4 rounded-full bg-emerald-500 border-4 border-background transition-all duration-700 ${
-                      isInView ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
+                      isInView ? 'scale-100 opacity-100 animate-pulse' : 'scale-0 opacity-0'
                     }`}
                     style={{ transitionDelay: `${index * 150}ms` }}
                   />
                   
-                  {/* Graphic */}
+                  {/* Graphic with rotation animation */}
                   <div 
                     className={`relative mb-4 transition-all duration-700 ${
-                      isInView ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
+                      isInView ? 'opacity-100 translate-y-0 rotate-0' : 'opacity-0 -translate-y-10 -rotate-45'
                     }`}
                     style={{ transitionDelay: `${index * 150}ms` }}
                   >

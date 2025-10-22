@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Quote } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const endorsements = [
   {
@@ -34,37 +35,15 @@ const endorsements = [
 ];
 
 export function Endorsements() {
-  const [isInView, setIsInView] = useState(false);
+  const { ref: sectionRef, isInView } = useScrollAnimation({ threshold: 0.2, triggerOnce: true });
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsInView(true);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
 
   return (
-    <section ref={sectionRef} className="section-container relative overflow-hidden bg-muted/30">
-      {/* Background decorative elements */}
+    <section ref={sectionRef} id="endorsements" className="section-container relative overflow-hidden bg-muted/30">
+      {/* Background decorative elements with morphing */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-20 right-10 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-10 w-72 h-72 bg-teal-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-20 right-10 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl morph-blob" />
+        <div className="absolute bottom-20 left-10 w-72 h-72 bg-teal-500/5 rounded-full blur-3xl morph-blob" style={{animationDelay: '4s'}} />
       </div>
 
       <div className="max-w-6xl mx-auto">
@@ -84,11 +63,11 @@ export function Endorsements() {
             <div
               key={index}
               className={`h-full transition-all duration-700 ${
-                isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                isInView ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-10 scale-95'
               }`}
               style={{ transitionDelay: `${index * 200}ms` }}
             >
-              <Card className="h-full group relative overflow-hidden border-border/40 hover:border-emerald-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/10 bg-card/80 backdrop-blur-sm">
+              <Card className="h-full group relative overflow-hidden border-border/40 hover:border-emerald-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-500/10 bg-card/80 backdrop-blur-sm hover:scale-[1.02]">
                 <CardContent className="p-8 md:p-10">
                   {/* Quote Icon */}
                   <div className="absolute top-6 right-6 opacity-10 group-hover:opacity-20 transition-opacity">

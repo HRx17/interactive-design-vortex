@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { BookOpen, Download, FileSearch, FlaskConical, Zap } from 'lucide-react';
 import { ResearchCard } from '@/components/ResearchCard';
+import { useScrollAnimation, useParallax } from '@/hooks/useScrollAnimation';
 
 interface BentoCardProps {
   className?: string;
@@ -55,29 +56,10 @@ const BentoCard = ({ className, title, description, icon, gradient, children, on
 };
 
 export function About() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const [isInView, setIsInView] = useState(false);
+  const { ref: sectionRef, isInView } = useScrollAnimation({ threshold: 0.1, triggerOnce: true });
+  const parallaxOffset = useParallax(0.3);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
-  
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
-      { threshold: 0.1 }
-    );
-    
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-    
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
 
   // Mouse parallax effect for the decorative elements
   useEffect(() => {
@@ -108,24 +90,24 @@ export function About() {
           <div>
             <span className={cn(
               "text-sm font-medium px-3 py-1 rounded-full bg-secondary text-primary inline-block mb-4",
-              "opacity-0 transform translate-y-6 transition-all duration-700",
-              isInView && "opacity-100 translate-y-0"
+              "opacity-0 transform scale-95 transition-all duration-700",
+              isInView && "opacity-100 scale-100 bounce-in"
             )}>
               About Me
             </span>
             
             <h2 className={cn(
               "heading bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent",
-              "opacity-0 transform translate-y-6 transition-all duration-700 delay-100",
-              isInView && "opacity-100 translate-y-0"
+              "opacity-0 transform transition-all duration-700 delay-100",
+              isInView && "opacity-100 slide-in-left"
             )}>
               UI/UX Designer & Product Designer with GenUI specialization
             </h2>
             
             <div className={cn(
               "mt-8 space-y-6 text-muted-foreground",
-              "opacity-0 transform translate-y-6 transition-all duration-700 delay-200",
-              isInView && "opacity-100 translate-y-0"
+              "opacity-0 transform transition-all duration-700 delay-200",
+              isInView && "opacity-100 blur-in"
             )}>
               <p>
                 I'm a UI/UX Designer and Product Designer currently studying Human-Computer Interaction at Rochester Institute of Technology. My passion lies in creating digital experiences that balance aesthetic appeal with intuitive functionality, focusing on end-to-end product strategy and user-centered design principles.
@@ -141,8 +123,8 @@ export function About() {
           
           <div className={cn(
             "lg:pt-16",
-            "opacity-0 transform translate-y-6 transition-all duration-700 delay-300",
-            isInView && "opacity-100 translate-y-0"
+            "opacity-0 transform transition-all duration-700 delay-300",
+            isInView && "opacity-100 scale-up"
           )}>
             {/* Education Section */}
             <BentoCard
@@ -174,14 +156,50 @@ export function About() {
       </div>
       
       {/* Enhanced animated background decorative elements */}
-      <div className="absolute bottom-0 right-0 w-1/3 h-1/2 bg-gradient-to-l from-emerald-500/20 to-transparent rounded-full filter blur-3xl opacity-30 float-animation" style={{animationDelay: '1s'}}></div>
-      <div className="absolute top-1/3 left-0 w-1/4 h-1/3 bg-gradient-to-r from-teal-500/10 to-emerald-500/10 rounded-full filter blur-3xl opacity-20 float-animation" style={{animationDelay: '2s'}}></div>
+      <div 
+        className="absolute bottom-0 right-0 w-1/3 h-1/2 bg-gradient-to-l from-emerald-500/20 to-transparent rounded-full filter blur-3xl opacity-30 float-animation morph-blob" 
+        style={{
+          animationDelay: '1s',
+          transform: `translateY(${parallaxOffset}px)`
+        }}
+      ></div>
+      <div 
+        className="absolute top-1/3 left-0 w-1/4 h-1/3 bg-gradient-to-r from-teal-500/10 to-emerald-500/10 rounded-full filter blur-3xl opacity-20 float-animation morph-blob" 
+        style={{
+          animationDelay: '2s',
+          transform: `translateY(${-parallaxOffset}px)`
+        }}
+      ></div>
       
       {/* Additional floating decorative elements */}
-      <div className="absolute top-1/4 right-1/3 w-6 h-6 border-2 border-emerald-400/30 rotate-45 float-animation" style={{animationDelay: '0.5s'}}></div>
-      <div className="absolute bottom-1/4 left-1/5 w-4 h-4 bg-teal-400/20 rounded-full float-animation" style={{animationDelay: '3s'}}></div>
-      <div className="absolute top-1/2 right-1/5 w-5 h-5 border border-emerald-300/40 rounded-full float-animation" style={{animationDelay: '1.5s'}}></div>
-      <div className="absolute bottom-1/3 right-1/4 w-3 h-3 bg-emerald-400/30 rotate-45 float-animation" style={{animationDelay: '4s'}}></div>
+      <div 
+        className="absolute top-1/4 right-1/3 w-6 h-6 border-2 border-emerald-400/30 rotate-45 float-animation"
+        style={{
+          animationDelay: '0.5s',
+          transform: `translate(${mousePosition.x * 20}px, ${mousePosition.y * 20}px) rotate(45deg)`
+        }}
+      ></div>
+      <div 
+        className="absolute bottom-1/4 left-1/5 w-4 h-4 bg-teal-400/20 rounded-full float-animation" 
+        style={{
+          animationDelay: '3s',
+          transform: `translate(${mousePosition.x * -15}px, ${mousePosition.y * -15}px)`
+        }}
+      ></div>
+      <div 
+        className="absolute top-1/2 right-1/5 w-5 h-5 border border-emerald-300/40 rounded-full float-animation" 
+        style={{
+          animationDelay: '1.5s',
+          transform: `translate(${mousePosition.x * 25}px, ${mousePosition.y * 25}px)`
+        }}
+      ></div>
+      <div 
+        className="absolute bottom-1/3 right-1/4 w-3 h-3 bg-emerald-400/30 rotate-45 float-animation" 
+        style={{
+          animationDelay: '4s',
+          transform: `translate(${mousePosition.x * -20}px, ${mousePosition.y * -20}px) rotate(45deg)`
+        }}
+      ></div>
     </section>
   );
 }
