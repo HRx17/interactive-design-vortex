@@ -42,9 +42,9 @@ const companies: Company[] = [
     logo: "/logos/rit-logo.png"
   }
   {
-    name: "Laurentian University,
+    name: "Laurentian University",
     url: "https://laurentian.ca/",
-    logo: "/logos/laurentian-university-removebg-preview.png",
+    logo: "/logos/laurentian-university-removebg-preview.png"
   }
 ];
 
@@ -203,7 +203,7 @@ export function Hero() {
                   animationFillMode: 'forwards'
                 }}
               >
-                {company.logo ? (
+                {company.logo? (
                   <img 
                     src={company.logo} 
                     alt={`${company.name} logo`}
