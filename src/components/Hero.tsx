@@ -44,7 +44,7 @@ const companies: Company[] = [
   {
     name: "Laurentian University",
     url: "https://laurentian.ca/",
-    logo: "/logos/laurentian-university-removebg-preview.png"
+    logo: "/logos/Laurentian_University.png"
   }
 ];
 
