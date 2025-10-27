@@ -40,7 +40,7 @@ const companies: Company[] = [
     name: "RIT",
     url: "https://www.rit.edu/",
     logo: "/logos/rit-logo.png"
-  }
+  },
   {
     name: "Laurentian University",
     url: "https://laurentian.ca/",
