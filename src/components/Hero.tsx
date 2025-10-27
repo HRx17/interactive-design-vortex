@@ -41,6 +41,11 @@ const companies: Company[] = [
     url: "https://www.rit.edu/",
     logo: "/logos/rit-logo.png"
   }
+  {
+    name: "Laurentian University,
+    url: "https://laurentian.ca/",
+    logo: "/logos/laurentian-university-removebg-preview.png",
+  }
 ];
 
 export function Hero() {
