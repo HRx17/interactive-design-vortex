@@ -58,17 +58,17 @@ export function WorkExperience() {
       website: "https://zlatotech.com/"
     },
     {
+      title: "UI/UX Designer & Frontend Developer",
+      company: "Upwork (Freelancer)",
+      period: "Sept 2020 - Dec 2022",
+      description: "Delivered 12+ successful projects to clients across globe, with featured work resulting in 40% increased user engagement (measured by session duration). Improved conversion rates by 25%. Led design initiatives that reached over 20K+ active users for the app."
+    },
+    {
       title: "Design Intern",
       company: "Laurentian University",
       period: "June 2022 - Aug 2022",
       description: "Worked on Transportation Goods Invoice App project at Laurentian University.",
       website: "https://laurentian.ca/"
-    },
-    {
-      title: "UI/UX Designer & Frontend Developer",
-      company: "Upwork (Freelancer)",
-      period: "Sept 2020 - Dec 2022",
-      description: "Delivered 12+ successful projects to clients across globe, with featured work resulting in 40% increased user engagement (measured by session duration). Improved conversion rates by 25%. Led design initiatives that reached over 20K+ active users for the app."
     },
     {
       title: "Founding Designer & Developer",
