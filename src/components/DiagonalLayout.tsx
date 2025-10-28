@@ -122,7 +122,7 @@ export function DiagonalLayout() {
       companyLogo: "/logos/tech9-logo.svg?v=2",
       period: "May 2025 - Aug 2025",
       location: "Utah, USA (Remote)",
-      description: "Designed user-centered solutions that increased user engagement by 35% and improved conversion rates by 25%. Worked with chief product officer (CPO) to lead design initiatives to reach client goals.",
+      description: "Designed user-centered solutions that increased user engagement (measured by Daily Active Users) by 35% and improved conversion rates (from free to paid) by 25%. Partnered directly with the CPO to own and lead design initiatives, translating client business goals into a clear product roadmap. Collaborated with cross-functional teams to design user-centric product interfaces.",
       skills: ["Product Design", "User Research", "Prototyping", "Design Systems", "Figma"],
       website: "https://www.tech9.com/"
     },
@@ -132,28 +132,38 @@ export function DiagonalLayout() {
       companyLogo: "/logos/excellus-logo.png",
       period: "Aug 2024 - Dec 2024",
       location: "New York, NY (Remote)",
-      description: "Planned and implemented a usability study using six task-based scenarios across mobile and desktop platforms, utilizing four key metrics to evaluate user interactions and identify usability gaps. Facilitated usability testing sessions with 10 users and gathered in-depth qualitative and quantitative insights to assess their needs.",
+      description: "Planned and implemented a usability study using six task-based scenarios across mobile and desktop platforms, utilizing four key metrics to evaluate user interactions and identify usability gaps. Conducted mixed-methods research, including user interviews, surveys, and task-based usability testing with 10 users to gather in-depth qualitative and quantitative insights.",
       skills: ["Usability Testing", "User Research", "Mobile & Desktop Testing", "Qualitative Analysis", "Task Scenarios"],
       website: "https://www.excellusbcbs.com/"
     },
     {
-      title: "Frontend UI/UX Project Intern",
+      title: "Project Lead Intern - UI/UX",
       company: "Zlato Technolabs",
       companyLogo: "/logos/zlato-logo.png",
       period: "Jan 2023 - May 2023",
       location: "Ahmedabad, India",
-      description: "Created a social media management platform for web and mobile that helps with post scheduling across different platforms like LinkedIn, Instagram, and Facebook.",
-      skills: ["UI/UX Design", "Frontend Development", "React", "Social Media Integration", "Mobile Design"],
+      description: "Led UI/UX design for a social app, improving user interaction with Figma and Android Studio. Delivered high-fidelity functional prototype within three months, demonstrating innovative design solutions. Increased daily active users through focused design enhancements and user experience improvements.",
+      skills: ["UI/UX Design", "Frontend Development", "Figma", "Android Studio", "Prototyping"],
       website: "https://zlatotech.com/"
+    },
+    {
+      title: "Design Intern",
+      company: "Laurentian University",
+      companyLogo: "/logos/Laurentian_University.png",
+      period: "June 2022 - Aug 2022",
+      location: "Greater Sudbury, Canada",
+      description: "Worked on Transportation Goods Invoice App project at Laurentian University.",
+      skills: ["UI/UX Design", "Mobile Development", "Invoice Systems", "Transportation"],
+      website: "https://laurentian.ca/"
     },
     {
       title: "Founding Designer & Developer",
       company: "WaahTV OTT App",
       companyLogo: "/logos/waahtv-logo.png",
-      period: "Sept 2021 - Feb 2022",
+      period: "Oct 2021 - Feb 2022",
       location: "NJ, USA (Remote)",
-      description: "Designed and developed an OTT Platform app for Android TV, with currently 15+ daily signups, 10+ countries covered, 10K+ active users. Delivered a complete streaming solution from concept to production.",
-      skills: ["Android TV Development", "UI/UX Design", "Streaming Platform", "Freelancing", "Product Strategy"],
+      description: "Led the end-to-end product lifecycle from concept to production, owning all design, development, and strategy for an OTT platform now serving 10K+ active users. Delivered a complete streaming solution from concept to production. Utilized Figma and Android Studio to develop user-friendly features for live streaming channels.",
+      skills: ["Android TV Development", "UI/UX Design", "Streaming Platform", "Product Strategy", "Figma"],
       website: "https://waahtv.com"
     },
     {
@@ -162,7 +172,7 @@ export function DiagonalLayout() {
       companyLogo: "/logos/upwork-logo.png",
       period: "Sept 2020 - Dec 2022",
       location: "Global",
-      description: "Delivered 12+ successful projects to clients across globe, with featured work resulting in 40% increased user engagement (France). Improved conversion rates by 25%. Led design initiatives that reached over 20K+ active users for the app.",
+      description: "Delivered 12+ successful projects to clients across globe, with featured work resulting in 40% increased user engagement (measured by session duration). Improved conversion rates by 25%. Led design initiatives that reached over 20K+ active users for the app.",
       skills: ["Freelancing", "UI/UX Design", "Frontend Development", "Client Management", "Project Management"]
     }
   ];
