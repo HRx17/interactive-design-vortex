@@ -39,28 +39,35 @@ export function WorkExperience() {
       title: "Product Designer",
       company: "Tech9",
       period: "May 2025 - Aug 2025",
-      description: "Designed user-centered solutions that increased user engagement by 35% and improved conversion rates by 25%. Worked with chief product officer (CPO) to lead design initiatives to reach client goals.",
+      description: "Designed user-centered solutions that increased user engagement (measured by Daily Active Users) by 35% and improved conversion rates (from free to paid) by 25%. Partnered directly with the CPO to own and lead design initiatives, translating client business goals into a clear product roadmap. Collaborated with cross-functional teams to design user-centric product interfaces.",
       website: "https://www.tech9.com/",
       isPrimary: true
     },
     {
-      title: "Frontend UI/UX Project Intern",
-      company: "Zlato Technolabs",
-      period: "Jan 2023 - May 2023",
-      description: "Built a comprehensive social media management platform that automated post scheduling for 500+ businesses, reducing their content management time by 60% and increasing social media reach by 40%.",
-      website: "https://zlatotech.com/"
+      title: "Usability Specialist",
+      company: "Excellus BCBS",
+      period: "Aug 2024 - Dec 2024",
+      description: "Planned and implemented a usability study using six task-based scenarios across mobile and desktop platforms, utilizing four key metrics to evaluate user interactions and identify usability gaps. Conducted mixed-methods research, including user interviews, surveys, and task-based usability testing with 10 users to gather in-depth qualitative and quantitative insights.",
+      website: "https://www.excellusbcbs.com/"
     },
     {
-      title: "Founding Designer & Developer",
-      company: "WaahTV OTT App",
-      period: "Sept 2021 - Feb 2022",
-      description: "Designed and developed an OTT Platform app for Android TV, with currently 15+ daily signups, 10+ countries covered, 10K+ active users. Delivered a complete streaming solution from concept to production."
+      title: "Project Lead Intern - UI/UX",
+      company: "Zlato Technolabs",
+      period: "Jan 2023 - May 2023",
+      description: "Led UI/UX design for a social app, improving user interaction with Figma and Android Studio. Delivered high-fidelity functional prototype within three months, demonstrating innovative design solutions. Increased daily active users through focused design enhancements and user experience improvements.",
+      website: "https://zlatotech.com/"
     },
     {
       title: "UI/UX Designer & Frontend Developer",
       company: "Upwork (Freelancer)",
       period: "Sept 2020 - Dec 2022",
-      description: "Delivered 12+ successful projects to clients across globe, with featured work resulting in 40% increased user engagement (France). Improved conversion rates by 25%. Led design initiatives that reached over 20K+ active users for the app."
+      description: "Delivered 12+ successful projects to clients across globe, with featured work resulting in 40% increased user engagement (measured by session duration). Improved conversion rates by 25%. Led design initiatives that reached over 20K+ active users for the app."
+    },
+    {
+      title: "Founding Designer & Developer",
+      company: "WaahTV OTT App",
+      period: "Oct 2021 - Feb 2022",
+      description: "Led the end-to-end product lifecycle from concept to production, owning all design, development, and strategy for an OTT platform now serving 10K+ active users. Delivered a complete streaming solution from concept to production. Utilized Figma and Android Studio to develop user-friendly features for live streaming channels."
     }
   ];
   
