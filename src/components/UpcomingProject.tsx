@@ -192,6 +192,44 @@ export function UpcomingProject({ index }: UpcomingProjectProps) {
                       </AccordionContent>
                     </AccordionItem>
                     
+                    <AccordionItem value="design-system">
+                      <AccordionTrigger className="text-xl font-bold">Design System & Style Guide</AccordionTrigger>
+                      <AccordionContent>
+                        <p className="text-muted-foreground mb-6">
+                          A comprehensive design system was created to ensure consistency across the entire application. The system includes typography scales, color palettes, spacing guidelines, and layout grids that work harmoniously together.
+                        </p>
+                        <div className="grid gap-6">
+                          <div>
+                            <h4 className="font-semibold mb-3 text-lg">Typography System</h4>
+                            <img 
+                              src="/lovable-uploads/dailygram-typography-guide.png" 
+                              alt="Typography Style Guide" 
+                              className="w-full rounded-lg border border-border"
+                              loading="lazy"
+                            />
+                          </div>
+                          <div>
+                            <h4 className="font-semibold mb-3 text-lg">Color Palette</h4>
+                            <img 
+                              src="/lovable-uploads/dailygram-colors-guide.png" 
+                              alt="Color Style Guide" 
+                              className="w-full rounded-lg border border-border"
+                              loading="lazy"
+                            />
+                          </div>
+                          <div>
+                            <h4 className="font-semibold mb-3 text-lg">Layout & Spacing</h4>
+                            <img 
+                              src="/lovable-uploads/dailygram-layout-guide.png" 
+                              alt="Layout Style Guide" 
+                              className="w-full rounded-lg border border-border"
+                              loading="lazy"
+                            />
+                          </div>
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                    
                     <AccordionItem value="process">
                       <AccordionTrigger className="text-xl font-bold">Design Process</AccordionTrigger>
                       <AccordionContent className="text-muted-foreground">
@@ -201,6 +239,7 @@ export function UpcomingProject({ index }: UpcomingProjectProps) {
                           <li>Problem definition through "How Might We" questions</li>
                           <li>Flow diagram creation and user journey mapping</li>
                           <li>Wireframing and visual design exploration</li>
+                          <li>Design system creation (typography, colors, spacing)</li>
                           <li>Interactive prototype development</li>
                           <li>Usability testing and iteration</li>
                         </ol>
