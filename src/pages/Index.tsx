@@ -6,7 +6,7 @@ import { CompanyLogos } from '@/components/CompanyLogos';
 import { MetricsShowcase } from '@/components/MetricsShowcase';
 import { BentoGrid } from '@/components/BentoGrid';
 import { DiagonalLayout } from '@/components/DiagonalLayout';
-import { ProjectToggle } from '@/components/ProjectToggle';
+import { Projects } from '@/components/Projects';
 import { UXProcess } from '@/components/UXProcess';
 import { Endorsements } from '@/components/Endorsements';
 import { About } from '@/components/About';
@@ -28,8 +28,8 @@ const Index = () => {
         {/* Work Experience - Diagonal Layout */}
         <DiagonalLayout />
         
-        {/* Projects Toggle Section */}
-        <ProjectToggle isInView={true} />
+        {/* Projects Section with Research/Design/Coding Tabs */}
+        <Projects />
         
         {/* UX Process Section */}
         <UXProcess />

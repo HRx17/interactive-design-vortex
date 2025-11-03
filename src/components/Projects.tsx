@@ -145,20 +145,14 @@ export function Projects() {
 
   const researchProjects = [
     {
-      title: "The Impact of Situationally Induced Impairments and Disabilities (SIIDs) on Task Performance: A Comparative Study of Sensory Modalities",
-      description: "This study proposes a comparative experimental investigation of how visual, auditory, and tactile SIIDs affect task performance and user experience.",
+      title: "The Impact of Situationally Induced Impairments and Disabilities (SIIDs) on Task Performance",
+      description: "A comparative experimental investigation examining how visual, auditory, and tactile situationally induced impairments and disabilities affect task performance and user experience across different sensory modalities.",
       year: "2024",
       downloadFile: "/SIID_Research.pdf",
     },
     {
-      title: "Experimental Research on MyCourses Platform",
-      description: "The study investigates the challenges faced by international and American students at the Rochester Institute of Technology(RIT) while using the MyCourses learning platform. ",
-      year: "2024",
-      downloadFile: "/Experimental_Research.pdf",
-    },
-    {
-      title: "What is the correlation between age groups and their preferred game genres on PlayStation, and how does this affect the average time spent playing per week?",
-      description: "This study investigates the correlation relationship between PlayStation users, focusing on age groups, their preferred game genres on PlayStation, and the average time spent playing per week and developing the structured survey methodology on Google Forms as we gathered data from PlayStation users to collect data focusing on their game genre preferences and gaming habits.",
+      title: "PlayStation Gaming Behaviors: Age Groups and Genre Preferences",
+      description: "An empirical study investigating the correlation between PlayStation users' age groups, their preferred game genres, and average weekly playtime. The research revealed that younger players (18-25) averaged 15-20 hours per week, primarily engaging in action/adventure and multiplayer games, while living situations and genre preferences showed stronger influence on gaming habits than age alone.",
       year: "2024",
       downloadFile: "/Research_Gaming.pdf",
     }
