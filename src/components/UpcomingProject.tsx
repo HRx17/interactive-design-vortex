@@ -158,40 +158,29 @@ export function UpcomingProject({ index }: UpcomingProjectProps) {
                 </p>
                 
                 <div className="grid gap-6 mb-8">
-                  {/* Main showcase image - shifted to the left */}
+                  {/* Main showcase image - hero */}
                   <div className="aspect-video w-full rounded-lg overflow-hidden shadow-xl">
                     <img 
                       src={caseStudyImages[0]} 
-                      alt="Project Cover" 
+                      alt="Dailygram Hero" 
                       className="w-full h-full object-cover"
                       style={{ objectPosition: "left center" }}
                     />
                   </div>
                   
-                  {/* Case study images gallery - one image per row */}
-                  <div className="grid grid-cols-1 gap-6">
-                    {caseStudyImages.slice(1).map((img, idx) => (
-                      <div key={idx} className="rounded-lg overflow-hidden shadow-md">
-                        <img 
-                          src={img} 
-                          alt={`Case Study ${idx + 1}`} 
-                          className="w-full h-auto object-contain"
-                          loading="lazy"
-                        />
-                      </div>
-                    ))}
+                  {/* All screens overview */}
+                  <div className="rounded-lg overflow-hidden shadow-md">
+                    <img 
+                      src={caseStudyImages[1]} 
+                      alt="All Screens Overview" 
+                      className="w-full h-auto object-contain"
+                      loading="lazy"
+                    />
                   </div>
                 </div>
                 
                 <div className="grid gap-8">
-                  <Accordion type="single" collapsible className="w-full">
-                    <AccordionItem value="overview">
-                      <AccordionTrigger className="text-xl font-bold">Project Overview</AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground">
-                        <p>Dailygram is a next-generation news app that reimagines how users discover and consume news content. With personalized interest selection, gamification elements, and an intuitive interface, users can stay informed while earning badges and tracking their reading progress. The app features curated news channels, trending articles, and a profile system that encourages daily engagement with quality journalism.</p>
-                      </AccordionContent>
-                    </AccordionItem>
-                    
+                  <Accordion type="single" collapsible className="w-full" defaultValue="design-system">
                     <AccordionItem value="design-system">
                       <AccordionTrigger className="text-xl font-bold">Design System & Style Guide</AccordionTrigger>
                       <AccordionContent>
@@ -227,6 +216,34 @@ export function UpcomingProject({ index }: UpcomingProjectProps) {
                             />
                           </div>
                         </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                    
+                    <AccordionItem value="problem-solution">
+                      <AccordionTrigger className="text-xl font-bold">Problem & Solution</AccordionTrigger>
+                      <AccordionContent>
+                        <p className="text-muted-foreground mb-6">
+                          The news consumption landscape is fragmented and overwhelming. Users struggle with information overload, lack of personalization, and no motivation to stay informed. Dailygram addresses these challenges through a gamified, personalized news experience.
+                        </p>
+                        <div className="grid grid-cols-1 gap-6">
+                          {caseStudyImages.slice(2).map((img, idx) => (
+                            <div key={idx} className="rounded-lg overflow-hidden shadow-md">
+                              <img 
+                                src={img} 
+                                alt={`Problem and Solution ${idx + 1}`} 
+                                className="w-full h-auto object-contain"
+                                loading="lazy"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                    
+                    <AccordionItem value="overview">
+                      <AccordionTrigger className="text-xl font-bold">Project Overview</AccordionTrigger>
+                      <AccordionContent className="text-muted-foreground">
+                        <p>Dailygram is a next-generation news app that reimagines how users discover and consume news content. With personalized interest selection, gamification elements, and an intuitive interface, users can stay informed while earning badges and tracking their reading progress. The app features curated news channels, trending articles, and a profile system that encourages daily engagement with quality journalism.</p>
                       </AccordionContent>
                     </AccordionItem>
                     
