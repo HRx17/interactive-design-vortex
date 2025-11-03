@@ -39,7 +39,7 @@ const designProjectEmbeds = [
 export function Projects() {
   const sectionRef = useRef<HTMLElement>(null);
   const [isInView, setIsInView] = useState(false);
-  const [isCodingProjects, setIsCodingProjects] = useState(false);
+  const [activeProjectType, setActiveProjectType] = useState<'design' | 'coding' | 'research'>('design');
   const isMobile = useIsMobile();
   
   useEffect(() => {
@@ -87,6 +87,21 @@ export function Projects() {
       <AttendanceProject key="attendance" index={1} />,
       <WaahTvProject key="waahTv" index={2} />
     ];
+  };
+
+  // Helper function to render research projects
+  const renderResearchProjects = () => {
+    return researchProjects.map((project, index) => (
+      <ResearchCard
+        key={project.title}
+        title={project.title}
+        description={project.description}
+        year={project.year}
+        downloadFile={project.downloadFile}
+        delay={100 + index * 100}
+        isInView={isInView}
+      />
+    ));
   };
 
   // Helper function to render carousel items with design projects
@@ -148,6 +163,7 @@ export function Projects() {
       downloadFile: "/Research_Gaming.pdf",
     }
   ];
+  
   // Helper function to render carousel items with coding projects
   const renderCodingCarouselItems = () => {
     return [
@@ -202,8 +218,8 @@ export function Projects() {
           isInView && "opacity-100 translate-y-0"
         )}>
           <ProjectTypeSwitcher 
-            isCodingProjects={isCodingProjects} 
-            onToggle={() => setIsCodingProjects(!isCodingProjects)}
+            activeType={activeProjectType} 
+            onTypeChange={setActiveProjectType}
           />
         </div>
         
@@ -222,10 +238,20 @@ export function Projects() {
             className="w-full"
           >
             <CarouselContent>
-              {isCodingProjects 
-                ? renderCodingCarouselItems() 
-                : renderDesignCarouselItems()
-              }
+              {activeProjectType === 'design' && renderDesignCarouselItems()}
+              {activeProjectType === 'coding' && renderCodingCarouselItems()}
+              {activeProjectType === 'research' && researchProjects.map((project, index) => (
+                <CarouselItem key={project.title} className="md:basis-1/2">
+                  <ResearchCard
+                    title={project.title}
+                    description={project.description}
+                    year={project.year}
+                    downloadFile={project.downloadFile}
+                    delay={100 + index * 100}
+                    isInView={isInView}
+                  />
+                </CarouselItem>
+              ))}
             </CarouselContent>
             <div className="flex justify-center gap-4 mt-6">
               <CarouselPrevious className="static translate-y-0 relative" />
@@ -236,14 +262,14 @@ export function Projects() {
         
         {/* Desktop grid view for projects */}
         <div className={cn(
-          "hidden md:grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10",
+          "hidden md:grid gap-8 md:gap-10",
           "transform transition-all duration-500",
           "fade-in",
+          activeProjectType === 'research' ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3" : "grid-cols-1 md:grid-cols-2"
         )}>
-          {isCodingProjects 
-            ? renderCodingProjects() 
-            : renderDesignProjects()
-          }
+          {activeProjectType === 'design' && renderDesignProjects()}
+          {activeProjectType === 'coding' && renderCodingProjects()}
+          {activeProjectType === 'research' && renderResearchProjects()}
         </div>
         
         <div className={cn(
@@ -251,50 +277,26 @@ export function Projects() {
           "opacity-0 transform translate-y-6 transition-all duration-700 delay-400",
           isInView && "opacity-100 translate-y-0"
         )}>
-          <a 
-            href={isCodingProjects ? "https://github.com/HRx17" : "https://www.behance.net/haetranpariya17"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={cn(
-              "btn-hover inline-flex items-center px-8 py-4 rounded-full text-white font-medium hover:shadow-lg transition-all",
-              isCodingProjects 
-                ? "bg-gradient-to-r from-blue-600 to-indigo-600" 
-                : "bg-gradient-to-r from-emerald-600 to-teal-500"
-            )}
-          >
-            <span className="relative z-10">
-              {isCodingProjects 
-                ? "View more projects on GitHub" 
-                : "View full portfolio on Behance"
-              }
-            </span>
-          </a>
-        </div>
-
-         {/* Research Section */}
-      <div className={cn(
-          "mt-20",
-          "opacity-0 transform translate-y-6 transition-all duration-700 delay-400",
-          isInView && "opacity-100 translate-y-0"
-        )}>
-          <div className="flex items-center gap-3 mb-6">
-            <FlaskConical className="w-6 h-6 text-emerald-500" />
-            <h2 className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">Research Projects</h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {researchProjects.map((project, index) => (
-              <ResearchCard
-                key={project.title}
-                title={project.title}
-                description={project.description}
-                year={project.year}
-                downloadFile={project.downloadFile}
-                delay={500 + index * 100}
-                isInView={isInView}
-              />
-            ))}
-          </div>
+          {activeProjectType !== 'research' && (
+            <a 
+              href={activeProjectType === 'coding' ? "https://github.com/HRx17" : "https://www.behance.net/haetranpariya17"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                "btn-hover inline-flex items-center px-8 py-4 rounded-full text-white font-medium hover:shadow-lg transition-all",
+                activeProjectType === 'coding' 
+                  ? "bg-gradient-to-r from-blue-600 to-indigo-600" 
+                  : "bg-gradient-to-r from-emerald-600 to-teal-500"
+              )}
+            >
+              <span className="relative z-10">
+                {activeProjectType === 'coding' 
+                  ? "View more projects on GitHub" 
+                  : "View full portfolio on Behance"
+                }
+              </span>
+            </a>
+          )}
         </div>
       </div>
       

@@ -2,48 +2,58 @@
 import React from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { cn } from '@/lib/utils';
-import { Switch } from '@/components/ui/switch';
-import { Code, Palette } from 'lucide-react';
+import { Code, Palette, FlaskConical } from 'lucide-react';
 
 interface ProjectTypeSwitcherProps {
-  isCodingProjects: boolean;
-  onToggle: () => void;
+  activeType: 'design' | 'coding' | 'research';
+  onTypeChange: (type: 'design' | 'coding' | 'research') => void;
   className?: string;
 }
 
 export function ProjectTypeSwitcher({ 
-  isCodingProjects, 
-  onToggle,
+  activeType, 
+  onTypeChange,
   className
 }: ProjectTypeSwitcherProps) {
   const isMobile = useIsMobile();
   
   return (
     <div className={cn(
-      "flex items-center justify-center gap-3 mb-8 p-3 rounded-full bg-secondary/50 backdrop-blur-sm w-fit mx-auto",
+      "flex items-center justify-center gap-2 mb-8 p-2 rounded-full bg-secondary/50 backdrop-blur-sm w-fit mx-auto",
       className
     )}>
-      <div className={cn(
-        "flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300",
-        !isCodingProjects ? "bg-emerald-600 text-white" : "text-muted-foreground"
-      )}>
+      <button
+        onClick={() => onTypeChange('design')}
+        className={cn(
+          "flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300",
+          activeType === 'design' ? "bg-emerald-600 text-white" : "text-muted-foreground hover:bg-secondary"
+        )}
+      >
         <Palette className="h-4 w-4" />
-        <span className={cn("font-medium text-sm", isMobile && "hidden")}>Design Projects</span>
-      </div>
+        <span className={cn("font-medium text-sm", isMobile && "hidden")}>Design</span>
+      </button>
       
-      <Switch 
-        checked={isCodingProjects}
-        onCheckedChange={onToggle}
-        className="data-[state=checked]:bg-blue-600"
-      />
-      
-      <div className={cn(
-        "flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300",
-        isCodingProjects ? "bg-blue-600 text-white" : "text-muted-foreground"
-      )}>
+      <button
+        onClick={() => onTypeChange('coding')}
+        className={cn(
+          "flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300",
+          activeType === 'coding' ? "bg-blue-600 text-white" : "text-muted-foreground hover:bg-secondary"
+        )}
+      >
         <Code className="h-4 w-4" />
-        <span className={cn("font-medium text-sm", isMobile && "hidden")}>Coding Projects</span>
-      </div>
+        <span className={cn("font-medium text-sm", isMobile && "hidden")}>Coding</span>
+      </button>
+      
+      <button
+        onClick={() => onTypeChange('research')}
+        className={cn(
+          "flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300",
+          activeType === 'research' ? "bg-purple-600 text-white" : "text-muted-foreground hover:bg-secondary"
+        )}
+      >
+        <FlaskConical className="h-4 w-4" />
+        <span className={cn("font-medium text-sm", isMobile && "hidden")}>Research</span>
+      </button>
     </div>
   );
 }
