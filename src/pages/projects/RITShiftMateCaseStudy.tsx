@@ -195,9 +195,44 @@ export default function RITShiftMateCaseStudy() {
             </div>
           </div>
 
+          {/* Design System */}
+          <div className="case-study-section">
+            <h2 className="text-2xl font-bold mb-6">Design System & Visual Language</h2>
+            
+            <div className="space-y-6 mb-8">
+              <p className="text-muted-foreground max-w-3xl">
+                A comprehensive design system was crafted to ensure consistency across the entire RIT ShiftMate experience. The system includes a carefully curated color palette reflecting RIT's brand identity, scalable typography hierarchy, component libraries with multiple states, and reusable UI patterns that work seamlessly across iOS and Android platforms.
+              </p>
+              
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="bg-card/30 p-5 rounded-xl">
+                  <h4 className="font-semibold mb-2 text-orange-500">Color System</h4>
+                  <p className="text-sm text-muted-foreground">Primary, secondary, neutral, and accent colors with semantic meanings for actions and states</p>
+                </div>
+                <div className="bg-card/30 p-5 rounded-xl">
+                  <h4 className="font-semibold mb-2 text-orange-500">Typography Scale</h4>
+                  <p className="text-sm text-muted-foreground">Hierarchical text styles optimized for readability on mobile screens</p>
+                </div>
+                <div className="bg-card/30 p-5 rounded-xl">
+                  <h4 className="font-semibold mb-2 text-orange-500">Component Library</h4>
+                  <p className="text-sm text-muted-foreground">Reusable UI components including buttons, cards, icons, and form elements</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="w-full rounded-xl overflow-hidden shadow-2xl border border-border">
+              <img 
+                src="/lovable-uploads/rit-shiftmate-design-system.png"
+                alt="RIT ShiftMate Design System and Component Library"
+                className="w-full h-auto"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
           {/* Design Showcase */}
           <div className="case-study-section">
-            <h2 className="text-2xl font-bold mb-8">Design Showcase</h2>
+            <h2 className="text-2xl font-bold mb-8">User Interface Screens</h2>
             <div className="space-y-8">
               {caseStudyImages.slice(1).map((img, idx) => (
                 <div key={idx} className="w-full">
