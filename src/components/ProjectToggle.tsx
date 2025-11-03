@@ -32,14 +32,14 @@ export function ProjectToggle({ isInView }: ProjectToggleProps) {
   };
 
   const designProjects = [
-    <UpcomingProject key="upcoming" index={0} />,
-    <UXProbeProject key="uxprobe" index={1} />,
-    <ParkingAppProject key="parkingApp" index={2} />,
-    <ARProject key="AR" index={3} />,
-    <RITShiftMateProject key="ritshiftmate" index={4} />,
-    <HealthyRProject key="healthyR" index={5} />,
+    <ARProject key="AR" index={0} />,
+    <RITShiftMateProject key="ritshiftmate" index={1} />,
+    <UXProbeProject key="uxprobe" index={2} />,
+    <HealthyRProject key="healthyR" index={3} />,
+    <ParkingAppProject key="parkingApp" index={4} />,
+    <FoodZapProject key="foodzap" index={5} />,
     <WeatherAppProject key="weatherApp" index={6} />,
-    <FoodZapProject key="foodzap" index={7} />
+    <UpcomingProject key="upcoming" index={7} />
   ];
 
   const developmentProjects = [

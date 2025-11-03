@@ -120,9 +120,16 @@ export function UpcomingProject({ index }: UpcomingProjectProps) {
           </AspectRatio>
           <CardContent className="p-5">
             <h3 className="text-lg font-bold mb-1">Dailygram - News App</h3>
-            <p className="text-sm text-muted-foreground line-clamp-2">
+            <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
               A personalized news experience app that reimagines how users consume and engage with news stories.
             </p>
+            
+            <div className="flex flex-wrap gap-1.5 text-xs mt-3 pt-3 border-t border-border/30">
+              <span className="px-2 py-1 rounded-md bg-muted/50 text-muted-foreground">Figma</span>
+              <span className="px-2 py-1 rounded-md bg-muted/50 text-muted-foreground">Design System</span>
+              <span className="px-2 py-1 rounded-md bg-muted/50 text-muted-foreground">Gamification</span>
+              <span className="px-2 py-1 rounded-md bg-muted/50 text-muted-foreground">Mobile UX</span>
+            </div>
           </CardContent>
         </div>
       </Card>

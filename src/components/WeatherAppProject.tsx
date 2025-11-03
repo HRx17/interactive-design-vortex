@@ -44,16 +44,25 @@ export function WeatherAppProject({ index }: WeatherAppProjectProps) {
       </div>
       <div className="p-6 flex-1 flex flex-col">
         <div className="flex justify-between items-center mb-3">
-          <span className="text-sm font-medium px-4 py-1.5 rounded-full bg-blue-100 text-blue-600">
+          <span className="text-sm font-medium px-4 py-1.5 rounded-full bg-sky-100 text-sky-600 dark:bg-sky-900/30 dark:text-sky-400">
             UX/UI Design
           </span>
         </div>
         <h3 className="text-2xl font-bold mb-2 group-hover:text-emerald-500 transition-colors">
           Weather App
         </h3>
-        <p className="text-muted-foreground text-sm leading-relaxed">
+        <p className="text-muted-foreground text-sm leading-relaxed mb-4">
           Weather app designs for different user archetypes with unique UI approaches.
         </p>
+        
+        <div className="mt-auto pt-4 border-t border-border/30">
+          <div className="flex flex-wrap gap-2 text-xs">
+            <span className="px-2 py-1 rounded-md bg-muted/50 text-muted-foreground">Figma</span>
+            <span className="px-2 py-1 rounded-md bg-muted/50 text-muted-foreground">Personas</span>
+            <span className="px-2 py-1 rounded-md bg-muted/50 text-muted-foreground">UI Design</span>
+            <span className="px-2 py-1 rounded-md bg-muted/50 text-muted-foreground">Visual Design</span>
+          </div>
+        </div>
       </div>
     </Link>
   );

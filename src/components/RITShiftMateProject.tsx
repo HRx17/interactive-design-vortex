@@ -44,16 +44,25 @@ export function RITShiftMateProject({ index }: RITShiftMateProjectProps) {
       </div>
       <div className="p-6 flex-1 flex flex-col">
         <div className="flex justify-between items-center mb-3">
-          <span className="text-sm font-medium px-4 py-1.5 rounded-full bg-orange-100 text-orange-600">
-            UX/UI Design
+          <span className="text-sm font-medium px-4 py-1.5 rounded-full bg-orange-100 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400">
+            Academic Project
           </span>
         </div>
         <h3 className="text-2xl font-bold mb-2 group-hover:text-emerald-500 transition-colors">
           RIT ShiftMate
         </h3>
-        <p className="text-muted-foreground text-sm leading-relaxed">
+        <p className="text-muted-foreground text-sm leading-relaxed mb-4">
           An on-campus shift coordinator and work-hour manager for students.
         </p>
+        
+        <div className="mt-auto pt-4 border-t border-border/30">
+          <div className="flex flex-wrap gap-2 text-xs">
+            <span className="px-2 py-1 rounded-md bg-muted/50 text-muted-foreground">Figma</span>
+            <span className="px-2 py-1 rounded-md bg-muted/50 text-muted-foreground">UX Research</span>
+            <span className="px-2 py-1 rounded-md bg-muted/50 text-muted-foreground">User Testing</span>
+            <span className="px-2 py-1 rounded-md bg-muted/50 text-muted-foreground">Design System</span>
+          </div>
+        </div>
       </div>
     </Link>
   );

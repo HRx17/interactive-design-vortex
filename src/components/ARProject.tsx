@@ -44,16 +44,25 @@ export function ARProject({ index }: ARProjectProps) {
       </div>
       <div className="p-6 flex-1 flex flex-col">
         <div className="flex justify-between items-center mb-3">
-          <span className="text-sm font-medium px-4 py-1.5 rounded-full bg-purple-100 text-purple-600">
+          <span className="text-sm font-medium px-4 py-1.5 rounded-full bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400">
             AR/VR Design
           </span>
         </div>
         <h3 className="text-2xl font-bold mb-2 group-hover:text-emerald-500 transition-colors">
           Mixed Reality Concept
         </h3>
-        <p className="text-muted-foreground text-sm leading-relaxed">
+        <p className="text-muted-foreground text-sm leading-relaxed mb-4">
           Mixed Reality Futuristic Holographic Interaction Tech - Help Visualize Better.
         </p>
+        
+        <div className="mt-auto pt-4 border-t border-border/30">
+          <div className="flex flex-wrap gap-2 text-xs">
+            <span className="px-2 py-1 rounded-md bg-muted/50 text-muted-foreground">Figma</span>
+            <span className="px-2 py-1 rounded-md bg-muted/50 text-muted-foreground">3D Design</span>
+            <span className="px-2 py-1 rounded-md bg-muted/50 text-muted-foreground">AR/VR</span>
+            <span className="px-2 py-1 rounded-md bg-muted/50 text-muted-foreground">Blender</span>
+          </div>
+        </div>
       </div>
     </Link>
   );
