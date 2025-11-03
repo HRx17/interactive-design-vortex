@@ -32,7 +32,7 @@ export function UXProbeProject({ index }: UXProbeProjectProps) {
         transitionDuration: '600ms'
       }}
     >
-      <div className="relative w-full aspect-[16/10] overflow-hidden bg-gradient-to-br from-purple-900/20 via-primary/10 to-teal-900/20">
+      <div className="relative w-full aspect-[16/9] overflow-hidden bg-gradient-to-br from-purple-900/20 via-primary/10 to-teal-900/20">
         <img 
           src={uxprobeThumbnail} 
           alt="UXProbe - AI-Powered UX Research Platform" 

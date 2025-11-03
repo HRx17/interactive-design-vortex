@@ -31,7 +31,7 @@ export function ParkingAppProject({ index }: ParkingAppProjectProps) {
         transitionDuration: '600ms'
       }}
     >
-      <div className="relative w-full aspect-[16/10] overflow-hidden">
+      <div className="relative w-full aspect-[16/9] overflow-hidden">
         <img 
           src="/lovable-uploads/2a9fc4ff-b9fa-4053-87ce-4de202e01975.png" 
           alt="ParkEase Project" 

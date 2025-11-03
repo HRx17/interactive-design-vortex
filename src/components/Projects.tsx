@@ -39,7 +39,7 @@ const designProjectEmbeds = [
 export function Projects() {
   const sectionRef = useRef<HTMLElement>(null);
   const [isInView, setIsInView] = useState(false);
-  const [activeProjectType, setActiveProjectType] = useState<'design' | 'coding' | 'research'>('research');
+  const [activeProjectType, setActiveProjectType] = useState<'design' | 'coding' | 'research'>('design');
   const isMobile = useIsMobile();
   
   useEffect(() => {
@@ -149,6 +149,12 @@ export function Projects() {
       description: "A comparative experimental investigation examining how visual, auditory, and tactile situationally induced impairments and disabilities affect task performance and user experience across different sensory modalities.",
       year: "2024",
       downloadFile: "/SIID_Research.pdf",
+    },
+    {
+      title: "Experimental Research on MyCourses Platform",
+      description: "An investigation into the challenges faced by international and American students at Rochester Institute of Technology (RIT) while using the MyCourses learning platform, exploring usability issues and user experience barriers.",
+      year: "2024",
+      downloadFile: "/Experimental_Research.pdf",
     },
     {
       title: "PlayStation Gaming Behaviors: Age Groups and Genre Preferences",

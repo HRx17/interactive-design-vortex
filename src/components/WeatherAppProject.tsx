@@ -31,7 +31,7 @@ export function WeatherAppProject({ index }: WeatherAppProjectProps) {
         transitionDuration: '600ms'
       }}
     >
-      <div className="relative w-full aspect-[16/10] overflow-hidden">
+      <div className="relative w-full aspect-[16/9] overflow-hidden">
         <img 
           src="/lovable-uploads/efc63ad4-1a76-470a-96f0-74a08ed01a6f.png" 
           alt="Weather App Project" 

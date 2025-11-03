@@ -31,7 +31,7 @@ export function FoodZapProject({ index }: FoodZapProjectProps) {
         transitionDuration: '600ms'
       }}
     >
-      <div className="relative w-full aspect-[16/10] overflow-hidden">
+      <div className="relative w-full aspect-[16/9] overflow-hidden">
         <img 
           src="/lovable-uploads/Group89.png" 
           alt="FoodZap Project" 

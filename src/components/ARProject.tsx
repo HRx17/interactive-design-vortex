@@ -31,7 +31,7 @@ export function ARProject({ index }: ARProjectProps) {
         transitionDuration: '600ms'
       }}
     >
-      <div className="relative w-full aspect-[16/10] overflow-hidden">
+      <div className="relative w-full aspect-[16/9] overflow-hidden">
         <img 
           src="/lovable-uploads/h1.png" 
           alt="AR/VR Project" 
