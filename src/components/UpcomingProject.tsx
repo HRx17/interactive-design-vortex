@@ -63,11 +63,13 @@ export function UpcomingProject({ index }: UpcomingProjectProps) {
     setIsExpanded(!isExpanded);
   };
 
-  // Cover image for the project card (using the last image from the array)
-  const coverImage = "/lovable-uploads/b9c4ca15-5989-4244-90d9-de2cb6f747eb.png";
+  // Cover image for the project card (using the hero image)
+  const coverImage = "/lovable-uploads/dailygram-hero.png";
 
-  // Array of images for the detailed case study in reverse order (last to first)
+  // Array of images for the detailed case study
   const caseStudyImages = [
+    "/lovable-uploads/dailygram-hero.png",
+    "/lovable-uploads/dailygram-all-screens.png",
     "/lovable-uploads/b9c4ca15-5989-4244-90d9-de2cb6f747eb.png",
     "/lovable-uploads/1a4e83d1-a197-4880-886c-748f9af505d7.png",
     "/lovable-uploads/a3bc2b03-24b2-452c-bc4f-943879f35f0c.png",
@@ -117,9 +119,9 @@ export function UpcomingProject({ index }: UpcomingProjectProps) {
             </div>
           </AspectRatio>
           <CardContent className="p-5">
-            <h3 className="text-lg font-bold mb-1">Upcoming Project</h3>
+            <h3 className="text-lg font-bold mb-1">Dailygram - News App</h3>
             <p className="text-sm text-muted-foreground line-clamp-2">
-              A modern user interface design focused on personalized experiences with innovative visual elements.
+              A personalized news experience app that reimagines how users consume and engage with news stories.
             </p>
           </CardContent>
         </div>
@@ -150,9 +152,9 @@ export function UpcomingProject({ index }: UpcomingProjectProps) {
               </button>
               
               <div className="p-6 md:p-8">
-                <h2 className="text-2xl md:text-3xl font-bold mb-2">Upcoming Project</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-2">Dailygram - News App</h2>
                 <p className="text-muted-foreground mb-6">
-                  A next-generation UI/UX design concept focused on modern visual elements and user engagement
+                  A mobile news application that transforms traditional news consumption into engaging, personalized story experiences
                 </p>
                 
                 <div className="grid gap-6 mb-8">
@@ -186,7 +188,7 @@ export function UpcomingProject({ index }: UpcomingProjectProps) {
                     <AccordionItem value="overview">
                       <AccordionTrigger className="text-xl font-bold">Project Overview</AccordionTrigger>
                       <AccordionContent className="text-muted-foreground">
-                        <p>This upcoming project focuses on creating an innovative interface design with emphasis on visual hierarchy, user flow, and engaging interactions. The concept explores new approaches to digital experiences through thoughtful design elements.</p>
+                        <p>Dailygram is a next-generation news app that reimagines how users discover and consume news content. With personalized interest selection, gamification elements, and an intuitive interface, users can stay informed while earning badges and tracking their reading progress. The app features curated news channels, trending articles, and a profile system that encourages daily engagement with quality journalism.</p>
                       </AccordionContent>
                     </AccordionItem>
                     
@@ -209,12 +211,12 @@ export function UpcomingProject({ index }: UpcomingProjectProps) {
                       <AccordionTrigger className="text-xl font-bold">Key Features</AccordionTrigger>
                       <AccordionContent>
                         <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
-                          <li>Modern visual design system with consistent components</li>
-                          <li>Thoughtful micro-interactions for enhanced user experience</li>
-                          <li>Accessible interface elements that work for all users</li>
-                          <li>Responsive layouts optimized for multiple devices</li>
-                          <li>Dark and light mode with seamless transitions</li>
-                          <li>Data visualization components for complex information</li>
+                          <li>Personalized interest selection with curated news channels (Sports, Finance, Politics, Climate, Kids, Tech)</li>
+                          <li>Gamification system with daily challenges, badges, and leaderboards</li>
+                          <li>Interactive profile dashboard tracking reading habits and achievements</li>
+                          <li>Trending articles section with real-time updates</li>
+                          <li>Clean, card-based news feed with headlines and featured images</li>
+                          <li>Dark mode optimized for comfortable reading in any lighting</li>
                         </ul>
                       </AccordionContent>
                     </AccordionItem>
