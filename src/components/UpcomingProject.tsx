@@ -190,12 +190,14 @@ export function UpcomingProject({ index }: UpcomingProjectProps) {
                         <div className="grid gap-6">
                           <div>
                             <h4 className="font-semibold mb-3 text-lg">Typography System</h4>
-                            <img 
-                              src="/lovable-uploads/dailygram-typography-guide.png" 
-                              alt="Typography Style Guide" 
-                              className="w-full rounded-lg border border-border"
-                              loading="lazy"
-                            />
+                            <div className="flex justify-center">
+                              <img 
+                                src="/lovable-uploads/dailygram-typography-guide.png" 
+                                alt="Typography Style Guide" 
+                                className="w-3/5 rounded-lg border border-border"
+                                loading="lazy"
+                              />
+                            </div>
                           </div>
                           <div>
                             <h4 className="font-semibold mb-3 text-lg">Color Palette</h4>
