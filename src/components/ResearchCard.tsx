@@ -51,19 +51,19 @@ export function ResearchCard({
             <p className="text-sm text-emerald-100/70 mt-1">{year}</p>
             <p className="mt-3 text-muted-foreground">{description}</p>
             <div className="pt-3 flex justify-end">
-              <a 
-                href={downloadFile}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open(downloadFile, '_blank', 'noopener,noreferrer');
+                }}
                 className={cn(
-                  "text-sm font-medium text-emerald-400 flex items-center gap-1 hover:text-emerald-300 transition-all px-4 py-2 rounded-full border border-emerald-700/30 hover:bg-emerald-800/40",
+                  "text-sm font-medium text-emerald-400 flex items-center gap-1 hover:text-emerald-300 transition-all px-4 py-2 rounded-full border border-emerald-700/30 hover:bg-emerald-800/40 cursor-pointer",
                   isHovered && "scale-105"
                 )}
               >
                 <span>Read full paper</span>
                 <ExternalLink className="w-4 h-4" />
-              </a>
+              </button>
             </div>
           </div>
         </div>
