@@ -23,6 +23,17 @@ export function ProjectTypeSwitcher({
       className
     )}>
       <button
+        onClick={() => onTypeChange('research')}
+        className={cn(
+          "flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300",
+          activeType === 'research' ? "bg-purple-600 text-white" : "text-muted-foreground hover:bg-secondary"
+        )}
+      >
+        <FlaskConical className="h-4 w-4" />
+        <span className={cn("font-medium text-sm", isMobile && "hidden")}>Research</span>
+      </button>
+      
+      <button
         onClick={() => onTypeChange('design')}
         className={cn(
           "flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300",
@@ -42,17 +53,6 @@ export function ProjectTypeSwitcher({
       >
         <Code className="h-4 w-4" />
         <span className={cn("font-medium text-sm", isMobile && "hidden")}>Coding</span>
-      </button>
-      
-      <button
-        onClick={() => onTypeChange('research')}
-        className={cn(
-          "flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300",
-          activeType === 'research' ? "bg-purple-600 text-white" : "text-muted-foreground hover:bg-secondary"
-        )}
-      >
-        <FlaskConical className="h-4 w-4" />
-        <span className={cn("font-medium text-sm", isMobile && "hidden")}>Research</span>
       </button>
     </div>
   );

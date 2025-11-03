@@ -39,7 +39,7 @@ const designProjectEmbeds = [
 export function Projects() {
   const sectionRef = useRef<HTMLElement>(null);
   const [isInView, setIsInView] = useState(false);
-  const [activeProjectType, setActiveProjectType] = useState<'design' | 'coding' | 'research'>('design');
+  const [activeProjectType, setActiveProjectType] = useState<'design' | 'coding' | 'research'>('research');
   const isMobile = useIsMobile();
   
   useEffect(() => {
@@ -208,7 +208,12 @@ export function Projects() {
             "opacity-0 transform translate-y-6 transition-all duration-700 delay-200",
             isInView && "opacity-100 translate-y-0"
           )}>
-            Explore my portfolio of UX design work and coding projects focused on creating human-centered digital experiences.
+            {activeProjectType === 'research' 
+              ? "Academic research projects exploring UX principles, user behavior, and experimental studies."
+              : activeProjectType === 'design'
+              ? "UI/UX design projects focusing on user-centered solutions and innovative digital experiences."
+              : "Full-stack applications showcasing technical implementation and coding skills."
+            }
           </p>
         </div>
         
