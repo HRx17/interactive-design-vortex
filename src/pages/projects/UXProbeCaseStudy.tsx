@@ -254,7 +254,7 @@ const UXProbeCaseStudy = () => {
                         asChild
                       >
                         <a
-                          href="https://www.figma.com/community/plugin/1452486119518247469/ux-probe-research-tool-importer"
+                          href="https://www.figma.com/community/plugin/1568368912191242307/ux-probe-research-tool-importer"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -304,7 +304,7 @@ const UXProbeCaseStudy = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
                 <div className="text-4xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent mb-2">
-                  200K+
+                  10K+
                 </div>
                 <div className="text-sm text-muted-foreground">API Requests Handled</div>
               </div>
@@ -628,7 +628,7 @@ const UXProbeCaseStudy = () => {
                     </div>
                     <div>
                       <div className="text-3xl font-bold bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent mb-1">
-                        200K+
+                        10K+
                       </div>
                       <div className="text-sm text-muted-foreground font-medium">Successful API Requests Processed</div>
                     </div>
@@ -745,7 +745,7 @@ const UXProbeCaseStudy = () => {
                       Demonstrates commitment to open-source contribution and designer productivity.
                     </p>
                     <a
-                      href="https://www.figma.com/community/plugin/1452486119518247469/ux-probe-research-tool-importer"
+                      href="https://www.figma.com/community/plugin/1568368912191242307/ux-probe-research-tool-importer"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline inline-flex items-center gap-1"
