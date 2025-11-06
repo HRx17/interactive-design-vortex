@@ -1,12 +1,33 @@
-import React from 'react';
-import { ArrowLeft, Brain, FileText, Layout, Users, UserCircle, Sparkles, Code2, Database, Lock, Zap, CheckCircle, ExternalLink, Target, TrendingUp, Clock, Network, Route, Boxes, Download } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { ImageZoom } from '@/components/ImageZoom';
-import { TechBadge } from '@/components/TechBadge';
-import { ScrollArea } from '@/components/ui/scroll-area';
+import React from "react";
+import {
+  ArrowLeft,
+  Brain,
+  FileText,
+  Layout,
+  Users,
+  UserCircle,
+  Sparkles,
+  Code2,
+  Database,
+  Lock,
+  Zap,
+  CheckCircle,
+  ExternalLink,
+  Target,
+  TrendingUp,
+  Clock,
+  Network,
+  Route,
+  Boxes,
+  Download,
+} from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { ImageZoom } from "@/components/ImageZoom";
+import { TechBadge } from "@/components/TechBadge";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const UXProbeCaseStudy = () => {
   const navigate = useNavigate();
@@ -15,73 +36,83 @@ const UXProbeCaseStudy = () => {
     {
       icon: Brain,
       title: "AI Heuristic Analysis",
-      description: "Automated analysis using Nielsen's 10 usability heuristics. AI evaluates websites and identifies violations with severity ratings, specific locations, and actionable recommendations.",
+      description:
+        "Automated analysis using Nielsen's 10 usability heuristics. AI evaluates websites and identifies violations with severity ratings, specific locations, and actionable recommendations.",
       tech: "Powered by Gemini 2.5 Pro for deep reasoning, processes screenshots with vision API, generates structured violation reports with bounding boxes",
-      image: "/lovable-uploads/uxprobe-analysis-results.png"
+      image: "/lovable-uploads/uxprobe-analysis-results.png",
     },
     {
       icon: FileText,
       title: "Study Plan Generation",
-      description: "AI-generated comprehensive research plans from user goals. Creates structured, multi-step research workflows with objectives, methodologies, and deliverables.",
+      description:
+        "AI-generated comprehensive research plans from user goals. Creates structured, multi-step research workflows with objectives, methodologies, and deliverables.",
       tech: "Uses Gemini 2.5 Flash for fast generation, dynamic step parsing, PostgreSQL storage with RLS policies",
-      image: "/lovable-uploads/uxprobe-study-plan.png"
+      image: "/lovable-uploads/uxprobe-study-plan.png",
     },
     {
       icon: Layout,
       title: "Dynamic Step Workspace",
-      description: "Context-aware workspace that adapts to each research step type. Different tools and AI guidance for interviews, personas, observations, and synthesis.",
+      description:
+        "Context-aware workspace that adapts to each research step type. Different tools and AI guidance for interviews, personas, observations, and synthesis.",
       tech: "React-based dynamic routing, step-specific AI prompts, real-time data persistence, markdown rendering",
-      image: "/lovable-uploads/uxprobe-study-plan.png"
+      image: "/lovable-uploads/uxprobe-study-plan.png",
     },
     {
       icon: Users,
       title: "Interview Management",
-      description: "Schedule, conduct, and document user interviews. Record responses, track findings, and generate insights with AI assistance.",
+      description:
+        "Schedule, conduct, and document user interviews. Record responses, track findings, and generate insights with AI assistance.",
       tech: "Real-time database updates, structured interview templates, AI-powered insight extraction",
-      image: "/lovable-uploads/uxprobe-research.png"
+      image: "/lovable-uploads/uxprobe-research.png",
     },
     {
       icon: UserCircle,
       title: "Persona Builder",
-      description: "Create detailed user personas based on research findings. Build comprehensive profiles with demographics, goals, pain points, and behaviors.",
+      description:
+        "Create detailed user personas based on research findings. Build comprehensive profiles with demographics, goals, pain points, and behaviors.",
       tech: "Form validation with Zod, rich persona templates, relationship mapping",
-      image: "/lovable-uploads/uxprobe-research.png"
+      image: "/lovable-uploads/uxprobe-research.png",
     },
     {
       icon: Sparkles,
       title: "Real-time AI Guidance",
-      description: "On-demand AI assistance for any research step. Get recommendations, suggestions, and guidance tailored to your current task and context.",
+      description:
+        "On-demand AI assistance for any research step. Get recommendations, suggestions, and guidance tailored to your current task and context.",
       tech: "Context-aware prompts, streaming AI responses, edge functions for AI processing",
-      image: "/lovable-uploads/uxprobe-analysis-input.png"
+      image: "/lovable-uploads/uxprobe-analysis-input.png",
     },
     {
       icon: Network,
       title: "Mind Mapping Tool",
-      description: "Create visual mind maps to organize research insights, brainstorm ideas, and map relationships between concepts. Drag-and-drop interface for intuitive information structuring.",
+      description:
+        "Create visual mind maps to organize research insights, brainstorm ideas, and map relationships between concepts. Drag-and-drop interface for intuitive information structuring.",
       tech: "React Flow for node-based visualization, real-time updates, export capabilities",
-      image: "/lovable-uploads/uxprobe-research.png"
+      image: "/lovable-uploads/uxprobe-research.png",
     },
     {
       icon: Route,
       title: "Journey Map Builder",
-      description: "Design comprehensive user journey maps with touchpoints, emotions, and pain points. Track the complete user experience across all stages.",
+      description:
+        "Design comprehensive user journey maps with touchpoints, emotions, and pain points. Track the complete user experience across all stages.",
       tech: "Custom canvas rendering, stage-based flow, emotional mapping, PostgreSQL persistence",
-      image: "/lovable-uploads/uxprobe-research.png"
+      image: "/lovable-uploads/uxprobe-research.png",
     },
     {
       icon: Boxes,
       title: "Information Architecture",
-      description: "Build and visualize site structures, navigation hierarchies, and content organization. Create sitemaps and taxonomy structures with AI suggestions.",
+      description:
+        "Build and visualize site structures, navigation hierarchies, and content organization. Create sitemaps and taxonomy structures with AI suggestions.",
       tech: "Tree-view components, hierarchical data structures, AI-powered recommendations",
-      image: "/lovable-uploads/uxprobe-research.png"
+      image: "/lovable-uploads/uxprobe-research.png",
     },
     {
       icon: Download,
       title: "Figma Integration & Plugin",
-      description: "Export research findings directly to Figma. Free Figma plugin available on Community for importing UX research data into design files.",
+      description:
+        "Export research findings directly to Figma. Free Figma plugin available on Community for importing UX research data into design files.",
       tech: "Figma API integration, plugin manifest, data transformation, community distribution",
-      image: "/lovable-uploads/uxprobe-research.png"
-    }
+      image: "/lovable-uploads/uxprobe-research.png",
+    },
   ];
 
   const techStack = [
@@ -96,7 +127,7 @@ const UXProbeCaseStudy = () => {
     { label: "Edge Functions", icon: Zap },
     { label: "Gemini AI", icon: Brain },
     { label: "Vite", icon: Zap },
-    { label: "Zod Validation", icon: CheckCircle }
+    { label: "Zod Validation", icon: CheckCircle },
   ];
 
   return (
@@ -104,11 +135,7 @@ const UXProbeCaseStudy = () => {
       {/* Sticky Back Button */}
       <div className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border/40">
         <div className="container px-4 mx-auto py-4">
-          <Button
-            variant="ghost"
-            onClick={() => navigate('/')}
-            className="gap-2 hover:gap-3 transition-all"
-          >
+          <Button variant="ghost" onClick={() => navigate("/")} className="gap-2 hover:gap-3 transition-all">
             <ArrowLeft className="w-4 h-4" />
             Back to Portfolio
           </Button>
@@ -127,7 +154,7 @@ const UXProbeCaseStudy = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
             </div>
-            
+
             <div className="relative h-full flex flex-col justify-end pb-16 px-4 container mx-auto">
               <div className="flex flex-wrap gap-2 mb-4">
                 <span className="px-3 py-1 bg-primary/20 border border-primary/30 rounded-full text-sm font-medium text-primary">
@@ -141,21 +168,25 @@ const UXProbeCaseStudy = () => {
                 </span>
                 <span className="px-3 py-1 bg-gradient-to-r from-purple-600/20 to-pink-600/20 border border-purple-600/30 rounded-full text-sm font-medium text-purple-600 dark:text-purple-400 flex items-center gap-2">
                   <svg viewBox="0 0 38 57" fill="none" className="w-3 h-4">
-                    <path d="M19 28.5L19 0.5" stroke="currentColor" strokeWidth="2"/>
-                    <path d="M0.5 47.5C0.5 41.9772 5.14873 37.5 10.9 37.5H27.1C32.8513 37.5 37.5 41.9772 37.5 47.5C37.5 53.0228 32.8513 57.5 27.1 57.5H10.9C5.14873 57.5 0.5 53.0228 0.5 47.5Z" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M19 28.5L19 0.5" stroke="currentColor" strokeWidth="2" />
+                    <path
+                      d="M0.5 47.5C0.5 41.9772 5.14873 37.5 10.9 37.5H27.1C32.8513 37.5 37.5 41.9772 37.5 47.5C37.5 53.0228 32.8513 57.5 27.1 57.5H10.9C5.14873 57.5 0.5 53.0228 0.5 47.5Z"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
                   </svg>
                   Figma Plugin
                 </span>
               </div>
-              
+
               <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent">
                 UXProbe
               </h1>
-              
+
               <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mb-6">
                 AI-Powered UX Research Platform
               </p>
-              
+
               <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
                 <div>
                   <span className="font-semibold text-foreground">Duration:</span> 6 months
@@ -185,17 +216,53 @@ const UXProbeCaseStudy = () => {
                       <CardTitle className="text-xl">Quick Demo</CardTitle>
                       <CardDescription>No signup required</CardDescription>
                     </CardHeader>
-                  <CardContent className="space-y-4">
-                    <p className="text-sm text-muted-foreground">
-                      Try a free heuristic analysis instantly - analyze any website in seconds
-                    </p>
-                    <Button className="w-full gap-2" asChild>
-                      <a href="https://ux-probe.lovable.app/" target="_blank" rel="noopener noreferrer">
-                        Analyze Now
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    </Button>
-                  </CardContent>
+                    <CardContent className="space-y-4">
+                      <p className="text-sm text-muted-foreground">
+                        Try a free heuristic analysis instantly - analyze any website in seconds
+                      </p>
+                      <Button className="w-full gap-2" asChild>
+                        <a href="https://ux-probe.lovable.app/" target="_blank" rel="noopener noreferrer">
+                          Analyze Now
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      </Button>
+                    </CardContent>
+                  </Card>
+
+                  {/* Figma Plugin Card */}
+                  <Card className="bg-gradient-to-br from-purple-600/10 to-pink-600/10 border-purple-600/30">
+                    <CardHeader>
+                      <CardTitle className="text-xl flex items-center gap-2">
+                        <svg viewBox="0 0 38 57" fill="none" className="w-4 h-5 text-purple-600 dark:text-purple-400">
+                          <path d="M19 28.5L19 0.5" stroke="currentColor" strokeWidth="2" />
+                          <path
+                            d="M0.5 47.5C0.5 41.9772 5.14873 37.5 10.9 37.5H27.1C32.8513 37.5 37.5 41.9772 37.5 47.5C37.5 53.0228 32.8513 57.5 27.1 57.5H10.9C5.14873 57.5 0.5 53.0228 0.5 47.5Z"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          />
+                        </svg>
+                        Figma Community Plugin
+                      </CardTitle>
+                      <CardDescription>Free research tool importer</CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <p className="text-sm text-muted-foreground">
+                        Import UX research findings directly into your Figma design files
+                      </p>
+                      <Button
+                        className="w-full gap-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
+                        asChild
+                      >
+                        <a
+                          href="https://www.figma.com/community/plugin/1452486119518247469/ux-probe-research-tool-importer"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Get Plugin
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      </Button>
+                    </CardContent>
                   </Card>
 
                   {/* Full Platform */}
@@ -222,31 +289,6 @@ const UXProbeCaseStudy = () => {
                       <Button className="w-full gap-2" variant="outline" asChild>
                         <a href="https://ux-probe.lovable.app/auth" target="_blank" rel="noopener noreferrer">
                           Create Account
-                          <ExternalLink className="w-4 h-4" />
-                        </a>
-                      </Button>
-                    </CardContent>
-                  </Card>
-                  
-                  {/* Figma Plugin Card */}
-                  <Card className="bg-gradient-to-br from-purple-600/10 to-pink-600/10 border-purple-600/30">
-                    <CardHeader>
-                      <CardTitle className="text-xl flex items-center gap-2">
-                        <svg viewBox="0 0 38 57" fill="none" className="w-4 h-5 text-purple-600 dark:text-purple-400">
-                          <path d="M19 28.5L19 0.5" stroke="currentColor" strokeWidth="2"/>
-                          <path d="M0.5 47.5C0.5 41.9772 5.14873 37.5 10.9 37.5H27.1C32.8513 37.5 37.5 41.9772 37.5 47.5C37.5 53.0228 32.8513 57.5 27.1 57.5H10.9C5.14873 57.5 0.5 53.0228 0.5 47.5Z" stroke="currentColor" strokeWidth="2"/>
-                        </svg>
-                        Figma Community Plugin
-                      </CardTitle>
-                      <CardDescription>Free research tool importer</CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <p className="text-sm text-muted-foreground">
-                        Import UX research findings directly into your Figma design files
-                      </p>
-                      <Button className="w-full gap-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700" asChild>
-                        <a href="https://www.figma.com/community/plugin/1452486119518247469/ux-probe-research-tool-importer" target="_blank" rel="noopener noreferrer">
-                          Get Plugin
                           <ExternalLink className="w-4 h-4" />
                         </a>
                       </Button>
@@ -300,7 +342,9 @@ const UXProbeCaseStudy = () => {
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">
-                      Manual UX evaluation is time-consuming, subjective, and requires specialized expertise. Researchers spend hours analyzing websites against heuristic principles, often missing critical issues. The process lacks consistency and scalability.
+                      Manual UX evaluation is time-consuming, subjective, and requires specialized expertise.
+                      Researchers spend hours analyzing websites against heuristic principles, often missing critical
+                      issues. The process lacks consistency and scalability.
                     </p>
                   </CardContent>
                 </Card>
@@ -314,7 +358,10 @@ const UXProbeCaseStudy = () => {
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">
-                      UXProbe leverages AI to automate heuristic evaluation using Nielsen's 10 usability principles, while providing comprehensive tools for planning, conducting, and documenting UX research. The platform includes mind mapping, journey maps, information architecture tools, and Figma integration with a free community plugin for seamless design handoff.
+                      UXProbe leverages AI to automate heuristic evaluation using Nielsen's 10 usability principles,
+                      while providing comprehensive tools for planning, conducting, and documenting UX research. The
+                      platform includes mind mapping, journey maps, information architecture tools, and Figma
+                      integration with a free community plugin for seamless design handoff.
                     </p>
                   </CardContent>
                 </Card>
@@ -357,7 +404,7 @@ const UXProbeCaseStudy = () => {
           {/* Key Features */}
           <section className="case-study-section bg-gradient-to-b from-transparent to-primary/5">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Key Features</h2>
-            
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {features.map((feature, index) => (
                 <Card key={index} className="bg-card/30 backdrop-blur hover:border-primary/50 transition-all group">
@@ -374,7 +421,7 @@ const UXProbeCaseStudy = () => {
                         <span className="font-semibold text-foreground">Tech:</span> {feature.tech}
                       </p>
                     </div>
-                    <ImageZoom 
+                    <ImageZoom
                       src={feature.image}
                       alt={`${feature.title} screenshot`}
                       className="rounded-lg border border-border/20"
@@ -388,7 +435,7 @@ const UXProbeCaseStudy = () => {
           {/* Platform Showcase */}
           <section className="case-study-section">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Platform Overview</h2>
-            
+
             <div className="space-y-8">
               {/* Landing Page */}
               <Card className="bg-card/30 backdrop-blur overflow-hidden">
@@ -397,7 +444,7 @@ const UXProbeCaseStudy = () => {
                   <CardDescription>First impression for users</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <ImageZoom 
+                  <ImageZoom
                     src="/lovable-uploads/uxprobe-landing.png"
                     alt="UXProbe Landing Page"
                     className="rounded-lg border border-border/20 w-full"
@@ -412,7 +459,7 @@ const UXProbeCaseStudy = () => {
                   <CardDescription>Manage and view analyzed websites</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <ImageZoom 
+                  <ImageZoom
                     src="/lovable-uploads/uxprobe-dashboard.png"
                     alt="UXProbe Dashboard"
                     className="rounded-lg border border-border/20 w-full"
@@ -427,7 +474,7 @@ const UXProbeCaseStudy = () => {
                   <CardDescription>Enter website URL for evaluation</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <ImageZoom 
+                  <ImageZoom
                     src="/lovable-uploads/uxprobe-analysis-input.png"
                     alt="UXProbe Analysis Input Page"
                     className="rounded-lg border border-border/20 w-full"
@@ -440,7 +487,7 @@ const UXProbeCaseStudy = () => {
           {/* Technical Implementation */}
           <section className="case-study-section bg-gradient-to-b from-transparent to-primary/5">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Technical Implementation</h2>
-            
+
             {/* Tech Stack */}
             <Card className="bg-card/30 backdrop-blur mb-8">
               <CardHeader>
@@ -467,45 +514,82 @@ const UXProbeCaseStudy = () => {
                   <AccordionItem value="item-1">
                     <AccordionTrigger>Multi-Model AI Integration</AccordionTrigger>
                     <AccordionContent className="space-y-2 text-muted-foreground">
-                      <p><strong>Challenge:</strong> Different tasks require different AI model strengths</p>
-                      <p><strong>Solution:</strong> Implemented intelligent model selection - Pro for complex reasoning (heuristic analysis), Flash for balanced performance (study plans, guidance), Flash-Lite for simple tasks (suggestions)</p>
-                      <p><strong>Impact:</strong> Optimized cost and latency while maintaining quality</p>
+                      <p>
+                        <strong>Challenge:</strong> Different tasks require different AI model strengths
+                      </p>
+                      <p>
+                        <strong>Solution:</strong> Implemented intelligent model selection - Pro for complex reasoning
+                        (heuristic analysis), Flash for balanced performance (study plans, guidance), Flash-Lite for
+                        simple tasks (suggestions)
+                      </p>
+                      <p>
+                        <strong>Impact:</strong> Optimized cost and latency while maintaining quality
+                      </p>
                     </AccordionContent>
                   </AccordionItem>
-                  
+
                   <AccordionItem value="item-2">
                     <AccordionTrigger>Dynamic Context-Aware Workspace</AccordionTrigger>
                     <AccordionContent className="space-y-2 text-muted-foreground">
-                      <p><strong>Challenge:</strong> Each research step needs different tools and UI</p>
-                      <p><strong>Solution:</strong> Built dynamic routing system with step-type detection, conditional rendering, and context-specific AI prompts</p>
-                      <p><strong>Impact:</strong> Single flexible interface adapts to 10+ different research activities</p>
+                      <p>
+                        <strong>Challenge:</strong> Each research step needs different tools and UI
+                      </p>
+                      <p>
+                        <strong>Solution:</strong> Built dynamic routing system with step-type detection, conditional
+                        rendering, and context-specific AI prompts
+                      </p>
+                      <p>
+                        <strong>Impact:</strong> Single flexible interface adapts to 10+ different research activities
+                      </p>
                     </AccordionContent>
                   </AccordionItem>
-                  
+
                   <AccordionItem value="item-3">
                     <AccordionTrigger>Secure Multi-Tenant Architecture</AccordionTrigger>
                     <AccordionContent className="space-y-2 text-muted-foreground">
-                      <p><strong>Challenge:</strong> Protect user data while enabling collaboration</p>
-                      <p><strong>Solution:</strong> Implemented Row Level Security policies, user-scoped queries, protected routes, and secure edge functions</p>
-                      <p><strong>Impact:</strong> Enterprise-grade security with zero data leakage</p>
+                      <p>
+                        <strong>Challenge:</strong> Protect user data while enabling collaboration
+                      </p>
+                      <p>
+                        <strong>Solution:</strong> Implemented Row Level Security policies, user-scoped queries,
+                        protected routes, and secure edge functions
+                      </p>
+                      <p>
+                        <strong>Impact:</strong> Enterprise-grade security with zero data leakage
+                      </p>
                     </AccordionContent>
                   </AccordionItem>
-                  
+
                   <AccordionItem value="item-4">
                     <AccordionTrigger>Scalable Edge Function Architecture</AccordionTrigger>
                     <AccordionContent className="space-y-2 text-muted-foreground">
-                      <p><strong>Challenge:</strong> AI processing requires backend compute without infrastructure management</p>
-                      <p><strong>Solution:</strong> Leveraged serverless edge functions with streaming responses, error handling, and rate limiting</p>
-                      <p><strong>Impact:</strong> Automatic scalability handling 200K+ requests</p>
+                      <p>
+                        <strong>Challenge:</strong> AI processing requires backend compute without infrastructure
+                        management
+                      </p>
+                      <p>
+                        <strong>Solution:</strong> Leveraged serverless edge functions with streaming responses, error
+                        handling, and rate limiting
+                      </p>
+                      <p>
+                        <strong>Impact:</strong> Automatic scalability handling 200K+ requests
+                      </p>
                     </AccordionContent>
                   </AccordionItem>
-                  
+
                   <AccordionItem value="item-5">
                     <AccordionTrigger>Vision API Integration</AccordionTrigger>
                     <AccordionContent className="space-y-2 text-muted-foreground">
-                      <p><strong>Challenge:</strong> Analyze website screenshots for visual UX issues</p>
-                      <p><strong>Solution:</strong> Integrated Gemini's multimodal capabilities, optimized image encoding, implemented bounding box visualization</p>
-                      <p><strong>Impact:</strong> Accurate visual element detection and violation mapping</p>
+                      <p>
+                        <strong>Challenge:</strong> Analyze website screenshots for visual UX issues
+                      </p>
+                      <p>
+                        <strong>Solution:</strong> Integrated Gemini's multimodal capabilities, optimized image
+                        encoding, implemented bounding box visualization
+                      </p>
+                      <p>
+                        <strong>Impact:</strong> Accurate visual element detection and violation mapping
+                      </p>
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
@@ -516,7 +600,7 @@ const UXProbeCaseStudy = () => {
           {/* Results & Impact */}
           <section className="case-study-section">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Results & Impact</h2>
-            
+
             <div className="grid md:grid-cols-3 gap-6 mb-12">
               <Card className="bg-card/30 backdrop-blur border-emerald-500/20">
                 <CardContent className="pt-6">
@@ -546,9 +630,7 @@ const UXProbeCaseStudy = () => {
                       <div className="text-3xl font-bold bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent mb-1">
                         200K+
                       </div>
-                      <div className="text-sm text-muted-foreground font-medium">
-                        Successful API Requests Processed
-                      </div>
+                      <div className="text-sm text-muted-foreground font-medium">Successful API Requests Processed</div>
                     </div>
                   </div>
                 </CardContent>
@@ -564,9 +646,7 @@ const UXProbeCaseStudy = () => {
                       <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent mb-1">
                         100%
                       </div>
-                      <div className="text-sm text-muted-foreground font-medium">
-                        Serverless & Auto-Scaling
-                      </div>
+                      <div className="text-sm text-muted-foreground font-medium">Serverless & Auto-Scaling</div>
                     </div>
                   </div>
                 </CardContent>
@@ -579,7 +659,9 @@ const UXProbeCaseStudy = () => {
                   <div className="text-4xl">"</div>
                   <div>
                     <p className="text-lg mb-4 italic text-muted-foreground">
-                      UXProbe demonstrates how AI can enhance rather than replace human expertise. By automating the mechanical aspects of heuristic evaluation, it frees researchers to focus on insights and solutions.
+                      UXProbe demonstrates how AI can enhance rather than replace human expertise. By automating the
+                      mechanical aspects of heuristic evaluation, it frees researchers to focus on insights and
+                      solutions.
                     </p>
                     <p className="text-sm font-semibold text-foreground">Personal Reflection</p>
                   </div>
@@ -591,17 +673,29 @@ const UXProbeCaseStudy = () => {
           {/* Learning & Insights */}
           <section className="case-study-section bg-gradient-to-b from-transparent to-primary/5">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Learning & Insights</h2>
-            
+
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="bg-card/30 backdrop-blur">
                 <CardHeader>
                   <CardTitle className="text-emerald-500">What Worked Well</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3 text-sm text-muted-foreground">
-                  <p>• <strong>Multi-model AI strategy:</strong> Using different models for different tasks optimized both cost and performance</p>
-                  <p>• <strong>Serverless architecture:</strong> Edge Functions provided scalability without infrastructure management</p>
-                  <p>• <strong>Context-aware design:</strong> Adapting the interface to each research step improved usability significantly</p>
-                  <p>• <strong>Security-first approach:</strong> Row Level Security policies prevented data leaks from the start</p>
+                  <p>
+                    • <strong>Multi-model AI strategy:</strong> Using different models for different tasks optimized
+                    both cost and performance
+                  </p>
+                  <p>
+                    • <strong>Serverless architecture:</strong> Edge Functions provided scalability without
+                    infrastructure management
+                  </p>
+                  <p>
+                    • <strong>Context-aware design:</strong> Adapting the interface to each research step improved
+                    usability significantly
+                  </p>
+                  <p>
+                    • <strong>Security-first approach:</strong> Row Level Security policies prevented data leaks from
+                    the start
+                  </p>
                 </CardContent>
               </Card>
 
@@ -610,10 +704,18 @@ const UXProbeCaseStudy = () => {
                   <CardTitle className="text-primary">Challenges Overcome</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3 text-sm text-muted-foreground">
-                  <p>• <strong>AI consistency:</strong> Structured prompts and validation ensured reliable outputs</p>
-                  <p>• <strong>Image processing:</strong> Optimized encoding and compression for vision API efficiency</p>
-                  <p>• <strong>State management:</strong> TanStack Query provided elegant solution for complex data flows</p>
-                  <p>• <strong>UX complexity:</strong> Progressive disclosure kept powerful features accessible</p>
+                  <p>
+                    • <strong>AI consistency:</strong> Structured prompts and validation ensured reliable outputs
+                  </p>
+                  <p>
+                    • <strong>Image processing:</strong> Optimized encoding and compression for vision API efficiency
+                  </p>
+                  <p>
+                    • <strong>State management:</strong> TanStack Query provided elegant solution for complex data flows
+                  </p>
+                  <p>
+                    • <strong>UX complexity:</strong> Progressive disclosure kept powerful features accessible
+                  </p>
                 </CardContent>
               </Card>
             </div>
@@ -624,18 +726,27 @@ const UXProbeCaseStudy = () => {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-start gap-4 p-4 rounded-lg bg-gradient-to-r from-purple-600/10 to-pink-600/10 border border-purple-600/20">
-                  <svg viewBox="0 0 38 57" fill="none" className="w-6 h-8 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-1">
-                    <path d="M19 28.5L19 0.5" stroke="currentColor" strokeWidth="2"/>
-                    <path d="M0.5 47.5C0.5 41.9772 5.14873 37.5 10.9 37.5H27.1C32.8513 37.5 37.5 41.9772 37.5 47.5C37.5 53.0228 32.8513 57.5 27.1 57.5H10.9C5.14873 57.5 0.5 53.0228 0.5 47.5Z" stroke="currentColor" strokeWidth="2"/>
+                  <svg
+                    viewBox="0 0 38 57"
+                    fill="none"
+                    className="w-6 h-8 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-1"
+                  >
+                    <path d="M19 28.5L19 0.5" stroke="currentColor" strokeWidth="2" />
+                    <path
+                      d="M0.5 47.5C0.5 41.9772 5.14873 37.5 10.9 37.5H27.1C32.8513 37.5 37.5 41.9772 37.5 47.5C37.5 53.0228 32.8513 57.5 27.1 57.5H10.9C5.14873 57.5 0.5 53.0228 0.5 47.5Z"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
                   </svg>
                   <div>
                     <h4 className="font-semibold text-foreground mb-2">Figma Community Plugin</h4>
                     <p className="text-sm text-muted-foreground mb-2">
-                      Published free plugin for the design community, enabling seamless research-to-design workflow. Demonstrates commitment to open-source contribution and designer productivity.
+                      Published free plugin for the design community, enabling seamless research-to-design workflow.
+                      Demonstrates commitment to open-source contribution and designer productivity.
                     </p>
-                    <a 
-                      href="https://www.figma.com/community/plugin/1452486119518247469/ux-probe-research-tool-importer" 
-                      target="_blank" 
+                    <a
+                      href="https://www.figma.com/community/plugin/1452486119518247469/ux-probe-research-tool-importer"
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline inline-flex items-center gap-1"
                     >
@@ -644,7 +755,7 @@ const UXProbeCaseStudy = () => {
                     </a>
                   </div>
                 </div>
-                
+
                 <div>
                   <h4 className="font-semibold text-foreground mb-2">Future Enhancements</h4>
                   <ul className="space-y-2 text-sm text-muted-foreground">
