@@ -67,15 +67,22 @@ export function UXProbeProject({ index }: UXProbeProjectProps) {
         </h3>
         
         <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-          AI-powered platform automating UX heuristic evaluation and streamlining research workflows with Nielsen's 10 usability principles.
+          AI-powered platform automating UX heuristic evaluation with comprehensive research tools including mind mapping, journey maps, information architecture, and Figma integration.
         </p>
         
-        <div className="mt-auto pt-4 border-t border-border/30">
+        <div className="mt-auto pt-4 border-t border-border/30 space-y-3">
+          <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-purple-600/10 to-pink-600/10 border border-purple-600/30 w-fit">
+            <svg viewBox="0 0 38 57" fill="none" className="w-3 h-3">
+              <path d="M19 28.5L19 0.5" stroke="currentColor" strokeWidth="2"/>
+              <path d="M0.5 47.5C0.5 41.9772 5.14873 37.5 10.9 37.5H27.1C32.8513 37.5 37.5 41.9772 37.5 47.5C37.5 53.0228 32.8513 57.5 27.1 57.5H10.9C5.14873 57.5 0.5 53.0228 0.5 47.5Z" stroke="currentColor" strokeWidth="2"/>
+            </svg>
+            <span className="text-xs font-medium text-purple-600 dark:text-purple-400">Figma Plugin • Free on Community</span>
+          </div>
           <div className="flex flex-wrap gap-2 text-xs">
             <span className="px-2 py-1 rounded-md bg-muted/50 text-muted-foreground">React</span>
             <span className="px-2 py-1 rounded-md bg-muted/50 text-muted-foreground">TypeScript</span>
             <span className="px-2 py-1 rounded-md bg-muted/50 text-muted-foreground">Gemini AI</span>
-            <span className="px-2 py-1 rounded-md bg-muted/50 text-muted-foreground">Lovable Cloud</span>
+            <span className="px-2 py-1 rounded-md bg-muted/50 text-muted-foreground">Figma API</span>
           </div>
         </div>
       </div>

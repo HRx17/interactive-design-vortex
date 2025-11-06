@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, Brain, FileText, Layout, Users, UserCircle, Sparkles, Code2, Database, Lock, Zap, CheckCircle, ExternalLink, Target, TrendingUp, Clock } from 'lucide-react';
+import { ArrowLeft, Brain, FileText, Layout, Users, UserCircle, Sparkles, Code2, Database, Lock, Zap, CheckCircle, ExternalLink, Target, TrendingUp, Clock, Network, Route, Boxes, Download } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -53,6 +53,34 @@ const UXProbeCaseStudy = () => {
       description: "On-demand AI assistance for any research step. Get recommendations, suggestions, and guidance tailored to your current task and context.",
       tech: "Context-aware prompts, streaming AI responses, edge functions for AI processing",
       image: "/lovable-uploads/uxprobe-analysis-input.png"
+    },
+    {
+      icon: Network,
+      title: "Mind Mapping Tool",
+      description: "Create visual mind maps to organize research insights, brainstorm ideas, and map relationships between concepts. Drag-and-drop interface for intuitive information structuring.",
+      tech: "React Flow for node-based visualization, real-time updates, export capabilities",
+      image: "/lovable-uploads/uxprobe-research.png"
+    },
+    {
+      icon: Route,
+      title: "Journey Map Builder",
+      description: "Design comprehensive user journey maps with touchpoints, emotions, and pain points. Track the complete user experience across all stages.",
+      tech: "Custom canvas rendering, stage-based flow, emotional mapping, PostgreSQL persistence",
+      image: "/lovable-uploads/uxprobe-research.png"
+    },
+    {
+      icon: Boxes,
+      title: "Information Architecture",
+      description: "Build and visualize site structures, navigation hierarchies, and content organization. Create sitemaps and taxonomy structures with AI suggestions.",
+      tech: "Tree-view components, hierarchical data structures, AI-powered recommendations",
+      image: "/lovable-uploads/uxprobe-research.png"
+    },
+    {
+      icon: Download,
+      title: "Figma Integration & Plugin",
+      description: "Export research findings directly to Figma. Free Figma plugin available on Community for importing UX research data into design files.",
+      tech: "Figma API integration, plugin manifest, data transformation, community distribution",
+      image: "/lovable-uploads/uxprobe-research.png"
     }
   ];
 
@@ -111,6 +139,13 @@ const UXProbeCaseStudy = () => {
                 <span className="px-3 py-1 bg-primary/20 border border-primary/30 rounded-full text-sm font-medium text-primary">
                   UX Research
                 </span>
+                <span className="px-3 py-1 bg-gradient-to-r from-purple-600/20 to-pink-600/20 border border-purple-600/30 rounded-full text-sm font-medium text-purple-600 dark:text-purple-400 flex items-center gap-2">
+                  <svg viewBox="0 0 38 57" fill="none" className="w-3 h-4">
+                    <path d="M19 28.5L19 0.5" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M0.5 47.5C0.5 41.9772 5.14873 37.5 10.9 37.5H27.1C32.8513 37.5 37.5 41.9772 37.5 47.5C37.5 53.0228 32.8513 57.5 27.1 57.5H10.9C5.14873 57.5 0.5 53.0228 0.5 47.5Z" stroke="currentColor" strokeWidth="2"/>
+                  </svg>
+                  Figma Plugin
+                </span>
               </div>
               
               <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent">
@@ -150,17 +185,17 @@ const UXProbeCaseStudy = () => {
                       <CardTitle className="text-xl">Quick Demo</CardTitle>
                       <CardDescription>No signup required</CardDescription>
                     </CardHeader>
-                    <CardContent className="space-y-4">
-                      <p className="text-sm text-muted-foreground">
-                        Try a free heuristic analysis instantly - analyze any website in seconds
-                      </p>
-                      <Button className="w-full gap-2" asChild>
-                        <a href="https://hello-world-starter-6016.lovable.app/" target="_blank" rel="noopener noreferrer">
-                          Analyze Now
-                          <ExternalLink className="w-4 h-4" />
-                        </a>
-                      </Button>
-                    </CardContent>
+                  <CardContent className="space-y-4">
+                    <p className="text-sm text-muted-foreground">
+                      Try a free heuristic analysis instantly - analyze any website in seconds
+                    </p>
+                    <Button className="w-full gap-2" asChild>
+                      <a href="https://ux-probe.lovable.app/" target="_blank" rel="noopener noreferrer">
+                        Analyze Now
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    </Button>
+                  </CardContent>
                   </Card>
 
                   {/* Full Platform */}
@@ -185,8 +220,33 @@ const UXProbeCaseStudy = () => {
                         </li>
                       </ul>
                       <Button className="w-full gap-2" variant="outline" asChild>
-                        <a href="https://hello-world-starter-6016.lovable.app/auth" target="_blank" rel="noopener noreferrer">
+                        <a href="https://ux-probe.lovable.app/auth" target="_blank" rel="noopener noreferrer">
                           Create Account
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                  
+                  {/* Figma Plugin Card */}
+                  <Card className="bg-gradient-to-br from-purple-600/10 to-pink-600/10 border-purple-600/30">
+                    <CardHeader>
+                      <CardTitle className="text-xl flex items-center gap-2">
+                        <svg viewBox="0 0 38 57" fill="none" className="w-4 h-5 text-purple-600 dark:text-purple-400">
+                          <path d="M19 28.5L19 0.5" stroke="currentColor" strokeWidth="2"/>
+                          <path d="M0.5 47.5C0.5 41.9772 5.14873 37.5 10.9 37.5H27.1C32.8513 37.5 37.5 41.9772 37.5 47.5C37.5 53.0228 32.8513 57.5 27.1 57.5H10.9C5.14873 57.5 0.5 53.0228 0.5 47.5Z" stroke="currentColor" strokeWidth="2"/>
+                        </svg>
+                        Figma Community Plugin
+                      </CardTitle>
+                      <CardDescription>Free research tool importer</CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <p className="text-sm text-muted-foreground">
+                        Import UX research findings directly into your Figma design files
+                      </p>
+                      <Button className="w-full gap-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700" asChild>
+                        <a href="https://www.figma.com/community/plugin/1452486119518247469/ux-probe-research-tool-importer" target="_blank" rel="noopener noreferrer">
+                          Get Plugin
                           <ExternalLink className="w-4 h-4" />
                         </a>
                       </Button>
@@ -220,9 +280,9 @@ const UXProbeCaseStudy = () => {
               </div>
               <div className="text-center">
                 <div className="text-4xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent mb-2">
-                  100%
+                  Free
                 </div>
-                <div className="text-sm text-muted-foreground">Serverless</div>
+                <div className="text-sm text-muted-foreground">Figma Community Plugin</div>
               </div>
             </div>
           </section>
@@ -254,7 +314,7 @@ const UXProbeCaseStudy = () => {
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">
-                      UXProbe leverages AI to automate heuristic evaluation using Nielsen's 10 usability principles, while providing comprehensive tools for planning, conducting, and documenting UX research. The platform combines AI-powered analysis with structured research workflows.
+                      UXProbe leverages AI to automate heuristic evaluation using Nielsen's 10 usability principles, while providing comprehensive tools for planning, conducting, and documenting UX research. The platform includes mind mapping, journey maps, information architecture tools, and Figma integration with a free community plugin for seamless design handoff.
                     </p>
                   </CardContent>
                 </Card>
@@ -560,16 +620,41 @@ const UXProbeCaseStudy = () => {
 
             <Card className="bg-card/30 backdrop-blur mt-8">
               <CardHeader>
-                <CardTitle>Future Enhancements</CardTitle>
+                <CardTitle>Community Impact</CardTitle>
               </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>• Collaborative features for team-based research</li>
-                  <li>• Integration with design tools (Figma, Sketch)</li>
-                  <li>• Advanced analytics and trend identification</li>
-                  <li>• Mobile app for field research</li>
-                  <li>• Custom heuristic frameworks beyond Nielsen's</li>
-                </ul>
+              <CardContent className="space-y-4">
+                <div className="flex items-start gap-4 p-4 rounded-lg bg-gradient-to-r from-purple-600/10 to-pink-600/10 border border-purple-600/20">
+                  <svg viewBox="0 0 38 57" fill="none" className="w-6 h-8 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-1">
+                    <path d="M19 28.5L19 0.5" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M0.5 47.5C0.5 41.9772 5.14873 37.5 10.9 37.5H27.1C32.8513 37.5 37.5 41.9772 37.5 47.5C37.5 53.0228 32.8513 57.5 27.1 57.5H10.9C5.14873 57.5 0.5 53.0228 0.5 47.5Z" stroke="currentColor" strokeWidth="2"/>
+                  </svg>
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">Figma Community Plugin</h4>
+                    <p className="text-sm text-muted-foreground mb-2">
+                      Published free plugin for the design community, enabling seamless research-to-design workflow. Demonstrates commitment to open-source contribution and designer productivity.
+                    </p>
+                    <a 
+                      href="https://www.figma.com/community/plugin/1452486119518247469/ux-probe-research-tool-importer" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline inline-flex items-center gap-1"
+                    >
+                      View on Figma Community
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 className="font-semibold text-foreground mb-2">Future Enhancements</h4>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li>• Collaborative features for team-based research</li>
+                    <li>• Advanced analytics and trend identification</li>
+                    <li>• Mobile app for field research</li>
+                    <li>• Custom heuristic frameworks beyond Nielsen's</li>
+                    <li>• Enhanced Figma plugin with bi-directional sync</li>
+                  </ul>
+                </div>
               </CardContent>
             </Card>
           </section>
