@@ -56,12 +56,25 @@ export function WeatherAppProject({ index }: WeatherAppProjectProps) {
         </p>
         
         <div className="mt-auto pt-4 border-t border-border/30">
-          <div className="flex flex-wrap gap-2 text-xs">
+          <div className="flex flex-wrap gap-2 text-xs mb-3">
             <span className="px-2 py-1 rounded-md bg-muted/50 text-muted-foreground">Figma</span>
             <span className="px-2 py-1 rounded-md bg-muted/50 text-muted-foreground">Personas</span>
             <span className="px-2 py-1 rounded-md bg-muted/50 text-muted-foreground">UI Design</span>
             <span className="px-2 py-1 rounded-md bg-muted/50 text-muted-foreground">Visual Design</span>
           </div>
+          <a 
+            href="https://www.figma.com/proto/YnTK9HhhKbu0CO9Dmywquh/Haet-Ranpariya-s-team-library?page-id=2347%3A1409&node-id=2347-2443&viewport=824%2C491%2C0.14&t=JN9neYDBFAUij8ts-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=2347%3A2443"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors"
+          >
+            <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polygon points="10 8 16 12 10 16 10 8"/>
+            </svg>
+            View Interactive Prototype
+          </a>
         </div>
       </div>
     </Link>

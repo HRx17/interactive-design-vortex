@@ -29,7 +29,21 @@ export default function ParkEaseCaseStudy() {
               className="w-full aspect-video object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 flex flex-col justify-end p-6 md:p-10">
-              <span className="text-sm font-medium px-3 py-1 rounded-full bg-blue-500/80 text-white inline-block w-fit mb-4">24-Hour Hackathon</span>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="text-sm font-medium px-3 py-1 rounded-full bg-blue-500/80 text-white inline-block">24-Hour Hackathon</span>
+                <a 
+                  href="https://www.figma.com/proto/MoSrBV5sSu5Ma0IsL0cpxK/Combine-Work-Space?page-id=13%3A2&node-id=60-46570&viewport=555%2C517%2C0.04&t=ngys50pDKIBLsMKP-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=60%3A46570&show-proto-sidebar=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium px-3 py-1 rounded-full bg-emerald-500/80 text-white hover:bg-emerald-600/80 transition-colors inline-flex items-center gap-1.5"
+                >
+                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polygon points="10 8 16 12 10 16 10 8"/>
+                  </svg>
+                  View Prototype
+                </a>
+              </div>
               <h1 className="text-3xl md:text-5xl font-bold text-white">ParkEase App</h1>
               <p className="text-white/80 mt-2 max-w-2xl">Simplifying parking experiences with real-time navigation and availability</p>
             </div>

@@ -36,6 +36,26 @@ export default function WeatherAppCaseStudy() {
 
       <ScrollArea className="h-[calc(100vh-73px)]">
         <div className="case-study-container">
+          {/* Interactive Prototype Banner */}
+          <div className="bg-gradient-to-r from-sky-900/20 to-blue-900/20 py-6 px-6 flex flex-col md:flex-row items-center justify-between gap-4 rounded-xl mb-6">
+            <div>
+              <h3 className="text-lg font-bold mb-1">Experience the Interactive Prototype</h3>
+              <p className="text-sm text-muted-foreground">Explore the sci-fi weather app design with full interactions</p>
+            </div>
+            <a 
+              href="https://www.figma.com/proto/YnTK9HhhKbu0CO9Dmywquh/Haet-Ranpariya-s-team-library?page-id=2347%3A1409&node-id=2347-2443&viewport=824%2C491%2C0.14&t=JN9neYDBFAUij8ts-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=2347%3A2443"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium transition-colors whitespace-nowrap"
+            >
+              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polygon points="10 8 16 12 10 16 10 8"/>
+              </svg>
+              View Prototype
+            </a>
+          </div>
+          
           <div className="space-y-6">
             {caseStudyImages.map((img, idx) => (
               <img 

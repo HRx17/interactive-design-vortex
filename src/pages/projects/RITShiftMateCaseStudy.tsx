@@ -48,6 +48,18 @@ export default function RITShiftMateCaseStudy() {
               <div className="flex flex-wrap gap-2 mb-4">
                 <span className="text-sm font-medium px-3 py-1 rounded-full bg-orange-500/80 text-white">Academic Project</span>
                 <span className="text-sm font-medium px-3 py-1 rounded-full bg-blue-500/80 text-white">Mobile App Design</span>
+                <a 
+                  href="https://www.figma.com/proto/MhsMW3UV2T1ukHbvmA8S7W/Presentation---Final-Project-ShiftMate?page-id=0%3A1&node-id=133-637&viewport=1012%2C566%2C0.06&t=0iDmAFgme4i2rAGn-1&scaling=contain&content-scaling=fixed&starting-point-node-id=133%3A637&show-proto-sidebar=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium px-3 py-1 rounded-full bg-emerald-500/80 text-white hover:bg-emerald-600/80 transition-colors inline-flex items-center gap-1.5"
+                >
+                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polygon points="10 8 16 12 10 16 10 8"/>
+                  </svg>
+                  View Prototype
+                </a>
               </div>
               <h1 className="text-3xl md:text-5xl font-bold text-white">RIT ShiftMate</h1>
               <p className="text-white/80 mt-2 max-w-2xl">Streamlining on-campus student employment and work-hour management at Rochester Institute of Technology</p>
