@@ -243,24 +243,18 @@ const UXProbeCaseStudy = () => {
                         </svg>
                         Figma Community Plugin
                       </CardTitle>
-                      <CardDescription>Free research tool importer</CardDescription>
+                      <CardDescription>Currently under review by Figma</CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <p className="text-sm text-muted-foreground">
-                        Import UX research findings directly into your Figma design files
+                        Import UX research findings directly into your Figma design files. Plugin is currently being reviewed by the Figma team.
                       </p>
                       <Button
-                        className="w-full gap-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
-                        asChild
+                        className="w-full gap-2 bg-gradient-to-r from-purple-600 to-pink-600 opacity-60 cursor-not-allowed"
+                        disabled
                       >
-                        <a
-                          href="https://www.figma.com/community/plugin/1568368912191242307/ux-probe-research-tool-importer"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Get Plugin
-                          <ExternalLink className="w-4 h-4" />
-                        </a>
+                        Under Review
+                        <Clock className="w-4 h-4" />
                       </Button>
                     </CardContent>
                   </Card>
@@ -322,9 +316,9 @@ const UXProbeCaseStudy = () => {
               </div>
               <div className="text-center">
                 <div className="text-4xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent mb-2">
-                  Free
+                  Coming Soon
                 </div>
-                <div className="text-sm text-muted-foreground">Figma Community Plugin</div>
+                <div className="text-sm text-muted-foreground">Figma Plugin (Under Review)</div>
               </div>
             </div>
           </section>

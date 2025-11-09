@@ -76,7 +76,7 @@ export function UXProbeProject({ index }: UXProbeProjectProps) {
               <path d="M19 28.5L19 0.5" stroke="currentColor" strokeWidth="2"/>
               <path d="M0.5 47.5C0.5 41.9772 5.14873 37.5 10.9 37.5H27.1C32.8513 37.5 37.5 41.9772 37.5 47.5C37.5 53.0228 32.8513 57.5 27.1 57.5H10.9C5.14873 57.5 0.5 53.0228 0.5 47.5Z" stroke="currentColor" strokeWidth="2"/>
             </svg>
-            <span className="text-xs font-medium text-purple-600 dark:text-purple-400">Figma Plugin • Free on Community</span>
+            <span className="text-xs font-medium text-purple-600 dark:text-purple-400">Figma Plugin • Under Review</span>
           </div>
           <div className="flex flex-wrap gap-2 text-xs">
             <span className="px-2 py-1 rounded-md bg-muted/50 text-muted-foreground">React</span>
