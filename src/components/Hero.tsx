@@ -193,8 +193,8 @@ export function Hero() {
               <div className="w-1 h-3 bg-muted-foreground rounded-full animate-pulse" />
             </div>
           </div>
-        </div>
-      </div> */}
+        </div>*/}
+      </div>
     </section>
   );
 }
