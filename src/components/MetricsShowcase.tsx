@@ -1,23 +1,52 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { cn } from '@/lib/utils';
-import { Users, TrendingUp, Target, Globe } from 'lucide-react';
+import React, { useRef, useState, useEffect } from "react";
+import { cn } from "@/lib/utils";
+import { Users, TrendingUp, Target, Globe } from "lucide-react";
+
+// This is the data for your metrics.
+// I removed the 'color' property as we'll now use your theme's primary color.
+const metrics = [
+  {
+    icon: Users,
+    value: "50K+",
+    label: "Users Reached",
+  },
+  {
+    icon: TrendingUp,
+    value: "40%",
+    label: "Increased User Engagement",
+  },
+  {
+    icon: Target,
+    value: "35%",
+    label: "Improved Conversion Rate",
+  },
+  {
+    icon: Globe,
+    value: "10+",
+    label: "Countries Covered",
+  },
+];
 
 export function MetricsShowcase() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isInView, setIsInView] = useState(false);
-  
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsInView(entry.isIntersecting);
+        // We only want it to trigger once
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.unobserve(entry.target);
+        }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
-    
+
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
-    
+
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
@@ -25,83 +54,58 @@ export function MetricsShowcase() {
     };
   }, []);
 
-  const metrics = [
-    {
-      icon: Users,
-      value: "50K+",
-      label: "Users Reached",
-      color: "text-emerald-500"
-    },
-    {
-      icon: TrendingUp,
-      value: "40%",
-      label: "Increased User Engagement",
-      color: "text-teal-500"
-    },
-    {
-      icon: Target,
-      value: "35%",
-      label: "Improved Conversion Rate",
-      color: "text-emerald-600"
-    },
-    {
-      icon: Globe,
-      value: "10+",
-      label: "Countries Covered",
-      color: "text-teal-600"
-    }
-  ];
-  
   return (
-    <div ref={sectionRef} className="py-6 relative overflow-hidden">
-      <div className="section-container">
-        <div className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
+    // 1. FULL-WIDTH WRAPPER:
+    // This section is now full-width and has a 'bg-secondary' to
+    // create the "stripe" effect and separate it from the hero.
+    <section
+      ref={sectionRef}
+      className="w-full bg-secondary" // Using your theme's secondary background
+    >
+      {/* 2. CONSTRAINED CONTENT:
+          This div centers your content and uses the same padding
+          as your global 'section-container' class.
+      */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        {/* Optional: A clear title for the section */}
+        <h2 className="text-3xl font-bold text-center text-foreground mb-4">Proven Impact</h2>
+        <p className="text-lg text-muted-foreground text-center mb-12">
+          My designs translate into measurable business outcomes.
+        </p>
+
+        {/* 3. SIMPLIFIED GRID:
+            A clean 2x2 grid on mobile, and a 1x4 on desktop.
+            This is much more structured than 'flex-wrap'.
+        */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {metrics.map((metric, index) => {
             const Icon = metric.icon;
             return (
-              <div 
+              // 4. SIMPLIFIED CARDS:
+              // No borders, no glows. Just the data.
+              // We kept your cool fade-in animation.
+              <div
                 key={metric.label}
                 className={cn(
-                  "group relative flex items-center gap-3 px-6 py-4 rounded-2xl bg-card/40 backdrop-blur-sm border border-border/30 hover:border-emerald-500/30 transition-all duration-500 hover:shadow-lg hover:shadow-emerald-500/10",
-                  "opacity-0 transform translate-y-8 scale-95",
-                  isInView && "opacity-100 translate-y-0 scale-100"
+                  "flex flex-col items-center text-center",
+                  "opacity-0 transform translate-y-8", // Animation classes
+                  isInView && "opacity-100 translate-y-0",
                 )}
-                style={{ transitionDelay: `${index * 150}ms` }}
+                style={{ transitionDelay: `${index * 150}ms` }} // Staggered animation
               >
-                {/* Background glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/5 to-teal-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                {/* Content */}
-                <div className="relative z-10 flex items-center gap-3">
-                  <div className={cn(
-                    "p-2 rounded-xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 border border-emerald-500/20",
-                    "group-hover:scale-110 transition-transform duration-300"
-                  )}>
-                    <Icon className={cn("w-5 h-5", metric.color)} />
-                  </div>
-                  
-                  <div className="text-center sm:text-left">
-                    <div className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">
-                      {metric.value}
-                    </div>
-                    <div className="text-sm text-muted-foreground font-medium whitespace-nowrap">
-                      {metric.label}
-                    </div>
-                  </div>
-                </div>
+                <Icon className="w-10 h-10 text-muted-foreground mb-3" />
 
-                {/* Decorative elements */}
-                <div className="absolute top-1 right-1 w-2 h-2 bg-emerald-400/30 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute bottom-1 left-1 w-1 h-1 bg-teal-400/30 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100" />
+                {/* 5. THEME-ALIGNED COLOR:
+                    The number now uses 'text-primary' (your new blue)
+                    to create a strong, consistent visual hierarchy.
+                */}
+                <div className="text-4xl lg:text-5xl font-bold text-primary">{metric.value}</div>
+                <div className="text-base text-muted-foreground font-medium">{metric.label}</div>
               </div>
             );
           })}
         </div>
       </div>
-
-      {/* Background decorative elements */}
-      <div className="absolute top-1/2 left-10 w-3 h-3 border border-emerald-400/20 rounded-full float-animation" style={{animationDelay: '2s'}}></div>
-      <div className="absolute top-1/3 right-16 w-2 h-2 bg-teal-400/20 rounded-full float-animation" style={{animationDelay: '4s'}}></div>
-    </div>
+    </section>
   );
 }
