@@ -97,17 +97,12 @@ export function Hero() {
         }} />
       </div>
       
-      {/* Subtle profile photo */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-2/3 opacity-[0.08] pointer-events-none hidden lg:block">
+      {/* Small profile photo */}
+      <div className="absolute top-8 right-8 w-16 h-16 rounded-full overflow-hidden border-2 border-border hidden md:block">
         <img 
           src={profilePhoto} 
-          alt="" 
-          className="w-full h-full object-contain"
-          style={{
-            filter: 'grayscale(100%) blur(1px)',
-            maskImage: 'linear-gradient(to left, transparent, black 30%, transparent)',
-            WebkitMaskImage: 'linear-gradient(to left, transparent, black 30%, transparent)'
-          }}
+          alt="Haet Ranpariya" 
+          className="w-full h-full object-cover"
         />
       </div>
       
