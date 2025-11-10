@@ -52,9 +52,12 @@ export function MetricsShowcase() {
   }, []);
 
   return (
-    // Added overflow-hidden here as a safety measure
-    <section ref={sectionRef} className="w-full bg-secondary overflow-x-hidden">
-      {/* 2. CONSTRAINED CONTENT */}
+    // FULL-WIDTH WRAPPER
+    <section
+      ref={sectionRef}
+      className="w-full bg-secondary overflow-hidden" // Kept overflow-hidden as a global safeguard
+    >
+      {/* CONSTRAINED CONTENT */}
       <div className="section-container">
         {" "}
         {/* This class is from your index.css */}
@@ -63,15 +66,16 @@ export function MetricsShowcase() {
         <p className="text-lg text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
           I focus on translating complex user needs into intuitive designs that achieve measurable business outcomes.
         </p>
-        {/* 4. METRICS CARD GRID */}
+        {/* METRICS CARD GRID */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
           {metrics.map((metric, index) => {
             const Icon = metric.icon;
             return (
+              // --- THIS IS THE CARD ---
               <div
                 key={metric.label}
                 className={cn(
-                  "group relative flex items-center gap-3 px-4 py-4 rounded-xl",
+                  "group relative rounded-xl p-6", // Added more padding
                   "bg-card/40 backdrop-blur-sm border border-border/30",
                   "hover:border-primary/30 transition-all duration-500 hover:shadow-lg hover:shadow-primary/10",
                   "opacity-0 transform translate-y-8", // Animation classes
@@ -82,21 +86,25 @@ export function MetricsShowcase() {
                 {/* Background glow effect (Subtler) */}
                 <div className="absolute inset-0 bg-primary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                {/* Content */}
-                <div className="relative z-10 flex items-center gap-3">
+                {/* --- FIX: CENTERED CONTENT ---
+                    I changed this from a horizontal 'flex' to a 
+                    vertical, centered 'flex flex-col items-center'.
+                */}
+                <div className="relative z-10 flex flex-col items-center text-center gap-3">
+                  {/* Icon */}
                   <div
                     className={cn(
                       "p-3 rounded-lg bg-primary/10 border border-primary/20",
                       "group-hover:scale-110 transition-transform duration-300",
                     )}
                   >
-                    <Icon className="w-5 h-5 text-primary" />
+                    <Icon className="w-6 h-6 text-primary" />
                   </div>
 
-                  <div className="text-left">
-                    <div className="text-3xl font-bold text-primary">{metric.value}</div>
-                    {/* --- FIX: Removed 'whitespace-nowrap' --- */}
-                    <div className="text-sm text-muted-foreground font-medium">{metric.label}</div>
+                  {/* Text Block */}
+                  <div>
+                    <div className="text-4xl font-bold text-primary">{metric.value}</div>
+                    <div className="text-sm text-muted-foreground font-medium mt-1">{metric.label}</div>
                   </div>
                 </div>
               </div>
