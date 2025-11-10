@@ -140,7 +140,7 @@ export function Hero() {
           {/* Certifications */}
           <div className="text-center mb-4">
             <p className="text-muted-foreground text-sm mb-4 uppercase tracking-wider">Certified by</p>
-            <div className="flex flex-wrap items-center justify-center gap-12 mb-8">
+            <div className="flex flex-wrap items-center justify-center gap-8 mb-8">
               <img
                 src="/logos/google-cert.png"
                 alt="Google Certified"
