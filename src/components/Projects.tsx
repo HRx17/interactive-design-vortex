@@ -196,7 +196,7 @@ export function Projects() {
           </span>
           
           <h2 className={cn(
-            "heading bg-gradient-to-r from-emerald-700 to-teal-500 bg-clip-text text-transparent",
+            "heading text-foreground",
             "opacity-0 transform translate-y-6 transition-all duration-700 delay-100",
             isInView && "opacity-100 translate-y-0"
           )}>
@@ -287,12 +287,7 @@ export function Projects() {
               href={activeProjectType === 'coding' ? "https://github.com/HRx17" : "https://www.behance.net/haetranpariya17"}
               target="_blank"
               rel="noopener noreferrer"
-              className={cn(
-                "btn-hover inline-flex items-center px-8 py-4 rounded-full text-white font-medium hover:shadow-lg transition-all",
-                activeProjectType === 'coding' 
-                  ? "bg-gradient-to-r from-blue-600 to-indigo-600" 
-                  : "bg-gradient-to-r from-emerald-600 to-teal-500"
-              )}
+              className="btn-hover inline-flex items-center px-8 py-4 rounded-lg bg-foreground text-background font-semibold hover:bg-foreground/90 transition-all shadow-sm hover:shadow-md"
             >
               <span className="relative z-10">
                 {activeProjectType === 'coding' 
@@ -305,9 +300,9 @@ export function Projects() {
         </div>
       </div>
       
-      {/* Background decorative elements */}
-      <div className="absolute top-1/4 left-0 w-1/3 h-1/3 bg-gradient-to-r from-emerald-600/20 to-transparent rounded-full filter blur-3xl opacity-30"></div>
-      <div className="absolute bottom-1/4 right-0 w-1/3 h-1/3 bg-gradient-to-l from-teal-500/20 to-transparent rounded-full filter blur-3xl opacity-30"></div>
+      {/* Subtle background decorative elements */}
+      <div className="absolute top-1/4 left-0 w-1/3 h-1/3 bg-muted rounded-full filter blur-3xl opacity-10"></div>
+      <div className="absolute bottom-1/4 right-0 w-1/3 h-1/3 bg-muted rounded-full filter blur-3xl opacity-10"></div>
     </section>
   );
 }

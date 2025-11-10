@@ -98,12 +98,6 @@ export function Hero() {
       
       <div className="section-container relative z-10">
         <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
-          <div className="mb-6">
-            <span className="inline-block px-4 py-2 rounded-full text-sm font-medium bg-muted text-foreground border border-border">
-              Product Designer
-            </span>
-          </div>
-          
           <h1 className="heading mb-4 text-foreground text-5xl md:text-7xl overflow-visible">
             <div className="reveal-text overflow-visible">
               <span className="inline-block">Creating</span>
@@ -120,8 +114,7 @@ export function Hero() {
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-            I design thoughtful user experiences for products across AR, AI, and web platforms. 
-            Currently shaping the future at Tech9 as a Product Designer.
+            I'm Haet Ranpariya, a UI/UX Designer and Product Designer passionate about creating human-centered digital experiences. I also specialize in GenUI, leveraging generative AI to enhance and accelerate the design process.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
