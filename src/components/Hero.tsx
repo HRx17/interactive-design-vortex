@@ -194,8 +194,8 @@ export function Hero() {
             </div>
           </div>
         </div> */}
-        <div className="w-full border-b border-black mt-16"></div>
       </div>
+      <div className="w-full border-b border-black mt-16"></div>
     </section>
   );
 }
