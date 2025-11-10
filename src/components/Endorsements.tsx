@@ -39,24 +39,20 @@ export function Endorsements() {
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
 
   return (
-    <section ref={sectionRef} id="endorsements" className="section-container relative overflow-hidden bg-foreground text-background">
-      {/* Background decorative elements - subtle with black */}
+    <section ref={sectionRef} id="endorsements" className="section-container relative overflow-hidden bg-muted/30">
+      {/* Background decorative elements with morphing */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-20 right-10 w-96 h-96 bg-background/5 rounded-full blur-3xl float-animation" style={{animationDelay: '0s'}} />
-        <div className="absolute bottom-20 left-10 w-72 h-72 bg-background/5 rounded-full blur-3xl float-animation" style={{animationDelay: '3s'}} />
+        <div className="absolute top-20 right-10 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl morph-blob" />
+        <div className="absolute bottom-20 left-10 w-72 h-72 bg-teal-500/5 rounded-full blur-3xl morph-blob" style={{animationDelay: '4s'}} />
       </div>
-      
-      {/* Floating shapes */}
-      <div className="absolute top-1/4 right-1/3 w-5 h-5 border border-background/15 rotate-45 float-animation" style={{animationDelay: '1.5s'}}></div>
-      <div className="absolute bottom-1/4 left-1/5 w-4 h-4 bg-background/10 rounded-full float-animation" style={{animationDelay: '2s'}}></div>
 
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className={`text-center mb-16 transition-all duration-1000 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="heading mb-4 text-background">
-            <span className="text-background">Endorsements</span>
+          <h2 className="heading mb-4">
+            <span className="text-gradient">Endorsements</span>
           </h2>
-          <p className="subheading max-w-2xl mx-auto text-background/80">
+          <p className="subheading max-w-2xl mx-auto">
             What others say about working with me
           </p>
         </div>
@@ -71,11 +67,11 @@ export function Endorsements() {
               }`}
               style={{ transitionDelay: `${index * 200}ms` }}
             >
-              <Card className="h-full group relative overflow-hidden border-border/40 hover:border-accent/30 transition-all duration-500 hover:shadow-2xl hover:shadow-accent/10 bg-card/80 backdrop-blur-sm hover:scale-[1.02]">
+              <Card className="h-full group relative overflow-hidden border-border/40 hover:border-emerald-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-500/10 bg-card/80 backdrop-blur-sm hover:scale-[1.02]">
                 <CardContent className="p-8 md:p-10">
                   {/* Quote Icon */}
                   <div className="absolute top-6 right-6 opacity-10 group-hover:opacity-20 transition-opacity">
-                    <Quote className="w-24 h-24 text-foreground" />
+                    <Quote className="w-24 h-24 text-emerald-500" />
                   </div>
 
                   <div className="relative z-10">
@@ -94,7 +90,7 @@ export function Endorsements() {
 
                     {/* Main Quote */}
                     <div className="mb-6">
-                      <blockquote className="text-lg leading-relaxed text-foreground/90 italic border-l-4 border-accent pl-6">
+                      <blockquote className="text-lg leading-relaxed text-foreground/90 italic border-l-4 border-emerald-500 pl-6">
                         "{endorsement.quote}"
                       </blockquote>
                     </div>
@@ -119,7 +115,7 @@ export function Endorsements() {
                             key={i}
                             className="flex items-start gap-2 group/item"
                           >
-                            <div className="shrink-0 w-1.5 h-1.5 rounded-full bg-foreground mt-2 group-hover/item:scale-150 transition-transform" />
+                            <div className="shrink-0 w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 group-hover/item:scale-150 transition-transform" />
                             <span className="text-sm text-foreground/80">
                               {highlight}
                             </span>
@@ -131,14 +127,14 @@ export function Endorsements() {
                     {/* Read More Toggle */}
                     <button
                       onClick={() => setExpandedCard(expandedCard === index ? null : index)}
-                      className="text-sm font-medium text-foreground hover:text-muted-foreground transition-colors"
+                      className="text-sm font-medium text-emerald-500 hover:text-emerald-400 transition-colors"
                     >
                       {expandedCard === index ? 'Read Less' : 'Read Full Recommendation'} →
                     </button>
                   </div>
 
                   {/* Gradient Overlay on Hover */}
-                  <div className="absolute inset-0 bg-muted/30 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                 </CardContent>
               </Card>
             </div>

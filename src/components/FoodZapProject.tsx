@@ -48,7 +48,7 @@ export function FoodZapProject({ index }: FoodZapProjectProps) {
             Food Delivery
           </span>
         </div>
-        <h3 className="text-2xl font-bold mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+        <h3 className="text-2xl font-bold mb-2 group-hover:text-emerald-500 transition-colors">
           FoodZap
         </h3>
         <p className="text-muted-foreground text-sm leading-relaxed mb-4">

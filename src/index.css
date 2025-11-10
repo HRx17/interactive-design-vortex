@@ -6,37 +6,37 @@
  @tailwind utilities;
  
  @layer base {
-  :root {
-    --background: 0 0% 98%;
-    --foreground: 0 0% 5%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 5%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 5%;
-
-    --primary: 0 0% 5%;
-    --primary-foreground: 0 0% 98%;
-
-    --secondary: 0 0% 95%;
-    --secondary-foreground: 0 0% 5%;
-
-    --muted: 0 0% 92%;
-    --muted-foreground: 0 0% 45%;
-
-    --accent: 0 0% 20%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 88%;
-    --input: 0 0% 88%;
-    --ring: 0 0% 20%;
-
-    --radius: 0.5rem;
-   }
+   :root {
+     --background: 160 15% 5%;
+     --foreground: 160 10% 98%;
+ 
+     --card: 160 15% 8%;
+     --card-foreground: 160 10% 98%;
+ 
+     --popover: 160 15% 6%;
+     --popover-foreground: 160 10% 98%;
+ 
+     --primary: 160 10% 98%;
+     --primary-foreground: 160 15% 5%;
+ 
+     --secondary: 165 15% 15%;
+     --secondary-foreground: 160 10% 98%;
+ 
+     --muted: 165 15% 15%;
+     --muted-foreground: 160 5% 65%;
+ 
+     --accent: 165 15% 15%;
+     --accent-foreground: 160 10% 98%;
+ 
+     --destructive: 0 84% 60%;
+     --destructive-foreground: 0 0% 98%;
+ 
+     --border: 160 15% 15%;
+     --input: 160 15% 15%;
+     --ring: 160 70% 40%;
+ 
+     --radius: 0.5rem;
+    }
     * {
       @apply border-border;
     }
@@ -122,10 +122,10 @@
 
   @keyframes glow-pulse {
     0%, 100% { 
-      box-shadow: 0 0 20px hsl(var(--accent) / 0.3);
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
     }
     50% { 
-      box-shadow: 0 0 40px hsl(var(--accent) / 0.6), 0 0 60px hsl(var(--accent) / 0.3);
+      box-shadow: 0 0 40px rgba(16, 185, 129, 0.6), 0 0 60px rgba(16, 185, 129, 0.3);
     }
   }
 
@@ -284,7 +284,7 @@
     left: 0;
     right: 0;
     height: 3px;
-    background: hsl(var(--accent));
+    background: linear-gradient(to right, #10b981, #14b8a6);
     transform-origin: left;
     z-index: 9999;
   }
@@ -336,7 +336,7 @@
  
 @layer components {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-accent;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-300 to-teal-200;
   }
   
   .btn-hover {
@@ -353,8 +353,8 @@
 
   .interactive-card {
     @apply relative overflow-hidden rounded-2xl transition-all duration-300;
-    @apply hover:scale-[1.02] hover:shadow-2xl hover:shadow-accent/20;
-    @apply before:absolute before:inset-0 before:bg-accent/5;
+    @apply hover:scale-[1.02] hover:shadow-2xl hover:shadow-emerald-500/20;
+    @apply before:absolute before:inset-0 before:bg-gradient-to-r before:from-emerald-500/10 before:to-teal-500/10;
     @apply before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-100;
   }
 
@@ -384,7 +384,7 @@
   /* Enhanced interactive elements */
   .code-card {
     @apply bg-card/80 backdrop-blur-sm border border-border/40 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all;
-    @apply hover:shadow-accent/20 hover:border-accent/30;
+    @apply hover:shadow-emerald-500/20 hover:border-emerald-500/30;
   }
 
   .code-gradient {
@@ -392,8 +392,8 @@
   }
 
   .skill-tag {
-    @apply px-4 py-2 rounded-full text-foreground text-sm font-medium transition-all duration-300;
-    @apply hover:shadow-lg hover:scale-105 border border-accent/30;
+    @apply px-4 py-2 rounded-full text-white text-sm font-medium transition-all duration-300;
+    @apply hover:shadow-lg hover:scale-105 border border-emerald-600/30;
     @apply cursor-pointer relative overflow-hidden;
   }
 
@@ -472,7 +472,7 @@
 
 /* Glassmorphism utilities */
 .glass {
-  @apply backdrop-blur-sm bg-muted/50 border border-border/20;
+  @apply backdrop-blur-sm bg-white/10 border border-white/20;
 }
 
 .btn-hover {
