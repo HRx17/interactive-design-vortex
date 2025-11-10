@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 const currentFocus = {
   name: "RIT",
   description: "M.S. in HCI (Grad. Dec 2025)",
-  logo: "/logos/rit-logo.png",
+  logo: "/logos/rit-logo.png", 
 };
 const previousWork = [
   { name: "Tech9", logo: "/logos/tech9-logo.svg?v=2" },
@@ -18,22 +18,23 @@ const previousWork = [
 ];
 const certifications = [
   { name: "Google Certified", logo: "/logos/google-cert.png", title: "Google UX Design Professional Certification" },
-  { name: "University of Michigan", logo: "/logos/umich-cert.png", title: "University of Michigan Certified" },
+  { name:D: "University of Michigan", logo: "/logos/umich-cert.png", title: "University of Michigan Certified" },
   { name: "Coursera", logo: "/logos/coursera-cert.png", title: "Coursera Certifications" },
 ];
 const socialLinks = [
-  {
-    name: "Email",
-    url: "mailto:haetranpariya17@gmail.com",
-    icon: <Mail className="h-5 w-5" />,
+  { 
+    name: "Email", 
+    url: "mailto:haetranpaeia17@gmail.com", 
+    icon: <Mail className="h-5 w-5" /> 
   },
-  {
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/haet-ranpariya-382324188",
-    icon: <Linkedin className="h-5 w-5" />,
+  { 
+    name: "LinkedIn", 
+    url: "https://www.linkedin.com/in/haet-ranpariya-382324188", 
+    icon: <Linkedin className="h-5 w-5" /> 
   },
 ];
 // --- End of Data ---
+
 
 export function Hero() {
   const sentenceRef = useRef<HTMLDivElement>(null);
@@ -59,12 +60,13 @@ export function Hero() {
     };
   }, []);
 
+
   return (
-    // 1. FULL-WIDTH WRAPPER. Note: No 'section-container' class here.
+    // 1. FULL-WIDTH WRAPPER
     <section
       id="home"
-      // Added vertical padding to match your other sections
-      className="min-h-0 md:min-h-screen flex flex-col justify-center relative overflow-hidden py-16 md:py-24 bg-background"
+      // Removed py-16/py-24, we will add padding inside
+      className="min-h-0 md:min-h-screen flex flex-col justify-center relative overflow-hidden bg-background"
     >
       {/* Background pattern (full-width) - Unchanged */}
       <div className="absolute inset-0 opacity-[0.03]">
@@ -78,10 +80,13 @@ export function Hero() {
       </div>
 
       {/* This 'div' is just a wrapper, it has NO width constraints */}
-      <div className="relative z-10">
+      {/* Added top padding here */}
+      <div className="relative z-10 pt-16 md:pt-24">
+        
         {/* 2. CONSTRAINED CONTENT Block 1 (Hero Grid) */}
-        {/* We apply the max-width and padding from your 'section-container' class *here* */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Added bottom padding here (pb-16) */}
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 md:pb-24">
+          
           {/* --- LEFT COLUMN (Text Content) --- */}
           <div className="md:col-span-3 flex flex-col items-center text-center md:items-start md:text-left">
             <h1 ref={sentenceRef} className="heading mb-4 text-foreground text-5xl md:text-7xl overflow-visible">
@@ -126,12 +131,17 @@ export function Hero() {
               </a>
             </div>
           </div>
-        </div>{" "}
-        {/* End of first constrained block */}
+
+        </div> {/* End of first constrained block */}
+        
+        {/* --- NEW FULL-WIDTH DIVIDER (LINE 1) --- */}
+        <div className="w-full border-t border-gray-200"></div>
+
         {/* 3. CONSTRAINED CONTENT Block 2 (Footer Logos) */}
-        {/* We apply the max-width and padding from your 'section-container' class *here* too */}
-        <div className="w-full max-w-7xl mx-auto border-t border-gray-200 pt-8 mt-16 md:mt-24 px-4 sm:px-6 lg:px-8">
+        {/* Removed border-t and mt-16/mt-24. Added py-8 for spacing. */}
+        <div className="w-full max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-around gap-8 md:gap-4">
+            
             {/* Block 1: Current Focus */}
             <div className="flex flex-col items-center md:items-start text-center md:text-left">
               <span className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wider">
@@ -187,20 +197,4 @@ export function Hero() {
               {socialLinks.map((link) => (
                 <a
                   key={link.name}
-                  href={link.url}
-                  aria-label={link.name}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 bg-gray-100 rounded-lg text-muted-foreground hover:text-foreground hover:bg-gray-200 transition-colors"
-                >
-                  {link.icon}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>{" "}
-        {/* End of second constrained block */}
-      </div>
-    </section>
-  );
-}
+                  href={link.url
