@@ -98,34 +98,31 @@ export function Hero() {
       
       <div className="section-container relative z-10">
         <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
-          <div className="mb-10">
-            <span className="inline-block px-6 py-3 rounded-full text-sm font-bold bg-foreground text-background tracking-wide">
-              Hi, I'm Haet Ranpariya ^_^
+          <div className="mb-6">
+            <span className="inline-block px-4 py-2 rounded-full text-sm font-medium bg-muted text-foreground border border-border">
+              Product Designer
             </span>
           </div>
           
-          <h1 className="heading mb-4 text-foreground text-5xl md:text-7xl lg:text-8xl font-bold overflow-visible leading-tight">
-            <div className="reveal-text overflow-visible mb-2">
-              <span className="inline-block">A</span>
-              <span className="inline-block ml-3 font-bold">Product Designer,</span>
-            </div>
-            <div className="reveal-text overflow-visible mb-2">
-              <span className="inline-block font-bold">Tech Geek,</span>
-              <span className="inline-block ml-3">and</span>
-              <span className="inline-block ml-3 font-bold">Storyteller,</span>
-            </div>
+          <h1 className="heading mb-4 text-foreground text-5xl md:text-7xl overflow-visible">
             <div className="reveal-text overflow-visible">
-              <span className="inline-block">always creating.</span>
+              <span className="inline-block">Creating</span>
+              <span className="inline-block ml-3">intentional</span>
+            </div>
+            <div className="reveal-text mt-2 overflow-visible">
+              <span className="inline-block">and</span>
+              <span className="inline-block ml-3">impactful</span>
+              <span className="inline-block ml-3">digital</span>
+            </div>
+            <div className="reveal-text mt-2 overflow-visible">
+              <span className="inline-block">experiences</span>
             </div>
           </h1>
           
-          {/* Colorful accent shapes */}
-          <div className="flex items-center justify-center gap-3 my-12">
-            <div className="w-12 h-12 bg-red-500 rounded-lg transform -rotate-12 hover:rotate-0 transition-transform duration-300" />
-            <div className="w-12 h-12 bg-emerald-500 rounded-lg transform rotate-6 hover:rotate-0 transition-transform duration-300" />
-            <div className="w-12 h-12 bg-blue-500 rounded-lg transform -rotate-6 hover:rotate-0 transition-transform duration-300" />
-            <div className="w-12 h-12 bg-yellow-400 rounded-lg transform rotate-12 hover:rotate-0 transition-transform duration-300" />
-          </div>
+          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
+            I design thoughtful user experiences for products across AR, AI, and web platforms. 
+            Currently shaping the future at Tech9 as a Product Designer.
+          </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <a 
@@ -144,50 +141,46 @@ export function Hero() {
             </a>
           </div>
           
-          {/* Company logos section */}
-          <div className="space-y-12">
-            <div>
-              <p className="text-muted-foreground text-sm mb-6 font-medium uppercase tracking-wide">Currently at</p>
-              <div className="flex items-center justify-center">
-                <a
-                  href="https://www.tech9.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-opacity hover:opacity-70"
-                >
+          {/* Certifications */}
+          <div className="flex flex-wrap items-center justify-center gap-6 mb-16">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-muted border border-border">
+              <img src="/logos/google-cert-logo.svg" alt="Google" className="w-6 h-6" />
+              <span className="text-sm text-foreground">Google Certified</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-muted border border-border">
+              <img src="/logos/umich-cert-logo.svg" alt="University of Michigan" className="w-6 h-6" />
+              <span className="text-sm text-foreground">UMich Certified</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-muted border border-border">
+              <img src="/logos/coursera-cert-logo.svg" alt="Coursera" className="w-6 h-6" />
+              <span className="text-sm text-foreground">Coursera Certified</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Company logos */}
+        <div className="text-center mb-16">
+          <p className="text-muted-foreground text-sm mb-8 uppercase tracking-wider">Trusted by</p>
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+            {companies.map((company) => (
+              <a
+                key={company.name}
+                href={company.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="opacity-70 hover:opacity-100 transition-all duration-300"
+              >
+                {company.logo ? (
                   <img 
-                    src="/logos/tech9-logo.svg?v=2" 
-                    alt="Tech9"
-                    className="h-10 object-contain"
+                    src={company.logo} 
+                    alt={company.name}
+                    className="h-8 md:h-10 object-contain"
                   />
-                </a>
-              </div>
-            </div>
-            
-            <div>
-              <p className="text-muted-foreground text-sm mb-6 font-medium uppercase tracking-wide">Previously at</p>
-              <div className="flex flex-wrap items-center justify-center gap-10">
-                {companies.filter(c => c.name !== 'Tech9').map((company) => (
-                  <a
-                    key={company.name}
-                    href={company.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="transition-opacity hover:opacity-70"
-                  >
-                    {company.logo ? (
-                      <img 
-                        src={company.logo} 
-                        alt={company.name}
-                        className="h-8 object-contain"
-                      />
-                    ) : (
-                      <span className="text-foreground font-semibold text-base">{company.name}</span>
-                    )}
-                  </a>
-                ))}
-              </div>
-            </div>
+                ) : (
+                  <span className="text-foreground font-semibold text-lg">{company.name}</span>
+                )}
+              </a>
+            ))}
           </div>
         </div>
         
