@@ -76,11 +76,11 @@ export function Header() {
             alt="SD" 
             className="w-12 h-12 md:w-14 md:h-14"
           />
-          <span className="relative z-10 text-foreground">
+          <span className="relative z-10">
             Haet Ranpariya
           </span>
-          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-foreground transition-all duration-300 group-hover:w-full"></span>
-          <div className="absolute inset-0 rounded-lg bg-muted opacity-0 group-hover:opacity-100 transition-opacity duration-300 -m-2"></div>
+          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-400 to-teal-400 transition-all duration-300 group-hover:w-full"></span>
+          <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-emerald-500/10 to-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -m-2"></div>
         </a>
 
         {/* Desktop Navigation */}
@@ -92,18 +92,18 @@ export function Header() {
               className={cn(
                 "relative py-2 px-3 font-medium text-sm transition-all duration-300 cursor-magnetic rounded-lg group",
                 activeSection === item.href.substring(1) 
-                  ? "text-foreground" 
-                  : "text-muted-foreground hover:text-foreground"
+                  ? "text-emerald-300" 
+                  : "text-muted-foreground hover:text-emerald-200"
               )}
             >
               <span className="relative z-10">{item.label}</span>
               <span 
                 className={cn(
-                  "absolute -bottom-1 left-1/2 transform -translate-x-1/2 h-0.5 bg-foreground transition-all duration-300",
+                  "absolute -bottom-1 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-emerald-400 to-teal-400 transition-all duration-300",
                   activeSection === item.href.substring(1) ? "w-4/5" : "w-0 group-hover:w-4/5"
                 )}
               ></span>
-              <div className="absolute inset-0 rounded-lg bg-muted opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-emerald-500/10 to-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
           ))}
         </nav>
@@ -112,7 +112,7 @@ export function Header() {
         <button 
           className={cn(
             "md:hidden p-2 rounded-lg focus:outline-none transition-all duration-300 cursor-magnetic relative group",
-            "hover:bg-muted"
+            "hover:bg-emerald-500/10"
           )}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
@@ -124,7 +124,7 @@ export function Header() {
               <Menu className="h-5 w-5 transition-transform duration-300 hover:scale-110" />
             )}
           </div>
-          <div className="absolute inset-0 rounded-lg bg-muted opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-emerald-500/20 to-teal-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </button>
       </div>
 
@@ -136,7 +136,7 @@ export function Header() {
           mobileMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
         )}
       >
-        <div className="px-4 py-6 border-t border-border">
+        <div className="px-4 py-6 border-t border-emerald-500/20">
           <div className="flex flex-col space-y-4">
             {navItems.map((item, index) => (
               <a 
@@ -144,9 +144,9 @@ export function Header() {
                 href={item.href}
                 className={cn(
                   "py-3 px-4 font-medium text-base rounded-xl transition-all duration-300 border border-transparent",
-                  "hover:border-border hover:bg-muted",
+                  "hover:border-emerald-500/30 hover:bg-emerald-500/10",
                   activeSection === item.href.substring(1) 
-                    ? "text-foreground bg-muted border-border" 
+                    ? "text-emerald-300 bg-emerald-500/10 border-emerald-500/30" 
                     : "text-muted-foreground"
                 )}
                 style={{
@@ -156,6 +156,7 @@ export function Header() {
               >
                 <span className="flex items-center gap-2">
                   {item.label}
+                  <div className="w-1 h-1 rounded-full bg-emerald-400 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                 </span>
               </a>
             ))}

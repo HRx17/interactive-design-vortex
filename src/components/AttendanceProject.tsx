@@ -48,7 +48,7 @@ export function AttendanceProject({ index }: AttendanceProjectProps) {
             Full Stack
           </span>
         </div>
-        <h3 className="text-2xl font-bold mb-2 group-hover:text-blue-600 transition-colors">
+        <h3 className="text-2xl font-bold mb-2 group-hover:text-emerald-500 transition-colors">
           Attendance App
         </h3>
         <p className="text-muted-foreground text-sm leading-relaxed">
