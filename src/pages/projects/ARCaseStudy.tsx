@@ -1,6 +1,6 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, ExternalLink } from 'lucide-react';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
 
@@ -29,7 +29,7 @@ export default function ARCaseStudy() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen w-full bg-background">
       {/* Back Button */}
       <div className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border/40">
         <div className="section-container py-4">
@@ -46,7 +46,7 @@ export default function ARCaseStudy() {
             {caseStudyContent.map((item, idx) => (
               <div key={idx} className="w-full">
                 {item.type === "image" ? (
-                  <img 
+                  <img
                     src={item.src}
                     alt={`AR/VR Project slide ${idx + 1}`}
                     className="w-full"
@@ -54,7 +54,7 @@ export default function ARCaseStudy() {
                   />
                 ) : (
                   <div className="w-full aspect-video">
-                    <iframe 
+                    <iframe
                       src={item.src}
                       className="w-full h-full"
                       title={`AR/VR Project video ${idx + 1}`}
@@ -67,11 +67,11 @@ export default function ARCaseStudy() {
               </div>
             ))}
           </div>
-          
+
           <div className="bg-[#ECECEC] text-black py-10 px-6 text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-2">Project by: HAET RANPARIYA</h2>
-            <a 
-              href="https://www.behance.net/haetranpariya17" 
+            <a
+              href="https://www.behance.net/haetranpariya17"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 mt-4 px-6 py-3 bg-white/10 hover:bg-white/20 transition-colors rounded-lg backdrop-blur-sm"
