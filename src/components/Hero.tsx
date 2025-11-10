@@ -211,40 +211,6 @@ export function Hero() {
 
           
           {/* Certifications */}
-      <div className="w-full py-16 md:py-24 bg-gray-50"> 
-      
-      {/* Centered content container */}
-      <div className="max-w-5xl mx-auto px-4">
-        
-        {/* --- CERTIFIED BY --- */}
-        <div className="flex flex-col items-center">
-          <h3 className="text-sm font-semibold text-gray-500 tracking-wider uppercase mb-6">
-            Certified By
-          </h3>
-          <div className="flex flex-wrap items-center justify-center gap-8 mb-4">
-              <img
-                src="/logos/google-cert.png"
-                alt="Google Certified"
-                className="h-8 w-auto opacity-90 hover:opacity-100 transition-all duration-300"
-                title="Google UX Design Professional Certification"
-              />
-              <img
-                src="/logos/umich-cert.png"
-                alt="University of Michigan"
-                className="h-8 w-auto opacity-90 hover:opacity-100 transition-all duration-300"
-                title="University of Michigan Certified"
-              />
-              <img
-                src="/logos/coursera-cert.png"
-                alt="Coursera"
-                className="h-8 w-auto opacity-90 hover:opacity-100 transition-all duration-300"
-                title="Coursera Certifications"
-              />
-            </div>
-        </div>
-      </div>
-      </div>
-          
           <div className="flex flex-row flex-wrap items-center justify-center gap-x-8 gap-y-6">
           <div className="text-center mb-2">
             <p className="text-muted-foreground text-sm mb-4 uppercase tracking-wider">Certified by</p>
