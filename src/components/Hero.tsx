@@ -62,7 +62,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="min-h-0 md:min-h-screen flex flex-col justify-center relative overflow-hidden py-20 bg-background"
+      className="min-h-0 md:min-h-screen w-full flex flex-col justify-center relative overflow-hidden py-20 bg-background"
     >
       {/* ... (Your background pattern div remains unchanged) ... */}
       <div className="absolute inset-0 opacity-[0.03]">
