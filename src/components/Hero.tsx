@@ -149,6 +149,35 @@ export function Hero() {
               </span>
             </a>
           </div>
+          
+          {/* Certification Badges - Compact */}
+          <div className="mt-16 animate-fade-in opacity-0" style={{animationDelay: '1s', animationFillMode: 'forwards'}}>
+            <div className="flex flex-col items-center gap-4">
+              <p className="text-xs font-medium text-emerald-200/60 uppercase tracking-wider">
+                Certified By
+              </p>
+              <div className="flex flex-wrap justify-center items-center gap-8">
+                <img 
+                  src="/logos/google-logo.png" 
+                  alt="Google Certified"
+                  className="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
+                  title="Google UX Design Professional Certification"
+                />
+                <img 
+                  src="/logos/umich-logo.png" 
+                  alt="University of Michigan"
+                  className="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
+                  title="University of Michigan Certified"
+                />
+                <img 
+                  src="/logos/coursera-logo.png" 
+                  alt="Coursera"
+                  className="h-7 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
+                  title="Coursera Certifications"
+                />
+              </div>
+            </div>
+          </div>
         </div>
         
         {/* Enhanced animated shapes that respond to mouse movement */}

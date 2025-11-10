@@ -8,6 +8,7 @@ interface Certification {
   issuer: string;
   date: string;
   skills: string[];
+  logo: string;
   featured?: boolean;
   credentialUrl?: string;
 }
@@ -18,6 +19,7 @@ export const Certifications = () => {
       title: "Google's UX Design Professional Certification",
       issuer: "Google",
       date: "Oct 2023",
+      logo: "/logos/google-logo.png",
       skills: [
         "User Experience Design",
         "User Interface Design",
@@ -40,6 +42,7 @@ export const Certifications = () => {
       title: "Core Java",
       issuer: "SunBeam Institute of Information Technology",
       date: "May 2021",
+      logo: "/logos/sunbeam-logo.png",
       skills: [
         "Java Programming",
         "Object-Oriented Programming",
@@ -56,6 +59,7 @@ export const Certifications = () => {
       title: "Programming for Everybody: Getting Started with Python",
       issuer: "University of Michigan",
       date: "Aug 2020",
+      logo: "/logos/umich-logo.png",
       skills: [
         "Python Programming",
         "Programming Fundamentals",
@@ -71,6 +75,7 @@ export const Certifications = () => {
       title: "Python Data Structures",
       issuer: "University of Michigan",
       date: "Aug 2020",
+      logo: "/logos/umich-logo.png",
       skills: [
         "Python",
         "Lists & Tuples",
@@ -86,6 +91,7 @@ export const Certifications = () => {
       title: "Using Python to Access Web Data",
       issuer: "University of Michigan",
       date: "Aug 2020",
+      logo: "/logos/umich-logo.png",
       skills: [
         "Python",
         "Web Scraping",
@@ -101,6 +107,7 @@ export const Certifications = () => {
       title: "Object Oriented Programming Using C++98 and C++03",
       issuer: "Sunbeam Institute of Information Technology",
       date: "Jul 2020",
+      logo: "/logos/sunbeam-logo.png",
       skills: [
         "C++ Programming",
         "Object-Oriented Programming",
@@ -116,6 +123,7 @@ export const Certifications = () => {
       title: "C for Everyone: Programming Fundamentals",
       issuer: "Coursera",
       date: "May 2020",
+      logo: "/logos/coursera-logo.png",
       skills: [
         "C Programming",
         "Memory Management",
@@ -164,17 +172,30 @@ export const Certifications = () => {
             >
               <CardHeader>
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex-1">
-                    <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors">
-                      {cert.title}
-                    </CardTitle>
-                    <CardDescription className="flex flex-col gap-1">
-                      <span className="font-medium text-foreground/70">{cert.issuer}</span>
-                      <span className="text-sm text-muted-foreground">{cert.date}</span>
-                    </CardDescription>
+                  <div className="flex items-start gap-4 flex-1">
+                    {/* Logo */}
+                    <div className="flex-shrink-0 w-14 h-14 rounded-lg bg-background border border-border/50 p-2 flex items-center justify-center group-hover:border-primary/30 transition-colors">
+                      <img 
+                        src={cert.logo} 
+                        alt={`${cert.issuer} logo`}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="flex-1">
+                      <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors">
+                        {cert.title}
+                      </CardTitle>
+                      <CardDescription className="flex flex-col gap-1">
+                        <span className="font-medium text-foreground/70">{cert.issuer}</span>
+                        <span className="text-sm text-muted-foreground">{cert.date}</span>
+                      </CardDescription>
+                    </div>
                   </div>
+                  
                   {cert.featured && (
-                    <Badge variant="default" className="bg-gradient-to-r from-primary to-purple-600 text-white">
+                    <Badge variant="default" className="bg-gradient-to-r from-primary to-purple-600 text-white flex-shrink-0">
                       Featured
                     </Badge>
                   )}
