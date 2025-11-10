@@ -97,7 +97,7 @@ export function Hero() {
         />
       </div>
 
-      <div className="section-container relative z-10 mt-16 md:mt-24">
+      <div className="section-container relative z-10 border-b border-black pb-16 mt-16 md:mt-24">
         <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
           <h1 className="heading mb-4 text-foreground text-5xl md:text-7xl overflow-visible">
             <div className="reveal-text overflow-visible">
@@ -193,8 +193,8 @@ export function Hero() {
               <div className="w-1 h-3 bg-muted-foreground rounded-full animate-pulse" />
             </div>
           </div>
-        </div>
-      </div> */}
+        </div> */}
+      </div>
     </section>
   );
 }
