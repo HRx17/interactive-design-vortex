@@ -117,11 +117,14 @@ export function BentoGrid() {
             onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
           >
             <div className="mt-4 grid grid-cols-3 gap-2">
-              {['Wireframing', 'Storyboarding', 'User Journey', 'Empathy Mapping', 'Mockups', 'Sketches', 'User Persona', 'UI Kit', 'Style Guide', 'Figma', 'Adobe XD', 'Prototyping'].map((skill) => (
-                <span key={skill} className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded-md border border-border text-center">
-                  {skill}
-                </span>
-              ))}
+              {['Wireframing', 'Storyboarding', 'User Journey', 'Empathy Mapping', 'Mockups', 'Sketches', 'User Persona', 'UI Kit', 'Style Guide', 'Figma', 'Adobe XD', 'Prototyping'].map((skill, i) => {
+                const colors = ['bg-purple-100 text-purple-600', 'bg-blue-100 text-blue-600', 'bg-amber-100 text-amber-600', 'bg-rose-100 text-rose-600', 'bg-indigo-100 text-indigo-600', 'bg-sky-100 text-sky-600'];
+                return (
+                  <span key={skill} className={`px-2 py-1 ${colors[i % colors.length]} text-xs rounded-md border border-transparent text-center`}>
+                    {skill}
+                  </span>
+                );
+              })}
             </div>
           </BentoCard>
 
@@ -158,11 +161,14 @@ export function BentoGrid() {
             onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
           >
             <div className="mt-4 grid grid-cols-2 gap-2">
-              {['React', 'TypeScript', 'Tailwind', 'JavaScript'].map((tech) => (
-                <span key={tech} className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded-md border border-border text-center">
-                  {tech}
-                </span>
-              ))}
+              {['React', 'TypeScript', 'Tailwind', 'JavaScript'].map((tech, i) => {
+                const colors = ['bg-cyan-100 text-cyan-600', 'bg-blue-100 text-blue-600', 'bg-sky-100 text-sky-600', 'bg-amber-100 text-amber-600'];
+                return (
+                  <span key={tech} className={`px-2 py-1 ${colors[i]} text-xs rounded-md border border-transparent text-center`}>
+                    {tech}
+                  </span>
+                );
+              })}
             </div>
           </BentoCard>
 
