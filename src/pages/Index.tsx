@@ -9,6 +9,7 @@ import { DiagonalLayout } from '@/components/DiagonalLayout';
 import { Projects } from '@/components/Projects';
 import { UXProcess } from '@/components/UXProcess';
 import { Endorsements } from '@/components/Endorsements';
+import { Certifications } from '@/components/Certifications';
 import { About } from '@/components/About';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
@@ -39,6 +40,9 @@ const Index = () => {
         
         {/* Endorsements Section */}
         <Endorsements />
+        
+        {/* Certifications Section */}
+        <Certifications />
         
         <About />
         <Contact />
