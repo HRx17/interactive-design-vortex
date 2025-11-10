@@ -164,10 +164,10 @@ export const Certifications = () => {
           {certifications.map((cert, index) => (
             <Card 
               key={index}
-              className={`group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${
+              className={`${
                 cert.featured 
                   ? 'border-2 border-primary/50 bg-gradient-to-br from-primary/5 to-purple-500/5' 
-                  : 'border-border/50 hover:border-primary/30'
+                  : 'border-border/50'
               }`}
             >
               {/* Featured Badge - Absolute Positioned */}
@@ -186,7 +186,7 @@ export const Certifications = () => {
               <CardHeader>
                 <div className="flex items-start gap-4">
                   {/* Logo */}
-                  <div className="flex-shrink-0 w-14 h-14 rounded-lg bg-background border border-border/50 p-2 flex items-center justify-center group-hover:border-primary/30 transition-colors">
+                  <div className="flex-shrink-0 w-14 h-14 rounded-lg bg-background border border-border/50 p-2 flex items-center justify-center">
                     <img 
                       src={cert.logo} 
                       alt={`${cert.issuer} logo`}
@@ -196,7 +196,7 @@ export const Certifications = () => {
                   
                   {/* Content */}
                   <div className="flex-1">
-                    <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors">
+                    <CardTitle className="text-xl mb-2">
                       {cert.title}
                     </CardTitle>
                     <CardDescription className="flex flex-col gap-1">
