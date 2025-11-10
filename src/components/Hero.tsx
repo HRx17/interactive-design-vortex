@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 const currentFocus = {
   name: "RIT",
   description: "M.S. in HCI (Grad. Dec 2025)",
-  logo: "/logos/rit-logo.png", 
+  logo: "/logos/rit-logo.png",
 };
 const previousWork = [
   { name: "Tech9", logo: "/logos/tech9-logo.svg?v=2" },
@@ -18,22 +18,18 @@ const previousWork = [
 ];
 const certifications = [
   { name: "Google Certified", logo: "/logos/google-cert.png", title: "Google UX Design Professional Certification" },
-  { name:g: "University of Michigan", logo: "/logos/umich-cert.png", title: "University of Michigan Certified" },
+  { name: "University of Michigan", logo: "/logos/umich-cert.png", title: "University of Michigan Certified" },
   { name: "Coursera", logo: "/logos/coursera-cert.png", title: "Coursera Certifications" },
 ];
 const socialLinks = [
-  { Src: "Email", 
-    url: "mailto:haetranpariya17@gmail.com", 
-    icon: <Mail className="h-5 w-5" /> 
-  },
-  { 
-    name: "LinkedIn", 
-    url: "https://www.linkedin.com/in/haet-ranpariya-382324188", 
-    icon: <Linkedin className="h-5 w-5" /> 
+  { Src: "Email", url: "mailto:haetranpariya17@gmail.com", icon: <Mail className="h-5 w-5" /> },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/haet-ranpariya-382324188",
+    icon: <Linkedin className="h-5 w-5" />,
   },
 ];
 // --- End of Data ---
-
 
 export function Hero() {
   const sentenceRef = useRef<HTMLDivElement>(null);
@@ -59,7 +55,6 @@ export function Hero() {
     };
   }, []);
 
-
   return (
     <section
       id="home"
@@ -79,11 +74,9 @@ export function Hero() {
 
       {/* NEW: Removed max-w-5xl mx-auto from this container */}
       <div className="section-container relative z-10 mt-16 md:mt-24">
-        
         {/* NEW: This is the main 2-column grid */}
         {/* It's 1 column on mobile, and 5 columns on desktop (3 for text, 2 for image) */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
-          
           {/* --- LEFT COLUMN (Text Content) --- */}
           {/* NEW: Takes up 3 of 5 columns on desktop */}
           {/* NEW: Switched from centered text/items to left-aligned on desktop */}
@@ -135,29 +128,28 @@ export function Hero() {
           <div className="md:col-span-2 flex items-center justify-center px-4">
             {/* --- THIS IS YOUR VISUAL PLACEHOLDER --- */}
             {/* Replace this div with an <img /> tag pointing to a photo of you */}
-            <div 
+            <div
               className="w-64 h-64 md:w-full md:h-[400px] bg-gray-100 rounded-lg flex items-center justify-center text-muted-foreground"
-              style={{
-                // Optional: Add a subtle background image if you want
-                // backgroundImage: "url('/path-to-your-image.jpg')",
-                // backgroundSize: "cover",
-                // backgroundPosition: "center"
-              }}
+              style={
+                {
+                  // Optional: Add a subtle background image if you want
+                  // backgroundImage: "url('/path-to-your-image.jpg')",
+                  // backgroundSize: "cover",
+                  // backgroundPosition: "center"
+                }
+              }
             >
               {/* <img src="/path-to-your-image.png" alt="Haet Ranpariya" className="w-full h-full object-cover rounded-lg" /> */}
               <span className="text-sm">Your visual/photo goes here</span>
             </div>
           </div>
-
-        </div> {/* End of 2-column grid */}
-        
-
+        </div>{" "}
+        {/* End of 2-column grid */}
         {/* --- MOVED: Footer section is now OUTSIDE the main content div --- */}
         {/* This lets it be full-width while the content above is in columns */}
         {/* NEW: Added max-w-5xl mx-auto here to constrain the footer */}
         <div className="w-full max-w-5xl mx-auto border-t border-gray-200 pt-8 mt-16 md:mt-24">
           <div className="flex flex-col md:flex-row items-center justify-around gap-8 md:gap-4">
-            
             {/* Block 1: Current Focus */}
             <div className="flex flex-col items-center md:items-start text-center md:text-left">
               <span className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wider">
@@ -223,10 +215,8 @@ export function Hero() {
                 </a>
               ))}
             </div>
-
           </div>
         </div>
-        
       </div>
     </section>
   );
