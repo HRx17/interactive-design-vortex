@@ -60,10 +60,11 @@ export function Hero() {
   }, []);
 
   return (
-    // This <section> is your full-width wrapper. This is correct.
+    // 1. FULL-WIDTH WRAPPER. Note: No 'section-container' class here.
     <section
       id="home"
-      className="min-h-0 md:min-h-screen flex flex-col justify-center relative overflow-hidden py-20 bg-background"
+      // Added vertical padding to match your other sections
+      className="min-h-0 md:min-h-screen flex flex-col justify-center relative overflow-hidden py-16 md:py-24 bg-background"
     >
       {/* Background pattern (full-width) - Unchanged */}
       <div className="absolute inset-0 opacity-[0.03]">
@@ -76,16 +77,11 @@ export function Hero() {
         />
       </div>
 
-      {/* --- THIS IS THE FIX ---
-        I removed 'section-container' from this div. 
-        It's now just a simple wrapper.
-      */}
-      <div className="relative z-10 mt-16 md:mt-24">
-        {/* --- CONSTRAINT ADDED HERE ---
-          I've added 'max-w-5xl mx-auto px-4' to your 2-column grid.
-          This constrains your hero content.
-        */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-center max-w-5xl mx-auto px-4">
+      {/* This 'div' is just a wrapper, it has NO width constraints */}
+      <div className="relative z-10">
+        {/* 2. CONSTRAINED CONTENT Block 1 (Hero Grid) */}
+        {/* We apply the max-width and padding from your 'section-container' class *here* */}
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* --- LEFT COLUMN (Text Content) --- */}
           <div className="md:col-span-3 flex flex-col items-center text-center md:items-start md:text-left">
             <h1 ref={sentenceRef} className="heading mb-4 text-foreground text-5xl md:text-7xl overflow-visible">
@@ -131,13 +127,10 @@ export function Hero() {
             </div>
           </div>
         </div>{" "}
-        {/* End of 2-column grid */}
-        {/* --- CONSTRAINT ALREADY HERE ---
-          This footer section already has its own 'max-w-5xl mx-auto'
-          so it will continue to work perfectly.
-          I've added 'px-4' for consistent padding.
-        */}
-        <div className="w-full max-w-5xl mx-auto border-t border-gray-200 pt-8 mt-16 md:mt-24 px-4">
+        {/* End of first constrained block */}
+        {/* 3. CONSTRAINED CONTENT Block 2 (Footer Logos) */}
+        {/* We apply the max-width and padding from your 'section-container' class *here* too */}
+        <div className="w-full max-w-7xl mx-auto border-t border-gray-200 pt-8 mt-16 md:mt-24 px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-around gap-8 md:gap-4">
             {/* Block 1: Current Focus */}
             <div className="flex flex-col items-center md:items-start text-center md:text-left">
@@ -205,7 +198,8 @@ export function Hero() {
               ))}
             </div>
           </div>
-        </div>
+        </div>{" "}
+        {/* End of second constrained block */}
       </div>
     </section>
   );
