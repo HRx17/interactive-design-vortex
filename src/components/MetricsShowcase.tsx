@@ -2,8 +2,6 @@ import React, { useRef, useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Users, TrendingUp, Target, Globe } from "lucide-react";
 
-// Using your original data structure, but removing the 'color' property
-// as we'll now use the theme's 'text-primary'
 const metrics = [
   {
     icon: Users,
@@ -54,40 +52,34 @@ export function MetricsShowcase() {
   }, []);
 
   return (
-    // 1. FULL-WIDTH WRAPPER:
-    // We're keeping the full-width 'bg-secondary' to create the "stripe" effect.
-    <section
-      ref={sectionRef}
-      className="w-full bg-secondary" // Using your theme's secondary background
-    >
-      {/* 2. CONSTRAINED CONTENT:
-          This div centers your content (using your .section-container CSS class)
-      */}
+    // 1. FULL-WIDTH WRAPPER
+    // --- FIX 3: Added 'overflow-hidden' to prevent horizontal scroll issues ---
+    <section ref={sectionRef} className="w-full bg-secondary overflow-hidden">
+      {/* 2. CONSTRAINED CONTENT */}
       <div className="section-container">
         {" "}
         {/* This class is from your index.css */}
-        {/* 3. SECTION TITLE:
-            Adding the clear title for hierarchy.
-        */}
+        {/* SECTION TITLE */}
         <h2 className="text-3xl font-bold text-center text-foreground mb-4">Proven Impact</h2>
+        {/* --- FIX 1: Reworded Subtitle --- */}
         <p className="text-lg text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-          My designs are more than just pixels; they translate into measurable business outcomes that drive growth.
+          I focus on translating complex user needs into intuitive designs that achieve measurable business outcomes.
         </p>
         {/* 4. METRICS CARD GRID:
-            We're back to your original flex-wrap layout.
-            This will show the four cards in a row.
+            --- FIX 2: Changed from 'flex flex-wrap' to 'grid' ---
+            This creates a 2-column grid on small screens and a 4-column
+            grid on large screens, fixing the '10+' orphan card.
         */}
-        <div className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
           {metrics.map((metric, index) => {
             const Icon = metric.icon;
             return (
-              // 5. YOUR ORIGINAL CARD STYLING:
-              // We're using your original card classes: bg-card/40, backdrop-blur-sm, border, etc.
+              // 5. CARD STYLING (Removed 'flex-grow')
               <div
                 key={metric.label}
                 className={cn(
-                  "group relative flex-grow flex items-center gap-4 px-6 py-4 rounded-xl",
-                  "bg-card/40 backdrop-blur-sm border border-border/30", // Your glassmorphism style
+                  "group relative flex items-center gap-3 px-4 py-4 rounded-xl", // Adjusted padding/gap
+                  "bg-card/40 backdrop-blur-sm border border-border/30",
                   "hover:border-primary/30 transition-all duration-500 hover:shadow-lg hover:shadow-primary/10",
                   "opacity-0 transform translate-y-8", // Animation classes
                   isInView && "opacity-100 translate-y-0 scale-100",
@@ -98,22 +90,18 @@ export function MetricsShowcase() {
                 <div className="absolute inset-0 bg-primary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 {/* Content */}
-                <div className="relative z-10 flex items-center gap-4">
+                <div className="relative z-10 flex items-center gap-3">
                   <div
                     className={cn(
                       "p-3 rounded-lg bg-primary/10 border border-primary/20",
                       "group-hover:scale-110 transition-transform duration-300",
                     )}
                   >
-                    {/* Icon now uses text-primary for theme consistency */}
-                    <Icon className="w-6 h-6 text-primary" />
+                    <Icon className="w-5 h-5 text-primary" /> {/* Cleaned up size */}
                   </div>
 
                   <div className="text-left">
-                    {/* 6. THEME-ALIGNED METRIC:
-                        The number now uses 'text-primary' to match your Hero headline.
-                        This is the key visual hierarchy fix.
-                    */}
+                    {/* THEME-ALIGNED METRIC */}
                     <div className="text-3xl font-bold text-primary">{metric.value}</div>
                     <div className="text-sm text-muted-foreground font-medium whitespace-nowrap">{metric.label}</div>
                   </div>
