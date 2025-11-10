@@ -2,37 +2,43 @@ import React, { useEffect, useRef, useState } from "react";
 import { Mouse, Download, Mail, Linkedin } from "lucide-react"; // Import Mail and Linkedin
 import { cn } from "@/lib/utils";
 
-// --- New Data Structure for the Footer Section ---
-// We replace the old 'companies' array with this more descriptive data.
-// Make sure to update your logo paths in `logo:`
+// --- Data for the Footer Section ---
+
 const currentFocus = {
   name: "RIT",
   description: "M.S. in HCI (Grad. Dec 2025)",
   logo: "/logos/rit-logo.png", // <-- Your RIT logo path
 };
 
-// --- THIS ARRAY IS NOW COMPLETE ---
 const previousWork = [
   { name: "Tech9", logo: "/logos/tech9-logo.svg?v=2" },
   { name: "Excellus BCBS", logo: "/logos/excellus-logo.png" },
   { name: "Zlato Technolabs", logo: "/logos/zlato-logo.png" },
-  { name: "WaahTV", logo: "/logos/waahtv-logo.png" },
+  { name:MSG_NOT_FOUND:"WaahTV", logo: "/logos/waahtv-logo.png" },
   { name: "Upwork", logo: "/logos/upwork-logo.png" },
   { name: "Laurentian University", logo: "/logos/Laurentian_University.png" },
 ];
 
+// --- ADDED CERTIFICATIONS ARRAY ---
+const certifications = [
+  { name: "Google Certified", logo: "/logos/google-cert.png", title: "Google UX Design Professional Certification" },
+  { name: "University of Michigan", logo: "/logos/umich-cert.png", title: "University of Michigan Certified" },
+  { name: "Coursera", logo: "/logos/coursera-cert.png", title: "Coursera Certifications" },
+];
+
 const socialLinks = [
-  {
-    name: "Email",
-    url: "mailto:haetranpariya17@gmail.com",
-    icon: <Mail className="h-5 w-5" />,
+  { 
+    name: "Email", 
+    url: "mailto:haetranpariya17@gmail.com", 
+    icon: <Mail className="h-5 w-5" /> 
   },
-  {
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/haet-ranpariya-382324188",
-    icon: <Linkedin className="h-5 w-5" />,
+  { 
+    name: "LinkedIn", 
+    url: "https://www.linkedin.com/in/haet-ranpariya-382324188", 
+    icon: <Linkedin className="h-5 w-5" /> 
   },
 ];
+
 
 // --- Main Hero Component ---
 
@@ -82,7 +88,7 @@ export function Hero() {
       <div className="section-container relative z-10 mt-16 md:mt-24">
         <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
           <h1 ref={sentenceRef} className="heading mb-4 text-foreground text-5xl md:text-7xl overflow-visible">
-            {/* The <h1> content remains the same... */}
+            {/* ... h1 content ... */}
             <div className="reveal-text overflow-visible">
               <span className="inline-block">Creating</span>
               <span className="inline-block ml-3">intentional</span>
@@ -121,10 +127,13 @@ export function Hero() {
           </div>
 
           {/* --- NEW STRUCTURED FOOTER SECTION --- */}
-          {/* This replaces the "Certified by" and "Trusted by" divs */}
           <div className="w-full max-w-5xl mx-auto border-t border-gray-200 pt-8 mt-16">
-            {/* Main flex container for the new footer UI */}
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4">
+            
+            {/* Main flex container updated for 4 items */}
+            {/* This will stack vertically on mobile (flex-col) */}
+            {/* On desktop, it will be a row, items centered, and spaced apart (md:flex-row md:justify-around) */}
+            <div className="flex flex-col md:flex-row items-center justify-around gap-8 md:gap-4">
+
               {/* Block 1: Current Focus */}
               <div className="flex flex-col items-center md:items-start text-center md:text-left">
                 <span className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wider">
@@ -144,21 +153,39 @@ export function Hero() {
                 <span className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wider">
                   Previously at
                 </span>
-                {/* This row will now show all 6 logos and wrap on mobile */}
+                {/* --- LOGO SIZE INCREASED --- */}
                 <div className="flex flex-row flex-wrap justify-center md:justify-start items-center gap-4 grayscale opacity-80">
                   {previousWork.map((company) => (
                     <img
                       key={company.name}
-                      src={company.logo} // Make sure this path is correct
+                      src={company.logo}
                       alt={company.name}
                       title={company.name}
-                      className="h-6 object-contain" // Adjusted height to h-6 to fit better
+                      className="h-8 object-contain" // <-- Increased size from h-6 to h-8 (32px)
                     />
                   ))}
                 </div>
               </div>
 
-              {/* Block 3: Social Links */}
+              {/* --- Block 3: Certified By (NEW) --- */}
+              <div className="flex flex-col items-center md:items-start">
+                <span className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wider">
+                  Certified by
+                </span>
+                <div className="flex flex-row flex-wrap justify-center md:justify-start items-center gap-4">
+                  {certifications.map((cert) => (
+                    <img
+                      key={cert.name}
+                      src={cert.logo}
+                      alt={cert.name}
+                      title={cert.title}
+                      className="h-8 object-contain opacity-90" // Kept these full color
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* Block 4: Social Links */}
               <div className="flex flex-row items-center gap-2">
                 {socialLinks.map((link) => (
                   <a
@@ -173,11 +200,13 @@ export function Hero() {
                   </a>
                 ))}
               </div>
+
             </div>
           </div>
           {/* --- END OF NEW SECTION --- */}
-        </div>
 
+        </div>
+        
         {/* Scroll indicator (still commented out as in your original file) */}
         {/* <div className="absolute bottom-8 ..."> ... </div> */}
       </div>
