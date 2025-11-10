@@ -143,18 +143,24 @@ export function Hero() {
           
           {/* Certifications */}
           <div className="flex flex-wrap items-center justify-center gap-6 mb-16">
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-muted border border-border">
-              <img src="/logos/google-cert-logo.svg" alt="Google" className="w-6 h-6" />
-              <span className="text-sm text-foreground">Google Certified</span>
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-muted border border-border">
-              <img src="/logos/umich-cert-logo.svg" alt="University of Michigan" className="w-6 h-6" />
-              <span className="text-sm text-foreground">UMich Certified</span>
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-muted border border-border">
-              <img src="/logos/coursera-cert-logo.svg" alt="Coursera" className="w-6 h-6" />
-              <span className="text-sm text-foreground">Coursera Certified</span>
-            </div>
+            <img 
+              src="/logos/google-cert.png" 
+              alt="Google Certified"
+              className="h-8 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              title="Google UX Design Professional Certification"
+            />
+            <img 
+              src="/logos/umich-cert.png" 
+              alt="University of Michigan"
+              className="h-10 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              title="University of Michigan Certified"
+            />
+            <img 
+              src="/logos/coursera-cert.png" 
+              alt="Coursera"
+              className="h-8 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              title="Coursera Certifications"
+            />
           </div>
         </div>
 
@@ -168,7 +174,7 @@ export function Hero() {
                 href={company.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="opacity-70 hover:opacity-100 transition-all duration-300"
+                className="grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
               >
                 {company.logo ? (
                   <img 
@@ -177,7 +183,7 @@ export function Hero() {
                     className="h-8 md:h-10 object-contain"
                   />
                 ) : (
-                  <span className="text-foreground font-semibold text-lg">{company.name}</span>
+                  <span className="text-muted-foreground font-semibold text-lg">{company.name}</span>
                 )}
               </a>
             ))}
