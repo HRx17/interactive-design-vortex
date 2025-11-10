@@ -19,7 +19,7 @@ export const Certifications = () => {
       title: "Google's UX Design Professional Certification",
       issuer: "Google",
       date: "Oct 2023",
-      logo: "/logos/google-logo.png",
+      logo: "/logos/google-cert-logo.svg",
       skills: [
         "User Experience Design",
         "User Interface Design",
@@ -42,7 +42,7 @@ export const Certifications = () => {
       title: "Core Java",
       issuer: "SunBeam Institute of Information Technology",
       date: "May 2021",
-      logo: "/logos/sunbeam-logo.png",
+      logo: "/logos/sunbeam-cert-logo.svg",
       skills: [
         "Java Programming",
         "Object-Oriented Programming",
@@ -59,7 +59,7 @@ export const Certifications = () => {
       title: "Programming for Everybody: Getting Started with Python",
       issuer: "University of Michigan",
       date: "Aug 2020",
-      logo: "/logos/umich-logo.png",
+      logo: "/logos/umich-cert-logo.svg",
       skills: [
         "Python Programming",
         "Programming Fundamentals",
@@ -75,7 +75,7 @@ export const Certifications = () => {
       title: "Python Data Structures",
       issuer: "University of Michigan",
       date: "Aug 2020",
-      logo: "/logos/umich-logo.png",
+      logo: "/logos/umich-cert-logo.svg",
       skills: [
         "Python",
         "Lists & Tuples",
@@ -91,7 +91,7 @@ export const Certifications = () => {
       title: "Using Python to Access Web Data",
       issuer: "University of Michigan",
       date: "Aug 2020",
-      logo: "/logos/umich-logo.png",
+      logo: "/logos/umich-cert-logo.svg",
       skills: [
         "Python",
         "Web Scraping",
@@ -107,7 +107,7 @@ export const Certifications = () => {
       title: "Object Oriented Programming Using C++98 and C++03",
       issuer: "Sunbeam Institute of Information Technology",
       date: "Jul 2020",
-      logo: "/logos/sunbeam-logo.png",
+      logo: "/logos/sunbeam-cert-logo.svg",
       skills: [
         "C++ Programming",
         "Object-Oriented Programming",
@@ -123,7 +123,7 @@ export const Certifications = () => {
       title: "C for Everyone: Programming Fundamentals",
       issuer: "Coursera",
       date: "May 2020",
-      logo: "/logos/coursera-logo.png",
+      logo: "/logos/coursera-cert-logo.svg",
       skills: [
         "C Programming",
         "Memory Management",
