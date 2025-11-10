@@ -1,81 +1,63 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Mouse, Download } from "lucide-react";
+import { Mouse, Download, Mail, Linkedin } from "lucide-react"; // Import Mail and Linkedin
 import { cn } from "@/lib/utils";
 
-interface Company {
-  name: string;
-  logo?: string;
-  url: string;
-}
+// --- New Data Structure for the Footer Section ---
+// We replace the old 'companies' array with this more descriptive data.
+// Make sure to update your logo paths in `logo:`
+const currentFocus = {
+  name: "RIT",
+  description: "M.S. in HCI (Grad. Dec 2025)",
+  logo: "/logos/rit-logo.png", // <-- Your RIT logo path
+};
 
-const companies: Company[] = [
+// --- THIS ARRAY IS NOW COMPLETE ---
+const previousWork = [
+  { name: "Tech9", logo: "/logos/tech9-logo.svg?v=2" },
+  { name: "Excellus BCBS", logo: "/logos/excellus-logo.png" },
+  { name: "Zlato Technolabs", logo: "/logos/zlato-logo.png" },
+  { name: "WaahTV", logo: "/logos/waahtv-logo.png" },
+  { name: "Upwork", logo: "/logos/upwork-logo.png" },
+  { name: "Laurentian University", logo: "/logos/Laurentian_University.png" },
+];
+
+const socialLinks = [
   {
-    name: "Tech9",
-    url: "https://www.tech9.com/",
-    logo: "/logos/tech9-logo.svg?v=2",
+    name: "Email",
+    url: "mailto:haetranpariya17@gmail.com",
+    icon: <Mail className="h-5 w-5" />,
   },
   {
-    name: "Excellus BCBS",
-    url: "https://www.excellusbcbs.com/",
-    logo: "/logos/excellus-logo.png",
-  },
-  {
-    name: "Zlato Technolabs",
-    url: "https://zlatotech.com/",
-    logo: "/logos/zlato-logo.png",
-  },
-  {
-    name: "WaahTV",
-    url: "https://waahtv.com",
-    logo: "/logos/waahtv-logo.png",
-  },
-  {
-    name: "Upwork",
-    url: "https://www.upwork.com/",
-    logo: "/logos/upwork-logo.png",
-  },
-  {
-    name: "RIT",
-    url: "https://www.rit.edu/",
-    logo: "/logos/rit-logo.png",
-  },
-  {
-    name: "Laurentian University",
-    url: "https://laurentian.ca/",
-    logo: "/logos/Laurentian_University.png",
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/haet-ranpariya-382324188",
+    icon: <Linkedin className="h-5 w-5" />,
   },
 ];
+
+// --- Main Hero Component ---
 
 export function Hero() {
   const sentenceRef = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
     const sentence = sentenceRef.current;
     if (!sentence) return;
-
-    // Get all spans
     const spans = sentence.querySelectorAll("span");
-
-    // Set the --index custom property for each span
     spans.forEach((span, index) => {
       span.style.setProperty("--index", index.toString());
     });
   }, []);
 
-  // Mouse parallax effect for the decorative elements
+  // Mouse parallax effect
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const { clientX, clientY } = e;
       const x = clientX / window.innerWidth - 0.5;
       const y = clientY / window.innerHeight - 0.5;
-
       setMousePosition({ x, y });
     };
-
     window.addEventListener("mousemove", handleMouseMove);
-
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
@@ -99,7 +81,8 @@ export function Hero() {
 
       <div className="section-container relative z-10 mt-16 md:mt-24">
         <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
-          <h1 className="heading mb-4 text-foreground text-5xl md:text-7xl overflow-visible">
+          <h1 ref={sentenceRef} className="heading mb-4 text-foreground text-5xl md:text-7xl overflow-visible">
+            {/* The <h1> content remains the same... */}
             <div className="reveal-text overflow-visible">
               <span className="inline-block">Creating</span>
               <span className="inline-block ml-3">intentional</span>
@@ -137,63 +120,66 @@ export function Hero() {
             </a>
           </div>
 
-          {/* Certifications */}
-          <div className="text-center mb-2">
-            <p className="text-muted-foreground text-sm mb-4 uppercase tracking-wider">Certified by</p>
-            <div className="flex flex-wrap items-center justify-center gap-8 mb-4">
-              <img
-                src="/logos/google-cert.png"
-                alt="Google Certified"
-                className="h-8 w-auto opacity-90 hover:opacity-100 transition-all duration-300"
-                title="Google UX Design Professional Certification"
-              />
-              <img
-                src="/logos/umich-cert.png"
-                alt="University of Michigan"
-                className="h-8 w-auto opacity-90 hover:opacity-100 transition-all duration-300"
-                title="University of Michigan Certified"
-              />
-              <img
-                src="/logos/coursera-cert.png"
-                alt="Coursera"
-                className="h-8 w-auto opacity-90 hover:opacity-100 transition-all duration-300"
-                title="Coursera Certifications"
-              />
+          {/* --- NEW STRUCTURED FOOTER SECTION --- */}
+          {/* This replaces the "Certified by" and "Trusted by" divs */}
+          <div className="w-full max-w-5xl mx-auto border-t border-gray-200 pt-8 mt-16">
+            {/* Main flex container for the new footer UI */}
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4">
+              {/* Block 1: Current Focus */}
+              <div className="flex flex-col items-center md:items-start text-center md:text-left">
+                <span className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wider">
+                  Current Focus
+                </span>
+                <div className="flex items-center gap-3">
+                  <img src={currentFocus.logo} alt={currentFocus.name} className="h-10 w-10 object-contain" />
+                  <div className="flex flex-col items-start">
+                    <span className="text-sm font-semibold text-foreground">{currentFocus.name}</span>
+                    <span className="text-sm text-muted-foreground">{currentFocus.description}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Block 2: Previously at */}
+              <div className="flex flex-col items-center md:items-start">
+                <span className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wider">
+                  Previously at
+                </span>
+                {/* This row will now show all 6 logos and wrap on mobile */}
+                <div className="flex flex-row flex-wrap justify-center md:justify-start items-center gap-4 grayscale opacity-80">
+                  {previousWork.map((company) => (
+                    <img
+                      key={company.name}
+                      src={company.logo} // Make sure this path is correct
+                      alt={company.name}
+                      title={company.name}
+                      className="h-6 object-contain" // Adjusted height to h-6 to fit better
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* Block 3: Social Links */}
+              <div className="flex flex-row items-center gap-2">
+                {socialLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.url}
+                    aria-label={link.name}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-gray-100 rounded-lg text-muted-foreground hover:text-foreground hover:bg-gray-200 transition-colors"
+                  >
+                    {link.icon}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
+          {/* --- END OF NEW SECTION --- */}
         </div>
 
-        {/* Company logos */}
-        <div className="text-center mb-4">
-          <p className="text-muted-foreground text-sm mb-8 uppercase tracking-wider">Trusted by</p>
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-8">
-            {companies.map((company) => (
-              <a
-                key={company.name}
-                href={company.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
-              >
-                {company.logo ? (
-                  <img src={company.logo} alt={company.name} className="h-8 md:h-10 object-contain" />
-                ) : (
-                  <span className="text-muted-foreground font-semibold text-lg">{company.name}</span>
-                )}
-              </a>
-            ))}
-          </div>
-        </div>
-
-        {/* Scroll indicator
-        <div className="absolute bottom-8 center-1 transform -translate-x-10/10 animate-">
-          <div className="flex flex-col items-center gap-2">
-            <span className="text-muted-foreground text-xs uppercase tracking-wider font-medium">Scroll</span>
-            <div className="w-6 h-10 border-2 border-muted-foreground rounded-full flex items-start justify-center p-2">
-              <div className="w-1 h-3 bg-muted-foreground rounded-full animate-pulse" />
-            </div>
-          </div>
-        </div>*/}
+        {/* Scroll indicator (still commented out as in your original file) */}
+        {/* <div className="absolute bottom-8 ..."> ... </div> */}
       </div>
     </section>
   );
