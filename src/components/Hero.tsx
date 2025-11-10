@@ -146,19 +146,19 @@ export function Hero() {
             <img 
               src="/logos/google-cert.png" 
               alt="Google Certified"
-              className="h-8 w-auto grayscale opacity-75 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              className="h-8 w-auto opacity-90 hover:opacity-100 transition-all duration-300"
               title="Google UX Design Professional Certification"
             />
             <img 
               src="/logos/umich-cert.png" 
               alt="University of Michigan"
-              className="h-10 w-auto grayscale opacity-75 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              className="h-10 w-auto opacity-90 hover:opacity-100 transition-all duration-300"
               title="University of Michigan Certified"
             />
             <img 
               src="/logos/coursera-cert.png" 
               alt="Coursera"
-              className="h-8 w-auto grayscale opacity-75 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              className="h-8 w-auto opacity-90 hover:opacity-100 transition-all duration-300"
               title="Coursera Certifications"
             />
           </div>
@@ -174,7 +174,7 @@ export function Hero() {
                 href={company.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
               >
                 {company.logo ? (
                   <img 
