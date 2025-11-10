@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Mouse, Download } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import profilePhoto from '@/assets/profile-photo.png';
 
 
 interface Company {
@@ -94,6 +95,20 @@ export function Hero() {
           backgroundImage: 'radial-gradient(circle at 1px 1px, hsl(var(--foreground)) 1px, transparent 0)',
           backgroundSize: '40px 40px'
         }} />
+      </div>
+      
+      {/* Subtle profile photo */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-2/3 opacity-[0.08] pointer-events-none hidden lg:block">
+        <img 
+          src={profilePhoto} 
+          alt="" 
+          className="w-full h-full object-contain"
+          style={{
+            filter: 'grayscale(100%) blur(1px)',
+            maskImage: 'linear-gradient(to left, transparent, black 30%, transparent)',
+            WebkitMaskImage: 'linear-gradient(to left, transparent, black 30%, transparent)'
+          }}
+        />
       </div>
       
       <div className="section-container relative z-10">
