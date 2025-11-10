@@ -139,26 +139,26 @@ export function Hero() {
 
           {/* Certifications */}
           <div className="text-center mb-16">
-          <p className="text-muted-foreground text-sm mb-8 uppercase tracking-wider">Certified by</p>
-          <div className="flex flex-wrap items-center justify-center gap-6 mb-16">
-            <img
-              src="/logos/google-cert.png"
-              alt="Google Certified"
-              className="h-8 w-auto opacity-90 hover:opacity-100 transition-all duration-300"
-              title="Google UX Design Professional Certification"
-            />
-            <img
-              src="/logos/umich-cert.png"
-              alt="University of Michigan"
-              className="h-10 w-auto opacity-90 hover:opacity-100 transition-all duration-300"
-              title="University of Michigan Certified"
-            />
-            <img
-              src="/logos/coursera-cert.png"
-              alt="Coursera"
-              className="h-8 w-auto opacity-90 hover:opacity-100 transition-all duration-300"
-              title="Coursera Certifications"
-            />
+            <p className="text-muted-foreground text-sm mb-8 uppercase tracking-wider">Certified by</p>
+            <div className="flex flex-wrap items-center justify-center gap-6 mb-16">
+              <img
+                src="/logos/google-cert.png"
+                alt="Google Certified"
+                className="h-8 w-auto opacity-90 hover:opacity-100 transition-all duration-300"
+                title="Google UX Design Professional Certification"
+              />
+              <img
+                src="/logos/umich-cert.png"
+                alt="University of Michigan"
+                className="h-10 w-auto opacity-90 hover:opacity-100 transition-all duration-300"
+                title="University of Michigan Certified"
+              />
+              <img
+                src="/logos/coursera-cert.png"
+                alt="Coursera"
+                className="h-8 w-auto opacity-90 hover:opacity-100 transition-all duration-300"
+                title="Coursera Certifications"
+              />
           </div>
         </div>
 
