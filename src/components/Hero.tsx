@@ -170,7 +170,8 @@ export function Hero() {
             </div>
         </div>
       </div>
-          {/* Logo row: In Color */}
+          </div>
+          
           <div className="flex flex-row flex-wrap items-center justify-center gap-x-8 gap-y-6">
           <div className="text-center mb-2">
             <p className="text-muted-foreground text-sm mb-4 uppercase tracking-wider">Certified by</p>
