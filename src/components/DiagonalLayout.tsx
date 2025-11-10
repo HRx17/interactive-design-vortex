@@ -106,7 +106,7 @@ const DiagonalCard = ({ title, company, companyLogo, period, location, descripti
     </div>
 
     {/* Hover gradient overlay */}
-    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    <div className="absolute inset-0 bg-muted/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
   </div>
   );
 };
@@ -178,7 +178,7 @@ export function DiagonalLayout() {
   ];
 
   return (
-    <section id="work-experience" ref={sectionRef} className="py-12 relative overflow-hidden bg-gradient-to-br from-emerald-950/20 to-teal-950/10">
+    <section id="work-experience" ref={sectionRef} className="py-12 relative overflow-hidden bg-muted/10">
       <div className="section-container">
         {/* Header */}
         <div className="max-w-2xl mx-auto mb-16 text-center">
@@ -191,7 +191,7 @@ export function DiagonalLayout() {
           </span>
           
           <h2 className={cn(
-            "heading bg-gradient-to-r from-emerald-700 to-teal-500 bg-clip-text text-transparent",
+            "heading text-foreground",
             "opacity-0 transform transition-all duration-700 delay-100",
             isInView && "opacity-100 slide-in-right"
           )}>
@@ -234,7 +234,7 @@ export function DiagonalLayout() {
           <a 
             href="/resume.pdf"
             download
-            className="btn-magnetic inline-flex items-center px-8 py-4 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-medium gap-2 border border-emerald-500/30 shadow-lg hover:shadow-emerald-500/25 group"
+            className="btn-magnetic inline-flex items-center px-8 py-4 rounded-lg bg-foreground text-background font-semibold gap-2 shadow-lg hover:bg-foreground/90 transition-all group"
           >
             <span className="relative z-10 flex items-center gap-2">
               Download Full Resume
@@ -244,13 +244,13 @@ export function DiagonalLayout() {
         </div>
       </div>
 
-      {/* Background Elements with parallax and morphing */}
+      {/* Background Elements with parallax */}
       <div 
-        className="absolute top-1/4 left-0 w-1/3 h-1/3 bg-gradient-to-r from-emerald-600/10 to-transparent rounded-full filter blur-3xl opacity-30 morph-blob"
+        className="absolute top-1/4 left-0 w-1/3 h-1/3 bg-foreground/5 rounded-full filter blur-3xl opacity-20 float-animation"
         style={{ transform: `translateY(${parallaxOffset}px)` }}
       />
       <div 
-        className="absolute bottom-1/4 right-0 w-1/3 h-1/3 bg-gradient-to-l from-teal-500/10 to-transparent rounded-full filter blur-3xl opacity-30 morph-blob" 
+        className="absolute bottom-1/4 right-0 w-1/3 h-1/3 bg-foreground/5 rounded-full filter blur-3xl opacity-20 float-animation" 
         style={{ 
           animationDelay: '4s',
           transform: `translateY(${-parallaxOffset * 0.7}px)` 
@@ -258,9 +258,9 @@ export function DiagonalLayout() {
       />
       
       {/* Floating decorative elements */}
-      <div className="absolute top-1/3 right-1/4 w-6 h-6 border-2 border-emerald-400/30 rounded-full float-animation" style={{animationDelay: '1s'}}></div>
-      <div className="absolute bottom-1/3 left-1/5 w-8 h-8 border border-teal-400/30 rotate-45 float-animation" style={{animationDelay: '3s'}}></div>
-      <div className="absolute top-1/2 right-1/3 w-4 h-4 bg-emerald-400/20 rounded-full float-animation" style={{animationDelay: '0.5s'}}></div>
+      <div className="absolute top-1/3 right-1/4 w-6 h-6 border-2 border-foreground/15 rounded-full float-animation" style={{animationDelay: '1s'}}></div>
+      <div className="absolute bottom-1/3 left-1/5 w-8 h-8 border border-foreground/20 rotate-45 float-animation" style={{animationDelay: '3s'}}></div>
+      <div className="absolute top-1/2 right-1/3 w-4 h-4 bg-foreground/10 rounded-full float-animation" style={{animationDelay: '0.5s'}}></div>
     </section>
   );
 }

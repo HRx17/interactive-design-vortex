@@ -40,11 +40,15 @@ export function Endorsements() {
 
   return (
     <section ref={sectionRef} id="endorsements" className="section-container relative overflow-hidden bg-muted/30">
-      {/* Background decorative elements - subtle */}
+      {/* Background decorative elements - subtle with black */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-20 right-10 w-96 h-96 bg-muted/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-10 w-72 h-72 bg-muted/10 rounded-full blur-3xl" />
+        <div className="absolute top-20 right-10 w-96 h-96 bg-foreground/5 rounded-full blur-3xl float-animation" style={{animationDelay: '0s'}} />
+        <div className="absolute bottom-20 left-10 w-72 h-72 bg-foreground/5 rounded-full blur-3xl float-animation" style={{animationDelay: '3s'}} />
       </div>
+      
+      {/* Floating shapes */}
+      <div className="absolute top-1/4 right-1/3 w-5 h-5 border border-foreground/15 rotate-45 float-animation" style={{animationDelay: '1.5s'}}></div>
+      <div className="absolute bottom-1/4 left-1/5 w-4 h-4 bg-foreground/10 rounded-full float-animation" style={{animationDelay: '2s'}}></div>
 
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}

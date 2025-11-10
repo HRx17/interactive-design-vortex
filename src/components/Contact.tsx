@@ -111,11 +111,16 @@ export function Contact() {
         </div>
       </div>
       
-      {/* Background decorative elements with parallax */}
+      {/* Background decorative elements with parallax and black colors */}
       <div 
-        className="absolute top-1/4 left-0 w-full h-1/3 bg-gradient-to-r from-secondary/20 via-transparent to-secondary/20 rounded-full filter blur-3xl opacity-20"
+        className="absolute top-1/4 left-0 w-full h-1/3 bg-foreground/3 rounded-full filter blur-3xl opacity-20 float-animation"
         style={{ transform: `translateY(${parallaxOffset}px)` }}
       ></div>
+      
+      {/* Floating decorative shapes */}
+      <div className="absolute top-1/3 right-1/3 w-5 h-5 border border-foreground/20 rotate-45 float-animation" style={{animationDelay: '0.8s'}}></div>
+      <div className="absolute bottom-1/4 left-1/6 w-3 h-3 bg-foreground/10 rounded-full float-animation" style={{animationDelay: '2.5s'}}></div>
+      <div className="absolute top-2/3 right-1/5 w-6 h-6 border-2 border-foreground/15 rounded-full float-animation" style={{animationDelay: '1s'}}></div>
     </section>
   );
 }

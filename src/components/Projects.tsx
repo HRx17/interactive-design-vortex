@@ -300,9 +300,14 @@ export function Projects() {
         </div>
       </div>
       
-      {/* Subtle background decorative elements */}
-      <div className="absolute top-1/4 left-0 w-1/3 h-1/3 bg-muted rounded-full filter blur-3xl opacity-10"></div>
-      <div className="absolute bottom-1/4 right-0 w-1/3 h-1/3 bg-muted rounded-full filter blur-3xl opacity-10"></div>
+      {/* Subtle background decorative elements with black */}
+      <div className="absolute top-1/4 left-0 w-1/3 h-1/3 bg-foreground/5 rounded-full filter blur-3xl opacity-10 float-animation" style={{animationDelay: '2s'}}></div>
+      <div className="absolute bottom-1/4 right-0 w-1/3 h-1/3 bg-foreground/5 rounded-full filter blur-3xl opacity-10 float-animation" style={{animationDelay: '0s'}}></div>
+      
+      {/* Floating decorative shapes */}
+      <div className="absolute top-1/3 right-1/4 w-6 h-6 border-2 border-foreground/15 rounded-full float-animation" style={{animationDelay: '1s'}}></div>
+      <div className="absolute bottom-1/3 left-1/5 w-8 h-8 border border-foreground/20 rotate-45 float-animation" style={{animationDelay: '3s'}}></div>
+      <div className="absolute top-1/2 right-1/3 w-4 h-4 bg-foreground/10 rounded-full float-animation" style={{animationDelay: '0.5s'}}></div>
     </section>
   );
 }

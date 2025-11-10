@@ -176,10 +176,13 @@ export function BentoGrid() {
           />
         </div>
       </div>
+      {/* Background decorative elements - subtle with black */}
+      <div className="absolute top-20 right-10 w-96 h-96 bg-foreground/5 rounded-full blur-3xl float-animation" style={{animationDelay: '0s'}} />
+      <div className="absolute bottom-20 left-10 w-72 h-72 bg-foreground/5 rounded-full blur-3xl float-animation" style={{animationDelay: '4s'}} />
       
-      {/* Background decorative elements - subtle */}
-      <div className="absolute top-1/5 right-1/4 w-28 h-28 rounded-full bg-muted/20 filter blur-2xl opacity-30 float-animation" style={{animationDelay: '2s'}}></div>
-      <div className="absolute bottom-1/4 left-1/5 w-36 h-36 rounded-full bg-muted/15 filter blur-3xl opacity-20 float-animation" style={{animationDelay: '0s'}}></div>
+      {/* Floating shapes */}
+      <div className="absolute top-1/3 right-1/5 w-6 h-6 border-2 border-foreground/15 rotate-45 float-animation" style={{animationDelay: '2s'}}></div>
+      <div className="absolute bottom-1/3 left-1/4 w-4 h-4 bg-foreground/10 rounded-full float-animation" style={{animationDelay: '1s'}}></div>
     </section>
   );
 }

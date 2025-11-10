@@ -155,12 +155,32 @@ export function About() {
         </div>
       </div>
       
-      {/* Subtle decorative elements */}
+      {/* Subtle decorative elements with black */}
       <div 
-        className="absolute bottom-0 right-0 w-1/3 h-1/2 bg-muted rounded-full filter blur-3xl opacity-20 float-animation" 
+        className="absolute bottom-0 right-0 w-1/3 h-1/2 bg-foreground/5 rounded-full filter blur-3xl opacity-20 float-animation" 
         style={{
           animationDelay: '1s',
           transform: `translateY(${parallaxOffset}px)`
+        }}
+      ></div>
+      
+      {/* Additional floating decorative elements */}
+      <div 
+        className="absolute top-1/4 right-1/3 w-6 h-6 border-2 border-foreground/20 rotate-45 float-animation"
+        style={{
+          animationDelay: '0.5s'
+        }}
+      ></div>
+      <div 
+        className="absolute bottom-1/4 left-1/5 w-4 h-4 bg-foreground/10 rounded-full float-animation" 
+        style={{
+          animationDelay: '3s'
+        }}
+      ></div>
+      <div 
+        className="absolute top-1/2 right-1/5 w-5 h-5 border border-foreground/15 rounded-full float-animation" 
+        style={{
+          animationDelay: '1.5s'
         }}
       ></div>
     </section>
