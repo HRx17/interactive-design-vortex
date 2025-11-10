@@ -18,7 +18,7 @@ const previousWork = [
 ];
 const certifications = [
   { name: "Google Certified", logo: "/logos/google-cert.png", title: "Google UX Design Professional Certification" },
-  { name:D: "University of Michigan", logo: "/logos/umich-cert.png", title: "University of Michigan Certified" },
+  { name: "University of Michigan", logo: "/logos/umich-cert.png", title: "University of Michigan Certified" },
   { name: "Coursera", logo: "/logos/coursera-cert.png", title: "Coursera Certifications" },
 ];
 const socialLinks = [
