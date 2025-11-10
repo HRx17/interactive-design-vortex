@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, ExternalLink } from 'lucide-react';
+import { Award, ExternalLink, Star } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
@@ -170,35 +170,40 @@ export const Certifications = () => {
                   : 'border-border/50 hover:border-primary/30'
               }`}
             >
-              <CardHeader>
-                <div className="flex items-start justify-between gap-4">
-                  <div className="flex items-start gap-4 flex-1">
-                    {/* Logo */}
-                    <div className="flex-shrink-0 w-14 h-14 rounded-lg bg-background border border-border/50 p-2 flex items-center justify-center group-hover:border-primary/30 transition-colors">
-                      <img 
-                        src={cert.logo} 
-                        alt={`${cert.issuer} logo`}
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                    
-                    {/* Content */}
-                    <div className="flex-1">
-                      <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors">
-                        {cert.title}
-                      </CardTitle>
-                      <CardDescription className="flex flex-col gap-1">
-                        <span className="font-medium text-foreground/70">{cert.issuer}</span>
-                        <span className="text-sm text-muted-foreground">{cert.date}</span>
-                      </CardDescription>
+              {/* Featured Badge - Absolute Positioned */}
+              {cert.featured && (
+                <div className="absolute -top-2 -right-2 z-10">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full blur-md opacity-75 animate-pulse"></div>
+                    <div className="relative px-3 py-1.5 rounded-full bg-gradient-to-r from-amber-400 to-orange-500 flex items-center gap-1.5 shadow-lg">
+                      <Star className="w-3.5 h-3.5 text-white fill-white" />
+                      <span className="text-xs font-bold text-white uppercase tracking-wide">Featured</span>
                     </div>
                   </div>
+                </div>
+              )}
+              
+              <CardHeader>
+                <div className="flex items-start gap-4">
+                  {/* Logo */}
+                  <div className="flex-shrink-0 w-14 h-14 rounded-lg bg-background border border-border/50 p-2 flex items-center justify-center group-hover:border-primary/30 transition-colors">
+                    <img 
+                      src={cert.logo} 
+                      alt={`${cert.issuer} logo`}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
                   
-                  {cert.featured && (
-                    <Badge variant="default" className="bg-gradient-to-r from-primary to-purple-600 text-white flex-shrink-0">
-                      Featured
-                    </Badge>
-                  )}
+                  {/* Content */}
+                  <div className="flex-1">
+                    <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors">
+                      {cert.title}
+                    </CardTitle>
+                    <CardDescription className="flex flex-col gap-1">
+                      <span className="font-medium text-foreground/70">{cert.issuer}</span>
+                      <span className="text-sm text-muted-foreground">{cert.date}</span>
+                    </CardDescription>
+                  </div>
                 </div>
               </CardHeader>
               <CardContent>
