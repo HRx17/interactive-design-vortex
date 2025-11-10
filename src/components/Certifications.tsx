@@ -164,25 +164,8 @@ export const Certifications = () => {
           {certifications.map((cert, index) => (
             <Card 
               key={index}
-              className={`${
-                cert.featured 
-                  ? 'border-2 border-primary/50 bg-gradient-to-br from-primary/5 to-purple-500/5' 
-                  : 'border-border/50'
-              }`}
+              className="border-border/50"
             >
-              {/* Featured Badge - Absolute Positioned */}
-              {cert.featured && (
-                <div className="absolute -top-2 -right-2 z-10">
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full blur-md opacity-75 animate-pulse"></div>
-                    <div className="relative px-3 py-1.5 rounded-full bg-gradient-to-r from-amber-400 to-orange-500 flex items-center gap-1.5 shadow-lg">
-                      <Star className="w-3.5 h-3.5 text-white fill-white" />
-                      <span className="text-xs font-bold text-white uppercase tracking-wide">Featured</span>
-                    </div>
-                  </div>
-                </div>
-              )}
-              
               <CardHeader>
                 <div className="flex items-start gap-4">
                   {/* Logo */}
