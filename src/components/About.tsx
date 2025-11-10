@@ -131,7 +131,7 @@ export function About() {
               className="w-full"
               title="MS in Human-Computer Interaction • Rochester Institute of Technology"
               description="Currently pursuing advanced studies in HCI with a focus on emerging technologies, accessibility, and user-centered design methodologies."
-              icon={<div className="w-5 h-5 bg-gradient-to-r from-emerald-400 to-teal-400 rounded" />}
+              icon={<div className="w-5 h-5 bg-accent rounded" />}
               gradient="hover:bg-muted"
             >
               <div className="mt-4 flex justify-between items-center">

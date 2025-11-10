@@ -26,7 +26,7 @@ const DiagonalCard = ({ title, company, companyLogo, period, location, descripti
   return (
     <div
       className={cn(
-        "group relative overflow-hidden rounded-2xl bg-card/40 backdrop-blur-sm border border-border/30 p-8 transition-all duration-700 hover:shadow-2xl hover:shadow-emerald-500/10 hover:border-emerald-500/30 hover:scale-[1.02]",
+        "group relative overflow-hidden rounded-2xl bg-card/40 backdrop-blur-sm border border-border/30 p-8 transition-all duration-700 hover:shadow-2xl hover:shadow-accent/10 hover:border-accent/30 hover:scale-[1.02]",
         website ? "cursor-pointer" : "cursor-default",
         "opacity-0 transform rotate-2 translate-y-8",
         isInView && "opacity-100 rotate-0 translate-y-0"
@@ -39,8 +39,8 @@ const DiagonalCard = ({ title, company, companyLogo, period, location, descripti
     >
     {/* Background Pattern */}
     <div className="absolute inset-0 opacity-5">
-      <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full -translate-x-16 -translate-y-16" />
-      <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl from-emerald-500 to-teal-500 rounded-full translate-x-12 translate-y-12" />
+      <div className="absolute top-0 left-0 w-32 h-32 bg-muted rounded-full -translate-x-16 -translate-y-16" />
+      <div className="absolute bottom-0 right-0 w-24 h-24 bg-muted rounded-full translate-x-12 translate-y-12" />
     </div>
 
     {/* Content */}
@@ -57,16 +57,16 @@ const DiagonalCard = ({ title, company, companyLogo, period, location, descripti
                   className="w-full h-full object-contain"
                 />
               ) : (
-                <span className="text-xl font-bold text-emerald-400">
+                <span className="text-xl font-bold text-accent">
                   {company.charAt(0)}
                 </span>
               )}
             </div>
             <div>
-              <h3 className="text-xl font-bold group-hover:text-emerald-300 transition-colors duration-300">
+              <h3 className="text-xl font-bold group-hover:text-accent transition-colors duration-300">
                 {title}
               </h3>
-              <p className="text-emerald-400 font-medium">{company}</p>
+              <p className="text-accent font-medium">{company}</p>
             </div>
           </div>
           
@@ -81,7 +81,7 @@ const DiagonalCard = ({ title, company, companyLogo, period, location, descripti
             </div>
           </div>
         </div>
-        <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-emerald-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 flex-shrink-0" />
+        <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-accent group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 flex-shrink-0" />
       </div>
 
       <p className="text-muted-foreground leading-relaxed mb-6">
@@ -93,7 +93,7 @@ const DiagonalCard = ({ title, company, companyLogo, period, location, descripti
           <span
             key={skill}
             className={cn(
-              "px-3 py-1 bg-emerald-500/10 text-emerald-300 text-xs rounded-full border border-emerald-500/20 transition-all duration-300",
+              "px-3 py-1 bg-accent/10 text-accent text-xs rounded-full border border-accent/20 transition-all duration-300",
               "opacity-0 translate-y-2",
               isInView && "opacity-100 translate-y-0"
             )}
