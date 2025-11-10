@@ -137,8 +137,81 @@ export function Hero() {
             </a>
           </div>
 
-          {/* Certifications */}
           <div className="w-full py-16 md:py-24 bg-gray-50"> 
+      
+      {/* Centered content container */}
+      <div className="max-w-5xl mx-auto px-4">
+        
+        {/* --- CERTIFIED BY --- */}
+        <div className="flex flex-col items-center">
+          <h3 className="text-sm font-semibold text-gray-500 tracking-wider uppercase mb-6">
+            Certified By
+          </h3>
+          {/* Logo row: In Color */}
+          <div className="flex flex-row flex-wrap items-center justify-center gap-x-8 gap-y-6">
+            {/* Replace these divs with your <img> or <svg> tags. 
+              Example: <img src="/logos/google.svg" alt="Google" className="h-8" />
+            */}
+            <img
+                src="/logos/google-cert.png"
+                alt="Google Certified"
+                className="h-8 w-auto opacity-90 hover:opacity-100 transition-all duration-300"
+                title="Google UX Design Professional Certification"
+              />
+              <img
+                src="/logos/umich-cert.png"
+                alt="University of Michigan"
+                className="h-8 w-auto opacity-90 hover:opacity-100 transition-all duration-300"
+                title="University of Michigan Certified"
+              />
+              <img
+                src="/logos/coursera-cert.png"
+                alt="Coursera"
+                className="h-8 w-auto opacity-90 hover:opacity-100 transition-all duration-300"
+                title="Coursera Certifications"
+              />
+          </div>
+        </div>
+
+        {/* --- TRUSTED BY --- */}
+        <div className="flex flex-col items-center mt-16">
+          <h3 className="text-sm font-semibold text-gray-500 tracking-wider uppercase mb-6">
+            Trusted By
+          </h3>
+          {/* Logo row: Grayscale */}
+          <div className="flex flex-row flex-wrap items-center justify-center gap-x-10 gap-y-8 grayscale">
+            {/* Replace these divs with your <img> or <svg> tags.
+              The `grayscale` class on the parent div will handle them all.
+              Example: <img src="/logos/tech9.svg" alt="Tech9" className="h-8" />
+            */}
+            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-8">
+            {companies.map((company) => (
+              <a
+                key={company.name}
+                href={company.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              >
+                {company.logo ? (
+                  <img src={company.logo} alt={company.name} className="h-8 md:h-10 object-contain" />
+                ) : (
+                  <span className="text-muted-foreground font-semibold text-lg">{company.name}</span>
+                )}
+              </a>
+            ))}
+          </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+          
+          {/* Certifications */}
+      <div className="w-full py-16 md:py-24 bg-gray-50"> 
       
       {/* Centered content container */}
       <div className="max-w-5xl mx-auto px-4">
@@ -170,7 +243,7 @@ export function Hero() {
             </div>
         </div>
       </div>
-          </div>
+      </div>
           
           <div className="flex flex-row flex-wrap items-center justify-center gap-x-8 gap-y-6">
           <div className="text-center mb-2">
