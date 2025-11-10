@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Mouse, Download, Mail, Linkedin } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-// --- Data (This is all the same as before) ---
+// --- Data (Unchanged) ---
 const currentFocus = {
   name: "RIT",
   description: "M.S. in HCI (Grad. Dec 2025)",
@@ -60,11 +60,12 @@ export function Hero() {
   }, []);
 
   return (
+    // This <section> is your full-width wrapper. This is correct.
     <section
       id="home"
-      className="min-h-0 md:min-h-screen w-full flex flex-col justify-center relative overflow-hidden py-20 bg-background"
+      className="min-h-0 md:min-h-screen flex flex-col justify-center relative overflow-hidden py-20 bg-background"
     >
-      {/* ... (Your background pattern div remains unchanged) ... */}
+      {/* Background pattern (full-width) - Unchanged */}
       <div className="absolute inset-0 opacity-[0.03]">
         <div
           className="absolute inset-0"
@@ -75,9 +76,16 @@ export function Hero() {
         />
       </div>
 
-      <div className="section-container relative z-10 mt-16 md:mt-24">
-        {/* This is the main 2-column grid */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
+      {/* --- THIS IS THE FIX ---
+        I removed 'section-container' from this div. 
+        It's now just a simple wrapper.
+      */}
+      <div className="relative z-10 mt-16 md:mt-24">
+        {/* --- CONSTRAINT ADDED HERE ---
+          I've added 'max-w-5xl mx-auto px-4' to your 2-column grid.
+          This constrains your hero content.
+        */}
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-center max-w-5xl mx-auto px-4">
           {/* --- LEFT COLUMN (Text Content) --- */}
           <div className="md:col-span-3 flex flex-col items-center text-center md:items-start md:text-left">
             <h1 ref={sentenceRef} className="heading mb-4 text-foreground text-5xl md:text-7xl overflow-visible">
@@ -101,17 +109,10 @@ export function Hero() {
               experiences. I also specialize in GenUI, leveraging generative AI to enhance and accelerate the design
               process.
             </p>
-
-            {/* --- BUTTONS MOVED FROM HERE --- */}
           </div>
 
           {/* --- RIGHT COLUMN (Buttons) --- */}
-          {/* NEW: This column now holds the buttons */}
           <div className="md:col-span-2 flex flex-col items-center justify-center md:items-start md:justify-start md:pt-4">
-            {/* This inner div controls the button layout.
-              - On mobile: they stack horizontally (sm:flex-row)
-              - On desktop: I've made them stack vertically (md:flex-col) for a cleaner alignment
-            */}
             <div className="flex flex-col sm:flex-row md:flex-col gap-4">
               <a
                 href="/resume.pdf"
@@ -131,8 +132,12 @@ export function Hero() {
           </div>
         </div>{" "}
         {/* End of 2-column grid */}
-        {/* --- Footer section (Unchanged) --- */}
-        <div className="w-full max-w-5xl mx-auto border-t border-gray-200 pt-8 mt-16 md:mt-24">
+        {/* --- CONSTRAINT ALREADY HERE ---
+          This footer section already has its own 'max-w-5xl mx-auto'
+          so it will continue to work perfectly.
+          I've added 'px-4' for consistent padding.
+        */}
+        <div className="w-full max-w-5xl mx-auto border-t border-gray-200 pt-8 mt-16 md:mt-24 px-4">
           <div className="flex flex-col md:flex-row items-center justify-around gap-8 md:gap-4">
             {/* Block 1: Current Focus */}
             <div className="flex flex-col items-center md:items-start text-center md:text-left">
