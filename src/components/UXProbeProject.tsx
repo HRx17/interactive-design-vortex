@@ -56,13 +56,13 @@ export function UXProbeProject({ index }: UXProbeProjectProps) {
           <span className="text-sm font-medium px-4 py-1.5 rounded-full bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400">
             Full-Stack App
           </span>
-          <div className="flex items-center gap-1 text-emerald-600 dark:text-emerald-400">
+          <div className="flex items-center gap-1 text-purple-600 dark:text-purple-400">
             <Brain className="h-4 w-4" />
             <span className="text-xs font-medium">Live</span>
           </div>
         </div>
         
-        <h3 className="text-2xl font-bold mb-2 group-hover:text-emerald-500 transition-colors">
+        <h3 className="text-2xl font-bold mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
           UXProbe
         </h3>
         

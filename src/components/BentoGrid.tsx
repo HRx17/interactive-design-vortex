@@ -29,22 +29,22 @@ const BentoCard = ({ className, title, description, icon, gradient, children, on
       {/* Background gradient overlay */}
       <div className={cn(
         "absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100",
-        gradient || "bg-gradient-to-br from-emerald-500/10 to-teal-500/10"
+        gradient || "bg-muted/30"
       )} />
       
       {/* Content */}
       <div className="relative z-10">
         <div className="flex items-start justify-between mb-4">
-          <div className="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
+          <div className="p-2 rounded-lg bg-muted border border-border">
             {icon}
           </div>
           <ArrowUpRight className={cn(
             "w-5 h-5 text-muted-foreground transition-all duration-300",
-            isHovered && "translate-x-1 -translate-y-1 text-emerald-400"
+            isHovered && "translate-x-1 -translate-y-1 text-foreground"
           )} />
         </div>
         
-        <h3 className="text-lg font-bold mb-2 group-hover:text-emerald-300 transition-colors duration-300">
+        <h3 className="text-lg font-bold mb-2 group-hover:text-foreground transition-colors duration-300">
           {title}
         </h3>
         <p className="text-muted-foreground text-sm leading-relaxed">
@@ -93,7 +93,7 @@ export function BentoGrid() {
           </span>
           
           <h2 className={cn(
-            "heading bg-gradient-to-r from-emerald-700 to-teal-500 bg-clip-text text-transparent",
+            "heading text-foreground",
             "opacity-0 transform translate-y-6 transition-all duration-700 delay-100",
             isInView && "opacity-100 translate-y-0"
           )}>
@@ -112,16 +112,19 @@ export function BentoGrid() {
             className="md:col-span-2 lg:col-span-3"
             title="UI/UX Design"
             description="Creating human-centered digital experiences through research, prototyping, and iterative design. I focus on solving real user problems with elegant, accessible solutions."
-            icon={<Palette className="w-5 h-5 text-emerald-400" />}
-            gradient="hover:bg-gradient-to-br hover:from-emerald-500/10 hover:to-teal-500/10"
+            icon={<Palette className="w-5 h-5 text-foreground" />}
+            gradient="hover:bg-muted/30"
             onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
           >
             <div className="mt-4 grid grid-cols-3 gap-2">
-              {['Wireframing', 'Storyboarding', 'User Journey', 'Empathy Mapping', 'Mockups', 'Sketches', 'User Persona', 'UI Kit', 'Style Guide', 'Figma', 'Adobe XD', 'Prototyping'].map((skill) => (
-                <span key={skill} className="px-2 py-1 bg-emerald-500/10 text-emerald-300 text-xs rounded-md border border-emerald-500/20 text-center">
-                  {skill}
-                </span>
-              ))}
+              {['Wireframing', 'Storyboarding', 'User Journey', 'Empathy Mapping', 'Mockups', 'Sketches', 'User Persona', 'UI Kit', 'Style Guide', 'Figma', 'Adobe XD', 'Prototyping'].map((skill, i) => {
+                const colors = ['bg-purple-100 text-purple-600', 'bg-blue-100 text-blue-600', 'bg-amber-100 text-amber-600', 'bg-rose-100 text-rose-600', 'bg-indigo-100 text-indigo-600', 'bg-sky-100 text-sky-600'];
+                return (
+                  <span key={skill} className={`px-2 py-1 ${colors[i % colors.length]} text-xs rounded-md border border-transparent text-center`}>
+                    {skill}
+                  </span>
+                );
+              })}
             </div>
           </BentoCard>
 
@@ -130,12 +133,12 @@ export function BentoGrid() {
             className="md:col-span-2 lg:col-span-2"
             title="GenUI Specialist"
             description="Leveraging AI tools like Lovable, ChatGPT, and custom prompting to accelerate design workflows."
-            icon={<Sparkles className="w-5 h-5 text-yellow-400" />}
-            gradient="hover:bg-gradient-to-br hover:from-yellow-500/10 hover:to-orange-500/10"
+            icon={<Sparkles className="w-5 h-5 text-foreground" />}
+            gradient="hover:bg-muted/30"
           >
             <div className="mt-4 flex items-center gap-2">
-              <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
-              <span className="text-xs text-yellow-300">AI-Enhanced Design</span>
+              <div className="w-2 h-2 bg-foreground rounded-full animate-pulse"></div>
+              <span className="text-xs text-muted-foreground">AI-Enhanced Design</span>
             </div>
           </BentoCard>
 
@@ -144,8 +147,8 @@ export function BentoGrid() {
             className="md:col-span-2 lg:col-span-1"
             title="Product Design"
             description="End-to-end product strategy and design thinking for digital products."
-            icon={<Zap className="w-5 h-5 text-blue-400" />}
-            gradient="hover:bg-gradient-to-br hover:from-blue-500/10 hover:to-indigo-500/10"
+            icon={<Zap className="w-5 h-5 text-foreground" />}
+            gradient="hover:bg-muted/30"
           />
 
           {/* Development Skills */}
@@ -153,16 +156,19 @@ export function BentoGrid() {
             className="md:col-span-2 lg:col-span-2"
             title="Frontend Development"
             description="Building responsive, accessible interfaces with modern web technologies and frameworks."
-            icon={<Code className="w-5 h-5 text-purple-400" />}
-            gradient="hover:bg-gradient-to-br hover:from-purple-500/10 hover:to-pink-500/10"
+            icon={<Code className="w-5 h-5 text-foreground" />}
+            gradient="hover:bg-muted/30"
             onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
           >
             <div className="mt-4 grid grid-cols-2 gap-2">
-              {['React', 'TypeScript', 'Tailwind', 'JavaScript'].map((tech) => (
-                <span key={tech} className="px-2 py-1 bg-purple-500/10 text-purple-300 text-xs rounded-md border border-purple-500/20 text-center">
-                  {tech}
-                </span>
-              ))}
+              {['React', 'TypeScript', 'Tailwind', 'JavaScript'].map((tech, i) => {
+                const colors = ['bg-cyan-100 text-cyan-600', 'bg-blue-100 text-blue-600', 'bg-sky-100 text-sky-600', 'bg-amber-100 text-amber-600'];
+                return (
+                  <span key={tech} className={`px-2 py-1 ${colors[i]} text-xs rounded-md border border-transparent text-center`}>
+                    {tech}
+                  </span>
+                );
+              })}
             </div>
           </BentoCard>
 
@@ -171,20 +177,18 @@ export function BentoGrid() {
             className="md:col-span-2 lg:col-span-2"
             title="User Research"
             description="Conducting usability testing, interviews, and data analysis to inform design decisions."
-            icon={<Users className="w-5 h-5 text-green-400" />}
-            gradient="hover:bg-gradient-to-br hover:from-green-500/10 hover:to-emerald-500/10"
+            icon={<Users className="w-5 h-5 text-foreground" />}
+            gradient="hover:bg-muted/30"
           />
         </div>
       </div>
+      {/* Background decorative elements - subtle with black */}
+      <div className="absolute top-20 right-10 w-96 h-96 bg-foreground/5 rounded-full blur-3xl float-animation" style={{animationDelay: '0s'}} />
+      <div className="absolute bottom-20 left-10 w-72 h-72 bg-foreground/5 rounded-full blur-3xl float-animation" style={{animationDelay: '4s'}} />
       
-      {/* Background floating elements */}
-      <div className="absolute top-1/5 right-1/4 w-28 h-28 rounded-full bg-gradient-to-r from-emerald-600/8 to-teal-600/8 filter blur-2xl opacity-50 float-animation" style={{animationDelay: '2s'}}></div>
-      <div className="absolute bottom-1/4 left-1/5 w-36 h-36 rounded-full bg-gradient-to-r from-teal-500/10 to-emerald-500/10 filter blur-3xl opacity-30 float-animation" style={{animationDelay: '0s'}}></div>
-      
-      {/* Floating decorative shapes */}
-      <div className="absolute top-1/3 right-1/6 w-5 h-5 border border-emerald-400/40 rotate-45 float-animation" style={{animationDelay: '1s'}}></div>
-      <div className="absolute bottom-1/3 left-1/3 w-3 h-3 bg-teal-400/30 rounded-full float-animation" style={{animationDelay: '3s'}}></div>
-      <div className="absolute top-2/3 right-1/3 w-7 h-7 border-2 border-teal-300/30 rounded-full float-animation" style={{animationDelay: '0.5s'}}></div>
+      {/* Floating shapes */}
+      <div className="absolute top-1/3 right-1/5 w-6 h-6 border-2 border-foreground/15 rotate-45 float-animation" style={{animationDelay: '2s'}}></div>
+      <div className="absolute bottom-1/3 left-1/4 w-4 h-4 bg-foreground/10 rounded-full float-animation" style={{animationDelay: '1s'}}></div>
     </section>
   );
 }
