@@ -138,9 +138,9 @@ export function Hero() {
           </div>
 
           {/* Certifications */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-4">
             <p className="text-muted-foreground text-sm mb-8 uppercase tracking-wider">Certified by</p>
-            <div className="flex flex-wrap items-center justify-center gap-6 mb-16">
+            <div className="flex flex-wrap items-center justify-center gap-6 mb-10">
               <img
                 src="/logos/google-cert.png"
                 alt="Google Certified"
@@ -164,9 +164,9 @@ export function Hero() {
         </div>
 
         {/* Company logos */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-4">
           <p className="text-muted-foreground text-sm mb-8 uppercase tracking-wider">Trusted by</p>
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-8">
             {companies.map((company) => (
               <a
                 key={company.name}
