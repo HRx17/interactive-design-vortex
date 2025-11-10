@@ -159,6 +159,7 @@ export function Hero() {
                 className="h-8 w-auto opacity-90 hover:opacity-100 transition-all duration-300"
                 title="Coursera Certifications"
               />
+            </div>
           </div>
         </div>
 
