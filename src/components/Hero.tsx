@@ -108,17 +108,17 @@ export function Hero() {
             </span>
           </div>
           
-          <h1 className="heading mb-4 text-white text-5xl md:text-7xl">
-            <div className="reveal-text">
+          <h1 className="heading mb-4 text-white text-5xl md:text-7xl overflow-visible">
+            <div className="reveal-text overflow-visible">
               <span className="inline-block bg-gradient-to-r from-emerald-300 to-teal-200 bg-clip-text text-transparent">Creating</span>
               <span className="inline-block ml-3">intentional</span>
             </div>
-            <div className="reveal-text mt-2">
+            <div className="reveal-text mt-2 overflow-visible">
               <span className="inline-block">and</span>
               <span className="inline-block ml-3 bg-gradient-to-r from-emerald-300 to-teal-200 bg-clip-text text-transparent">impactful</span>
               <span className="inline-block ml-3">digital</span>
             </div>
-            <div className="reveal-text mt-2">
+            <div className="reveal-text mt-2 overflow-visible">
               <span className="inline-block bg-gradient-to-r from-emerald-300 to-teal-200 bg-clip-text text-transparent">experiences</span>
             </div>
           </h1>

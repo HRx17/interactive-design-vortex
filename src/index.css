@@ -64,7 +64,7 @@
   /* Custom reveal animation for text */
   .reveal-text {
     display: inline-block;
-    overflow: hidden;
+    overflow: visible;
   }
   
   .reveal-text span {
