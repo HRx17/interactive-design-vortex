@@ -31,7 +31,7 @@ export function WorkExperienceSection() {
       <div className="section-container">
         <span
           className={cn(
-            "text-sm font-medium px-3 py-1 rounded-full bg-secondary text-primary inline-block mb-4",
+            "text-sm font-medium px-3 py-1 rounded-full bg-black-200 text-primary inline-block mb-4",
             "opacity-0 transform translate-y-6 transition-all duration-700",
             isInView && "opacity-100 translate-y-0",
           )}
