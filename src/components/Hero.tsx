@@ -158,21 +158,21 @@ export function Hero() {
               </p>
               <div className="flex flex-wrap justify-center items-center gap-8">
                 <img 
-                  src="/logos/google-cert-logo.svg" 
+                  src="/logos/google-cert.png" 
                   alt="Google Certified"
                   className="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
                   title="Google UX Design Professional Certification"
                 />
                 <img 
-                  src="/logos/umich-cert-logo.svg" 
+                  src="/logos/umich-cert.png" 
                   alt="University of Michigan"
                   className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
                   title="University of Michigan Certified"
                 />
                 <img 
-                  src="/logos/coursera-cert-logo.svg" 
+                  src="/logos/coursera-cert.png" 
                   alt="Coursera"
-                  className="h-7 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
+                  className="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
                   title="Coursera Certifications"
                 />
               </div>
