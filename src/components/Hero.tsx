@@ -140,7 +140,7 @@ export function Hero() {
           {/* Certifications */}
           <div className="text-center mb-4">
             <p className="text-muted-foreground text-sm mb-4 uppercase tracking-wider">Certified by</p>
-            <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
+            <div className="flex flex-wrap items-center justify-center gap-12 mb-8">
               <img
                 src="/logos/google-cert.png"
                 alt="Google Certified"
@@ -150,7 +150,7 @@ export function Hero() {
               <img
                 src="/logos/umich-cert.png"
                 alt="University of Michigan"
-                className="h-10 w-auto opacity-90 hover:opacity-100 transition-all duration-300"
+                className="h-8 w-auto opacity-90 hover:opacity-100 transition-all duration-300"
                 title="University of Michigan Certified"
               />
               <img
