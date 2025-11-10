@@ -107,63 +107,93 @@ export function Hero() {
       </div>
       
       <div className="section-container relative z-10">
-        <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
-          <h1 className="heading mb-4 text-foreground text-5xl md:text-7xl overflow-visible">
-            <div className="reveal-text overflow-visible">
-              <span className="inline-block">Creating</span>
-              <span className="inline-block ml-3">intentional</span>
+        {/* Split Hero Layout */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto mb-16">
+          {/* Left Content */}
+          <div className="flex flex-col items-start text-left order-2 lg:order-1">
+            <h1 className="heading mb-6 text-foreground text-4xl md:text-6xl lg:text-7xl overflow-visible">
+              <div className="reveal-text overflow-visible">
+                <span className="inline-block">Creating</span>
+              </div>
+              <div className="reveal-text mt-2 overflow-visible">
+                <span className="inline-block">intentional</span>
+                <span className="inline-block ml-3">and</span>
+              </div>
+              <div className="reveal-text mt-2 overflow-visible">
+                <span className="inline-block">impactful</span>
+              </div>
+              <div className="reveal-text mt-2 overflow-visible">
+                <span className="inline-block">digital</span>
+                <span className="inline-block ml-3">experiences</span>
+              </div>
+            </h1>
+            
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
+              I'm <span className="text-foreground font-semibold">Haet Ranpariya</span>, a UI/UX Designer and Product Designer passionate about creating human-centered digital experiences. I also specialize in GenUI, leveraging generative AI to enhance and accelerate the design process.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <a 
+                href="/resume.pdf"
+                download
+                className="inline-flex items-center px-8 py-4 bg-foreground text-background font-semibold rounded-lg transition-all duration-300 hover:bg-foreground/90 shadow-sm hover:shadow-md gap-2"
+              >
+                Download Resume
+                <Download className="h-4 w-4" />
+              </a>
+              <a 
+                href="#projects"
+                className="inline-flex items-center px-8 py-4 border-2 border-foreground text-foreground font-semibold rounded-lg transition-all duration-300 hover:bg-foreground hover:text-background"
+              >
+                View Projects
+              </a>
             </div>
-            <div className="reveal-text mt-2 overflow-visible">
-              <span className="inline-block">and</span>
-              <span className="inline-block ml-3">impactful</span>
-              <span className="inline-block ml-3">digital</span>
+            
+            {/* Certifications */}
+            <div className="flex flex-wrap items-center gap-6">
+              <img 
+                src="/logos/google-cert.png" 
+                alt="Google Certified"
+                className="h-8 w-auto opacity-90 hover:opacity-100 transition-all duration-300"
+                title="Google UX Design Professional Certification"
+              />
+              <img 
+                src="/logos/umich-cert.png" 
+                alt="University of Michigan"
+                className="h-10 w-auto opacity-90 hover:opacity-100 transition-all duration-300"
+                title="University of Michigan Certified"
+              />
+              <img 
+                src="/logos/coursera-cert.png" 
+                alt="Coursera"
+                className="h-8 w-auto opacity-90 hover:opacity-100 transition-all duration-300"
+                title="Coursera Certifications"
+              />
             </div>
-            <div className="reveal-text mt-2 overflow-visible">
-              <span className="inline-block">experiences</span>
-            </div>
-          </h1>
-          
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-            I'm Haet Ranpariya, a UI/UX Designer and Product Designer passionate about creating human-centered digital experiences. I also specialize in GenUI, leveraging generative AI to enhance and accelerate the design process.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <a 
-              href="/resume.pdf"
-              download
-              className="inline-flex items-center px-8 py-4 bg-foreground text-background font-semibold rounded-lg transition-all duration-300 hover:bg-foreground/90 shadow-sm hover:shadow-md gap-2"
-            >
-              Download Resume
-              <Download className="h-4 w-4" />
-            </a>
-            <a 
-              href="#projects"
-              className="inline-flex items-center px-8 py-4 border-2 border-foreground text-foreground font-semibold rounded-lg transition-all duration-300 hover:bg-foreground hover:text-background"
-            >
-              View Projects
-            </a>
           </div>
           
-          {/* Certifications */}
-          <div className="flex flex-wrap items-center justify-center gap-6 mb-16">
-            <img 
-              src="/logos/google-cert.png" 
-              alt="Google Certified"
-              className="h-8 w-auto opacity-90 hover:opacity-100 transition-all duration-300"
-              title="Google UX Design Professional Certification"
-            />
-            <img 
-              src="/logos/umich-cert.png" 
-              alt="University of Michigan"
-              className="h-10 w-auto opacity-90 hover:opacity-100 transition-all duration-300"
-              title="University of Michigan Certified"
-            />
-            <img 
-              src="/logos/coursera-cert.png" 
-              alt="Coursera"
-              className="h-8 w-auto opacity-90 hover:opacity-100 transition-all duration-300"
-              title="Coursera Certifications"
-            />
+          {/* Right Image */}
+          <div className="flex justify-center lg:justify-end order-1 lg:order-2">
+            <div className="relative group">
+              {/* Decorative border */}
+              <div className="absolute -inset-4 bg-gradient-to-br from-muted/50 to-muted/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+              
+              {/* Image container */}
+              <div className="relative w-[280px] h-[350px] md:w-[340px] md:h-[420px] rounded-2xl overflow-hidden border-4 border-background shadow-2xl">
+                <img 
+                  src={profilePhoto} 
+                  alt="Haet Ranpariya - UX Designer" 
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                />
+                
+                {/* Subtle gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+              
+              {/* Floating accent dot */}
+              <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-accent rounded-full opacity-20 animate-pulse"></div>
+              <div className="absolute -top-6 -left-6 w-16 h-16 border-4 border-accent/30 rounded-full"></div>
+            </div>
           </div>
         </div>
 
