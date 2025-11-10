@@ -100,7 +100,7 @@ export function Hero() {
 
                 {/* --- NEW: VISIBLE Gradient Text --- */}
                 {/* I've applied the gradient classes directly, not using .text-gradient */}
-                <span className="inline-block ml-3 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+                <span className="inline-block ml-3 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70">
                   impactful
                 </span>
 
