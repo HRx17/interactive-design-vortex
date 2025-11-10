@@ -185,7 +185,7 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Scroll indicator */}
+        {/* Scroll indicator
         <div className="absolute bottom-8 center-1 transform -translate-x-10/10 animate-">
           <div className="flex flex-col items-center gap-2">
             <span className="text-muted-foreground text-xs uppercase tracking-wider font-medium">Scroll</span>
@@ -194,7 +194,7 @@ export function Hero() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }
