@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-// Added 'Mail' and 'Linkedin' to the import
 import { Mouse, Download, Mail, Linkedin } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -66,14 +65,13 @@ export function Hero() {
       id="home"
       className="min-h-0 md:min-h-screen flex flex-col justify-center relative overflow-hidden py-16 md:py-24 bg-background"
     >
-      {/* --- NEW: Subtle Background Blob --- */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 w-full h-full -z-10" // Added -z-10 to ensure it's behind everything
-      >
-        <div className="absolute -top-48 left-1/4 w-[40rem] h-[40rem] bg-accent/5 opacity-50 rounded-full filter blur-3xl" />
+      {/* --- NEW: VISIBLE Background Blobs --- */}
+      {/* I've removed the extra opacity-50 and used brighter colors */}
+      <div aria-hidden="true" className="absolute inset-0 w-full h-full -z-10">
+        <div className="absolute -top-48 left-1/4 w-[40rem] h-[40rem] bg-blue-500/10 rounded-full filter blur-[150px]" />
+        <div className="absolute top-48 right-1/4 w-[30rem] h-[30rem] bg-purple-500/10 rounded-full filter blur-[150px]" />
       </div>
-      {/* --- END OF NEW BLOB --- */}
+      {/* --- END OF NEW BLOBS --- */}
 
       {/* Background pattern (full-width) - Unchanged */}
       <div className="absolute inset-0 opacity-[0.03] -z-10">
@@ -87,11 +85,9 @@ export function Hero() {
       </div>
 
       {/* This 'div' is just a wrapper, it has NO width constraints */}
-      {/* Removed pt-16/pt-24 from here, padding is on the <section> */}
       <div className="relative z-10">
         {/* 2. CONSTRAINED CONTENT Block 1 (Hero Grid) */}
-        {/* Removed pb-16/pb-24, padding is on the <section> */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 md:pb-24">
           {/* --- LEFT COLUMN (Text Content) --- */}
           <div className="md:col-span-3 flex flex-col items-center text-center md:items-start md:text-left">
             <h1 ref={sentenceRef} className="heading mb-4 text-foreground text-5xl md:text-7xl overflow-visible">
@@ -102,8 +98,11 @@ export function Hero() {
               <div className="reveal-text mt-2 overflow-visible">
                 <span className="inline-block">and</span>
 
-                {/* --- NEW: Gradient Text --- */}
-                <span className="inline-block ml-3 text-gradient">impactful</span>
+                {/* --- NEW: VISIBLE Gradient Text --- */}
+                {/* I've applied the gradient classes directly, not using .text-gradient */}
+                <span className="inline-block ml-3 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+                  impactful
+                </span>
 
                 <span className="inline-block ml-3">digital</span>
               </div>
@@ -120,6 +119,7 @@ export function Hero() {
           </div>
 
           {/* --- RIGHT COLUMN (Buttons) --- */}
+          {/* --- REMOVED: Scroll Indicator --- */}
           <div className="md:col-span-2 flex flex-col items-center justify-center md:items-start md:justify-start md:pt-4">
             <div className="flex flex-col sm:flex-row md:flex-col gap-4">
               <a
@@ -137,22 +137,11 @@ export function Hero() {
                 View Projects
               </a>
             </div>
-
-            {/* --- NEW: Scroll Indicator --- */}
-            {/* Added 'hidden md:flex' to only show on desktop */}
-            <div className="hidden md:flex flex-col items-center gap-2 mt-16 md:mt-24">
-              <span className="text-muted-foreground text-xs uppercase tracking-wider font-medium">Scroll</span>
-              <div className="w-6 h-10 border-2 border-muted-foreground rounded-full flex items-start justify-center p-1">
-                {/* This div is the little moving "mouse" wheel */}
-                <div className="w-1 h-2 bg-muted-foreground rounded-full animate-bounce" />
-              </div>
-            </div>
-            {/* --- END OF SCROLL INDICATOR --- */}
           </div>
         </div>{" "}
         {/* End of first constrained block */}
         {/* --- FULL-WIDTH DIVIDER (LINE 1) --- */}
-        <div className="w-full border-t border-gray-200 mt-16 md:mt-24"></div>
+        <div className="w-full border-t border-gray-200"></div>
         {/* 3. CONSTRAINED CONTENT Block 2 (Footer Logos) */}
         <div className="w-full max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-around gap-8 md:gap-4">
@@ -215,7 +204,7 @@ export function Hero() {
                   aria-label={link.name}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-gray-100 rounded-lg text-muted-foreground hover:text-foreground hover:bg-G-200 transition-colors"
+                  className="p-3 bg-gray-100 rounded-lg text-muted-foreground hover:text-foreground hover:bg-gray-200 transition-colors"
                 >
                   {link.icon}
                 </a>
