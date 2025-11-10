@@ -48,7 +48,7 @@ export function WeatherAppProject({ index }: WeatherAppProjectProps) {
             UX/UI Design
           </span>
         </div>
-        <h3 className="text-2xl font-bold mb-2 group-hover:text-emerald-500 transition-colors">
+        <h3 className="text-2xl font-bold mb-2 group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
           Weather App
         </h3>
         <p className="text-muted-foreground text-sm leading-relaxed mb-4">
@@ -67,7 +67,7 @@ export function WeatherAppProject({ index }: WeatherAppProjectProps) {
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-foreground hover:text-foreground/80 transition-colors"
           >
             <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <circle cx="12" cy="12" r="10"/>

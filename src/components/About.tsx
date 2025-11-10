@@ -31,18 +31,18 @@ const BentoCard = ({ className, title, description, icon, gradient, children, on
       {/* Background gradient overlay */}
       <div className={cn(
         "absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100",
-        gradient || "bg-gradient-to-br from-emerald-500/10 to-teal-500/10"
+        gradient || "bg-muted"
       )} />
       
       {/* Content */}
       <div className="relative z-10">
         <div className="flex items-start justify-between mb-4">
-          <div className="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
+          <div className="p-2 rounded-lg bg-muted border border-border">
             {icon}
           </div>
         </div>
         
-        <h3 className="text-lg font-bold mb-2 group-hover:text-emerald-300 transition-colors duration-300">
+        <h3 className="text-lg font-bold mb-2 group-hover:text-foreground transition-colors duration-300">
           {title}
         </h3>
         <p className="text-muted-foreground text-sm leading-relaxed">
@@ -97,7 +97,7 @@ export function About() {
             </span>
             
             <h2 className={cn(
-              "heading bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent",
+              "heading text-foreground",
               "opacity-0 transform transition-all duration-700 delay-100",
               isInView && "opacity-100 slide-in-left"
             )}>
@@ -131,8 +131,8 @@ export function About() {
               className="w-full"
               title="MS in Human-Computer Interaction • Rochester Institute of Technology"
               description="Currently pursuing advanced studies in HCI with a focus on emerging technologies, accessibility, and user-centered design methodologies."
-              icon={<div className="w-5 h-5 bg-gradient-to-r from-emerald-400 to-teal-400 rounded" />}
-              gradient="hover:bg-gradient-to-r hover:from-emerald-500/5 hover:to-teal-500/5"
+              icon={<div className="w-5 h-5 bg-accent rounded" />}
+              gradient="hover:bg-muted"
             >
               <div className="mt-4 flex justify-between items-center">
                 <div className="flex gap-4 text-xs text-muted-foreground">
@@ -140,11 +140,11 @@ export function About() {
                   <span>•</span>
                   <span>Rochester, NY</span>
                 </div>
-                <div className="text-emerald-400 text-sm font-medium">3.9 GPA</div>
+                <div className="text-foreground text-sm font-medium">3.9 GPA</div>
               </div>
               
-              <div className="mt-4 p-4 bg-emerald-500/5 rounded-lg border border-emerald-500/10">
-                <h5 className="text-sm font-semibold text-emerald-300 mb-2">Previous Education</h5>
+              <div className="mt-4 p-4 bg-muted rounded-lg border border-border">
+                <h5 className="text-sm font-semibold text-foreground mb-2">Previous Education</h5>
                 <div className="text-xs text-muted-foreground">
                   <p className="font-medium">B.E. in Computer Engineering</p>
                   <p>Gujarat Technological University • 2019 - 2023 • GPA: 3.8</p>
@@ -155,49 +155,32 @@ export function About() {
         </div>
       </div>
       
-      {/* Enhanced animated background decorative elements */}
+      {/* Subtle decorative elements with black */}
       <div 
-        className="absolute bottom-0 right-0 w-1/3 h-1/2 bg-gradient-to-l from-emerald-500/20 to-transparent rounded-full filter blur-3xl opacity-30 float-animation morph-blob" 
+        className="absolute bottom-0 right-0 w-1/3 h-1/2 bg-foreground/5 rounded-full filter blur-3xl opacity-20 float-animation" 
         style={{
           animationDelay: '1s',
           transform: `translateY(${parallaxOffset}px)`
         }}
       ></div>
-      <div 
-        className="absolute top-1/3 left-0 w-1/4 h-1/3 bg-gradient-to-r from-teal-500/10 to-emerald-500/10 rounded-full filter blur-3xl opacity-20 float-animation morph-blob" 
-        style={{
-          animationDelay: '2s',
-          transform: `translateY(${-parallaxOffset}px)`
-        }}
-      ></div>
       
       {/* Additional floating decorative elements */}
       <div 
-        className="absolute top-1/4 right-1/3 w-6 h-6 border-2 border-emerald-400/30 rotate-45 float-animation"
+        className="absolute top-1/4 right-1/3 w-6 h-6 border-2 border-foreground/20 rotate-45 float-animation"
         style={{
-          animationDelay: '0.5s',
-          transform: `translate(${mousePosition.x * 20}px, ${mousePosition.y * 20}px) rotate(45deg)`
+          animationDelay: '0.5s'
         }}
       ></div>
       <div 
-        className="absolute bottom-1/4 left-1/5 w-4 h-4 bg-teal-400/20 rounded-full float-animation" 
+        className="absolute bottom-1/4 left-1/5 w-4 h-4 bg-foreground/10 rounded-full float-animation" 
         style={{
-          animationDelay: '3s',
-          transform: `translate(${mousePosition.x * -15}px, ${mousePosition.y * -15}px)`
+          animationDelay: '3s'
         }}
       ></div>
       <div 
-        className="absolute top-1/2 right-1/5 w-5 h-5 border border-emerald-300/40 rounded-full float-animation" 
+        className="absolute top-1/2 right-1/5 w-5 h-5 border border-foreground/15 rounded-full float-animation" 
         style={{
-          animationDelay: '1.5s',
-          transform: `translate(${mousePosition.x * 25}px, ${mousePosition.y * 25}px)`
-        }}
-      ></div>
-      <div 
-        className="absolute bottom-1/3 right-1/4 w-3 h-3 bg-emerald-400/30 rotate-45 float-animation" 
-        style={{
-          animationDelay: '4s',
-          transform: `translate(${mousePosition.x * -20}px, ${mousePosition.y * -20}px) rotate(45deg)`
+          animationDelay: '1.5s'
         }}
       ></div>
     </section>

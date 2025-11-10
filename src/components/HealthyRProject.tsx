@@ -48,7 +48,7 @@ export function HealthyRProject({ index }: HealthyRProjectProps) {
             Health & Wellness
           </span>
         </div>
-        <h3 className="text-2xl font-bold mb-2 group-hover:text-emerald-500 transition-colors">
+        <h3 className="text-2xl font-bold mb-2 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
           HealthyR
         </h3>
         <p className="text-muted-foreground text-sm leading-relaxed mb-4">
