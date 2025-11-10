@@ -178,12 +178,12 @@ export function DiagonalLayout() {
   ];
 
   return (
-    <section id="work-experience" ref={sectionRef} className="py-12 relative overflow-hidden bg-muted/10">
+    <section id="work-experience" ref={sectionRef} className="py-12 relative overflow-hidden bg-foreground text-background">
       <div className="section-container">
         {/* Header */}
         <div className="max-w-2xl mx-auto mb-16 text-center">
           <span className={cn(
-            "text-sm font-medium px-3 py-1 rounded-full bg-secondary text-primary inline-block mb-4",
+            "text-sm font-medium px-3 py-1 rounded-full bg-background text-foreground inline-block mb-4",
             "opacity-0 transform transition-all duration-700",
             isInView && "opacity-100 bounce-in"
           )}>
@@ -191,7 +191,7 @@ export function DiagonalLayout() {
           </span>
           
           <h2 className={cn(
-            "heading text-foreground",
+            "heading text-background",
             "opacity-0 transform transition-all duration-700 delay-100",
             isInView && "opacity-100 slide-in-right"
           )}>
@@ -199,7 +199,7 @@ export function DiagonalLayout() {
           </h2>
           
           <p className={cn(
-            "text-muted-foreground mt-4 max-w-xl mx-auto",
+            "text-background/80 mt-4 max-w-xl mx-auto",
             "opacity-0 transform transition-all duration-700 delay-200",
             isInView && "opacity-100 blur-in"
           )}>
@@ -234,7 +234,7 @@ export function DiagonalLayout() {
           <a 
             href="/resume.pdf"
             download
-            className="btn-magnetic inline-flex items-center px-8 py-4 rounded-lg bg-foreground text-background font-semibold gap-2 shadow-lg hover:bg-foreground/90 transition-all group"
+            className="btn-magnetic inline-flex items-center px-8 py-4 rounded-lg bg-background text-foreground font-semibold gap-2 shadow-lg hover:bg-background/90 transition-all group"
           >
             <span className="relative z-10 flex items-center gap-2">
               Download Full Resume
@@ -246,11 +246,11 @@ export function DiagonalLayout() {
 
       {/* Background Elements with parallax */}
       <div 
-        className="absolute top-1/4 left-0 w-1/3 h-1/3 bg-foreground/5 rounded-full filter blur-3xl opacity-20 float-animation"
+        className="absolute top-1/4 left-0 w-1/3 h-1/3 bg-background/5 rounded-full filter blur-3xl opacity-20 float-animation"
         style={{ transform: `translateY(${parallaxOffset}px)` }}
       />
       <div 
-        className="absolute bottom-1/4 right-0 w-1/3 h-1/3 bg-foreground/5 rounded-full filter blur-3xl opacity-20 float-animation" 
+        className="absolute bottom-1/4 right-0 w-1/3 h-1/3 bg-background/5 rounded-full filter blur-3xl opacity-20 float-animation" 
         style={{ 
           animationDelay: '4s',
           transform: `translateY(${-parallaxOffset * 0.7}px)` 
@@ -258,9 +258,9 @@ export function DiagonalLayout() {
       />
       
       {/* Floating decorative elements */}
-      <div className="absolute top-1/3 right-1/4 w-6 h-6 border-2 border-foreground/15 rounded-full float-animation" style={{animationDelay: '1s'}}></div>
-      <div className="absolute bottom-1/3 left-1/5 w-8 h-8 border border-foreground/20 rotate-45 float-animation" style={{animationDelay: '3s'}}></div>
-      <div className="absolute top-1/2 right-1/3 w-4 h-4 bg-foreground/10 rounded-full float-animation" style={{animationDelay: '0.5s'}}></div>
+      <div className="absolute top-1/3 right-1/4 w-6 h-6 border-2 border-background/15 rounded-full float-animation" style={{animationDelay: '1s'}}></div>
+      <div className="absolute bottom-1/3 left-1/5 w-8 h-8 border border-background/20 rotate-45 float-animation" style={{animationDelay: '3s'}}></div>
+      <div className="absolute top-1/2 right-1/3 w-4 h-4 bg-background/10 rounded-full float-animation" style={{animationDelay: '0.5s'}}></div>
     </section>
   );
 }

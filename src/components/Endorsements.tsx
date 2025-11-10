@@ -39,24 +39,24 @@ export function Endorsements() {
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
 
   return (
-    <section ref={sectionRef} id="endorsements" className="section-container relative overflow-hidden bg-muted/30">
+    <section ref={sectionRef} id="endorsements" className="section-container relative overflow-hidden bg-foreground text-background">
       {/* Background decorative elements - subtle with black */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-20 right-10 w-96 h-96 bg-foreground/5 rounded-full blur-3xl float-animation" style={{animationDelay: '0s'}} />
-        <div className="absolute bottom-20 left-10 w-72 h-72 bg-foreground/5 rounded-full blur-3xl float-animation" style={{animationDelay: '3s'}} />
+        <div className="absolute top-20 right-10 w-96 h-96 bg-background/5 rounded-full blur-3xl float-animation" style={{animationDelay: '0s'}} />
+        <div className="absolute bottom-20 left-10 w-72 h-72 bg-background/5 rounded-full blur-3xl float-animation" style={{animationDelay: '3s'}} />
       </div>
       
       {/* Floating shapes */}
-      <div className="absolute top-1/4 right-1/3 w-5 h-5 border border-foreground/15 rotate-45 float-animation" style={{animationDelay: '1.5s'}}></div>
-      <div className="absolute bottom-1/4 left-1/5 w-4 h-4 bg-foreground/10 rounded-full float-animation" style={{animationDelay: '2s'}}></div>
+      <div className="absolute top-1/4 right-1/3 w-5 h-5 border border-background/15 rotate-45 float-animation" style={{animationDelay: '1.5s'}}></div>
+      <div className="absolute bottom-1/4 left-1/5 w-4 h-4 bg-background/10 rounded-full float-animation" style={{animationDelay: '2s'}}></div>
 
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className={`text-center mb-16 transition-all duration-1000 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="heading mb-4">
-            <span className="text-gradient">Endorsements</span>
+          <h2 className="heading mb-4 text-background">
+            <span className="text-background">Endorsements</span>
           </h2>
-          <p className="subheading max-w-2xl mx-auto">
+          <p className="subheading max-w-2xl mx-auto text-background/80">
             What others say about working with me
           </p>
         </div>

@@ -81,7 +81,7 @@ export function About() {
     <section 
       id="about" 
       ref={sectionRef}
-      className="py-12 relative overflow-hidden"
+      className="py-12 relative overflow-hidden bg-foreground text-background"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
@@ -89,7 +89,7 @@ export function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           <div>
             <span className={cn(
-              "text-sm font-medium px-3 py-1 rounded-full bg-secondary text-primary inline-block mb-4",
+              "text-sm font-medium px-3 py-1 rounded-full bg-background text-foreground inline-block mb-4",
               "opacity-0 transform scale-95 transition-all duration-700",
               isInView && "opacity-100 scale-100 bounce-in"
             )}>
@@ -97,7 +97,7 @@ export function About() {
             </span>
             
             <h2 className={cn(
-              "heading text-foreground",
+              "heading text-background",
               "opacity-0 transform transition-all duration-700 delay-100",
               isInView && "opacity-100 slide-in-left"
             )}>
@@ -105,7 +105,7 @@ export function About() {
             </h2>
             
             <div className={cn(
-              "mt-8 space-y-6 text-muted-foreground",
+              "mt-8 space-y-6 text-background/80",
               "opacity-0 transform transition-all duration-700 delay-200",
               isInView && "opacity-100 blur-in"
             )}>
@@ -157,7 +157,7 @@ export function About() {
       
       {/* Subtle decorative elements with black */}
       <div 
-        className="absolute bottom-0 right-0 w-1/3 h-1/2 bg-foreground/5 rounded-full filter blur-3xl opacity-20 float-animation" 
+        className="absolute bottom-0 right-0 w-1/3 h-1/2 bg-background/5 rounded-full filter blur-3xl opacity-20 float-animation" 
         style={{
           animationDelay: '1s',
           transform: `translateY(${parallaxOffset}px)`
@@ -166,19 +166,19 @@ export function About() {
       
       {/* Additional floating decorative elements */}
       <div 
-        className="absolute top-1/4 right-1/3 w-6 h-6 border-2 border-foreground/20 rotate-45 float-animation"
+        className="absolute top-1/4 right-1/3 w-6 h-6 border-2 border-background/20 rotate-45 float-animation"
         style={{
           animationDelay: '0.5s'
         }}
       ></div>
       <div 
-        className="absolute bottom-1/4 left-1/5 w-4 h-4 bg-foreground/10 rounded-full float-animation" 
+        className="absolute bottom-1/4 left-1/5 w-4 h-4 bg-background/10 rounded-full float-animation" 
         style={{
           animationDelay: '3s'
         }}
       ></div>
       <div 
-        className="absolute top-1/2 right-1/5 w-5 h-5 border border-foreground/15 rounded-full float-animation" 
+        className="absolute top-1/2 right-1/5 w-5 h-5 border border-background/15 rounded-full float-animation" 
         style={{
           animationDelay: '1.5s'
         }}

@@ -86,7 +86,7 @@ export function Hero() {
   return (
     <section 
       id="home"
-      className="min-h-screen flex flex-col justify-center relative overflow-hidden pb-20 bg-background"
+      className="min-h-screen flex flex-col justify-center relative overflow-hidden pb-20 pt-32 bg-background"
     >
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-[0.03]">

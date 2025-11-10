@@ -96,20 +96,20 @@ export function UXProcess() {
   const { ref: sectionRef, isInView } = useScrollAnimation({ threshold: 0.2, triggerOnce: true });
 
   return (
-    <section ref={sectionRef} className="section-container relative overflow-hidden">
+    <section ref={sectionRef} className="section-container relative overflow-hidden bg-foreground text-background">
       {/* Background decorative elements */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-background/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-background/10 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className={`text-center mb-16 transition-all duration-1000 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="heading mb-4">
-            My UX <span className="text-gradient">Process</span>
+          <h2 className="heading mb-4 text-background">
+            My UX <span className="text-background">Process</span>
           </h2>
-          <p className="subheading max-w-3xl mx-auto mb-8">
+          <p className="subheading max-w-3xl mx-auto mb-8 text-background/80">
             Focusing on figuring out the right problem to solve is the core of my UX process. I lead with a user-centric mindset, 
             using iterative sprints to design and deliver systems that meet both user needs and business goals.
           </p>
@@ -119,7 +119,7 @@ export function UXProcess() {
         <div className="hidden lg:block">
           <div className="relative py-16">
             {/* Main horizontal line with animated gradient */}
-            <div className={`absolute left-0 right-0 top-32 h-1 bg-gradient-to-r from-emerald-500 via-teal-500 to-purple-500 transition-all duration-1000 ${
+            <div className={`absolute left-0 right-0 top-32 h-1 bg-gradient-to-r from-background/50 via-background/70 to-background/50 transition-all duration-1000 ${
               isInView ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'
             }`} style={{ transformOrigin: 'left' }} />
             
@@ -128,11 +128,11 @@ export function UXProcess() {
               {processSteps.map((step, index) => (
                 <div key={step.title} className="relative">
                   {/* Vertical connector to timeline */}
-                  <div className="absolute left-1/2 -translate-x-1/2 top-24 w-0.5 h-8 bg-border" />
+                  <div className="absolute left-1/2 -translate-x-1/2 top-24 w-0.5 h-8 bg-background/30" />
                   
                   {/* Dot on timeline with pulse effect */}
                   <div 
-                    className={`absolute left-1/2 -translate-x-1/2 top-[124px] w-4 h-4 rounded-full bg-emerald-500 border-4 border-background transition-all duration-700 ${
+                    className={`absolute left-1/2 -translate-x-1/2 top-[124px] w-4 h-4 rounded-full bg-background border-4 border-foreground transition-all duration-700 ${
                       isInView ? 'scale-100 opacity-100 animate-pulse' : 'scale-0 opacity-0'
                     }`}
                     style={{ transitionDelay: `${index * 150}ms` }}
@@ -145,7 +145,7 @@ export function UXProcess() {
                     }`}
                     style={{ transitionDelay: `${index * 150}ms` }}
                   >
-                    <div className="w-full h-24 flex items-center justify-center text-emerald-500">
+                    <div className="w-full h-24 flex items-center justify-center text-background">
                       <StepGraphics index={index} />
                     </div>
                   </div>
@@ -157,10 +157,10 @@ export function UXProcess() {
                     }`}
                     style={{ transitionDelay: `${index * 150 + 200}ms` }}
                   >
-                    <h3 className="font-bold text-foreground mb-1 text-sm">
+                    <h3 className="font-bold text-background mb-1 text-sm">
                       {step.subtitle}
                     </h3>
-                    <p className="text-xs text-muted-foreground leading-relaxed">
+                    <p className="text-xs text-background/70 leading-relaxed">
                       {step.description}
                     </p>
                   </div>
@@ -172,7 +172,7 @@ export function UXProcess() {
 
         {/* Mobile/Tablet Vertical Timeline */}
         <div className="lg:hidden relative">
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-emerald-500 via-teal-500 to-purple-500" />
+          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-background/50 via-background/70 to-background/50" />
           
           {processSteps.map((step, index) => (
             <div
@@ -183,18 +183,18 @@ export function UXProcess() {
               style={{ transitionDelay: `${index * 150}ms` }}
             >
               {/* Dot on timeline */}
-              <div className="absolute left-6 top-12 w-4 h-4 rounded-full bg-emerald-500 border-4 border-background z-10" />
+              <div className="absolute left-6 top-12 w-4 h-4 rounded-full bg-background border-4 border-foreground z-10" />
               
               {/* Graphic */}
-              <div className="w-16 h-16 mb-3 text-emerald-500">
+              <div className="w-16 h-16 mb-3 text-background">
                 <StepGraphics index={index} />
               </div>
               
               {/* Content */}
-              <h3 className="font-bold text-foreground mb-1">
+              <h3 className="font-bold text-background mb-1">
                 {step.subtitle}
               </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-sm text-background/70 leading-relaxed">
                 {step.description}
               </p>
             </div>
