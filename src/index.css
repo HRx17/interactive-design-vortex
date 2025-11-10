@@ -6,33 +6,33 @@
 
 @layer base {
   :root {
-    --background: 240 6% 99%; /* Was 0 0% 98% (This is now a very light blue-gray) */
-    --foreground: 240 10% 3.9%; /* Standard Slate 950 */
+    --background: 240 10% 3.9%; /* Dark Slate */
+    --foreground: 0 0% 98%; /* Light Text */
 
-    --card: 240 6% 99%; /* Same as background */
-    --card-foreground: 240 10% 3.9%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 240 6% 99%;
-    --popover-foreground: 240 10% 3.9%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 221 83% 53%; /* NEW: A strong, professional Blue */
-    --primary-foreground: 0 0% 98%;
+    --primary: 217 91% 60%; /* A brighter blue for dark mode */
+    --primary-foreground: 240 6% 10%;
 
-    --secondary: 240 5% 96%; /* Slate 100 */
-    --secondary-foreground: 240 6% 10%; /* Slate 900 */
+    --secondary: 240 4% 16%; /* Darker gray */
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 240 5% 90%; /* Slate 200 */
-    --muted-foreground: 240 4% 46%; /* Slate 500 */
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 65%; /* Lighter muted text */
 
-    --accent: 221 83% 53%; /* NEW: Same as primary blue */
+    --accent: 217 91% 60%; /* Same as primary blue */
     --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 63% 31%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 5% 86%; /* Slate 300 */
-    --input: 240 5% 86%;
-    --ring: 221 83% 53%;
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 217 91% 60%;
 
     --radius: 0.5rem;
   }
