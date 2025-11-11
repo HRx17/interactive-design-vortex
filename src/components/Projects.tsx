@@ -188,10 +188,7 @@ const ProjectCard = ({ project, index, isInView }: ProjectCardProps) => {
 
 // --- 6. NEW "PINBOARD" CARD COMPONENTS ---
 const Thumbtack = () => (
-  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 z-20" style={{
-            backgroundImage: corkboardImage,
-            
-          }}>
+  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 z-20" >
     <div className="w-5 h-5 rounded-full bg-red-500 shadow-lg border-2 border-red-700/50">
       <div className="absolute inset-0.5 rounded-full"></div>
     </div>

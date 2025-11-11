@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 // --- Data (Unchanged) ---
 const currentFocus = {
-  name: "RIT",
+  name: "Rochester Institute of Technology",
   description: "M.S. in HCI (Grad. Dec 2025)",
   logo: "/logos/rit-logo.png",
 };
@@ -63,7 +63,7 @@ export function Hero() {
     // 1. FULL-WIDTH WRAPPER
     <section
       id="home"
-      className="min-h-0 md:min-h-screen flex flex-col justify-center relative overflow-hidden py-16 md:py-24 bg-background"
+      className="min-h-1 md:min-h-screen flex flex-col justify-center relative overflow-hidden py-16 md:py-24 bg-background"
     >
       {/* --- NEW: VISIBLE Background Blobs --- */}
       {/* I've removed the extra opacity-50 and used brighter colors */}
@@ -137,81 +137,90 @@ export function Hero() {
                 View Projects
               </a>
             </div>
-          </div>
+            </div>
         </div>{" "}
         {/* End of first constrained block */}
         {/* --- FULL-WIDTH DIVIDER (LINE 1) --- */}
         <div className="w-full border-t border-gray-200"></div>
-        {/* 3. CONSTRAINED CONTENT Block 2 (Footer Logos) */}
-        <div className="w-full max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-around gap-8 md:gap-4">
-            {/* Block 1: Current Focus */}
-            <div className="flex flex-col items-center md:items-start text-center md:text-left">
-              <span className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wider">
-                Current Focus
-              </span>
-              <div className="flex items-center gap-3">
-                <img src={currentFocus.logo} alt={currentFocus.name} className="h-10 w-10 object-contain" />
-                <div className="flex flex-col items-start">
-                  <span className="text-sm font-semibold text-foreground">{currentFocus.name}</span>
-                  <span className="text-sm text-muted-foreground">{currentFocus.description}</span>
-                </div>
-              </div>
-            </div>
+{/* 3. CONSTRAINED CONTENT Block 2 (Footer Logos) */}
+<div className="w-full max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+  <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-6">
+    {/* Block 1: Current Focus (No border) */}
+    <div className="flex flex-col items-center md:items-start text-center md:text-left">
+      <span className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wider">
+        Currently at
+      </span>
+      <div className="flex items-center gap-3">
+        <img
+          src={currentFocus.logo}
+          alt={currentFocus.name}
+          className="h-10 w-10 object-contain"
+        />
+        <div className="flex flex-col items-start">
+          <span className="text-sm font-semibold text-foreground">
+            {currentFocus.name}
+          </span>
+          <span className="text-sm text-muted-foreground">
+            {currentFocus.description}
+          </span>
+        </div>
+      </div>
+    </div>
 
-            {/* Block 2: Previously at */}
-            <div className="flex flex-col items-center md:items-start">
-              <span className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wider">
-                Previously at
-              </span>
-              <div className="flex flex-row flex-wrap justify-center md:justify-start items-center gap-4 grayscale opacity-80">
-                {previousWork.map((company) => (
-                  <img
-                    key={company.name}
-                    src={company.logo}
-                    alt={company.name}
-                    title={company.name}
-                    className="h-8 object-contain"
-                  />
-                ))}
-              </div>
-            </div>
+    {/* Block 2: Previously at (ADD BORDER) */}
+    <div className="flex flex-col items-center md:items-start md:border-l md:border-border md:pl-6">
+      <span className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wider">
+        Previously at
+      </span>
+      <div className="flex flex-row flex-wrap justify-center md:justify-start items-center gap-4 grayscale opacity-80">
+        {previousWork.map((company) => (
+          <img
+            key={company.name}
+            src={company.logo}
+            alt={company.name}
+            title={company.name}
+            className="h-8 object-contain"
+          />
+        ))}
+      </div>
+    </div>
 
-            {/* Block 3: Certified By */}
-            <div className="flex flex-col items-center md:items-start">
-              <span className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wider">
-                Certified by
-              </span>
-              <div className="flex flex-row flex-wrap justify-center md:justify-start items-center gap-4">
-                {certifications.map((cert) => (
-                  <img
-                    key={cert.name}
-                    src={cert.logo}
-                    alt={cert.name}
-                    title={cert.title}
-                    className="h-8 object-contain opacity-90"
-                  />
-                ))}
-              </div>
-            </div>
+    {/* Block 3: Certified By (ADD BORDER) */}
+    <div className="flex flex-col items-center md:items-start md:border-l md:border-border md:pl-6">
+      <span className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wider">
+        Certified by
+      </span>
+      <div className="flex flex-row flex-wrap justify-center md:justify-start items-center gap-4">
+        {certifications.map((cert) => (
+          <img
+            key={cert.name}
+            src={cert.logo}
+            alt={cert.name}
+            title={cert.title}
+            className="h-8 object-contain opacity-90"
+          />
+        ))}
+      </div>
+    </div>
 
-            {/* Block 4: Social Links */}
-            <div className="flex flex-row items-center gap-2">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.url}
-                  aria-label={link.name}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 bg-gray-100 rounded-lg text-muted-foreground hover:text-foreground hover:bg-gray-200 transition-colors"
-                >
-                  {link.icon}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>{" "}
+    {/* Block 4: Social Links (ADD BORDER) */}
+    <div className="flex flex-row items-center gap-2 md:border-l md:border-border md:pl-6">
+      {socialLinks.map((link) => (
+        <a
+          key={link.name}
+          href={link.url}
+          aria-label={link.name}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-3 bg-gray-100 rounded-lg text-muted-foreground hover:text-foreground hover:bg-gray-200 transition-colors"
+        >
+          {link.icon}
+        </a>
+      ))}
+    </div>
+  </div>
+</div>
+             
         {/* End of second constrained block */}
         {/* --- FULL-WIDTH DIVIDER (LINE 2) --- */}
         <div className="w-full border-t border-gray-200"></div>

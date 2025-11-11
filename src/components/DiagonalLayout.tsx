@@ -85,7 +85,7 @@ const ExperienceCard = ({ title, company, companyLogo, period, location, descrip
         "opacity-0 transform translate-y-8",
         isInView && "opacity-100 translate-y-0"
       )}
-      style={{ transitionDelay: `${index * 150}ms` }}
+      style={{ transitionDelay: `${index * 650}ms` }}
       onClick={handleClick}
     >
       {/* ... Card content (unchanged) ... */}
@@ -155,7 +155,8 @@ export function DiagonalLayout() { // Or WorkExperience, matching your file name
   const { ref: sectionRef, inView: sectionInView } = useInView({ threshold: 0.1, triggerOnce: true });
 
   const activeIndex = experiences.findIndex(exp => exp.company === activeCompany);
-  const progressHeight = activeIndex * 3.5; 
+  // Use a percentage-based progress so the bar never overflows the container.
+  const progressPercent = experiences.length > 1 ? (activeIndex / (experiences.length - 1)) * 100 : 0;
 
   return (
     // This section is now 'bg-background' (white)
@@ -198,26 +199,26 @@ export function DiagonalLayout() { // Or WorkExperience, matching your file name
           <div className="lg:col-span-1 lg:sticky top-24 h-fit hidden lg:block">
             <div className="relative">
               <div className="absolute left-[7px] top-[0.875rem] bottom-[0.875rem] w-0.5 bg-border -z-10" />
-              <div 
-                className="absolute left-[7px] top-[0.875rem] w-0.5 bg-primary transition-all duration-300 ease-out"
-                style={{ height: `${progressHeight}rem` }}
+              <div
+                className="absolute left-[7px] top-[0.875rem] bottom-[0.875rem] w-0.5 bg-primary transition-transform duration-300 ease-out origin-top"
+                style={{ transform: `scaleY(${progressPercent / 100})` }}
               />
               <ul className="relative flex flex-col gap-0">
                 {experiences.map((exp) => (
                   <li key={exp.company} className="relative flex items-center gap-4">
-                    <div className={cn(
-                      "w-4 h-4 rounded-full border-4 z-10 transition-all duration-300",
-                      activeCompany === exp.company 
-                        ? "bg-primary border-background" 
-                        : "bg-border border-background" 
-                    )} />
-                    <a 
+                      <div className={cn(
+                        "w-4 h-4 rounded-full border-4 z-10 transition-all duration-300",
+                        activeCompany === exp.company 
+                          ? "bg-primary border-background" 
+                          : "bg-border border-background" 
+                      )} />
+                    <a
                       href={`#exp-${exp.company.replace(/\s+/g, '-')}`}
                       onClick={() => setActiveCompany(exp.company)}
                       className={cn(
-                        "flex-1 p-3 my-1 rounded-lg transition-all duration-300 flex items-center gap-3", 
-                        activeCompany === exp.company 
-                          ? "bg-secondary text-primary font-bold shadow-lg shadow-primary/10" 
+                        "flex-1 p-2 my-0.5 rounded-md transition-all duration-300 flex items-center gap-3",
+                        activeCompany === exp.company
+                          ? "bg-secondary text-primary font-bold shadow-lg shadow-primary/10"
                           : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
                       )}
                     >
@@ -277,8 +278,11 @@ export function DiagonalLayout() { // Or WorkExperience, matching your file name
 // --- Helper Component (Unchanged) ---
 function InViewTrigger({ children, company, setActiveCompany }: any) {
   const { ref, inView } = useInView({
-    threshold: 0.5, 
-    triggerOnce: false, 
+    // Use a central root margin so the element that crosses the center of the viewport
+    // becomes "in view". This helps focus the company that's near the screen center.
+    threshold: 0,
+    rootMargin: '-50% 0px -50% 0px',
+    triggerOnce: false,
   });
 
   useEffect(() => {
