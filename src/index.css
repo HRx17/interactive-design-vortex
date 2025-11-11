@@ -39,7 +39,12 @@
   * {
     @apply border-border;
   }
-
+@keyframes scroll-up-loop {
+  /* Starts at 0% translation */
+  0% { transform: translateY(0); }
+  /* Ends at 50% translation (which aligns the start of the duplicated list) */
+  100% { transform: translateY(-50%); } 
+}
   html {
     scroll-behavior: smooth;
   }

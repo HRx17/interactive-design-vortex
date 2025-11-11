@@ -21,7 +21,7 @@ const Index = () => {
         <Hero />
         
         {/* Key Metrics Showcase */}
-        <MetricsShowcase />
+
         
         {/* Work Experience - Diagonal Layout */}
         <DiagonalLayout />
