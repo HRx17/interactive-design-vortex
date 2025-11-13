@@ -175,10 +175,17 @@ const ProjectCard = ({ project, index, isInView }: ProjectCardProps) => {
         </div>
         <div className="flex flex-row gap-4">
           {project.links.map(link => (
-            <a key={link.label} href={link.url} target={link.isInternal ? '_self' : '_blank'} rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 bg-foreground text-background font-semibold rounded-lg transition-all duration-300 hover:bg-foreground/90 shadow-sm hover:shadow-md gap-2">
-              {link.label}
-              <ArrowUpRight className="h-4 w-4" />
-            </a>
+            link.isInternal ? (
+              <Link key={link.label} to={link.url} className="inline-flex items-center px-6 py-3 bg-foreground text-background font-semibold rounded-lg transition-all duration-300 hover:bg-foreground/90 shadow-sm hover:shadow-md gap-2">
+                {link.label}
+                <ArrowUpRight className="h-4 w-4" />
+              </Link>
+            ) : (
+              <a key={link.label} href={link.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 bg-foreground text-background font-semibold rounded-lg transition-all duration-300 hover:bg-foreground/90 shadow-sm hover:shadow-md gap-2">
+                {link.label}
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
+            )
           ))}
         </div>
       </div>
