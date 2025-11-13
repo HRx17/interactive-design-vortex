@@ -163,7 +163,7 @@ export function DiagonalLayout() { // Or WorkExperience, matching your file name
     <section 
       id="work-experience" 
       ref={sectionRef} 
-      className="relative bg-background border-t border-border"
+      className="relative bg-background"
     >
       <div className="section-container">
         
