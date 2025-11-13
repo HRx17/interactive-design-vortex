@@ -42,15 +42,15 @@ const companies: Company[] = [
 
 export function CompanyLogos() {
   return (
-    <div className="pb-6 border-y border-white/20 bg-white/10 backdrop-blur-xl shadow-lg">
+    <div className="py-8 border-y border-border bg-muted shadow-sm">
       <div className="section-container">
-        <div className="text-center mb-4">
-          <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider pt-4 pb-2">
+        <div className="text-center mb-6">
+          <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
             Trusted by companies worldwide
           </h3>
         </div>
         
-        <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16">
+        <div className="flex flex-wrap justify-center items-center gap-16 md:gap-20">
           {companies.map((company, index) => (
             <div
               key={company.name}
@@ -68,7 +68,7 @@ export function CompanyLogos() {
                   alt={`${company.name} logo`}
                   className={cn(
                     "w-auto",
-                    (company.name === "Zlato Technolabs" || company.name === "Upwork") ? "h-16" : "h-12"
+                    (company.name === "Zlato Technolabs" || company.name === "Upwork") ? "h-24" : "h-16"
                   )}
                 />
               ) : (
