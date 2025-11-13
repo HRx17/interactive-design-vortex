@@ -294,31 +294,33 @@ const UXProbeCaseStudy = () => {
           </section>
 
           {/* Key Metrics Banner */}
-          <section className="case-study-section bg-gradient-to-r from-primary/10 via-purple-600/10 to-primary/10">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="text-4xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent mb-2">
-                  10K+
+          <section className="w-full bg-gradient-to-r from-primary/10 via-purple-600/10 to-primary/10">
+            <div className="case-study-section">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div className="text-center">
+                  <div className="text-4xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent mb-2">
+                    10K+
+                  </div>
+                  <div className="text-sm text-muted-foreground">API Requests Handled</div>
                 </div>
-                <div className="text-sm text-muted-foreground">API Requests Handled</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent mb-2">
-                  95%
+                <div className="text-center">
+                  <div className="text-4xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent mb-2">
+                    95%
+                  </div>
+                  <div className="text-sm text-muted-foreground">Time Reduction</div>
                 </div>
-                <div className="text-sm text-muted-foreground">Time Reduction</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent mb-2">
-                  3 AI Models
+                <div className="text-center">
+                  <div className="text-4xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent mb-2">
+                    3 AI Models
+                  </div>
+                  <div className="text-sm text-muted-foreground">Integrated</div>
                 </div>
-                <div className="text-sm text-muted-foreground">Integrated</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent mb-2">
-                  Coming Soon
+                <div className="text-center">
+                  <div className="text-4xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent mb-2">
+                    Coming Soon
+                  </div>
+                  <div className="text-sm text-muted-foreground">Figma Plugin (Under Review)</div>
                 </div>
-                <div className="text-sm text-muted-foreground">Figma Plugin (Under Review)</div>
               </div>
             </div>
           </section>
