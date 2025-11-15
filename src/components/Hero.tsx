@@ -59,14 +59,13 @@ export function Hero() {
 
             <h1 ref={sentenceRef} className="heading mb-4 text-white text-5xl md:text-6xl overflow-visible font-bold leading-tight">
               <div className="reveal-text overflow-visible">
-                <span className="inline-block">Haet Ranpariya,</span>
+                <span className="inline-block">Haet Ranpariya</span>
               </div>
               <div className="reveal-text mt-2 overflow-visible">
                 <span className="inline-block">an experienced</span>
-                <span className="inline-block ml-3">Product</span>
               </div>
               <div className="reveal-text mt-2 overflow-visible">
-                <span className="inline-block">Designer</span>
+                <span className="inline-block">Product Designer</span>
               </div>
             </h1>
             
