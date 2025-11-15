@@ -3,13 +3,13 @@ import { Download, Mail, Linkedin, Users, TrendingUp, Target, Globe } from "luci
 
 // --- Data (Finalized and Aligned) ---
 const previousWork = [
-  { name: "Rochester Institute of Technology", logo: "/logos/rit-logo.png" },
-  { name: "Tech9", logo: "/logos/tech9-logo.svg?v=2" },
-  { name: "Excellus BCBS", logo: "/logos/excellus-logo.png" },
-  { name: "Zlato Technolabs", logo: "/logos/zlato-logo.png" },
-  { name: "WaahTV", logo: "/logos/waahtv-logo.png" },
-  { name: "Upwork", logo: "/logos/upwork-logo.png" },
-  { name: "Laurentian University", logo: "/logos/Laurentian_University.png" },
+  { name: "Rochester Institute of Technology", logo: "/logos/rit-logo.png", url: "https://www.rit.edu/" },
+  { name: "Tech9", logo: "/logos/tech9-logo.svg?v=2", url: "https://www.tech9.com/" },
+  { name: "Excellus BCBS", logo: "/logos/excellus-logo.png", url: "https://www.excellusbcbs.com/" },
+  { name: "Zlato Technolabs", logo: "/logos/zlato-logo.png", url: "https://www.zlatoinfotech.com/" },
+  { name: "WaahTV", logo: "/logos/waahtv-logo.png", url: "https://www.waahtv.com/" },
+  { name: "Upwork", logo: "/logos/upwork-logo.png", url: "https://www.upwork.com/" },
+  { name: "Laurentian University", logo: "/logos/Laurentian_University.png", url: "https://laurentian.ca/" },
 ];
 const certifications = [
   { name: "Google UX Design", logo: "/logos/google-cert.png", title: "Google UX Design Professional Certification" },
@@ -179,17 +179,20 @@ export function Hero() {
             <div className="flex flex-wrap justify-center items-center gap-x-16 gap-y-4 px-4 sm:px-6 lg:px-8">
                 
                 {previousWork.map((logoItem, index) => (
-                    <div 
-                        key={`work-${index}`} 
-                        className="flex justify-center items-center flex-shrink-0 py-2" 
+                    <a
+                        key={`work-${index}`}
+                        href={logoItem.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex justify-center items-center flex-shrink-0 py-2 cursor-pointer transition-transform duration-300 hover:scale-110"
                     >
                         <img
                             src={logoItem.logo}
                             alt={logoItem.name}
                             title={logoItem.name}
-                            className="h-16 w-auto object-contain max-h-16 grayscale opacity-70 transition-opacity duration-300 hover:grayscale-0 hover:opacity-100" 
+                            className="h-16 w-auto object-contain max-h-16 grayscale opacity-70 transition-all duration-300 hover:grayscale-0 hover:opacity-100" 
                         />
-                    </div>
+                    </a>
                 ))}
                 
             </div>
