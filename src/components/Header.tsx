@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X, Zap } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useLocation } from 'react-router-dom';
 
 const navItems = [
   { label: 'Home', href: '#home' },
@@ -12,13 +13,15 @@ const navItems = [
 ];
 
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
-  const headerRef = useRef<HTMLElement>(null);
-  const isMobile = useIsMobile();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+  const headerRef = useRef<HTMLElement>(null);
+  const isMobile = useIsMobile();
+  const location = useLocation();
   
-  const isAtTop = !isScrolled && activeSection === 'home';
+  const isHomePage = location.pathname === '/';
+  const isAtTop = !isScrolled && activeSection === 'home' && isHomePage;
 
   useEffect(() => {
     const handleScroll = () => {
