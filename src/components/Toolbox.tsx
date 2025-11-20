@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Import tool logos from public folder
-const tools = [
+const allTools = [
     { name: 'Figma', logo: '/logos/figma-logo.svg' },
     { name: 'React', logo: '/logos/logo-react.svg' },
     { name: 'GitHub', logo: '/logos/github.png' },
@@ -17,11 +17,15 @@ const tools = [
     { name: 'V0', logo: '/logos/v0.png' },
 ];
 
+// Split into two distinct groups - no overlap
+const row1Tools = allTools.filter((_, index) => index % 2 === 0); // Even indices
+const row2Tools = allTools.filter((_, index) => index % 2 !== 0); // Odd indices
+
 export function Toolbox() {
     return (
-        <section className="py-24 bg-background border-t border-border/40">
-            <div className="section-container">
-                <div className="text-center mb-16">
+        <section className="py-8 bg-secondary border-t border-border/40 overflow-hidden">
+            <div className="max-w-7xl mx-auto px-4">
+                <div className="text-center mb-12">
                     <h2 className="heading mb-6 text-foreground">
                         Toolbox
                     </h2>
@@ -31,22 +35,86 @@ export function Toolbox() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-12 max-w-4xl mx-auto place-items-center">
-                    {tools.map((tool) => (
-                        <div
-                            key={tool.name}
-                            className="flex items-center justify-center w-16 h-16"
-                            title={tool.name}
-                        >
-                            <img
-                                src={tool.logo}
-                                alt={tool.name}
-                                className="w-10 h-10 object-contain grayscale brightness-0 dark:brightness-200 transition-all duration-300 hover:grayscale-0 hover:brightness-100"
-                            />
+                {/* Container with fixed width and fade edges */}
+                <div className="relative max-w-6xl mx-auto">
+                    {/* Fade overlays */}
+                    <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-secondary to-transparent z-10 pointer-events-none" />
+                    <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-secondary to-transparent z-10 pointer-events-none" />
+
+                    {/* First row - scrolling left to right */}
+                    <div className="relative mb-8 overflow-hidden">
+                        <div className="flex animate-scroll-left">
+                            {/* Duplicate the array 3 times for seamless infinite scroll */}
+                            {[...row1Tools, ...row1Tools, ...row1Tools].map((tool, index) => (
+                                <div
+                                    key={`row1-${index}`}
+                                    className="flex-shrink-0 mx-8"
+                                    title={tool.name}
+                                >
+                                    <img
+                                        src={tool.logo}
+                                        alt={tool.name}
+                                        className="w-12 h-12 object-contain grayscale brightness-0 dark:brightness-200 transition-all duration-300 hover:grayscale-0 hover:brightness-100"
+                                    />
+                                </div>
+                            ))}
                         </div>
-                    ))}
+                    </div>
+
+                    {/* Second row - scrolling right to left */}
+                    <div className="relative overflow-hidden">
+                        <div className="flex animate-scroll-right">
+                            {/* Duplicate the array 3 times for seamless infinite scroll */}
+                            {[...row2Tools, ...row2Tools, ...row2Tools].map((tool, index) => (
+                                <div
+                                    key={`row2-${index}`}
+                                    className="flex-shrink-0 mx-8"
+                                    title={tool.name}
+                                >
+                                    <img
+                                        src={tool.logo}
+                                        alt={tool.name}
+                                        className="w-12 h-12 object-contain grayscale brightness-0 dark:brightness-200 transition-all duration-300 hover:grayscale-0 hover:brightness-100"
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <style jsx>{`
+        @keyframes scroll-left {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-33.333%);
+          }
+        }
+
+        @keyframes scroll-right {
+          0% {
+            transform: translateX(-33.333%);
+          }
+          100% {
+            transform: translateX(0);
+          }
+        }
+
+        .animate-scroll-left {
+          animation: scroll-left 30s linear infinite;
+        }
+
+        .animate-scroll-right {
+          animation: scroll-right 30s linear infinite;
+        }
+
+        .animate-scroll-left:hover,
+        .animate-scroll-right:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
         </section>
     );
 }
