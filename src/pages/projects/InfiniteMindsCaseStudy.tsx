@@ -133,22 +133,7 @@ export default function InfiniteMindsCaseStudy() {
 
                     </div>
 
-                    {/* Mockups Grid */}
-                    <div className="mb-12">
-                        <h3 className="text-2xl font-bold mb-6 text-center">Design Mockup Samples: Sharable Work</h3>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            {caseStudyContent.map((item, idx) => (
-                                <div key={idx} className="w-full rounded-xl overflow-hidden shadow-lg border border-border/20 hover:scale-[1.02] transition-transform duration-300">
-                                    <img
-                                        src={item.src}
-                                        alt={item.alt}
-                                        className="w-full h-auto object-cover aspect-[9/16]"
-                                        loading="lazy"
-                                    />
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+
 
                 </div>
             </ScrollArea>
