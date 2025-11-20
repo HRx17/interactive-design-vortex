@@ -70,8 +70,8 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			fontFamily: {
-				sans: ['Inter', 'sans-serif'],
-				display: ['SF Pro Display', 'Inter', 'sans-serif'],
+				sans: ['Jost', 'sans-serif'],
+				display: ['Jost', 'sans-serif'],
 			},
 			keyframes: {
 				'accordion-down': {

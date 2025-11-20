@@ -11,6 +11,7 @@ import { Footer } from '@/components/Footer';
 import { ScrollProgress } from '@/components/ScrollProgress';
 import { Expertise } from '@/components/Expertise';
 import { Endorsements } from '@/components/Endorsements';
+import { Toolbox } from '@/components/Toolbox';
 
 const Index = () => {
   return (
@@ -19,23 +20,25 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        
+
         {/* Key Metrics Showcase */}
 
-        
+
         {/* Work Experience - Diagonal Layout */}
         <DiagonalLayout />
-        
+
         {/* Projects Section with Research/Design/Coding Tabs */}
         <Projects />
 
-
-       
-
         {/* Expertise Section */}
-        <Expertise/>
-        
-        
+        <Expertise />
+
+        {/* Toolbox Section */}
+        <Toolbox />
+
+        {/* Endorsements Section */}
+        <Endorsements />
+
         <Contact />
       </main>
       <Footer />

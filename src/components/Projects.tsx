@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { ResearchCard } from '@/components/ResearchCard';
 import { cn } from '@/lib/utils';
-import { ArrowUpRight, Github, Layout, PlusCircle, Quote } from 'lucide-react'; // Added Quote
+import { ArrowUpRight } from 'lucide-react';
 import { ProjectTypeSwitcher } from './ProjectTypeSwitcher';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
@@ -16,9 +16,9 @@ import { UpcomingProject } from './UpcomingProject';
 
 // --- We must import the local image, just like your old file did ---
 import uxprobeThumbnail from '@/assets/uxprobe-thumbnail.jpg';
-import corkboardImage from '@/assets/corkboard.jpg';
+import infiniteMindsThumbnail from '@/assets/infinite-minds/hero-banner.png';
 
-// --- 1. FEATURED PROJECTS DATA (Unchanged) ---
+// --- 1. FEATURED PROJECTS DATA ---
 const featuredProjects = [
   {
     type: 'design',
@@ -30,6 +30,18 @@ const featuredProjects = [
     tags: ["Full-Stack App", "AI-Powered", "Next.js", "Figma", "UX Design"],
     links: [
       { label: 'View Case Study', url: '/projects/uxprobe', isInternal: true },
+    ],
+  },
+  { // 1. INFINITE MINDS (NEW STRATEGIC PROJECT for Bayer SkillSprint)
+    type: 'design',
+    id: 'infinite-minds',
+    title: 'Infinite Minds: Gamified Learning',
+    description: 'Redesigned core engagement systems (badges, streaks, leaderboards) for a live app and led the design exploration for a new web/tablet interface.',
+    imageUrl: infiniteMindsThumbnail,
+    placeholder: null,
+    tags: ["Gamification", "Retention Design", "UX/UI", "Mobile to Web"],
+    links: [
+      { label: 'View Case Study', url: '/projects/infinite-minds', isInternal: true },
     ],
   },
   {
@@ -97,7 +109,7 @@ const featuredProjects = [
   },
 ];
 
-// --- 2. SECONDARY PROJECTS DATA (Unchanged) ---
+// --- 2. SECONDARY PROJECTS DATA ---
 const secondaryDesignProjects = [
   { id: 'healthyr', component: <HealthyRProject key="healthyR" index={0} /> },
   { id: 'parkease', component: <ParkingAppProject key="parkingApp" index={1} /> },
@@ -109,7 +121,7 @@ const secondaryCodingProjects = [
   { id: 'attendance', component: <AttendanceProject key="attendance" index={0} /> },
 ];
 
-// --- 3. RESEARCH PROJECTS DATA (Unchanged) ---
+// --- 3. RESEARCH PROJECTS DATA ---
 const researchProjects = [
   {
     title: "The Impact of Situationally Induced Impairments and Disabilities (SIIDs) on Task Performance",
@@ -131,23 +143,7 @@ const researchProjects = [
   }
 ];
 
-// --- 4. ENDORSEMENTS DATA (Moved from Endorsements.tsx) ---
-const endorsements = [
-  {
-    name: "Matt Beynon",
-    title: "Chief Product Officer, Tech9",
-    quote: "Haet demonstrated exceptional qualities... approaching every project and task with enthusiasm and determination.",
-    rotation: "lg:-rotate-1" // Subtle rotation
-  },
-  {
-    name: "WaahTV Founder",
-    title: "Founder & CEO, WaahTV",
-    quote: "Working with Haet was an absolute pleasure. His deep understanding of UX principles and ability to translate our vision into intuitive designs exceeded our expectations.",
-    rotation: "lg:rotate-1" // Opposite rotation
-  }
-];
-
-// --- 5. Alternating Project Card Component (Unchanged) ---
+// --- 5. Alternating Project Card Component ---
 interface ProjectCardProps {
   project: (typeof featuredProjects)[0];
   index: number;
@@ -193,39 +189,7 @@ const ProjectCard = ({ project, index, isInView }: ProjectCardProps) => {
   );
 };
 
-// --- 6. NEW "PINBOARD" CARD COMPONENTS ---
-const Thumbtack = () => (
-  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 z-20" >
-    <div className="w-5 h-5 rounded-full bg-red-500 shadow-lg border-2 border-red-700/50">
-      <div className="absolute inset-0.5 rounded-full"></div>
-    </div>
-  </div>
-);
-
-const MinimalEndorsementCard = ({ endorsement }: { endorsement: (typeof endorsements)[0] }) => {
-  return (
-    <div className={cn(
-      "relative flex flex-col items-start gap-4 p-6 rounded-xl h-full",
-      // --- This is the "Pinned Note" style ---
-      "bg-card border border-border/40 shadow-xl", // "Paper" style
-      "transition-all duration-300 hover:shadow-2xl",
-      endorsement.rotation // Applies the -rotate-1 or rotate-1
-    )}>
-      <Thumbtack />
-      <Quote className="w-10 h-10 text-primary/40" />
-      <blockquote className="text-md leading-relaxed text-foreground/90 italic">
-        "{endorsement.quote}"
-      </blockquote>
-      <div className="mt-auto">
-        <p className="font-bold text-foreground">{endorsement.name}</p>
-        <p className="text-sm text-muted-foreground">{endorsement.title}</p>
-      </div>
-    </div>
-  );
-};
-
-
-// --- 7. MAIN PROJECTS COMPONENT (Updated) ---
+// --- 7. MAIN PROJECTS COMPONENT ---
 export function Projects() {
   const { ref: sectionRef, inView: isInView } = useInView({ threshold: 0.1, triggerOnce: true });
   const [activeProjectType, setActiveProjectType] = useState<'design' | 'coding' | 'research'>('design');
@@ -234,16 +198,15 @@ export function Projects() {
 
   return (
     // --- FIX: Section is now 'bg-secondary' (light gray), no image ---
-    <section 
-      id="projects" 
+    <section
+      id="projects"
       ref={sectionRef}
       className="py-16 md:py-24 relative bg-secondary border-t border-border"
     >
       <div className="section-container">
-        
-        {/* Header Title (Unchanged) */}
+
+        {/* Header Title */}
         <div className="max-w-2xl mx-auto mb-16 text-center">
-          {/* ... (title, subtitle... unchanged) ... */}
           <span className={cn("text-sm font-medium px-3 py-1 rounded-full bg-background text-primary inline-block mb-4", "opacity-0 transform translate-y-6 transition-all duration-700", isInView && "opacity-100 translate-y-0")}>
             Featured Work
           </span>
@@ -251,26 +214,25 @@ export function Projects() {
             Recent Projects
           </h2>
           <p className={cn("text-muted-foreground mt-4 max-w-xl mx-auto", "opacity-0 transform translate-y-6 transition-all duration-700 delay-200", isInView && "opacity-100 translate-y-0")}>
-            {activeProjectType === 'research' 
+            {activeProjectType === 'research'
               ? "Academic research projects exploring UX principles, user behavior, and experimental studies."
               : activeProjectType === 'design'
-              ? "UI/UX design projects focusing on user-centered solutions and innovative digital experiences."
-              : "Full-stack applications showcasing technical implementation and coding skills."
+                ? "UI/UX design projects focusing on user-centered solutions and innovative digital experiences."
+                : "Full-stack applications showcasing technical implementation and coding skills."
             }
           </p>
         </div>
-        
-        {/* Project Type Switcher (Unchanged) */}
+
+        {/* Project Type Switcher */}
         <div className={cn("opacity-0 transform translate-y-6 transition-all duration-700 delay-300", isInView && "opacity-100 translate-y-0")}>
-          <ProjectTypeSwitcher 
-            activeType={activeProjectType} 
+          <ProjectTypeSwitcher
+            activeType={activeProjectType}
             onTypeChange={setActiveProjectType}
           />
         </div>
-        
-        {/* --- RENDER LOGIC (Unchanged) --- */}
+
+        {/* --- RENDER LOGIC --- */}
         <div className="mt-16">
-          {/* ... (All your project rendering logic is unchanged) ... */}
           {activeProjectType === 'research' && (
             <div className={cn("grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8", "opacity-0 transform transition-all duration-500", isInView && "opacity-100")}>
               {researchProjects.map((project, index) => (
@@ -313,8 +275,8 @@ export function Projects() {
             </div>
           )}
         </div>
-        
-        {/* "View More" Button (Github/Behance) - (Unchanged) */}
+
+        {/* "View More" Button (Github/Behance) */}
         <div className={cn("mt-16 text-center", "opacity-0 transform translate-y-6 transition-all duration-700 delay-400", isInView && "opacity-100 translate-y-0")}>
           {activeProjectType !== 'research' && (
             <a href={activeProjectType === 'coding' ? "https://github.com/HRx17" : "https://www.behance.net/haetranpariya17"} target="_blank" rel="noopener noreferrer" className="btn-hover inline-flex items-center px-8 py-4 rounded-lg bg-foreground text-background font-semibold hover:bg-foreground/90 transition-all shadow-sm hover:shadow-md">
@@ -325,41 +287,6 @@ export function Projects() {
           )}
         </div>
 
-        {/* --- 8. "PINBOARD" ENDORSEMENT SECTION --- */}
-        {/* This div is the container for the pinboard. */}
-        <div
-          className={cn(
-            "relative pt-16 md:pt-24 mt-16 md:mt-24 border-t border-border",
-            "opacity-0 transform transition-all duration-700 delay-600",
-            isInView && "opacity-100",
-          )}
-          style={{
-            backgroundImage: corkboardImage,
-          }}
-        >
-          {/* --- FIX: This is your new "Pinboard" Dot Grid Background --- */}
-          <div 
-            className="absolute inset-0 w-full h-full -z-10"
-            style={{
-              backgroundImage: "radial-gradient(circle at 1px 1px, hsl(var(--border) / 0.3) 1px, transparent 0)",
-              backgroundSize: "30px 30px", // Smaller dots, closer together
-            }}
-          />
-
-          <h3 className="text-2xl font-bold text-center text-foreground mb-12">
-            What My Colleagues Say
-          </h3>
-          {/* 2-Column Grid for the "Pinned Notes" */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
-            {endorsements.map((endorsement, index) => (
-              <MinimalEndorsementCard 
-                key={index} 
-                endorsement={endorsement} 
-              />
-            ))}
-          </div>
-        </div>
-        
       </div>
     </section>
   );

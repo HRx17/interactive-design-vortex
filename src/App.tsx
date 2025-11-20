@@ -13,6 +13,7 @@ import WeatherAppCaseStudy from "./pages/projects/WeatherAppCaseStudy";
 import FoodZapCaseStudy from "./pages/projects/FoodZapCaseStudy";
 import UXProbeCaseStudy from "./pages/projects/UXProbeCaseStudy";
 import DailygramCaseStudy from "./pages/projects/DailygramCaseStudy";
+import InfiniteMindsCaseStudy from "./pages/projects/InfiniteMindsCaseStudy";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/projects/foodzap" element={<FoodZapCaseStudy />} />
           <Route path="/projects/uxprobe" element={<UXProbeCaseStudy />} />
           <Route path="/projects/dailygram" element={<DailygramCaseStudy />} />
+          <Route path="/projects/infinite-minds" element={<InfiniteMindsCaseStudy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
