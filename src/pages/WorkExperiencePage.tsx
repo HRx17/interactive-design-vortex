@@ -12,7 +12,7 @@ const WorkExperiencePage = () => {
       <Header />
       <main className="pt-20">
         <DiagonalLayout />
-        <Endorsements />
+        <Endorsements className="bg-zinc-950 text-white border-t-zinc-800" />
       </main>
       <Footer />
     </div>

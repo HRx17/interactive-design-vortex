@@ -23,7 +23,7 @@ const row2Tools = allTools.filter((_, index) => index % 2 !== 0); // Odd indices
 
 export function Toolbox() {
     return (
-        <section className="py-8 bg-secondary border-t border-border/40 overflow-hidden">
+        <section className="py-16 bg-secondary border-t border-border/40 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4">
                 <div className="text-center mb-12">
                     <h2 className="heading mb-6 text-foreground">

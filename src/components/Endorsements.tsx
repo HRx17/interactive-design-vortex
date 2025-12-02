@@ -76,7 +76,7 @@ const EndorsementCard = ({ endorsement, isExpanded, onToggleExpand, rotation }: 
               "{endorsement.quote}"
             </blockquote>
           </div>
-          
+
           {/* Key Highlights (Unchanged) */}
           <div className="mb-6">
             <h4 className="text-sm font-semibold text-muted-foreground mb-3 uppercase tracking-wider">
@@ -84,7 +84,7 @@ const EndorsementCard = ({ endorsement, isExpanded, onToggleExpand, rotation }: 
             </h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {endorsement.highlights.map((highlight: string, i: number) => (
-                <div 
+                <div
                   key={i}
                   className="flex items-start gap-2 group/item"
                 >
@@ -121,19 +121,19 @@ const EndorsementCard = ({ endorsement, isExpanded, onToggleExpand, rotation }: 
 
 
 // --- Main Endorsements Component (Refactored to "Pinboard") ---
-export function Endorsements() {
+export function Endorsements({ className }: { className?: string }) {
   const { ref: sectionRef, inView: isInView } = useInView({ threshold: 0.1, triggerOnce: true });
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
 
   return (
     // --- FIX 1: 'bg-background' (white) and 'border-t' for the "stripe" ---
-    <section 
-      ref={sectionRef} 
-      id="endorsements" 
-      className="relative overflow-hidden bg-background border-t border-border" 
+    <section
+      ref={sectionRef}
+      id="endorsements"
+      className={cn("relative overflow-hidden bg-background border-t border-border", className)}
     >
       {/* --- FIX 2: This is your new "Pinboard" Dot Grid Background --- */}
-      <div 
+      <div
         className="absolute inset-0 w-full h-full -z-10"
         style={{
           backgroundImage: "radial-gradient(circle at 1px 1px, hsl(var(--border)) 1px, transparent 0)",
@@ -141,13 +141,13 @@ export function Endorsements() {
           opacity: 0.4,
         }}
       />
-      
+
       {/* Use the 'section-container' to constrain the content */}
       <div className="section-container">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className={`text-center mb-16 transition-all duration-1000 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            
+
             <span className={cn(
               "text-sm font-medium px-3 py-1 rounded-full bg-secondary text-primary inline-block mb-4",
               "transition-all duration-700",
@@ -156,7 +156,7 @@ export function Endorsements() {
               Testimonials
             </span>
 
-            <h2 className="heading mb-4 text-foreground">
+            <h2 className="heading mb-4">
               Endorsements
             </h2>
             <p className="subheading max-w-2xl mx-auto text-muted-foreground">
@@ -169,12 +169,11 @@ export function Endorsements() {
             {endorsements.map((endorsement, index) => (
               <div
                 key={index}
-                className={`h-full transition-all duration-700 ${
-                  isInView ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-10 scale-95'
-                }`}
+                className={`h-full transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-10 scale-95'
+                  }`}
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
-                <EndorsementCard 
+                <EndorsementCard
                   endorsement={endorsement}
                   isExpanded={expandedCard === index}
                   onToggleExpand={() => setExpandedCard(expandedCard === index ? null : index)}

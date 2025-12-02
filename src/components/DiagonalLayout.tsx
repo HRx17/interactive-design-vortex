@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { ArrowUpRight, Download, Calendar, MapPin } from 'lucide-react';
-import { useInView } from 'react-intersection-observer'; 
+import { useInView } from 'react-intersection-observer';
 
 // --- DATA: Unchanged ---
 const experiences = [
@@ -107,7 +107,7 @@ const ExperienceCard = ({ title, company, companyLogo, period, location, descrip
                 <p className="text-primary font-medium">{company}</p>
               </div>
             </div>
-            
+
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 text-sm text-muted-foreground">
               <div className="flex items-center gap-1">
                 <Calendar className="w-3 h-3" />
@@ -150,7 +150,7 @@ const ExperienceCard = ({ title, company, companyLogo, period, location, descrip
 
 
 // --- Main WorkExperience Component (or DiagonalLayout) ---
-export function DiagonalLayout() { // Or WorkExperience, matching your file name
+export function DiagonalLayout({ className }: { className?: string }) { // Or WorkExperience, matching your file name
   const [activeCompany, setActiveCompany] = useState(experiences[0].company);
   const { ref: sectionRef, inView: sectionInView } = useInView({ threshold: 0.1, triggerOnce: true });
 
@@ -160,17 +160,17 @@ export function DiagonalLayout() { // Or WorkExperience, matching your file name
 
   return (
     // This section is now 'bg-background' (white)
-    <section 
-      id="work-experience" 
-      ref={sectionRef} 
-      className="relative bg-background"
+    <section
+      id="work-experience"
+      ref={sectionRef}
+      className={cn("relative bg-background", className)}
     >
       <div className="section-container">
-        
+
         {/* Header - Unchanged */}
         <div className="max-w-2xl mx-auto mb-16 text-center">
           <span className={cn(
-            "text-sm font-medium px-3 py-1 rounded-full bg-secondary text-primary inline-block mb-4", 
+            "text-sm font-medium px-3 py-1 rounded-full bg-secondary text-primary inline-block mb-4",
             "opacity-0 transform transition-all duration-700",
             sectionInView && "opacity-100 bounce-in"
           )}>
@@ -194,7 +194,7 @@ export function DiagonalLayout() { // Or WorkExperience, matching your file name
 
         {/* --- 2-Column Sticky Layout (Unchanged) --- */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16">
-          
+
           {/* 1. LEFT COLUMN (Sticky List) */}
           <div className="lg:col-span-1 lg:sticky top-24 h-fit hidden lg:block">
             <div className="relative">
@@ -206,12 +206,12 @@ export function DiagonalLayout() { // Or WorkExperience, matching your file name
               <ul className="relative flex flex-col gap-0">
                 {experiences.map((exp) => (
                   <li key={exp.company} className="relative flex items-center gap-4">
-                      <div className={cn(
-                        "w-4 h-4 rounded-full border-4 z-10 transition-all duration-300",
-                        activeCompany === exp.company 
-                          ? "bg-primary border-background" 
-                          : "bg-border border-background" 
-                      )} />
+                    <div className={cn(
+                      "w-4 h-4 rounded-full border-4 z-10 transition-all duration-300",
+                      activeCompany === exp.company
+                        ? "bg-primary border-background"
+                        : "bg-border border-background"
+                    )} />
                     <a
                       href={`#exp-${exp.company.replace(/\s+/g, '-')}`}
                       onClick={() => setActiveCompany(exp.company)}
@@ -222,10 +222,10 @@ export function DiagonalLayout() { // Or WorkExperience, matching your file name
                           : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
                       )}
                     >
-                      <img 
-                        src={exp.companyLogo} 
-                        alt={exp.company} 
-                        className="w-6 h-6 object-contain" 
+                      <img
+                        src={exp.companyLogo}
+                        alt={exp.company}
+                        className="w-6 h-6 object-contain"
                       />
                       <span>{exp.company}</span>
                     </a>
@@ -259,7 +259,7 @@ export function DiagonalLayout() { // Or WorkExperience, matching your file name
           "opacity-0 transform transition-all duration-700 delay-600",
           sectionInView && "opacity-100 scale-up"
         )}>
-          <a 
+          <a
             href="/resume.pdf"
             download
             className="btn-magnetic inline-flex items-center px-8 py-4 rounded-lg bg-foreground text-background font-semibold gap-2 shadow-lg hover:bg-foreground/90 transition-all group"

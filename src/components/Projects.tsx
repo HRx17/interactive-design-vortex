@@ -6,7 +6,7 @@ import { ProjectTypeSwitcher } from './ProjectTypeSwitcher';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 
-// --- Re-importing your project components for the "More Work" grid ---
+// Project components for "More Work"
 import { HealthyRProject } from './HealthyRProject';
 import { FoodZapProject } from './FoodZapProject';
 import { WeatherAppProject } from './WeatherAppProject';
@@ -14,7 +14,7 @@ import { ParkingAppProject } from './ParkingAppProject';
 import { AttendanceProject } from './AttendanceProject';
 import { UpcomingProject } from './UpcomingProject';
 
-// --- We must import the local image, just like your old file did ---
+// Images
 import uxprobeThumbnail from '@/assets/uxprobe-thumbnail.jpg';
 import infiniteMindsThumbnail from '@/assets/infinite-minds/hero-banner.png';
 
@@ -32,10 +32,11 @@ const featuredProjects = [
       { label: 'View Case Study', url: '/projects/uxprobe', isInternal: true },
     ],
   },
-  { // 1. INFINITE MINDS (NEW STRATEGIC PROJECT for Bayer SkillSprint)
+  {
     type: 'design',
     id: 'infinite-minds',
     title: 'Infinite Minds: Gamified Learning',
+    role: "Product Design - Tech9",
     description: 'Redesigned core engagement systems (badges, streaks, leaderboards) for a live app and led the design exploration for a new web/tablet interface.',
     imageUrl: infiniteMindsThumbnail,
     placeholder: null,
@@ -161,7 +162,9 @@ const ProjectCard = ({ project, index, isInView }: ProjectCardProps) => {
         )}
       </div>
       <div className={cn("flex flex-col", isEven ? "md:order-2" : "md:order-1")}>
-        <span className="text-sm font-semibold text-primary mb-2 uppercase tracking-wider">{project.type === 'design' ? 'UI/UX Design' : 'Full-Stack Development'}</span>
+        <span className="text-sm font-semibold text-primary mb-2 uppercase tracking-wider">
+          {project.role || (project.type === 'design' ? 'UI/UX Design' : 'Full-Stack Development')}
+        </span>
         <h3 className="text-3xl font-bold text-foreground mb-4">{project.title}</h3>
         <p className="text-muted-foreground text-lg mb-6">{project.description}</p>
         <div className="flex flex-wrap gap-2 mb-8">
@@ -197,17 +200,16 @@ export function Projects() {
   const activeProjects = featuredProjects.filter(p => p.type === activeProjectType);
 
   return (
-    // --- FIX: Section is now 'bg-secondary' (light gray), no image ---
     <section
       id="projects"
       ref={sectionRef}
-      className="py-16 md:py-24 relative bg-secondary border-t border-border"
+      className="py-16 md:py-24 relative bg-background border-t border-border"
     >
       <div className="section-container">
 
         {/* Header Title */}
         <div className="max-w-2xl mx-auto mb-16 text-center">
-          <span className={cn("text-sm font-medium px-3 py-1 rounded-full bg-background text-primary inline-block mb-4", "opacity-0 transform translate-y-6 transition-all duration-700", isInView && "opacity-100 translate-y-0")}>
+          <span className={cn("text-sm font-medium px-3 py-1 rounded-full bg-secondary text-primary inline-block mb-4", "opacity-0 transform translate-y-6 transition-all duration-700", isInView && "opacity-100 translate-y-0")}>
             Featured Work
           </span>
           <h2 className={cn("heading text-foreground", "opacity-0 transform translate-y-6 transition-all duration-700 delay-100", isInView && "opacity-100 translate-y-0")}>
@@ -240,54 +242,46 @@ export function Projects() {
               ))}
             </div>
           )}
-          {activeProjectType === 'design' && (
+
+          {(activeProjectType === 'design' || activeProjectType === 'coding') && (
             <div className="flex flex-col gap-16 md:gap-24">
-              {activeProjects.map((project, index) => (
-                <ProjectCard key={project.id} project={project} index={index} isInView={isInView} />
-              ))}
-              <h3 className={cn("text-2xl font-bold text-center text-foreground pt-12 border-t border-border", "opacity-0 transform transition-all duration-700 delay-400", isInView && "opacity-100")}>
-                More Design Work
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {secondaryDesignProjects.map((project, index) => (
-                  <div key={project.id} className="opacity-0 transform translate-y-8" style={{ animation: `fade-slide 0.5s ease-out ${index * 100}ms forwards` }}>
-                    {project.component}
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-          {activeProjectType === 'coding' && (
-            <div className="flex flex-col gap-16 md:gap-24">
-              {activeProjects.map((project, index) => (
-                <ProjectCard key={project.id} project={project} index={index} isInView={isInView} />
-              ))}
-              <h3 className={cn("text-2xl font-bold text-center text-foreground pt-12 border-t border-border", "opacity-0 transform transition-all duration-700 delay-400", isInView && "opacity-100")}>
-                More Coding Work
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {secondaryCodingProjects.map((project, index) => (
-                  <div key={project.id} className="opacity-0 transform translate-y-8" style={{ animation: `fade-slide 0.5s ease-out ${index * 100}ms forwards` }}>
-                    {project.component}
-                  </div>
+              {/* Featured Projects - White Background */}
+              <div className="flex flex-col gap-16 md:gap-24">
+                {activeProjects.map((project, index) => (
+                  <ProjectCard key={project.id} project={project} index={index} isInView={isInView} />
                 ))}
               </div>
             </div>
           )}
         </div>
-
-        {/* "View More" Button (Github/Behance) */}
-        <div className={cn("mt-16 text-center", "opacity-0 transform translate-y-6 transition-all duration-700 delay-400", isInView && "opacity-100 translate-y-0")}>
-          {activeProjectType !== 'research' && (
-            <a href={activeProjectType === 'coding' ? "https://github.com/HRx17" : "https://www.behance.net/haetranpariya17"} target="_blank" rel="noopener noreferrer" className="btn-hover inline-flex items-center px-8 py-4 rounded-lg bg-foreground text-background font-semibold hover:bg-foreground/90 transition-all shadow-sm hover:shadow-md">
-              <span className="relative z-10">
-                {activeProjectType === 'coding' ? "View more projects on GitHub" : "View full portfolio on Behance"}
-              </span>
-            </a>
-          )}
-        </div>
-
       </div>
+
+      {/* --- SECONDARY PROJECTS SECTION (Gray Background) --- */}
+      {(activeProjectType === 'design' || activeProjectType === 'coding') && (
+        <div className="w-full bg-secondary py-16 md:py-24 mt-8 md:mt-12 border-t border-border">
+          <div className="section-container">
+            <h3 className={cn("text-2xl font-bold text-center text-foreground mb-12", "opacity-0 transform transition-all duration-700", isInView && "opacity-100")}>
+              {activeProjectType === 'design' ? 'More Design Work' : 'More Coding Work'}
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {(activeProjectType === 'design' ? secondaryDesignProjects : secondaryCodingProjects).map((project, index) => (
+                <div key={project.id} className="opacity-0 transform translate-y-8" style={{ animation: `fade-slide 0.5s ease-out ${index * 100}ms forwards` }}>
+                  {project.component}
+                </div>
+              ))}
+            </div>
+
+            {/* "View More" Button */}
+            <div className={cn("mt-16 text-center", "opacity-0 transform translate-y-6 transition-all duration-700 delay-400", isInView && "opacity-100 translate-y-0")}>
+              <a href={activeProjectType === 'coding' ? "https://github.com/HRx17" : "https://www.behance.net/haetranpariya17"} target="_blank" rel="noopener noreferrer" className="btn-hover inline-flex items-center px-8 py-4 rounded-lg bg-foreground text-background font-semibold hover:bg-foreground/90 transition-all shadow-sm hover:shadow-md">
+                <span className="relative z-10">
+                  {activeProjectType === 'coding' ? "View more projects on GitHub" : "View full portfolio on Behance"}
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

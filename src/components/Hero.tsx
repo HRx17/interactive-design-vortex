@@ -31,31 +31,31 @@ const metrics = [
 
 export function Hero() {
   const sentenceRef = useRef<HTMLDivElement>(null);
-  
+
   // Cleanup/Placeholders for other logic
   useEffect(() => { /* ... */ }, []);
   useEffect(() => { /* ... */ }, []);
-  
+
   return (
     // 1. FULL-WIDTH WRAPPER (GRADIENT)
     <section
       id="home"
-      className="flex flex-col justify-start relative overflow-hidden pt-44 text-white" 
+      className="flex flex-col justify-start relative overflow-hidden pt-44 text-white"
       style={{
         background: 'linear-gradient(225deg, #434343 17%, #050505 100%)',
       }}
     >
       {/* --- Background Elements --- */}
-      <div aria-hidden="true" className="absolute inset-0 w-full h-full -z-10" /> 
+      <div aria-hidden="true" className="absolute inset-0 w-full h-full -z-10" />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* 2. HERO CONTENT GRID */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-center pt-8 pb-32">
-          
+
           {/* --- LEFT COLUMN (Text Content) --- */}
           <div className="md:col-span-3 flex flex-col items-center text-center md:items-start md:text-left">
-              <p className="text-xl text-gray-400 mb-2">Hi there! I'm</p>
+            <p className="text-xl text-gray-400 mb-2">Hi there! I'm</p>
 
             <h1 ref={sentenceRef} className="heading mb-4 text-white text-5xl md:text-6xl overflow-visible font-bold leading-tight">
               <div className="reveal-text overflow-visible">
@@ -68,7 +68,7 @@ export function Hero() {
                 <span className="inline-block">Product Designer</span>
               </div>
             </h1>
-            
+
             <p className="text-lg md:text-xl text-gray-400 mb-8 leading-relaxed max-w-lg">
               Creating intentional and impactful digital experiences. I specialize in GenUI, leveraging generative AI to enhance and accelerate the design process.
             </p>
@@ -76,78 +76,78 @@ export function Hero() {
 
           {/* --- 🚨 RESTRUCTURED RIGHT COLUMN (Fixed Order) --- */}
           <div className="md:col-span-2 flex flex-col items-center justify-center md:items-start md:justify-start md:pt-4">
-            
+
             {/* 🟢 Tier 1: Action Buttons & Social Links (Moved to Top) */}
             <div className="flex gap-3 mb-10 w-full justify-center md:justify-start order-1">
-                {/* Button 1: Resume */}
-                <a
-                  href="/resume.pdf"
-                  download
-                  className="inline-flex items-center justify-center px-4 py-3 bg-white text-black font-semibold rounded-lg transition-all duration-300 hover:bg-gray-200 shadow-sm gap-2"
-                >
-                  Download Resume
-                  <Download className="h-4 w-4" />
-                </a>
-                
-                {/* Button 2: View Projects */}
-                <a
-                  href="#projects"
-                  className="inline-flex items-center justify-center px-4 py-3 border-2 border-white text-white font-semibold rounded-lg transition-all duration-300 hover:bg-white hover:text-black"
-                >
-                  View Projects
-                </a>
-                
-                {/* Social Links placed next to View Projects button */}
-                
+              {/* Button 1: Resume */}
+              <a
+                href="/resume.pdf"
+                download
+                className="inline-flex items-center justify-center px-4 py-3 bg-white text-black font-semibold rounded-lg transition-all duration-300 hover:bg-gray-200 shadow-sm gap-2"
+              >
+                Download Resume
+                <Download className="h-4 w-4" />
+              </a>
+
+              {/* Button 2: View Projects */}
+              <a
+                href="#projects"
+                className="inline-flex items-center justify-center px-4 py-3 border-2 border-white text-white font-semibold rounded-lg transition-all duration-300 hover:bg-white hover:text-black"
+              >
+                View Projects
+              </a>
+
+              {/* Social Links placed next to View Projects button */}
+
             </div>
 
             {/* 🟢 Tier 2: Metrics Static Grid (Moved to Second) */}
             <div className="w-full max-w-md order-2 mb-10">
-                <div className="grid grid-cols-2 gap-x-4 gap-y-6 justify-center md:justify-start">
-                    {metrics.map((metric, index) => {
-                        const Icon = metric.icon;
-                        return (
-                            <div 
-                                key={index} 
-                                className="flex items-start gap-2 flex-col flex-shrink-0"
-                            >
-                                <div className="flex items-center text-gray-400">
-                                    <Icon className="h-4 w-4 mr-1" />
-                                    <span className="text-sm uppercase tracking-wider">{metric.label}</span>
-                                </div>
-                                <span className="text-2xl font-bold text-white mt-1">{metric.value}</span>
-                            </div>
-                        );
-                    })}
-                </div>
+              <div className="grid grid-cols-2 gap-x-4 gap-y-6 justify-center md:justify-start">
+                {metrics.map((metric, index) => {
+                  const Icon = metric.icon;
+                  return (
+                    <div
+                      key={index}
+                      className="flex items-start gap-2 flex-col flex-shrink-0"
+                    >
+                      <div className="flex items-center text-gray-400">
+                        <Icon className="h-4 w-4 mr-1" />
+                        <span className="text-sm uppercase tracking-wider">{metric.label}</span>
+                      </div>
+                      <span className="text-2xl font-bold text-white mt-1">{metric.value}</span>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
-            
+
             {/* 🟢 Tier 3: CERTIFIED BY (Aligned and Divided) */}
             <div className="w-96 max-w-md order-3 mt-4">
-                {/* 🚨 CERTIFIED BY FIX: Centered text with horizontal lines */}
-                <div className="flex items-center justify-center mb-6">
-                    <hr className="w-full border-t border-gray-600/50 mr-4" />
-                    <span className="text-sm font-semibold text-gray-400 uppercase tracking-wider flex-shrink-0">
-                        Certified by
-                    </span>
-                    <hr className="w-full border-t border-gray-600/50 ml-4" />
-                </div>
-                
-                <div className="flex flex-wrap gap-x-6 justify-center md:justify-center">
-                    {certifications.map((logoItem, index) => (
-                        <div 
-                            key={`cert-hero-${index}`} 
-                            className="flex justify-center items-center py-2 px-2" 
-                        >
-                            <img
-                                src={logoItem.logo}
-                                alt={logoItem.name}
-                                title={logoItem.title || logoItem.name}
-                                className="h-12 w-auto object-contain max-h-12 opacity-80 transition-opacity duration-300 hover:opacity-100" 
-                            />
-                        </div>
-                    ))}
-                </div>
+              {/* 🚨 CERTIFIED BY FIX: Centered text with horizontal lines */}
+              <div className="flex items-center justify-center mb-6">
+                <hr className="w-full border-t border-gray-600/50 mr-4" />
+                <span className="text-sm font-semibold text-gray-400 uppercase tracking-wider flex-shrink-0">
+                  Certified by
+                </span>
+                <hr className="w-full border-t border-gray-600/50 ml-4" />
+              </div>
+
+              <div className="flex flex-wrap gap-x-6 justify-center md:justify-center">
+                {certifications.map((logoItem, index) => (
+                  <div
+                    key={`cert-hero-${index}`}
+                    className="flex justify-center items-center py-2 px-2"
+                  >
+                    <img
+                      src={logoItem.logo}
+                      alt={logoItem.name}
+                      title={logoItem.title || logoItem.name}
+                      className="h-12 w-auto object-contain max-h-12 opacity-80 transition-opacity duration-300 hover:opacity-100"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
 
           </div>
@@ -156,45 +156,45 @@ export function Hero() {
       </div>
 
       {/* 3. CONSOLIDATED LOGO BAR (LIGHT GRAY SECTION) - ONLY PREVIOUS WORK */}
-      <div 
+      <div
         style={{ backgroundColor: '#F2F2F2' }}
-        className="w-full mx-auto py-10 border-t border-gray-700" 
+        className="w-full mx-auto py-10 border-t border-gray-700"
       >
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            {/* LINE 1: CATEGORY TITLE (ONLY PREVIOUSLY AT) - Left Aligned */}
-            <div className="flex flex-col sm:flex-row justify-center items-center mb-6 px-0">
-              <hr className="w-96 border-t border-gray-600/50 mr-4" />
-                <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider text-center sm:text-left mb-2 sm:mb-0">
-                    Previously at 
-                </span>
-                <hr className="w-96 border-t border-gray-600/50 mr-4" />
-            </div>
+
+          {/* LINE 1: CATEGORY TITLE (ONLY PREVIOUSLY AT) - Left Aligned */}
+          <div className="flex flex-col sm:flex-row justify-center items-center mb-6 px-0">
+            <hr className="w-96 border-t border-gray-600/50 mr-4" />
+            <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider text-center sm:text-left mb-2 sm:mb-0">
+              Previously at
+            </span>
+            <hr className="w-96 border-t border-gray-600/50 mr-4" />
+          </div>
         </div>
-        
+
         {/* 🚨 LINE 2: ALL LOGOS (ONLY PREVIOUS WORK) - Centered and Spaced */}
         <div className="w-full max-w-7xl mx-auto">
-            {/* 🚨 SPACING FIX: Using flex-wrap and justify-center with larger gap */}
-            <div className="flex flex-wrap justify-center items-center gap-x-16 gap-y-4 px-4 sm:px-6 lg:px-8">
-                
-                {previousWork.map((logoItem, index) => (
-                    <a
-                        key={`work-${index}`}
-                        href={logoItem.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex justify-center items-center flex-shrink-0 py-2 cursor-pointer transition-transform duration-300 hover:scale-110"
-                    >
-                        <img
-                            src={logoItem.logo}
-                            alt={logoItem.name}
-                            title={logoItem.name}
-                            className="h-16 w-auto object-contain max-h-16 grayscale opacity-70 transition-all duration-300 hover:grayscale-0 hover:opacity-100" 
-                        />
-                    </a>
-                ))}
-                
-            </div>
+          {/* 🚨 SPACING FIX: Using flex-wrap and justify-center with larger gap */}
+          <div className="flex flex-wrap justify-center items-center gap-x-16 gap-y-4 px-4 sm:px-6 lg:px-8">
+
+            {previousWork.map((logoItem, index) => (
+              <a
+                key={`work-${index}`}
+                href={logoItem.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex justify-center items-center flex-shrink-0 py-2 cursor-pointer transition-transform duration-300 hover:scale-110"
+              >
+                <img
+                  src={logoItem.logo}
+                  alt={logoItem.name}
+                  title={logoItem.name}
+                  className="h-16 w-auto object-contain max-h-16 grayscale opacity-70 transition-all duration-300 hover:grayscale-0 hover:opacity-100"
+                />
+              </a>
+            ))}
+
+          </div>
         </div>
       </div>
       {/* End of Logo Bar */}

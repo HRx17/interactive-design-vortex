@@ -20,6 +20,7 @@ import { UpcomingProject } from '@/components/UpcomingProject';
 // Images
 import uxprobeThumbnail from '@/assets/uxprobe-thumbnail.jpg';
 import infiniteMindsThumbnail from '@/assets/infinite-minds/hero-banner.png';
+import projectsHero from '@/assets/projects-hero-light.png';
 
 // Featured Projects Data
 const featuredProjects = [
@@ -36,6 +37,7 @@ const featuredProjects = [
     type: 'design',
     id: 'infinite-minds',
     title: 'Infinite Minds: Gamified Learning',
+    role: "Product Design - Tech9",
     description: 'Redesigned core engagement systems (badges, streaks, leaderboards) for a live app and led the design exploration for a new web/tablet interface.',
     imageUrl: infiniteMindsThumbnail,
     tags: ["Gamification", "Retention Design", "UX/UI", "Mobile to Web"],
@@ -145,21 +147,21 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       {/* Image */}
       <div className="relative aspect-[16/10] overflow-hidden">
         {project.imageUrl ? (
-          <img 
-            src={project.imageUrl as string} 
-            alt={project.title} 
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+          <img
+            src={project.imageUrl as string}
+            alt={project.title}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
           project.placeholder
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
-      
+
       {/* Content */}
       <div className="p-6">
         <span className="text-xs font-semibold text-primary uppercase tracking-wider">
-          {project.type === 'design' ? 'UI/UX Design' : 'Full-Stack Development'}
+          {project.role || (project.type === 'design' ? 'UI/UX Design' : 'Full-Stack Development')}
         </span>
         <h3 className="text-xl font-bold text-foreground mt-2 mb-3 group-hover:text-primary transition-colors">
           {project.title}
@@ -167,7 +169,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
         <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
           {project.description}
         </p>
-        
+
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-4">
           {project.tags.slice(0, 3).map(tag => (
@@ -176,25 +178,25 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
             </span>
           ))}
         </div>
-        
+
         {/* Links */}
         <div className="flex gap-3">
           {project.links.map(link => (
             link.isInternal ? (
-              <Link 
-                key={link.label} 
-                to={link.url} 
+              <Link
+                key={link.label}
+                to={link.url}
                 className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground hover:text-primary transition-colors"
               >
                 {link.label}
                 <ArrowUpRight className="h-4 w-4" />
               </Link>
             ) : (
-              <a 
-                key={link.label} 
-                href={link.url} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                key={link.label}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground hover:text-primary transition-colors"
               >
                 {link.label}
@@ -211,7 +213,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 const ProjectsPage = () => {
   const { ref: sectionRef, inView: isInView } = useInView({ threshold: 0.05, triggerOnce: true });
   const [activeProjectType, setActiveProjectType] = useState<'design' | 'coding' | 'research'>('design');
-  
+
   const activeProjects = featuredProjects.filter(p => p.type === activeProjectType);
   const secondaryProjects = activeProjectType === 'design' ? secondaryDesignProjects : secondaryCodingProjects;
 
@@ -219,41 +221,42 @@ const ProjectsPage = () => {
     <div className="relative min-h-screen bg-background">
       <ScrollProgress />
       <Header />
-      <main className="pt-24 pb-16" ref={sectionRef}>
-        <div className="section-container">
-          {/* Header */}
-          <div className="max-w-3xl mx-auto mb-12 text-center">
-            <span className={cn(
-              "text-sm font-medium px-3 py-1 rounded-full bg-secondary text-primary inline-block mb-4",
-              "opacity-0 transform translate-y-6 transition-all duration-700",
-              isInView && "opacity-100 translate-y-0"
-            )}>
-              Portfolio
-            </span>
-            <h1 className={cn(
-              "text-4xl md:text-5xl font-bold text-foreground mb-4",
-              "opacity-0 transform translate-y-6 transition-all duration-700 delay-100",
-              isInView && "opacity-100 translate-y-0"
-            )}>
-              All Projects
-            </h1>
-            <p className={cn(
-              "text-lg text-muted-foreground",
-              "opacity-0 transform translate-y-6 transition-all duration-700 delay-200",
-              isInView && "opacity-100 translate-y-0"
-            )}>
-              {activeProjectType === 'research'
-                ? "Academic research projects exploring UX principles, user behavior, and experimental studies."
-                : activeProjectType === 'design'
-                  ? "UI/UX design projects focusing on user-centered solutions and innovative digital experiences."
-                  : "Full-stack applications showcasing technical implementation and coding skills."
-              }
-            </p>
-          </div>
 
+      {/* Hero Section with Full Width Background */}
+      <div className="relative w-full h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={projectsHero}
+            alt="UI/UX Design"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-background/80 backdrop-blur-[2px]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
+        </div>
+
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
+          <span className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 backdrop-blur-md border border-primary/20 animate-fade-in">
+            Portfolio
+          </span>
+          <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 tracking-tight animate-fade-in animation-delay-100">
+            All Projects
+          </h1>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in animation-delay-200">
+            {activeProjectType === 'research'
+              ? "Academic research projects exploring UX principles, user behavior, and experimental studies."
+              : activeProjectType === 'design'
+                ? "UI/UX design projects focusing on user-centered solutions and innovative digital experiences."
+                : "Full-stack applications showcasing technical implementation and coding skills."
+            }
+          </p>
+        </div>
+      </div>
+
+      <main className="pb-16" ref={sectionRef}>
+        <div className="section-container">
           {/* Project Type Switcher */}
           <div className={cn(
-            "mb-12",
+            "mb-12 -mt-8 relative z-20",
             "opacity-0 transform translate-y-6 transition-all duration-700 delay-300",
             isInView && "opacity-100 translate-y-0"
           )}>
@@ -304,10 +307,10 @@ const ProjectsPage = () => {
           {/* External Links */}
           {activeProjectType !== 'research' && (
             <div className="mt-16 text-center">
-              <a 
-                href={activeProjectType === 'coding' ? "https://github.com/HRx17" : "https://www.behance.net/haetranpariya17"} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href={activeProjectType === 'coding' ? "https://github.com/HRx17" : "https://www.behance.net/haetranpariya17"}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-foreground text-background font-semibold hover:bg-foreground/90 transition-all shadow-sm hover:shadow-md"
               >
                 {activeProjectType === 'coding' ? "View more on GitHub" : "View full portfolio on Behance"}

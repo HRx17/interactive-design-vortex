@@ -24,8 +24,7 @@ const Index = () => {
         {/* Key Metrics Showcase */}
 
 
-        {/* Work Experience - Diagonal Layout */}
-        <DiagonalLayout />
+
 
         {/* Projects Section with Research/Design/Coding Tabs */}
         <Projects />
