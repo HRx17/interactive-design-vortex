@@ -2,14 +2,14 @@ import React, { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const navItems = [
-  { label: 'Home', href: '#home' },
-  { label: 'Work Experience', href: '#work-experience' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'About', href: '#about' },
-  { label: 'Contact', href: '#contact' }
+  { label: 'Home', href: '/', isRoute: true },
+  { label: 'Work Experience', href: '/work-experience', isRoute: true },
+  { label: 'Projects', href: '/projects', isRoute: true },
+  { label: 'About', href: '/about', isRoute: true },
+  { label: 'Contact', href: '#contact', isRoute: false }
 ];
 
 export function Header() {
@@ -75,8 +75,8 @@ export function Header() {
       )}
     >
       <div className="max-w-7xl h-full mx-auto flex items-center justify-between">
-        <a 
-          href="#home" 
+        <Link 
+          to="/" 
           className={cn(
             "font-display text-base md:text-lg font-bold relative group cursor-magnetic flex items-center gap-2", 
             textColorClass
@@ -92,35 +92,46 @@ export function Header() {
             "absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full",
             underlineColorClass
           )}></span>
-        </a>
+        </Link>
   
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          {navItems.map(item => (
-            <a 
-              key={item.href}
-              href={item.href}
-              className={cn(
-                "relative py-2 px-3 font-medium text-sm transition-all duration-300 cursor-magnetic rounded-lg group",
-                activeSection === item.href.substring(1) 
-                  ? textColorClass
-                  : cn(mutedTextColorClass, isAtTop ? "hover:text-white" : "hover:text-foreground")
-              )}
-            >
-              <span className="relative z-10 whitespace-nowrap">{item.label}</span>
-              <span 
+          {navItems.map(item => {
+            const isActive = item.isRoute 
+              ? location.pathname === item.href 
+              : false;
+            
+            const NavElement = item.isRoute ? Link : 'a';
+            const navProps = item.isRoute 
+              ? { to: item.href } 
+              : { href: item.href };
+            
+            return (
+              <NavElement 
+                key={item.href}
+                {...navProps as any}
                 className={cn(
-                  "absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 transition-all duration-300",
-                  underlineColorClass,
-                  activeSection === item.href.substring(1) ? "w-4/5" : "w-0 group-hover:w-4/5"
+                  "relative py-2 px-3 font-medium text-sm transition-all duration-300 cursor-magnetic rounded-lg group",
+                  isActive
+                    ? textColorClass
+                    : cn(mutedTextColorClass, isAtTop ? "hover:text-white" : "hover:text-foreground")
                 )}
-              ></span>
-              <div className={cn(
-                "absolute inset-0 rounded-lg opacity-0 group-hover:opacity-50 transition-opacity duration-300",
-                hoverBgClass
-              )}></div>
-            </a>
-          ))}
+              >
+                <span className="relative z-10 whitespace-nowrap">{item.label}</span>
+                <span 
+                  className={cn(
+                    "absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 transition-all duration-300",
+                    underlineColorClass,
+                    isActive ? "w-4/5" : "w-0 group-hover:w-4/5"
+                  )}
+                ></span>
+                <div className={cn(
+                  "absolute inset-0 rounded-lg opacity-0 group-hover:opacity-50 transition-opacity duration-300",
+                  hoverBgClass
+                )}></div>
+              </NavElement>
+            );
+          })}
         </nav>
 
         {/* Mobile Menu Button */}
@@ -152,24 +163,35 @@ export function Header() {
       >
         <div className="px-4 py-6 border-t border-border">
           <div className="flex flex-col space-y-4">
-            {navItems.map((item, index) => (
-              <a 
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  "py-3 px-4 font-medium text-base rounded-xl transition-all duration-300 border border-transparent",
-                  "hover:border-border hover:bg-muted",
-                  activeSection === item.href.substring(1) 
-                    ? "text-foreground bg-muted border-border" 
-                    : "text-muted-foreground"
-                )}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <span className="flex items-center gap-2">
-                  {item.label}
-                </span>
-              </a>
-            ))}
+            {navItems.map((item) => {
+              const isActive = item.isRoute 
+                ? location.pathname === item.href 
+                : false;
+              
+              const NavElement = item.isRoute ? Link : 'a';
+              const navProps = item.isRoute 
+                ? { to: item.href } 
+                : { href: item.href };
+              
+              return (
+                <NavElement 
+                  key={item.href}
+                  {...navProps as any}
+                  className={cn(
+                    "py-3 px-4 font-medium text-base rounded-xl transition-all duration-300 border border-transparent",
+                    "hover:border-border hover:bg-muted",
+                    isActive
+                      ? "text-foreground bg-muted border-border" 
+                      : "text-muted-foreground"
+                  )}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="flex items-center gap-2">
+                    {item.label}
+                  </span>
+                </NavElement>
+              );
+            })}
           </div>
         </div>
       </div>

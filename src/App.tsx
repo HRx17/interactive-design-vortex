@@ -5,6 +5,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import WorkExperiencePage from "./pages/WorkExperiencePage";
+import ProjectsPage from "./pages/ProjectsPage";
+import AboutPage from "./pages/AboutPage";
 import HealthyRCaseStudy from "./pages/projects/HealthyRCaseStudy";
 import RITShiftMateCaseStudy from "./pages/projects/RITShiftMateCaseStudy";
 import ParkEaseCaseStudy from "./pages/projects/ParkEaseCaseStudy";
@@ -25,6 +28,9 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/work-experience" element={<WorkExperiencePage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/projects/healthyr" element={<HealthyRCaseStudy />} />
           <Route path="/projects/rit-shiftmate" element={<RITShiftMateCaseStudy />} />
           <Route path="/projects/parkease" element={<ParkEaseCaseStudy />} />
