@@ -106,7 +106,7 @@ export function Expertise() {
     <section
       id="expertise"
       ref={sectionRef}
-      className="py-12 relative overflow-hidden bg-background border-t border-border"
+      className="py-4 relative overflow-hidden bg-background border-t border-border"
     >
       <div className="section-container">
 

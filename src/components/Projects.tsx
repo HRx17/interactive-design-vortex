@@ -203,17 +203,17 @@ export function Projects() {
     <section
       id="projects"
       ref={sectionRef}
-      className="py-16 md:py-24 relative bg-background border-t border-border"
+      className="py-16 md:py-0 relative bg-background border-t border-border"
     >
       <div className="section-container">
 
         {/* Header Title */}
         <div className="max-w-2xl mx-auto mb-16 text-center">
           <span className={cn("text-sm font-medium px-3 py-1 rounded-full bg-secondary text-primary inline-block mb-4", "opacity-0 transform translate-y-6 transition-all duration-700", isInView && "opacity-100 translate-y-0")}>
-            Featured Work
+            Featured Projects
           </span>
           <h2 className={cn("heading text-foreground", "opacity-0 transform translate-y-6 transition-all duration-700 delay-100", isInView && "opacity-100 translate-y-0")}>
-            Recent Projects
+            Recent Work
           </h2>
           <p className={cn("text-muted-foreground mt-4 max-w-xl mx-auto", "opacity-0 transform translate-y-6 transition-all duration-700 delay-200", isInView && "opacity-100 translate-y-0")}>
             {activeProjectType === 'research'
@@ -258,7 +258,7 @@ export function Projects() {
 
       {/* --- SECONDARY PROJECTS SECTION (Gray Background) --- */}
       {(activeProjectType === 'design' || activeProjectType === 'coding') && (
-        <div className="w-full bg-secondary py-16 md:py-24 mt-8 md:mt-12 border-t border-border">
+        <div className="w-full bg-secondary py-4 md:py-4 mt-4 md:mt-12 border-t border-border">
           <div className="section-container">
             <h3 className={cn("text-2xl font-bold text-center text-foreground mb-12", "opacity-0 transform transition-all duration-700", isInView && "opacity-100")}>
               {activeProjectType === 'design' ? 'More Design Work' : 'More Coding Work'}
