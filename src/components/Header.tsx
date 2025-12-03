@@ -4,6 +4,8 @@ import { Menu, X } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Link, useLocation } from 'react-router-dom';
 
+import { AnimatedSignature } from './AnimatedSignature';
+
 const navItems = [
   { label: 'Home', href: '/', isRoute: true },
   { label: 'Work Experience', href: '/work-experience', isRoute: true },
@@ -19,7 +21,7 @@ export function Header() {
   const headerRef = useRef<HTMLElement>(null);
   const isMobile = useIsMobile();
   const location = useLocation();
-  
+
   const isHomePage = location.pathname === '/';
   const isAtTop = !isScrolled && activeSection === 'home' && isHomePage;
 
@@ -27,7 +29,7 @@ export function Header() {
     const handleScroll = () => {
       const scrolled = window.scrollY > 50;
       setIsScrolled(scrolled);
-      
+
       const sections = navItems.map(item => item.href.substring(1));
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
@@ -35,7 +37,7 @@ export function Header() {
         const rect = element.getBoundingClientRect();
         return rect.top <= 100 && rect.bottom >= 100;
       });
-      
+
       if (currentSection) {
         setActiveSection(currentSection);
       } else if (window.scrollY < 50) {
@@ -51,7 +53,7 @@ export function Header() {
 
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('mousemove', handleMouseMove);
-    
+
     handleScroll();
 
     return () => {
@@ -59,7 +61,7 @@ export function Header() {
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
-  
+
   // Define color classes based on scroll state
   const textColorClass = isAtTop ? 'text-white' : 'text-foreground';
   const mutedTextColorClass = isAtTop ? 'text-gray-400' : 'text-muted-foreground';
@@ -67,47 +69,45 @@ export function Header() {
   const hoverBgClass = isAtTop ? 'bg-white/20' : 'bg-muted';
 
   return (
-    <header 
+    <header
       ref={headerRef}
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-4 md:px-6",
         isScrolled ? "h-16 glass backdrop-blur-xl bg-background/80" : "h-20 bg-transparent"
       )}
     >
-      <div className="max-w-7xl h-full mx-auto flex items-center justify-between">
-        <Link 
-          to="/" 
+      <div className="max-w-7xl h-full mx-auto flex items-center justify-between relative">
+        <div
           className={cn(
-            "font-display text-base md:text-lg font-bold relative group cursor-magnetic flex items-center gap-2", 
+            "font-display text-base md:text-lg font-bold relative flex items-center gap-2",
             textColorClass
           )}
         >
-          <img 
-            src="/lovable-uploads/031164e9-f067-46d6-9ed3-ea3a83cd4a7d.png" 
-            alt="SD" 
-            className="w-8 h-8 md:w-10 md:h-10 flex-shrink-0" 
+
+          <AnimatedSignature
+            className={cn(
+              "w-20 h-20 transition-opacity duration-500",
+              textColorClass,
+              isScrolled ? "opacity-0" : "opacity-100"
+            )}
+            isScrolled={isScrolled}
           />
-          <span className="font-bold text-base whitespace-nowrap">Haet Ranpariya</span>
-          <span className={cn(
-            "absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full",
-            underlineColorClass
-          )}></span>
-        </Link>
-  
+        </div>
+
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-8 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
           {navItems.map(item => {
-            const isActive = item.isRoute 
-              ? location.pathname === item.href 
+            const isActive = item.isRoute
+              ? location.pathname === item.href
               : false;
-            
+
             const NavElement = item.isRoute ? Link : 'a';
-            const navProps = item.isRoute 
-              ? { to: item.href } 
+            const navProps = item.isRoute
+              ? { to: item.href }
               : { href: item.href };
-            
+
             return (
-              <NavElement 
+              <NavElement
                 key={item.href}
                 {...navProps as any}
                 className={cn(
@@ -118,7 +118,7 @@ export function Header() {
                 )}
               >
                 <span className="relative z-10 whitespace-nowrap">{item.label}</span>
-                <span 
+                <span
                   className={cn(
                     "absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 transition-all duration-300",
                     underlineColorClass,
@@ -135,7 +135,7 @@ export function Header() {
         </nav>
 
         {/* Mobile Menu Button */}
-        <button 
+        <button
           className={cn(
             "md:hidden p-2 rounded-lg focus:outline-none transition-all duration-300 cursor-magnetic relative group",
             isAtTop ? "text-white hover:bg-white/20" : "text-foreground hover:bg-muted"
@@ -154,7 +154,7 @@ export function Header() {
       </div>
 
       {/* Enhanced Mobile Menu */}
-      <div 
+      <div
         className={cn(
           "fixed inset-x-0 z-50 backdrop-blur-xl bg-background/95 md:hidden transform transition-all duration-500 ease-out",
           isScrolled ? "top-16" : "top-20",
@@ -164,24 +164,24 @@ export function Header() {
         <div className="px-4 py-6 border-t border-border">
           <div className="flex flex-col space-y-4">
             {navItems.map((item) => {
-              const isActive = item.isRoute 
-                ? location.pathname === item.href 
+              const isActive = item.isRoute
+                ? location.pathname === item.href
                 : false;
-              
+
               const NavElement = item.isRoute ? Link : 'a';
-              const navProps = item.isRoute 
-                ? { to: item.href } 
+              const navProps = item.isRoute
+                ? { to: item.href }
                 : { href: item.href };
-              
+
               return (
-                <NavElement 
+                <NavElement
                   key={item.href}
                   {...navProps as any}
                   className={cn(
                     "py-3 px-4 font-medium text-base rounded-xl transition-all duration-300 border border-transparent",
                     "hover:border-border hover:bg-muted",
                     isActive
-                      ? "text-foreground bg-muted border-border" 
+                      ? "text-foreground bg-muted border-border"
                       : "text-muted-foreground"
                   )}
                   onClick={() => setMobileMenuOpen(false)}
