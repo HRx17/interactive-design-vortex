@@ -31,6 +31,19 @@ const endorsements = [
     ],
     fullText: "Haet took our streaming platform from concept to launch with exceptional skill and professionalism... (full text)",
     rotation: "lg:rotate-1" // Opposite rotation
+  },
+  {
+    name: "Stephanie Bird",
+    title: "Sr. Product Designer",
+    quote: "Haet is an incredibly humble Product Designer, his passion for put the user first was clear in the interactions he built at his time at Tech9.",
+    highlights: [
+      "Passion for putting the user first",
+      "Eager to learn and grow",
+      "Insightful contributor to feedback sessions",
+      "Dedicated UI/UX or Product Designer"
+    ],
+    fullText: "Haet is an incredibly humble Product Designer, his passion for put the user first was clear in the interactions he built at his time at Tech9. Haet is eager to learn and grow from other senior designers and always brought good insights to our group feedback sessions. Haet would be a valuable asset to any company looking for a dedicated UI/UX or Product Designer, he can do it all.",
+    rotation: "lg:-rotate-2" // Varied rotation
   }
 ];
 
@@ -48,7 +61,7 @@ const EndorsementCard = ({ endorsement, isExpanded, onToggleExpand, rotation }: 
   return (
     // --- FIX: New "Paper" Card Style ---
     <Card className={cn(
-      "h-full group relative overflow-hidden rounded-2xl p-8 md:p-10 transition-all duration-500",
+      "h-full group relative overflow-hidden rounded-2xl p-6 md:p-8 transition-all duration-500", // Reduced padding
       "bg-card border border-border/40 shadow-xl", // Solid card, strong shadow
       "hover:shadow-2xl hover:border-primary/30",
       rotation // Apply the rotation
@@ -58,38 +71,38 @@ const EndorsementCard = ({ endorsement, isExpanded, onToggleExpand, rotation }: 
 
       <CardContent className="p-0">
         <div className="absolute top-6 right-6 opacity-10 group-hover:opacity-20 transition-opacity">
-          <Quote className="w-24 h-24 text-foreground" />
+          <Quote className="w-20 h-20 text-foreground" /> {/* Reduced icon size */}
         </div>
 
         <div className="relative z-10">
           <div className="mb-6">
-            <h3 className="text-2xl font-bold text-foreground mb-1">
+            <h3 className="text-xl font-bold text-foreground mb-1"> {/* Reduced text size */}
               {endorsement.name}
             </h3>
-            <p className="text-muted-foreground font-medium">
+            <p className="text-muted-foreground font-medium text-sm"> {/* Reduced text size */}
               {endorsement.title}
             </p>
           </div>
 
           <div className="mb-6">
-            <blockquote className="text-lg leading-relaxed text-foreground/90 italic border-l-4 border-primary pl-6">
+            <blockquote className="text-base leading-relaxed text-foreground/90 italic border-l-4 border-primary pl-4"> {/* Reduced text size and padding */}
               "{endorsement.quote}"
             </blockquote>
           </div>
 
           {/* Key Highlights (Unchanged) */}
           <div className="mb-6">
-            <h4 className="text-sm font-semibold text-muted-foreground mb-3 uppercase tracking-wider">
+            <h4 className="text-xs font-semibold text-muted-foreground mb-3 uppercase tracking-wider"> {/* Reduced text size */}
               Key Highlights
             </h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 gap-2"> {/* Single column for tighter space */}
               {endorsement.highlights.map((highlight: string, i: number) => (
                 <div
                   key={i}
                   className="flex items-start gap-2 group/item"
                 >
-                  <div className="shrink-0 w-1.5 h-1.5 rounded-full bg-primary mt-2 group-hover/item:scale-150 transition-transform" />
-                  <span className="text-sm text-foreground/80">
+                  <div className="shrink-0 w-1.5 h-1.5 rounded-full bg-primary mt-1.5 group-hover/item:scale-150 transition-transform" />
+                  <span className="text-xs text-foreground/80"> {/* Reduced text size */}
                     {highlight}
                   </span>
                 </div>
@@ -100,15 +113,15 @@ const EndorsementCard = ({ endorsement, isExpanded, onToggleExpand, rotation }: 
           {/* Read More Toggle (Unchanged) */}
           <button
             onClick={onToggleExpand}
-            className="text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+            className="text-xs font-medium text-primary hover:text-primary/80 transition-colors"
           >
             {isExpanded ? 'Read Less' : 'Read Full Recommendation'} →
           </button>
 
           {/* Expandable Full Text (Unchanged) */}
           {isExpanded && (
-            <div className="mt-6 animate-fade-in">
-              <p className="text-muted-foreground leading-relaxed">
+            <div className="mt-4 animate-fade-in">
+              <p className="text-muted-foreground leading-relaxed text-sm">
                 {endorsement.fullText}
               </p>
             </div>
@@ -144,9 +157,9 @@ export function Endorsements({ className }: { className?: string }) {
 
       {/* Use the 'section-container' to constrain the content */}
       <div className="section-container">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto"> {/* Increased max-width */}
           {/* Section Header */}
-          <div className={`text-center mb-16 transition-all duration-1000 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className={`text-center mb-12 transition-all duration-1000 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
 
             <span className={cn(
               "text-sm font-medium px-3 py-1 rounded-full bg-secondary text-primary inline-block mb-4",
@@ -164,8 +177,8 @@ export function Endorsements({ className }: { className?: string }) {
             </p>
           </div>
 
-          {/* --- FIX 3: Back to a static 2-Column Grid --- */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          {/* --- FIX 3: 3-Column Grid --- */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"> {/* Updated grid columns and gap */}
             {endorsements.map((endorsement, index) => (
               <div
                 key={index}
