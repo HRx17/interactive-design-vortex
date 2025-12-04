@@ -86,7 +86,7 @@ export function Header() {
 
           <AnimatedSignature
             className={cn(
-              "w-20 h-20 transition-opacity duration-500",
+              "w-28 h-28 transition-opacity duration-500",
               textColorClass,
               isScrolled ? "opacity-0" : "opacity-100"
             )}
