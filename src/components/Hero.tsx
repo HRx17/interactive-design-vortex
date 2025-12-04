@@ -57,20 +57,20 @@ export function Hero() {
           <div className="md:col-span-3 flex flex-col items-center text-center md:items-start md:text-left">
             <p className="text-xl text-gray-400 mb-2">Hi there! I'm</p>
 
-            <h1 ref={sentenceRef} className="heading mb-4 text-white text-5xl md:text-6xl overflow-visible font-bold leading-tight">
-              <div className="reveal-text overflow-visible">
-                <span className="inline-block font-ballmain">Haet Ranpariya</span>
+            <h1 ref={sentenceRef} className="heading mb-4 text-white overflow-visible font-bold leading-tight">
+              <div className="reveal-text overflow-visible text-5xl md:text-6xl">
+                <span className="inline-block font-ballmain">Haet Ranpariya,</span>
               </div>
-              <div className="reveal-text mt-2 overflow-visible">
-                <span className="inline-block">an experienced</span>
+              <div className="reveal-text mt-2 overflow-visible text-4xl md:text-5xl">
+                <span className="inline-block"></span>
               </div>
-              <div className="reveal-text mt-2 overflow-visible">
-                <span className="inline-block">Product Designer</span>
+              <div className="reveal-text mt-2 overflow-visible text-4xl md:text-5xl">
+                <span className="inline-block"></span>
               </div>
             </h1>
 
             <p className="text-lg md:text-xl text-gray-400 mb-8 leading-relaxed max-w-lg">
-              Creating intentional and impactful digital experiences. I specialize in GenUI, leveraging generative AI to enhance and accelerate the design process.
+              <span className="text-2xl md:text-2xl font-bold text-white">Product Designer</span> <span className="text-gray-400">creating intentional and impactful digital experiences. I specialize in GenUI, leveraging generative AI to enhance and accelerate the design process.</span>
             </p>
           </div>
 
@@ -85,11 +85,22 @@ export function Hero() {
                 download
                 className="inline-flex items-center justify-center px-4 py-3 bg-white text-black font-semibold rounded-lg transition-all duration-300 hover:bg-gray-200 shadow-sm gap-2"
               >
-                Download Resume
+                Resume
                 <Download className="h-4 w-4" />
               </a>
 
-              {/* Button 2: View Projects */}
+              {/* Button 2: LinkedIn */}
+              <a
+                href="https://www.linkedin.com/in/haet-ranpariya-382324188"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-4 py-3 border-2 border-white text-white font-semibold rounded-lg transition-all duration-300 hover:bg-white hover:text-black gap-2"
+              >
+                LinkedIn
+                <Linkedin className="h-4 w-4" />
+              </a>
+
+              {/* Button 3: View Projects */}
               <a
                 href="#projects"
                 className="inline-flex items-center justify-center px-4 py-3 border-2 border-white text-white font-semibold rounded-lg transition-all duration-300 hover:bg-white hover:text-black"
