@@ -272,13 +272,16 @@ export function Projects() {
             </div>
 
             {/* "View More" Button */}
-            <div className={cn("mt-16 text-center", "opacity-0 transform translate-y-6 transition-all duration-700 delay-400", isInView && "opacity-100 translate-y-0")}>
-              <a href={activeProjectType === 'coding' ? "https://github.com/HRx17" : "https://www.behance.net/haetranpariya17"} target="_blank" rel="noopener noreferrer" className="btn-hover inline-flex items-center px-8 py-4 rounded-lg bg-foreground text-background font-semibold hover:bg-foreground/90 transition-all shadow-sm hover:shadow-md">
-                <span className="relative z-10">
-                  {activeProjectType === 'coding' ? "View more projects on GitHub" : "View full portfolio on Behance"}
-                </span>
-              </a>
-            </div>
+            {/* "View More" Button */}
+            {activeProjectType === 'coding' && (
+              <div className={cn("mt-16 text-center", "opacity-0 transform translate-y-6 transition-all duration-700 delay-400", isInView && "opacity-100 translate-y-0")}>
+                <a href="https://github.com/HRx17" target="_blank" rel="noopener noreferrer" className="btn-hover inline-flex items-center px-8 py-4 rounded-lg bg-foreground text-background font-semibold hover:bg-foreground/90 transition-all shadow-sm hover:shadow-md">
+                  <span className="relative z-10">
+                    View more projects on GitHub
+                  </span>
+                </a>
+              </div>
+            )}
           </div>
         </div>
       )}
