@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Cpu, Mic, Eye, Gamepad2, Zap, Sparkles, ArrowRight, X, Wrench, Layers, Code, Settings, ChevronLeft, ChevronRight, Smartphone, Globe, Bot, Shield } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
@@ -233,12 +234,12 @@ function BuildGalleryCarousel({ images }: { images: { src: string; label: string
         </button>
       </div>
 
-      {expandedImage && (
+      {expandedImage && createPortal(
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm"
           onClick={() => setExpandedImage(null)}
         >
-          <div className="relative max-w-4xl max-h-[85vh] m-4">
+          <div className="relative max-w-4xl max-h-[85vh] m-4" onClick={(e) => e.stopPropagation()}>
             <img 
               src={expandedImage.src} 
               alt={expandedImage.label}
@@ -256,7 +257,8 @@ function BuildGalleryCarousel({ images }: { images: { src: string; label: string
               <X className="h-5 w-5 text-foreground" />
             </button>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );
