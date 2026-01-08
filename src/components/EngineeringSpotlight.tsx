@@ -251,8 +251,11 @@ function BuildGalleryCarousel({ images }: { images: { src: string; label: string
               </span>
             </div>
             <button 
-              onClick={() => setExpandedImage(null)}
-              className="absolute top-4 right-4 p-2 rounded-full bg-background/80 backdrop-blur-sm border border-border hover:bg-secondary transition-colors"
+              onClick={(e) => {
+                e.stopPropagation();
+                setExpandedImage(null);
+              }}
+              className="absolute top-4 right-4 p-2 rounded-full bg-background/80 backdrop-blur-sm border border-border hover:bg-secondary transition-colors z-10"
             >
               <X className="h-5 w-5 text-foreground" />
             </button>
