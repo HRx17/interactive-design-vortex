@@ -35,7 +35,7 @@ const handler = async (req: Request): Promise<Response> => {
     // Send notification email to you
     const emailResponse = await resend.emails.send({
       from: "Judgement Early Access <onboarding@resend.dev>",
-      to: ["haetranpariya17@gmail.com"],
+      to: ["hello.pureglow1@gmail.com"],
       subject: "🎮 New Judgement Early Access Request!",
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
