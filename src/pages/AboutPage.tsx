@@ -7,7 +7,7 @@ import { Toolbox } from '@/components/Toolbox';
 import { Contact } from '@/components/Contact';
 import { cn } from '@/lib/utils';
 import { useInView } from 'react-intersection-observer';
-import aboutCollageHero from '@/assets/about-collage-hero.png';
+import aboutCollageHero from '@/assets/about-collage-new.png';
 
 
 // Education Card Component
