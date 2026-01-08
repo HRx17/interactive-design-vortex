@@ -174,14 +174,27 @@ export function EngineeringSpotlight() {
         <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto p-0 bg-background border-border">
           <DialogTitle className="sr-only">Cloudy Engineering Case Study</DialogTitle>
           
-          {/* Modal Header with Hero Image - Compact */}
-          <div className="relative h-48 md:h-56">
-            <img 
-              src={cloudyComplete} 
-              alt="Cloudy Robot"
-              className="w-full h-full object-cover object-top"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
+          {/* Modal Header with Photo Collage Banner */}
+          <div className="relative h-48 md:h-64">
+            {/* Photo Collage Grid */}
+            <div className="absolute inset-0 grid grid-cols-4 grid-rows-2 gap-1">
+              <div className="col-span-2 row-span-2 overflow-hidden">
+                <img src={cloudyComplete} alt="Cloudy Complete" className="w-full h-full object-cover" />
+              </div>
+              <div className="overflow-hidden">
+                <img src={cloudyFinal} alt="Cloudy Front" className="w-full h-full object-cover" />
+              </div>
+              <div className="overflow-hidden">
+                <img src={cloudySide1} alt="Cloudy Side" className="w-full h-full object-cover" />
+              </div>
+              <div className="overflow-hidden">
+                <img src={cloudy3DPrint} alt="3D Printing" className="w-full h-full object-cover" />
+              </div>
+              <div className="overflow-hidden">
+                <img src={cloudyWiring} alt="Wiring" className="w-full h-full object-cover" />
+              </div>
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
             <div className="absolute bottom-4 left-6 right-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/90 text-primary-foreground text-xs font-semibold mb-2">
                 <Sparkles className="h-3 w-3" />
