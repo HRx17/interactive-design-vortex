@@ -149,31 +149,6 @@ const MakersStudioPage = () => {
         </div>
       </section>
 
-      {/* Robotics Section */}
-      <section className="py-16 md:py-24" ref={robotRef}>
-        <div className="container mx-auto px-4 md:px-6">
-          <div className={`max-w-6xl mx-auto transition-all duration-700 ${robotInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className="flex items-center gap-4 mb-6">
-              <div className="p-3 rounded-2xl bg-primary/10">
-                <Bot className="h-6 w-6 text-primary" />
-              </div>
-              <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground">Robotics - Cloudy</h2>
-                <p className="text-muted-foreground">Desktop Companion Robot</p>
-              </div>
-            </div>
-            
-            <p className="text-muted-foreground mb-8 max-w-3xl leading-relaxed">
-              A fully functional desktop companion robot featuring an LCD display for expressions, 
-              servo-controlled movements, and custom 3D printed parts. This project combines mechanical 
-              design, electronics, and embedded programming.
-            </p>
-
-            <GalleryGrid items={robotItems} onImageClick={setExpandedImage} />
-          </div>
-        </div>
-      </section>
-
       {/* 3D Printing Section */}
       <section className="py-16 md:py-24" ref={printingRef}>
         <div className="container mx-auto px-4 md:px-6">
@@ -218,6 +193,31 @@ const MakersStudioPage = () => {
             </p>
 
             <GalleryGrid items={artItems} onImageClick={setExpandedImage} />
+          </div>
+        </div>
+      </section>
+
+      {/* Robotics Section */}
+      <section className="py-16 md:py-24" ref={robotRef}>
+        <div className="container mx-auto px-4 md:px-6">
+          <div className={`max-w-6xl mx-auto transition-all duration-700 ${robotInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="p-3 rounded-2xl bg-primary/10">
+                <Bot className="h-6 w-6 text-primary" />
+              </div>
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground">Robotics - Cloudy</h2>
+                <p className="text-muted-foreground">Desktop Companion Robot</p>
+              </div>
+            </div>
+            
+            <p className="text-muted-foreground mb-8 max-w-3xl leading-relaxed">
+              A fully functional desktop companion robot featuring an LCD display for expressions, 
+              servo-controlled movements, and custom 3D printed parts. This project combines mechanical 
+              design, electronics, and embedded programming.
+            </p>
+
+            <GalleryGrid items={robotItems} onImageClick={setExpandedImage} />
           </div>
         </div>
       </section>
