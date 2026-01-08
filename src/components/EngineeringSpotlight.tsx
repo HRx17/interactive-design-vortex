@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { Cpu, Mic, Eye, Gamepad2, Zap, Sparkles, ArrowRight, X, Wrench, Layers, Code, Settings } from 'lucide-react';
+import React, { useState, useCallback, useEffect } from 'react';
+import { Cpu, Mic, Eye, Gamepad2, Zap, Sparkles, ArrowRight, X, Wrench, Layers, Code, Settings, ChevronLeft, ChevronRight } from 'lucide-react';
+import useEmblaCarousel from 'embla-carousel-react';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import cloudyFinal from '@/assets/cloudy/cloudy-final.jpg';
 import cloudyWiring from '@/assets/cloudy/cloudy-wiring.jpg';
@@ -103,6 +104,79 @@ const buildGalleryImages = [
   { src: cloudyTesting, label: "Testing Phase" },
   { src: cloudyScreen, label: "LCD Integration" }
 ];
+
+// Build Gallery Carousel Component
+function BuildGalleryCarousel({ images }: { images: { src: string; label: string }[] }) {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+    loop: true, 
+    align: 'start',
+    dragFree: true,
+    containScroll: false
+  });
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
+  // Auto-scroll effect
+  useEffect(() => {
+    if (!emblaApi) return;
+    
+    const autoScroll = setInterval(() => {
+      emblaApi.scrollNext();
+    }, 3000);
+
+    return () => clearInterval(autoScroll);
+  }, [emblaApi]);
+
+  return (
+    <div className="overflow-hidden">
+      <h3 className="text-xl font-bold text-foreground mb-6">Build Gallery</h3>
+      <div className="relative">
+        {/* Left Arrow */}
+        <button
+          onClick={scrollPrev}
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-background/90 backdrop-blur-sm border border-border shadow-lg hover:bg-secondary transition-colors"
+          aria-label="Previous images"
+        >
+          <ChevronLeft className="h-5 w-5 text-foreground" />
+        </button>
+
+        {/* Carousel */}
+        <div className="overflow-hidden mx-10" ref={emblaRef}>
+          <div className="flex gap-4">
+            {images.map((image, index) => (
+              <div key={index} className="relative rounded-xl overflow-hidden min-w-[12rem] w-48 h-48 group border border-border/50 flex-shrink-0">
+                <img 
+                  src={image.src} 
+                  alt={image.label}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <span className="absolute bottom-3 left-3 text-xs font-medium text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                  {image.label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Right Arrow */}
+        <button
+          onClick={scrollNext}
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-background/90 backdrop-blur-sm border border-border shadow-lg hover:bg-secondary transition-colors"
+          aria-label="Next images"
+        >
+          <ChevronRight className="h-5 w-5 text-foreground" />
+        </button>
+      </div>
+    </div>
+  );
+}
 
 export function EngineeringSpotlight() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -326,27 +400,8 @@ export function EngineeringSpotlight() {
               </div>
             </div>
 
-            {/* Build Gallery - Horizontal Scroll */}
-            <div className="overflow-hidden">
-              <h3 className="text-xl font-bold text-foreground mb-6">Build Gallery</h3>
-              <div className="overflow-x-auto pb-4">
-                <div className="flex gap-4 w-max">
-                  {buildGalleryImages.map((image, index) => (
-                    <div key={index} className="relative rounded-xl overflow-hidden w-48 h-48 group border border-border/50 flex-shrink-0">
-                      <img 
-                        src={image.src} 
-                        alt={image.label}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                      <span className="absolute bottom-3 left-3 text-xs font-medium text-white opacity-0 group-hover:opacity-100 transition-opacity">
-                        {image.label}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+            {/* Build Gallery - Carousel with Arrows */}
+            <BuildGalleryCarousel images={buildGalleryImages} />
 
             {/* Challenges & Learnings */}
             <div className="p-6 rounded-2xl bg-secondary/30 border border-border/50">
