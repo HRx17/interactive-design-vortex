@@ -113,6 +113,7 @@ function BuildGalleryCarousel({ images }: { images: { src: string; label: string
     dragFree: true,
     containScroll: 'trimSnaps'
   });
+  const [expandedImage, setExpandedImage] = useState<{ src: string; label: string } | null>(null);
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -139,7 +140,11 @@ function BuildGalleryCarousel({ images }: { images: { src: string; label: string
         <div className="overflow-hidden mx-10" ref={emblaRef}>
           <div className="flex gap-4">
             {images.map((image, index) => (
-              <div key={index} className="relative rounded-xl overflow-hidden min-w-[12rem] w-48 h-48 group border border-border/50 flex-shrink-0">
+              <div 
+                key={index} 
+                className="relative rounded-xl overflow-hidden min-w-[12rem] w-48 h-48 group border border-border/50 flex-shrink-0 cursor-pointer"
+                onClick={() => setExpandedImage(image)}
+              >
                 <img 
                   src={image.src} 
                   alt={image.label}
@@ -149,6 +154,11 @@ function BuildGalleryCarousel({ images }: { images: { src: string; label: string
                 <span className="absolute bottom-3 left-3 text-xs font-medium text-white opacity-0 group-hover:opacity-100 transition-opacity">
                   {image.label}
                 </span>
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="p-2 rounded-full bg-background/80 backdrop-blur-sm">
+                    <Zap className="h-4 w-4 text-primary" />
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -163,6 +173,33 @@ function BuildGalleryCarousel({ images }: { images: { src: string; label: string
           <ChevronRight className="h-5 w-5 text-foreground" />
         </button>
       </div>
+
+      {/* Expanded Image Lightbox */}
+      {expandedImage && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+          onClick={() => setExpandedImage(null)}
+        >
+          <div className="relative max-w-4xl max-h-[85vh] m-4">
+            <img 
+              src={expandedImage.src} 
+              alt={expandedImage.label}
+              className="max-w-full max-h-[85vh] object-contain rounded-lg"
+            />
+            <div className="absolute bottom-4 left-4 right-4 text-center">
+              <span className="px-4 py-2 rounded-full bg-background/90 backdrop-blur-sm text-sm font-medium text-foreground">
+                {expandedImage.label}
+              </span>
+            </div>
+            <button 
+              onClick={() => setExpandedImage(null)}
+              className="absolute top-4 right-4 p-2 rounded-full bg-background/80 backdrop-blur-sm border border-border hover:bg-secondary transition-colors"
+            >
+              <X className="h-5 w-5 text-foreground" />
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
