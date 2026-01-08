@@ -8,7 +8,7 @@ import { Contact } from '@/components/Contact';
 import { cn } from '@/lib/utils';
 import { useInView } from 'react-intersection-observer';
 import aboutCollageHero from '@/assets/about-collage-hero.png';
-import haetPhoto from '@/assets/haet-photo.png';
+import haetPhoto from '@/assets/haet-avatar-option2.png';
 
 // Education Card Component
 const EducationCard = ({ title, description, year, gpa, location, previous }: any) => (
