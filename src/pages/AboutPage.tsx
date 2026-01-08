@@ -8,7 +8,7 @@ import { Contact } from '@/components/Contact';
 import { cn } from '@/lib/utils';
 import { useInView } from 'react-intersection-observer';
 import aboutCollageHero from '@/assets/about-collage-hero.png';
-import haetPhoto from '@/assets/haet-photo-option3.png';
+import aboutAbstract from '@/assets/about-abstract.png';
 
 // Education Card Component
 const EducationCard = ({ title, description, year, gpa, location, previous }: any) => (
@@ -160,8 +160,8 @@ const AboutPage = () => {
                 <div className="max-w-xs w-full aspect-[4/5] rounded-2xl overflow-hidden bg-secondary/50 border border-border/50 relative group shadow-2xl transition-all duration-500">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
                   <img
-                    src={haetPhoto}
-                    alt="Haet"
+                    src={aboutAbstract}
+                    alt="Abstract Design"
                     className="w-full h-full object-cover"
                   />
                 </div>
