@@ -118,18 +118,19 @@ const AboutPage = () => {
                   <p className="mb-4">
                     I define myself as an <strong>AI-Native Designer/Developer</strong>. My workflow—often called "Vibe Coding"—shifts the focus from syntax to solutions.
                   </p>
-                  <p className="mb-2">
-                    I act as the <strong>Technical Architect</strong>: I design the system, define the complex logic, manage API integrations, and ensure scalability.
-                  </p>
-                  <p className="mb-4">
-                    I use <strong>AI as the Builder</strong>: I direct AI agents (Lovable, v0, Cursor) to handle the labor of standard coding, UI scaffolding, and boilerplate.
-                  </p>
-                  <p className="mb-2 font-semibold text-foreground">This synergy allows me to:</p>
-                  <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                    <li><strong>Ship Faster:</strong> Move from Figma to deployed production code in days, not weeks.</li>
-                    <li><strong>Scale Ambition:</strong> Tackle complex full-stack projects alone (like my UX Probe tool, Robotics control systems, and Multiplayer Card Games).</li>
-                    <li><strong>Maintain Quality:</strong> Focus my human energy on high-level UX strategy and unique problem solving, rather than debugging CSS.</li>
+                  <ul className="space-y-3 text-muted-foreground mb-4">
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary font-bold">•</span>
+                      <span><strong className="text-foreground">I act as the Architect:</strong> Designing the system, defining logic, and managing scalability.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary font-bold">•</span>
+                      <span><strong className="text-foreground">AI acts as the Builder:</strong> Handling standard coding, UI scaffolding, and boilerplate.</span>
+                    </li>
                   </ul>
+                  <p className="text-muted-foreground">
+                    This allows me to ship full-stack apps and hardware projects (like <strong>Robotics</strong> and <strong>Multiplayer Games</strong>) solo, moving from Figma to production in days, not weeks.
+                  </p>
                 </div>
 
                 {/* Education Card Integrated Here */}
