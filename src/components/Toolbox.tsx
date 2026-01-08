@@ -21,6 +21,25 @@ const allTools = [
 const row1Tools = allTools.filter((_, index) => index % 2 === 0); // Even indices
 const row2Tools = allTools.filter((_, index) => index % 2 !== 0); // Odd indices
 
+// AI-Native Stack data
+const aiNativeStack = [
+    {
+        category: 'Vibe Coding',
+        tools: ['Cursor', 'Replit', 'Lovable'],
+        icon: '🚀'
+    },
+    {
+        category: 'GenUI',
+        tools: ['v0', 'Galileo AI'],
+        icon: '✨'
+    },
+    {
+        category: 'Architecture',
+        tools: ['System Design', 'API Integration', 'Prompt Engineering'],
+        icon: '🏗️'
+    }
+];
+
 export function Toolbox() {
     return (
         <section className="py-16 bg-secondary border-t border-border/40 overflow-hidden">
@@ -33,6 +52,49 @@ export function Toolbox() {
                         These are the preferred tools that I've been working on to streamline my creative process.
                         I'm always open to learning new methodologies, approaches and strategies to hone my craft.
                     </p>
+                </div>
+
+                {/* AI-Native Stack Section */}
+                <div className="mb-16">
+                    <div className="flex items-center justify-center mb-8">
+                        <hr className="w-24 border-t border-border/50 mr-4" />
+                        <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+                            AI-Native Stack
+                        </span>
+                        <hr className="w-24 border-t border-border/50 ml-4" />
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                        {aiNativeStack.map((item, index) => (
+                            <div
+                                key={index}
+                                className="group p-6 rounded-2xl border border-border/40 bg-card/50 backdrop-blur-sm transition-all duration-300 hover:shadow-lg hover:border-primary/30"
+                            >
+                                <div className="flex items-center gap-3 mb-4">
+                                    <span className="text-2xl">{item.icon}</span>
+                                    <h3 className="font-semibold text-foreground">{item.category}</h3>
+                                </div>
+                                <div className="flex flex-wrap gap-2">
+                                    {item.tools.map((tool, toolIndex) => (
+                                        <span
+                                            key={toolIndex}
+                                            className="px-3 py-1 text-sm rounded-full bg-secondary border border-border/50 text-muted-foreground"
+                                        >
+                                            {tool}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Divider */}
+                <div className="flex items-center justify-center mb-8">
+                    <hr className="w-24 border-t border-border/50 mr-4" />
+                    <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+                        Design & Development Tools
+                    </span>
+                    <hr className="w-24 border-t border-border/50 ml-4" />
                 </div>
 
                 {/* Container with fixed width and fade edges */}
