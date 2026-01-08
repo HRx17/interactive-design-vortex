@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { Cpu, Mic, Eye, Gamepad2, Zap, Sparkles, ArrowRight, X, Wrench, Layers, Code, Settings, ChevronLeft, ChevronRight, Smartphone, Globe, Bot, Shield } from 'lucide-react';
+import { Cpu, Mic, Eye, Gamepad2, Zap, Sparkles, ArrowRight, X, Wrench, Layers, Code, Settings, ChevronLeft, ChevronRight, Smartphone, Globe, Bot, Shield, Mail } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
@@ -585,6 +585,47 @@ function JudgementModalContent() {
         {/* App Gallery */}
         <BuildGalleryCarousel images={judgementGalleryImages} />
 
+        {/* Early Access Email Signup */}
+        <div className="p-6 rounded-2xl bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20">
+          <div className="flex flex-col md:flex-row items-center gap-4">
+            <div className="flex items-center gap-3 flex-1">
+              <div className="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center flex-shrink-0">
+                <Mail className="h-5 w-5 text-green-500" />
+              </div>
+              <div>
+                <h4 className="font-bold text-foreground">Get Early Access</h4>
+                <p className="text-sm text-muted-foreground">Submit your email to get instant early access on Play Store</p>
+              </div>
+            </div>
+            <form 
+              className="flex w-full md:w-auto gap-2"
+              onSubmit={(e) => {
+                e.preventDefault();
+                const form = e.target as HTMLFormElement;
+                const emailInput = form.querySelector('input[type="email"]') as HTMLInputElement;
+                if (emailInput?.value) {
+                  window.open(`mailto:haetdesigns@gmail.com?subject=Judgement Early Access&body=Please add me to the early access list for Judgement. My email: ${encodeURIComponent(emailInput.value)}`);
+                  emailInput.value = '';
+                }
+              }}
+            >
+              <input
+                type="email"
+                placeholder="your@email.com"
+                required
+                maxLength={255}
+                className="flex-1 md:w-64 px-4 py-2 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-green-500/50 text-sm"
+              />
+              <button
+                type="submit"
+                className="px-4 py-2 rounded-lg bg-green-500 text-white font-semibold text-sm hover:bg-green-600 transition-colors flex-shrink-0"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+
         {/* Footer */}
         <div className="pt-6 border-t border-border/50">
           <div className="flex flex-wrap items-center justify-between gap-4">
@@ -594,7 +635,7 @@ function JudgementModalContent() {
             </div>
             <div className="flex gap-3">
               <div className="px-4 py-2 rounded-full bg-green-500/10 border border-green-500/30">
-                <span className="text-xs font-semibold text-green-500">Live on Play Store</span>
+                <span className="text-xs font-semibold text-green-500">Public Release in 13 Days</span>
               </div>
             </div>
           </div>
@@ -654,7 +695,7 @@ export function EngineeringSpotlight() {
     },
     {
       id: 'judgement',
-      badge: 'Live Beta',
+      badge: 'Public Release in 13 Days',
       badgeIcon: <Smartphone className="h-3 w-3" />,
       badgeColor: 'bg-green-500/10 border-green-500/20 text-green-500',
       title: 'Judgement',
