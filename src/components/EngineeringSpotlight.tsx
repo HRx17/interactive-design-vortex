@@ -604,7 +604,7 @@ function JudgementModalContent() {
                 const form = e.target as HTMLFormElement;
                 const emailInput = form.querySelector('input[type="email"]') as HTMLInputElement;
                 if (emailInput?.value) {
-                  window.open(`mailto:haetdesigns@gmail.com?subject=Judgement Early Access&body=Please add me to the early access list for Judgement. My email: ${encodeURIComponent(emailInput.value)}`);
+                  window.open(`mailto:haetranpariya17@gmail.com?subject=Judgement Early Access&body=Please add me to the early access list for Judgement. My email: ${encodeURIComponent(emailInput.value)}`);
                   emailInput.value = '';
                 }
               }}
