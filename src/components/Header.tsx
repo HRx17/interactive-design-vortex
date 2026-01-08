@@ -102,10 +102,14 @@ export function Header() {
               ? location.pathname === item.href
               : false;
 
+            // Handle Contact link - use mailto on non-home pages
+            const isContactOnOtherPage = item.label === 'Contact' && !isHomePage;
+            const contactHref = isContactOnOtherPage ? 'mailto:haetranpariya17@gmail.com' : item.href;
+
             const NavElement = item.isRoute ? Link : 'a';
             const navProps = item.isRoute
               ? { to: item.href }
-              : { href: item.href };
+              : { href: contactHref };
 
             return (
               <NavElement
@@ -169,10 +173,14 @@ export function Header() {
                 ? location.pathname === item.href
                 : false;
 
+              // Handle Contact link - use mailto on non-home pages
+              const isContactOnOtherPage = item.label === 'Contact' && !isHomePage;
+              const contactHref = isContactOnOtherPage ? 'mailto:haetranpariya17@gmail.com' : item.href;
+
               const NavElement = item.isRoute ? Link : 'a';
               const navProps = item.isRoute
                 ? { to: item.href }
-                : { href: item.href };
+                : { href: contactHref };
 
               return (
                 <NavElement
