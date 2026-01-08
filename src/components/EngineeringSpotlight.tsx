@@ -316,13 +316,13 @@ function CloudyModalContent() {
             The "Vibe Coding" Story (Hardware Edition)
           </h3>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            The most challenging aspect of this build wasn't the mechanical assembly—it was bridging high-level Python logic with low-level Linux hardware controls. Raspberry Pi GPIO programming, PWM motor control, I2C sensor communication, and real-time interrupt handling all required deep understanding of Linux kernel interfaces.
+            I designed the entire robot from the ground up—the 3D-printed chassis, the circuit layouts, the emotional expression system, and the user interaction flows. Every component, from mechanical design to software architecture, was conceptualized and built by me.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            This is where <strong className="text-foreground">Agentic Gemini AI</strong> became my co-pilot. Instead of spending days reading through dense documentation on L298N driver timing diagrams or MPU6050 register configurations, I used AI to rapidly decode these technical specifications. Gemini helped translate complex datasheets into actionable Python code, debug I2C communication issues, and optimize PWM frequencies for smooth motor control.
+            The most challenging aspect was bridging high-level Python logic with low-level Linux hardware controls. Raspberry Pi GPIO programming, PWM motor control, I2C sensor communication, and real-time interrupt handling all required deep understanding of Linux kernel interfaces.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            This allowed me to act as the <strong className="text-foreground">Architect</strong>—focusing on the robot's personality engine, emotional state machine, and user experience—while AI handled the low-level driver boilerplate. The result: a 6-week solo build that would have traditionally required months of embedded systems experience.
+            AI served as a <strong className="text-foreground">research accelerator</strong>—helping me decode dense documentation on L298N driver timing diagrams and MPU6050 register configurations faster. But the architecture decisions, the personality engine design, the sensor fusion algorithms, and the creative vision were entirely mine. AI helped with the heavy lifting of boilerplate code; I handled the engineering and design.
           </p>
         </div>
 
@@ -511,10 +511,13 @@ function JudgementModalContent() {
             The "Vibe Coding" Story (Software Edition)
           </h3>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            For this project, I acted as the <strong className="text-foreground">Game Mathematician</strong>, while AI acted as the <strong className="text-foreground">UI Builder</strong>. I leveraged generative workflows to handle the React Native UI scaffolding and Firebase boilerplate.
+            I designed and built this entire application—the UI/UX, the game logic, the multiplayer architecture, and the intelligent bot system. Every screen, animation, and interaction was crafted by me to deliver a polished mobile gaming experience.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            The core challenge was creating intelligent bot opponents that feel competitive, not random. I developed custom <strong className="text-foreground">game theory algorithms</strong> that analyze card distribution, bid history, and optimal play strategies. The bots use probability-based prediction engines that I designed from scratch.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            This allowed me to dedicate 90% of my time to the "Hard Engineering": writing the complex decision-making logic for the Offline Bots and ensuring sub-second state synchronization for Global Multiplayer. The bot AI uses probability-based prediction engines that analyze card distribution, bid history, and optimal play strategies—not random moves.
+            AI assisted with the <strong className="text-foreground">repetitive coding tasks</strong>—scaffolding React Native components and Firebase boilerplate. But the game mathematics, the real-time state synchronization logic, and the entire creative direction came from me. AI helped speed up the mundane; I engineered the complex.
           </p>
         </div>
 
