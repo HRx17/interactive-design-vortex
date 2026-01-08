@@ -13,7 +13,6 @@ import { ScrollProgress } from '@/components/ScrollProgress';
 import { Expertise } from '@/components/Expertise';
 import { Endorsements } from '@/components/Endorsements';
 import { Toolbox } from '@/components/Toolbox';
-import { MakersStudio } from '@/components/MakersStudio';
 
 const Index = () => {
   return (
@@ -37,9 +36,6 @@ const Index = () => {
 
         {/* Endorsements Section */}
         <Endorsements />
-
-        {/* Maker's Studio - Hobbies Section */}
-        <MakersStudio />
 
         <Contact />
       </main>
