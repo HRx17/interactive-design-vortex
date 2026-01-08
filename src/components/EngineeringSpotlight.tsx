@@ -1,9 +1,11 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { Cpu, Mic, Eye, Gamepad2, Zap, Sparkles, ArrowRight, X, Wrench, Layers, Code, Settings, ChevronLeft, ChevronRight, Smartphone, Globe, Bot, Shield, Mail } from 'lucide-react';
+import { Cpu, Mic, Eye, Gamepad2, Zap, Sparkles, ArrowRight, X, Wrench, Layers, Code, Settings, ChevronLeft, ChevronRight, Smartphone, Globe, Bot, Shield, Mail, Loader2 } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
+import { supabase } from '@/integrations/supabase/client';
+import { toast } from 'sonner';
 
 // Cloudy imports
 import cloudyFinal from '@/assets/cloudy/cloudy-final.jpg';
@@ -462,6 +464,88 @@ function CloudyModalContent() {
   );
 }
 
+// ========== EARLY ACCESS FORM ==========
+function EarlyAccessForm() {
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || isSubmitting) return;
+
+    setIsSubmitting(true);
+    try {
+      const { data, error } = await supabase.functions.invoke('notify-early-access', {
+        body: { email }
+      });
+
+      if (error) throw error;
+
+      setIsSubmitted(true);
+      setEmail('');
+      toast.success('Request submitted! You\'ll hear from us soon.');
+    } catch (error: any) {
+      console.error('Error submitting early access request:', error);
+      toast.error('Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  if (isSubmitted) {
+    return (
+      <div className="p-6 rounded-2xl bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20">
+        <div className="flex items-center gap-3">
+          <div className="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center flex-shrink-0">
+            <Mail className="h-5 w-5 text-green-500" />
+          </div>
+          <div>
+            <h4 className="font-bold text-foreground">You're on the list! 🎉</h4>
+            <p className="text-sm text-muted-foreground">We'll notify you when early access is available.</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="p-6 rounded-2xl bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20">
+      <div className="flex flex-col md:flex-row items-center gap-4">
+        <div className="flex items-center gap-3 flex-1">
+          <div className="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center flex-shrink-0">
+            <Mail className="h-5 w-5 text-green-500" />
+          </div>
+          <div>
+            <h4 className="font-bold text-foreground">Get Early Access</h4>
+            <p className="text-sm text-muted-foreground">Submit your email to get instant early access on Play Store</p>
+          </div>
+        </div>
+        <form className="flex w-full md:w-auto gap-2" onSubmit={handleSubmit}>
+          <input
+            type="email"
+            placeholder="your@email.com"
+            required
+            maxLength={255}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            disabled={isSubmitting}
+            className="flex-1 md:w-64 px-4 py-2 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-green-500/50 text-sm disabled:opacity-50"
+          />
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="px-4 py-2 rounded-lg bg-green-500 text-white font-semibold text-sm hover:bg-green-600 transition-colors flex-shrink-0 disabled:opacity-50 flex items-center gap-2"
+          >
+            {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
+            {isSubmitting ? 'Sending...' : 'Submit'}
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+}
+
 // ========== JUDGEMENT MODAL CONTENT ==========
 function JudgementModalContent() {
   return (
@@ -586,45 +670,7 @@ function JudgementModalContent() {
         <BuildGalleryCarousel images={judgementGalleryImages} />
 
         {/* Early Access Email Signup */}
-        <div className="p-6 rounded-2xl bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20">
-          <div className="flex flex-col md:flex-row items-center gap-4">
-            <div className="flex items-center gap-3 flex-1">
-              <div className="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center flex-shrink-0">
-                <Mail className="h-5 w-5 text-green-500" />
-              </div>
-              <div>
-                <h4 className="font-bold text-foreground">Get Early Access</h4>
-                <p className="text-sm text-muted-foreground">Submit your email to get instant early access on Play Store</p>
-              </div>
-            </div>
-            <form 
-              className="flex w-full md:w-auto gap-2"
-              onSubmit={(e) => {
-                e.preventDefault();
-                const form = e.target as HTMLFormElement;
-                const emailInput = form.querySelector('input[type="email"]') as HTMLInputElement;
-                if (emailInput?.value) {
-                  window.open(`mailto:haetranpariya17@gmail.com?subject=Judgement Early Access&body=Please add me to the early access list for Judgement. My email: ${encodeURIComponent(emailInput.value)}`);
-                  emailInput.value = '';
-                }
-              }}
-            >
-              <input
-                type="email"
-                placeholder="your@email.com"
-                required
-                maxLength={255}
-                className="flex-1 md:w-64 px-4 py-2 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-green-500/50 text-sm"
-              />
-              <button
-                type="submit"
-                className="px-4 py-2 rounded-lg bg-green-500 text-white font-semibold text-sm hover:bg-green-600 transition-colors flex-shrink-0"
-              >
-                Submit
-              </button>
-            </form>
-          </div>
-        </div>
+        <EarlyAccessForm />
 
         {/* Footer */}
         <div className="pt-6 border-t border-border/50">
