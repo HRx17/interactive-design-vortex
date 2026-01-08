@@ -75,7 +75,7 @@ const AboutPage = () => {
             "opacity-0 translate-y-4 transition-all duration-700 delay-100",
             heroInView && "opacity-100 translate-y-0"
           )}>
-            Designer & Developer
+            Designer, Developer & Researcher
           </h1>
           <p className={cn(
             "text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed",
@@ -89,7 +89,7 @@ const AboutPage = () => {
 
       <main className="pb-0">
         {/* Bio Section */}
-        <section className="py-20 px-4" ref={bioRef}>
+        <section className="py-12 px-4" ref={bioRef}>
           <div className="section-container max-w-5xl mx-auto">
             <div className="max-w-3xl mx-auto">
               {/* Bio Text */}
