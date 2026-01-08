@@ -10,7 +10,7 @@ const navItems = [
   { label: 'Home', href: '/', isRoute: true },
   { label: 'Work Experience', href: '/work-experience', isRoute: true },
   { label: 'Projects', href: '/projects', isRoute: true },
-  { label: "Maker's Studio", href: '/makers-studio', isRoute: true },
+  { label: "Maker's Gallery", href: '/makers-studio', isRoute: true },
   { label: 'About', href: '/about', isRoute: true },
   { label: 'Contact', href: '#contact', isRoute: false }
 ];
