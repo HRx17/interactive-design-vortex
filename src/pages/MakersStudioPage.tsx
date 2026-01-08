@@ -21,6 +21,13 @@ import artShiva from '@/assets/makers-studio/art-shiva.jpeg';
 import artColony from '@/assets/makers-studio/art-colony.jpg';
 import artMountains from '@/assets/makers-studio/art-mountains.jpeg';
 import artDeku from '@/assets/makers-studio/art-deku.jpeg';
+import artCraft1 from '@/assets/makers-studio/art-craft-1.jpg';
+import artCraft2 from '@/assets/makers-studio/art-craft-2.jpeg';
+import artCraft3 from '@/assets/makers-studio/art-craft-3.webp';
+import artCraft4 from '@/assets/makers-studio/art-craft-4.jpg';
+import artCraft5 from '@/assets/makers-studio/art-craft-5.webp';
+import artCraft6 from '@/assets/makers-studio/art-craft-6.webp';
+import artCraft7 from '@/assets/makers-studio/art-craft-7.jpeg';
 
 interface GalleryItem {
   id: string;
@@ -46,6 +53,13 @@ const artItems: GalleryItem[] = [
   { id: 'art-7', image: artLuffy, category: 'art', caption: 'Luffy - Anime Sketch', span: 'normal' },
   { id: 'art-8', image: artDeku, category: 'art', caption: 'Deku - Anime Sketch', span: 'normal' },
   { id: 'art-9', image: artCitySketch, category: 'art', caption: 'City Street - Pencil Sketch', span: 'normal' },
+  { id: 'art-10', image: artCraft1, category: 'art', caption: 'Mountain Sunset - Acrylic', span: 'normal' },
+  { id: 'art-11', image: artCraft2, category: 'art', caption: 'Portrait Sketch', span: 'tall' },
+  { id: 'art-12', image: artCraft3, category: 'art', caption: 'Canvas Art Collection', span: 'wide' },
+  { id: 'art-13', image: artCraft4, category: 'art', caption: 'Bottle Art - Acrylic', span: 'normal' },
+  { id: 'art-14', image: artCraft5, category: 'art', caption: 'Creative Craft Work', span: 'normal' },
+  { id: 'art-15', image: artCraft6, category: 'art', caption: 'Handmade Craft', span: 'normal' },
+  { id: 'art-16', image: artCraft7, category: 'art', caption: 'Portrait Study', span: 'normal' },
 ];
 
 const GalleryGrid = ({ 
