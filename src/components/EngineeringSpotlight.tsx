@@ -1,49 +1,99 @@
 import React, { useState } from 'react';
-import { Cpu, Mic, Eye, Gamepad2, Home, Zap, Sparkles, ArrowRight, X } from 'lucide-react';
+import { Cpu, Mic, Eye, Gamepad2, Zap, Sparkles, ArrowRight, X, Wrench, Layers, Code, Settings } from 'lucide-react';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import cloudyFinal from '@/assets/cloudy/cloudy-final.jpg';
 import cloudyWiring from '@/assets/cloudy/cloudy-wiring.jpg';
 import cloudy3DPrint from '@/assets/cloudy/cloudy-3d-print.jpg';
 import cloudyScreen from '@/assets/cloudy/cloudy-screen.jpg';
+import cloudyAssembly1 from '@/assets/cloudy/cloudy-assembly-1.jpg';
+import cloudyAssembly2 from '@/assets/cloudy/cloudy-assembly-2.jpg';
+import cloudyElectronics1 from '@/assets/cloudy/cloudy-electronics-1.jpg';
+import cloudyComplete from '@/assets/cloudy/cloudy-complete.webp';
+import cloudySide1 from '@/assets/cloudy/cloudy-side-1.jpg';
+import cloudySide2 from '@/assets/cloudy/cloudy-side-2.jpg';
+import cloudyMotors from '@/assets/cloudy/cloudy-motors.jpg';
+import cloudyParts from '@/assets/cloudy/cloudy-parts.jpg';
+import cloudyDevSetup from '@/assets/cloudy/cloudy-dev-setup.jpg';
+import cloudyTesting from '@/assets/cloudy/cloudy-testing.jpg';
 
 const features = [
   {
     icon: <Eye className="h-5 w-5" />,
     title: "Emotional State Engine",
-    description: "Dynamic mood system reacting to physical interactions (pats vs. pushes) or neglect."
+    description: "Dynamic mood system reacting to physical interactions (pats vs. pushes) or neglect. The robot expresses happiness, curiosity, sadness, and boredom through animated face expressions on the LCD."
   },
   {
     icon: <Gamepad2 className="h-5 w-5" />,
     title: "Autonomous Roaming",
-    description: "Independent exploration using sensor fusion to avoid obstacles and edges."
+    description: "Independent exploration using sensor fusion combining IR edge detection and gyroscope data to navigate safely, avoid obstacles, and prevent falls from elevated surfaces."
   },
   {
     icon: <Mic className="h-5 w-5" />,
     title: "IoT Voice Hub",
-    description: "Natural language interface to control smart home devices via voice commands."
+    description: "Natural language interface powered by OpenAI for conversational interactions and Google Cloud integration to control smart home devices like lights, TV, and other IoT appliances via voice commands."
   }
 ];
 
 const hardwareSpecs = [
   "Raspberry Pi 4 Model B (Brain)",
-  "L298N Driver + TT Motors (Movement)",
-  "Gyro & IR Sensors (Navigation)",
-  "3.5\" Touch LCD (Expression)",
-  "Custom 3D Printed Chassis"
+  "L298N Motor Driver + TT Geared Motors (Movement)",
+  "MPU6050 Gyroscope/Accelerometer (Orientation)",
+  "IR Sensors Array (Edge Detection)",
+  "3.5\" IPS Touch LCD (Expression Display)",
+  "Custom 3D Printed PLA Chassis",
+  "10000mAh USB-C Power Bank",
+  "Touch Sensors (Capacitive Interaction)"
 ];
 
 const softwareSpecs = [
-  "Python Core Logic (Antigravity IDE)",
-  "OpenAI API (Natural Language Processing)",
-  "Google Cloud API (Smart Home Integration)"
+  "Python 3.11 Core Logic",
+  "Antigravity IDE (Development Environment)",
+  "OpenAI GPT API (Conversational AI)",
+  "Google Cloud Speech-to-Text API",
+  "Google Home API (IoT Control)",
+  "PWM Motor Control via GPIO",
+  "Threading for Real-time Sensor Fusion",
+  "Custom Animation Engine for LCD Expressions"
 ];
 
 const techIcons = ["Raspberry Pi", "Python", "OpenAI", "Google Cloud"];
 
-const processImages = [
-  { src: cloudyWiring, label: "Hardware Wiring" },
-  { src: cloudy3DPrint, label: "3D Printed Body" },
-  { src: cloudyScreen, label: "Expression Display" }
+const buildPhases = [
+  {
+    icon: <Layers className="h-5 w-5" />,
+    title: "Phase 1: Design & 3D Printing",
+    duration: "Week 1-2",
+    description: "Designed the robot chassis in Fusion 360, optimizing for print-in-place joints and cable management. Printed over 40 hours of PLA parts including the body shell, motor mounts, and sensor brackets.",
+    images: [cloudy3DPrint, cloudyParts]
+  },
+  {
+    icon: <Wrench className="h-5 w-5" />,
+    title: "Phase 2: Electronics Assembly",
+    duration: "Week 2-3",
+    description: "Wired the L298N motor driver to the Raspberry Pi GPIO, integrated IR sensors for edge detection, and mounted the MPU6050 gyroscope. Soldered custom cables for clean wire management and added the touch LCD display.",
+    images: [cloudyWiring, cloudyElectronics1, cloudyMotors]
+  },
+  {
+    icon: <Settings className="h-5 w-5" />,
+    title: "Phase 3: Hardware Integration",
+    duration: "Week 3-4",
+    description: "Assembled all components into the 3D printed chassis. Calibrated motor speeds for balanced movement, fine-tuned sensor positions for optimal detection, and ensured proper heat dissipation for the Raspberry Pi.",
+    images: [cloudyAssembly1, cloudyAssembly2, cloudyTesting]
+  },
+  {
+    icon: <Code className="h-5 w-5" />,
+    title: "Phase 4: Software Development",
+    duration: "Week 4-6",
+    description: "Built the Python control system using Agentic Gemini AI to decode complex Linux GPIO documentation. Developed the emotional state machine, integrated OpenAI for natural conversation, and connected Google Cloud APIs for smart home control.",
+    images: [cloudyDevSetup, cloudyScreen]
+  }
+];
+
+const finalShowcaseImages = [
+  { src: cloudyComplete, label: "Completed Build" },
+  { src: cloudyFinal, label: "Front View with Face" },
+  { src: cloudySide1, label: "Side Profile Left" },
+  { src: cloudySide2, label: "Side Profile Right" }
 ];
 
 export function EngineeringSpotlight() {
@@ -113,17 +163,17 @@ export function EngineeringSpotlight() {
 
       {/* Full Case Study Modal */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto p-0 bg-background border-border">
+        <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto p-0 bg-background border-border">
           <DialogTitle className="sr-only">Cloudy Engineering Case Study</DialogTitle>
           
           {/* Modal Header with Hero Image */}
-          <div className="relative h-64 md:h-80">
+          <div className="relative h-72 md:h-96">
             <img 
-              src={cloudyFinal} 
+              src={cloudyComplete} 
               alt="Cloudy Robot"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/90 text-primary-foreground text-xs font-semibold mb-3">
                 <Sparkles className="h-3 w-3" />
@@ -132,7 +182,7 @@ export function EngineeringSpotlight() {
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
                 Cloudy <span className="text-muted-foreground font-normal text-xl">(v1.0.0 Beta)</span>
               </h2>
-              <p className="text-muted-foreground mt-1">AI-Native Autonomous Companion Robot</p>
+              <p className="text-muted-foreground mt-1">An Autonomous, Emotionally Intelligent AI Companion Robot</p>
             </div>
             <button 
               onClick={() => setIsModalOpen(false)}
@@ -142,32 +192,82 @@ export function EngineeringSpotlight() {
             </button>
           </div>
 
-          <div className="p-6 md:p-8 space-y-8">
+          <div className="p-6 md:p-8 space-y-10">
             
+            {/* Project Overview */}
+            <div>
+              <h3 className="text-xl font-bold text-foreground mb-4">Project Overview</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Cloudy is a fully autonomous companion robot designed and built entirely from scratch. The project combines custom 3D-printed hardware, low-level electronics integration, and high-level AI systems to create a robot with genuine personality. From soldering motor drivers to training emotional responses, every aspect was engineered with the goal of creating a companion that feels alive—responding to touch, engaging in natural conversation, and even controlling smart home devices.
+              </p>
+            </div>
+
             {/* The Vibe Coding Story */}
-            <div className="p-6 rounded-2xl bg-secondary/50 border border-border/50">
-              <h3 className="text-lg font-bold text-foreground mb-3 flex items-center gap-2">
-                <Zap className="h-5 w-5 text-primary" />
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/50 border border-primary/20">
+              <h3 className="text-xl font-bold text-foreground mb-4 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Zap className="h-5 w-5 text-primary" />
+                </div>
                 The "Vibe Coding" Story (Hardware Edition)
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                The challenge was bridging high-level Python logic with low-level Linux hardware controls. I utilized <strong className="text-foreground">Agentic Gemini AI</strong> to rapidly decode driver documentation and sensor integration, allowing me to act as the Architect focused on the robot's 'personality' rather than getting stuck in driver boilerplate.
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                The most challenging aspect of this build wasn't the mechanical assembly—it was bridging high-level Python logic with low-level Linux hardware controls. Raspberry Pi GPIO programming, PWM motor control, I2C sensor communication, and real-time interrupt handling all required deep understanding of Linux kernel interfaces.
               </p>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                This is where <strong className="text-foreground">Agentic Gemini AI</strong> became my co-pilot. Instead of spending days reading through dense documentation on L298N driver timing diagrams or MPU6050 register configurations, I used AI to rapidly decode these technical specifications. Gemini helped translate complex datasheets into actionable Python code, debug I2C communication issues, and optimize PWM frequencies for smooth motor control.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                This allowed me to act as the <strong className="text-foreground">Architect</strong>—focusing on the robot's personality engine, emotional state machine, and user experience—while AI handled the low-level driver boilerplate. The result: a 6-week solo build that would have traditionally required months of embedded systems experience.
+              </p>
+            </div>
+
+            {/* Build Process Timeline */}
+            <div>
+              <h3 className="text-xl font-bold text-foreground mb-6">Build Process Timeline</h3>
+              <div className="space-y-8">
+                {buildPhases.map((phase, index) => (
+                  <div key={index} className="relative pl-8 border-l-2 border-border/50 pb-8 last:pb-0">
+                    <div className="absolute -left-3 top-0 w-6 h-6 rounded-full bg-primary/10 border-2 border-primary flex items-center justify-center">
+                      <span className="text-primary">{phase.icon}</span>
+                    </div>
+                    <div className="flex flex-col md:flex-row gap-6">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-3 mb-2">
+                          <h4 className="font-bold text-foreground">{phase.title}</h4>
+                          <span className="px-2 py-0.5 text-xs rounded-full bg-secondary text-muted-foreground">{phase.duration}</span>
+                        </div>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{phase.description}</p>
+                      </div>
+                      <div className="flex gap-2 flex-shrink-0">
+                        {phase.images.map((img, imgIndex) => (
+                          <div key={imgIndex} className="w-24 h-24 rounded-lg overflow-hidden border border-border/50">
+                            <img 
+                              src={img} 
+                              alt={`${phase.title} - Image ${imgIndex + 1}`}
+                              className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Technical Specifications - Two Columns */}
             <div>
-              <h3 className="text-lg font-bold text-foreground mb-4">Technical Specifications</h3>
+              <h3 className="text-xl font-bold text-foreground mb-6">Technical Specifications</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Hardware */}
-                <div className="p-5 rounded-xl bg-orange-500/5 border border-orange-500/20">
+                <div className="p-6 rounded-xl bg-orange-500/5 border border-orange-500/20">
                   <h4 className="text-sm font-bold text-orange-400 uppercase tracking-wider mb-4 flex items-center gap-2">
                     <Cpu className="h-4 w-4" />
                     The Body (Hardware)
                   </h4>
-                  <ul className="space-y-2">
+                  <ul className="space-y-3">
                     {hardwareSpecs.map((spec, index) => (
-                      <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <li key={index} className="flex items-start gap-3 text-sm text-muted-foreground">
                         <span className="w-1.5 h-1.5 rounded-full bg-orange-400 mt-2 flex-shrink-0" />
                         {spec}
                       </li>
@@ -176,14 +276,14 @@ export function EngineeringSpotlight() {
                 </div>
 
                 {/* Software */}
-                <div className="p-5 rounded-xl bg-blue-500/5 border border-blue-500/20">
+                <div className="p-6 rounded-xl bg-blue-500/5 border border-blue-500/20">
                   <h4 className="text-sm font-bold text-blue-400 uppercase tracking-wider mb-4 flex items-center gap-2">
-                    <Zap className="h-4 w-4" />
+                    <Code className="h-4 w-4" />
                     The Soul (Software)
                   </h4>
-                  <ul className="space-y-2">
+                  <ul className="space-y-3">
                     {softwareSpecs.map((spec, index) => (
-                      <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <li key={index} className="flex items-start gap-3 text-sm text-muted-foreground">
                         <span className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 flex-shrink-0" />
                         {spec}
                       </li>
@@ -195,33 +295,33 @@ export function EngineeringSpotlight() {
 
             {/* Key Features */}
             <div>
-              <h3 className="text-lg font-bold text-foreground mb-4">Key Features</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <h3 className="text-xl font-bold text-foreground mb-6">Key Features</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {features.map((feature, index) => (
-                  <div key={index} className="p-5 rounded-xl bg-secondary/50 border border-border/50">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
+                  <div key={index} className="p-6 rounded-xl bg-secondary/50 border border-border/50 hover:border-primary/30 transition-colors">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                       <span className="text-primary">{feature.icon}</span>
                     </div>
-                    <h4 className="font-semibold text-foreground mb-2">{feature.title}</h4>
+                    <h4 className="font-bold text-foreground mb-3">{feature.title}</h4>
                     <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Process Gallery */}
+            {/* Final Showcase Gallery */}
             <div>
-              <h3 className="text-lg font-bold text-foreground mb-4">Build Process Gallery</h3>
-              <div className="grid grid-cols-3 gap-4">
-                {processImages.map((image, index) => (
-                  <div key={index} className="relative rounded-xl overflow-hidden aspect-square group">
+              <h3 className="text-xl font-bold text-foreground mb-6">Final Build Gallery</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {finalShowcaseImages.map((image, index) => (
+                  <div key={index} className="relative rounded-xl overflow-hidden aspect-square group border border-border/50">
                     <img 
                       src={image.src} 
                       alt={image.label}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                    <span className="absolute bottom-3 left-3 text-xs font-medium text-white">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <span className="absolute bottom-3 left-3 text-xs font-medium text-white opacity-0 group-hover:opacity-100 transition-opacity">
                       {image.label}
                     </span>
                   </div>
@@ -229,14 +329,44 @@ export function EngineeringSpotlight() {
               </div>
             </div>
 
+            {/* Challenges & Learnings */}
+            <div className="p-6 rounded-2xl bg-secondary/30 border border-border/50">
+              <h3 className="text-xl font-bold text-foreground mb-4">Challenges & Learnings</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-semibold text-foreground mb-2">Technical Challenges</h4>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li>• Achieving consistent PWM timing for smooth motor control</li>
+                    <li>• Sensor fusion between IR edge detection and gyroscope data</li>
+                    <li>• Managing real-time audio processing alongside motor control</li>
+                    <li>• Heat management for the Raspberry Pi in an enclosed chassis</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-foreground mb-2">Key Learnings</h4>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li>• AI-assisted development dramatically accelerates hardware projects</li>
+                    <li>• Iterative 3D printing is essential—expect 3-4 chassis revisions</li>
+                    <li>• Python threading requires careful management for robotics</li>
+                    <li>• Personality design matters as much as technical functionality</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
             {/* Role Badge */}
-            <div className="pt-4 border-t border-border/50 flex items-center justify-between">
+            <div className="pt-6 border-t border-border/50 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
               <div>
                 <span className="text-xs text-muted-foreground uppercase tracking-wider">Role</span>
                 <p className="text-sm font-semibold text-foreground">Full-Stack Robotics Engineer (Hardware, Software, 3D Design)</p>
               </div>
-              <div className="px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-                <span className="text-xs font-semibold text-primary">Solo Project</span>
+              <div className="flex gap-3">
+                <div className="px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+                  <span className="text-xs font-semibold text-primary">Solo Project</span>
+                </div>
+                <div className="px-4 py-2 rounded-full bg-secondary border border-border">
+                  <span className="text-xs font-semibold text-muted-foreground">6 Weeks Build Time</span>
+                </div>
               </div>
             </div>
           </div>
