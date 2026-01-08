@@ -112,6 +112,26 @@ const AboutPage = () => {
                   When I'm not designing products or experimenting with new design methodologies, you can find me <strong>Painting</strong>, <strong>Scuba Diving</strong>, or researching the latest developments in human-computer interaction.
                 </p>
 
+                {/* Vibe Coding Workflow Section */}
+                <div className="mt-8 p-6 rounded-2xl border border-border/40 bg-card/50 backdrop-blur-sm">
+                  <h3 className="text-xl font-bold text-foreground mb-4">The Vibe Coding Workflow</h3>
+                  <p className="mb-4">
+                    I define myself as an <strong>AI-Native Designer/Developer</strong>. My workflow—often called "Vibe Coding"—shifts the focus from syntax to solutions.
+                  </p>
+                  <p className="mb-2">
+                    I act as the <strong>Technical Architect</strong>: I design the system, define the complex logic, manage API integrations, and ensure scalability.
+                  </p>
+                  <p className="mb-4">
+                    I use <strong>AI as the Builder</strong>: I direct AI agents (Lovable, v0, Cursor) to handle the labor of standard coding, UI scaffolding, and boilerplate.
+                  </p>
+                  <p className="mb-2 font-semibold text-foreground">This synergy allows me to:</p>
+                  <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                    <li><strong>Ship Faster:</strong> Move from Figma to deployed production code in days, not weeks.</li>
+                    <li><strong>Scale Ambition:</strong> Tackle complex full-stack projects alone (like my UX Probe tool, Robotics control systems, and Multiplayer Card Games).</li>
+                    <li><strong>Maintain Quality:</strong> Focus my human energy on high-level UX strategy and unique problem solving, rather than debugging CSS.</li>
+                  </ul>
+                </div>
+
                 {/* Education Card Integrated Here */}
                 <div className="pt-8">
                   <EducationCard

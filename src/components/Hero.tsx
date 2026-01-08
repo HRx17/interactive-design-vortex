@@ -70,7 +70,7 @@ export function Hero() {
             </h1>
 
             <p className="text-lg md:text-xl text-gray-400 mb-8 leading-relaxed max-w-lg">
-              <span className="text-2xl md:text-2xl font-bold text-white">Product Designer</span> <span className="text-gray-400">creating intentional and impactful digital experiences. I specialize in GenUI, leveraging generative AI to enhance and accelerate the design process.</span>
+              <span className="text-2xl md:text-2xl font-bold text-white">Product Designer & Vibe Coder.</span> <span className="text-gray-400">I orchestrate AI to turn design intent into production-ready code. Specializing in GenUI and Vibe Coding—bridging the gap between Figma and Full-Stack at record speed.</span>
             </p>
           </div>
 
