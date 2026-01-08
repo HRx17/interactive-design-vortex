@@ -484,7 +484,7 @@ function EarlyAccessForm() {
 
       setIsSubmitted(true);
       setEmail('');
-      toast.success('Request submitted! You\'ll hear from us soon.');
+      toast.success('Request submitted! You\'ll be added to the early access list soon.');
     } catch (error: any) {
       console.error('Error submitting early access request:', error);
       toast.error('Something went wrong. Please try again.');
