@@ -8,7 +8,7 @@ import { Contact } from '@/components/Contact';
 import { cn } from '@/lib/utils';
 import { useInView } from 'react-intersection-observer';
 import aboutCollageHero from '@/assets/about-collage-hero.png';
-import aboutAbstract from '@/assets/about-abstract.png';
+
 
 // Education Card Component
 const EducationCard = ({ title, description, year, gpa, location, previous }: any) => (
@@ -91,13 +91,12 @@ const AboutPage = () => {
         {/* Bio Section */}
         <section className="py-20 px-4" ref={bioRef}>
           <div className="section-container max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-start">
-
-              {/* Left Column: Bio Text */}
+            <div className="max-w-3xl mx-auto">
+              {/* Bio Text */}
               <div className={cn(
                 "space-y-6 text-lg text-muted-foreground leading-relaxed",
-                "opacity-0 translate-x-[-20px] transition-all duration-700",
-                bioInView && "opacity-100 translate-x-0"
+                "opacity-0 translate-y-4 transition-all duration-700",
+                bioInView && "opacity-100 translate-y-0"
               )}>
                 <h2 className="text-3xl font-bold text-foreground mb-6">
                   Hello! I'm Haet.
@@ -133,7 +132,7 @@ const AboutPage = () => {
                   </p>
                 </div>
 
-                {/* Education Card Integrated Here */}
+                {/* Education Card */}
                 <div className="pt-8">
                   <EducationCard
                     title="MS in Human-Computer Interaction"
@@ -149,25 +148,6 @@ const AboutPage = () => {
                     }}
                   />
                 </div>
-              </div>
-
-              {/* Right Column: Photo */}
-              <div className={cn(
-                "relative sticky top-24 flex justify-center md:justify-end",
-                "opacity-0 translate-x-[20px] transition-all duration-700 delay-200",
-                bioInView && "opacity-100 translate-x-0"
-              )}>
-                <div className="max-w-xs w-full aspect-[4/5] rounded-2xl overflow-hidden bg-secondary/50 border border-border/50 relative group shadow-2xl transition-all duration-500">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
-                  <img
-                    src={aboutAbstract}
-                    alt="Abstract Design"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                {/* Decorative elements */}
-                <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/10 rounded-full blur-2xl -z-10" />
-                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl -z-10" />
               </div>
             </div>
           </div>
