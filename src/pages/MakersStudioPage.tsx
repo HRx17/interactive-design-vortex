@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { createPortal } from 'react-dom';
-import { X, Printer, Palette, ArrowLeft } from 'lucide-react';
+import { X, Printer, Palette, ArrowLeft, Bot } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
@@ -10,6 +10,16 @@ import { Footer } from '@/components/Footer';
 import figureFront from '@/assets/makers-studio/3d-figure-front.jpg';
 import figureBack from '@/assets/makers-studio/3d-figure-back.jpg';
 import mechanismCube from '@/assets/makers-studio/3d-mechanism-cube.jpg';
+
+// Robot (Cloudy) images
+import cloudyComplete from '@/assets/cloudy/cloudy-complete.webp';
+import cloudyAssembly1 from '@/assets/cloudy/cloudy-assembly-1.jpg';
+import cloudyAssembly2 from '@/assets/cloudy/cloudy-assembly-2.jpg';
+import cloudyElectronics from '@/assets/cloudy/cloudy-electronics-1.jpg';
+import cloudyWiring from '@/assets/cloudy/cloudy-wiring.jpg';
+import cloudyScreen from '@/assets/cloudy/cloudy-screen.jpg';
+import cloudyParts from '@/assets/cloudy/cloudy-parts.jpg';
+import cloudyFinal from '@/assets/cloudy/cloudy-final.jpg';
 
 // Art images
 import artJarLandscape from '@/assets/makers-studio/art-jar-landscape.jpg';
@@ -32,7 +42,7 @@ import artCraft7 from '@/assets/makers-studio/art-craft-7.jpeg';
 interface GalleryItem {
   id: string;
   image: string;
-  category: '3d-printing' | 'art';
+  category: '3d-printing' | 'art' | 'robotics';
   caption: string;
   span?: 'tall' | 'wide' | 'normal';
 }
@@ -41,6 +51,17 @@ const printingItems: GalleryItem[] = [
   { id: '3d-1', image: figureFront, category: '3d-printing', caption: 'Articulated Figure - Front View', span: 'tall' },
   { id: '3d-2', image: mechanismCube, category: '3d-printing', caption: 'Print-in-Place Mechanism Cube', span: 'normal' },
   { id: '3d-3', image: figureBack, category: '3d-printing', caption: 'Articulated Figure - Back View', span: 'normal' },
+];
+
+const robotItems: GalleryItem[] = [
+  { id: 'robot-1', image: cloudyComplete, category: 'robotics', caption: 'Cloudy - Desktop Companion Robot' },
+  { id: 'robot-2', image: cloudyFinal, category: 'robotics', caption: 'Cloudy - Final Build' },
+  { id: 'robot-3', image: cloudyAssembly1, category: 'robotics', caption: 'Assembly in Progress' },
+  { id: 'robot-4', image: cloudyAssembly2, category: 'robotics', caption: 'Component Assembly' },
+  { id: 'robot-5', image: cloudyElectronics, category: 'robotics', caption: 'Electronics & Wiring' },
+  { id: 'robot-6', image: cloudyWiring, category: 'robotics', caption: 'Internal Wiring Setup' },
+  { id: 'robot-7', image: cloudyScreen, category: 'robotics', caption: 'LCD Display Integration' },
+  { id: 'robot-8', image: cloudyParts, category: 'robotics', caption: '3D Printed Parts' },
 ];
 
 const artItems: GalleryItem[] = [
@@ -95,6 +116,7 @@ const GalleryGrid = ({
 const MakersStudioPage = () => {
   const [expandedImage, setExpandedImage] = useState<GalleryItem | null>(null);
   const { ref: heroRef, inView: heroInView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { ref: robotRef, inView: robotInView } = useInView({ triggerOnce: true, threshold: 0.1 });
   const { ref: printingRef, inView: printingInView } = useInView({ triggerOnce: true, threshold: 0.1 });
   const { ref: artRef, inView: artInView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
@@ -123,6 +145,31 @@ const MakersStudioPage = () => {
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
               Exploring the intersection of creativity and fabrication—from 3D printers to canvas.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Robotics Section */}
+      <section className="py-16 md:py-24" ref={robotRef}>
+        <div className="container mx-auto px-4 md:px-6">
+          <div className={`max-w-6xl mx-auto transition-all duration-700 ${robotInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="p-3 rounded-2xl bg-primary/10">
+                <Bot className="h-6 w-6 text-primary" />
+              </div>
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground">Robotics - Cloudy</h2>
+                <p className="text-muted-foreground">Desktop Companion Robot</p>
+              </div>
+            </div>
+            
+            <p className="text-muted-foreground mb-8 max-w-3xl leading-relaxed">
+              A fully functional desktop companion robot featuring an LCD display for expressions, 
+              servo-controlled movements, and custom 3D printed parts. This project combines mechanical 
+              design, electronics, and embedded programming.
+            </p>
+
+            <GalleryGrid items={robotItems} onImageClick={setExpandedImage} />
           </div>
         </div>
       </section>
