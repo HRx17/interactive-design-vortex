@@ -327,10 +327,10 @@ export function EngineeringSpotlight() {
             </div>
 
             {/* Build Gallery - Horizontal Scroll */}
-            <div>
+            <div className="overflow-hidden">
               <h3 className="text-xl font-bold text-foreground mb-6">Build Gallery</h3>
-              <div className="overflow-x-auto pb-4 -mx-6 md:-mx-8 px-6 md:px-8">
-                <div className="flex gap-4" style={{ width: 'max-content' }}>
+              <div className="overflow-x-auto pb-4">
+                <div className="flex gap-4 w-max">
                   {buildGalleryImages.map((image, index) => (
                     <div key={index} className="relative rounded-xl overflow-hidden w-48 h-48 group border border-border/50 flex-shrink-0">
                       <img 
