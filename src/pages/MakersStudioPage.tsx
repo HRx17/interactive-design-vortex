@@ -70,7 +70,7 @@ const GalleryGrid = ({
   onImageClick: (item: GalleryItem) => void;
 }) => {
   return (
-    <div className="columns-2 md:columns-3 gap-3 md:gap-4 space-y-0">
+    <div className="columns-2 md:columns-3 gap-4">
       {items.map((item) => (
         <div
           key={item.id}
