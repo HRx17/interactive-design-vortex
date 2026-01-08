@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Cpu, Mic, Eye, Gamepad2, Zap, Sparkles, ArrowRight, X, Wrench, Layers, Code, Settings, ChevronLeft, ChevronRight } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
@@ -108,10 +108,10 @@ const buildGalleryImages = [
 // Build Gallery Carousel Component
 function BuildGalleryCarousel({ images }: { images: { src: string; label: string }[] }) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
-    loop: true, 
+    loop: false, 
     align: 'start',
     dragFree: true,
-    containScroll: false
+    containScroll: 'trimSnaps'
   });
 
   const scrollPrev = useCallback(() => {
@@ -120,17 +120,6 @@ function BuildGalleryCarousel({ images }: { images: { src: string; label: string
 
   const scrollNext = useCallback(() => {
     if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
-
-  // Auto-scroll effect
-  useEffect(() => {
-    if (!emblaApi) return;
-    
-    const autoScroll = setInterval(() => {
-      emblaApi.scrollNext();
-    }, 3000);
-
-    return () => clearInterval(autoScroll);
   }, [emblaApi]);
 
   return (
@@ -385,16 +374,20 @@ export function EngineeringSpotlight() {
             </div>
 
             {/* Key Features */}
-            <div>
+            <div className="overflow-hidden">
               <h3 className="text-xl font-bold text-foreground mb-6">Key Features</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 gap-6">
                 {features.map((feature, index) => (
                   <div key={index} className="p-6 rounded-xl bg-secondary/50 border border-border/50 hover:border-primary/30 transition-colors">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                      <span className="text-primary">{feature.icon}</span>
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <span className="text-primary">{feature.icon}</span>
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-foreground mb-2">{feature.title}</h4>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
+                      </div>
                     </div>
-                    <h4 className="font-bold text-foreground mb-3">{feature.title}</h4>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
                   </div>
                 ))}
               </div>
