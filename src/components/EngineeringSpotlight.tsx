@@ -64,36 +64,44 @@ const buildPhases = [
     title: "Phase 1: Design & 3D Printing",
     duration: "Week 1-2",
     description: "Designed the robot chassis in Fusion 360, optimizing for print-in-place joints and cable management. Printed over 40 hours of PLA parts including the body shell, motor mounts, and sensor brackets.",
-    images: [cloudy3DPrint, cloudyParts]
+    image: cloudy3DPrint
   },
   {
     icon: <Wrench className="h-5 w-5" />,
     title: "Phase 2: Electronics Assembly",
     duration: "Week 2-3",
     description: "Wired the L298N motor driver to the Raspberry Pi GPIO, integrated IR sensors for edge detection, and mounted the MPU6050 gyroscope. Soldered custom cables for clean wire management and added the touch LCD display.",
-    images: [cloudyWiring, cloudyElectronics1, cloudyMotors]
+    image: cloudyWiring
   },
   {
     icon: <Settings className="h-5 w-5" />,
     title: "Phase 3: Hardware Integration",
     duration: "Week 3-4",
     description: "Assembled all components into the 3D printed chassis. Calibrated motor speeds for balanced movement, fine-tuned sensor positions for optimal detection, and ensured proper heat dissipation for the Raspberry Pi.",
-    images: [cloudyAssembly1, cloudyAssembly2, cloudyTesting]
+    image: cloudyAssembly1
   },
   {
     icon: <Code className="h-5 w-5" />,
     title: "Phase 4: Software Development",
     duration: "Week 4-6",
     description: "Built the Python control system using Agentic Gemini AI to decode complex Linux GPIO documentation. Developed the emotional state machine, integrated OpenAI for natural conversation, and connected Google Cloud APIs for smart home control.",
-    images: [cloudyDevSetup, cloudyScreen]
+    image: cloudyDevSetup
   }
 ];
 
-const finalShowcaseImages = [
+const buildGalleryImages = [
   { src: cloudyComplete, label: "Completed Build" },
   { src: cloudyFinal, label: "Front View with Face" },
   { src: cloudySide1, label: "Side Profile Left" },
-  { src: cloudySide2, label: "Side Profile Right" }
+  { src: cloudySide2, label: "Side Profile Right" },
+  { src: cloudy3DPrint, label: "3D Printing Process" },
+  { src: cloudyParts, label: "Printed Components" },
+  { src: cloudyWiring, label: "Wiring & Soldering" },
+  { src: cloudyElectronics1, label: "Electronics Setup" },
+  { src: cloudyMotors, label: "Motor Assembly" },
+  { src: cloudyAssembly2, label: "Chassis Assembly" },
+  { src: cloudyTesting, label: "Testing Phase" },
+  { src: cloudyScreen, label: "LCD Integration" }
 ];
 
 export function EngineeringSpotlight() {
@@ -166,23 +174,23 @@ export function EngineeringSpotlight() {
         <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto p-0 bg-background border-border">
           <DialogTitle className="sr-only">Cloudy Engineering Case Study</DialogTitle>
           
-          {/* Modal Header with Hero Image */}
-          <div className="relative h-72 md:h-96">
+          {/* Modal Header with Hero Image - Compact */}
+          <div className="relative h-48 md:h-56">
             <img 
               src={cloudyComplete} 
               alt="Cloudy Robot"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-top"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/90 text-primary-foreground text-xs font-semibold mb-3">
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
+            <div className="absolute bottom-4 left-6 right-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/90 text-primary-foreground text-xs font-semibold mb-2">
                 <Sparkles className="h-3 w-3" />
                 Engineering Case Study
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Cloudy <span className="text-muted-foreground font-normal text-xl">(v1.0.0 Beta)</span>
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+                Cloudy <span className="text-muted-foreground font-normal text-lg">(v1.0.0 Beta)</span>
               </h2>
-              <p className="text-muted-foreground mt-1">An Autonomous, Emotionally Intelligent AI Companion Robot</p>
+              <p className="text-sm text-muted-foreground mt-1">An Autonomous, Emotionally Intelligent AI Companion Robot</p>
             </div>
             <button 
               onClick={() => setIsModalOpen(false)}
@@ -238,16 +246,12 @@ export function EngineeringSpotlight() {
                         </div>
                         <p className="text-sm text-muted-foreground leading-relaxed">{phase.description}</p>
                       </div>
-                      <div className="flex gap-2 flex-shrink-0">
-                        {phase.images.map((img, imgIndex) => (
-                          <div key={imgIndex} className="w-24 h-24 rounded-lg overflow-hidden border border-border/50">
-                            <img 
-                              src={img} 
-                              alt={`${phase.title} - Image ${imgIndex + 1}`}
-                              className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                            />
-                          </div>
-                        ))}
+                      <div className="w-28 h-28 rounded-lg overflow-hidden border border-border/50 flex-shrink-0">
+                        <img 
+                          src={phase.image} 
+                          alt={phase.title}
+                          className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                        />
                       </div>
                     </div>
                   </div>
@@ -309,23 +313,25 @@ export function EngineeringSpotlight() {
               </div>
             </div>
 
-            {/* Final Showcase Gallery */}
+            {/* Build Gallery - Horizontal Scroll */}
             <div>
-              <h3 className="text-xl font-bold text-foreground mb-6">Final Build Gallery</h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {finalShowcaseImages.map((image, index) => (
-                  <div key={index} className="relative rounded-xl overflow-hidden aspect-square group border border-border/50">
-                    <img 
-                      src={image.src} 
-                      alt={image.label}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <span className="absolute bottom-3 left-3 text-xs font-medium text-white opacity-0 group-hover:opacity-100 transition-opacity">
-                      {image.label}
-                    </span>
-                  </div>
-                ))}
+              <h3 className="text-xl font-bold text-foreground mb-6">Build Gallery</h3>
+              <div className="overflow-x-auto pb-4 -mx-6 md:-mx-8 px-6 md:px-8">
+                <div className="flex gap-4" style={{ width: 'max-content' }}>
+                  {buildGalleryImages.map((image, index) => (
+                    <div key={index} className="relative rounded-xl overflow-hidden w-48 h-48 group border border-border/50 flex-shrink-0">
+                      <img 
+                        src={image.src} 
+                        alt={image.label}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <span className="absolute bottom-3 left-3 text-xs font-medium text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                        {image.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
