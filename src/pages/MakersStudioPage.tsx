@@ -140,10 +140,10 @@ const MakersStudioPage = () => {
             </Link>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              The Maker's Studio
+              The Maker's Gallery
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Exploring the intersection of creativity and fabrication—from 3D printers to canvas.
+              A creative outlet—from 3D printing experiments to paintings on canvas.
             </p>
           </div>
         </div>
@@ -183,15 +183,14 @@ const MakersStudioPage = () => {
                 <Printer className="h-6 w-6 text-primary" />
               </div>
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground">Precision 3D Fabrication</h2>
-                <p className="text-muted-foreground">Rapid Prototyping & Assembly</p>
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground">3D Printing</h2>
+                <p className="text-muted-foreground">A Fun Hobby</p>
               </div>
             </div>
             
             <p className="text-muted-foreground mb-8 max-w-3xl leading-relaxed">
-              Exploring kinematics, print-in-place mechanisms, and tolerance testing with FDM printing. 
-              These projects help me understand physical constraints in product design and bridge the gap 
-              between digital prototypes and tangible products.
+              Playing around with FDM printing—experimenting with articulated figures, print-in-place mechanisms, 
+              and fun mechanical puzzles. Just a hobby that keeps the hands busy and the mind curious.
             </p>
 
             <GalleryGrid items={printingItems} onImageClick={setExpandedImage} />
