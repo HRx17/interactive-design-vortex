@@ -70,22 +70,18 @@ const GalleryGrid = ({
   onImageClick: (item: GalleryItem) => void;
 }) => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+    <div className="columns-2 md:columns-3 gap-3 md:gap-4 space-y-0">
       {items.map((item) => (
         <div
           key={item.id}
-          className={`group relative overflow-hidden rounded-2xl cursor-pointer ${
-            item.span === 'tall' ? 'row-span-2' : ''
-          } ${item.span === 'wide' ? 'col-span-2' : ''}`}
+          className="group relative overflow-hidden rounded-2xl cursor-pointer mb-3 md:mb-4 break-inside-avoid"
           onClick={() => onImageClick(item)}
         >
-          <div className={`${item.span === 'tall' ? 'aspect-[3/4]' : 'aspect-square'} w-full`}>
-            <img
-              src={item.image}
-              alt={item.caption}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-          </div>
+          <img
+            src={item.image}
+            alt={item.caption}
+            className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110"
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
             <p className="text-white text-xs md:text-sm font-medium">{item.caption}</p>
