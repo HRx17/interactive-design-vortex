@@ -234,7 +234,7 @@ export function EngineeringSpotlight() {
 
       {/* Full Case Study Modal */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto p-0 bg-background border-border">
+        <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto overflow-x-hidden p-0 bg-background border-border">
           <DialogTitle className="sr-only">Cloudy Engineering Case Study</DialogTitle>
           
           {/* Modal Header with Photo Collage Banner */}
@@ -276,7 +276,7 @@ export function EngineeringSpotlight() {
             </button>
           </div>
 
-          <div className="p-6 md:p-8 space-y-10">
+          <div className="p-6 md:p-8 space-y-10 overflow-hidden">
             
             {/* Project Overview */}
             <div>
