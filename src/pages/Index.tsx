@@ -2,7 +2,6 @@
 import React from 'react';
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
-import { EngineeringSpotlight } from '@/components/EngineeringSpotlight';
 import { MetricsShowcase } from '@/components/MetricsShowcase';
 import { DiagonalLayout } from '@/components/DiagonalLayout';
 import { Projects } from '@/components/Projects';
@@ -22,10 +21,7 @@ const Index = () => {
       <main>
         <Hero />
 
-        {/* Engineering Spotlight - Cloudy Robot */}
-        <EngineeringSpotlight />
-
-        {/* Projects Section with Research/Design/Coding Tabs */}
+        {/* Projects Section with Engineering Cards + Research/Design/Coding Tabs */}
         <Projects />
 
         {/* Expertise Section */}
