@@ -728,28 +728,28 @@ export function EngineeringCards({ isInView }: EngineeringCardsProps) {
   return (
     <>
       {/* Two Static Cards Grid */}
-      <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 opacity-0 transform translate-y-6 transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-y-0' : ''}`}>
+      <div className={`grid grid-cols-1 lg:grid-cols-2 gap-6 mb-16 opacity-0 transform translate-y-6 transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-y-0' : ''}`}>
         {engineeringProjects.map((project) => (
           <div 
             key={project.id} 
-            className="rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]"
+            className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
             style={{
               background: 'linear-gradient(225deg, #434343 17%, #050505 100%)',
             }}
           >
-            <div className="p-6 md:p-8">
+            <div className="p-5 md:p-6">
               {/* Top - Badge */}
-              <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full border mb-4 ${
+              <div className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border mb-3 ${
                 project.id === 'cloudy' 
                   ? 'bg-white/10 border-white/20 text-white' 
                   : 'bg-green-500/20 border-green-500/30 text-green-400'
               }`}>
                 {project.badgeIcon}
-                <span className="text-xs font-semibold uppercase tracking-wider">{project.badge}</span>
+                <span className="text-[10px] font-semibold uppercase tracking-wider">{project.badge}</span>
               </div>
 
               {/* Image */}
-              <div className="relative rounded-2xl overflow-hidden aspect-video mb-6 group">
+              <div className="relative rounded-xl overflow-hidden aspect-video mb-4 group">
                 <img 
                   src={project.image} 
                   alt={project.title}
@@ -759,21 +759,21 @@ export function EngineeringCards({ isInView }: EngineeringCardsProps) {
               </div>
 
               {/* Content */}
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
-                {project.title} <span className="text-gray-400 font-normal text-base">{project.version}</span>
+              <h3 className="text-lg md:text-xl font-bold text-white mb-1">
+                {project.title} <span className="text-gray-400 font-normal text-sm">{project.version}</span>
               </h3>
-              <p className="text-sm text-gray-400 font-medium mb-2">{project.subtitle}</p>
+              <p className="text-xs text-gray-400 font-medium mb-1.5">{project.subtitle}</p>
               
-              <p className="text-sm text-gray-300 leading-relaxed mb-4">
+              <p className="text-xs text-gray-300 leading-relaxed mb-3 line-clamp-2">
                 {project.description}
               </p>
 
               {/* Tech Icons */}
-              <div className="flex flex-wrap gap-2 mb-6">
+              <div className="flex flex-wrap gap-1.5 mb-4">
                 {project.techIcons.map((tech, index) => (
                   <span 
                     key={index} 
-                    className="px-3 py-1 text-xs rounded-full bg-white/10 text-gray-300 border border-white/10"
+                    className="px-2 py-0.5 text-[10px] rounded-full bg-white/10 text-gray-300 border border-white/10"
                   >
                     {tech}
                   </span>
@@ -783,10 +783,10 @@ export function EngineeringCards({ isInView }: EngineeringCardsProps) {
               {/* CTA */}
               <button
                 onClick={() => setActiveModal(project.id as 'cloudy' | 'judgement')}
-                className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-gray-900 font-semibold text-sm hover:bg-gray-100 transition-all shadow-lg"
+                className="group inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-gray-900 font-semibold text-xs hover:bg-gray-100 transition-all shadow-md"
               >
-                View Engineering Case Study
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                View Case Study
+                <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
               </button>
             </div>
           </div>
