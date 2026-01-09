@@ -741,7 +741,9 @@ export function EngineeringCards({ isInView }: EngineeringCardsProps) {
               <img 
                 src={project.image} 
                 alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 absolute inset-0"
+                className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 absolute inset-0 ${
+                  project.id === 'judgement' ? 'object-top' : 'object-center'
+                }`}
               />
             </div>
 
