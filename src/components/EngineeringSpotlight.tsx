@@ -728,26 +728,26 @@ export function EngineeringCards({ isInView }: EngineeringCardsProps) {
   return (
     <>
       {/* Two Static Cards Grid */}
-      <div className={`grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-16 mb-20 max-w-4xl mx-auto opacity-0 transform translate-y-6 transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-y-0' : ''}`}>
+      <div className={`flex flex-col gap-6 mb-20 max-w-4xl mx-auto opacity-0 transform translate-y-6 transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-y-0' : ''}`}>
         {engineeringProjects.map((project) => (
           <div 
             key={project.id} 
-            className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.01] bg-card border border-border"
+            className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.01] bg-card border border-border flex flex-col md:flex-row"
           >
-            {/* Image - No edge spacing */}
-            <div className="relative overflow-hidden aspect-video group">
+            {/* Image - Left side on desktop */}
+            <div className="relative overflow-hidden md:w-72 lg:w-80 flex-shrink-0 aspect-video md:aspect-auto group">
               <img 
                 src={project.image} 
                 alt={project.title}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/30 to-transparent" />
             </div>
 
-            {/* Content with padding */}
-            <div className="p-4 pb-5">
+            {/* Content - Right side on desktop */}
+            <div className="p-4 md:p-5 flex flex-col justify-center flex-1">
               {/* Badge */}
-              <div className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full border mb-2 ${
+              <div className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full border mb-2 w-fit ${
                 project.id === 'cloudy' 
                   ? 'bg-primary/10 border-primary/20 text-primary' 
                   : 'bg-green-500/10 border-green-500/20 text-green-600'
@@ -757,36 +757,31 @@ export function EngineeringCards({ isInView }: EngineeringCardsProps) {
               </div>
 
               {/* Content */}
-              <h3 className="text-base font-bold text-foreground mb-0.5">
-                {project.title} <span className="text-muted-foreground font-normal text-xs">{project.version}</span>
+              <h3 className="text-lg font-bold text-foreground mb-0.5">
+                {project.title} <span className="text-muted-foreground font-normal text-sm">{project.version}</span>
               </h3>
-              <p className="text-[10px] text-muted-foreground font-medium mb-1">{project.subtitle}</p>
+              <p className="text-xs text-muted-foreground font-medium mb-1">{project.subtitle}</p>
               
-              <p className="text-[11px] text-muted-foreground leading-relaxed mb-2 line-clamp-2">
+              <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                 {project.description}
               </p>
 
               {/* Tech Icons */}
-              <div className="flex flex-wrap gap-1 mb-3">
-                {project.techIcons.slice(0, 3).map((tech, index) => (
+              <div className="flex flex-wrap gap-1.5 mb-4">
+                {project.techIcons.map((tech, index) => (
                   <span 
                     key={index} 
-                    className="px-1.5 py-0.5 text-[9px] rounded-full bg-secondary text-muted-foreground border border-border"
+                    className="px-2 py-0.5 text-[10px] rounded-full bg-secondary text-muted-foreground border border-border"
                   >
                     {tech}
                   </span>
                 ))}
-                {project.techIcons.length > 3 && (
-                  <span className="px-1.5 py-0.5 text-[9px] rounded-full bg-secondary text-muted-foreground">
-                    +{project.techIcons.length - 3}
-                  </span>
-                )}
               </div>
 
               {/* CTA */}
               <button
                 onClick={() => setActiveModal(project.id as 'cloudy' | 'judgement')}
-                className="group inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-foreground text-background font-semibold text-[11px] hover:bg-foreground/90 transition-all shadow-sm"
+                className="group inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-foreground text-background font-semibold text-xs hover:bg-foreground/90 transition-all shadow-sm w-fit"
               >
                 View Case Study
                 <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
