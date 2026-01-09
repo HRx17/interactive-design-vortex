@@ -736,17 +736,17 @@ export function EngineeringCards({ isInView }: EngineeringCardsProps) {
               index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
             }`}
           >
-            {/* Image - Cropped with fixed height */}
-            <div className="relative overflow-hidden md:w-64 lg:w-72 flex-shrink-0 h-48 md:h-auto group">
+            {/* Image - Cropped to match content height */}
+            <div className="relative overflow-hidden md:w-56 lg:w-64 flex-shrink-0 h-40 md:h-auto group">
               <img 
                 src={project.image} 
                 alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 absolute inset-0"
               />
             </div>
 
-            {/* Content */}
-            <div className="p-4 md:p-5 flex flex-col justify-center flex-1">
+            {/* Content - Determines card height */}
+            <div className="p-4 md:py-4 md:px-5 flex flex-col justify-center flex-1">
               {/* Badge */}
               <div className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full border mb-2 w-fit ${
                 project.id === 'cloudy' 
@@ -757,22 +757,22 @@ export function EngineeringCards({ isInView }: EngineeringCardsProps) {
                 <span className="text-[9px] font-semibold uppercase tracking-wider">{project.badge}</span>
               </div>
 
-              {/* Content */}
-              <h3 className="text-lg font-bold text-foreground mb-0.5">
-                {project.title} <span className="text-muted-foreground font-normal text-sm">{project.version}</span>
+              {/* Title */}
+              <h3 className="text-base font-bold text-foreground mb-0.5">
+                {project.title} <span className="text-muted-foreground font-normal text-xs">{project.version}</span>
               </h3>
-              <p className="text-xs text-muted-foreground font-medium mb-1">{project.subtitle}</p>
+              <p className="text-[10px] text-muted-foreground font-medium mb-1">{project.subtitle}</p>
               
-              <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+              <p className="text-xs text-muted-foreground leading-relaxed mb-2">
                 {project.description}
               </p>
 
               {/* Tech Icons */}
-              <div className="flex flex-wrap gap-1.5 mb-4">
+              <div className="flex flex-wrap gap-1 mb-3">
                 {project.techIcons.map((tech, idx) => (
                   <span 
                     key={idx} 
-                    className="px-2 py-0.5 text-[10px] rounded-full bg-secondary text-muted-foreground border border-border"
+                    className="px-1.5 py-0.5 text-[9px] rounded-full bg-secondary text-muted-foreground border border-border"
                   >
                     {tech}
                   </span>
@@ -782,7 +782,7 @@ export function EngineeringCards({ isInView }: EngineeringCardsProps) {
               {/* CTA */}
               <button
                 onClick={() => setActiveModal(project.id as 'cloudy' | 'judgement')}
-                className="group inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-foreground text-background font-semibold text-xs hover:bg-foreground/90 transition-all shadow-sm w-fit"
+                className="group inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-foreground text-background font-semibold text-[10px] hover:bg-foreground/90 transition-all shadow-sm w-fit"
               >
                 View Case Study
                 <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
