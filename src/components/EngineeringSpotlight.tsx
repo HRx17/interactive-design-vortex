@@ -728,14 +728,25 @@ export function EngineeringCards({ isInView }: EngineeringCardsProps) {
   return (
     <>
       {/* Two Static Cards Grid */}
-      <div className={`grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8 mb-20 max-w-4xl mx-auto opacity-0 transform translate-y-6 transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-y-0' : ''}`}>
+      <div className={`grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-16 mb-20 max-w-4xl mx-auto opacity-0 transform translate-y-6 transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-y-0' : ''}`}>
         {engineeringProjects.map((project) => (
           <div 
             key={project.id} 
             className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.01] bg-card border border-border"
           >
+            {/* Image - No edge spacing */}
+            <div className="relative overflow-hidden aspect-video group">
+              <img 
+                src={project.image} 
+                alt={project.title}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+            </div>
+
+            {/* Content with padding */}
             <div className="p-4">
-              {/* Top - Badge */}
+              {/* Badge */}
               <div className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full border mb-2 ${
                 project.id === 'cloudy' 
                   ? 'bg-primary/10 border-primary/20 text-primary' 
@@ -743,16 +754,6 @@ export function EngineeringCards({ isInView }: EngineeringCardsProps) {
               }`}>
                 {project.badgeIcon}
                 <span className="text-[9px] font-semibold uppercase tracking-wider">{project.badge}</span>
-              </div>
-
-              {/* Image */}
-              <div className="relative rounded-lg overflow-hidden aspect-video mb-3 group">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
               </div>
 
               {/* Content */}
