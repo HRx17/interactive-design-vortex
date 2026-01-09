@@ -209,7 +209,7 @@ export function Projects() {
       <div className="section-container">
 
         {/* Header Title */}
-        <div className="max-w-2xl mx-auto mb-16 text-center">
+        <div className="max-w-2xl mx-auto mb-8 text-center">
           <span className={cn("text-sm font-medium px-3 py-1 rounded-full bg-secondary text-primary inline-block mb-4", "opacity-0 transform translate-y-6 transition-all duration-700", isInView && "opacity-100 translate-y-0")}>
             Featured Projects
           </span>
