@@ -706,7 +706,7 @@ export const engineeringProjects = [
   },
   {
     id: 'judgement',
-    badge: 'Public Release in 13 Days',
+    badge: 'Releasing on Google Play Store in 13 Days',
     badgeIcon: <Smartphone className="h-3 w-3" />,
     title: 'Judgement',
     version: 'Multiplayer Strategy Game',
@@ -745,7 +745,7 @@ export function EngineeringCards({ isInView }: EngineeringCardsProps) {
             </div>
 
             {/* Content with padding */}
-            <div className="p-4">
+            <div className="p-4 pb-5">
               {/* Badge */}
               <div className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full border mb-2 ${
                 project.id === 'cloudy' 
