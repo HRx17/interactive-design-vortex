@@ -728,7 +728,7 @@ export function EngineeringCards({ isInView }: EngineeringCardsProps) {
   return (
     <>
       {/* Two Static Cards Grid */}
-      <div className={`grid grid-cols-1 md:grid-cols-2 gap-4 mb-20 max-w-4xl mx-auto opacity-0 transform translate-y-6 transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-y-0' : ''}`}>
+      <div className={`grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8 mb-20 max-w-4xl mx-auto opacity-0 transform translate-y-6 transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-y-0' : ''}`}>
         {engineeringProjects.map((project) => (
           <div 
             key={project.id} 
