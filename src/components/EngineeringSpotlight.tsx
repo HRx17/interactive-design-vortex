@@ -691,153 +691,107 @@ function JudgementModalContent() {
   );
 }
 
-// ========== MAIN COMPONENT ==========
-export function EngineeringSpotlight() {
+// ========== ENGINEERING PROJECTS DATA (exported for use in Projects.tsx) ==========
+export const engineeringProjects = [
+  {
+    id: 'cloudy',
+    badge: 'Latest Innovation',
+    badgeIcon: <Sparkles className="h-3 w-3" />,
+    title: 'Cloudy',
+    version: '(v1.0.0 Beta)',
+    subtitle: 'AI-Native Autonomous Robot',
+    description: 'A physical manifestation of Vibe Coding—bridging Python logic with custom hardware and generative AI instrumentation.',
+    techIcons: ['Raspberry Pi', 'Python', 'OpenAI', 'Google Cloud'],
+    image: cloudyFinal
+  },
+  {
+    id: 'judgement',
+    badge: 'Public Release in 13 Days',
+    badgeIcon: <Smartphone className="h-3 w-3" />,
+    title: 'Judgement',
+    version: 'Multiplayer Strategy Game',
+    subtitle: 'Cross-Platform Mobile Game',
+    description: 'A cross-platform mobile game powered by custom Game Theory algorithms and real-time state synchronization.',
+    techIcons: ['React Native', 'Firebase', 'TypeScript', 'Android'],
+    image: judgementHome
+  }
+];
+
+// ========== ENGINEERING CARDS COMPONENT (for use in Projects.tsx) ==========
+interface EngineeringCardsProps {
+  isInView: boolean;
+}
+
+export function EngineeringCards({ isInView }: EngineeringCardsProps) {
   const [activeModal, setActiveModal] = useState<'cloudy' | 'judgement' | null>(null);
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true },
-    [Autoplay({ delay: 6000, stopOnInteraction: true })]
-  );
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    
-    const onSelect = () => {
-      setSelectedIndex(emblaApi.selectedScrollSnap());
-    };
-    
-    emblaApi.on('select', onSelect);
-    return () => {
-      emblaApi.off('select', onSelect);
-    };
-  }, [emblaApi]);
-
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
-
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
-
-  const scrollTo = useCallback((index: number) => {
-    if (emblaApi) emblaApi.scrollTo(index);
-  }, [emblaApi]);
-
-  const projects = [
-    {
-      id: 'cloudy',
-      badge: 'Latest Innovation',
-      badgeIcon: <Sparkles className="h-3 w-3" />,
-      badgeColor: 'bg-primary/10 border-primary/20 text-primary',
-      title: 'Cloudy',
-      version: '(v1.0.0 Beta)',
-      subtitle: 'AI-Native Autonomous Robot',
-      description: 'A physical manifestation of Vibe Coding—bridging Python logic with custom hardware and generative AI instrumentation.',
-      techIcons: ['Raspberry Pi', 'Python', 'OpenAI', 'Google Cloud'],
-      image: cloudyFinal
-    },
-    {
-      id: 'judgement',
-      badge: 'Public Release in 13 Days',
-      badgeIcon: <Smartphone className="h-3 w-3" />,
-      badgeColor: 'bg-green-500/10 border-green-500/20 text-green-500',
-      title: 'Judgement',
-      version: 'Multiplayer Strategy Game',
-      subtitle: 'Cross-Platform Mobile Game',
-      description: 'A cross-platform mobile game powered by custom Game Theory algorithms and real-time state synchronization.',
-      techIcons: ['React Native', 'Firebase', 'TypeScript', 'Android'],
-      image: judgementHome
-    }
-  ];
 
   return (
     <>
-      {/* Engineering Spotlight Section */}
-      <section className="py-16 md:py-20 relative bg-background border-t border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section Header */}
-          <div className="text-center mb-12">
-            <span className="text-sm font-medium px-3 py-1 rounded-full bg-secondary text-primary inline-block mb-4">
-              Engineering Spotlight
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
-              Latest Innovation
-            </h2>
-            <p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto">
-              Engineering projects that push the boundaries of what's possible
-            </p>
-          </div>
-
-          {/* Two Static Cards Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {projects.map((project) => (
-              <div 
-                key={project.id} 
-                className="rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]"
-                style={{
-                  background: 'linear-gradient(225deg, #434343 17%, #050505 100%)',
-                }}
-              >
-                <div className="p-6 md:p-8">
-                  {/* Top - Badge */}
-                  <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full border mb-4 ${
-                    project.id === 'cloudy' 
-                      ? 'bg-white/10 border-white/20 text-white' 
-                      : 'bg-green-500/20 border-green-500/30 text-green-400'
-                  }`}>
-                    {project.badgeIcon}
-                    <span className="text-xs font-semibold uppercase tracking-wider">{project.badge}</span>
-                  </div>
-
-                  {/* Image */}
-                  <div className="relative rounded-2xl overflow-hidden aspect-video mb-6 group">
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  </div>
-
-                  {/* Content */}
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
-                    {project.title} <span className="text-gray-400 font-normal text-base">{project.version}</span>
-                  </h3>
-                  <p className="text-sm text-gray-400 font-medium mb-2">{project.subtitle}</p>
-                  
-                  <p className="text-sm text-gray-300 leading-relaxed mb-4">
-                    {project.description}
-                  </p>
-
-                  {/* Tech Icons */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.techIcons.map((tech, index) => (
-                      <span 
-                        key={index} 
-                        className="px-3 py-1 text-xs rounded-full bg-white/10 text-gray-300 border border-white/10"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* CTA */}
-                  <button
-                    onClick={() => setActiveModal(project.id as 'cloudy' | 'judgement')}
-                    className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-gray-900 font-semibold text-sm hover:bg-gray-100 transition-all shadow-lg"
-                  >
-                    View Engineering Case Study
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </button>
-                </div>
+      {/* Two Static Cards Grid */}
+      <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 opacity-0 transform translate-y-6 transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-y-0' : ''}`}>
+        {engineeringProjects.map((project) => (
+          <div 
+            key={project.id} 
+            className="rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]"
+            style={{
+              background: 'linear-gradient(225deg, #434343 17%, #050505 100%)',
+            }}
+          >
+            <div className="p-6 md:p-8">
+              {/* Top - Badge */}
+              <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full border mb-4 ${
+                project.id === 'cloudy' 
+                  ? 'bg-white/10 border-white/20 text-white' 
+                  : 'bg-green-500/20 border-green-500/30 text-green-400'
+              }`}>
+                {project.badgeIcon}
+                <span className="text-xs font-semibold uppercase tracking-wider">{project.badge}</span>
               </div>
-            ))}
+
+              {/* Image */}
+              <div className="relative rounded-2xl overflow-hidden aspect-video mb-6 group">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              </div>
+
+              {/* Content */}
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
+                {project.title} <span className="text-gray-400 font-normal text-base">{project.version}</span>
+              </h3>
+              <p className="text-sm text-gray-400 font-medium mb-2">{project.subtitle}</p>
+              
+              <p className="text-sm text-gray-300 leading-relaxed mb-4">
+                {project.description}
+              </p>
+
+              {/* Tech Icons */}
+              <div className="flex flex-wrap gap-2 mb-6">
+                {project.techIcons.map((tech, index) => (
+                  <span 
+                    key={index} 
+                    className="px-3 py-1 text-xs rounded-full bg-white/10 text-gray-300 border border-white/10"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              {/* CTA */}
+              <button
+                onClick={() => setActiveModal(project.id as 'cloudy' | 'judgement')}
+                className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-gray-900 font-semibold text-sm hover:bg-gray-100 transition-all shadow-lg"
+              >
+                View Engineering Case Study
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </button>
+            </div>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
 
       {/* Cloudy Modal */}
       <Dialog open={activeModal === 'cloudy'} onOpenChange={(open) => !open && setActiveModal(null)}>
@@ -868,4 +822,9 @@ export function EngineeringSpotlight() {
       </Dialog>
     </>
   );
+}
+
+// ========== LEGACY MAIN COMPONENT (keeping for backwards compatibility) ==========
+export function EngineeringSpotlight() {
+  return null; // Component moved to Projects.tsx
 }

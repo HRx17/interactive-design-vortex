@@ -5,6 +5,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { ProjectTypeSwitcher } from './ProjectTypeSwitcher';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
+import { EngineeringCards } from './EngineeringSpotlight';
 
 // Project components for "More Work"
 import { HealthyRProject } from './HealthyRProject';
@@ -224,6 +225,9 @@ export function Projects() {
             }
           </p>
         </div>
+
+        {/* Engineering Cards - After header, before tabs */}
+        <EngineeringCards isInView={isInView} />
 
         {/* Project Type Switcher */}
         <div className={cn("opacity-0 transform translate-y-6 transition-all duration-700 delay-300", isInView && "opacity-100 translate-y-0")}>
