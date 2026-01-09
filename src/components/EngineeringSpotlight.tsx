@@ -755,75 +755,99 @@ export function EngineeringSpotlight() {
 
   return (
     <>
-      {/* Carousel Banner */}
-      <section className="py-8 bg-gradient-to-r from-secondary via-background to-secondary border-y border-border/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Carousel Banner - The Void */}
+      <section className="py-16 md:py-20 bg-gradient-to-b from-slate-900 via-gray-900 to-slate-800 relative overflow-hidden">
+        {/* Subtle ambient glow effect */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl" />
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Section Header with Gradient Text */}
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent mb-3">
+              Latest Innovation
+            </h2>
+            <p className="text-gray-400 text-sm md:text-base max-w-2xl mx-auto">
+              Engineering projects that push the boundaries of what's possible
+            </p>
+          </div>
+
           <div className="relative">
             {/* Left Arrow */}
             <button
               onClick={scrollPrev}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-background/90 backdrop-blur-sm border border-border shadow-lg hover:bg-secondary transition-colors hidden md:flex"
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 shadow-lg hover:bg-white/20 transition-colors hidden md:flex"
               aria-label="Previous project"
             >
-              <ChevronLeft className="h-5 w-5 text-foreground" />
+              <ChevronLeft className="h-5 w-5 text-white" />
             </button>
 
-            {/* Carousel */}
+            {/* Carousel - The Floating Card */}
             <div className="overflow-hidden md:mx-12" ref={emblaRef}>
               <div className="flex">
                 {projects.map((project) => (
-                  <div key={project.id} className="flex-[0_0_100%] min-w-0">
-                    <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8 px-2">
-                      {/* Left - Image */}
-                      <div className="w-full md:w-48 lg:w-56 flex-shrink-0">
-                        <div className="relative rounded-2xl overflow-hidden aspect-square shadow-xl border border-border/50 group">
-                          <img 
-                            src={project.image} 
-                            alt={project.title}
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  <div key={project.id} className="flex-[0_0_100%] min-w-0 px-4">
+                    {/* Floating Card with Breathing Animation */}
+                    <div 
+                      className="bg-white rounded-3xl shadow-2xl shadow-indigo-500/20 border border-gray-100 p-6 md:p-8 animate-[float_3s_ease-in-out_infinite]"
+                      style={{
+                        animation: 'float 3s ease-in-out infinite'
+                      }}
+                    >
+                      <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+                        {/* Left - Image */}
+                        <div className="w-full md:w-48 lg:w-56 flex-shrink-0">
+                          <div className="relative rounded-2xl overflow-hidden aspect-square shadow-xl border border-gray-200 group">
+                            <img 
+                              src={project.image} 
+                              alt={project.title}
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                          </div>
                         </div>
-                      </div>
 
-                      {/* Center - Content */}
-                      <div className="flex-1 text-center md:text-left">
-                        <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full border mb-3 ${project.badgeColor}`}>
-                          {project.badgeIcon}
-                          <span className="text-xs font-semibold uppercase tracking-wider">{project.badge}</span>
+                        {/* Center - Content */}
+                        <div className="flex-1 text-center md:text-left">
+                          <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full border mb-3 ${project.badgeColor}`}>
+                            {project.badgeIcon}
+                            <span className="text-xs font-semibold uppercase tracking-wider">{project.badge}</span>
+                          </div>
+                          
+                          <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-2">
+                            {project.title} <span className="text-gray-500 font-normal text-base md:text-lg">{project.version}</span>
+                          </h3>
+                          <p className="text-sm text-gray-600 font-medium mb-2">{project.subtitle}</p>
+                          
+                          <p className="text-sm text-gray-600 leading-relaxed mb-4 max-w-xl">
+                            {project.description}
+                          </p>
+
+                          {/* Tech Icons */}
+                          <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-4">
+                            {project.techIcons.map((tech, index) => (
+                              <span 
+                                key={index} 
+                                className="px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-700 border border-gray-200"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
                         </div>
-                        
-                        <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-foreground mb-2">
-                          {project.title} <span className="text-muted-foreground font-normal text-base md:text-lg">{project.version}</span>
-                        </h3>
-                        <p className="text-sm text-muted-foreground font-medium mb-2">{project.subtitle}</p>
-                        
-                        <p className="text-sm text-muted-foreground leading-relaxed mb-4 max-w-xl">
-                          {project.description}
-                        </p>
 
-                        {/* Tech Icons */}
-                        <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-4">
-                          {project.techIcons.map((tech, index) => (
-                            <span 
-                              key={index} 
-                              className="px-3 py-1 text-xs rounded-full bg-secondary text-muted-foreground border border-border/50"
-                            >
-                              {tech}
-                            </span>
-                          ))}
+                        {/* Right - CTA */}
+                        <div className="flex-shrink-0">
+                          <button
+                            onClick={() => setActiveModal(project.id as 'cloudy' | 'judgement')}
+                            className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold text-sm hover:from-cyan-600 hover:to-purple-600 transition-all shadow-lg hover:shadow-purple-500/25"
+                          >
+                            View Engineering Case Study
+                            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                          </button>
                         </div>
-                      </div>
-
-                      {/* Right - CTA */}
-                      <div className="flex-shrink-0">
-                        <button
-                          onClick={() => setActiveModal(project.id as 'cloudy' | 'judgement')}
-                          className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/25"
-                        >
-                          View Engineering Case Study
-                          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                        </button>
                       </div>
                     </div>
                   </div>
@@ -834,23 +858,23 @@ export function EngineeringSpotlight() {
             {/* Right Arrow */}
             <button
               onClick={scrollNext}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-background/90 backdrop-blur-sm border border-border shadow-lg hover:bg-secondary transition-colors hidden md:flex"
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 shadow-lg hover:bg-white/20 transition-colors hidden md:flex"
               aria-label="Next project"
             >
-              <ChevronRight className="h-5 w-5 text-foreground" />
+              <ChevronRight className="h-5 w-5 text-white" />
             </button>
           </div>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center gap-2 mt-6">
+          <div className="flex justify-center gap-2 mt-8">
             {projects.map((_, index) => (
               <button
                 key={index}
                 onClick={() => scrollTo(index)}
                 className={`w-2 h-2 rounded-full transition-all ${
                   selectedIndex === index 
-                    ? 'bg-primary w-6' 
-                    : 'bg-border hover:bg-muted-foreground'
+                    ? 'bg-cyan-400 w-6' 
+                    : 'bg-white/30 hover:bg-white/50'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
