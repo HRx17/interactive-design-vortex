@@ -713,7 +713,7 @@ export const engineeringProjects = [
     subtitle: 'Cross-Platform Mobile Game',
     description: 'A cross-platform mobile game powered by custom Game Theory algorithms and real-time state synchronization.',
     techIcons: ['React Native', 'Firebase', 'TypeScript', 'Android'],
-    image: judgementHome
+    image: judgementPlaystore
   }
 ];
 
