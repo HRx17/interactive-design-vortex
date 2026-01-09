@@ -749,8 +749,8 @@ export function EngineeringCards({ isInView }: EngineeringCardsProps) {
             </div>
 
             {/* Content - Determines card height */}
-            <div className={`p-4 md:py-4 md:px-5 flex flex-col justify-center flex-1 ${
-              index % 2 === 1 ? 'md:items-end md:text-right' : ''
+            <div className={`p-4 md:py-4 flex flex-col justify-center flex-1 ${
+              index % 2 === 1 ? 'md:pl-6 md:pr-5' : 'md:px-5'
             }`}>
               {/* Badge */}
               <div className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full border mb-2 w-fit ${
@@ -773,7 +773,7 @@ export function EngineeringCards({ isInView }: EngineeringCardsProps) {
               </p>
 
               {/* Tech Icons */}
-              <div className={`flex flex-wrap gap-1 mb-3 ${index % 2 === 1 ? 'md:justify-end' : ''}`}>
+              <div className="flex flex-wrap gap-1 mb-3">
                 {project.techIcons.map((tech, idx) => (
                   <span 
                     key={idx} 
