@@ -729,22 +729,23 @@ export function EngineeringCards({ isInView }: EngineeringCardsProps) {
     <>
       {/* Two Static Cards Grid */}
       <div className={`flex flex-col gap-6 mb-20 max-w-4xl mx-auto opacity-0 transform translate-y-6 transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-y-0' : ''}`}>
-        {engineeringProjects.map((project) => (
+        {engineeringProjects.map((project, index) => (
           <div 
             key={project.id} 
-            className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.01] bg-card border border-border flex flex-col md:flex-row"
+            className={`rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.01] bg-card border border-border flex flex-col ${
+              index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+            }`}
           >
-            {/* Image - Left side on desktop */}
-            <div className="relative overflow-hidden md:w-72 lg:w-80 flex-shrink-0 aspect-video md:aspect-auto group">
+            {/* Image - Cropped with fixed height */}
+            <div className="relative overflow-hidden md:w-64 lg:w-72 flex-shrink-0 h-48 md:h-auto group">
               <img 
                 src={project.image} 
                 alt={project.title}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/30 to-transparent" />
             </div>
 
-            {/* Content - Right side on desktop */}
+            {/* Content */}
             <div className="p-4 md:p-5 flex flex-col justify-center flex-1">
               {/* Badge */}
               <div className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full border mb-2 w-fit ${
@@ -768,9 +769,9 @@ export function EngineeringCards({ isInView }: EngineeringCardsProps) {
 
               {/* Tech Icons */}
               <div className="flex flex-wrap gap-1.5 mb-4">
-                {project.techIcons.map((tech, index) => (
+                {project.techIcons.map((tech, idx) => (
                   <span 
-                    key={index} 
+                    key={idx} 
                     className="px-2 py-0.5 text-[10px] rounded-full bg-secondary text-muted-foreground border border-border"
                   >
                     {tech}
