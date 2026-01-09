@@ -756,17 +756,17 @@ export function EngineeringSpotlight() {
   return (
     <>
       {/* Carousel Banner - The Void */}
-      <section className="py-16 md:py-20 bg-gradient-to-b from-slate-900 via-gray-900 to-slate-800 relative overflow-hidden">
-        {/* Subtle ambient glow effect */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl" />
+      <section className="py-16 md:py-20 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 relative overflow-hidden">
+        {/* Subtle ambient glow effect - monochrome */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Section Header with Gradient Text */}
+          {/* Section Header */}
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent mb-3">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
               Latest Innovation
             </h2>
             <p className="text-gray-400 text-sm md:text-base max-w-2xl mx-auto">
@@ -791,7 +791,7 @@ export function EngineeringSpotlight() {
                   <div key={project.id} className="flex-[0_0_100%] min-w-0 px-4">
                     {/* Floating Card with Breathing Animation */}
                     <div 
-                      className="bg-white rounded-3xl shadow-2xl shadow-indigo-500/20 border border-gray-100 p-6 md:p-8 animate-[float_3s_ease-in-out_infinite]"
+                      className="bg-white rounded-3xl shadow-2xl shadow-black/40 border border-gray-200 p-6 md:p-8"
                       style={{
                         animation: 'float 3s ease-in-out infinite'
                       }}
@@ -842,7 +842,7 @@ export function EngineeringSpotlight() {
                         <div className="flex-shrink-0">
                           <button
                             onClick={() => setActiveModal(project.id as 'cloudy' | 'judgement')}
-                            className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold text-sm hover:from-cyan-600 hover:to-purple-600 transition-all shadow-lg hover:shadow-purple-500/25"
+                            className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gray-900 text-white font-semibold text-sm hover:bg-gray-800 transition-all shadow-lg hover:shadow-gray-900/25"
                           >
                             View Engineering Case Study
                             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -873,7 +873,7 @@ export function EngineeringSpotlight() {
                 onClick={() => scrollTo(index)}
                 className={`w-2 h-2 rounded-full transition-all ${
                   selectedIndex === index 
-                    ? 'bg-cyan-400 w-6' 
+                    ? 'bg-white w-6' 
                     : 'bg-white/30 hover:bg-white/50'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
