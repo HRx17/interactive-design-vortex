@@ -755,14 +755,13 @@ export function EngineeringSpotlight() {
 
   return (
     <>
-      {/* Carousel Banner - The Void */}
-      <section className="py-16 md:py-20 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 relative overflow-hidden">
-        {/* Subtle ambient glow effect - monochrome */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
-        </div>
-        
+      {/* Carousel Banner */}
+      <section 
+        className="py-16 md:py-20 relative overflow-hidden"
+        style={{
+          background: 'linear-gradient(225deg, #434343 17%, #050505 100%)',
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Section Header */}
           <div className="text-center mb-10">
@@ -789,13 +788,8 @@ export function EngineeringSpotlight() {
               <div className="flex">
                 {projects.map((project) => (
                   <div key={project.id} className="flex-[0_0_100%] min-w-0 px-4">
-                    {/* Floating Card with Breathing Animation */}
-                    <div 
-                      className="bg-white rounded-3xl shadow-2xl shadow-black/40 border border-gray-200 p-6 md:p-8"
-                      style={{
-                        animation: 'float 3s ease-in-out infinite'
-                      }}
-                    >
+                    {/* Card */}
+                    <div className="bg-white rounded-3xl shadow-2xl shadow-black/40 border border-gray-200 p-6 md:p-8">
                       <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
                         {/* Left - Image */}
                         <div className="w-full md:w-48 lg:w-56 flex-shrink-0">
