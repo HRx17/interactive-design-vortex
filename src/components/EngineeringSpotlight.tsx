@@ -728,65 +728,70 @@ export function EngineeringCards({ isInView }: EngineeringCardsProps) {
   return (
     <>
       {/* Two Static Cards Grid */}
-      <div className={`grid grid-cols-1 lg:grid-cols-2 gap-6 mb-16 opacity-0 transform translate-y-6 transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-y-0' : ''}`}>
+      <div className={`grid grid-cols-1 md:grid-cols-2 gap-4 mb-20 max-w-4xl mx-auto opacity-0 transform translate-y-6 transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-y-0' : ''}`}>
         {engineeringProjects.map((project) => (
           <div 
             key={project.id} 
-            className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
+            className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.01]"
             style={{
               background: 'linear-gradient(225deg, #434343 17%, #050505 100%)',
             }}
           >
-            <div className="p-5 md:p-6">
+            <div className="p-4">
               {/* Top - Badge */}
-              <div className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border mb-3 ${
+              <div className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full border mb-2 ${
                 project.id === 'cloudy' 
                   ? 'bg-white/10 border-white/20 text-white' 
                   : 'bg-green-500/20 border-green-500/30 text-green-400'
               }`}>
                 {project.badgeIcon}
-                <span className="text-[10px] font-semibold uppercase tracking-wider">{project.badge}</span>
+                <span className="text-[9px] font-semibold uppercase tracking-wider">{project.badge}</span>
               </div>
 
               {/* Image */}
-              <div className="relative rounded-xl overflow-hidden aspect-video mb-4 group">
+              <div className="relative rounded-lg overflow-hidden aspect-video mb-3 group">
                 <img 
                   src={project.image} 
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
               </div>
 
               {/* Content */}
-              <h3 className="text-lg md:text-xl font-bold text-white mb-1">
-                {project.title} <span className="text-gray-400 font-normal text-sm">{project.version}</span>
+              <h3 className="text-base font-bold text-white mb-0.5">
+                {project.title} <span className="text-gray-400 font-normal text-xs">{project.version}</span>
               </h3>
-              <p className="text-xs text-gray-400 font-medium mb-1.5">{project.subtitle}</p>
+              <p className="text-[10px] text-gray-400 font-medium mb-1">{project.subtitle}</p>
               
-              <p className="text-xs text-gray-300 leading-relaxed mb-3 line-clamp-2">
+              <p className="text-[11px] text-gray-300 leading-relaxed mb-2 line-clamp-2">
                 {project.description}
               </p>
 
               {/* Tech Icons */}
-              <div className="flex flex-wrap gap-1.5 mb-4">
-                {project.techIcons.map((tech, index) => (
+              <div className="flex flex-wrap gap-1 mb-3">
+                {project.techIcons.slice(0, 3).map((tech, index) => (
                   <span 
                     key={index} 
-                    className="px-2 py-0.5 text-[10px] rounded-full bg-white/10 text-gray-300 border border-white/10"
+                    className="px-1.5 py-0.5 text-[9px] rounded-full bg-white/10 text-gray-300 border border-white/10"
                   >
                     {tech}
                   </span>
                 ))}
+                {project.techIcons.length > 3 && (
+                  <span className="px-1.5 py-0.5 text-[9px] rounded-full bg-white/10 text-gray-400">
+                    +{project.techIcons.length - 3}
+                  </span>
+                )}
               </div>
 
               {/* CTA */}
               <button
                 onClick={() => setActiveModal(project.id as 'cloudy' | 'judgement')}
-                className="group inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-gray-900 font-semibold text-xs hover:bg-gray-100 transition-all shadow-md"
+                className="group inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white text-gray-900 font-semibold text-[11px] hover:bg-gray-100 transition-all shadow-sm"
               >
                 View Case Study
-                <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
               </button>
             </div>
           </div>
