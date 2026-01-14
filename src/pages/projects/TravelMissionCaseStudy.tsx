@@ -7,11 +7,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import userJourneyMap from "@/assets/travel-mission/user-journey-map.png";
 import stakeholderDiagram from "@/assets/travel-mission/stakeholder-diagram.png";
 import tripLeaderFlow from "@/assets/travel-mission/trip-leader-flow.png";
-import hifiTodo from "@/assets/travel-mission/hifi-todo.png";
-import hifiTripFeed from "@/assets/travel-mission/hifi-tripfeed.png";
-import hifiPhotos from "@/assets/travel-mission/hifi-photos.png";
-import hifiNotifications from "@/assets/travel-mission/hifi-notifications.png";
-import hifiTripDetails from "@/assets/travel-mission/hifi-tripdetails.png";
+import screenTripDetails from "@/assets/travel-mission/screen-trip-details.png";
+import screenTodo from "@/assets/travel-mission/screen-todo.png";
+import screenNotifications from "@/assets/travel-mission/screen-notifications.png";
+import screenGallery from "@/assets/travel-mission/screen-gallery.png";
+import screenTripFeed from "@/assets/travel-mission/screen-tripfeed.png";
 
 const TravelMissionCaseStudy = () => {
   const navigate = useNavigate();
@@ -303,32 +303,22 @@ const TravelMissionCaseStudy = () => {
               ))}
             </div>
 
-            {/* Hi-Fi Screens Grid – screens extracted from your PDF (long screen cropped via CSS) */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Standard-height screens */}
-              {[hifiTodo, hifiNotifications, hifiTripFeed, hifiPhotos].map((src, idx) => (
-                <div
-                  key={idx}
-                  className="rounded-xl overflow-hidden border border-border shadow-lg bg-card"
-                >
-                  <img
-                    src={src}
-                    alt={`High-fidelity mobile screen ${idx + 1}`}
-                    className="w-full h-auto"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-              {/* Long screen cropped to match the height of others */}
-              <div className="rounded-xl overflow-hidden border border-border shadow-lg bg-card col-span-1 sm:col-span-2 lg:col-span-2">
-                <div className="relative w-full" style={{ paddingBottom: "120%" }}>
-                  <img
-                    src={hifiTripDetails}
-                    alt="Trip Details screen (cropped)"
-                    className="absolute top-0 left-0 w-full h-full object-cover object-top"
-                    loading="lazy"
-                  />
-                </div>
+            {/* Hi-Fi Screens Collage */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+              <div className="rounded-xl overflow-hidden border border-border shadow-lg bg-card">
+                <img src={screenTodo} alt="To-Do List Screen" className="w-full h-auto" loading="lazy" />
+              </div>
+              <div className="rounded-xl overflow-hidden border border-border shadow-lg bg-card">
+                <img src={screenNotifications} alt="Notifications Screen" className="w-full h-auto" loading="lazy" />
+              </div>
+              <div className="rounded-xl overflow-hidden border border-border shadow-lg bg-card">
+                <img src={screenTripFeed} alt="Trip Feed Screen" className="w-full h-auto" loading="lazy" />
+              </div>
+              <div className="rounded-xl overflow-hidden border border-border shadow-lg bg-card">
+                <img src={screenGallery} alt="Trip Feed Gallery Screen" className="w-full h-auto" loading="lazy" />
+              </div>
+              <div className="rounded-xl overflow-hidden border border-border shadow-lg bg-card">
+                <img src={screenTripDetails} alt="Trip Details Screen" className="w-full h-auto" loading="lazy" />
               </div>
             </div>
           </div>
