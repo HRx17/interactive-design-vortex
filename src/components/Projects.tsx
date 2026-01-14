@@ -66,7 +66,7 @@ const featuredProjects = [
     description: 'A futuristic holographic interaction design for mixed reality, exploring how users can visualize...',
     imageUrl: "/lovable-uploads/h1.png",
     placeholder: null,
-    tags: ["AR/VR Design", "3D Design", "Figma", "Blender"],
+    tags: ["Product Design", "3D Design", "Figma", "Blender"],
     links: [
       { label: 'View Case Study', url: '/projects/ar-vr', isInternal: true },
     ],
