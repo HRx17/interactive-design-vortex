@@ -1,22 +1,41 @@
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, Users, Map, Smartphone, FileText, Layers, CheckCircle, Shield, ExternalLink } from "lucide-react";
+import { ArrowLeft, Users, Map, Smartphone, FileText, Layers, CheckCircle, Shield, ExternalLink, GitBranch, Target, Workflow } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 
 // Import images
-import catalystSummary from "@/assets/travel-mission/catalyst-summary.jpg";
 import userJourneyMap from "@/assets/travel-mission/user-journey-map.png";
-import processFlow from "@/assets/travel-mission/process-flow.png";
-import moduleMatrix from "@/assets/travel-mission/module-matrix.png";
 import stakeholderDiagram from "@/assets/travel-mission/stakeholder-diagram.png";
 import outcomes from "@/assets/travel-mission/outcomes.png";
-import hifiScreensOverview from "@/assets/travel-mission/hifi-screens-overview.jpg";
 import hifiScreen1 from "@/assets/travel-mission/hifi-screen-1.jpg";
 import hifiScreen2 from "@/assets/travel-mission/hifi-screen-2.jpg";
 import hifiScreen3 from "@/assets/travel-mission/hifi-screen-3.jpg";
 import hifiScreen4 from "@/assets/travel-mission/hifi-screen-4.jpg";
 import hifiScreen5 from "@/assets/travel-mission/hifi-screen-5.jpg";
 import hifiScreen6 from "@/assets/travel-mission/hifi-screen-6.jpg";
+
+// Reusable component for images with blur overlay on logo areas
+const CensoredImage = ({ 
+  src, 
+  alt, 
+  className = "",
+  blurTop = false 
+}: { 
+  src: string; 
+  alt: string; 
+  className?: string;
+  blurTop?: boolean;
+}) => (
+  <div className="relative overflow-hidden rounded-lg">
+    <img src={src} alt={alt} className={`w-full h-auto ${className}`} />
+    {blurTop && (
+      <div 
+        className="absolute top-0 left-0 right-0 h-16 backdrop-blur-xl bg-gradient-to-b from-background/80 to-transparent"
+        style={{ backdropFilter: 'blur(12px)' }}
+      />
+    )}
+  </div>
+);
 
 const TravelMissionCaseStudy = () => {
   const navigate = useNavigate();
@@ -42,6 +61,24 @@ const TravelMissionCaseStudy = () => {
     "Delivered client-ready catalyst summary for stakeholder alignment",
   ];
 
+  const iaProcess = [
+    {
+      icon: GitBranch,
+      title: "Feature Mapping",
+      description: "Analyzed existing web platform features and mapped them to mobile-appropriate patterns, identifying which features needed redesign vs. direct adaptation."
+    },
+    {
+      icon: Target,
+      title: "User Type Analysis",
+      description: "Created distinct feature sets for each user type — travelers needing trip info and checklists, trip leaders managing expenses and groups, and parents monitoring progress."
+    },
+    {
+      icon: Workflow,
+      title: "Flow Optimization",
+      description: "Streamlined complex multi-step processes (registration, lottery, payments) into intuitive mobile flows with clear progress indicators and reduced cognitive load."
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
@@ -57,7 +94,7 @@ const TravelMissionCaseStudy = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* Hero Section - Text-based, no blurred PDF */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Confidentiality Banner */}
@@ -93,13 +130,20 @@ const TravelMissionCaseStudy = () => {
             ))}
           </div>
 
-          {/* Hero Image - Catalyst Summary Overview */}
-          <div className="relative rounded-xl overflow-hidden border border-border shadow-lg">
-            <img
-              src={catalystSummary}
-              alt="TravelMission App - Catalyst Summary Overview"
-              className="w-full h-auto"
-            />
+          {/* Hero Visual - Mobile Mockups Preview with blur on logos */}
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-4 p-6 bg-gradient-to-br from-primary/5 to-secondary/30 rounded-2xl border border-border">
+            {[hifiScreen1, hifiScreen2, hifiScreen3, hifiScreen4, hifiScreen5, hifiScreen6].map((screen, index) => (
+              <div 
+                key={index} 
+                className="rounded-xl overflow-hidden border border-border shadow-lg hover:shadow-xl transition-all hover:scale-105"
+              >
+                <CensoredImage 
+                  src={screen} 
+                  alt={`Mobile App Screen ${index + 1}`}
+                  blurTop={true}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -184,8 +228,11 @@ const TravelMissionCaseStudy = () => {
           <div className="mb-16">
             <h3 className="text-2xl font-semibold text-foreground mb-4">1. Understanding Users</h3>
             <p className="text-muted-foreground mb-6 max-w-3xl">
-              Created comprehensive user journey maps identifying minimum, in-between, and ideal 
-              experiences for the core user types — from initial discovery through trip completion.
+              I started by mapping the complete user journey from discovery to post-trip engagement. 
+              This involved interviewing stakeholders, analyzing the existing web platform, and 
+              identifying pain points at each stage. The journey map below shows three experience 
+              levels: minimum (basic functionality), in-between (enhanced experience), and ideal 
+              (optimized flow with automation).
             </p>
             <div className="rounded-xl overflow-hidden border border-border shadow-lg bg-card p-4">
               <img
@@ -196,44 +243,40 @@ const TravelMissionCaseStudy = () => {
             </div>
           </div>
 
-          {/* Current State Analysis */}
+          {/* Information Architecture - Enhanced with description */}
           <div className="mb-16">
-            <h3 className="text-2xl font-semibold text-foreground mb-4">2. Current State Analysis</h3>
+            <h3 className="text-2xl font-semibold text-foreground mb-4">2. Information Architecture</h3>
             <p className="text-muted-foreground mb-6 max-w-3xl">
-              Mapped the existing process flow to identify bottlenecks, manual intervention points, 
-              and opportunities for automation and improved user experience.
+              Translating a complex web platform into a mobile experience required careful 
+              consideration of screen real estate, touch interactions, and offline capabilities. 
+              I developed a modular architecture that prioritized the most frequent user tasks 
+              while maintaining access to less common features.
             </p>
-            <div className="rounded-xl overflow-hidden border border-border shadow-lg bg-card p-4">
-              <img
-                src={processFlow}
-                alt="Current Process Flow Analysis"
-                className="w-full h-auto rounded-lg"
-              />
-            </div>
-          </div>
-
-          {/* Information Architecture */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-semibold text-foreground mb-4">3. Information Architecture</h3>
-            <p className="text-muted-foreground mb-6 max-w-3xl">
-              Developed a module matrix mapping features and functionality across different user 
-              types (Builders, Trip Leaders, Office Staff) to ensure comprehensive coverage.
-            </p>
-            <div className="rounded-xl overflow-hidden border border-border shadow-lg bg-card p-4">
-              <img
-                src={moduleMatrix}
-                alt="Module Matrix - Feature Mapping by User Type"
-                className="w-full h-auto rounded-lg"
-              />
+            
+            {/* Process Cards instead of blurred image */}
+            <div className="grid md:grid-cols-3 gap-6">
+              {iaProcess.map((item, index) => (
+                <Card key={index} className="bg-card border-border">
+                  <CardContent className="p-6">
+                    <div className="p-3 rounded-lg bg-primary/10 w-fit mb-4">
+                      <item.icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <h4 className="font-semibold text-foreground mb-2">{item.title}</h4>
+                    <p className="text-sm text-muted-foreground">{item.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
 
           {/* Stakeholder Ecosystem */}
           <div className="mb-16">
-            <h3 className="text-2xl font-semibold text-foreground mb-4">4. Stakeholder Ecosystem</h3>
+            <h3 className="text-2xl font-semibold text-foreground mb-4">3. Stakeholder Ecosystem</h3>
             <p className="text-muted-foreground mb-6 max-w-3xl">
-              Visualized the complex communication patterns between stakeholders including 
-              1-to-1 and 1-to-many interactions across trip leaders, builders, office staff, and parents.
+              One of the most complex aspects was designing for multiple interconnected user types. 
+              I visualized the communication patterns to understand how information flows between 
+              trip leaders, travelers, parents, and office staff — informing notification systems 
+              and permission structures.
             </p>
             <div className="rounded-xl overflow-hidden border border-border shadow-lg bg-card p-4">
               <img
@@ -246,32 +289,25 @@ const TravelMissionCaseStudy = () => {
 
           {/* Visual Design */}
           <div className="mb-16">
-            <h3 className="text-2xl font-semibold text-foreground mb-4">5. Visual Design</h3>
+            <h3 className="text-2xl font-semibold text-foreground mb-4">4. Visual Design</h3>
             <p className="text-muted-foreground mb-6 max-w-3xl">
-              Created high-fidelity prototypes for the complete mobile app experience, 
-              including trip management, expense tracking, and communication features.
+              After validating the wireframes, I developed high-fidelity prototypes covering 
+              the complete app experience. Key screens include trip details, expense tracking, 
+              to-do checklists, and notification management — all designed with accessibility 
+              and ease of use in mind.
             </p>
             
-            {/* Overview */}
-            <div className="rounded-xl overflow-hidden border border-border shadow-lg mb-8">
-              <img
-                src={hifiScreensOverview}
-                alt="High-Fidelity Screens Overview"
-                className="w-full h-auto"
-              />
-            </div>
-
-            {/* Individual Screens Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {/* Individual Screens Grid with blur on logos */}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {[hifiScreen1, hifiScreen2, hifiScreen3, hifiScreen4, hifiScreen5, hifiScreen6].map((screen, index) => (
                 <div 
                   key={index} 
-                  className="rounded-xl overflow-hidden border border-border shadow-md hover:shadow-lg transition-shadow"
+                  className="rounded-xl overflow-hidden border border-border shadow-md hover:shadow-lg transition-shadow bg-card"
                 >
-                  <img
-                    src={screen}
+                  <CensoredImage 
+                    src={screen} 
                     alt={`Mobile App Screen ${index + 1}`}
-                    className="w-full h-auto"
+                    blurTop={true}
                   />
                 </div>
               ))}
@@ -305,11 +341,11 @@ const TravelMissionCaseStudy = () => {
             </div>
           </div>
 
-          {/* External Link */}
+          {/* External Link - Anonymized */}
           <Card className="bg-primary/5 border-primary/20">
-            <CardContent className="p-6 flex items-center justify-between">
+            <CardContent className="p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
-                <h3 className="font-semibold text-foreground mb-1">View the Original Website</h3>
+                <h3 className="font-semibold text-foreground mb-1">View the Client Website</h3>
                 <p className="text-sm text-muted-foreground">
                   See the web platform for which we designed the mobile app companion.
                 </p>
@@ -318,7 +354,7 @@ const TravelMissionCaseStudy = () => {
                 href="https://hxp.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background font-semibold rounded-lg hover:bg-foreground/90 transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background font-semibold rounded-lg hover:bg-foreground/90 transition-colors whitespace-nowrap"
               >
                 Visit Website
                 <ExternalLink className="h-4 w-4" />
