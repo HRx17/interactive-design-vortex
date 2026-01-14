@@ -49,19 +49,6 @@ const featuredProjects = [
   },
   {
     type: 'design',
-    id: 'rit-shiftmate',
-    title: 'RIT ShiftMate',
-    description: 'An on-campus shift coordinator and work-hour manager designed to streamline scheduling...',
-    imageUrl: "/lovable-uploads/RIT1.png",
-    placeholder: null,
-    tags: ["UX/UI Design", "Figma", "Management", "Mobile App"],
-    links: [
-      { label: 'View Case Study', url: '/projects/rit-shiftmate', isInternal: true },
-      { label: 'View Prototype', url: 'https://www.figma.com/proto/MhsMW3UV2T1ukHbvmA8S7W/Presentation---Final-Project-ShiftMate?page-id=0%3A1&node-id=133-637&viewport=1012%2C566%2C0.06&t=0iDmAFgme4i2rAGn-1&scaling=contain&content-scaling=fixed&starting-point-node-id=133%3A637&show-proto-sidebar=1', isInternal: false },
-    ],
-  },
-  {
-    type: 'design',
     id: 'ar-concept',
     title: 'Spectra HoloVisio',
     role: 'Product Design',
@@ -71,6 +58,19 @@ const featuredProjects = [
     tags: ["Product Design", "3D Design", "Figma", "Blender"],
     links: [
       { label: 'View Case Study', url: '/projects/ar-vr', isInternal: true },
+    ],
+  },
+  {
+    type: 'design',
+    id: 'rit-shiftmate',
+    title: 'RIT ShiftMate',
+    description: 'An on-campus shift coordinator and work-hour manager designed to streamline scheduling...',
+    imageUrl: "/lovable-uploads/RIT1.png",
+    placeholder: null,
+    tags: ["UX/UI Design", "Figma", "Management", "Mobile App"],
+    links: [
+      { label: 'View Case Study', url: '/projects/rit-shiftmate', isInternal: true },
+      { label: 'View Prototype', url: 'https://www.figma.com/proto/MhsMW3UV2T1ukHbvmA8S7W/Presentation---Final-Project-ShiftMate?page-id=0%3A1&node-id=133-637&viewport=1012%2C566%2C0.06&t=0iDmAFgme4i2rAGn-1&scaling=contain&content-scaling=fixed&starting-point-node-id=133%3A637&show-proto-sidebar=1', isInternal: false },
     ],
   },
   {
