@@ -290,31 +290,24 @@ const TravelMissionCaseStudy = () => {
               ))}
             </div>
 
-            {/* Hi-Fi Screens with blur overlay on logos only */}
+            {/* Hi-Fi Screens with blur overlay on logos/titles only (not the full screen) */}
             <div className="relative rounded-xl overflow-hidden border border-border shadow-lg">
               <img
                 src={hifiScreensOverview}
-                alt="High-Fidelity Mobile App Screens"
+                alt="High-Fidelity Mobile App Screens (logo redacted)"
                 className="w-full h-auto"
               />
-              {/* Cover the "Hi-Fi Money Screens" title at the top */}
-              <div className="absolute top-0 left-0 right-0 h-[3%] bg-background" />
-              
-              {/* Precise blur overlays for HXP logos in red header bars */}
-              {/* Trip Details Screen - left column, top */}
-              <div className="absolute top-[5.5%] left-[7.5%] w-[4%] h-[1.5%] backdrop-blur-xl bg-white/70 rounded-sm" />
-              
-              {/* To Do List Screen - right column, top */}
-              <div className="absolute top-[5.5%] left-[53.5%] w-[4%] h-[1.5%] backdrop-blur-xl bg-white/70 rounded-sm" />
-              
-              {/* Notifications Screen - right column, middle */}
-              <div className="absolute top-[32.8%] left-[53.5%] w-[4%] h-[1.2%] backdrop-blur-xl bg-white/70 rounded-sm" />
-              
-              {/* Trip Feed - Gallery Screen - right column, bottom */}
-              <div className="absolute top-[52.5%] left-[53.5%] w-[4%] h-[1.2%] backdrop-blur-xl bg-white/70 rounded-sm" />
-              
-              {/* Trip Feed Screen - left column, bottom */}
-              <div className="absolute top-[60.5%] left-[7.5%] w-[4%] h-[1.2%] backdrop-blur-xl bg-white/70 rounded-sm" />
+
+              {/* Hide the top title strip (e.g., "Hi‑Fi Money Screens") */}
+              <div className="absolute top-0 left-0 right-0 h-[7%] bg-background" />
+
+              {/* Redact header/logo regions (made intentionally wider/taller for reliable coverage) */}
+              <div className="absolute top-[6.2%] left-[4%] w-[22%] h-[3.2%] backdrop-blur-2xl bg-background/70 rounded-sm" />
+              <div className="absolute top-[6.2%] left-[52%] w-[22%] h-[3.2%] backdrop-blur-2xl bg-background/70 rounded-sm" />
+              <div className="absolute top-[33.2%] left-[52%] w-[22%] h-[2.6%] backdrop-blur-2xl bg-background/70 rounded-sm" />
+              <div className="absolute top-[52.8%] left-[52%] w-[22%] h-[2.6%] backdrop-blur-2xl bg-background/70 rounded-sm" />
+              <div className="absolute top-[61.0%] left-[4%] w-[22%] h-[2.6%] backdrop-blur-2xl bg-background/70 rounded-sm" />
+              <div className="absolute top-[73.5%] left-[52%] w-[22%] h-[2.6%] backdrop-blur-2xl bg-background/70 rounded-sm" />
             </div>
           </div>
         </div>
@@ -341,12 +334,14 @@ const TravelMissionCaseStudy = () => {
                 ))}
               </ul>
             </div>
-            <div className="rounded-xl overflow-hidden border border-border shadow-lg bg-card p-4">
+            <div className="relative rounded-xl overflow-hidden border border-border shadow-lg bg-card p-4">
               <img
                 src={outcomes}
-                alt="Expected Outcomes - User and Business Benefits"
+                alt="Expected Outcomes - User and Business Benefits (logo redacted)"
                 className="w-full h-auto rounded-lg"
               />
+              {/* Redact remaining logo mark in the outcomes graphic */}
+              <div className="absolute bottom-[6%] right-[6%] w-[24%] h-[18%] backdrop-blur-2xl bg-background/70 rounded-sm" />
             </div>
           </div>
         </div>
