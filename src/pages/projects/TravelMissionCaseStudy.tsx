@@ -6,10 +6,13 @@ import { Card, CardContent } from "@/components/ui/card";
 // Import images
 import userJourneyMap from "@/assets/travel-mission/user-journey-map.png";
 import stakeholderDiagram from "@/assets/travel-mission/stakeholder-diagram.png";
-import hifiScreen1 from "@/assets/travel-mission/hifi-screen-1.jpg";
-import hifiScreen2 from "@/assets/travel-mission/hifi-screen-2.jpg";
-import hifiScreen3 from "@/assets/travel-mission/hifi-screen-3.jpg";
-import hifiScreen4 from "@/assets/travel-mission/hifi-screen-4.jpg";
+import tripLeaderFlow from "@/assets/travel-mission/trip-leader-flow.png";
+import hifiScreen1 from "@/assets/travel-mission/hifi-clean-1.png";
+import hifiScreen2 from "@/assets/travel-mission/hifi-clean-2.png";
+import hifiScreen3 from "@/assets/travel-mission/hifi-clean-3.png";
+import hifiScreen4 from "@/assets/travel-mission/hifi-clean-4.png";
+import hifiScreen5 from "@/assets/travel-mission/hifi-clean-5.png";
+import hifiScreen6 from "@/assets/travel-mission/hifi-clean-6.png";
 
 const TravelMissionCaseStudy = () => {
   const navigate = useNavigate();
@@ -260,16 +263,25 @@ const TravelMissionCaseStudy = () => {
           <div className="mb-16">
             <h3 className="text-2xl font-semibold text-foreground mb-4">3. Stakeholder Ecosystem</h3>
             <p className="text-muted-foreground mb-6 max-w-3xl">
-              The organization has a complex communication structure with 1-to-1 and 1-to-many 
-              interactions between Trip Leaders, Builders, Office Staff, Parents, and Vendors. 
+              The organization has a complex communication structure with 1-to-1 and 1-to-many
+              interactions between Trip Leaders, Builders, Office Staff, Parents, and Vendors.
               This informed the notification system and permission structures in the app design.
             </p>
-            <div className="rounded-xl overflow-hidden border border-border shadow-lg bg-card p-4">
-              <img
-                src={stakeholderDiagram}
-                alt="Stakeholder Communication Ecosystem"
-                className="w-full h-auto rounded-lg"
-              />
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="rounded-xl overflow-hidden border border-border shadow-lg bg-card p-4">
+                <img
+                  src={stakeholderDiagram}
+                  alt="Stakeholder Communication Ecosystem"
+                  className="w-full h-auto rounded-lg"
+                />
+              </div>
+              <div className="rounded-xl overflow-hidden border border-border shadow-lg bg-card p-4">
+                <img
+                  src={tripLeaderFlow}
+                  alt="Trip Leader Flow Diagram"
+                  className="w-full h-auto rounded-lg"
+                />
+              </div>
             </div>
           </div>
 
@@ -292,21 +304,19 @@ const TravelMissionCaseStudy = () => {
               ))}
             </div>
 
-            {/* Hi-Fi Screens (header area redacted; no full-screen blur) */}
-            <div className="grid sm:grid-cols-2 gap-6">
-              {[hifiScreen1, hifiScreen2, hifiScreen3, hifiScreen4].map((src, idx) => (
+            {/* Hi-Fi Screens Grid – using your cleaned screens (no overlays) */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[hifiScreen1, hifiScreen2, hifiScreen3, hifiScreen4, hifiScreen5, hifiScreen6].map((src, idx) => (
                 <div
                   key={idx}
-                  className="relative rounded-xl overflow-hidden border border-border shadow-lg bg-card"
+                  className="rounded-xl overflow-hidden border border-border shadow-lg bg-card"
                 >
                   <img
                     src={src}
-                    alt={`High-fidelity mobile screen ${idx + 1} (branding redacted)`}
+                    alt={`High-fidelity mobile screen ${idx + 1}`}
                     className="w-full h-auto"
                     loading="lazy"
                   />
-                  {/* Remove the entire top header region to eliminate logos/text consistently */}
-                  <div className="absolute top-0 left-0 right-0 h-[14%] bg-background" />
                 </div>
               ))}
             </div>
