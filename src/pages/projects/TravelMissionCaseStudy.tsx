@@ -6,8 +6,10 @@ import { Card, CardContent } from "@/components/ui/card";
 // Import images
 import userJourneyMap from "@/assets/travel-mission/user-journey-map.png";
 import stakeholderDiagram from "@/assets/travel-mission/stakeholder-diagram.png";
-import outcomes from "@/assets/travel-mission/outcomes.png";
-import hifiScreensOverview from "@/assets/travel-mission/hifi-screens-overview.jpg";
+import hifiScreen1 from "@/assets/travel-mission/hifi-screen-1.jpg";
+import hifiScreen2 from "@/assets/travel-mission/hifi-screen-2.jpg";
+import hifiScreen3 from "@/assets/travel-mission/hifi-screen-3.jpg";
+import hifiScreen4 from "@/assets/travel-mission/hifi-screen-4.jpg";
 
 const TravelMissionCaseStudy = () => {
   const navigate = useNavigate();
@@ -275,11 +277,11 @@ const TravelMissionCaseStudy = () => {
           <div className="mb-16">
             <h3 className="text-2xl font-semibold text-foreground mb-4">4. High-Fidelity Design</h3>
             <p className="text-muted-foreground mb-6 max-w-3xl">
-              After validating wireframes with stakeholders, I developed high-fidelity prototypes 
-              covering the complete app experience. Key screens address the core user needs 
+              After validating wireframes with stakeholders, I developed high-fidelity prototypes
+              covering the complete app experience. Key screens address the core user needs
               identified in research.
             </p>
-            
+
             {/* Key Features List */}
             <div className="grid sm:grid-cols-2 gap-3 mb-8">
               {keyFeatures.map((feature, index) => (
@@ -290,24 +292,23 @@ const TravelMissionCaseStudy = () => {
               ))}
             </div>
 
-            {/* Hi-Fi Screens with blur overlay on logos/titles only (not the full screen) */}
-            <div className="relative rounded-xl overflow-hidden border border-border shadow-lg">
-              <img
-                src={hifiScreensOverview}
-                alt="High-Fidelity Mobile App Screens (logo redacted)"
-                className="w-full h-auto"
-              />
-
-              {/* Hide the top title strip (e.g., "Hi‑Fi Money Screens") */}
-              <div className="absolute top-0 left-0 right-0 h-[7%] bg-background" />
-
-              {/* Redact header/logo regions (made intentionally wider/taller for reliable coverage) */}
-              <div className="absolute top-[6.2%] left-[4%] w-[22%] h-[3.2%] backdrop-blur-2xl bg-background/70 rounded-sm" />
-              <div className="absolute top-[6.2%] left-[52%] w-[22%] h-[3.2%] backdrop-blur-2xl bg-background/70 rounded-sm" />
-              <div className="absolute top-[33.2%] left-[52%] w-[22%] h-[2.6%] backdrop-blur-2xl bg-background/70 rounded-sm" />
-              <div className="absolute top-[52.8%] left-[52%] w-[22%] h-[2.6%] backdrop-blur-2xl bg-background/70 rounded-sm" />
-              <div className="absolute top-[61.0%] left-[4%] w-[22%] h-[2.6%] backdrop-blur-2xl bg-background/70 rounded-sm" />
-              <div className="absolute top-[73.5%] left-[52%] w-[22%] h-[2.6%] backdrop-blur-2xl bg-background/70 rounded-sm" />
+            {/* Hi-Fi Screens (header area redacted; no full-screen blur) */}
+            <div className="grid sm:grid-cols-2 gap-6">
+              {[hifiScreen1, hifiScreen2, hifiScreen3, hifiScreen4].map((src, idx) => (
+                <div
+                  key={idx}
+                  className="relative rounded-xl overflow-hidden border border-border shadow-lg bg-card"
+                >
+                  <img
+                    src={src}
+                    alt={`High-fidelity mobile screen ${idx + 1} (branding redacted)`}
+                    className="w-full h-auto"
+                    loading="lazy"
+                  />
+                  {/* Remove the entire top header region to eliminate logos/text consistently */}
+                  <div className="absolute top-0 left-0 right-0 h-[14%] bg-background" />
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -318,31 +319,20 @@ const TravelMissionCaseStudy = () => {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-foreground mb-8">Expected Outcomes</h2>
           
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div>
-              <p className="text-muted-foreground mb-6">
-                The mobile app design addresses the core pain points identified in research, 
-                providing a streamlined experience for all user types while maintaining the 
-                complex business logic required for trip management.
-              </p>
-              <ul className="space-y-4">
-                {keyOutcomes.map((outcome, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground">{outcome}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="relative rounded-xl overflow-hidden border border-border shadow-lg bg-card p-4">
-              <img
-                src={outcomes}
-                alt="Expected Outcomes - User and Business Benefits (logo redacted)"
-                className="w-full h-auto rounded-lg"
-              />
-              {/* Redact remaining logo mark in the outcomes graphic */}
-              <div className="absolute bottom-[6%] right-[6%] w-[24%] h-[18%] backdrop-blur-2xl bg-background/70 rounded-sm" />
-            </div>
+          <div className="max-w-3xl">
+            <p className="text-muted-foreground mb-6">
+              The mobile app design addresses the core pain points identified in research,
+              providing a streamlined experience for all user types while maintaining the
+              complex business logic required for trip management.
+            </p>
+            <ul className="space-y-4">
+              {keyOutcomes.map((outcome, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-muted-foreground">{outcome}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
