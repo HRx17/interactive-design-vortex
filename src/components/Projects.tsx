@@ -25,6 +25,7 @@ const featuredProjects = [
     type: 'design',
     id: 'uxprobe',
     title: 'UXProbe',
+    role: 'Product Design | Full Stack | Vibe Coding | AI Tools',
     description: 'AI-powered platform automating UX heuristic evaluation with comprehensive research tools...',
     imageUrl: uxprobeThumbnail,
     placeholder: null,
