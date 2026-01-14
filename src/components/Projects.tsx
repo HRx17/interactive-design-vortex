@@ -62,8 +62,9 @@ const featuredProjects = [
   {
     type: 'design',
     id: 'ar-concept',
-    title: 'Mixed Reality Concept',
-    description: 'A futuristic holographic interaction design for mixed reality, exploring how users can visualize...',
+    title: 'Spectra HoloVisio',
+    role: 'Product Design',
+    description: 'An MR tool for real-time space design using holographic projections and motion sensors...',
     imageUrl: "/lovable-uploads/h1.png",
     placeholder: null,
     tags: ["Product Design", "3D Design", "Figma", "Blender"],
