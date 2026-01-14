@@ -7,12 +7,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import userJourneyMap from "@/assets/travel-mission/user-journey-map.png";
 import stakeholderDiagram from "@/assets/travel-mission/stakeholder-diagram.png";
 import tripLeaderFlow from "@/assets/travel-mission/trip-leader-flow.png";
-import hifiScreen1 from "@/assets/travel-mission/hifi-clean-1.png";
-import hifiScreen2 from "@/assets/travel-mission/hifi-clean-2.png";
-import hifiScreen3 from "@/assets/travel-mission/hifi-clean-3.png";
-import hifiScreen4 from "@/assets/travel-mission/hifi-clean-4.png";
-import hifiScreen5 from "@/assets/travel-mission/hifi-clean-5.png";
-import hifiScreen6 from "@/assets/travel-mission/hifi-clean-6.png";
+import hifiTodo from "@/assets/travel-mission/hifi-todo.png";
+import hifiTripFeed from "@/assets/travel-mission/hifi-tripfeed.png";
+import hifiPhotos from "@/assets/travel-mission/hifi-photos.png";
+import hifiNotifications from "@/assets/travel-mission/hifi-notifications.png";
+import hifiTripDetails from "@/assets/travel-mission/hifi-tripdetails.png";
 
 const TravelMissionCaseStudy = () => {
   const navigate = useNavigate();
@@ -304,9 +303,10 @@ const TravelMissionCaseStudy = () => {
               ))}
             </div>
 
-            {/* Hi-Fi Screens Grid – using your cleaned screens (no overlays) */}
+            {/* Hi-Fi Screens Grid – screens extracted from your PDF (long screen cropped via CSS) */}
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[hifiScreen1, hifiScreen2, hifiScreen3, hifiScreen4, hifiScreen5, hifiScreen6].map((src, idx) => (
+              {/* Standard-height screens */}
+              {[hifiTodo, hifiNotifications, hifiTripFeed, hifiPhotos].map((src, idx) => (
                 <div
                   key={idx}
                   className="rounded-xl overflow-hidden border border-border shadow-lg bg-card"
@@ -319,6 +319,17 @@ const TravelMissionCaseStudy = () => {
                   />
                 </div>
               ))}
+              {/* Long screen cropped to match the height of others */}
+              <div className="rounded-xl overflow-hidden border border-border shadow-lg bg-card col-span-1 sm:col-span-2 lg:col-span-2">
+                <div className="relative w-full" style={{ paddingBottom: "120%" }}>
+                  <img
+                    src={hifiTripDetails}
+                    alt="Trip Details screen (cropped)"
+                    className="absolute top-0 left-0 w-full h-full object-cover object-top"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
