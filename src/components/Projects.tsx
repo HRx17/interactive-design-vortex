@@ -18,7 +18,6 @@ import { UpcomingProject } from './UpcomingProject';
 // Images
 import uxprobeThumbnail from '@/assets/uxprobe-thumbnail.jpg';
 import infiniteMindsThumbnail from '@/assets/infinite-minds/hero-banner.png';
-import travelMissionThumbnail from '@/assets/travel-mission/travel-mission-thumbnail.png';
 
 // --- 1. FEATURED PROJECTS DATA ---
 const featuredProjects = [
@@ -54,8 +53,16 @@ const featuredProjects = [
     title: 'TravelMission: Humanitarian Travel App',
     role: "Product Design - Tech9",
     description: 'Designed a complete mobile app experience for a humanitarian travel organization, creating dual user journeys for travelers and trip leaders, from user research to high-fidelity prototypes.',
-    imageUrl: travelMissionThumbnail,
-    placeholder: null,
+    imageUrl: null,
+    placeholder: (
+      <div className="w-full h-full bg-[#1a1a2e] flex items-center justify-center aspect-[16/10]">
+        <img
+          src="/logos/tech9-logo.svg?v=2"
+          alt="Tech9"
+          className="w-32 h-auto"
+        />
+      </div>
+    ),
     tags: ["Product Design", "Mobile App", "UX Research", "User Flows", "Design System"],
     links: [
       { label: 'View Case Study', url: '/projects/travel-mission', isInternal: true },
