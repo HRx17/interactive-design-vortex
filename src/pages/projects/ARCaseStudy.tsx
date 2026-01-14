@@ -12,7 +12,7 @@ export default function ARCaseStudy() {
       {/* Back Button */}
       <div className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border/40">
         <div className="section-container py-4">
-          <Button variant="ghost" className="gap-2" onClick={() => navigate('/projects')}>
+          <Button variant="ghost" className="gap-2" onClick={() => navigate('/#projects')}>
             <ArrowLeft className="h-4 w-4" />
             Back to Projects
           </Button>
@@ -415,6 +415,16 @@ export default function ARCaseStudy() {
           </div>
 
 
+          {/* Final Showcase - Full Width */}
+          <div className="w-full">
+            <img 
+              src="/lovable-uploads/h10.png" 
+              alt="Final Design Showcase" 
+              className="w-full"
+              loading="lazy"
+            />
+          </div>
+
           {/* Final Prototype Video - Full Width */}
           <div className="w-full aspect-video">
             <iframe
@@ -446,15 +456,6 @@ export default function ARCaseStudy() {
             </ul>
           </div>
 
-          {/* Conclusion Image - Full Width */}
-          <div className="w-full">
-            <img 
-              src="/lovable-uploads/h11.png" 
-              alt="Project Conclusion" 
-              className="w-full"
-              loading="lazy"
-            />
-          </div>
 
           {/* Footer */}
           <div className="bg-foreground text-background py-10 px-6 text-center">
