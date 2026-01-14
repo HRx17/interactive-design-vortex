@@ -23,19 +23,6 @@ import infiniteMindsThumbnail from '@/assets/infinite-minds/hero-banner.png';
 const featuredProjects = [
   {
     type: 'design',
-    id: 'uxprobe',
-    title: 'UXProbe',
-    role: 'Product Design | Full Stack | Vibe Coding | AI Tools',
-    description: 'AI-powered platform automating UX heuristic evaluation with comprehensive research tools...',
-    imageUrl: uxprobeThumbnail,
-    placeholder: null,
-    tags: ["Full-Stack App", "AI-Powered", "Next.js", "Figma", "UX Design"],
-    links: [
-      { label: 'View Case Study', url: '/projects/uxprobe', isInternal: true },
-    ],
-  },
-  {
-    type: 'design',
     id: 'infinite-minds',
     title: 'Infinite Minds: Gamified Learning',
     role: "Product Design - Tech9",
@@ -66,6 +53,19 @@ const featuredProjects = [
     tags: ["Product Design", "Mobile App", "UX Research", "User Flows", "Design System"],
     links: [
       { label: 'View Case Study', url: '/projects/travel-mission', isInternal: true },
+    ],
+  },
+  {
+    type: 'design',
+    id: 'uxprobe',
+    title: 'UXProbe',
+    role: 'Product Design | Full Stack | Vibe Coding | AI Tools',
+    description: 'AI-powered platform automating UX heuristic evaluation with comprehensive research tools...',
+    imageUrl: uxprobeThumbnail,
+    placeholder: null,
+    tags: ["Full-Stack App", "AI-Powered", "Next.js", "Figma", "UX Design"],
+    links: [
+      { label: 'View Case Study', url: '/projects/uxprobe', isInternal: true },
     ],
   },
   {
