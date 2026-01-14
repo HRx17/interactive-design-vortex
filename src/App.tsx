@@ -19,6 +19,7 @@ import FoodZapCaseStudy from "./pages/projects/FoodZapCaseStudy";
 import UXProbeCaseStudy from "./pages/projects/UXProbeCaseStudy";
 import DailygramCaseStudy from "./pages/projects/DailygramCaseStudy";
 import InfiniteMindsCaseStudy from "./pages/projects/InfiniteMindsCaseStudy";
+import TravelMissionCaseStudy from "./pages/projects/TravelMissionCaseStudy";
 
 const queryClient = new QueryClient();
 
@@ -44,6 +45,7 @@ const App = () => (
           <Route path="/projects/uxprobe" element={<UXProbeCaseStudy />} />
           <Route path="/projects/dailygram" element={<DailygramCaseStudy />} />
           <Route path="/projects/infinite-minds" element={<InfiniteMindsCaseStudy />} />
+          <Route path="/projects/travel-mission" element={<TravelMissionCaseStudy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

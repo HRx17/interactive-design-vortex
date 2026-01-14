@@ -18,6 +18,7 @@ import { UpcomingProject } from './UpcomingProject';
 // Images
 import uxprobeThumbnail from '@/assets/uxprobe-thumbnail.jpg';
 import infiniteMindsThumbnail from '@/assets/infinite-minds/hero-banner.png';
+import travelMissionThumbnail from '@/assets/travel-mission/catalyst-summary.jpg';
 
 // --- 1. FEATURED PROJECTS DATA ---
 const featuredProjects = [
@@ -45,6 +46,19 @@ const featuredProjects = [
     tags: ["Gamification", "Retention Design", "UX/UI", "Mobile to Web"],
     links: [
       { label: 'View Case Study', url: '/projects/infinite-minds', isInternal: true },
+    ],
+  },
+  {
+    type: 'design',
+    id: 'travel-mission',
+    title: 'TravelMission: Humanitarian Travel App',
+    role: "Product Design - Tech9",
+    description: 'Designed a complete mobile app experience for a humanitarian travel organization, creating dual user journeys for travelers and trip leaders, from user research to high-fidelity prototypes.',
+    imageUrl: travelMissionThumbnail,
+    placeholder: null,
+    tags: ["Product Design", "Mobile App", "UX Research", "User Flows", "Design System"],
+    links: [
+      { label: 'View Case Study', url: '/projects/travel-mission', isInternal: true },
     ],
   },
   {
