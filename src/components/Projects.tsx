@@ -18,7 +18,7 @@ import { UpcomingProject } from './UpcomingProject';
 // Images
 import uxprobeThumbnail from '@/assets/uxprobe-thumbnail.jpg';
 import infiniteMindsThumbnail from '@/assets/infinite-minds/hero-banner.png';
-import travelMissionThumbnail from '@/assets/travel-mission/catalyst-summary.jpg';
+import travelMissionThumbnail from '@/assets/travel-mission/stakeholder-diagram.png';
 
 // --- 1. FEATURED PROJECTS DATA ---
 const featuredProjects = [

@@ -129,28 +129,12 @@ const TravelMissionCaseStudy = () => {
           </p>
 
           {/* Tags */}
-          <div className="flex flex-wrap gap-2 mb-12">
+          <div className="flex flex-wrap gap-2">
             {["Product Design", "Mobile App", "UX Research", "User Flows", "Design System", "Prototyping"].map((tag) => (
               <Badge key={tag} variant="secondary" className="text-sm">
                 {tag}
               </Badge>
             ))}
-          </div>
-
-          {/* Hero Visual - Hi-Fi Screens with blur overlay on logo */}
-          <div className="relative rounded-2xl overflow-hidden border border-border shadow-xl">
-            <img
-              src={hifiScreensOverview}
-              alt="High-Fidelity Mobile App Screens"
-              className="w-full h-auto"
-            />
-            {/* Blur overlays for logo areas - positioned over the HXP logos in the header bars */}
-            <div className="absolute top-[7%] left-[8%] w-[8%] h-[2.5%] backdrop-blur-lg bg-background/60 rounded" />
-            <div className="absolute top-[7%] left-[55%] w-[8%] h-[2.5%] backdrop-blur-lg bg-background/60 rounded" />
-            <div className="absolute top-[34%] left-[55%] w-[8%] h-[2%] backdrop-blur-lg bg-background/60 rounded" />
-            <div className="absolute top-[51%] left-[55%] w-[8%] h-[2%] backdrop-blur-lg bg-background/60 rounded" />
-            <div className="absolute top-[62%] left-[8%] w-[8%] h-[2%] backdrop-blur-lg bg-background/60 rounded" />
-            <div className="absolute top-[73%] left-[55%] w-[8%] h-[2%] backdrop-blur-lg bg-background/60 rounded" />
           </div>
         </div>
       </section>
@@ -306,20 +290,31 @@ const TravelMissionCaseStudy = () => {
               ))}
             </div>
 
-            {/* Hi-Fi Screens with blur overlay */}
+            {/* Hi-Fi Screens with blur overlay on logos only */}
             <div className="relative rounded-xl overflow-hidden border border-border shadow-lg">
               <img
                 src={hifiScreensOverview}
                 alt="High-Fidelity Mobile App Screens"
                 className="w-full h-auto"
               />
-              {/* Blur overlays for logo areas */}
-              <div className="absolute top-[7%] left-[8%] w-[8%] h-[2.5%] backdrop-blur-lg bg-background/60 rounded" />
-              <div className="absolute top-[7%] left-[55%] w-[8%] h-[2.5%] backdrop-blur-lg bg-background/60 rounded" />
-              <div className="absolute top-[34%] left-[55%] w-[8%] h-[2%] backdrop-blur-lg bg-background/60 rounded" />
-              <div className="absolute top-[51%] left-[55%] w-[8%] h-[2%] backdrop-blur-lg bg-background/60 rounded" />
-              <div className="absolute top-[62%] left-[8%] w-[8%] h-[2%] backdrop-blur-lg bg-background/60 rounded" />
-              <div className="absolute top-[73%] left-[55%] w-[8%] h-[2%] backdrop-blur-lg bg-background/60 rounded" />
+              {/* Cover the "Hi-Fi Money Screens" title at the top */}
+              <div className="absolute top-0 left-0 right-0 h-[3%] bg-background" />
+              
+              {/* Precise blur overlays for HXP logos in red header bars */}
+              {/* Trip Details Screen - left column, top */}
+              <div className="absolute top-[5.5%] left-[7.5%] w-[4%] h-[1.5%] backdrop-blur-xl bg-white/70 rounded-sm" />
+              
+              {/* To Do List Screen - right column, top */}
+              <div className="absolute top-[5.5%] left-[53.5%] w-[4%] h-[1.5%] backdrop-blur-xl bg-white/70 rounded-sm" />
+              
+              {/* Notifications Screen - right column, middle */}
+              <div className="absolute top-[32.8%] left-[53.5%] w-[4%] h-[1.2%] backdrop-blur-xl bg-white/70 rounded-sm" />
+              
+              {/* Trip Feed - Gallery Screen - right column, bottom */}
+              <div className="absolute top-[52.5%] left-[53.5%] w-[4%] h-[1.2%] backdrop-blur-xl bg-white/70 rounded-sm" />
+              
+              {/* Trip Feed Screen - left column, bottom */}
+              <div className="absolute top-[60.5%] left-[7.5%] w-[4%] h-[1.2%] backdrop-blur-xl bg-white/70 rounded-sm" />
             </div>
           </div>
         </div>
