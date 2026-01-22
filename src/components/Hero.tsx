@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Download, Mail, Linkedin, Users, TrendingUp, Target, Globe } from "lucide-react";
+import { Download, Mail, Linkedin, Users, TrendingUp, Target, Globe, GraduationCap } from "lucide-react";
 
 // --- Data (Finalized and Aligned) ---
 const previousWork = [
@@ -108,7 +108,16 @@ export function Hero() {
                 View Projects
               </a>
 
-              {/* Social Links placed next to View Projects button */}
+              {/* Button 4: Google Scholar */}
+              <a
+                href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-4 py-3 border-2 border-white text-white font-semibold rounded-lg transition-all duration-300 hover:bg-white hover:text-black gap-2"
+                title="Google Scholar"
+              >
+                <GraduationCap className="h-4 w-4" />
+              </a>
 
             </div>
 
