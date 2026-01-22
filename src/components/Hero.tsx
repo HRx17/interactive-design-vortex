@@ -110,7 +110,7 @@ export function Hero() {
 
               {/* Button 4: Google Scholar */}
               <a
-                href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID"
+                href="https://scholar.google.com/citations?hl=en&user=tcxJYE4AAAAJ"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-4 py-3 border-2 border-white text-white font-semibold rounded-lg transition-all duration-300 hover:bg-white hover:text-black gap-2"
