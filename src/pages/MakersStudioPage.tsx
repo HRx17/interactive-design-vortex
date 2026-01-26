@@ -54,8 +54,8 @@ const printingItems: GalleryItem[] = [
 ];
 
 const robotItems: GalleryItem[] = [
-  { id: 'robot-1', image: cloudyComplete, category: 'robotics', caption: 'Cloudy - Desktop Companion Robot' },
-  { id: 'robot-2', image: cloudyFinal, category: 'robotics', caption: 'Cloudy - Final Build' },
+  { id: 'robot-1', image: cloudyComplete, category: 'robotics', caption: 'Nugget - Desktop Companion Robot' },
+  { id: 'robot-2', image: cloudyFinal, category: 'robotics', caption: 'Nugget - Final Build' },
   { id: 'robot-3', image: cloudyAssembly1, category: 'robotics', caption: 'Assembly in Progress' },
   { id: 'robot-4', image: cloudyAssembly2, category: 'robotics', caption: 'Component Assembly' },
   { id: 'robot-5', image: cloudyElectronics, category: 'robotics', caption: 'Electronics & Wiring' },
@@ -206,7 +206,7 @@ const MakersStudioPage = () => {
                 <Bot className="h-6 w-6 text-primary" />
               </div>
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground">Robotics - Cloudy</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground">Robotics - Nugget</h2>
                 <p className="text-muted-foreground">Desktop Companion Robot</p>
               </div>
             </div>
