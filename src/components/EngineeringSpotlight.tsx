@@ -7,21 +7,21 @@ import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 
-// Cloudy imports
-import cloudyFinal from '@/assets/cloudy/cloudy-final.jpg';
-import cloudyWiring from '@/assets/cloudy/cloudy-wiring.jpg';
-import cloudy3DPrint from '@/assets/cloudy/cloudy-3d-print.jpg';
-import cloudyScreen from '@/assets/cloudy/cloudy-screen.jpg';
-import cloudyAssembly1 from '@/assets/cloudy/cloudy-assembly-1.jpg';
-import cloudyAssembly2 from '@/assets/cloudy/cloudy-assembly-2.jpg';
-import cloudyElectronics1 from '@/assets/cloudy/cloudy-electronics-1.jpg';
-import cloudyComplete from '@/assets/cloudy/cloudy-complete.webp';
-import cloudySide1 from '@/assets/cloudy/cloudy-side-1.jpg';
-import cloudySide2 from '@/assets/cloudy/cloudy-side-2.jpg';
-import cloudyMotors from '@/assets/cloudy/cloudy-motors.jpg';
-import cloudyParts from '@/assets/cloudy/cloudy-parts.jpg';
-import cloudyDevSetup from '@/assets/cloudy/cloudy-dev-setup.jpg';
-import cloudyTesting from '@/assets/cloudy/cloudy-testing.jpg';
+// Nugget imports
+import nuggetFinal from '@/assets/cloudy/cloudy-final.jpg';
+import nuggetWiring from '@/assets/cloudy/cloudy-wiring.jpg';
+import nugget3DPrint from '@/assets/cloudy/cloudy-3d-print.jpg';
+import nuggetScreen from '@/assets/cloudy/cloudy-screen.jpg';
+import nuggetAssembly1 from '@/assets/cloudy/cloudy-assembly-1.jpg';
+import nuggetAssembly2 from '@/assets/cloudy/cloudy-assembly-2.jpg';
+import nuggetElectronics1 from '@/assets/cloudy/cloudy-electronics-1.jpg';
+import nuggetComplete from '@/assets/cloudy/cloudy-complete.webp';
+import nuggetSide1 from '@/assets/cloudy/cloudy-side-1.jpg';
+import nuggetSide2 from '@/assets/cloudy/cloudy-side-2.jpg';
+import nuggetMotors from '@/assets/cloudy/cloudy-motors.jpg';
+import nuggetParts from '@/assets/cloudy/cloudy-parts.jpg';
+import nuggetDevSetup from '@/assets/cloudy/cloudy-dev-setup.jpg';
+import nuggetTesting from '@/assets/cloudy/cloudy-testing.jpg';
 
 // Judgement imports
 import judgementHome from '@/assets/judgement/judgement-home.png';
@@ -34,8 +34,8 @@ import judgementGameOver from '@/assets/judgement/judgement-game-over.png';
 import judgementProfile from '@/assets/judgement/judgement-profile.png';
 import judgementPlaystore from '@/assets/judgement/judgement-playstore.png';
 
-// ========== CLOUDY DATA ==========
-const cloudyFeatures = [
+// ========== NUGGET DATA ==========
+const nuggetFeatures = [
   {
     icon: <Eye className="h-5 w-5" />,
     title: "Emotional State Engine",
@@ -53,7 +53,7 @@ const cloudyFeatures = [
   }
 ];
 
-const cloudyHardwareSpecs = [
+const nuggetHardwareSpecs = [
   "Raspberry Pi 4 Model B (Brain)",
   "L298N Motor Driver + TT Geared Motors (Movement)",
   "MPU6050 Gyroscope/Accelerometer (Orientation)",
@@ -64,7 +64,7 @@ const cloudyHardwareSpecs = [
   "Touch Sensors (Capacitive Interaction)"
 ];
 
-const cloudySoftwareSpecs = [
+const nuggetSoftwareSpecs = [
   "Python 3.11 Core Logic",
   "Antigravity IDE (Development Environment)",
   "OpenAI GPT API (Conversational AI)",
@@ -75,50 +75,50 @@ const cloudySoftwareSpecs = [
   "Custom Animation Engine for LCD Expressions"
 ];
 
-const cloudyBuildPhases = [
+const nuggetBuildPhases = [
   {
     icon: <Layers className="h-5 w-5" />,
     title: "Phase 1: Design & 3D Printing",
     duration: "Week 1-2",
     description: "Designed the robot chassis in Fusion 360, optimizing for print-in-place joints and cable management. Printed over 40 hours of PLA parts including the body shell, motor mounts, and sensor brackets.",
-    image: cloudy3DPrint
+    image: nugget3DPrint
   },
   {
     icon: <Wrench className="h-5 w-5" />,
     title: "Phase 2: Electronics Assembly",
     duration: "Week 2-3",
     description: "Wired the L298N motor driver to the Raspberry Pi GPIO, integrated IR sensors for edge detection, and mounted the MPU6050 gyroscope. Soldered custom cables for clean wire management and added the touch LCD display.",
-    image: cloudyWiring
+    image: nuggetWiring
   },
   {
     icon: <Settings className="h-5 w-5" />,
     title: "Phase 3: Hardware Integration",
     duration: "Week 3-4",
     description: "Assembled all components into the 3D printed chassis. Calibrated motor speeds for balanced movement, fine-tuned sensor positions for optimal detection, and ensured proper heat dissipation for the Raspberry Pi.",
-    image: cloudyAssembly1
+    image: nuggetAssembly1
   },
   {
     icon: <Code className="h-5 w-5" />,
     title: "Phase 4: Software Development",
     duration: "Week 4-6",
     description: "Built the Python control system using Agentic Gemini AI to decode complex Linux GPIO documentation. Developed the emotional state machine, integrated OpenAI for natural conversation, and connected Google Cloud APIs for smart home control.",
-    image: cloudyDevSetup
+    image: nuggetDevSetup
   }
 ];
 
-const cloudyGalleryImages = [
-  { src: cloudyComplete, label: "Completed Build" },
-  { src: cloudyFinal, label: "Front View with Face" },
-  { src: cloudySide1, label: "Side Profile Left" },
-  { src: cloudySide2, label: "Side Profile Right" },
-  { src: cloudy3DPrint, label: "3D Printing Process" },
-  { src: cloudyParts, label: "Printed Components" },
-  { src: cloudyWiring, label: "Wiring & Soldering" },
-  { src: cloudyElectronics1, label: "Electronics Setup" },
-  { src: cloudyMotors, label: "Motor Assembly" },
-  { src: cloudyAssembly2, label: "Chassis Assembly" },
-  { src: cloudyTesting, label: "Testing Phase" },
-  { src: cloudyScreen, label: "LCD Integration" }
+const nuggetGalleryImages = [
+  { src: nuggetComplete, label: "Completed Build" },
+  { src: nuggetFinal, label: "Front View with Face" },
+  { src: nuggetSide1, label: "Side Profile Left" },
+  { src: nuggetSide2, label: "Side Profile Right" },
+  { src: nugget3DPrint, label: "3D Printing Process" },
+  { src: nuggetParts, label: "Printed Components" },
+  { src: nuggetWiring, label: "Wiring & Soldering" },
+  { src: nuggetElectronics1, label: "Electronics Setup" },
+  { src: nuggetMotors, label: "Motor Assembly" },
+  { src: nuggetAssembly2, label: "Chassis Assembly" },
+  { src: nuggetTesting, label: "Testing Phase" },
+  { src: nuggetScreen, label: "LCD Integration" }
 ];
 
 // ========== JUDGEMENT DATA ==========
@@ -269,27 +269,27 @@ function BuildGalleryCarousel({ images }: { images: { src: string; label: string
   );
 }
 
-// ========== CLOUDY MODAL CONTENT ==========
-function CloudyModalContent() {
+// ========== NUGGET MODAL CONTENT ==========
+function NuggetModalContent() {
   return (
     <>
       {/* Modal Header with Photo Collage Banner */}
       <div className="relative h-48 md:h-64">
         <div className="absolute inset-0 grid grid-cols-4 grid-rows-2 gap-1">
           <div className="col-span-2 row-span-2 overflow-hidden">
-            <img src={cloudyComplete} alt="Cloudy Complete" className="w-full h-full object-cover" />
+            <img src={nuggetComplete} alt="Nugget Complete" className="w-full h-full object-cover" />
           </div>
           <div className="overflow-hidden">
-            <img src={cloudyFinal} alt="Cloudy Front" className="w-full h-full object-cover" />
+            <img src={nuggetFinal} alt="Nugget Front" className="w-full h-full object-cover" />
           </div>
           <div className="overflow-hidden">
-            <img src={cloudySide1} alt="Cloudy Side" className="w-full h-full object-cover" />
+            <img src={nuggetSide1} alt="Nugget Side" className="w-full h-full object-cover" />
           </div>
           <div className="overflow-hidden">
-            <img src={cloudy3DPrint} alt="3D Printing" className="w-full h-full object-cover" />
+            <img src={nugget3DPrint} alt="3D Printing" className="w-full h-full object-cover" />
           </div>
           <div className="overflow-hidden">
-            <img src={cloudyWiring} alt="Wiring" className="w-full h-full object-cover" />
+            <img src={nuggetWiring} alt="Wiring" className="w-full h-full object-cover" />
           </div>
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
@@ -299,7 +299,7 @@ function CloudyModalContent() {
             Engineering Case Study
           </div>
           <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-            Cloudy <span className="text-muted-foreground font-normal text-lg">(v1.0.0 Beta)</span>
+            Nugget <span className="text-muted-foreground font-normal text-lg">(v1.0.0 Beta)</span>
           </h2>
           <p className="text-sm text-muted-foreground mt-1">An Autonomous, Emotionally Intelligent AI Companion Robot</p>
         </div>
@@ -310,7 +310,7 @@ function CloudyModalContent() {
         <div>
           <h3 className="text-xl font-bold text-foreground mb-4">Project Overview</h3>
           <p className="text-muted-foreground leading-relaxed">
-            Cloudy is a fully autonomous companion robot designed and built entirely from scratch. The project combines custom 3D-printed hardware, low-level electronics integration, and high-level AI systems to create a robot with genuine personality. From soldering motor drivers to training emotional responses, every aspect was engineered with the goal of creating a companion that feels alive—responding to touch, engaging in natural conversation, and even controlling smart home devices.
+            Nugget is a fully autonomous companion robot designed and built entirely from scratch. The project combines custom 3D-printed hardware, low-level electronics integration, and high-level AI systems to create a robot with genuine personality. From soldering motor drivers to training emotional responses, every aspect was engineered with the goal of creating a companion that feels alive—responding to touch, engaging in natural conversation, and even controlling smart home devices.
           </p>
         </div>
 
@@ -337,7 +337,7 @@ function CloudyModalContent() {
         <div>
           <h3 className="text-xl font-bold text-foreground mb-6">Build Process Timeline</h3>
           <div className="space-y-8">
-            {cloudyBuildPhases.map((phase, index) => (
+            {nuggetBuildPhases.map((phase, index) => (
               <div key={index} className="relative pl-8 border-l-2 border-border/50 pb-8 last:pb-0">
                 <div className="absolute -left-3 top-0 w-6 h-6 rounded-full bg-primary/10 border-2 border-primary flex items-center justify-center">
                   <span className="text-primary">{phase.icon}</span>
@@ -373,7 +373,7 @@ function CloudyModalContent() {
                 The Body (Hardware)
               </h4>
               <ul className="space-y-3">
-                {cloudyHardwareSpecs.map((spec, index) => (
+                {nuggetHardwareSpecs.map((spec, index) => (
                   <li key={index} className="flex items-start gap-3 text-sm text-muted-foreground">
                     <span className="w-1.5 h-1.5 rounded-full bg-orange-400 mt-2 flex-shrink-0" />
                     {spec}
@@ -388,7 +388,7 @@ function CloudyModalContent() {
                 The Soul (Software)
               </h4>
               <ul className="space-y-3">
-                {cloudySoftwareSpecs.map((spec, index) => (
+                {nuggetSoftwareSpecs.map((spec, index) => (
                   <li key={index} className="flex items-start gap-3 text-sm text-muted-foreground">
                     <span className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 flex-shrink-0" />
                     {spec}
@@ -403,7 +403,7 @@ function CloudyModalContent() {
         <div className="overflow-hidden">
           <h3 className="text-xl font-bold text-foreground mb-6">Key Features</h3>
           <div className="grid grid-cols-1 gap-6">
-            {cloudyFeatures.map((feature, index) => (
+            {nuggetFeatures.map((feature, index) => (
               <div key={index} className="p-6 rounded-xl bg-secondary/50 border border-border/50 hover:border-primary/30 transition-colors">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -420,7 +420,7 @@ function CloudyModalContent() {
         </div>
 
         {/* Build Gallery */}
-        <BuildGalleryCarousel images={cloudyGalleryImages} />
+        <BuildGalleryCarousel images={nuggetGalleryImages} />
 
         {/* Challenges & Learnings */}
         <div className="p-6 rounded-2xl bg-secondary/30 border border-border/50">
@@ -694,15 +694,15 @@ function JudgementModalContent() {
 // ========== ENGINEERING PROJECTS DATA (exported for use in Projects.tsx) ==========
 export const engineeringProjects = [
   {
-    id: 'cloudy',
+    id: 'nugget',
     badge: 'Latest Innovation',
     badgeIcon: <Sparkles className="h-3 w-3" />,
-    title: 'Cloudy',
+    title: 'Nugget',
     version: '(v1.0.0 Beta)',
     subtitle: 'AI-Native Autonomous Robot',
     description: 'A physical manifestation of Vibe Coding—bridging Python logic with custom hardware and generative AI instrumentation.',
     techIcons: ['Raspberry Pi', 'Python', 'OpenAI', 'Google Cloud'],
-    image: cloudyFinal
+    image: nuggetFinal
   },
   {
     id: 'judgement',
@@ -723,7 +723,7 @@ interface EngineeringCardsProps {
 }
 
 export function EngineeringCards({ isInView }: EngineeringCardsProps) {
-  const [activeModal, setActiveModal] = useState<'cloudy' | 'judgement' | null>(null);
+  const [activeModal, setActiveModal] = useState<'nugget' | 'judgement' | null>(null);
 
   return (
     <>
@@ -754,7 +754,7 @@ export function EngineeringCards({ isInView }: EngineeringCardsProps) {
             }`}>
               {/* Badge */}
               <div className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border mb-2.5 w-fit ${
-                project.id === 'cloudy' 
+                project.id === 'nugget' 
                   ? 'bg-primary/10 border-primary/20 text-primary' 
                   : 'bg-green-500/10 border-green-500/20 text-green-600'
               }`}>
@@ -786,7 +786,7 @@ export function EngineeringCards({ isInView }: EngineeringCardsProps) {
 
               {/* CTA */}
               <button
-                onClick={() => setActiveModal(project.id as 'cloudy' | 'judgement')}
+                onClick={() => setActiveModal(project.id as 'nugget' | 'judgement')}
                 className="group inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-foreground text-background font-semibold text-xs hover:bg-foreground/90 transition-all shadow-sm w-fit"
               >
                 View Case Study
@@ -797,17 +797,17 @@ export function EngineeringCards({ isInView }: EngineeringCardsProps) {
         ))}
       </div>
 
-      {/* Cloudy Modal */}
-      <Dialog open={activeModal === 'cloudy'} onOpenChange={(open) => !open && setActiveModal(null)}>
+      {/* Nugget Modal */}
+      <Dialog open={activeModal === 'nugget'} onOpenChange={(open) => !open && setActiveModal(null)}>
         <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto overflow-x-hidden p-0 bg-background border-border">
-          <DialogTitle className="sr-only">Cloudy Engineering Case Study</DialogTitle>
+          <DialogTitle className="sr-only">Nugget Engineering Case Study</DialogTitle>
           <button 
             onClick={() => setActiveModal(null)}
             className="absolute top-4 right-4 z-10 p-2 rounded-full bg-background/80 backdrop-blur-sm border border-border hover:bg-secondary transition-colors"
           >
             <X className="h-5 w-5 text-foreground" />
           </button>
-          <CloudyModalContent />
+          <NuggetModalContent />
         </DialogContent>
       </Dialog>
 
