@@ -180,6 +180,33 @@ export function Hero() {
         style={{ backgroundColor: '#F2F2F2' }}
         className="w-full mx-auto py-10 border-t border-gray-700"
       >
+        {/* CURRENTLY AT */}
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+          <div className="flex flex-col sm:flex-row justify-center items-center mb-6 px-0">
+            <hr className="w-96 border-t border-gray-600/50 mr-4" />
+            <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider text-center sm:text-left mb-2 sm:mb-0">
+              Currently at
+            </span>
+            <hr className="w-96 border-t border-gray-600/50 ml-4" />
+          </div>
+          <div className="flex justify-center items-center">
+            <a
+              href="https://lore.co/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex justify-center items-center py-2 cursor-pointer transition-transform duration-300 hover:scale-110"
+              title="Lore"
+            >
+              <img
+                src="/logos/lore-logo.svg"
+                alt="Lore"
+                title="Lore"
+                className="h-12 w-auto object-contain max-h-12"
+              />
+            </a>
+          </div>
+        </div>
+
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* LINE 1: CATEGORY TITLE (ONLY PREVIOUSLY AT) - Left Aligned */}
