@@ -6,6 +6,16 @@ import { useInView } from 'react-intersection-observer';
 // --- DATA: Unchanged ---
 const experiences = [
   {
+    title: "UX Designer",
+    company: "Lore",
+    companyLogo: "/logos/lore-logo.svg",
+    period: "April 2026 - Present",
+    location: "Remote",
+    description: "Designing and shipping production-ready features for a health platform that uses AI and human conversation to help users manage psychological and physical stressors. Bridging design and engineering by leveraging vibe coding to translate high-fidelity Figma prototypes directly into functional, production-ready front-end code. Collaborating cross-functionally in a fully remote, async-first environment to rapidly iterate on user-facing features aligned with product and business goals.",
+    skills: ["Product Design", "Vibe Coding", "Figma", "Frontend Development", "AI-Assisted Development"],
+    website: "https://lore.co/"
+  },
+  {
     title: "Product Designer",
     company: "Tech9",
     companyLogo: "/logos/tech9-logo.svg?v=2",
