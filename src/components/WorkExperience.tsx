@@ -36,6 +36,14 @@ export function WorkExperience() {
 
   const experiences: WorkExperienceItem[] = [
     {
+      title: "UX Designer",
+      company: "Lore",
+      period: "April 2026 - Present",
+      description: "Designing and shipping production-ready features for a health platform that uses AI and human conversation to help users manage psychological and physical stressors. Bridging design and engineering by leveraging vibe coding to translate high-fidelity Figma prototypes directly into functional, production-ready front-end code. Collaborating cross-functionally in a fully remote, async-first environment to rapidly iterate on user-facing features aligned with product and business goals.",
+      website: "https://lore.co/",
+      isPrimary: true
+    },
+    {
       title: "Product Designer",
       company: "Tech9",
       period: "May 2025 - Aug 2025",
