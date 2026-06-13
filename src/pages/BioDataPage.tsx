@@ -26,6 +26,17 @@ import {
   MessageCircle,
 } from "lucide-react";
 import haetPhoto from "@/assets/haet-photo.jpg.asset.json";
+import photoGrad from "@/assets/photo-grad.jpg.asset.json";
+import photoFamily from "@/assets/photo-family.jpg.asset.json";
+import photoBanff from "@/assets/photo-banff.jpg.asset.json";
+import photoToronto from "@/assets/photo-toronto.jpg.asset.json";
+
+const gallery = [
+  { src: photoGrad.url, caption: "Graduation · RIT, Rochester NY" },
+  { src: photoFamily.url, caption: "With Family · BAPS Mandir, Robbinsville NJ" },
+  { src: photoBanff.url, caption: "Banff National Park, Canada" },
+  { src: photoToronto.url, caption: "Toronto Waterfront, Canada" },
+];
 
 const hobbies = [
   { label: "Painting", Icon: Palette },
