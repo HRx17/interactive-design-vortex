@@ -430,7 +430,7 @@ const BioDataPage: React.FC = () => {
               Get in Touch
             </h2>
           </div>
-          <div className="grid sm:grid-cols-3 gap-3">
+          <div className="grid sm:grid-cols-2 gap-3">
             <a
               href="tel:+17326463484"
               className="group flex items-center gap-3 rounded-xl border border-border bg-background px-4 py-3.5 hover:bg-foreground hover:text-background hover:-translate-y-0.5 transition-all duration-300"
@@ -439,6 +439,16 @@ const BioDataPage: React.FC = () => {
               <div className="min-w-0">
                 <div className="text-[9px] uppercase tracking-[0.22em] opacity-60">Phone</div>
                 <div className="text-sm font-medium truncate">+1 732 646 3484</div>
+              </div>
+            </a>
+            <a
+              href="tel:+917043271467"
+              className="group flex items-center gap-3 rounded-xl border border-border bg-background px-4 py-3.5 hover:bg-foreground hover:text-background hover:-translate-y-0.5 transition-all duration-300"
+            >
+              <Phone className="w-4 h-4 shrink-0 opacity-70 group-hover:opacity-100" />
+              <div className="min-w-0">
+                <div className="text-[9px] uppercase tracking-[0.22em] opacity-60">Father</div>
+                <div className="text-sm font-medium truncate">+91-7043271467</div>
               </div>
             </a>
             <a
