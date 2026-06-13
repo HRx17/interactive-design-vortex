@@ -65,11 +65,14 @@ const AboutPage = () => {
         </div>
 
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20">
-          <span className={cn(
-            "inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 backdrop-blur-md border border-primary/20",
-            "opacity-0 translate-y-4 transition-all duration-700",
-            heroInView && "opacity-100 translate-y-0"
-          )}>
+          <span
+            onClick={() => navigate('/bio-data')}
+            className={cn(
+              "inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 backdrop-blur-md border border-primary/20 cursor-pointer hover:bg-primary/20 transition-colors",
+              "opacity-0 translate-y-4 transition-all duration-700",
+              heroInView && "opacity-100 translate-y-0"
+            )}
+          >
             About Me
           </span>
           <h1 className={cn(
