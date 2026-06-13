@@ -381,7 +381,59 @@ const BioDataPage: React.FC = () => {
         </div>
 
         {/* Footer */}
-        <footer className="mt-14 text-center">
+        {/* Contact */}
+        <div
+          className="mt-6 rounded-2xl border border-border bg-card/80 backdrop-blur p-6 md:p-8 opacity-0 animate-[fadeUp_0.8s_ease-out_forwards]"
+          style={{ animationDelay: "1100ms" }}
+        >
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-9 h-9 rounded-full border border-border flex items-center justify-center bg-background">
+              <MessageCircle className="w-4 h-4" />
+            </div>
+            <h2 className="font-display text-lg tracking-wide uppercase">
+              Get in Touch
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-3">
+            <a
+              href="tel:+17326463484"
+              className="group flex items-center gap-3 rounded-xl border border-border bg-background px-4 py-3.5 hover:bg-foreground hover:text-background hover:-translate-y-0.5 transition-all duration-300"
+            >
+              <Phone className="w-4 h-4 shrink-0 opacity-70 group-hover:opacity-100" />
+              <div className="min-w-0">
+                <div className="text-[9px] uppercase tracking-[0.22em] opacity-60">Phone</div>
+                <div className="text-sm font-medium truncate">+1 732 646 3484</div>
+              </div>
+            </a>
+            <a
+              href="mailto:haetranpariya17@gmail.com"
+              className="group flex items-center gap-3 rounded-xl border border-border bg-background px-4 py-3.5 hover:bg-foreground hover:text-background hover:-translate-y-0.5 transition-all duration-300"
+            >
+              <Mail className="w-4 h-4 shrink-0 opacity-70 group-hover:opacity-100" />
+              <div className="min-w-0">
+                <div className="text-[9px] uppercase tracking-[0.22em] opacity-60">Email</div>
+                <div className="text-sm font-medium truncate">haetranpariya17@gmail.com</div>
+              </div>
+            </a>
+            <a
+              href="https://haetranpariya.com"
+              target="_blank"
+              rel="noreferrer"
+              className="group flex items-center gap-3 rounded-xl border border-border bg-background px-4 py-3.5 hover:bg-foreground hover:text-background hover:-translate-y-0.5 transition-all duration-300"
+            >
+              <Globe className="w-4 h-4 shrink-0 opacity-70 group-hover:opacity-100" />
+              <div className="min-w-0">
+                <div className="text-[9px] uppercase tracking-[0.22em] opacity-60">Web</div>
+                <div className="text-sm font-medium truncate">haetranpariya.com</div>
+              </div>
+            </a>
+          </div>
+          <p className="mt-5 text-[11px] text-muted-foreground text-center">
+            For matrimonial enquiries, please feel free to reach out · Responses within 24–48 hours
+          </p>
+        </div>
+
+        <footer className="mt-10 text-center">
           <div className="flex items-center justify-center gap-3 text-muted-foreground">
             <MapPin className="w-3.5 h-3.5" />
             <p className="text-xs uppercase tracking-[0.3em]">
