@@ -26,6 +26,17 @@ import {
   MessageCircle,
 } from "lucide-react";
 import haetPhoto from "@/assets/haet-photo.jpg.asset.json";
+import photoGrad from "@/assets/photo-grad.jpg.asset.json";
+import photoFamily from "@/assets/photo-family.jpg.asset.json";
+import photoBanff from "@/assets/photo-banff.jpg.asset.json";
+import photoToronto from "@/assets/photo-toronto.jpg.asset.json";
+
+const gallery = [
+  { src: photoGrad.url, caption: "Graduation · RIT, Rochester NY" },
+  { src: photoFamily.url, caption: "With Family · BAPS Mandir, Robbinsville NJ" },
+  { src: photoBanff.url, caption: "Banff National Park, Canada" },
+  { src: photoToronto.url, caption: "Toronto Waterfront, Canada" },
+];
 
 const hobbies = [
   { label: "Painting", Icon: Palette },
@@ -201,6 +212,50 @@ const BioDataPage: React.FC = () => {
           <span className="font-display text-6xl leading-none text-foreground/15 absolute -bottom-10 right-0">
             ”
           </span>
+        </div>
+
+        {/* Photo Gallery — horizontal scroll */}
+        <div
+          className="-mx-4 sm:-mx-6 md:-mx-8 mb-10 md:mb-14 opacity-0 animate-[fadeUp_0.8s_ease-out_forwards]"
+          style={{ animationDelay: "450ms" }}
+        >
+          <div className="flex items-center justify-between px-4 sm:px-6 md:px-8 mb-4">
+            <div className="flex items-center gap-2">
+              <span className="h-px w-6 bg-foreground/40" />
+              <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+                Glimpses
+              </p>
+            </div>
+            <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground/70">
+              Swipe →
+            </p>
+          </div>
+          <div
+            className="flex gap-3 sm:gap-4 overflow-x-auto snap-x snap-mandatory px-4 sm:px-6 md:px-8 pb-4 scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          >
+            {gallery.map((p, i) => (
+              <figure
+                key={i}
+                className="snap-center shrink-0 w-[78%] sm:w-[60%] md:w-[42%] group"
+              >
+                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-border bg-card shadow-md hover:shadow-xl transition-all duration-500">
+                  <img
+                    src={p.src}
+                    alt={p.caption}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/55 to-transparent" />
+                  <div className="absolute bottom-3 left-3 right-3 text-white text-[11px] uppercase tracking-[0.18em] font-medium drop-shadow">
+                    {p.caption}
+                  </div>
+                  <div className="absolute top-3 right-3 w-7 h-7 rounded-full bg-background/80 backdrop-blur text-foreground text-[10px] font-semibold flex items-center justify-center">
+                    {i + 1}
+                  </div>
+                </div>
+              </figure>
+            ))}
+          </div>
         </div>
 
         {/* Grid */}
