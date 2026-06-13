@@ -21,7 +21,11 @@ import {
   MapPin,
   Globe,
   ArrowLeft,
+  Mail,
+  Phone,
+  MessageCircle,
 } from "lucide-react";
+import haetPhoto from "@/assets/haet-photo.jpg.asset.json";
 
 const hobbies = [
   { label: "Painting", Icon: Palette },
@@ -95,29 +99,49 @@ const BioDataPage: React.FC = () => {
       <div className="pointer-events-none absolute -top-32 -right-32 w-96 h-96 rounded-full bg-foreground/5 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-foreground/5 blur-3xl" />
 
-      <div className="relative max-w-5xl mx-auto px-5 md:px-8 py-10 md:py-16">
+      <div className="relative max-w-3xl mx-auto px-4 sm:px-6 md:px-8 py-6 md:py-14">
         {/* Back link */}
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors mb-8"
+          className="inline-flex items-center gap-2 text-[10px] sm:text-xs uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors mb-6"
         >
           <ArrowLeft className="w-3.5 h-3.5" /> Back to portfolio
         </Link>
 
         {/* Header */}
-        <header className="text-center mb-12 md:mb-16">
-          <div className="flex items-center justify-center gap-2 mb-4">
+        <header className="text-center mb-10 md:mb-14">
+          <div className="flex items-center justify-center gap-2 mb-5">
             <span className="h-px w-10 bg-foreground/40" />
             <Sparkles className="w-3.5 h-3.5 text-foreground/60" />
-            <p className="text-[11px] uppercase tracking-[0.4em] text-muted-foreground">
+            <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.35em] text-muted-foreground">
               Jai Shree Krishna
             </p>
             <Sparkles className="w-3.5 h-3.5 text-foreground/60" />
             <span className="h-px w-10 bg-foreground/40" />
           </div>
 
+          {/* Photo */}
+          <div
+            className={`relative mx-auto mb-7 transition-all duration-1000 ${
+              revealed ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"
+            }`}
+          >
+            <div className="absolute inset-0 rounded-full bg-foreground/10 blur-2xl scale-110" />
+            <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 mx-auto rounded-full overflow-hidden border-2 border-foreground/15 shadow-xl ring-1 ring-foreground/5 ring-offset-4 ring-offset-background">
+              <img
+                src={haetPhoto.url}
+                alt="Haet Ranpariya portrait"
+                className="w-full h-full object-cover"
+                loading="eager"
+              />
+            </div>
+            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-foreground text-background text-[9px] uppercase tracking-[0.25em] font-medium shadow-md">
+              ॐ
+            </div>
+          </div>
+
           <h1
-            className={`font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] transition-all duration-1000 ${
+            className={`font-display text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] transition-all duration-1000 ${
               revealed ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
@@ -125,7 +149,7 @@ const BioDataPage: React.FC = () => {
           </h1>
 
           <p
-            className={`mt-4 text-sm md:text-base text-muted-foreground tracking-wide transition-all duration-1000 delay-200 ${
+            className={`mt-3 text-xs sm:text-sm md:text-base text-muted-foreground tracking-wide transition-all duration-1000 delay-200 ${
               revealed ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
@@ -134,7 +158,7 @@ const BioDataPage: React.FC = () => {
 
           {/* Quick stats */}
           <div
-            className={`mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-3xl mx-auto transition-all duration-1000 delay-300 ${
+            className={`mt-7 grid grid-cols-2 md:grid-cols-4 gap-2.5 md:gap-4 max-w-3xl mx-auto transition-all duration-1000 delay-300 ${
               revealed ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
@@ -146,12 +170,12 @@ const BioDataPage: React.FC = () => {
             ].map((s) => (
               <div
                 key={s.k}
-                className="rounded-xl border border-border bg-card/60 backdrop-blur px-4 py-3 hover:border-foreground/40 hover:-translate-y-0.5 transition-all duration-300"
+                className="rounded-xl border border-border bg-card/60 backdrop-blur px-3 py-2.5 sm:px-4 sm:py-3 hover:border-foreground/40 hover:-translate-y-0.5 transition-all duration-300"
               >
-                <div className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+                <div className="text-[9px] sm:text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
                   {s.k}
                 </div>
-                <div className="mt-1 font-display text-base md:text-lg font-semibold">
+                <div className="mt-1 font-display text-sm sm:text-base md:text-lg font-semibold">
                   {s.v}
                 </div>
               </div>
@@ -161,13 +185,13 @@ const BioDataPage: React.FC = () => {
 
         {/* About */}
         <div
-          className="relative mx-auto max-w-3xl text-center mb-14 opacity-0 animate-[fadeUp_0.8s_ease-out_forwards]"
+          className="relative mx-auto max-w-3xl text-center mb-10 md:mb-14 opacity-0 animate-[fadeUp_0.8s_ease-out_forwards]"
           style={{ animationDelay: "400ms" }}
         >
           <span className="font-display text-6xl leading-none text-foreground/15 absolute -top-4 left-0">
             “
           </span>
-          <p className="italic text-base md:text-lg text-muted-foreground leading-relaxed px-6">
+          <p className="italic text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed px-6">
             A calm, patient, and grounded young man — equally at home in
             thoughtful conversation and creative problem-solving. An ambivert
             who values deep, meaningful connections over a wide social circle.
@@ -180,7 +204,7 @@ const BioDataPage: React.FC = () => {
         </div>
 
         {/* Grid */}
-        <div className="grid md:grid-cols-2 gap-5 md:gap-6">
+        <div className="grid md:grid-cols-2 gap-4 md:gap-6">
           <SectionCard title="Personal" icon={Heart} delay={500}>
             <Row label="Religion" value="Hindu" />
             <Row label="Caste" value="Leva Patel" />
