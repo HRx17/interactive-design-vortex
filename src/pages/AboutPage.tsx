@@ -43,6 +43,7 @@ const EducationCard = ({ title, description, year, gpa, location, previous }: an
 );
 
 const AboutPage = () => {
+  const navigate = useNavigate();
   const { ref: heroRef, inView: heroInView } = useInView({ threshold: 0.1, triggerOnce: true });
   const { ref: bioRef, inView: bioInView } = useInView({ threshold: 0.1, triggerOnce: true });
 
