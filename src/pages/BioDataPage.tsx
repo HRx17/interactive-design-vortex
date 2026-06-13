@@ -25,7 +25,7 @@ import {
   Phone,
   MessageCircle,
 } from "lucide-react";
-import haetPhoto from "@/assets/haet-photo.jpg.asset.json";
+
 import photoGrad from "@/assets/photo-grad.jpg.asset.json";
 import photoFamily from "@/assets/photo-family.jpg.asset.json";
 import photoBanff from "@/assets/photo-banff.jpg.asset.json";
@@ -131,25 +131,6 @@ const BioDataPage: React.FC = () => {
             <span className="h-px w-10 bg-foreground/40" />
           </div>
 
-          {/* Photo */}
-          <div
-            className={`relative mx-auto mb-7 transition-all duration-1000 ${
-              revealed ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-4 scale-95"
-            }`}
-          >
-            <div className="absolute inset-0 rounded-full bg-foreground/10 blur-2xl scale-110" />
-            <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 mx-auto rounded-full overflow-hidden border-2 border-foreground/15 shadow-xl ring-1 ring-foreground/5 ring-offset-4 ring-offset-background">
-              <img
-                src={haetPhoto.url}
-                alt="Haet Ranpariya portrait"
-                className="w-full h-full object-cover"
-                loading="eager"
-              />
-            </div>
-            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-foreground text-background text-[9px] uppercase tracking-[0.25em] font-medium shadow-md">
-              ॐ
-            </div>
-          </div>
 
           <h1
             className={`font-display text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] transition-all duration-1000 ${
