@@ -110,7 +110,7 @@ const AboutPage = () => {
                   I'm a passionate Product Designer and Frontend Developer currently studying Human-Computer Interaction at Rochester Institute of Technology. My passion lies in creating digital experiences that balance aesthetic appeal with intuitive functionality, focusing on end-to-end product strategy and user-centered design principles.
                 </p>
                 <p>
-                  I also specialize in GenUI, leveraging AI tools like Lovable, ChatGPT, and custom prompting techniques to enhance my design workflow. This parallel expertise allows me to rapidly prototype and iterate while maintaining focus on strategic product decisions and user needs.
+                  I also specialize in AI-powered design and GenUI, leveraging tools like Cursor, Lovable, ChatGPT, and custom prompting techniques to enhance my workflow. This parallel expertise allows me to rapidly prototype and iterate while maintaining focus on strategic product decisions and user needs.
                 </p>
                 <p>
                   When I'm not designing products or experimenting with new design methodologies, you can find me <strong>Painting</strong>, <strong>Scuba Diving</strong>, or researching the latest developments in human-computer interaction.

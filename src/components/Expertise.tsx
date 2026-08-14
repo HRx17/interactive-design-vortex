@@ -159,8 +159,8 @@ export function Expertise() {
               </div>
             </SkillCard>
             <SkillCard
-              title="GenUI Specialist"
-              description="Leveraging AI tools like v0, Lovable, and GPT-4 to accelerate design workflows."
+              title="AI Design Specialist"
+              description="Leveraging AI tools like Cursor, v0, Lovable, and GPT-4 to accelerate design workflows."
               icon={<Sparkles className="w-5 h-5 text-purple-600" />}
               iconContainerClassName="bg-purple-100/50 border-purple-200"
             >
