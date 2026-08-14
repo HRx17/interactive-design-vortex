@@ -21,6 +21,7 @@ import DailygramCaseStudy from "./pages/projects/DailygramCaseStudy";
 import InfiniteMindsCaseStudy from "./pages/projects/InfiniteMindsCaseStudy";
 import TravelMissionCaseStudy from "./pages/projects/TravelMissionCaseStudy";
 import BioDataPage from "./pages/BioDataPage";
+import PasswordGate from "./components/PasswordGate";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <PasswordGate>
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
@@ -52,6 +54,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      </PasswordGate>
     </TooltipProvider>
   </QueryClientProvider>
 );
