@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Lock } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { PORTFOLIO_PASSWORD } from '@/lib/portfolio-password';
+import { fetchPasswordRequired } from '@/lib/site-access';
 
-const PASSWORD = 'Welcome2creativity@2026';
+const PASSWORD = PORTFOLIO_PASSWORD;
 const STORAGE_KEY = 'portfolio-access';
 
 export function PasswordGate({ children }: { children: React.ReactNode }) {
   const [unlocked, setUnlocked] = useState(false);
+  const [passwordRequired, setPasswordRequired] = useState(true);
   const [ready, setReady] = useState(false);
   const [value, setValue] = useState('');
   const [error, setError] = useState(false);
@@ -18,7 +21,34 @@ export function PasswordGate({ children }: { children: React.ReactNode }) {
     } catch (_) {
       /* ignore */
     }
-    setReady(true);
+
+    let cancelled = false;
+    const load = () => {
+      fetchPasswordRequired()
+        .then((required) => {
+          if (!cancelled) setPasswordRequired(required);
+        })
+        .catch(() => {
+          /* keep the last known setting; default is locked */
+        })
+        .finally(() => {
+          if (!cancelled) setReady(true);
+        });
+    };
+
+    load();
+    const id = window.setInterval(() => {
+      if (document.visibilityState === 'visible') load();
+    }, 2000);
+    const onVisible = () => {
+      if (document.visibilityState === 'visible') load();
+    };
+    document.addEventListener('visibilitychange', onVisible);
+    return () => {
+      cancelled = true;
+      window.clearInterval(id);
+      document.removeEventListener('visibilitychange', onVisible);
+    };
   }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -37,7 +67,7 @@ export function PasswordGate({ children }: { children: React.ReactNode }) {
   };
 
   if (!ready) return null;
-  if (unlocked) return <>{children}</>;
+  if (!passwordRequired || unlocked) return <>{children}</>;
 
   return (
     <main className="min-h-screen w-full flex items-center justify-center bg-background px-6">
